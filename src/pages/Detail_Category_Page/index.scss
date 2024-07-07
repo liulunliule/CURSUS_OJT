@@ -1,0 +1,61 @@
+.DetailCategoryPage{
+    margin-top: 60px;
+    margin-left: 240px;
+    padding: 35px 30px 35px 40px;
+    background-color: #f7f7f7;
+    transition: margin-left 0.5s ease;
+
+    &.active{
+        transition: margin-left 0.5s ease;
+        margin-left: 0;
+    }
+    
+
+    .DetailCategoryPage__Title{
+        margin-bottom: 30px;
+    }
+
+
+    .DetailCategoryPage_Contents__Field_Title{
+        display: flex;
+        align-items: center;
+        box-shadow: 0in 0.5pc 1.125pc -7px rgba(25, 42, 70, .13);
+        border-radius: 3px;
+        height: 40px;
+        margin: 20px 50px;
+        width: max-content;
+
+        .Logo_DetailCategoryPage{
+            height: 100%;
+            padding: 7px 5px;
+            background-color: red;
+            border-radius: 3px 0 0 3px;
+        }
+        .Logo_DetailCategoryPage_Title{
+            height: 100%;
+            background-color: #fff;
+            padding: 9px 13px;
+            font-weight: 500px;
+            border-radius: 0 3px 3px 0;
+        }
+    }
+
+    .DetailCategoryPage_Contents{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+
+        .DetailCategoryPage_H3{
+            font-weight: 600;
+        }
+    
+        .DetailCategoryPage_P{
+            display: flex;
+            justify-content: center;
+            text-align: left;
+            width: 70vh;
+        }
+    } 
+}

@@ -1,0 +1,99 @@
+.PrivacyTab{
+    background-color: #f7f7f7;
+
+
+    .AllTabButton_SettingPage{
+        display: flex;
+        gap: 10px;
+
+        .AllTabButton_SettingPage_PrivacyTab{
+            border: none;
+            height: 35px;
+            padding: 0 15px;
+            color: #fff;
+            border-radius: 3px;
+            font-weight: 500;
+            background: #ed2a26;
+        }
+
+        .AllTabButton_SettingPage_Rest{
+            border: none;
+            height: 35px;
+            padding: 0 15px;
+            color: #333;
+            border-radius: 3px;
+            font-weight: 500;
+            background: #f7f7f7;
+        }
+    }
+
+    .PrivacyTab_Contents{
+        margin-top: 40px;
+
+        .PrivacyTab_Contents_Privacy_H4{
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .PrivacyTab_Contents_PrivacyOf_P{
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #686f7a;
+        }
+
+        .PrivacyTab_Contents_SettingProfile_H4{
+            margin-top: 30px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .PrivacyTab_Contents_SwitchButton1{
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .PrivacyTab_Contents_SwitchButton1_Switch{
+                width: 50px;
+            }
+
+            .PrivacyTab_Contents_SwitchButton1_Switch:where(.css-dev-only-do-not-override-m4timi).ant-switch.ant-switch-checked {
+                background: #ed2a26;
+            }
+        }
+
+        .PrivacyTab_Contents_SwitchButton2{
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .PrivacyTab_Contents_SwitchButton2_Switch{
+                width: 50px;
+
+            }
+
+            .PrivacyTab_Contents_SwitchButton2_Switch:where(.css-dev-only-do-not-override-m4timi).ant-switch.ant-switch-checked {
+                background: #ed2a26;
+            }
+        }
+
+        .CloseAccountTab_Contents_button{
+            border: none;
+            height: 40px;
+            padding: 0 20px;
+            margin-top: 45px;
+            margin-bottom: 20px;
+            color: #fff;
+            border-radius: 3px;
+            font-weight: 500;
+            background: #ed2a26;
+        }
+        .CloseAccountTab_Contents_button:hover{
+            background: #333;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+.create_course_media {
+    .media_title {
+        padding: 19px 0;
+        border-top: 1px solid #efefef;
+        border-bottom: 1px solid #efefef;
+        display: flex;
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        gap: 15px;
+
+        .media_icon {
+            font-size: 20px;
+        }
+    }
+
+    .media_content {
+        margin-top: 25px;
+
+        &-intro {
+            font-size: 14px;
+            margin-bottom: 11px;
+            color: #686f7a;
+        }
+
+        &-cta {
+            display: flex;
+            align-items: center;
+            column-gap: 12px;
+
+            .media_content-link {
+                font-size: 14px;
+                font-weight: 500;
+                padding: 7px 20px 5px;
+                color: #231f20;
+                background: #ffffff;
+                border-radius: 3px;
+                border: 1px solid #efefef;
+
+                &.active {
+                    background-color: #ed2a26;
+                    color: #fff;
+                    border-radius: 3px;
+                    border: 1px solid #ed2a26;
+                }
+            }
+        }
+    }
+}

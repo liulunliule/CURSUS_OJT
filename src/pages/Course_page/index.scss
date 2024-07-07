@@ -1,0 +1,88 @@
+.course_page {
+    margin-top: 60px;
+    margin-left: 240px;
+    background-color: #f7f7f7;
+    padding: 30px;
+    transition: margin-left 0.5s ease;
+
+    &.active{
+        transition: margin-left 0.5s ease;
+        margin-left: 0;
+    }
+
+    &_hero {
+        &-title {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            font-size: 20px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        &-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 38px;
+            background-color: #fff;
+            padding: 31px 21px;
+
+            h1 {
+                display: flex;
+                column-gap: 10px;
+                font-size: 24px;
+                color: #333;
+                font-weight: 400;
+            }
+
+            .course_page_hero-btn {
+                font-size: 14px;
+                font-weight: 500;
+                color: #fff;
+                background: #ed2a26;
+                padding: 0px 20px;
+                border-radius: 3px;
+                border: 0;
+                height: 40px;
+            }
+        }
+    }
+
+    &_cta {
+        margin-top: 51px;
+
+        &-list {
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            align-items: center;
+            background: #fff;
+            border-radius: 3px;
+            border: 1px solid #efefef;
+
+            .course_page_cta-item {
+                padding-left: 0;
+                list-style: none;
+                width: 244px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 16.8px 14px;
+                font-size: 14px;
+                font-weight: 500;
+                color: #333;
+                border-radius: 3px;
+
+                .course-page_icon {
+                    margin-right: 8px;
+                }
+
+                &.active {
+                    background-color: #ed2a26;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.free_page {
+    margin-top: 34px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .free_page_switch-btn {
+        margin-bottom: 17px;
+        color: #231f20;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .free_page-content {
+        margin-top: 20px;
+        text-align: center;
+        padding: 0 150px;
+    }
+}
+
+.ant-switch.ant-switch-checked {
+    background-color: #ed2a26;
+}

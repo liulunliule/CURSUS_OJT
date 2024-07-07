@@ -1,0 +1,27 @@
+.purchased_courses_page {
+    margin-top: 60px;
+    margin-left: 240px;
+    background-color: #f7f7f7;
+    padding: 30px;
+    transition: margin-left 0.5s ease;
+
+    &.active{
+        transition: margin-left 0.5s ease;
+        margin-left: 0;
+    }
+
+    &-hero {
+        &-title {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            font-size: 20px;
+            font-weight: 500;
+            color: #333;
+        }
+    }
+
+    &-table {
+        margin-top: 39px;
+    }
+}

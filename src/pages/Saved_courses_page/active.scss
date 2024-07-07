@@ -1,0 +1,49 @@
+.active {
+    margin-left: 0;
+
+    .saved_courses_cta {
+        margin-right: 21px;
+
+        &-title {
+            column-gap: 187px;
+        }
+    }
+
+    .saved_courses_line {
+        width: 350px;
+    }
+    .saved_courses_cta-desc-btn {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        color: #fff;
+        padding: 8px 91px;
+        background-color: #ed2a26;
+        border: none;
+        outline: none;
+        font-size: 14px;
+        border-radius: 3px;
+    }
+
+    .saved_courses_media-item {
+        width: 1092px;
+    }
+
+    .saved_courses_media-thumbnail {
+        .thumbnail {
+            width: 428px;
+            height: 241px;
+            object-fit: cover;
+        }
+
+        .saved_courses_media-overlay {
+            width: 428px;
+            height: 241px;
+        }
+    }
+    .saved_courses_media-content-views {
+        .dots {
+            margin-left: 469px;
+        }
+    }
+}

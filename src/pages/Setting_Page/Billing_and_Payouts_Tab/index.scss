@@ -1,0 +1,463 @@
+.BillingAndPayoutsTab{
+    background-color: #f7f7f7;
+    
+    
+
+
+    .AllTabButton_SettingPage{
+        display: flex;
+        gap: 10px;
+
+        .AllTabButton_SettingPage_BillingAndPayoutsTab{
+            border: none;
+            height: 35px;
+            padding: 0 15px;
+            color: #fff;
+            border-radius: 3px;
+            font-weight: 500;
+            background: #ed2a26;
+        }
+
+        .AllTabButton_SettingPage_Rest{
+            border: none;
+            height: 35px;
+            padding: 0 15px;
+            color: #333;
+            border-radius: 3px;
+            font-weight: 500;
+            background: #f7f7f7;
+        }
+    }
+
+    .BillingAndPayoutsTab_Contents{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width: 57vw;
+
+        .BillingAndPayoutsTab_Contents_Title_H4{
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .BillingAndPayoutsTab_Contents_TitleOfH4_P{
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #686f7a;
+        }
+
+        .BillingAndPayoutsTab_Contents_TitleOf_H4{
+            margin-top: 40px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .BillingAndPayoutsTab_Contents_InputName{
+            margin-top: 35px;
+            display: flex;
+            gap: 20px;
+
+            .BillingAndPayoutsTab_Contents_InputName_FirstName{
+                border-radius: 3px;
+            }
+            .BillingAndPayoutsTab_Contents_InputName_FirstName:hover{
+                border: 1.5px solid #e5e5e5;
+            }
+            .BillingAndPayoutsTab_Contents_InputName_FirstName:focus-within{
+                border: 1.5px solid #333;
+                box-shadow: none;
+            }
+
+            .BillingAndPayoutsTab_Contents_InputName_LastName{
+                border-radius: 3px;
+            }
+            .BillingAndPayoutsTab_Contents_InputName_LastName:hover{
+                border: 1.5px solid #e5e5e5;
+            }
+            .BillingAndPayoutsTab_Contents_InputName_LastName:focus-within{
+                border: 1.5px solid #333;
+                box-shadow: none;
+            }
+        }
+
+        .BillingAndPayoutsTab_Contents_InputHeadline_Headline{
+            margin-top: 30px;
+            border-radius: 3px;
+        }
+        .BillingAndPayoutsTab_Contents_InputHeadline_Headline:hover{
+            border: 1.5px solid #e5e5e5;
+        }
+        .BillingAndPayoutsTab_Contents_InputHeadline_Headline:focus-within{
+            border: 1.5px solid #333;
+            box-shadow: none;
+        }
+
+        .BillingAndPayoutsTab_ContentsUnder_SPAN{
+            margin-top: 5px;
+            font-size: 12px;
+            color: #686f7a;
+        }
+
+        .BillingAndPayoutsTab_Contents_Select{
+            margin-top: 30px;
+            
+            .ant-select-selector{
+                border-radius: 3px;
+            }
+        }
+
+    }
+
+    .BillingAndPayoutsTab_orExclusiveSales{
+        border-top: 1px solid #e5e5e5;
+
+        .BillingAndPayoutsTab_orExclusiveSales_ExclusiveSales{
+            margin-top: 40px;
+            .BillingAndPayoutsTab_orExclusiveSales_ExclusiveSales_H4{
+                margin-top: 40px;
+                font-size: 16px;
+                font-weight: 500;
+                color: #333;
+            }
+            .BillingAndPayoutsTab_orExclusiveSales_ExclusiveSales_P{
+                margin-top: 20px;
+                font-size: 14px;
+                font-weight: 400;
+                color: #686f7a;
+            }
+            .BillingAndPayoutsTab_orExclusiveSales_ExclusiveSales_listMoney1{
+                margin-top: 30px;
+                display: flex;
+                gap: 130px;
+                .BillingAndPayoutsTab_orExclusiveSales_ExclusiveSales_listMoney1_Span_One{
+                    color: #76d48f;
+                    font-weight: 600;
+                    font-size: 12px;
+                    .BillingAndPayoutsTab_orExclusiveSales_ExclusiveSales_listMoney1_Span__{
+                        margin-top: 10px;
+                    }
+                    .BillingAndPayoutsTab_orExclusiveSales_ExclusiveSales_percent1_Span_One{
+                        color: #76d48f;
+                        font-size: 12px;
+                    }
+                }
+                .BillingAndPayoutsTab_orExclusiveSales_ExclusiveSales_listMoney1_Span{
+                    font-size: 12px;
+                    color: #333;
+                    .BillingAndPayoutsTab_orExclusiveSales_ExclusiveSales_listMoney1_Span__{
+                        margin-top: 10px;
+                    }
+                    .BillingAndPayoutsTab_orExclusiveSales_ExclusiveSales_percent1_Span{
+                        color: #333;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    .BillingAndPayoutsTab_WithrawalMethod{
+        border-top: 1px solid #e5e5e5;
+        margin-top: 30px;
+        padding-top: 40px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #333;
+
+
+        .BillingAndPayoutsTab_WithrawalMethod_Button_Choice_Tab{
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            .BillingAndPayoutsTab_WithrawalMethod_Paypal_button{
+                border: none;
+                display: flex;
+                align-items: center;
+                width: 28vw;
+                padding: 10px 15px;
+                background-color: #fff;
+    
+                .radioChoice_Paypal{
+                    width: 15px;
+                    height: 15px;
+                    border: 1px solid #505050;
+                    border-radius: 100%;
+                    background-color: #f7f7f7;
+                }
+                .radioChoice_Paypal.red{
+                    background-color: #ed2a26;
+                }
+    
+                .word_Paypal{
+                    margin-left: 10px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #686f7a;
+                }
+            }
+
+            .BillingAndPayoutsTab_WithrawalMethod_Payoneer_button{
+                border: none;
+                display: flex;
+                align-items: center;
+                width: 28vw;
+                padding: 10px 15px;
+                background-color: #fff;
+    
+                .radioChoice_Payoneer{
+                    width: 15px;
+                    height: 15px;
+                    border: 1px solid #505050;
+                    border-radius: 100%;
+                    background-color: #f7f7f7;
+                }
+                .radioChoice_Payoneer.red{
+                    background-color: #ed2a26;
+                }
+    
+                .word_Payoneer{
+                    margin-left: 10px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #686f7a;
+                }
+            }
+
+            .BillingAndPayoutsTab_WithrawalMethod_Swift_button{
+                border: none;
+                display: flex;
+                align-items: center;
+                width: 28vw;
+                padding: 10px 15px;
+                background-color: #fff;
+    
+                .radioChoice_Swift{
+                    width: 15px;
+                    height: 15px;
+                    border: 1px solid #505050;
+                    border-radius: 100%;
+                    background-color: #f7f7f7;
+                }
+                .radioChoice_Swift.red{
+                    background-color: #ed2a26;
+                }
+    
+                .word_Swift{
+                    margin-left: 10px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #686f7a;
+                }
+            }
+        }
+        
+
+        .BillingAndPayoutsTab_WithrawalMethod_Paypal.active{
+            display: block;
+            .BillingAndPayoutsTab_WithrawalMethod_Paypal_Title_H4{
+                margin-top: 40px;
+                font-size: 16px;
+                font-weight: 500;
+                color: #333;
+                margin-bottom: 10px;
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Paypal_Title_Span{
+                font-size: 14px;
+                font-weight: 500;
+                color: #333;
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Paypal_Contents_Span{
+                margin-top: 10px;
+                font-size: 14px;
+                color: #686f7a;
+                font-weight: 400;
+                
+                .BillingAndPayoutsTab_WithrawalMethod_Paypal_Contents_Span_Link{
+                    color: #6896c6;
+                }
+                .BillingAndPayoutsTab_WithrawalMethod_Paypal_Contents_Span_Link:hover{
+                    text-decoration: underline;
+                }
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Paypal_Input{
+                width: 30vw;
+                margin-top: 20px;
+                border-radius: 3px;
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Paypal_Input:hover{
+                border: 1.5px solid #e5e5e5;
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Paypal_Input:focus-within{
+                border: 1.5px solid #333;
+                box-shadow: none;
+            }
+
+            .BillingAndPayoutsTab_WithrawalMethod_Paypal_ButtonSet{
+                border: none;
+                height: 40px;
+                padding: 0 20px;
+                margin-top: 45px;
+                margin-bottom: 20px;
+                color: #fff;
+                border-radius: 3px;
+                font-weight: 500;
+                background: #ed2a26;
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Paypal_ButtonSet:hover{
+                background: #333;
+            }
+        }
+        .BillingAndPayoutsTab_WithrawalMethod_Paypal.hidden{
+            display: none;
+        }
+    
+        .BillingAndPayoutsTab_WithrawalMethod_Payoneer.active{
+            display: block;
+            .BillingAndPayoutsTab_WithrawalMethod_Payoneer_Title_H4{
+                margin-top: 40px;
+                font-size: 16px;
+                font-weight: 500;
+                color: #333;
+                margin-bottom: 10px;
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Payoneer_Title_Span{
+                font-size: 14px;
+                font-weight: 500;
+                color: #333;
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Payoneer_Contents_Span{
+                margin-top: 10px;
+                font-size: 14px;
+                color: #686f7a;
+                font-weight: 400;
+                
+                .BillingAndPayoutsTab_WithrawalMethod_Payoneer_Contents_Span_Link{
+                    color: #6896c6;
+                }
+                .BillingAndPayoutsTab_WithrawalMethod_Payoneer_Contents_Span_Link:hover{
+                    text-decoration: underline;
+                }
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Payoneer_Input{
+                width: 30vw;
+                margin-top: 20px;
+                border-radius: 3px;
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Payoneer_Input:hover{
+                border: 1.5px solid #e5e5e5;
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Payoneer_Input:focus-within{
+                border: 1.5px solid #333;
+                box-shadow: none;
+            }
+
+            .BillingAndPayoutsTab_WithrawalMethod_Payoneer_ButtonSet{
+                border: none;
+                height: 40px;
+                padding: 0 20px;
+                margin-top: 45px;
+                margin-bottom: 20px;
+                color: #fff;
+                border-radius: 3px;
+                font-weight: 500;
+                background: #ed2a26;
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Payoneer_ButtonSet:hover{
+                background: #333;
+            }
+        }
+        .BillingAndPayoutsTab_WithrawalMethod_Payoneer.hidden{
+            display: none;
+        }
+    
+        .BillingAndPayoutsTab_WithrawalMethod_Swift.active{
+            display: block;
+            .BillingAndPayoutsTab_WithrawalMethod_Swift_Title_H4{
+                margin-top: 40px;
+                font-size: 16px;
+                font-weight: 500;
+                color: #333;
+                margin-bottom: 10px;
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Swift_Title_Span{
+                font-size: 14px;
+                font-weight: 500;
+                color: #333;
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Swift_Contents_Span{
+                margin-top: 10px;
+                font-size: 14px;
+                color: #686f7a;
+                font-weight: 400;
+                
+                .BillingAndPayoutsTab_WithrawalMethod_Swift_Contents_Span_Link{
+                    color: #6896c6;
+                }
+                .BillingAndPayoutsTab_WithrawalMethod_Swift_Contents_Span_Link:hover{
+                    text-decoration: underline;
+                }
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Swift_Input{
+                width: 30vw;
+                margin-top: 20px;
+                border-radius: 3px;
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Swift_Input:hover{
+                border: 1.5px solid #e5e5e5;
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Swift_Input:focus-within{
+                border: 1.5px solid #333;
+                box-shadow: none;
+            }
+
+            .BillingAndPayoutsTab_WithrawalMethod_Swift_Select{
+                margin-top: 30px;
+                .ant-select.ant-select-outlined.BillingAndPayoutsTab_WithrawalMethod_Swift_Select.css-dev-only-do-not-override-m4timi.ant-select-single.ant-select-show-arrow{
+                    width: 30vw;
+                }
+                
+                .ant-select-selector{
+                    border-radius: 3px;
+                    width: 30vw;
+                }
+            }
+
+            .BillingAndPayoutsTab_WithrawalMethod_Swift_ButtonSet{
+                border: none;
+                height: 40px;
+                padding: 0 20px;
+                margin-top: 45px;
+                margin-bottom: 20px;
+                color: #fff;
+                border-radius: 3px;
+                font-weight: 500;
+                background: #ed2a26;
+            }
+            .BillingAndPayoutsTab_WithrawalMethod_Swift_ButtonSet:hover{
+                background: #333;
+            }
+
+        }
+        .BillingAndPayoutsTab_WithrawalMethod_Swift.hidden{
+            display: none;
+        }
+    }
+    .BillingAndPayoutsTab_Save_ButtonSet{
+        border: none;
+        height: 40px;
+        padding: 0 20px;
+        margin-top: 45px;
+        margin-bottom: 20px;
+        color: #fff;
+        border-radius: 3px;
+        font-weight: 500;
+        background: #ed2a26;
+    }
+    .BillingAndPayoutsTab_Save_ButtonSet:hover{
+        background: #333;
+    }
+}

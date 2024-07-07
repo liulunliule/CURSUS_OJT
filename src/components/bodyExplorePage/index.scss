@@ -1,0 +1,196 @@
+.bodyExplore{
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    .explore_page__wrapper_courseAll{
+        margin: 10px 10px;
+
+        .showInformationOfCourse{
+            background-color: #fff;
+            border-radius: 3px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px 0;
+            
+            
+    
+            .thumbnail_course_information{
+                display: flex;
+                justify-content: center;
+                position: relative;
+                margin: 0 15px;
+                
+                
+    
+                .thumbnailCourse{
+                    padding: 10px;
+                    width: 95%;
+                }
+    
+                .membrane_thumbnail{
+                    position: absolute;
+                    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(51, 51, 51, 0.3) 90%);
+                    color: #000000de;
+                    top: 0;
+                    right: 0;
+                    left: 0;
+                    bottom: 0;
+                }
+
+                .other_thumbnail{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+
+                    .voteOfThumbnail{
+                        position: absolute;
+                        top: 5px;
+                        left: 10px;
+                        padding: 2px 10px;
+                        background-color: #fdcc0d;
+                        color: #fff;
+                        font-size: 14px;
+                        font-weight: 500;
+                        border-radius: 3px;
+
+                        .voteOfThumbnail_number{
+                            margin-left: 5px;
+                        }
+                    }
+
+                    .other_thumbnail_badge_seller_sqr{
+                        position: absolute;
+                        top: 13px;
+                        right: 68px;
+                        width: 12px;
+                        height: 12px;
+                        background-color: #fa8305;
+                        border-radius: 2px;
+                        transform: rotate(45deg);
+                    }
+
+                    .other_thumbnail_badge_seller{
+                        position: absolute;
+                        top: 5px;
+                        right: 0;
+                        padding: 3px 5px;
+                        
+
+                        .other_thumbnail_badge_seller_title{
+                            background-color: #fa8305;
+                            border-radius: 3px 0 0 3px;
+                            padding: 3px 5px;
+                            font-size: 10px;
+                            font-weight: 600;
+                            color: #fff;
+                        }
+                    }
+
+                    .other_thumbnail_crse_timer{
+                        position: absolute;
+                        bottom: 5px;
+                        right: 10px;
+                        padding: 3px 10px;
+                        color: #fff;
+                        background: rgba(51, 51, 51, 0.8);
+                        border-radius: 3px;
+                        font-size: 12px;
+                        font-weight: 500;
+                    }
+
+                }
+            }
+    
+            .viewsAndPostDate{
+                font-size: 12px;
+                display: flex;
+                justify-content: space-between;
+                margin: 0 15px;
+    
+                .viewsAndPostDate_menu{
+                    .menu_course{
+                        width: 15px;
+                        filter: brightness(1);
+                    }
+                    .menu_course:hover{
+                        filter: brightness(0);
+                    }
+                    
+                }
+            }
+            
+            .title_course{
+                .titleOfCourse{
+                    text-decoration: none;
+                    color: #000000de;
+                    font-weight: 600;
+                    margin: 0 20px;
+                    display: flex;
+                    text-align: left;
+                }
+            }
+    
+            .fieldOfCourse{
+                display: flex;
+                text-align: left;
+                margin: 0 15px;
+                .field_course{
+                    text-decoration: none;
+                    color: #686f7a;
+                    font-size: 13px;
+                }
+                .field_course:hover{
+                    color: #333;
+                }
+    
+            }
+    
+            .other_course{
+                display: flex;
+                justify-content: space-between;
+                margin: 0 15px;
+                
+                .other_By{
+                    font-size: 13px;
+                    color: #686f7a;
+                    .other_courseName{
+                        font-weight: 500;
+                        color: #333;
+                        text-decoration: none;
+                        font-size: 14px;
+                    }
+                    .other_courseName:hover{
+                        text-decoration: underline;
+                    }
+                    
+                }
+                .price_course{
+                    font-weight: 500;
+                    font-size: 18px;
+                    display: flex;
+                    align-items: center;
+                    gap: 20px;
+                    .cart_course{
+                        color: #fff;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    
+        .showInformationOfCourse:hover{
+            .other_course{
+                .price_course{
+                    .cart_course{
+                        color: #333;
+                    }
+                    .cart_course:hover{
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+
+}

@@ -1,0 +1,31 @@
+.crc_add_lecture_externalURL {
+    margin-top: 34px;
+
+    .externalURL_input-title {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .externalURL_input-wrap {
+        position: relative;
+        width: 100%;
+        font-weight: 400;
+        display: inline-flex;
+        color: rgba(0, 0, 0, 0.87);
+        border: 1px solid #e5e5e5;
+        border-radius: 3px;
+        height: 40px;
+
+        input {
+            width: 100%;
+            padding-left: 1em;
+            padding-right: 2em;
+            font-size: 14px;
+            font-weight: 400;
+            outline: none;
+            border: none;
+        }
+    }
+}

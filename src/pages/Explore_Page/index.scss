@@ -1,0 +1,89 @@
+.explore_page{
+    background-color: #f7f7f7;
+    margin-top: 60px;
+    margin-left: 240px;
+    padding-top: 35px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: margin-left 0.5s ease;
+
+    &.active{
+        transition: margin-left 0.5s ease;
+        margin-left: 0;
+    }
+
+    &__wrapper_search{
+        background-color: #fff;
+        border-style: solid;
+        border-radius: 3px;
+        border-width: 1px;
+        border-color: #e5e5e5;
+        font-size: 14px;
+        box-shadow: #00000005 0px 1px 4px 0px;
+        padding: 12px 10px 12px 18px;
+        margin: 0 10.5px;
+        display: flex;
+        text-align: center;
+        gap: 15px;
+
+
+        .iconSearch{
+            width: 25px;
+            filter: brightness(2);
+        }
+
+        .inputForSearch{
+            outline: none;
+            border: none;
+            width: 100%;
+        }
+    }
+    &__wrapper_search:focus-within{
+        border-color: #333;
+        .iconSearch{
+            filter: brightness(0);
+        }
+        .inputForSearch::placeholder{
+            color: #333;
+        }
+    }
+
+    &__wrapper_showLive{
+        margin: 0 10.5px;
+        .show_title{
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .title{
+                font-size: 18px;
+                font-weight: 500;
+                margin: 0px 0px 20px;
+                text-align: left;
+            }
+
+            .link_See_all{
+                text-decoration: none;
+                color: #afafaf;
+                font-size: 14px;
+                font-weight: 500;
+                margin: 0px 0px 20px;
+                padding: 3px 0px 0px;
+                text-align: right;
+            }
+            .link_See_all:hover{
+                color:#000000de;
+            }
+        }
+    }
+    .bodyExplorePage{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .loadMore{
+            font-size: 30px;
+        }
+    }
+    
+}

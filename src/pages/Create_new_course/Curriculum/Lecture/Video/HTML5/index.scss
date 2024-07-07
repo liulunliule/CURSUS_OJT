@@ -1,0 +1,89 @@
+.crc_add_lecture_html5 {
+    margin-top: 34px;
+
+    .html5_upload_video_wrapper {
+        display: flex;
+        align-items: center;
+        column-gap: 21px;
+
+        .html5_upload_video-btn {
+            display: flex;
+            flex-direction: column;
+            width: 361px;
+            // flex: 1;
+            // flex-wrap: wrap;
+            background: #fff;
+            border: 2px dashed #efefef;
+            border-radius: 5px;
+            text-align: center;
+            padding: 30px 20px 17px;
+
+            .html5_upload_input-wrap {
+                margin: 0 0 28px;
+            }
+            input {
+                display: none;
+            }
+            label {
+                cursor: pointer;
+                transition: all 0.3s;
+                color: #ed2a26;
+                box-shadow: 0px 2px 3px 0px rgba(20, 47, 219, 0.11);
+                border: 0;
+                font-size: 14px;
+                font-weight: 500;
+                height: 40px;
+                padding: 10px 25px;
+                border: 1px solid #ed2a26;
+                border-radius: 3px;
+                text-transform: uppercase;
+            }
+
+            .upload_video_file {
+                color: #686f7a;
+                background-color: transparent;
+                line-height: 26px;
+            }
+            .upload_video_id {
+                margin-top: 8px;
+                color: #231f1f;
+                font-size: 14px;
+            }
+
+            .video_poster_file {
+                color: #231f1f;
+            }
+
+            .video_poster_file_size {
+                margin-top: 8px;
+                color: #91699c;
+            }
+        }
+    }
+}
+
+.html5_video-runtime {
+    margin-top: 28px;
+    .html5_video-runtime-title {
+        font-size: 14px;
+        font-weight: 500;
+        font-family: "Roboto", sans-serif;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .video_runtime {
+        width: 124px;
+        flex: 1;
+        height: 40px;
+        background-color: #f7f7f7;
+        border-radius: 3px 0px 0px 3px;
+        border: 0.8px solid #efefef;
+        box-shadow: #00000005 0px 1px 4px 0px;
+        color: #333;
+        outline: none;
+        font-size: 14px;
+        line-height: 16.1px;
+        padding: 0px 16px;
+    }
+}

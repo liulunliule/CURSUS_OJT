@@ -1,0 +1,142 @@
+.Shopping_cart{
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    padding: 0;
+    margin-bottom: 5px;
+    .container{
+        max-width: 1200px;
+    }
+}
+
+.CourseInCard {
+    background: #fff;
+    width: 100%;
+    float: left;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #efefef;
+    transition: all .2s ease-in-out;
+    margin-bottom: 60px;
+    margin-top: 47px;
+    &_img{
+        width: 40% !important;
+        float: left;
+        position: relative;
+
+        img {
+            width: 100%;
+            border-radius: 3px;
+        }
+    }
+    &_content{
+        width: 60% !important;
+        padding: 0px 15px 0px 20px;
+        float: left;
+        position: relative;
+        &_X{
+            top: 5px;
+            display: inline-block;
+            position: absolute;
+            right: 5px;
+        }
+    }
+    &_title{
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+        font-family: 'Roboto', sans-serif;
+        color: #333;
+        text-align: left;
+        margin-bottom: 7px;
+        line-height: 24px;
+        padding-top: .5rem !important;
+    }
+    &_cate{
+        display: block;
+        font-size: 13px;
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+        color: #686f7a;
+        text-align: left;
+        padding-top: 2px;
+    }
+    .auth {
+        float: left;
+        width: 100%;
+        margin-top: 18px;
+        p{    
+            margin-bottom: 0;
+            margin-top: 18px;
+            font-size: 14px;
+            font-family: 'Roboto', sans-serif;
+            float: left;
+            color: #686f7a;
+            text-align: left;
+            line-height: 24px;
+        }
+        a {
+            color: #333;
+            font-weight: 500;
+        }
+        .price{
+            float: right;
+            font-size: 18px;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            text-align: right;
+        }
+    }
+}
+
+.coupon{
+    &_code {
+        p {
+            font-family: 'Roboto', sans-serif;
+            padding: 20px 0 0;
+            float: left;
+            width: 100%;
+        }
+    }
+    &_input{
+        &_content{
+            margin-top: 15px;
+        }
+    }
+}
+.UI{
+    .search .prompt {
+        border-radius: 3px !important;
+    }
+}
+.code-apply-btn {
+    height: 40px;
+    padding: 0 20px;
+    border: 0;
+    /* margin-top: 45px; */
+    /* margin-bottom: 20px; */
+    color: #fff;
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    background: #ed2a26;
+    /* display: block; */
+    position: absolute;
+    right: 0;
+}
+.Checkout{
+    font-size: 14px;
+    margin-top: 30px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: #fff !important;
+    background: #ed2a26;
+    border-radius: 3px;
+    text-align: center;
+    border: 0;
+    width: 100%;
+    float: left;
+    height: 40px;
+    padding: 10px 0;
+}
+

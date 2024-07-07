@@ -1,0 +1,38 @@
+.course_page-promotion {
+    margin-top: 32px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 51px 0;
+    width: 100%;
+    flex-direction: column;
+
+    .promotion_img {
+        width: 250px;
+    }
+    .course_page-promotion-title {
+        font-size: 18px;
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    &-desc {
+        font-size: 14px;
+        font-weight: 400;
+        color: #686f7a;
+    }
+
+    &-btn {
+        margin-top: 34px;
+        height: 40px;
+        border-radius: 20px;
+        border: 0;
+        color: #fff;
+        font-weight: 500;
+        background: #ed2a26;    
+        padding: 0 30px;
+    }
+}

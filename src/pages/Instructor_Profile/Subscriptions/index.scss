@@ -1,0 +1,127 @@
+.subscriptions_grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.subscription_card {
+  width: 279px;
+  height: 329px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  overflow: hidden;
+  width: calc(25% - 20px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.subscription_image {
+  padding-top: 40px;
+}
+.subscription_image img {
+  border-color: #fff;
+  border-radius: 100%;
+  border-style: solid;
+  border-width: 1.6px;
+  box-shadow: #0000001a 0px 2px 2px 0px;
+  color: #4183c4;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.subscription_details {
+  width: 257px;
+  height: 147px;
+  padding: 15px;
+  margin-left: 10px;
+}
+
+.subscription_name {
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  color: #333;
+}
+.fa_circle_check {
+  padding-left: 5px;
+}
+.subscription_category {
+  font-size: 14px;
+  color: #777;
+  margin: 10px 0;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subscription_actions {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.subscription_actions li {
+  flex: 1;
+}
+
+.subscribes_button,
+.notification_button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.subscribes_button {
+  background: #ed2a26;
+  color: #fff;
+  margin-left: 20px;
+}
+.subscribes_button:hover {
+  background: #000000;
+}
+.notification_button {
+  width: 40px;
+  height: 40px;
+  background: #d4dbe6;
+  color: #fff;
+  margin-right: 20px;
+}
+.subscription_stats {
+  margin-top: -30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  text-align: center;
+  color: #686f7a;
+
+  .students_count::after {
+    content: "•";
+    margin-left: 10px;
+  }
+
+  .students_count,
+  .courses_count {
+    font-size: 12px;
+    color: #555;
+  }
+}
+
+.courses_count,
+.tutor_social_links li,
+.profile_button_right li {
+  padding-left: 10px;
+}
+
+.subscription_notification {
+  width: 18px;
+  height: 18px;
+}

@@ -1,0 +1,85 @@
+.CloseAccountTab{
+    background-color: #f7f7f7;
+
+
+    .AllTabButton_SettingPage{
+        display: flex;
+        gap: 10px;
+
+        .AllTabButton_SettingPage_CloseAccountTab{
+            border: none;
+            height: 35px;
+            padding: 0 15px;
+            color: #fff;
+            border-radius: 3px;
+            font-weight: 500;
+            background: #ed2a26;
+        }
+
+        .AllTabButton_SettingPage_Rest{
+            border: none;
+            height: 35px;
+            padding: 0 15px;
+            color: #333;
+            border-radius: 3px;
+            font-weight: 500;
+            background: #f7f7f7;
+        }
+    }
+
+    .CloseAccountTab_Contents{
+        margin-top: 40px;
+
+        .CloseAccountTab_Contents_close_H4{
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .CloseAccountTab_Contents_close_P{
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #686f7a;
+        }
+
+        .CloseAccountTab_Contents_close_P_STRONG{
+            font-size: 14px;
+        }
+
+        .AccountTab_Contents_InputPassword{
+            width: 33%;
+            height: 40px;
+            margin-top: 20px;
+            border-radius: 3px;
+        }
+        .AccountTab_Contents_InputPassword:hover{
+            border: 1.5px solid #e5e5e5;
+        }
+        .AccountTab_Contents_InputPassword:focus-within{
+            border: 1.5px solid #333;
+            box-shadow: none;
+        }
+
+        .CloseAccountTab_Contents_SPAN{
+            margin-top: 5px;
+            font-size: 12px;
+            color: #686f7a;
+        }
+
+        .CloseAccountTab_Contents_button{
+            border: none;
+            height: 40px;
+            padding: 0 20px;
+            margin-top: 45px;
+            margin-bottom: 20px;
+            color: #fff;
+            border-radius: 3px;
+            font-weight: 500;
+            background: #ed2a26;
+        }
+        .CloseAccountTab_Contents_button:hover{
+            background: #333;
+        }
+    }
+}

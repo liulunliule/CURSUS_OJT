@@ -1,0 +1,151 @@
+.test_result{
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    padding: 0;
+    margin-top: 56px;
+    .container{
+        max-width: 1200px;
+    }
+    
+    &_bg {
+        width: 100%;
+        float: left;
+    }
+
+    &_left {
+        width: 100%;
+        float: left;
+        display: flex;
+        & li {
+            width: 33.333%;
+            float: left;
+            display: inline-block;
+            padding: 0;
+        }
+
+        
+    }
+    & ul {
+        list-style: none;
+        margin-bottom: 0 !important;
+        padding-left: 0 !important;
+    }
+}
+
+.result_dt {
+    float: left;
+    width: 100%;
+    text-align: center;
+
+    .right_ans {
+        font-size: 50px;
+        font-weight: 600;
+        font-family: 'Roboto', sans-serif;
+        color: #fff;
+        margin-bottom: 15px;
+        text-align: center;
+        line-height: 26px;
+        height: 100px;
+        width: 100px;
+        display: inline-block;
+        border: 2px solid #01b200;
+        border-radius: 100%;
+        padding: 26px 0;
+        background: #01b200;
+    }
+
+    .wrong_ans {
+        font-size: 46px;
+        font-weight: 600;
+        font-family: 'Roboto', sans-serif;
+        color: #fff;
+        margin-bottom: 15px;
+        text-align: center;
+        line-height: 26px;
+        height: 100px;
+        width: 100px;
+        display: inline-block;
+        border: 2px solid #fb3838;
+        border-radius: 100%;
+        padding: 26px 0;
+        background: #fb3838;
+    }
+
+    h4 {
+        font-size: 24px;
+        font-weight: 600;
+        font-family: 'Roboto', sans-serif;
+        color: #fff;
+        margin-bottom: 15px;
+        text-align: center;
+        line-height: 26px;
+        height: 100px;
+        width: 100px;
+        display: inline-block;
+        border: 2px solid #57a4ff;
+        border-radius: 100%;
+        padding: 35px 0;
+        background: #57a4ff;
+    }
+
+    p {
+        font-size: 18px;
+        font-weight: 500;
+        font-family: 'Roboto', sans-serif;
+        color: #333;
+        margin-top: 0;
+        text-align: center;
+        line-height: 26px;
+    }
+
+    span {
+        color: #686f7a;
+        margin-left: 5px;
+        font-weight: 400;
+    }
+}
+
+.result_content {
+    margin-top: 57px;
+    float: left;
+    width: 100%;
+    text-align: center;
+
+    h2 {
+        font-size: 42px;
+        font-weight: 600;
+        color: #333;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        padding-bottom: 15px;
+        margin-top: 0;
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: 400;
+        color: #686f7a;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        margin-top: 0;
+    }
+
+    .download_btn {
+        font-weight: 500;
+        color: #fff;
+        font-size: 14px;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        background: #ed2a26;
+        border-radius: 3px;
+        height: 40px;
+        border: 0;
+        padding: 10px 20px;
+        display: inline-block;
+        margin-top: 25px;
+
+        &:hover{
+            background-color: #000;
+        }
+    }
+}

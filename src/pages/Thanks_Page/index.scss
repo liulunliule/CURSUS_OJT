@@ -1,0 +1,143 @@
+/* --- Thank You Page --- */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.thanks-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #2f2f30 0%, #202326 50%, #10151A 100%);
+}
+
+.thanks-page-wrapper {
+  margin-left: 0;
+  margin-top: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+.thanks-content-group {
+  width: 100%;
+  padding: 100px 0;
+}
+
+.thanks-logo {
+  width: 100%;
+  text-align: center;
+}
+
+.thanks-logo img {
+  width: 150px;
+}
+
+.thanks-message {
+  padding: 106px 0 117px;
+  text-align: center;
+}
+
+.thanks-title {
+  font-size: 9em;
+  font-weight: 600;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  line-height: 1em;
+  text-shadow: 1px 10px 6px rgba(0, 0, 0, 0.2);
+  padding-bottom: 29px;
+  margin-top: 0;
+}
+
+.thanks-subtitle {
+  font-size: 24px;
+  font-weight: 400;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  line-height: 26px;
+  margin-top: 0;
+  text-shadow: 1px 10px 6px rgba(0, 0, 0, 0.2);
+}
+
+.thanks-description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  line-height: 26px;
+  margin-top: 0;
+  text-shadow: 1px 10px 6px rgba(0, 0, 0, 0.2);
+  margin-top: 30px;
+  margin-bottom: 0;
+}
+
+.thanks-description span {
+  color: #fe807e;
+}
+
+.thanks-description a {
+  color: #ed2a26;
+}
+
+.thanks-description a:hover {
+  color: #ed2a26;
+  text-decoration: underline;
+}
+
+.thanks-footer {
+  float: left;
+  width: 100%;
+  margin-top: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-top: 1px solid #333;
+}
+
+.thanks-footer-left ul li {
+  display: inline-block;
+}
+
+.thanks-footer-left {
+  float: left;
+}
+
+.thanks-footer-left a {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  line-height: 24px;
+  padding: 10px 10px 0;
+  color: #fff;
+}
+
+.thanks-footer-left a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.thanks-footer-right {
+  float: right;
+}
+
+.thanks-footer-right p {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  line-height: 24px;
+}
+
+@media (max-width: 700px) {
+  .wrapper {
+    width: 100%;
+    height: 100%;
+  }
+}

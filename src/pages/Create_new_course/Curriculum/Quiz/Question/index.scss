@@ -1,0 +1,29 @@
+.add_quiz_question {
+    padding: 29px 14px 0;
+    .add_quiz_question-option {
+        margin-top: 20px;
+    }
+
+    .add_option-title {
+        font-size: 14px;
+        color: #686f7a;
+    }
+    .add_quiz_question-cta {
+        margin-top: 15px;
+    }
+}
+
+.add_quiz_question_collapse-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+    // margin: -16px;
+    // padding: 8px;
+    // background: #ed2a26;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #333;
+}

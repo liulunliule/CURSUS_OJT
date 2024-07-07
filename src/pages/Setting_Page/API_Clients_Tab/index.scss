@@ -1,0 +1,85 @@
+.APIClientsTab{
+    background-color: #f7f7f7;
+    width: 44vw;
+
+
+    .AllTabButton_SettingPage{
+        display: flex;
+        gap: 10px;
+
+        .AllTabButton_SettingPage_APIClientsTab{
+            border: none;
+            height: 35px;
+            padding: 0 15px;
+            color: #fff;
+            border-radius: 3px;
+            font-weight: 500;
+            background: #ed2a26;
+        }
+
+        .AllTabButton_SettingPage_Rest{
+            border: none;
+            height: 35px;
+            padding: 0 15px;
+            color: #333;
+            border-radius: 3px;
+            font-weight: 500;
+            background: #f7f7f7;
+        }
+    }
+
+    .APIClientsTab_Contents{
+        margin-top: 40px;
+
+        .APIClientsTab_Contents_Title_H4{
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .APIClientsTab_Contents_TitleOf_P{
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #686f7a;
+
+            .APIClientsTab_Contents_TitleOf_P_Link{
+                color: #419bd8;
+            }
+            .APIClientsTab_Contents_TitleOf_P_Link:hover{
+                color: #686f7a;
+            }
+        }
+        
+        .APIClientsTab_Contents_Button{
+            height: 40px;
+            padding: 0 20px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            color: #686f7a;
+            border: 2px solid;
+            border-radius: 3px;
+            font-weight: 400;
+            border-color: #efefef;
+            background: #fff;
+        }
+        .APIClientsTab_Contents_Button:hover{
+            background: #333;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        .APIClientsTab_Contents_UilInfoCircle_Logo{
+            width: 18px;
+            color: red;
+            margin-bottom: 2px;
+        }
+
+        .APIClientsTab_Contents_UilInfoCircle_SPAN{
+            margin-left: 5px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #419bd8;
+        }
+    }
+}

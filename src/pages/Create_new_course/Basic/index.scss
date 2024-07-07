@@ -1,0 +1,110 @@
+.create_course_basic {
+    .basic_title {
+        padding: 19px 0;
+        border-top: 1px solid #efefef;
+        border-bottom: 1px solid #efefef;
+        display: flex;
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        gap: 15px;
+
+        .basic_icon {
+            font-size: 20px;
+        }
+    }
+
+    .basic_main_content {
+        margin-top: 31px;
+        padding: 30px;
+        background-color: #fff;
+    }
+
+    .basic_main_select-item,
+    .requirement_left,
+    .requirement_right,
+    .basic_main_course-description,
+    .basic_main_short-description,
+    .basic_main_course-title {
+        label {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .course_title-input {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 40px;
+            border: 1px solid #efefef;
+
+            input {
+                width: 100%;
+                height: 100%;
+                padding-left: 1em;
+                padding-right: 2em;
+                font-size: 14px;
+                font-weight: 400;
+                border: none;
+                outline: none;
+
+                &::placeholder {
+                    color: #c7c7c7;
+                }
+            }
+
+            span {
+                background: #ed2a26;
+                color: #fff;
+                font-weight: 500;
+                right: 3px;
+                border-radius: 3px;
+                height: 34px;
+                top: 3px;
+                width: 34px;
+                font-size: 14px;
+                padding: 8px 9px;
+            }
+        }
+
+        .course_title-desc {
+            margin-top: 5px;
+            color: #686f7a;
+            font-size: 12px;
+        }
+    }
+
+    .short-description-input {
+        height: 130px;
+        border: 1px solid #efefef;
+
+        textarea {
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            padding-left: 16px;
+            padding-top: 10px;
+            font-size: 14px;
+            font-weight: 400;
+
+            &::placeholder {
+                color: #c7c7c7;
+            }
+        }
+    }
+
+    .basic_main_requirement {
+        margin-top: 71px;
+        display: flex;
+        gap: 21px;
+    }
+
+    .basic_main_select {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 21px;
+    }
+}

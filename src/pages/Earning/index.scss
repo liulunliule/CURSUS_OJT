@@ -1,0 +1,123 @@
+.earning{
+    margin-top: 60px;
+    padding-top: 30px;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 60px;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+    &.active{
+        margin-left: 240px;
+    }
+    .container-fluid {
+        padding-right: 30px !important;
+        padding-left: 30px !important;
+    }
+
+    &_steps {
+        border-radius: 3px;
+        background: #333;
+        text-align: center;
+        padding: 30px;
+        margin-top: 30px;
+        vertical-align: middle;
+        height: 157px;
+        width: 100%;
+
+        p {
+            font-size: 14px;
+            font-weight: 400;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            line-height: 26px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 30px;
+            font-weight: 600;
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            line-height: 26px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    }
+
+    .top_countries {
+        border-radius: 3px;
+        background: #fff;
+        float: left;
+        width: 100%;
+        border: 1px solid #efefef;
+        margin-top: 50px;
+        &_title{
+            h2{
+                font-size: 16px;
+                font-weight: 500;
+                font-family: 'Roboto', sans-serif;
+                color: #333;
+                border-bottom: 1px solid #efefef;
+                padding: 1.2rem 2rem;
+                float: left;
+                width: 100%;
+            }
+        }
+    }
+
+    .country{
+        &_list {
+            float: left;
+            width: 100%;
+            padding-left: 0;
+            margin-bottom: 0;
+            li {
+                display: block;
+                padding: 10px 20px;
+                float: left;
+                width: 100%;
+                border-bottom: 1px solid #efefef;
+            }
+        }
+        &_item {
+            float: left;
+            width: 100%;
+            &_left {
+                float: left;
+                span {
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #686f7a;
+                }
+            }
+            &_right {
+                float: right;
+                span {
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #686f7a;
+                }
+            }
+        }
+    }
+
+    .select{
+        margin-top: 50px;
+    }
+    &_table{
+        margin-top: 30px;
+        margin-bottom: 50px;
+        tfoot{
+            td{
+                background-color: black;
+                span{
+                    color: white;
+                }
+                &:last-child{
+                    border-bottom-right-radius: 10px;
+                }
+                &:first-child{
+                    border-bottom-left-radius: 10px;
+                }
+            }
+        }
+    }
+}

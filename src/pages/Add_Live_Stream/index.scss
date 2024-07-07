@@ -1,0 +1,138 @@
+.live-stream-page {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .header100 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .content100 {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    margin-bottom: 50px;
+  }
+  
+  .buttonRed100 {
+    padding: 10px 20px;
+    margin: 10px;
+    margin-right: 8px;
+    border: none;
+    background-color: #ff4a4a;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    // margin-top: 0;
+    font-weight: 500 !important;
+    font-family: 'Roboto', sans-serif;
+    
+
+    &:hover {
+        background-color: #e04343;
+    }
+  }
+  
+  .inputRead {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .randomLine {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-weight: 400;
+  }
+  
+  .inputToggle {
+    margin-right: 10px;
+  }
+
+  .live-stream-title {
+        font-size: 18px;
+        font-weight: 500;
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        color: #333;
+        line-height: 24px;
+        margin-bottom: 0;
+    
+  }
+
+.whatever {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: #686f7a;
+    text-align: center;
+    margin-top: 5px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+.learn-more {
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 4px;
+}
+
+.sth-imp {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 30px;
+    color: #333;
+    line-height: 24px;
+}
+
+.group-form {
+    margin-top: 27px;
+    position: relative;
+}
+
+.group-form label {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px;
+    color: #333;
+    line-height: 24px;
+}
+
+._dlor1 {
+    border: 1px solid #efefef;
+    background: #f7f7f7;
+    height: 40px;
+    width: 100%;
+    padding: 0 100px 0 20px;
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+._6tf7s {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    height: 30px;
+    padding: 0 15px;
+    background: #ed2a26;
+    color: #fff;
+    border: 0;
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+}

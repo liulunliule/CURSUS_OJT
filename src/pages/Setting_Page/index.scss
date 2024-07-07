@@ -1,0 +1,30 @@
+.SettingPage{
+    margin-top: 60px;
+    margin-left: 240px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    transition: margin-left 0.5s ease;
+
+    &.active{
+        transition: margin-left 0.5s ease;
+        margin-left: 0;
+    }
+    
+    .SettingPage_Title{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 40px; 
+
+        .SettingPage_SettingLogo{
+            width: 30px;
+            margin-bottom: 4px;
+        }
+        .SettingPage_Title_Title{
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+
+    
+}

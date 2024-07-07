@@ -1,0 +1,110 @@
+.course_detail_about {
+    background-color: #f7f7f7;
+    padding: 47px 30px;
+
+    h3 {
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    ul {
+        padding: 0;
+    }
+    li {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        font-size: 14px;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 400;
+        color: #686f7a;
+        line-height: 26px;
+        padding: 0;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #333;
+            margin-right: 10px;
+        }
+    }
+
+    p {
+        font-size: 14px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        color: #686f7a;
+        text-align: left;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        line-height: 26px;
+    }
+
+    &-description {
+        margin-top: 35px;
+
+        .intro {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .subject_list,
+        .technologies_list,
+        .content-list {
+            margin-left: 30px;
+
+            li {
+                margin-bottom: 5px;
+            }
+        }
+
+        .subject_list {
+            li {
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    &-courseFor {
+        margin-top: 35px;
+
+        .courseFor-list {
+            margin-left: 30px;
+
+            li {
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    &-learn {
+        background-color: #fff;
+        margin-top: 35px;
+        padding: 31px;
+
+        .learn_list {
+            display: flex;
+            justify-content: space-between;
+
+            .learn_list-right,
+            .learn_list-left {
+                li {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 15px;
+                    margin-bottom: 10px;
+
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

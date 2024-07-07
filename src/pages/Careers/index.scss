@@ -1,0 +1,248 @@
+.careers-page {
+  font-family: Arial, sans-serif;
+  margin-top: 56px;
+  color: #333;
+  p {
+    color: gray;
+    margin-bottom: 30px;
+  }
+}
+
+.custom-header {
+  background: #f8f8f8;
+  padding: 10px 0;
+}
+
+.custom-nav {
+  .custom-ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+
+    .custom-li {
+      cursor: pointer;
+      padding: 10px;
+      position: relative;
+
+      &.selected::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: red;
+      }
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.hero {
+  background: #f0f0f0;
+  text-align: center;
+  padding: 50px 0;
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-size: 1.5em;
+}
+
+.video-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #ddd;
+
+  .video-half {
+    flex: 1;
+    iframe {
+      margin-left: 165px;
+      max-width: 560px;
+      max-height: 315px;
+    }
+  }
+
+  .info-half {
+    flex: 1;
+    padding: 0 20px;
+    text-align: left;
+
+    h1 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    .video-container-item {
+      max-width: 590px;
+      text-align: left;
+      margin-top: 10px;
+
+      p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .learn-more {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 14px;
+        color: #fff;
+        background-color: red;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+
+        &:hover {
+          background-color: black;
+        }
+      }
+    }
+  }
+}
+
+.quotes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  background: #f8f8f8;
+}
+
+.arrow {
+  font-size: 2em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.arrow:hover {
+  opacity: 1;
+}
+
+.arrow:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
+
+.quote {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 20px;
+}
+
+.benefits {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.benefits h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.benefit-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.benefit-item {
+  max-width: 250px;
+  text-align: center;
+}
+
+.open-roles {
+  text-align: center;
+  padding: 50px 0;
+  background: #f8f8f8;
+}
+
+.open-roles h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.role-lists-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+
+  .role-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    &.role-list1 {
+      margin-right: 20px;
+    }
+
+    .role-item {
+      width: 600px;
+      height: 190px;
+      text-align: center;
+      background: #fff;
+      padding: 15px;
+      border: none;
+      border-radius: 4px;
+
+      h3 {
+        font-size: 18px;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+      .learn-more {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 14px;
+        color: #fff;
+        background-color: red;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: red;
+        }
+
+        &:hover {
+          background-color: black;
+        }
+      }
+    }
+  }
+}

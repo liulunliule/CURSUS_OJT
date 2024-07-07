@@ -1,0 +1,315 @@
+.CertificationCenter {
+    background-color: #f8f9fa;
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    margin: 65px 0 0 0;
+    padding: 0;
+    .container{
+        max-width: 1200px;
+    }
+}
+
+button {
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.Center {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    height: 90vh;
+
+    .title {
+        h1 {
+            font-size: 60px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        p {
+            font-size: 24px;
+            margin-bottom: 0;
+            font-weight: 400;
+
+            color: #fff;
+        }
+    }
+
+    .certi_icon {
+        list-style: none;
+        padding: 0;
+        padding-top: 56px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        li {
+            img {
+                width: 150px;
+                height: 100%;
+            }
+        }
+    }
+
+    .certi_btn {
+        margin-top: 80px;
+        border: 0;
+        height: 50px;
+        text-align: center;
+        padding: 0 100px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+        border-radius: 3px;
+        background: #ed2a26;
+        cursor: pointer;
+
+        &:hover {
+            color: white;
+            background-color: #c20024;
+        }
+    }
+}
+
+.findCertificate {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+
+    .title {
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 7px !important;
+            text-align: center;
+            color: #333;
+            line-height: 26px;
+        }
+    }
+
+    .findfrom {
+        input,
+        select {
+            padding: 10px;
+            margin: 10px 5px;
+            font-size: 14px;
+            border: 1px solid #e5e5e5;
+            padding-left: 1em !important;
+            padding-right: 2em !important;
+            height: 40px !important;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .login-btn {
+            background-color: #e4002b;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            height: 40px !important;
+            width: 100%;
+            box-sizing: border-box;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #c20024;
+            }
+        }
+    }
+}
+
+.OurCertificate {
+    background-color: #f7f7f7;
+    padding: 40px 20px;
+    text-align: center;
+
+    .title {
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 17px !important;
+            text-align: center;
+            color: #333;
+            line-height: 26px;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 0 !important;
+            text-align: center;
+            color: #686f7a;
+            line-height: 26px;
+        }
+    }
+
+    .catey-tabs {
+        .nav-pills {
+            .nav-item {
+                .nav-link {
+                    font-size: 16px;
+                    color: #333;
+                    margin: 0 10px;
+                    font-weight: 500;
+
+                    &.active {
+                        background-color: #e4002b;
+                        color: white;
+                    }
+
+                    &:hover {
+                        background-color: #e4002b;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+    .certicates {
+            .certilink {
+                background: #fff;
+                border-radius: 3px;
+                border: 1px solid #efefef;
+                padding: 20px;
+                box-shadow: none;
+                flex: 1;
+                float: left;
+                color: #333;
+                width: 100%;
+                font-size: 14px;
+                line-height: 26px;
+                font-weight: 500;
+                margin-top: 30px;
+                text-align: center;
+                text-decoration: none;
+
+                &:hover {
+                    background-color: #e4002b;
+                    color: white;
+                }
+            }
+        
+    }
+}
+
+.benefit {
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background-color: #333;
+    color: white;
+    &::before {
+        content: "";
+        background: url(../../assets/img/backgroundLDP.svg) no-repeat center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.06;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    .title {
+        h2 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 17px !important;
+            text-align: center;
+            color: #fff;
+            line-height: 26px;
+        }
+    }
+
+    .who_get {
+        text-align: center;
+        margin-top: 43px;
+        display: inline-block;
+        margin: 40px;
+
+        .who_img {
+            width: 150px;
+            height: 150px;
+            background: #fff;
+            border-radius: 100%;
+            display: inline-block;
+            padding: 23px 0;
+            border: 5px solid #fff;
+            box-shadow: inset 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+            img {
+                width: 100px;
+                height: 100px;
+            }
+        }
+
+        h4 {
+            font-size: 18px;
+            font-weight: 500;
+            color: #fff;
+            margin-top: 27px;
+            text-align: center;
+            line-height: 26px;
+        }
+    }
+}
+
+.willGet {
+    background-color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+
+    .title {
+        h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 17px !important;
+            text-align: center;
+            color: #333;
+            line-height: 26px;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 0 !important;
+            text-align: center;
+            color: #686f7a;
+            line-height: 26px;
+        }
+    }
+
+    .knowledge_dts {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .knowledge_btn {
+        margin-top: 23px;
+        border: 0;
+        height: 50px;
+        text-align: center;
+        padding: 0 100px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+        border-radius: 3px;
+        background: #ed2a26;
+
+        &:hover {
+            background-color: #c20024;
+        }
+    }
+}

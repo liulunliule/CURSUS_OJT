@@ -1,0 +1,213 @@
+._help {
+    // padding: 60px 0 0 !important;
+    margin-top: 60px;
+}
+
+.help-background {
+    float: left;
+    width: 100%;
+    padding: 80px 0;
+    background: #333;
+    position: relative;
+}
+
+.helpSection {
+        float: left;
+        width: 100%;
+}
+
+.help_title h2{
+        font-size: 30px;
+        font-weight: 600;
+        font-family: 'Roboto', sans-serif;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 30px;
+}
+
+.search-focus {
+    position: relative;
+    font-size: 1em;
+}
+
+.search-input {
+        position: relative;
+        font-weight: 400;
+        font-style: normal;
+        display: inline-flex;
+        color: rgba(0,0,0,.87);
+        font-size: 14px !important;
+        width: 100%;
+}
+
+.explore-search {
+        padding-left: 1.2em!important;
+        padding-right: 1em!important;
+        height: 50px;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+        border-radius: 3px !important;
+        flex: 1 0 auto;
+        background: #fff !important;
+        border: 1px solid #e5e5e5 !important;
+        color: #333 !important;
+        box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.02) !important;
+}
+
+.search_icon {
+    right: auto;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 40px;
+    height: 40px;
+
+}
+
+.instu-tab {
+    float: left;
+    width: 100%;
+    padding: 20px 0 0;
+    background: #fff;
+    // margin-bottom: 17px;
+    margin-top: 17px;
+}
+
+.instu-section {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.ins-or-stu {
+    justify-content: center;
+    display: flex;
+}
+
+.instu-content {
+        float: left;
+        width: 100%;
+        background-color: #F8F8F8;
+}
+
+.instr-cont {
+        float: left;
+        width: 100%;
+        margin-top: 0px;
+}
+
+.ins-topic {
+        float: left;
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+            text-align: left;
+            margin-bottom: 15px;
+            color: #333;
+            float: left;
+            margin-left: 20px;
+        }
+}
+
+.helpCont {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.help-props {
+    background: #fff;
+    border-radius: 3px;
+    padding: 20px;
+    border: 1px solid #efefef;
+    box-shadow: none;
+    flex: 1;
+    float: left;
+    width: 92%;
+    margin-bottom: 30px;
+    text-align: center;
+    height: 225px;
+    margin-left: 15px;
+    margin-right: 20px;
+}
+
+.help_tabs {
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.value_props100 {
+    background: #fff;
+    // border-radius: 3px;
+    padding: 20px;
+    // border: 1px solid #efefef;
+    box-shadow: none;
+    flex: 1;
+    float: left;
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+    height: 200px;
+}
+
+.value_contents {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.value_contents h4 {
+    font-size: 18px;
+    margin-bottom: 9px;
+    display: block;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    text-align: center;
+}
+
+.value_contents p {
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    text-align: left;
+    line-height: 26px;
+    color: #686f7a;
+    text-align: center;
+}
+
+.faqs {
+    float: left;
+    width: 100%;
+}
+
+.faq-section {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.value_props1000 {
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #efefef;
+    padding: 20px;
+    box-shadow: none;
+    flex: 1;
+    float: left;
+    color: #333 !important;
+    width: 92%;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 30px;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 20px;
+}

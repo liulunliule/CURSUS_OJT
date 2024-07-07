@@ -1,0 +1,108 @@
+.SendFeedbackPage{
+    margin-top: 60px;
+    margin-left: 240px;
+    padding: 30px;
+    background-color: #f7f7f7;
+    transition: margin-left 0.5s ease;
+
+    &.active{
+        transition: margin-left 0.5s ease;
+        margin-left: 0;
+    }
+
+    .SendFeedbackPage_Contents{
+        width: 40vw;
+
+        .SendFeedbackPage_Contents_Title{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 40px;
+
+            .SendFeedbackLogo_SendFeedbackPage{
+                width: 30px;
+                margin-bottom: 5px;
+            }
+
+            .SendFeedbackPage_Contents_Title_H2{
+                font-size: 20px;
+                font-weight: 500;
+            }
+        }
+
+        .SendFeedbackPage_Contents_Input{
+            border-radius: 3px;
+            margin-bottom: 40px;
+        }
+        .SendFeedbackPage_Contents_Input:hover{
+            border: 1.5px solid #e5e5e5;
+        }
+        .SendFeedbackPage_Contents_Input:focus-within{
+            border: 1.5px solid #333;
+            box-shadow: none;
+        }
+
+
+        .SendFeedbackPage_Contents_TextArea{
+            border-radius: 3px;
+            margin-bottom: 40px;
+        }
+        .SendFeedbackPage_Contents_TextArea:hover{
+            border: 1.5px solid #e5e5e5;
+        }
+        .SendFeedbackPage_Contents_TextArea:focus-within{
+            border: 1.5px solid #333;
+            box-shadow: none;
+        }
+
+        .SendFeedbackPage_Contents_Span{
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .ant-upload{
+            border: none;
+            .anticon svg{
+                font-size: 40px;
+                color: #686f7a;
+            }
+
+            .Drag_Text{
+                color: #333;
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            .Drag_hint{
+                color: #686f7a;
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+        .ant-upload.ant-upload-btn{
+            border-radius: 3px;
+            border: 1.5px solid #e5e5e5;
+            background-color: #fff;
+        }
+        .ant-upload.ant-upload-btn:hover{
+            border: 1.5px solid #e5e5e5;
+        }
+
+        .SendFeedbackPage_Contents_button{
+            border: none;
+            height: 40px;
+            padding: 0 20px;
+            margin-top: 45px;
+            margin-bottom: 20px;
+            color: #fff;
+            border-radius: 3px;
+            font-weight: 500;
+            background: #ed2a26;
+        }
+        .SendFeedbackPage_Contents_button:hover{
+            background: #333;
+        }
+        
+    }
+}

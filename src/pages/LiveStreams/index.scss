@@ -1,0 +1,243 @@
+.wrapper {
+    padding: 90px 0 0;
+    transition: all 0.3s ease-out;
+    margin-left: 240px;
+    background-color: #F8F8F8;
+    transition: margin-left 0.5s ease;
+
+    &.active{
+        transition: margin-left 0.5s ease;
+        margin-left: 0;
+    }
+}
+
+a{
+    text-decoration: none;
+}
+
+
+.section3125 {
+    float: left;
+    width: 100%;
+}
+
+.item_title {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    text-align: left;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.see150 {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #afafaf;
+    text-align: right;
+    float: right;
+    padding-top: 3px;
+    margin-bottom: 20px;
+}
+
+.la5lo2 {
+    float: left;
+    width: 95%;
+    margin-left: 34px;
+}
+
+.stream_1 {
+    width: 100%;
+    border-radius: 3px;
+    padding: 8px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background: rgba(51,1,51, 0.1);
+}
+
+.stream_bg {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(30px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.13);
+}
+
+.stream_bg img {
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 100%;
+    display: inline-block !important;
+    border: 1px solid #fff;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.stream_bg h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #333;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.stream_bg p span {
+    width: 6px;
+    height: 6px;
+    background: #ed2a26;
+    position: absolute;
+    z-index: 100;
+    border-radius: 100%;
+}
+
+.right_side {
+    margin-left: auto;
+}
+
+.tutor_img {
+    width: 100%;
+    float: left;
+    padding: 20px;
+    text-align: center;
+}
+
+.right_side {
+    display: flex;
+    // margin-left: 10px;
+}
+
+.cater_ttle {
+    float: left;
+    width: 100%;
+    padding: 15px 20px;
+    border-bottom: 1px solid #efefef;
+}
+
+.fcrse_11 {
+    background: #fff;
+    width: 88%;
+    height: 360px;
+    float: left;
+    border-radius: 3px;
+    border: 1px solid #efefef;
+    transition: all .2s ease-in-out;
+    margin-left: 20px;
+    margin-right: 5px;
+    margin-top: 20px;
+
+}
+
+.fcrse_11 h4 {
+    font-size: 16px;
+    color: #333;
+    float: left;
+    font-weight: 800;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0;
+}
+
+.live_text {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.live_icon {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.live_icon img {
+    width: 80px;
+    height: 80px;
+    align-self: center;
+}
+
+.live-content {
+    float: left;
+    width: 100%;
+    padding: 0;
+    text-align: center;
+}
+
+.live-content p {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    line-height: 26px;
+    margin-bottom: 20px;
+    color: #686f7a;
+}
+
+.live_link {
+    height: 40px;
+    background: #ed2a26;
+    border: 0;
+    border-radius: 3px;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.livinfo {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0;
+    margin-top: 15px;
+    color: #686f7a;
+    display: block;
+}
+
+.spinner {
+    margin: 0 auto 0;
+    width: 50px;
+    text-align: center;
+    height: 20px;
+    border-radius: 100px;
+    background-color: #fff;
+    line-height: 20px;
+    border: 1px solid #efefef;
+    cursor: pointer;
+}
+
+.spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+    background-color: #333;
+}
+
+.spinner > div {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+    background-color: #333;
+    opacity: 0.702;
+}
+
+.spinner .bounce3 {
+    -webkit-animation-delay: -0.12s;
+    animation-delay: -0.12s;
+    background-color: #333;
+    opacity: 0.4;
+}

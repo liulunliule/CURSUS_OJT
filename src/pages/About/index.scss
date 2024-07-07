@@ -1,0 +1,186 @@
+.about-page {
+    font-family: Arial, sans-serif;
+    margin-top: 56px;
+    color: #333;
+  }
+  
+  // .header {
+  //   background: #f8f8f8;
+  //   padding: 10px 0;
+  // }
+  
+  .custom-nav {
+    .custom-ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+  
+      .custom-li {
+        cursor: pointer;
+        padding: 10px;
+        position: relative;
+  
+        &.selected::after {
+          content: '';
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: red;
+        }
+  
+        &:hover {
+          font-weight: bold;
+        }
+      }
+    }
+  }    
+  
+  .hero {
+    background: #f0f0f0;
+    text-align: center;
+    padding: 50px 0;
+    font-weight: bold;
+  }
+  
+  .hero h1 {
+    font-size: 1.5em;
+  }
+  
+  .features {
+    text-align: center;
+    padding: 50px 0;
+
+    p {
+    color: gray;
+    margin-bottom: 30px;
+  }
+  }
+
+  .features h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .feature-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+  }
+  
+  .feature-item {
+    max-width: 350px;
+  }
+  
+  .icon {
+    display: block;
+    margin: 0 auto 10px;
+  }
+  
+  .our-story {
+    padding: 50px 0;
+    background: #f8f8f8;
+  
+    .our-story-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+  
+      .our-story-text {
+        flex: 1;
+  
+        h2 {
+          font-size: 1.5em;
+          font-weight: bold;
+          text-align: left;
+        }
+  
+        p {
+          max-width: 750px;
+          text-align: left;
+          margin-bottom: 30px;
+          color: gray;
+          line-height: 1.6;
+        }
+      }
+  
+      .our-story-image {
+        flex: 1;
+        text-align: center;
+  
+        img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 8px;
+        }
+      }
+    }
+  }  
+  
+  .global-reach {
+    padding: 50px 0;
+    text-align: center;
+  }
+
+  .global-reach h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .reach-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .team {
+    padding: 50px 0;
+    text-align: center;
+    background: #f8f8f8;
+  }
+
+  .team h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .team img {
+    max-width: 45%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  
+  .team-description {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: left;
+    margin: 0 auto;
+    color: gray;
+  }
+
+  // p {
+  //   color: gray;
+  //   margin-bottom: 30px;
+  // }
+  
+  .join-team {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .join-team:hover {
+    background: black;
+  }

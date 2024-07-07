@@ -1,0 +1,341 @@
+.saved_courses {
+    margin-top: 60px;
+    margin-left: 240px;
+    padding: 30px 30px 50px 30px;
+    background-color: #f7f7f7;
+    transition: margin-left 0.5s ease;
+
+    &_inner {
+        display: flex;
+    }
+
+    &_cta {
+        margin-right: 21px;
+
+        &-title {
+            display: flex;
+            column-gap: 127px;
+
+            &-left {
+                color: #333;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 19.999px;
+                white-space: nowrap;
+            }
+
+            &-right {
+                color: #000000de;
+                font-size: 14px;
+                line-height: 19.999px;
+                white-space: nowrap;
+            }
+        }
+
+        &-desc {
+            margin-top: 25px;
+
+            .saved_courses_quantity {
+                color: #686f7a;
+                font-size: 14px;
+                line-height: 19.999px;
+            }
+            .saved_courses_cta-desc-btn {
+                margin-top: 30px;
+                display: flex;
+                align-items: center;
+                color: #fff;
+                padding: 8px 60px;
+                background-color: #ed2a26;
+                border: none;
+                outline: none;
+                font-size: 14px;
+                border-radius: 3px;
+                white-space: nowrap;
+            }
+            .saved_courses_cta-icon {
+                color: #fff;
+                margin-right: 7px;
+            }
+        }
+    }
+
+    &_line {
+        margin-top: 5px;
+        width: 290px;
+        height: 1px;
+        background: #e5e5e5;
+    }
+
+    &_media-title {
+        margin-top: -3px;
+        color: #000000de;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    &_media-item {
+        position: relative;
+        display: flex;
+        background-color: #fff;
+        padding: 10px;
+        width: 912px;
+        border: 0.8px solid #efefef;
+        border-radius: 3px;
+        margin-bottom: 31px;
+        transition: transform 0.5s ease;
+        transition: width 0.5s ease, height 0.5s ease;
+
+        &:hover {
+            transform: translateY(1px);
+            cursor: pointer;
+        }
+    }
+
+    &_media-thumbnail {
+        margin-right: 20px;
+        position: relative;
+
+        .thumbnail {
+            width: 356px;
+            height: 200px;
+            object-fit: cover;
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+
+        .saved_courses_media-overlay {
+            width: 356px;
+            height: 200px;
+            background-image: linear-gradient(
+                transparent,
+                rgba(51, 51, 51, 0.3) 90%
+            );
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            transition: width 0.5s ease, height 0.5s ease;
+        }
+
+        .saved_courses_media-star {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #fff;
+            background: #fdcc0d;
+            padding: 3px 15px 3px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .saved_courses_media-play {
+            border: 0;
+            width: 50px;
+            height: 50px;
+            float: left;
+            text-align: center;
+            border-radius: 100%;
+            padding: 15px 13px;
+            font-size: 20px;
+            color: #fff;
+            position: absolute;
+            top: 40%;
+            right: 40%;
+            opacity: 0;
+            background: rgba(51, 51, 51, 0.8);
+            transition: opacity 0.5s ease;
+
+            &::before {
+                position: absolute;
+                content: url(../../assets/img/Saved_Courses/play-7-2.png);
+                top: 25%;
+                right: 32%;
+            }
+        }
+
+        .saved_courses_media-seller {
+            border-radius: 3px;
+            font-size: 10px;
+            position: absolute;
+            right: 0;
+            top: 10px;
+            padding: 2px 10px;
+            background: #fa8305;
+            border: none;
+            color: #fff;
+            font-weight: 600;
+            z-index: 2;
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+            box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1),
+                0 3px 1px 0 rgba(20, 23, 28, 0.1);
+
+            &::after {
+                background: inherit;
+                content: "";
+                height: 12px;
+                position: absolute;
+                top: 3px;
+                transform: rotate(45deg);
+                width: 12px;
+                z-index: 1;
+                display: block;
+                left: -5px;
+                border-bottom-left-radius: 2px;
+                border-top-left-radius: 3px;
+                border-bottom-right-radius: 3px;
+            }
+        }
+
+        .saved_courses_media-timer {
+            bottom: 0;
+            position: absolute;
+            margin-bottom: 10px;
+            right: 0;
+            margin-right: 10px;
+            color: #fff;
+            background: rgba(51, 51, 51, 0.8);
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+    }
+    &_media-content {
+        &-views {
+            margin-top: 7px;
+            display: flex;
+            align-items: center;
+
+            .view-left,
+            .view-right {
+                font-size: 12px;
+                color: #686f7a;
+                white-space: nowrap;
+            }
+
+            .view-left::after {
+                content: "•";
+                margin: 0px 4px;
+            }
+            .dots {
+                padding: 0 2px;
+                margin-left: 362px;
+                font-size: 25px;
+                line-height: 19.999px;
+                color: #afafaf;
+                transition: margin-left 0.5s ease;
+
+                &:hover {
+                    color: #333;
+                }
+                &:hover .dots_popup {
+                    visibility: visible;
+                }
+            }
+        }
+        &-title {
+            margin-top: 11px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            line-height: 24px;
+        }
+
+        &-desc {
+            margin-top: 7px;
+            font-size: 13px;
+            font-weight: 400;
+            color: #686f7a;
+            padding-top: 2px;
+        }
+
+        &-buy {
+            display: flex;
+            margin-top: 18px;
+            align-items: center;
+            justify-content: space-between;
+
+            .author {
+                color: #686f7a;
+                font-size: 14px;
+
+                a {
+                    color: #333;
+                    font-weight: 500;
+                }
+            }
+
+            .deal {
+                display: flex;
+                align-items: center;
+                .cart {
+                    margin-right: 10px;
+                    border: none;
+                    outline: none;
+                    background-color: #fff;
+                    opacity: 0;
+                    transition: color 0.5s ease;
+                    &:hover {
+                        color: #ed2a26;
+                    }
+                }
+                .cost {
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: #333;
+                }
+            }
+        }
+    }
+}
+
+.saved_courses_media-item:hover .cart {
+    opacity: 1;
+}
+
+.saved_courses_media-thumbnail:hover .saved_courses_media-play {
+    opacity: 1;
+}
+
+.dots_popup {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    column-gap: 10px;
+    position: absolute;
+    top: 40px;
+    right: 11px;
+    width: 158px;
+    height: 41px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    box-shadow: 3px 7px 5px -1px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    color: #686f7a;
+    visibility: hidden;
+
+    &:hover {
+        background-color: #ffecec;
+        color: #333;
+    }
+
+    .closeIcon {
+        width: 11px;
+        color: #686f7a;
+
+        &:hover {
+            color: #333;
+        }
+    }
+}
+
+// .dots:hover .dots_popup {
+//     opacity: 1;
+// }

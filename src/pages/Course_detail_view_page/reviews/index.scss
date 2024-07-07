@@ -1,0 +1,204 @@
+.course_detail_reviews {
+    background-color: #efefef;
+    padding: 47px 30px;
+
+    &_inner {
+        display: flex;
+
+        .course_detail_reviews-feedback {
+            // width: 438px;
+            background: #fff;
+            padding: 20px 30px 30px;
+            border: 1px solid #efefef;
+            border-radius: 3px;
+            margin-right: 21px;
+            height: 30%;
+
+            &-title {
+                font-size: 20px;
+                font-weight: 500;
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            .total_rating {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                font-size: 16px;
+                justify-items: center;
+                background: #f7f7f7;
+                border: 1px solid #efefef;
+                padding: 10px 20px;
+                border-radius: 3px;
+                column-gap: 10px;
+
+                .total_rate {
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: #333;
+                    margin-right: 10px;
+                }
+
+                .total_label {
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: #333;
+                    margin-left: 10px;
+                }
+            }
+
+            .total_progress {
+                margin-top: 20px;
+
+                .progress_item {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        .course_detail_reviews-comments {
+            flex: 1;
+            padding: 0 10.5px;
+            &-search {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 30px;
+
+                h3 {
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: #333;
+                }
+
+                .search {
+                    position: relative;
+                    width: 180px;
+                    height: 30px;
+                    border: 1px solid #efefef;
+                    display: flex;
+
+                    input {
+                        height: 30px;
+                        font-size: 12px;
+                        font-weight: 400;
+                        color: #333;
+                        padding-left: 15px;
+                        padding-right: 40px;
+                        width: 100%;
+                        border: 1px solid #efefef;
+                        border-radius: 3px;
+                    }
+
+                    button {
+                        position: absolute;
+                        right: 3px;
+                        top: 2px;
+                        border-radius: 3px;
+                        border: 0;
+                        height: 26px;
+                        width: 26px;
+                        background: #ed2a26;
+                        color: #fff;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            &-box {
+                .course_detail_reviews-comments-item {
+                    background-color: #fff;
+                    padding: 20px;
+                    border-bottom: 1px solid #efefef;
+
+                    .comment_item-info {
+                        display: flex;
+                        margin-bottom: 20px;
+                        .comment_avt {
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            border: 2px solid #fff;
+                            box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+                            margin-right: 15px;
+                        }
+
+                        .comment_name {
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: #333;
+                        }
+                        .comment_time {
+                            font-size: 13px;
+                            font-weight: 400;
+                            color: #686f7a;
+                            margin-top: 5px;
+                        }
+                    }
+
+                    .icon_star {
+                        margin-left: -10px;
+                    }
+
+                    .comment_content {
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: #686f7a;
+                        margin: 17px 0;
+                        line-height: 26px;
+                    }
+
+                    .comment_report {
+                        display: flex;
+                        align-items: center;
+
+                        p {
+                            font-size: 14px;
+                            font-weight: 400;
+                            color: #333;
+                            line-height: 24px;
+                            margin-right: 10px;
+                            margin-bottom: 0;
+                        }
+
+                        input {
+                            margin-right: 10px;
+                        }
+
+                        label {
+                            font-size: 14px;
+                            font-weight: 400;
+                            line-height: 12px;
+                            color: #333;
+                            cursor: pointer;
+                            margin-right: 10px;
+                        }
+                        span {
+                            font-size: 13px;
+                            font-weight: 400;
+                            color: #333;
+                            margin-left: 5px;
+                            margin-bottom: -3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ant-rate .ant-rate-star:not(:last-child) {
+    margin-inline-end: 0;
+}
+
+.ant-rate {
+    margin-top: -10px;
+    white-space: nowrap;
+}
+
+.ant-progress .ant-progress-bg {
+    background-color: #ed2a26;
+}

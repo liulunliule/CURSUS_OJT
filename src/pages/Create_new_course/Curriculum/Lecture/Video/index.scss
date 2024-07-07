@@ -1,0 +1,30 @@
+.add_lecture_video {
+    padding: 29px 14px 0;
+
+    &-title {
+        font-size: 14px;
+        margin-bottom: 11px;
+        display: block;
+        color: #686f7a;
+    }
+}
+
+.add_lecture_video-cta {
+    .add_lecture_video-btn {
+        margin-right: 12px;
+        font-size: 14px;
+        font-weight: 500;
+        padding: 7px 20px 5px;
+        color: #231f20;
+        background: #ffffff;
+        border-radius: 3px;
+        border: 1px solid #efefef;
+
+        &.active {
+            background-color: #ed2a26;
+            color: #fff;
+            border-radius: 3px;
+            border: 1px solid #ed2a26;
+        }
+    }
+}

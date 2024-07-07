@@ -1,0 +1,120 @@
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
+.footer {
+  width: 100%;
+  background-color: #333333;
+  padding: 30px 150px 0px;
+
+  &.active {
+    padding-left: 260px;
+    .footer-right{
+      margin-right: -60px;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.footer-container {
+  padding-top: 20px;
+}
+/* Additional styling for footer */
+.footer-column {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 50px;
+
+    li {
+      margin-bottom: 8px;
+      a {
+        color: #ffffff;
+        // text-decoration: none;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .footer-button {
+        background-color: #ed2a26;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-bottom: 10px;
+
+        &:hover {
+          background-color: darkred;
+        }
+      }
+      .footer-button-language {
+        padding: 10px;
+        background-color: #333333;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 14px;
+        border: 1px solid #ffffff;
+      }
+      .footer-button-language-golobe {
+        position: relative;
+      }
+      .footer-button,
+      .footer-button-language {
+        width: 150px; /* Bao gồm border và padding trong kích thước tổng */
+        padding: 10px;
+      }
+      .golobe {
+        width: 15px;
+        height: auto;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px 20px;
+  border-top: 1px solid #454545;
+}
+
+.footer-left {
+  display: flex;
+  color: #fff;
+  align-items: center;
+}
+
+.logo_footer {
+  width: 38px;
+  height: 38px;
+  margin-left: -5px;
+}
+
+.text_footer {
+  color: #fff;
+  margin: 0;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.footer-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-right .footer-right-icon {
+  margin-left: 20px;
+}

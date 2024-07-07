@@ -1,0 +1,109 @@
+.analyics {
+    margin-top: 60px;
+    padding-top: 30px;
+    font-family: "Roboto", sans-serif;
+    margin-left: 60px;
+    background-color: #f8f9fa;
+    transition: all 0.3s ease;
+    height: 100%;
+    .container-fluid {
+        padding-right: 30px !important;
+        padding-left: 30px !important;
+    }
+    &.active{
+        margin-left: 240px;
+    }
+    &_icon {
+        width: 20px;
+        height: 100%;
+        margin: 0 5px;
+    }
+    &_card {
+        background: #fff !important;
+        border: 1px solid #efefef !important;
+        border-radius: 3px !important;
+        margin-top: 30px;
+        padding: 10px;
+        h2 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #333;
+            text-align: left;
+            line-height: 26px;
+            margin-top: 0;
+            // margin-bottom: 5rem;
+        }
+        p {
+            font-size: 16px;
+            font-weight: 400;
+            color: #686f7a;
+            text-align: left;
+            line-height: 26px;
+            margin-bottom: 10px;
+        }
+        .nav-link {
+            font-weight: 400;
+            color: #686f7a;
+            padding-top: 30px;
+            border-radius: 0 !important;
+            margin-left: -1px;
+        }
+    }
+    .card {
+        &_body {
+            flex: 1 1 auto;
+            padding: 14px;
+        }
+        &_default {
+            padding: 3rem;
+        }
+        &_header {
+            h2 {
+                padding: 1.2rem 2rem;
+                margin-bottom: 0;
+                background-color: #fff !important;
+                border-bottom: 1px solid #efefef !important;
+                border-top-right-radius: 10px !important;
+                border-top-left-radius: 10px !important;
+                font-size: 18px !important;
+                font-weight: 500 !important;
+                color: #333 !important;
+            }
+        }
+        &_footer {
+            padding: 0.75rem 1.25rem;
+            background-color: rgba(0, 0, 0, 0.03);
+            border-top: 1px solid #efefef !important;
+        }
+    }
+
+    &_table {
+        margin-top: 32px;
+        margin-bottom: 54px;
+    }
+
+    .chart {
+        &_line1 {
+            height: 100px;
+        }
+        &_line2 {
+            height: 366px;
+        }
+    }
+    .type-name {
+        display: block;
+    }
+    .text-success1 {
+        color: #ed2a26 !important;
+    }
+    .views_title {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+    }
+    .fade {
+        transition: opacity 0.15s linear;
+    }
+    .curntusr145 {
+        padding: 10px 30px;
+    }
+}

@@ -1,0 +1,113 @@
+.noti-title {
+    font-size: 20px;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    margin-left: 25px;
+
+    img {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+}
+
+.setting-section {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.setting_noti {
+    margin-top: 40px;
+    float: left;
+    padding: 10px 20px;
+    color: #fff;
+    background: #ed2a26;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    margin-left: 25px;
+}
+
+.message_back {
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #efefef;
+    padding: 0;
+    float: left;
+    width: 95%;
+    margin-left: 25px;
+
+    &:hover {
+        background-color: #ffecec;
+    }
+}
+
+.panel_stuff {
+    border-bottom: 1px solid #efefef !important;
+    min-width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    display: block;
+    padding: 20px !important;
+}
+
+.profile_show {
+    display: flex;
+
+    img {
+        
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border: 2px solid #fff;
+            border-radius: 100%;
+            box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.content_show {
+    width: 80%;
+    white-space: normal;
+
+    h6 {
+        font-size: 14px;
+        font-weight: 500;
+        font-family: 'Roboto', sans-serif;
+        margin-bottom: 5px;
+        color: #333;
+        text-align: left;
+        position: relative;
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 400;
+        font-family: 'Roboto', sans-serif;
+        margin-bottom: 8px;
+        color: #686f7a;
+        text-align: left;
+        margin-top: 8px;
+        line-height: 20px;
+    }
+}
+
+.time_ago {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0;
+    color: #afafaf;
+    text-align: left;
+}
+
+.mart-30 {
+    margin-top: 30px;
+}
+
+.mbt-30 {
+    margin-bottom: 30px;
+}

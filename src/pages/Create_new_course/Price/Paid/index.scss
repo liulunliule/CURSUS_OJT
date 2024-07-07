@@ -1,0 +1,47 @@
+.paid_page {
+    margin-top: 30px;
+
+    &-input {
+        margin-bottom: 30px;
+        label {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #333;
+        }
+    }
+
+    &-form {
+        position: relative;
+        display: flex;
+        width: 33.33333333%;
+        background-color: #fff;
+        border: 0.8px solid #e5e5e5;
+        border-radius: 4px;
+        color: #333;
+        font-size: 14px;
+        padding: 9.5px 28px 9.5px 14px;
+        input {
+            width: 100%;
+            border: none;
+            outline: none;
+
+            &::placeholder {
+                color: #c4c1c1;
+            }
+        }
+
+        span {
+            color: #333;
+            font-weight: 600;
+            position: absolute;
+            background: #f7f7f7;
+            right: 5px;
+            top: 5px;
+            min-height: 30px;
+            padding: 0 12px;
+            line-height: 30px;
+            border-radius: 3px;
+        }
+    }
+}

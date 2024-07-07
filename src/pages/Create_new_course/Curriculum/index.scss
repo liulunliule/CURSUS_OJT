@@ -1,0 +1,214 @@
+.create_course_curriculum {
+    .curriculum_title {
+        padding: 19px 0;
+        border-top: 1px solid #efefef;
+        border-bottom: 1px solid #efefef;
+        display: flex;
+        font-size: 18px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        gap: 15px;
+
+        .curriculum_icon {
+            font-size: 20px;
+        }
+    }
+
+    .curriculum_main {
+        margin-top: 30px;
+
+        .curriculum_new-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            border: 1px solid #efefef;
+            background: #fff;
+            padding: 15px 20px;
+
+            &-title {
+                font-size: 18px;
+                color: #333;
+            }
+
+            &-btn {
+                height: 40px;
+                padding: 0 20px;
+                font-size: 14px;
+                color: #fff;
+                border: 0;
+                background: #ed2a26;
+                border-radius: 3px;
+                font-weight: 500;
+            }
+        }
+        .modal_newSection {
+            &-content {
+                width: 798px;
+                // height: 400px;
+                background-color: #fff;
+                padding: 14px;
+                border-radius: 6px;
+
+                .modal_newSection-header {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                .modal_newSection-input {
+                    margin-top: 15px;
+                    padding: 28px;
+                    border-top: 1px solid #dee2e6;
+                    border-bottom: 1px solid #dee2e6;
+
+                    label {
+                        font-size: 14px;
+                        font-weight: 500;
+                        margin-bottom: 10px;
+                        color: #333;
+                        text-align: left;
+                        display: block;
+                    }
+
+                    input {
+                        font-size: 14px;
+                        font-weight: 400;
+                        width: 100%;
+                        border: 1px solid #efefef;
+                        height: 40px;
+                        padding: 0 16px;
+                        background: #fff;
+                        border-radius: 3px;
+                        box-shadow: inset 0px 1px 4px rgb(0 0 0 / 2%) !important;
+                        outline: none;
+                    }
+                }
+
+                .modal_newSection-btn {
+                    margin-top: 15px;
+                    display: flex;
+                    justify-content: flex-end;
+                    gap: 7px;
+
+                    .modal_newSection-btn {
+                        height: 40px;
+                        padding: 9px 20px;
+                        font-size: 14px;
+                        color: #fff;
+                        border: 0;
+                        background: #ed2a26;
+                        border-radius: 3px;
+                        margin-right: 5px;
+                        font-weight: 500;
+
+                        &.close {
+                            color: #91699c;
+                            background: #f3f3f3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .curriculum_intro {
+        margin-top: 31px;
+        background-color: #fff;
+        padding: 15px 20px;
+
+        .curriculum_intro-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #efefef;
+
+            .intro_header-right,
+            .intro_header-left {
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                font-weight: 600;
+                color: #333;
+                gap: 10px;
+            }
+        }
+    }
+    .curriculum_intro_end {
+        background-color: #333;
+
+        .intro_end {
+            border: none;
+            background-color: #333;
+            color: #fff;
+            padding: 17px 14px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .add_lecture_modal {
+            width: 798px;
+            padding: 14px;
+            background-color: #fff;
+            border-radius: 6px;
+
+            .add_lecture_modal_title {
+                padding-bottom: 15px;
+                color: #333;
+                border-bottom: 1px solid #dee2e6;
+            }
+
+            .add_lecture_modal_body {
+                display: flex;
+                margin-top: 28px;
+                padding: 0 14px;
+
+                .add_lecture_btn {
+                    flex: 1;
+                    padding: 12px;
+                    border: 1px solid #efefef;
+                    font-size: 14px;
+                    text-align: center;
+                    font-weight: 500;
+                    color: #333;
+                    background: #f7f7f7;
+
+                    &.active {
+                        color: #fff;
+                        background-color: #ed2a26;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.curriculum_intro_body {
+    margin-top: 20px;
+
+    .curriculum_intro-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 17px 15px 19px;
+        background-color: #f7f7f7;
+        margin-bottom: 10px;
+
+        .intro_body-left {
+            display: flex;
+            gap: 11px;
+            align-items: center;
+        }
+        .intro_body-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            visibility: hidden;
+        }
+
+        &:hover .intro_body-right {
+            visibility: visible;
+        }
+    }
+}

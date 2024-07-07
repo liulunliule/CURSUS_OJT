@@ -1,0 +1,32 @@
+.video_modal {
+    position: fixed;
+    inset: 200% 0 0 0;
+    display: flex;
+    justify-content: center;
+    max-height: 100vh; /* Điều chỉnh giá trị này nếu cần */
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    z-index: 1000;
+
+    &.active {
+        top: 0;
+    }
+
+    &-overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        z-index: -1;
+    }
+
+    &-content {
+        margin-top: 30px;
+        max-height: 90vh;
+        overflow-y: scroll;
+        border-radius: 8px;
+    }
+}
+
+.video_modal-content::-webkit-scrollbar {
+    display: none;
+}

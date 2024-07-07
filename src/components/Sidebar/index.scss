@@ -1,0 +1,963 @@
+.SideBarFrontend {
+    width: 240px;
+    position: fixed;
+    background-color: #ffffff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+    z-index: 998;
+    padding-bottom: 80px;
+    top: 60px;
+    left: 0;
+    transition: all 0.5s ease;
+
+    &.active {
+        width: 0;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    &:hover::-webkit-scrollbar {
+        width: 3.5px;
+        background-color: #e5e5e5;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        background: #afafaf;
+        border-radius: 999px;
+    }
+
+    .Link_SideBar {
+        color: #333;
+    }
+
+    //select_Side1
+    .select_Side1 {
+        width: 100%;
+        border-bottom: solid 0.2px #e5e5e5;
+
+        //select_Home
+        .select_Home {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .HomeLogo_SideBar {
+                margin-left: 15px;
+                width: 23px;
+            }
+
+            .select_Home__title {
+                font-size: 14px;
+                font-weight: 450;
+            }
+        }
+
+        .select_Home:hover {
+            background-color: #ffecec;
+            .HomeLogo_SideBar {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+
+            .select_Home__title {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+
+        //select_LiveSteam
+        .select_LiveSteam {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+
+            .LiveStreamLogo_SideBar {
+                margin-left: 13px;
+                width: 27px;
+            }
+
+            .select_LiveSteam__title {
+                font-size: 14px;
+                font-weight: 450;
+                white-space: nowrap;
+            }
+        }
+
+        .select_LiveSteam:hover {
+            background-color: #ffecec;
+            .LiveStreamLogo_SideBar {
+                filter: brightness(0.5) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+
+            .select_LiveSteam__title {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+
+        //select_Explore
+        .select_Explore {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+
+            .ExploreLogo_SideBar {
+                margin-left: 13px;
+                width: 28px;
+            }
+
+            .select_Explore__title {
+                font-size: 14px;
+                font-weight: 450;
+            }
+        }
+
+        .select_Explore:hover {
+            background-color: #ffecec;
+            .ExploreLogo_SideBar {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+
+            .select_Explore__title {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+
+        //select_Categories
+        .select_Categories {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .wrapperCategories {
+                display: flex;
+                gap: 14px;
+
+                .CategoriesLogo_SideBar {
+                    margin-left: 14px;
+                    width: 25px;
+                }
+
+                .select_Explore__title {
+                    font-size: 14px;
+                    font-weight: 450;
+                }
+            }
+
+            .DropDownLogo_SideBar {
+                width: 20px;
+            }
+        }
+
+        .select_Categories:hover {
+            background-color: #ffecec;
+
+            .wrapperCategories {
+                .CategoriesLogo_SideBar {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+
+                .select_Explore__title {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+            }
+
+            .DropDownLogo_SideBar {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+
+        .select_Categories:focus-within {
+            background-color: #ffecec;
+
+            .wrapperCategories {
+                .CategoriesLogo_SideBar {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+
+                .select_Explore__title {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+            }
+
+            .DropDownLogo_SideBar {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+
+        .List_Select_Categories {
+            .Ul_List_Select_Categories_SideBar {
+                background-color: #ffecec;
+
+                .Li_List_Select_Categories_SideBar {
+                    list-style: none;
+                    height: 40px;
+                    padding-left: 32px;
+                    padding-top: 5px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #333;
+                }
+
+                .Li_List_Select_Categories_SideBar:hover {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+            }
+        }
+
+        //select_Tests
+        .select_Tests {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .wrapperTests {
+                display: flex;
+                gap: 13px;
+
+                .TestsLogo_SideBar {
+                    margin-left: 13px;
+                    width: 28px;
+                }
+
+                .select_Tests__title {
+                    font-size: 14px;
+                    font-weight: 450;
+                }
+            }
+
+            .DropDownLogo_SideBar {
+                width: 20px;
+            }
+        }
+
+        .select_Tests:hover {
+            background-color: #ffecec;
+
+            .wrapperTests {
+                .TestsLogo_SideBar {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+
+                .select_Tests__title {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+            }
+
+            .DropDownLogo_SideBar {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+
+        .select_Tests:focus-within {
+            background-color: #ffecec;
+
+            .wrapperTests {
+                .TestsLogo_SideBar {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+
+                .select_Tests__title {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+            }
+
+            .DropDownLogo_SideBar {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+
+        .List_Select_Tests {
+            .Ul_List_Select_Tests_SideBar {
+                background-color: #ffecec;
+
+                .Li_List_Select_Tests_SideBar {
+                    list-style: none;
+                    height: 40px;
+                    padding-left: 32px;
+                    padding-top: 5px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #333;
+                }
+
+                .Li_List_Select_Tests_SideBar:hover {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+            }
+        }
+
+        //select_SavedCourses
+        .select_SavedCourses {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+
+            .SavedCoursesLogo_SideBar {
+                margin-left: 13px;
+                width: 28px;
+            }
+
+            .select_SavedCourses__title {
+                font-size: 14px;
+                font-weight: 450;
+            }
+        }
+
+        .select_SavedCourses:hover {
+            background-color: #ffecec;
+            .SavedCoursesLogo_SideBar {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+
+            .select_SavedCourses__title {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+
+        //select_Pages
+        .select_Pages {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .wrapperPages {
+                display: flex;
+                gap: 13px;
+
+                .PagesLogo_SideBar {
+                    margin-left: 13px;
+                    width: 28px;
+                }
+
+                .select_Pages__title {
+                    font-size: 14px;
+                    font-weight: 450;
+                }
+            }
+
+            .DropDownLogo_SideBar {
+                width: 20px;
+            }
+        }
+
+        .select_Pages:hover {
+            background-color: #ffecec;
+
+            .wrapperPages {
+                .PagesLogo_SideBar {
+                    filter: brightness(0.5) invert(20%) sepia(90%)
+                        saturate(3000%) hue-rotate(0deg);
+                }
+
+                .select_Pages__title {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+            }
+
+            .DropDownLogo_SideBar {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+        .select_Pages:focus-within {
+            background-color: #ffecec;
+
+            .wrapperPages {
+                .PagesLogo_SideBar {
+                    filter: brightness(0.5) invert(20%) sepia(90%)
+                        saturate(3000%) hue-rotate(0deg);
+                }
+
+                .select_Pages__title {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+            }
+
+            .DropDownLogo_SideBar {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+
+        .List_Select_Pages {
+            .Ul_List_Select_Pages_SideBar {
+                background-color: #ffecec;
+
+                .Li_List_Select_Pages_SideBar {
+                    list-style: none;
+                    height: 40px;
+                    padding-left: 32px;
+                    padding-top: 5px;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: #333;
+                }
+
+                .Li_List_Select_Pages_SideBar:hover {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+            }
+        }
+    }
+
+    //select_Side2
+    .select_Side2 {
+        width: 100%;
+        border-bottom: solid 0.2px #e5e5e5;
+
+        //wrapper_select_Title
+        .wrapper_select_Title {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            height: 45px;
+
+            .select_Title {
+                font-size: 12px;
+                font-weight: 500;
+                color: #afafaf;
+                padding: 20px 17px 10px;
+            }
+        }
+
+        //select_ListAvatar
+        .select_ListAvatar {
+            width: 100%;
+
+            .wrapper_avatar1_SideBar {
+                width: 100%;
+                height: 45px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                position: relative;
+
+                .avatar1_SideBar {
+                    width: 30px;
+                    border-radius: 100%;
+                    margin-left: 15px;
+                }
+
+                .nameOfAvatar1_SideBar {
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+
+                .redDot_Avatar_SideBar {
+                    position: absolute;
+                    width: 5px;
+                    height: 5px;
+                    background-color: red;
+                    border-radius: 100%;
+                    margin-left: 90%;
+                }
+            }
+
+            .wrapper_avatar1_SideBar:hover {
+                background-color: #ffecec;
+                .nameOfAvatar1_SideBar {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+            }
+
+            .wrapper_avatar2_SideBar {
+                position: relative;
+                width: 100%;
+                height: 45px;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                .avatar2_SideBar {
+                    width: 30px;
+                    border-radius: 100%;
+                    margin-left: 15px;
+                }
+
+                .nameOfAvatar2_SideBar {
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+
+                .redDot_Avatar_SideBar {
+                    position: absolute;
+                    width: 5px;
+                    height: 5px;
+                    background-color: red;
+                    border-radius: 100%;
+                    margin-left: 90%;
+                }
+            }
+
+            .wrapper_avatar2_SideBar:hover {
+                background-color: #ffecec;
+
+                .nameOfAvatar2_SideBar {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+            }
+
+            .addInstructor_SideBar {
+                width: 100%;
+                height: 45px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                .AddInstructorLogo_SideBar {
+                    width: 25px;
+                    margin-left: 10px;
+                }
+
+                .AddInstructor__title {
+                    font-size: 14px;
+                    font-weight: 500;
+                }
+            }
+
+            .addInstructor_SideBar:hover {
+                background-color: #ffecec;
+
+                .AddInstructorLogo_SideBar {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+                .AddInstructor__title {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+            }
+        }
+    }
+
+    //select_Side3
+    .select_Side3 {
+        width: 100%;
+        border-bottom: solid 0.2px #e5e5e5;
+
+        .wrapper_SupportFunction_Setting_SideBar {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .SettingLogo_SideBar {
+                margin-left: 10px;
+                width: 25px;
+            }
+
+            .Setting_Title {
+                font-size: 14px;
+                font-weight: 450;
+            }
+        }
+
+        .wrapper_SupportFunction_Setting_SideBar:hover {
+            background-color: #ffecec;
+            .SettingLogo_SideBar {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+
+            .Setting_Title {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+
+        .wrapper_SupportFunction_Help_SideBar {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .HelpLogo_SideBar {
+                margin-left: 10px;
+                width: 25px;
+            }
+
+            .Help_Title {
+                font-size: 14px;
+                font-weight: 450;
+            }
+        }
+
+        .wrapper_SupportFunction_Help_SideBar:hover {
+            background-color: #ffecec;
+            .HelpLogo_SideBar {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+
+            .Help_Title {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+
+        .wrapper_SupportFunction_ReportHistory_SideBar {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .ReportHistoryLogo_SideBar {
+                margin-left: 10px;
+                width: 25px;
+            }
+
+            .ReportHistory_Title {
+                font-size: 14px;
+                font-weight: 450;
+            }
+        }
+
+        .wrapper_SupportFunction_ReportHistory_SideBar:hover {
+            background-color: #ffecec;
+            .ReportHistoryLogo_SideBar {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+
+            .ReportHistory_Title {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+
+        .wrapper_SupportFunction_SendFeedback_SideBar {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .SendFeedbackLogo_SideBar {
+                margin-left: 10px;
+                width: 25px;
+            }
+
+            .SendFeedback_Title {
+                font-size: 14px;
+                font-weight: 450;
+            }
+        }
+
+        .wrapper_SupportFunction_SendFeedback_SideBar:hover {
+            background-color: #ffecec;
+            .SendFeedbackLogo_SideBar {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+
+            .SendFeedback_Title {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+    }
+
+    //select_Side4
+    .select_Side4 {
+        width: 100%;
+        border-bottom: solid 0.2px #e5e5e5;
+
+        .ListFooter_SideBar {
+            width: 100%;
+            margin-left: 10px;
+            margin-top: 15px;
+
+            .Ul_Footer_SideBar {
+                width: 100%;
+                padding-left: 0;
+
+                .Li_Footer_SideBar {
+                    list-style: none;
+                    display: inline-block;
+                    font-size: 13px;
+                    font-weight: 500;
+                    padding: 0 7px;
+                }
+
+                .Li_Footer_SideBar:hover {
+                    filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                        hue-rotate(0deg);
+                }
+            }
+        }
+
+        .Footer_Content_SideBar {
+            width: 100%;
+            margin-left: 10px;
+
+            .P_Footer_SideBar {
+                color: #afafaf;
+                font-size: 12px;
+                font-weight: 400;
+
+                .Strong_Footer_SideBar {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+.SideBarInstructorDashboardDemo{
+    width: 240px;
+    position: fixed;
+    background-color: #ffffff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+    z-index: 998;
+    padding-bottom: 80px;
+    top: 60px;
+    left: 0;
+    transition: all 0.5s ease;
+
+    &.active {
+        width: 0;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    &:hover::-webkit-scrollbar {
+        width: 3.5px;
+        background-color: #e5e5e5;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        background: #afafaf;
+        border-radius: 999px;
+    }
+
+    .Link_SideBarInstructorDashboardDemo{
+        color: #333;
+    }
+
+    .SideBarInstructorDashboardDemo_select1{
+        width: 100%;
+        border-bottom: solid 0.2px #e5e5e5;
+
+        .SideBarInstructorDashboardDemo_select_wrapper {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .SideBarInstructorDashboardDemo_select_Logo {
+                margin-left: 15px;
+                width: 20px;
+            }
+
+            .SideBarInstructorDashboardDemo_select_Title {
+                font-size: 14px;
+                font-weight: 450;
+            }
+        }
+
+        .SideBarInstructorDashboardDemo_select_wrapper:hover {
+            background-color: #ffecec;
+            .SideBarInstructorDashboardDemo_select_Logo {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+
+            .SideBarInstructorDashboardDemo_select_Title {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+    }
+
+    .SideBarInstructorDashboardDemo_select2{
+        width: 100%;
+
+        .SideBarInstructorDashboardDemo_select_wrapper {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .SideBarInstructorDashboardDemo_select_Logo {
+                margin-left: 15px;
+                width: 20px;
+            }
+
+            .SideBarInstructorDashboardDemo_select_Title {
+                font-size: 14px;
+                font-weight: 450;
+            }
+        }
+
+        .SideBarInstructorDashboardDemo_select_wrapper:hover {
+            background-color: #ffecec;
+            .SideBarInstructorDashboardDemo_select_Logo {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+
+            .SideBarInstructorDashboardDemo_select_Title {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+    }
+}
+
+.SideBarStudentDashboardDemo{
+    width: 240px;
+    position: fixed;
+    background-color: #ffffff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+    z-index: 998;
+    padding-bottom: 80px;
+    top: 60px;
+    left: 0;
+    transition: all 0.5s ease;
+
+    &.active {
+        width: 0;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    &:hover::-webkit-scrollbar {
+        width: 3.5px;
+        background-color: #e5e5e5;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+        background: #afafaf;
+        border-radius: 999px;
+    }
+
+    .Link_SideBarStudentDashboardDemo{
+        color: #333;
+    }
+
+    .SideBarStudentDashboardDemo_select1{
+        width: 100%;
+        border-bottom: solid 0.2px #e5e5e5;
+
+        .SideBarStudentDashboardDemo_select_wrapper {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .SideBarStudentDashboardDemo_select_Logo {
+                margin-left: 15px;
+                width: 20px;
+            }
+
+            .SideBarStudentDashboardDemo_select_Title {
+                font-size: 14px;
+                font-weight: 450;
+            }
+        }
+
+        .SideBarStudentDashboardDemo_select_wrapper:hover {
+            background-color: #ffecec;
+            .SideBarStudentDashboardDemo_select_Logo {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+
+            .SideBarStudentDashboardDemo_select_Title {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+    }
+
+    .SideBarStudentDashboardDemo_select2{
+        width: 100%;
+
+        .SideBarStudentDashboardDemo_select_wrapper {
+            width: 100%;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .SideBarStudentDashboardDemo_select_Logo {
+                margin-left: 15px;
+                width: 20px;
+            }
+
+            .SideBarStudentDashboardDemo_select_Title {
+                font-size: 14px;
+                font-weight: 450;
+            }
+        }
+
+        .SideBarStudentDashboardDemo_select_wrapper:hover {
+            background-color: #ffecec;
+            .SideBarStudentDashboardDemo_select_Logo {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+
+            .SideBarStudentDashboardDemo_select_Title {
+                filter: brightness(0) invert(20%) sepia(90%) saturate(3000%)
+                    hue-rotate(0deg);
+            }
+        }
+    }
+}

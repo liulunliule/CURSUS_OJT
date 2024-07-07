@@ -1,0 +1,48 @@
+.discounts {
+    margin-top: 32px;
+
+    &_collapse {
+        border-radius: 5px;
+        background-color: #fff;
+
+        &_title {
+            margin-top: 5px;
+        }
+    }
+    &__content {
+        padding: 20px 31px;
+
+        .discount-form {
+            width: 70%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+
+            label {
+                font-size: 14px;
+                font-weight: 500;
+                margin-bottom: 10px;
+                color: #333;
+            }
+        }
+        .discount_btn {
+            margin-top: 30px;
+            height: 40px;
+            border-radius: 20px;
+            border: 0;
+            color: #fff;
+            font-weight: 500;
+            background: #ed2a26;
+            width: 35%;
+            text-align: center;
+
+            &:hover {
+                background-color: #333;
+            }
+        }
+    }
+
+    &_table {
+        margin-top: 31px;
+    }
+}

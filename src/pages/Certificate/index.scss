@@ -1,0 +1,12 @@
+.certificate {
+    margin: 0px;
+    background-color: rgb(14, 14, 14);
+    img{
+        height: 100vh;
+        display: block;
+        margin: auto;
+        cursor: zoom-in;
+        background-color: hsl(0, 0%, 90%);
+        transition: background-color 300ms;
+    }
+}

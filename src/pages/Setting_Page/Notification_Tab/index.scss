@@ -1,0 +1,103 @@
+.NotificationTab{
+    background-color: #f7f7f7;
+
+
+    .AllTabButton_SettingPage{
+        display: flex;
+        gap: 10px;
+
+        .AllTabButton_SettingPage_NotificationTab{
+            border: none;
+            height: 35px;
+            padding: 0 15px;
+            color: #fff;
+            border-radius: 3px;
+            font-weight: 500;
+            background: #ed2a26;
+        }
+
+        .AllTabButton_SettingPage_Rest{
+            border: none;
+            height: 35px;
+            padding: 0 15px;
+            color: #333;
+            border-radius: 3px;
+            font-weight: 500;
+            background: #f7f7f7;
+        }
+    }
+
+    .NotificationTab_Contents{
+        margin-top: 40px;
+
+        .NotificationTab_Contents_TitleNotifications_H4{
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+        }
+        .NotificationTab_Contents_Title_P{
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #686f7a;
+        }
+
+        .NotificationTab_Contents_TitleChoose_H4{
+            margin-top: 35px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .NotificationTab_Contents_Subscriptions_Switch{
+            margin-top: 20px;
+            
+
+            .NotificationTab_Contents_Subscriptions_SwitchButton{
+                width: 50px;
+                margin-bottom: 5px;
+            }
+
+            .NotificationTab_Contents_Subscriptions_SwitchButton:where(.css-dev-only-do-not-override-m4timi).ant-switch.ant-switch-checked {
+                background: #ed2a26;
+            }
+
+            .NotificationTab_Contents_Subscriptions_Switch_Title{
+                margin-left: 10px;
+                font-size: 14px;
+                font-weight: 500;
+                color: #333;
+            }
+
+        }
+
+        .NotificationTab_Contents_P{
+            margin-left: 60px;
+            margin-top: 5px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #686f7a;
+        }
+
+        .NotificationTab_Contents_Line{
+            margin-top: 30px;
+            border-bottom: 1px solid #e5e5e5;
+            margin-bottom: 30px;
+        }
+
+        .NotificationTab_Contents_button{
+            border: none;
+            height: 40px;
+            padding: 0 20px;
+            margin-top: 45px;
+            margin-bottom: 20px;
+            color: #fff;
+            border-radius: 3px;
+            font-weight: 500;
+            background: #ed2a26;
+        }
+        .NotificationTab_Contents_button:hover{
+            background: #333;
+        }
+    }
+}

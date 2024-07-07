@@ -1,0 +1,204 @@
+.signUpStep {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    background-color: #f7f7f7;
+    z-index: 1;
+    &::before {
+        content: "";
+        background: url(../../assets/img/backgroundLDP.svg) no-repeat center;
+        inset: 0;
+        position: absolute;
+        background-size: cover;
+        opacity: 0.04;
+        z-index: -1;
+    }
+    &__logo {
+        width: 135px;
+    }
+
+    // &__switch {
+    //     &-label {
+    //         position: relative;
+    //         display: flex;
+    //         justify-content: space-between;
+    //         align-items: center;
+    //         width: 478px;
+    //         height: 56px;
+    //         border: 1px solid #e5e5e5;
+    //         border-radius: 5.25px;
+    //         font-size: 14px;
+    //         font-weight: 500;
+    //         line-height: 24px;
+    //         padding: 0 10px;
+    //         background-color: #f7f7f7;
+    //         user-select: none;
+
+    //         &::before {
+    //             position: absolute;
+    //             content: "";
+    //             bottom: 0;
+    //             left: 0;
+    //             width: 239px;
+    //             height: 2px;
+    //             background-color: #ed2a26;
+    //         }
+    //         &::after {
+    //             position: absolute;
+    //             content: "";
+    //             top: 0;
+    //             left: 239px;
+    //             width: 0.1px;
+    //             height: 53px;
+    //             background-color: #e5e5e5;
+    //         }
+    //     }
+    //     &-value {
+    //         color: #ed2a26;
+    //     }
+    //     &-input:checked + &-label::before {
+    //         width: 238px;
+    //         left: auto;
+    //         right: 0;
+    //     }
+    //     &-input:not(:checked)
+    //         + &-label
+    //         .signUpStep__switch-value:nth-of-type(2),
+    //     &-input:checked + &-label .signUpStep__switch-value:nth-of-type(1) {
+    //         color: #333;
+    //     }
+    // }
+    &__switch:nth-of-type(1) .signUpStep__switch-label {
+        padding: 0 65px;
+    }
+    &__switch:nth-of-type(2) .signUpStep__switch-label {
+        padding: 0 70px;
+    }
+    &__switch {
+        &-wrap {
+            display: flex;
+        }
+
+        &-label {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 239px;
+            height: 56px;
+            border: 1px solid #e5e5e5;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 24px;
+            background-color: #f7f7f7;
+            user-select: none;
+            white-space: nowrap;
+
+            &::before {
+                position: absolute;
+                content: "";
+                bottom: 0;
+                left: 0;
+                width: 239px;
+                height: 2px;
+            }
+        }
+        &-value {
+            color: #333;
+        }
+        &-input:checked + &-label::before {
+            width: 238px;
+            background-color: #ed2a26;
+        }
+        &-input:not(:checked)
+            + &-label
+            .signUpStep__switch-value:nth-of-type(2),
+        &-input:checked + &-label .signUpStep__switch-value:nth-of-type(1) {
+            color: #ed2a26;
+        }
+    }
+    &__desc {
+        margin-top: 49px;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: "Roboto", sans-serif;
+        color: #686f7a;
+    }
+
+    &__form {
+        margin-top: 47px;
+    }
+
+    &__textArea {
+        margin-top: 25px;
+    }
+
+    &__limit {
+        text-align: start;
+        font-size: 11px;
+        margin-top: 5px;
+        color: #686f7a;
+        font-size: 12px;
+        font-family: "Roboto", sans-serif;
+    }
+
+    &__btn {
+        margin-top: 30px;
+        width: 479px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    &__signup {
+        font-size: 14px;
+        margin-top: 47px;
+        font-weight: 400;
+        font-family: "Roboto", sans-serif;
+        color: #686f7a;
+        text-align: center;
+        line-height: 26px;
+
+        a {
+            margin-left: 4px;
+            color: #4183c4;
+            text-decoration: none;
+        }
+
+        & a:hover {
+            color: #686f7a;
+        }
+    }
+    &__footer {
+        display: flex;
+        align-items: center;
+        margin-top: 57px;
+
+        &-content {
+            margin: 0;
+        }
+    }
+}
+
+//Antd custom css
+
+.custom-select .ant-select-selection-placeholder {
+    display: flex;
+    justify-content: flex-start;
+
+    color: #00b2a9;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Roboto", sans-serif;
+}
+
+.custom-select .ant-select-selector {
+    display: flex;
+    align-items: center;
+    padding: 20px 15px !important;
+}
+
+.custom-select .ant-select-arrow {
+    top: 20px;
+}
