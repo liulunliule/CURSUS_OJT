@@ -164,7 +164,7 @@
 }
 
 .benefit-item {
-  max-width: 250px;
+  max-width: 130px;
   text-align: center;
 }
 
@@ -183,6 +183,8 @@
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+  margin-left: 150px;
+  max-width: 80px;
 
   .role-list {
     flex: 1;
