@@ -1,177 +1,177 @@
 .wrapper-my-certificates {
-  padding: 90px 0 0px;
-  transition: all 0.3s ease-out;
-  margin-left: 250px;
-  overflow-x: hidden;
+    padding: 90px 0 0px;
+    transition: all 0.3s ease-out;
+    margin-left: 250px;
+    overflow-x: hidden;
 }
 .active {
-  margin-left: 0px;
+    margin-left: 0;
 }
 
 .my-certificates-title {
-  font-size: 20px;
-  margin-top: 0;
-  margin-bottom: 18px;
-  font-weight: 500;
-  color: #333;
-  margin-left: 35px;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-weight: 500;
+    color: #333;
+    margin-left: 35px;
 }
 .uil-award-my-certificates {
-  width: 28px;
-  height: 54px;
+    width: 28px;
+    height: 54px;
 }
 
 .table-my-cerificate {
-  margin: 0 30px 30px 0;
+    margin: 0 30px 30px 0;
 }
 
 .create-btn-dash-my-cerificate {
-  font-size: 14px;
-  font-weight: 500;
-  color: #fff;
-  background: #ed2a26;
-  padding: 0px 20px;
-  border-radius: 3px;
-  border: 0;
-  height: 40px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background: #ed2a26;
+    padding: 0px 20px;
+    border-radius: 3px;
+    border: 0;
+    height: 40px;
 }
 
 .create-btn-dash-my-cerificate:hover {
-  color: #fff;
-  background: #333;
+    color: #fff;
+    background: #333;
 }
 
 .card-dash-my-cerificate {
-  background: #fff;
-  margin-top: 30px;
-  width: 95%;
-  border-radius: 3px;
-  border: 1px solid #efefef;
-  padding: 30px 20px;
-  margin-bottom: 50px;
-  margin-left: 30px;
-  margin-right: 30px;
-  float: left;
+    background: #fff;
+    margin-top: 30px;
+    width: 95%;
+    border-radius: 3px;
+    border: 1px solid #efefef;
+    padding: 30px 20px;
+    margin-bottom: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    float: left;
 }
 .award-iconaward-icon-new-certificate {
-  padding-right: 300px;
-  color: #686f7a;
+    padding-right: 300px;
+    color: #686f7a;
 }
 
 .card-dash-left-my-cerificate {
-  float: left;
-  display: flex;
-  padding: 4px 0;
+    float: left;
+    display: flex;
+    padding: 4px 0;
 }
 
 .card-dash-right-my-cerificate {
-  float: right;
+    float: right;
 }
 
 .card-dash-left-my-cerificate h1 {
-  font-size: 24px;
-  color: #333;
-  font-weight: 400;
-  margin-bottom: 0;
-  text-align: left;
-  margin-top: 0;
-  padding-left: 15px;
+    font-size: 24px;
+    color: #333;
+    font-weight: 400;
+    margin-bottom: 0;
+    text-align: left;
+    margin-top: 0;
+    padding-left: 15px;
 }
 
 .card-dash-left-my-cerificate i {
-  font-size: 30px;
-  margin-right: -1px;
-  color: #686f7a;
+    font-size: 30px;
+    margin-right: -1px;
+    color: #686f7a;
 }
 
 .my-certificates-title .award-icon {
-  margin-left: -6px;
-  margin-right: 5px;
+    margin-left: -6px;
+    margin-right: 5px;
 }
 
 .table-responsive-my-cerificate {
-  border-radius: 3px;
-  margin-bottom: 12px;
-  margin-left: 30px;
-  overflow-x: inherit;
+    border-radius: 3px;
+    margin-bottom: 12px;
+    margin-left: 30px;
+    overflow-x: inherit;
 }
 
 table.table.ucp-table-my-cerificate {
-  margin-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 .ucp-table-my-cerificate {
-  height: auto;
-  overflow: hidden;
-  border-radius: 4px;
+    height: auto;
+    overflow: hidden;
+    border-radius: 4px;
 }
 
 .ucp-table-my-cerificate thead tfoot {
-  font-weight: 500;
-  padding: 14px;
-  border-radius: 4px;
-  color: #333;
+    font-weight: 500;
+    padding: 14px;
+    border-radius: 4px;
+    color: #333;
 }
 
 .ucp-table-my-cerificate thead tr th:first-child {
-  border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 4px;
 }
 
 .ucp-table-my-cerificate thead tr th {
-  color: #333;
-  font-size: 14px;
-  background-color: #ffecec;
+    color: #333;
+    font-size: 14px;
+    background-color: #ffecec;
 }
 
 .ucp-table-my-cerificate tfoot td {
-  color: #fff;
+    color: #fff;
 }
 
 .ucp-table.earning__table td {
-  padding: 1rem;
+    padding: 1rem;
 }
 
 table {
-  margin: 0px auto 0px;
-  font-size: 14px;
-  width: 100%;
+    margin: 0px auto 0px;
+    font-size: 14px;
+    width: 100%;
 }
 
 .ucp-table-my-cerificate tbody {
-  background: #fff;
+    background: #fff;
 }
 
 .ucp-table-my-cerificate td,
 .ucp-table-my-cerificate th {
-  border-top: 1px solid #efefef;
+    border-top: 1px solid #efefef;
 }
 
 .ucp-table-my-cerificate td {
-  padding: 1.6rem 0.75rem;
-  vertical-align: top;
-  border-top: 1px solid #dee2e6;
+    padding: 1.6rem 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
 }
 
 .ucp-table-my-cerificate tbody tr td {
-  font-size: 14px;
-  vertical-align: middle;
-  font-weight: 400;
+    font-size: 14px;
+    vertical-align: middle;
+    font-weight: 400;
 }
 .text-center-hover {
-  a {
-    display: inline-block;
-    padding: 6px 12px;
-    transition: color 0.3s ease;
-    color: #686f7a;
+    a {
+        display: inline-block;
+        padding: 6px 12px;
+        transition: color 0.3s ease;
+        color: #686f7a;
 
-    &:hover {
-      color: #000000;
+        &:hover {
+            color: #000000;
+        }
     }
-  }
 }
 .gray-s:hover {
-  filter: brightness(0);
+    filter: brightness(0);
 }
 .text-left {
-  font-weight: 500;
+    font-weight: 500;
 }
