@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./index.scss";
@@ -28,7 +26,7 @@ const OurBlog = () => {
 
   return (
     <div className="blog-page">
-      <header className="custom-header">
+      <header className="custom-header" style={{ backgroundColor: "#f8f8f8" }}>
         <nav className="custom-nav">
           <ul className="custom-ul">
             {["About", "Blog", "Company", "Careers", "Press"].map((item) => (
@@ -44,7 +42,7 @@ const OurBlog = () => {
         </nav>
       </header>
 
-      <section className="hero">
+      <section className="hero" style={{ backgroundColor: "#f8f8f8" }}>
         <h1>Insights, ideas, and stories</h1>
       </section>
 

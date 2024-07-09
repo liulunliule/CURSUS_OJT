@@ -25,7 +25,7 @@ const CompanyDetails = () => {
 
   return (
     <div className="company-page">
-      <header className="custom-header">
+      <header className="custom-header" style={{ backgroundColor: "#f8f8f8" }}>
         <nav className="custom-nav">
           <ul className="custom-ul">
             {["About", "Blog", "Company", "Careers", "Press"].map((item) => (
@@ -41,8 +41,8 @@ const CompanyDetails = () => {
         </nav>
       </header>
 
-      <section className="hero">
-        <h1>Expanding learning opportunities</h1>
+      <section className="hero" style={{ backgroundColor: "#f8f8f8", padding: "40px" }}>
+        <h1 style={{ marginTop: "6px" }}>Expanding learning opportunities</h1>
       </section>
 
       <section className="origins">

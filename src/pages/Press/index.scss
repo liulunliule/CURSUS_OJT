@@ -7,11 +7,6 @@
       margin-bottom: 30px;
     }
   }
-
-  .custom-header {
-    background: #f8f8f8;
-    padding: 10px 0;
-  }
   
   .custom-nav {
     .custom-ul {
@@ -45,7 +40,6 @@
   }
 
     .hero {
-      background: #f0f0f0;
       text-align: center;
       padding: 50px 0;
       font-weight: bold;
@@ -63,6 +57,7 @@
       .sidebar {
         width: 35%;
         margin-left: 60px;
+        margin-top: 30px;
 
         .follow-buttons {
           display: flex;
@@ -113,7 +108,7 @@
         .learn-more {
           color: gray;
           text-align: center;
-          padding: 178px;
+          padding: 214px;
           text-decoration: none;
         }
 
@@ -129,6 +124,7 @@
       .right-section {
         width: 50%;
         margin-right: 230px;
+        margin-top: 30px;
   
         .news-section,
         .releases-section {

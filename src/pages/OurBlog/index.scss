@@ -8,11 +8,6 @@
     margin-bottom: 30px;
   }
   
-  .custom-header {
-    background: #f8f8f8;
-    padding: 10px 0;
-  }
-  
   .custom-nav {
     .custom-ul {
       list-style: none;
@@ -44,6 +39,16 @@
     }
   }
 
+  .hero {
+    text-align: center;
+    padding: 50px 0;
+    font-weight: bold;
+  }
+  
+  .hero h1 {
+    font-size: 1.5em;
+  }
+
   .content {
     padding: 20px;
 
@@ -59,6 +64,7 @@
         width: 35%;
         margin-left: 150px;
         padding-right: 20px;
+        margin-top: 0;
 
         .left{
           background-color: #fff;

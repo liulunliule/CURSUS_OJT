@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import "./index.scss";
 
@@ -22,7 +21,7 @@ const Press = () => {
 
   return (
     <div className="press-page">
-      <header className="custom-header">
+      <header className="custom-header" style={{ backgroundColor: "#f8f8f8" }}>
         <nav className="custom-nav">
           <ul className="custom-ul">
             {["About", "Blog", "Company", "Careers", "Press"].map((item) => (
@@ -38,8 +37,8 @@ const Press = () => {
         </nav>
       </header>
 
-      <section className="hero">
-        <h1>Improving Lives Through Learning</h1>
+      <section className="hero" style={{ backgroundColor: "#f8f8f8" }}>
+        <h1>What others are saying</h1>
       </section>
 
       <div className="content">
