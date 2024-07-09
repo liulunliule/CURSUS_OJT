@@ -80,58 +80,60 @@ const currentChat = [
 const Messages = () => {
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
   return (
-    <div className={`chat-app ${isShowAll ? "active" : ""}`}>
-      <aside className="message-list">
-        <header>
-          <h2>Messages</h2>
+    <div className="chat-tab">
+      <header className="chatting-header">
+        <h2>Messages</h2>
+      </header>
+      <div className={`chat-app ${isShowAll ? "active" : ""}`}>
+        <aside className="message-list">
           <input type="text" placeholder="Search Messages..." />
-        </header>
-        <ul>
-          {messages.map((msg, index) => (
-            <li key={index} className={`message-item ${index === 0 ? "first" : ""}`}>
-              <img src={msg.avatar} alt={msg.name} />
-              <div className="message-info">
-                <h3>{msg.name}</h3>
-                <p>{msg.text}</p>
-              </div>
-              <div className="time-unread-wrapper">
-                <span className="time">{msg.time}</span>
-                {msg.unread > 0 && <span className="unread-count">{msg.unread}</span>}
-              </div>
-            </li>
-          ))}
-        </ul>
-      </aside>
-      <main className="chat-window">
-        <header className="chat-header">
-          <img src={mess1} alt="John Doe" />
-          <div className="header-content">
-            <h3>John Doe</h3>
-            <span className="status">ONLINE</span>
-          </div>
-          <div className="options-menu">
-            <div className="ellipsis">...</div>
-            <ul className="menu-items">
-              <li>Delete</li>
-              <li>Block</li>
-              <li>Report</li>
-              <li>Mute</li>
-            </ul>
-          </div>
-        </header>
-        <div className="chat-messages">
-          {currentChat.map((msg, index) => (
-            <div key={index} className={`chat-message ${msg.isOwnMessage ? "own" : ""}`}>
-              <p>{msg.text}</p>
-              <span className="time">{msg.time}</span>
+          <ul>
+            {messages.map((msg, index) => (
+              <li key={index} className={`message-item ${index === 0 ? "first" : ""}`}>
+                <img src={msg.avatar} alt={msg.name} />
+                <div className="message-info">
+                  <h3>{msg.name}</h3>
+                  <p>{msg.text}</p>
+                </div>
+                <div className="time-unread-wrapper">
+                  <span className="time">{msg.time}</span>
+                  {msg.unread > 0 && <span className="unread-count">{msg.unread}</span>}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </aside>
+        <main className="chat-window">
+          <header className="chat-header">
+            <img src={mess1} alt="John Doe" />
+            <div className="header-content">
+              <h3>John Doe</h3>
+              <span className="status">ONLINE</span>
             </div>
-          ))}
-        </div>
-        <footer className="chat-input">
-          <input type="text" placeholder="Write a message..." />
-          <button>&#9658;</button>
-        </footer>
-      </main>
+            <div className="options-menu">
+              <div className="ellipsis">...</div>
+              <ul className="menu-items">
+                <li>Delete</li>
+                <li>Block</li>
+                <li>Report</li>
+                <li>Mute</li>
+              </ul>
+            </div>
+          </header>
+          <div className="chat-messages">
+            {currentChat.map((msg, index) => (
+              <div key={index} className={`chat-message ${msg.isOwnMessage ? "own" : ""}`}>
+                <p>{msg.text}</p>
+                <span className="time">{msg.time}</span>
+              </div>
+            ))}
+          </div>
+          <footer className="chat-input">
+            <input type="text" placeholder="Write a message..." />
+            <button>&#9658;</button>
+          </footer>
+        </main>
+      </div>
     </div>
   );
 };
