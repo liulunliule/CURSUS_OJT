@@ -207,11 +207,11 @@ function Other_Instructor_View() {
                     </ul>
                   </div>
                   <ul className="profile_button_right">
-                    <li>
+                  <li>
                       <button
                         className="studio_link_btn btn_500"
                         onClick={() =>
-                          (window.location.href = "instructor_dashboard.html")
+                          (window.location.href = "/setting_page/account_tab")
                         }
                       >
                         Cursus Studio
@@ -220,7 +220,7 @@ function Other_Instructor_View() {
                     <li>
                       <button
                         className="studio_link_btn-edit btn_500"
-                        onClick={() => (window.location.href = "setting.html")}
+                        onClick={() => (window.location.href = "/fourlayout/instructor_studio_dashboard")}
                       >
                         Edit
                       </button>
