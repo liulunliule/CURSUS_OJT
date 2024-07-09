@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 export const useDarkMode = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    setTheme(theme === "light" ? "dark" : "light");
   };
 
   useEffect(() => {
     // Load saved theme from localStorage on initial render
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
       setTheme(savedTheme);
     }
@@ -17,7 +17,7 @@ export const useDarkMode = () => {
 
   useEffect(() => {
     // Save theme to localStorage whenever it changes
-    localStorage.setItem('theme', theme);
+    localStorage.setItem("theme", theme);
   }, [theme]); // Watch for changes to the theme state and save them to localStorage
 
   return [theme, toggleTheme];
