@@ -61,8 +61,8 @@
       justify-content: space-between;
   
       .sidebar {
-        width: 30%;
-        padding-right: 20px;
+        width: 35%;
+        margin-left: 60px;
 
         .follow-buttons {
           display: flex;
@@ -127,7 +127,8 @@
       }
   
       .right-section {
-        width: 70%;
+        width: 50%;
+        margin-right: 230px;
   
         .news-section,
         .releases-section {
