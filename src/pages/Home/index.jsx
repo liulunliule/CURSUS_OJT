@@ -385,9 +385,9 @@ const Homepage = () => {
                         <span>615k Students</span>
                         <span className="mr-20">12 Courses</span>
                       </div>
-                      <a href="#" className="prfle12link">
+                      <Link to="/instructor_profile" className="prfle12link">
                         Go To Profile
-                      </a>
+                      </Link>
                     </div>
                   </div>
 
