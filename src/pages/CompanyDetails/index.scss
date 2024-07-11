@@ -1,141 +1,141 @@
 .company-page {
-    font-family: Arial, sans-serif;
-    margin-top: 56px;
-    color: #333;
-    p {
-      color: gray;
-      margin-bottom: 30px;
-    }
-    
+  font-family: Arial, sans-serif;
+  margin-top: 56px;
+  color: #333;
+
+  p {
+    color: gray;
+    margin-bottom: 30px;
+  }
+  
   h1, h2 {
     color: #333;
     font-weight: bold;
     margin-bottom: 20px;
   }
-  }
-  
-  .custom-nav {
-    .custom-ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-  
-      .custom-li {
-        cursor: pointer;
-        padding: 10px;
-        position: relative;
-  
-        &.selected::after {
-          content: '';
-          position: absolute;
-          bottom: -3px;
-          left: 0;
-          right: 0;
-          height: 3px;
-          background: red;
-        }
-  
-        &:hover {
-          font-weight: bold;
-        }
-      }
-    }
-  }
-  
-  .origins {
-    padding: 50px 0;
-    background: #f0f0f0;
-  
-    .origins-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-  
-      .origins-text {
-        flex: 1;
-  
-        h2 {
-          font-size: 1.5em;
-          font-weight: bold;
-          text-align: left;
-        }
-  
-        p {
-          max-width: 1000px;
-          text-align: left;
-          margin-bottom: 30px;
-          line-height: 1.6;
-        }
-      }
-  
-      .origins-image {
-        flex: 1;
-        text-align: center;
-  
-        img {
-          max-width: 100%;
-          height: auto;
-        }
-      }
-    }
-  }  
-  
-  .offices {
-    padding: 50px 0;
-    text-align: center;
+}
 
-    p {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-  }
-
-  .offices h2 {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-
-  
-  .office-list {
+.custom-nav {
+  .custom-ul {
+    list-style: none;
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+
+    .custom-li {
+      cursor: pointer;
+      padding: 10px;
+      position: relative;
+
+      &.selected::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: red;
+      }
+
+      &:hover {
+        font-weight: bold;
+      }
+    }
   }
-  
-  .office-item {
-    max-width: 500px;
+}
+
+.origins {
+  padding: 50px 0;
+  background: #f0f0f0;
+
+  .origins-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    .origins-text {
+      flex: 1;
+
+      h2 {
+        font-size: 1.5em;
+        font-weight: bold;
+        text-align: left;
+      }
+
+      p {
+        max-width: 1000px;
+        text-align: left;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+    }
+
+    .origins-image {
+      flex: 1;
+      text-align: center;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.offices {
+  padding: 50px 0;
+  text-align: center;
+
+  p {
     text-align: center;
+    margin-bottom: 30px;
   }
-  
-  .office-item img {
-    width: 394px;
-    height: 222px;
-    margin-bottom: 10px;
-  }
+}
 
-  h3 {
-    color: #333;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  h5 {
-    color: gray;
-    font-size: 15px;
-    text-align: left;
-  }
+.offices h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
 
-  h6 {
-    margin-top: 20px;
-    font-size: 15px;
-    color: gray;
-    text-align: left;
-  }
+.office-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.office-item {
+  max-width: 500px;
+  text-align: center;
+}
+
+.office-item img {
+  width: 394px;
+  height: 222px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+h5 {
+  color: gray;
+  font-size: 15px;
+  text-align: left;
+}
+
+h6 {
+  margin-top: 20px;
+  font-size: 15px;
+  color: gray;
+  text-align: left;
+}
