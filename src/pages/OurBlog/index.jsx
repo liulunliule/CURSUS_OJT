@@ -1,13 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./index.scss";
-import { blogImage1 } from "../../assets";
-import { blogImage2 } from "../../assets";
-import { blogImage3 } from "../../assets";
-import { blogImage4 } from "../../assets";
+import { blogImage1, blogImage2, blogImage3, blogImage4 } from "../../assets";
 
 const OurBlog = () => {
   const [selected, setSelected] = useState("Blog");
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    fetch("https://668f4a0880b313ba09178dee.mockapi.io/api/blogs")
+      .then((response) => response.json())
+      .then((data) => {
+        const updatedData = data.map(blog => {
+          switch(blog.Blog_ID) {
+            case 1:
+              return { ...blog, Blog_Image: blogImage1 };
+            case 2:
+              return { ...blog, Blog_Image: blogImage2 };
+            case 3:
+              return { ...blog, Blog_Image: blogImage3 };
+            case 4:
+              return { ...blog, Blog_Image: blogImage4 };
+            default:
+              return blog;
+          }
+        });
+        setBlogs(updatedData);
+      })
+      .catch((error) => console.error("Error fetching blog data:", error));
+  }, []);
 
   const handleSelect = (item) => {
     if (item === "About") {
@@ -73,62 +94,17 @@ const OurBlog = () => {
           </div>
 
           <div className="blog-list">
-            <div className="blog-item">
-              <img src={blogImage1} alt="Blog 1" />
-              <div className="blog-info">
-                <p>109k views • March 10, 2020</p>
-                <h3>Blog Title Here</h3>
-                <p>
-                  Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam
-                  metus odio, iaculis eu nunc et, interdum mollis arcu.
-                  Pellentesque viverra faucibus diam. In sit amet laoreet dolor
-                  interdum mollis arcu.
-                </p>
-                <Link to="/secondLayout/blog-detail">Read More</Link>
+            {blogs.map((blog) => (
+              <div className="blog-item" key={blog.Blog_ID}>
+                <img src={blog.Blog_Image} alt={`Blog ${blog.Blog_ID}`} />
+                <div className="blog-info">
+                  <p>{blog.Views} • {blog.Create_At}</p>
+                  <h3>{blog.Blog_Title}</h3>
+                  <p>{blog.Intro}</p>
+                  <Link to="/secondLayout/blog-detail">Read More</Link>
+                </div>
               </div>
-            </div>
-            <div className="blog-item">
-              <img src={blogImage2} alt="Blog 2" />
-              <div className="blog-info">
-                <p>109k views • March 10, 2020</p>
-                <h3>Blog Title Here</h3>
-                <p>
-                  Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam
-                  metus odio, iaculis eu nunc et, interdum mollis arcu.
-                  Pellentesque viverra faucibus diam. In sit amet laoreet dolor
-                  interdum mollis arcu.
-                </p>
-                <Link to="/secondLayout/blog-detail">Read More</Link>
-              </div>
-            </div>
-            <div className="blog-item">
-              <img src={blogImage3} alt="Blog 3" />
-              <div className="blog-info">
-                <p>109k views • March 10, 2020</p>
-                <h3>Blog Title Here</h3>
-                <p>
-                  Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam
-                  metus odio, iaculis eu nunc et, interdum mollis arcu.
-                  Pellentesque viverra faucibus diam. In sit amet laoreet dolor
-                  interdum mollis arcu.
-                </p>
-                <Link to="/secondLayout/blog-detail">Read More</Link>
-              </div>
-            </div>
-            <div className="blog-item">
-              <img src={blogImage4} alt="Blog 4" />
-              <div className="blog-info">
-                <p>109k views • March 10, 2020</p>
-                <h3>Blog Title Here</h3>
-                <p>
-                  Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam
-                  metus odio, iaculis eu nunc et, interdum mollis arcu.
-                  Pellentesque viverra faucibus diam. In sit amet laoreet dolor
-                  interdum mollis arcu.
-                </p>
-                <Link to="/secondLayout/blog-detail">Read More</Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
