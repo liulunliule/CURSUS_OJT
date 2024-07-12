@@ -1,14 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./index.scss";
-import { companyImage } from "../../assets";
-import { officeIndia, officeSF, officeBrazil } from "../../assets";
-
-const officeImages = {
-  officeIndia,
-  officeSF,
-  officeBrazil,
-};
 
 const CompanyDetails = () => {
   const [selected, setSelected] = useState("Company");
@@ -67,7 +59,7 @@ const CompanyDetails = () => {
             </p>
           </div>
           <div className="origins-image">
-            <img src={companyImage} alt="Company Origins" />
+            <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/about/company.jpg" alt="Company Origins" />
           </div>
         </div>
       </section>
@@ -78,7 +70,7 @@ const CompanyDetails = () => {
         <div className="office-list">
           {offices.map((office) => (
             <div key={office.Offices_ID} className="office-item">
-              <img src={officeImages[office.Offices_Image]} alt={`Office in ${office.Nation}`} />
+              <img src={office.Offices_Image} alt={`Office in ${office.Nation}`} />
               <h3>{office.Nation}</h3>
               <h5>{office.Address.split(",")[0]}</h5>
               <h5>{office.Address.split(",").slice(1).join(",")}</h5>

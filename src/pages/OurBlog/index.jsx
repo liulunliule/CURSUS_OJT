@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./index.scss";
-import { blogImage1, blogImage2, blogImage3, blogImage4 } from "../../assets";
 
 const OurBlog = () => {
   const [selected, setSelected] = useState("Blog");
@@ -10,38 +9,19 @@ const OurBlog = () => {
   useEffect(() => {
     fetch("https://668f4a0880b313ba09178dee.mockapi.io/api/blogs")
       .then((response) => response.json())
-      .then((data) => {
-        const updatedData = data.map(blog => {
-          switch(blog.Blog_ID) {
-            case 1:
-              return { ...blog, Blog_Image: blogImage1 };
-            case 2:
-              return { ...blog, Blog_Image: blogImage2 };
-            case 3:
-              return { ...blog, Blog_Image: blogImage3 };
-            case 4:
-              return { ...blog, Blog_Image: blogImage4 };
-            default:
-              return blog;
-          }
-        });
-        setBlogs(updatedData);
-      })
+      .then((data) => setBlogs(data))
       .catch((error) => console.error("Error fetching blog data:", error));
   }, []);
 
   const handleSelect = (item) => {
-    if (item === "About") {
-      window.location.href = "/secondLayout/about";
-    } else if (item === "Company") {
-      window.location.href = "/secondLayout/company";
-    } else if (item === "Blog") {
-      window.location.href = "/secondLayout/blog";
-    } else if (item === "Careers") {
-      window.location.href = "/secondLayout/careers";
-    } else if (item === "Press") {
-      window.location.href = "/secondLayout/press";
-    }
+    const paths = {
+      About: "/secondLayout/about",
+      Company: "/secondLayout/company",
+      Blog: "/secondLayout/blog",
+      Careers: "/secondLayout/careers",
+      Press: "/secondLayout/press",
+    };
+    window.location.href = paths[item];
     setSelected(item);
   };
 
