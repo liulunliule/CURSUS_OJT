@@ -1,8 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.scss";
 
 const Press = () => {
   const [selected, setSelected] = useState("Press");
+  const [news, setNews] = useState([]);
+  const [releases, setReleases] = useState([]);
+
+  useEffect(() => {
+    const fetchNews = async () => {
+      const response = await fetch('https://6690833cc0a7969efd9c4da4.mockapi.io/api/press_news');
+      const data = await response.json();
+      setNews(data);
+    };
+
+    const fetchReleases = async () => {
+      const response = await fetch('https://6690833cc0a7969efd9c4da4.mockapi.io/api/press_releases');
+      const data = await response.json();
+      setReleases(data);
+    };
+
+    fetchNews();
+    fetchReleases();
+  }, []);
 
   const handleSelect = (item) => {
     if (item === "About") {
@@ -62,21 +81,14 @@ const Press = () => {
               <a href="mailto:press@cursus.com">press@cursus.com</a>
             </p>
             <div className="news-items">
-              {Array(3)
-                .fill()
-                .map((_, idx) => (
-                  <div key={idx} className="news-item">
-                    <p>March 10, 2020</p>
-                    <h3>Press News Title</h3>
-                    <p>
-                      Donec eget arcu vel mauris lacinia vestibulum id eu elit.
-                      Nam metus odio, iaculis eu nunc et, interdum mollis arcu.
-                      Pellentesque viverra faucibus diam. In sit amet laoreet
-                      dolor, vitae fringilla quam...
-                    </p>
-                    <a href="#">Read More</a>
-                  </div>
-                ))}
+              {news.map((item) => (
+                <div key={item.Press_News_ID} className="news-item">
+                  <p>{item.Press_At}</p>
+                  <h3>{item.Title}</h3>
+                  <p>{item.Intro}</p>
+                  <a href="#">Read More</a>
+                </div>
+              ))}
             </div>
             <a className="see-more" href="#">
               See More News
@@ -86,14 +98,12 @@ const Press = () => {
             <h2>Press Releases</h2>
             <p>For Release from Cursus</p>
             <div className="release-items">
-              {Array(5)
-                .fill()
-                .map((_, idx) => (
-                  <div key={idx} className="release-item">
-                    <p>March 10, 2020</p>
-                    <h3>Press Release Title</h3>
-                  </div>
-                ))}
+              {releases.map((item) => (
+                <div key={item.Press_Releases_ID} className="release-item">
+                  <p>{item.Press_At}</p>
+                  <h3>{item.Title}</h3>
+                </div>
+              ))}
             </div>
             <a className="see-more" href="#">
               See More Press Releases
