@@ -1,40 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useFetchPressData } from "./data";
 import "./index.scss";
 
 const Press = () => {
   const [selected, setSelected] = useState("Press");
-  const [news, setNews] = useState([]);
-  const [releases, setReleases] = useState([]);
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      const response = await fetch('https://6690833cc0a7969efd9c4da4.mockapi.io/api/press_news');
-      const data = await response.json();
-      setNews(data);
-    };
-
-    const fetchReleases = async () => {
-      const response = await fetch('https://6690833cc0a7969efd9c4da4.mockapi.io/api/press_releases');
-      const data = await response.json();
-      setReleases(data);
-    };
-
-    fetchNews();
-    fetchReleases();
-  }, []);
+  const { news, releases } = useFetchPressData();
 
   const handleSelect = (item) => {
-    if (item === "About") {
-      window.location.href = "/secondLayout/about";
-    } else if (item === "Company") {
-      window.location.href = "/secondLayout/company";
-    } else if (item === "Blog") {
-      window.location.href = "/secondLayout/blog";
-    } else if (item === "Careers") {
-      window.location.href = "/secondLayout/careers";
-    } else if (item === "Press") {
-      window.location.href = "/secondLayout/press";
-    }
+    const paths = {
+      About: "/secondLayout/about",
+      Company: "/secondLayout/company",
+      Blog: "/secondLayout/blog",
+      Careers: "/secondLayout/careers",
+      Press: "/secondLayout/press",
+    };
+    window.location.href = paths[item];
     setSelected(item);
   };
 

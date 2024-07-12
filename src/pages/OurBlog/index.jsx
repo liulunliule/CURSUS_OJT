@@ -1,17 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useFetchBlogs } from "./data";
 import "./index.scss";
 
 const OurBlog = () => {
   const [selected, setSelected] = useState("Blog");
-  const [blogs, setBlogs] = useState([]);
-
-  useEffect(() => {
-    fetch("https://668f4a0880b313ba09178dee.mockapi.io/api/blogs")
-      .then((response) => response.json())
-      .then((data) => setBlogs(data))
-      .catch((error) => console.error("Error fetching blog data:", error));
-  }, []);
+  const blogs = useFetchBlogs();
 
   const handleSelect = (item) => {
     const paths = {
