@@ -2,9 +2,12 @@ import React from 'react';
 import './index.scss';
 import { payout } from "../../assets";
 import { useSelector } from 'react-redux';
+import { useFetchPayoutData } from './data';
 
 const Payout = () => {
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
+  const { nextPayout, transactions } = useFetchPayoutData();
+
   return (
     <div className={`payout-page ${isShowAll ? "active" : ""}`}>
       <div className="content">
@@ -14,9 +17,9 @@ const Payout = () => {
         <div className="payout-content">
           <div className="next-payout">
             <h3>Next payout</h3>
-            <h6>$4568.50</h6>
-            <h5>via Payoneer</h5>
-            <p>Your payout will be processed on <span>April 15, 2020</span></p>
+            <h6>{nextPayout.amount}</h6>
+            <h5>via {nextPayout.method}</h5>
+            <p>Your payout will be processed on <span>{nextPayout.date}</span></p>
           </div>
           <div className="payout-account">
             <h3>Payout account</h3>
@@ -37,16 +40,13 @@ const Payout = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>$2550.54</td>
-                <td>Payoneer</td>
-                <td>15 Mar 2020</td>
-              </tr>
-              <tr>
-                <td>$1950.14</td>
-                <td>Payoneer</td>
-                <td>15 Feb 2020</td>
-              </tr>
+              {transactions.map((transaction, index) => (
+                <tr key={index}>
+                  <td>{transaction.amount}</td>
+                  <td>{transaction.method}</td>
+                  <td>{transaction.date}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
