@@ -2,9 +2,12 @@ import React from 'react';
 import './index.scss';
 import { MasterCard } from "../../assets";
 import { useSelector } from 'react-redux';
+import { useFetchCreditsData } from './data';
 
 const Credits = () => {
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
+  const { addedCredits, transactions } = useFetchCreditsData();
+
   return (
     <div className={`credits-page ${isShowAll ? "active" : ""}`}>
       <div className="content">
@@ -14,9 +17,9 @@ const Credits = () => {
         <div className="credits-content">
           <div className="added-credits">
             <h3>Added Credits</h3>
-            <h6>$100</h6>
-            <h5>via Mastercard</h5>
-            <p>Your credits will be used on <span>purchase courses</span></p>
+            <h6>{addedCredits.amount}</h6>
+            <h5>via {addedCredits.method}</h5>
+            <p>Your credits will be used on <span>{addedCredits.description}</span></p>
           </div>
           <div className="saved-cards">
             <h3>Saved Cards</h3>
@@ -87,16 +90,13 @@ const Credits = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>$50.00</td>
-                <td>Mastercard</td>
-                <td>15 Mar 2020</td>
-              </tr>
-              <tr>
-                <td>$50.00</td>
-                <td>Mastercard</td>
-                <td>10 Feb 2020</td>
-              </tr>
+              {transactions.map((transaction, index) => (
+                <tr key={index}>
+                  <td>{transaction.amount}</td>
+                  <td>{transaction.method}</td>
+                  <td>{transaction.date}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

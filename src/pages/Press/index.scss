@@ -1,192 +1,190 @@
 .press-page {
-    font-family: Arial, sans-serif;
-    margin-top: 56px;
-    color: #333;
-    p {
-      color: gray;
-      margin-bottom: 30px;
+  font-family: Arial, sans-serif;
+  margin-top: 56px;
+  color: #333;
+
+  p {
+    color: gray;
+    margin-bottom: 30px;
+  }
+}
+
+.custom-nav {
+  .custom-ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+
+    .custom-li {
+      cursor: pointer;
+      padding: 10px;
+      position: relative;
+
+      &.selected::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: red;
+      }
+
+      &:hover {
+        font-weight: bold;
+      }
     }
   }
+}
 
-  .custom-header {
-    background: #f8f8f8;
-    padding: 10px 0;
+.hero {
+  text-align: center;
+  padding: 50px 0;
+  font-weight: bold;
+
+  h1 {
+    font-size: 1.5em;
   }
-  
-  .custom-nav {
-    .custom-ul {
-      list-style: none;
+}
+
+.content {
+  background: #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+
+  .sidebar {
+    width: 35%;
+    margin-left: 60px;
+    margin-top: 30px;
+
+    .follow-buttons {
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-  
-      .custom-li {
-        cursor: pointer;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+      margin-bottom: 45px;
+
+      .follow1, .follow2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 10px;
-        position: relative;
-  
-        &.selected::after {
-          content: '';
-          position: absolute;
-          bottom: -3px;
-          left: 0;
-          right: 0;
-          height: 3px;
-          background: red;
-        }
-  
+        width: 50%;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        transition: background-color 0.3s, transform 0.2s;
+
         &:hover {
-          font-weight: bold;
+          transform: scale(1.05);
         }
       }
+
+      .follow1 {
+        background: #007bff;
+
+        &:hover {
+          background: #0056b3;
+        }
+      }
+
+      .follow2 {
+        background: black;
+
+        &:hover {
+          background: #333;
+        }
+      }
+    }
+
+    .learn-more {
+      color: gray;
+      text-align: center;
+      padding: 214px;
+      text-decoration: none;
+    }
+
+    .help-center {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      color: darkblue;
+      text-decoration: none;
     }
   }
 
-    .hero {
-      background: #f0f0f0;
-      text-align: center;
-      padding: 50px 0;
-      font-weight: bold;
-    }
-    
-    .hero h1 {
-      font-size: 1.5em;
-    }
+  .right-section {
+    width: 50%;
+    margin-right: 230px;
+    margin-top: 30px;
 
-    .content {
-      background: #f0f0f0;
-      display: flex;
-      justify-content: space-between;
-  
-      .sidebar {
-        width: 35%;
-        margin-left: 60px;
+    .news-section,
+    .releases-section {
+      margin-bottom: 40px;
 
-        .follow-buttons {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 10px;
-          margin-top: 10px;
-          margin-bottom: 45px;
-        
-          .follow1, .follow2 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-            width: 50%;
-            height: 30px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            color: #fff;
-            font-size: 12px;
-            font-weight: bold;
-            text-align: center;
-            transition: background-color 0.3s, transform 0.2s;
-        
+      h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1em;
+        margin-bottom: 20px;
+      }
+
+      .news-items,
+      .release-items {
+        .news-item,
+        .release-item {
+          border: 1px solid #ddd;
+          background: #f8f8f8;
+          padding: 15px;
+          border-radius: 5px;
+          margin-bottom: 20px;
+
+          p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #555;
+          }
+
+          h3 {
+            margin: 5px 0;
+            font-size: 1.2em;
+            color: #333;
+          }
+
+          a {
+            color: black;
+            text-decoration: none;
+
             &:hover {
-              transform: scale(1.05);
+              text-decoration: underline;
             }
           }
-        
-          .follow1 {
-            background: #007bff;
-        
-            &:hover {
-              background: #0056b3;
-            }
-          }
-        
-          .follow2 {
-            background: black;
-        
-            &:hover {
-              background: #333;
-            }
-          }
-        }
-
-        .learn-more {
-          color: gray;
-          text-align: center;
-          padding: 178px;
-          text-decoration: none;
-        }
-
-        .help-center {
-          display: block;
-          text-align: center;
-          padding: 10px;
-          color: darkblue;
-          text-decoration: none;
         }
       }
-  
-      .right-section {
-        width: 50%;
-        margin-right: 230px;
-  
-        .news-section,
-        .releases-section {
-          margin-bottom: 40px;
-  
-          h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-          }
-  
-          p {
-            font-size: 1em;
-            margin-bottom: 20px;
-          }
-  
-          .news-items,
-          .release-items {
-            .news-item,
-            .release-item {
-              border: 1px solid #ddd;
-              background: #f8f8f8;
-              padding: 15px;
-              border-radius: 5px;
-              margin-bottom: 20px;
-  
-              p {
-                margin: 0;
-                font-size: 0.9em;
-                color: #555;
-              }
-  
-              h3 {
-                margin: 5px 0;
-                font-size: 1.2em;
-                color: #333;
-              }
-  
-              a {
-                color: black;
-                text-decoration: none;
-                &:hover {
-                  text-decoration: underline;
-                }
-              }
-            }
-          }
-  
-        .see-more {
-          display: block;
-          text-align: center;
-          margin-top: 10px;
-          color: black;
-          text-decoration: none;
-  
+
+      .see-more {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: black;
+        text-decoration: none;
+
         &:hover {
           text-decoration: underline;
         }
       }
     }
   }
-}  
+}
