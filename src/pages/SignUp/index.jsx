@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { logoCursus } from "../../assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./index.scss";
 import { logo_Small } from "../../assets";
+import { message } from "antd";
 
 function SignUpPage() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [username, setUsername] = useState("");
+
+    const [messageApi, contextHolder] = message.useMessage();
+    const navigate = useNavigate();
     return (
         <div>
             <div className="signup">
@@ -13,14 +20,18 @@ function SignUpPage() {
                     <h2 className="signup__title">Welcome to Cursus</h2>
                     <p className="signup__desc">Sign Up and Start Learning!</p>
                     <div className="signup__cta">
-                        <form action="" className="signup__form-group">
+                        <div action="" className="signup__form-group">
                             <div className="signup__form">
                                 <input
                                     type="text"
                                     name=""
                                     id=""
-                                    placeholder="Full Name"
+                                    placeholder="User Name"
                                     className="signup__form-input"
+                                    value={username}
+                                    onChange={(event) =>
+                                        setUsername(event.target.value)
+                                    }
                                 />
                             </div>
 
@@ -31,6 +42,10 @@ function SignUpPage() {
                                     id=""
                                     placeholder="Email Address"
                                     className="signup__form-input"
+                                    value={email}
+                                    onChange={(event) =>
+                                        setEmail(event.target.value)
+                                    }
                                 />
                             </div>
                             <div className="signup__form">
@@ -40,6 +55,10 @@ function SignUpPage() {
                                     id=""
                                     placeholder="Password"
                                     className="signup__form-input"
+                                    value={password}
+                                    onChange={(event) =>
+                                        setPassword(event.target.value)
+                                    }
                                 />
                             </div>
                             <div className="signup__remember">
@@ -58,7 +77,7 @@ function SignUpPage() {
                                     Next
                                 </button>
                             </Link>
-                        </form>
+                        </div>
                     </div>
 
                     <div className="signup__forgotPass">
