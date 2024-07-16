@@ -1,34 +1,27 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useFetchBlogs } from "./data";
 import "./index.scss";
-import { blogImage1 } from "../../assets";
-import { blogImage2 } from "../../assets";
-import { blogImage3 } from "../../assets";
-import { blogImage4 } from "../../assets";
 
 const OurBlog = () => {
   const [selected, setSelected] = useState("Blog");
+  const blogs = useFetchBlogs();
 
   const handleSelect = (item) => {
-    if (item === "About") {
-      window.location.href = "/secondLayout/about";
-    } else if (item === "Company") {
-      window.location.href = "/secondLayout/company";
-    } else if (item === "Blog") {
-      window.location.href = "/secondLayout/blog";
-    } else if (item === "Careers") {
-      window.location.href = "/secondLayout/careers";
-    } else if (item === "Press") {
-      window.location.href = "/secondLayout/press";
-    }
+    const paths = {
+      About: "/secondLayout/about",
+      Company: "/secondLayout/company",
+      Blog: "/secondLayout/blog",
+      Careers: "/secondLayout/careers",
+      Press: "/secondLayout/press",
+    };
+    window.location.href = paths[item];
     setSelected(item);
   };
 
   return (
     <div className="blog-page">
-      <header className="custom-header">
+      <header className="custom-header" style={{ backgroundColor: "#f8f8f8" }}>
         <nav className="custom-nav">
           <ul className="custom-ul">
             {["About", "Blog", "Company", "Careers", "Press"].map((item) => (
@@ -44,7 +37,7 @@ const OurBlog = () => {
         </nav>
       </header>
 
-      <section className="hero">
+      <section className="hero" style={{ backgroundColor: "#f8f8f8" }}>
         <h1>Insights, ideas, and stories</h1>
       </section>
 
@@ -75,62 +68,17 @@ const OurBlog = () => {
           </div>
 
           <div className="blog-list">
-            <div className="blog-item">
-              <img src={blogImage1} alt="Blog 1" />
-              <div className="blog-info">
-                <p>109k views • March 10, 2020</p>
-                <h3>Blog Title Here</h3>
-                <p>
-                  Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam
-                  metus odio, iaculis eu nunc et, interdum mollis arcu.
-                  Pellentesque viverra faucibus diam. In sit amet laoreet dolor
-                  interdum mollis arcu.
-                </p>
-                <Link to="/secondLayout/blog-detail">Read More</Link>
+            {blogs.map((blog) => (
+              <div className="blog-item" key={blog.Blog_ID}>
+                <img src={blog.Blog_Image} alt={`Blog ${blog.Blog_ID}`} />
+                <div className="blog-info">
+                  <p>{blog.Views} • {blog.Create_At}</p>
+                  <h3>{blog.Blog_Title}</h3>
+                  <p>{blog.Intro}</p>
+                  <Link to="/secondLayout/blog-detail">Read More</Link>
+                </div>
               </div>
-            </div>
-            <div className="blog-item">
-              <img src={blogImage2} alt="Blog 2" />
-              <div className="blog-info">
-                <p>109k views • March 10, 2020</p>
-                <h3>Blog Title Here</h3>
-                <p>
-                  Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam
-                  metus odio, iaculis eu nunc et, interdum mollis arcu.
-                  Pellentesque viverra faucibus diam. In sit amet laoreet dolor
-                  interdum mollis arcu.
-                </p>
-                <Link to="/secondLayout/blog-detail">Read More</Link>
-              </div>
-            </div>
-            <div className="blog-item">
-              <img src={blogImage3} alt="Blog 3" />
-              <div className="blog-info">
-                <p>109k views • March 10, 2020</p>
-                <h3>Blog Title Here</h3>
-                <p>
-                  Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam
-                  metus odio, iaculis eu nunc et, interdum mollis arcu.
-                  Pellentesque viverra faucibus diam. In sit amet laoreet dolor
-                  interdum mollis arcu.
-                </p>
-                <Link to="/secondLayout/blog-detail">Read More</Link>
-              </div>
-            </div>
-            <div className="blog-item">
-              <img src={blogImage4} alt="Blog 4" />
-              <div className="blog-info">
-                <p>109k views • March 10, 2020</p>
-                <h3>Blog Title Here</h3>
-                <p>
-                  Donec eget arcu vel mauris lacinia vestibulum id eu elit. Nam
-                  metus odio, iaculis eu nunc et, interdum mollis arcu.
-                  Pellentesque viverra faucibus diam. In sit amet laoreet dolor
-                  interdum mollis arcu.
-                </p>
-                <Link to="/secondLayout/blog-detail">Read More</Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

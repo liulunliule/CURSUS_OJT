@@ -8,11 +8,6 @@
   }
 }
 
-.custom-header {
-  background: #f8f8f8;
-  padding: 10px 0;
-}
-
 .custom-nav {
   .custom-ul {
     list-style: none;
@@ -45,7 +40,6 @@
 }
 
 .hero {
-  background: #f0f0f0;
   text-align: center;
   padding: 50px 0;
   font-weight: bold;
@@ -61,7 +55,6 @@
   align-items: center;
   padding: 20px;
   background: #fff;
-  border: 1px solid #ddd;
 
   .video-half {
     flex: 1;
@@ -164,7 +157,7 @@
 }
 
 .benefit-item {
-  max-width: 250px;
+  max-width: 130px;
   text-align: center;
 }
 
@@ -183,6 +176,8 @@
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
+  margin-left: 150px;
+  max-width: 80px;
 
   .role-list {
     flex: 1;

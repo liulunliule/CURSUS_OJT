@@ -22,48 +22,48 @@ import { doLogout } from "../../redux/features/userSlice";
 import { message } from "antd";
 
 function Header() {
-    const [isDropdownOpenLetter, setIsDropdownOpenLetter] = useState(false);
-    const [isDropdownOpenBell, setIsDropdownOpenBell] = useState(false);
-    const [isDropdownOpenAvatar, setIsDropdownOpenAvatar] = useState(false);
-    const [theme, toggleTheme] = useDarkMode();
-    const [messages, setMessages] = useState([]);
+  const [isDropdownOpenLetter, setIsDropdownOpenLetter] = useState(false);
+  const [isDropdownOpenBell, setIsDropdownOpenBell] = useState(false);
+  const [isDropdownOpenAvatar, setIsDropdownOpenAvatar] = useState(false);
+  const [theme, toggleTheme] = useDarkMode();
+  const [messages, setMessages] = useState([]);
 
-    useEffect(() => {
-        const fetchMessages = async () => {
-            try {
-                const response = await fetch(
-                    "https://66751909a8d2b4d072eeb172.mockapi.io/notification"
-                );
-                if (!response.ok) {
-                    throw new Error("Network response was not ok.");
-                }
-                const data = await response.json();
-                setMessages(data);
-            } catch (error) {
-                console.error("Error fetching messages:", error);
-            }
-        };
-
-        fetchMessages();
-    }, []);
-
-    const toggleDropdownLetter = () => {
-        setIsDropdownOpenLetter(!isDropdownOpenLetter);
-        setIsDropdownOpenBell(false);
-        setIsDropdownOpenAvatar(false);
+  useEffect(() => {
+    const fetchMessages = async () => {
+      try {
+        const response = await fetch(
+          "https://66751909a8d2b4d072eeb172.mockapi.io/notification"
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok.");
+        }
+        const data = await response.json();
+        setMessages(data);
+      } catch (error) {
+        console.error("Error fetching messages:", error);
+      }
     };
 
-    const toggleDropdownBell = () => {
-        setIsDropdownOpenBell(!isDropdownOpenBell);
-        setIsDropdownOpenLetter(false);
-        setIsDropdownOpenAvatar(false);
-    };
+    fetchMessages();
+  }, []);
 
-    const toggleDropdownAvatar = () => {
-        setIsDropdownOpenAvatar(!isDropdownOpenAvatar);
-        setIsDropdownOpenLetter(false);
-        setIsDropdownOpenBell(false);
-    };
+  const toggleDropdownLetter = () => {
+    setIsDropdownOpenLetter(!isDropdownOpenLetter);
+    setIsDropdownOpenBell(false);
+    setIsDropdownOpenAvatar(false);
+  };
+
+  const toggleDropdownBell = () => {
+    setIsDropdownOpenBell(!isDropdownOpenBell);
+    setIsDropdownOpenLetter(false);
+    setIsDropdownOpenAvatar(false);
+  };
+
+  const toggleDropdownAvatar = () => {
+    setIsDropdownOpenAvatar(!isDropdownOpenAvatar);
+    setIsDropdownOpenLetter(false);
+    setIsDropdownOpenBell(false);
+  };
 
     const dispatch = useDispatch();
     const handleKeyPress = (event) => {

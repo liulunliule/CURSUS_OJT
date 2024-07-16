@@ -27,7 +27,7 @@ const AboutPage = () => {
 
   return (
     <div className="about-page">
-      <header className="custom-header">
+      <header className="custom-header" style={{ backgroundColor: "#f8f8f8" }}>
         <nav className="custom-nav">
           <ul className="custom-ul">
             {["About", "Blog", "Company", "Careers", "Press"].map((item) => (
@@ -43,7 +43,7 @@ const AboutPage = () => {
         </nav>
       </header>
 
-      <section className="hero">
+      <section className="hero" style={{ backgroundColor: "#f8f8f8" }}>
         <h1>Improving Lives Through Learning</h1>
       </section>
 
