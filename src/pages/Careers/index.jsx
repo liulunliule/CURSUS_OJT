@@ -60,7 +60,7 @@ const CareersPage = () => {
 
   return (
     <div className="careers-page">
-      <header className="custom-header">
+      <header className="custom-header" style={{ backgroundColor: "#f8f8f8" }}>
         <nav className="custom-nav">
           <ul className="custom-ul">
             {["About", "Blog", "Company", "Careers", "Press"].map((item) => (
@@ -76,10 +76,8 @@ const CareersPage = () => {
         </nav>
       </header>
 
-      <section className="hero">
-        <h1>
-          We're a passionate, creative, and global company, come work with us.
-        </h1>
+      <section className="hero" style={{ backgroundColor: "#f8f8f8" }}>
+        <h1>We're a passionate, creative, and global company, come work with us.</h1>
       </section>
 
       <section className="video-container">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,8 +7,23 @@ import {
   faCheck,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
+import { hanldeGetResult } from "./dataResult";
 
 const Certification_test_result = () => {
+  const [result, setResult] = useState([]);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        const result = await hanldeGetResult();
+        setResult(result);
+        console.log("result ", result);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    loadData();
+  }, []);
   return (
     <div className="test_result">
       <div className="toolbar_certification">
@@ -60,48 +75,52 @@ const Certification_test_result = () => {
           <div className="col-md-6">
             <div className="certi_form stickytime">
               <div className="test_result_bg">
-                <ul className="test_result_left">
-                  <li>
-                    <div className="result_dt">
-                      <div className="right_ans">
-                        <FontAwesomeIcon
-                          icon={faCheck}
-                          style={{
-                            // color: "#fff",
-                            width: "35px",
-                            height: "100%",
-                          }}
-                        />
+                {result ? (
+                  <ul className="test_result_left">
+                    <li>
+                      <div className="result_dt">
+                        <div className="right_ans">
+                          <FontAwesomeIcon
+                            icon={faCheck}
+                            style={{
+                              // color: "#fff",
+                              width: "35px",
+                              height: "100%",
+                            }}
+                          />
+                        </div>
+                        <p>
+                          Right<span>({result.Right})</span>
+                        </p>
                       </div>
-                      <p>
-                        Right<span>(15)</span>
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="result_dt">
-                      <div className="wrong_ans">
-                        <FontAwesomeIcon
-                          icon={faXmark}
-                          style={{
-                            // color: "#fff",
-                            width: "35px",
-                            height: "100%",
-                          }}
-                        />
+                    </li>
+                    <li>
+                      <div className="result_dt">
+                        <div className="wrong_ans">
+                          <FontAwesomeIcon
+                            icon={faXmark}
+                            style={{
+                              // color: "#fff",
+                              width: "35px",
+                              height: "100%",
+                            }}
+                          />
+                        </div>
+                        <p>
+                          Wrong<span>({result.Wrong})</span>
+                        </p>
                       </div>
-                      <p>
-                        Wrong<span>(5)</span>
-                      </p>
-                    </div>
-                  </li>
-                  <li>
-                    <div className="result_dt">
-                      <h4>15</h4>
-                      <p>Out of 20</p>
-                    </div>
-                  </li>
-                </ul>
+                    </li>
+                    <li>
+                      <div className="result_dt">
+                        <h4>{result.Right}</h4>
+                        <p>Out of {result.totalMark}</p>
+                      </div>
+                    </li>
+                  </ul>
+                ) : (
+                  <div>Loading...</div>
+                )}
                 <div className="result_content">
                   <h2>Congratulation! Joginder</h2>
                   <p>You are eligible for this certificate</p>

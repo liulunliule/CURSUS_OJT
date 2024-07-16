@@ -1,31 +1,19 @@
 import React, { useState } from "react";
+import { useFetchOffices } from "./data";
 import "./index.scss";
-import { companyImage } from "../../assets";
-import { officeIndia } from "../../assets";
-import { officeSF } from "../../assets";
-import { officeBrazil } from "../../assets";
 
 const CompanyDetails = () => {
   const [selected, setSelected] = useState("Company");
+  const offices = useFetchOffices();
 
   const handleSelect = (item) => {
-    if (item === "About") {
-      window.location.href = "/secondLayout/about";
-    } else if (item === "Company") {
-      window.location.href = "/secondLayout/company";
-    } else if (item === "Blog") {
-      window.location.href = "/secondLayout/blog";
-    } else if (item === "Careers") {
-      window.location.href = "/secondLayout/careers";
-    } else if (item === "Press") {
-      window.location.href = "/secondLayout/press";
-    }
+    window.location.href = `/secondLayout/${item.toLowerCase()}`;
     setSelected(item);
   };
 
   return (
     <div className="company-page">
-      <header className="custom-header">
+      <header className="custom-header" style={{ backgroundColor: "#f8f8f8" }}>
         <nav className="custom-nav">
           <ul className="custom-ul">
             {["About", "Blog", "Company", "Careers", "Press"].map((item) => (
@@ -41,8 +29,8 @@ const CompanyDetails = () => {
         </nav>
       </header>
 
-      <section className="hero">
-        <h1>Expanding learning opportunities</h1>
+      <section className="hero" style={{ backgroundColor: "#f8f8f8", padding: "40px" }}>
+        <h1 style={{ marginTop: "6px" }}>Expanding learning opportunities</h1>
       </section>
 
       <section className="origins">
@@ -61,7 +49,7 @@ const CompanyDetails = () => {
             </p>
           </div>
           <div className="origins-image">
-            <img src={companyImage} alt="Company Origins" />
+            <img src="https://gambolthemes.net/html-items/cursus-new-demo/images/about/company.jpg" alt="Company Origins" />
           </div>
         </div>
       </section>
@@ -70,27 +58,15 @@ const CompanyDetails = () => {
         <h2>Our Offices</h2>
         <p>Cursus branches around the world</p>
         <div className="office-list">
-          <div className="office-item">
-            <img src={officeIndia} alt="Office in Punjab, India" />
-            <h3>Punjab, India</h3>
-            <h5>#1235 Sks Nagar St No. 8 Phase 3, Pakhowal Road,</h5>
-            <h5>141001, LDH, Punjab, India</h5>
-            <h6>0161-1234567</h6>
-          </div>
-          <div className="office-item">
-            <img src={officeSF} alt="Office in San Francisco, CA" />
-            <h3>San Francisco, CA</h3>
-            <h5>586 Lorem st. 5 floor,</h5>
-            <h5>San Francisco, CA 94107</h5>
-            <h6>+1-415-1234567</h6>
-          </div>
-          <div className="office-item">
-            <img src={officeBrazil} alt="Office in São Paulo, Brazil" />
-            <h3>São Paulo, Brazil</h3>
-            <h5>Lorem ipsum 589,</h5>
-            <h5>Vila Madalena, São Paulo - SP 01443-010</h5>
-            <h6>+55-11-1234567</h6>
-          </div>
+          {offices.map((office) => (
+            <div key={office.Offices_ID} className="office-item">
+              <img src={office.Offices_Image} alt={`Office in ${office.Nation}`} />
+              <h3>{office.Nation}</h3>
+              <h5>{office.Address.split(",")[0]}</h5>
+              <h5>{office.Address.split(",").slice(1).join(",")}</h5>
+              <h6>{office.Hotline}</h6>
+            </div>
+          ))}
         </div>
       </section>
     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,6 +11,7 @@ import { faCreditCard } from "@fortawesome/free-regular-svg-icons";
 import { faPaypal } from "@fortawesome/free-brands-svg-icons";
 import { line } from "../../assets";
 import { Select } from "antd";
+import { hanldeGetAddr, hanldeGetOrder, updateAddress } from "./dataCheckout";
 
 const Checkout_Page = () => {
   const [activeId, setActiveId] = useState(null);
@@ -273,7 +274,64 @@ const Checkout_Page = () => {
     { value: "244", label: "Zambia" },
     { value: "245", label: "Zimbabwe" },
   ];
+  const handleSave = async (e) => {
+    e.preventDefault(); // Ngăn chặn hành vi submit mặc định của form
+    try {
+      const updatedAddr = await updateAddress(addr);
+      console.log("Address updated successfully:", updatedAddr);
+      // Thực hiện hành động khác sau khi cập nhật thành công
+      loadData();
+    } catch (error) {
+      console.error("Error updating address:", error);
+    }
+  };
+  const [Order, setOrder] = useState([]);
+  // const [addr, setAddr] = useState([]);
+  const [addr, setAddr] = useState({
+    AcademyName: "",
+    Country: "",
+    Address1: "",
+    Address2: "",
+    City: "",
+    State: "",
+    ZipCode: "",
+    Phone: "",
+    FirstName: "",
+    LastName: "",
+  });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setAddr((prevAddr) => ({
+      ...prevAddr,
+      [name]: value,
+    }));
+  };
 
+  const handleSelectChange = (value) => {
+    const selectedCountry = countries.find(
+      (country) => country.value === value
+    );
+    setAddr((prevAddr) => ({
+      ...prevAddr,
+      Country: selectedCountry ? selectedCountry.label : "",
+    }));
+  };
+  const loadData = async () => {
+    try {
+      const Order = await hanldeGetOrder();
+      setOrder(Order);
+      console.log("Order ", Order);
+
+      const addr = await hanldeGetAddr();
+      setAddr(addr);
+      console.log("Addr ", addr);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+  useEffect(() => {
+    loadData();
+  }, []);
   return (
     <div className="Checkout_Page">
       <div className="toolbar_certification">
@@ -322,244 +380,276 @@ const Checkout_Page = () => {
           <div className="row">
             <div className="col-lg-8">
               <div className="checkout_chk_bg">
-                <div className="checkout_title">
-                  <h4>Billing Details</h4>
-                  <img src={line} alt="" />
-                </div>
-                <div
-                  className="panel-group"
-                  id="accordion"
-                  role="tablist"
-                  aria-multiselectable="true"
-                >
-                  <div className="panel-default">
-                    <div className="panel-heading" role="tab" id="address1">
-                      <div className="panel-title">
-                        <div
-                          className={`link ${
-                            activeId === 1 ? "" : "collapsed"
-                          }`}
-                          onClick={() => handleToggle(1)}
-                        >
-                          Edit Address
+                {addr ? (
+                  <div>
+                    <div className="checkout_title">
+                      <h4>Billing Details</h4>
+                      <img src={line} alt="" />
+                    </div>
+                    <div
+                      className="panel-group"
+                      id="accordion"
+                      role="tablist"
+                      aria-multiselectable="true"
+                    >
+                      <div className="panel-default">
+                        <div className="panel-heading" role="tab" id="address1">
+                          <div className="panel-title">
+                            <div
+                              className={`link ${
+                                activeId === 1 ? "" : "collapsed"
+                              }`}
+                              onClick={() => handleToggle(1)}
+                            >
+                              Edit Address
+                            </div>
+                          </div>
                         </div>
+                        {activeId === 1 && (
+                          <div>
+                            <div className="panel-body">
+                              <form onSubmit={handleSave}>
+                                <div className="row">
+                                  <div className="col-lg-6">
+                                    <div className="UI search panel-body_text">
+                                      <label>First Name*</label>
+                                      <div className="UI input panel-body_text_item">
+                                        <input
+                                          className="prompt srch_explore"
+                                          type="text"
+                                          name="FirstName"
+                                          // value={addr.FirstName}
+                                          id="id_name"
+                                          required
+                                          maxlength="64"
+                                          // placeholder="First Name"
+                                          placeholder={addr.FirstName}
+                                          onChange={handleChange}
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-lg-6">
+                                    <div className="UI search panel-body_text">
+                                      <label>Last Name*</label>
+                                      <div className="UI input panel-body_text_item">
+                                        <input
+                                          className="prompt srch_explore"
+                                          type="text"
+                                          name="LastName"
+                                          // value={addr.LastName}
+                                          id="id_surname"
+                                          required=""
+                                          maxlength="64"
+                                          // placeholder="Last Name"
+                                          placeholder={addr.LastName}
+                                          onChange={handleChange}
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-lg-12">
+                                    <div className="UI search panel-body_text">
+                                      <label>Academy Name*</label>
+                                      <div className="UI input panel-body_text_item">
+                                        <input
+                                          className="prompt srch_explore"
+                                          type="text"
+                                          name="AcademyName"
+                                          // value={addr.AcademyName}
+                                          id="id_academy"
+                                          required=""
+                                          maxlength="64"
+                                          // placeholder="Academy Name"
+                                          placeholder={addr.AcademyName}
+                                          onChange={handleChange}
+                                        />
+                                      </div>
+                                      <div className="help-block">
+                                        If you want your invoices addressed to a
+                                        academy. Leave blank to use your full
+                                        name.
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-lg-12">
+                                    <div className="country">
+                                      <label>Country*</label>
+                                    </div>
+                                    <Select
+                                      showSearch
+                                      style={{
+                                        width: "100%",
+                                        height: 40,
+                                        borderRadius: 3,
+                                      }}
+                                      placeholder="Select a country"
+                                      optionFilterProp="children"
+                                      filterOption={(input, option) =>
+                                        option.label
+                                          .toLowerCase()
+                                          .includes(input.toLowerCase())
+                                      }
+                                      filterSort={filterSort}
+                                      onChange={handleSelectChange}
+                                      value={
+                                        countries.find(
+                                          (country) =>
+                                            country.label === addr.Country
+                                        )?.value || undefined
+                                      }
+                                    >
+                                      {countries.map((country) => (
+                                        <Option
+                                          key={country.value}
+                                          value={country.value}
+                                        >
+                                          {country.label}
+                                        </Option>
+                                      ))}
+                                    </Select>
+                                  </div>
+                                  <div className="col-lg-12">
+                                    <div className="UI search panel-body_text">
+                                      <label>Address1*</label>
+                                      <div className="UI input panel-body_text_item">
+                                        <input
+                                          className="prompt srch_explore"
+                                          type="text"
+                                          name="Address1"
+                                          // value={addr.Address1}
+                                          id="id_address1"
+                                          required=""
+                                          maxlength="300"
+                                          // placeholder="Address Line 1"
+                                          placeholder={addr.Address1}
+                                          onChange={handleChange}
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-lg-12">
+                                    <div className="UI search panel-body_text">
+                                      <label>Address2*</label>
+                                      <div className="UI input panel-body_text_item">
+                                        <input
+                                          className="prompt srch_explore"
+                                          type="text"
+                                          name="Address2"
+                                          // value={addr.Address2}
+                                          id="id_address2"
+                                          required=""
+                                          maxlength="300"
+                                          // placeholder="Address Line 2"
+                                          placeholder={addr.Address2}
+                                          onChange={handleChange}
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-lg-6">
+                                    <div className="UI search panel-body_text">
+                                      <label>City*</label>
+                                      <div className="UI input panel-body_text_item">
+                                        <input
+                                          className="prompt srch_explore"
+                                          type="text"
+                                          name="City"
+                                          // value={addr.City}
+                                          id="id_city"
+                                          required=""
+                                          maxlength="64"
+                                          // placeholder="City"
+                                          placeholder={addr.City}
+                                          onChange={handleChange}
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-lg-6">
+                                    <div className="UI search panel-body_text">
+                                      <label>State / Province / Region*</label>
+                                      <div className="UI input panel-body_text_item">
+                                        <input
+                                          className="prompt srch_explore"
+                                          type="text"
+                                          name="State"
+                                          // value={addr.State}
+                                          id="id_state"
+                                          required=""
+                                          maxlength="64"
+                                          // placeholder="State / Province / Region"
+                                          placeholder={addr.State}
+                                          onChange={handleChange}
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-lg-6">
+                                    <div className="UI search panel-body_text">
+                                      <label>Zip/Postal Code*</label>
+                                      <div className="UI input panel-body_text_item">
+                                        <input
+                                          className="prompt srch_explore"
+                                          type="text"
+                                          name="ZipCode"
+                                          // value={addr.ZipCode}
+                                          id="id_zip"
+                                          required=""
+                                          maxlength="64"
+                                          // placeholder="Zip / Postal Code"
+                                          placeholder={addr.ZipCode}
+                                          onChange={handleChange}
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-lg-6">
+                                    <div className="UI search panel-body_text">
+                                      <label>Phone Number*</label>
+                                      <div className="UI input panel-body_text_item">
+                                        <input
+                                          className="prompt srch_explore"
+                                          type="text"
+                                          name="Phone"
+                                          // value={addr.Phone}
+                                          id="id_phone"
+                                          required=""
+                                          maxlength="12"
+                                          // placeholder="Phone Number"
+                                          placeholder={addr.Phone}
+                                          onChange={handleChange}
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="col-lg-6">
+                                    <button
+                                      className="save_address_btn"
+                                      type="submit"
+                                    >
+                                      Save Changes
+                                    </button>
+                                  </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
-                    {activeId === 1 && (
-                      <div>
-                        <div className="panel-body">
-                          <form>
-                            <div className="row">
-                              <div className="col-lg-6">
-                                <div className="UI search panel-body_text">
-                                  <label>First Name*</label>
-                                  <div className="UI input panel-body_text_item">
-                                    <input
-                                      className="prompt srch_explore"
-                                      type="text"
-                                      name="name"
-                                      value="Joginder"
-                                      id="id_name"
-                                      required=""
-                                      maxlength="64"
-                                      placeholder="First Name"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-lg-6">
-                                <div className="UI search panel-body_text">
-                                  <label>Last Name*</label>
-                                  <div className="UI input panel-body_text_item">
-                                    <input
-                                      className="prompt srch_explore"
-                                      type="text"
-                                      name="surname"
-                                      value="Singh"
-                                      id="id_surname"
-                                      required=""
-                                      maxlength="64"
-                                      placeholder="Last Name"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-lg-12">
-                                <div className="UI search panel-body_text">
-                                  <label>Academy Name*</label>
-                                  <div className="UI input panel-body_text_item">
-                                    <input
-                                      className="prompt srch_explore"
-                                      type="text"
-                                      name="academyname"
-                                      value="Gambolthemes"
-                                      id="id_academy"
-                                      required=""
-                                      maxlength="64"
-                                      placeholder="Academy Name"
-                                    />
-                                  </div>
-                                  <div className="help-block">
-                                    If you want your invoices addressed to a
-                                    academy. Leave blank to use your full name.
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-lg-12">
-                                <div className="country">
-                                  <label>Country*</label>
-                                </div>
-                                <Select
-                                  showSearch
-                                  style={{
-                                    width: "100%",
-                                    height: 40,
-                                    borderRadius: 3,
-                                  }}
-                                  placeholder="Select a country"
-                                  optionFilterProp="children"
-                                  filterOption={(input, option) =>
-                                    option.label
-                                      .toLowerCase()
-                                      .includes(input.toLowerCase())
-                                  }
-                                  filterSort={filterSort}
-                                >
-                                  {countries.map((country) => (
-                                    <Option
-                                      key={country.value}
-                                      value={country.value}
-                                    >
-                                      {country.label}
-                                    </Option>
-                                  ))}
-                                </Select>
-                              </div>
-                              <div className="col-lg-12">
-                                <div className="UI search panel-body_text">
-                                  <label>Address1*</label>
-                                  <div className="UI input panel-body_text_item">
-                                    <input
-                                      className="prompt srch_explore"
-                                      type="text"
-                                      name="addressname"
-                                      value="#1234 Street No. 45, Ward No. 60, Phase 3"
-                                      id="id_address1"
-                                      required=""
-                                      maxlength="300"
-                                      placeholder="Address Line 1"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-lg-12">
-                                <div className="UI search panel-body_text">
-                                  <label>Address2*</label>
-                                  <div className="UI input panel-body_text_item">
-                                    <input
-                                      className="prompt srch_explore"
-                                      type="text"
-                                      name="addressname2"
-                                      value="Shahid Karnail Singh Nagar, Near Pakhowal Road"
-                                      id="id_address2"
-                                      required=""
-                                      maxlength="300"
-                                      placeholder="Address Line 2"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-lg-6">
-                                <div className="UI search panel-body_text">
-                                  <label>City*</label>
-                                  <div className="UI input panel-body_text_item">
-                                    <input
-                                      className="prompt srch_explore"
-                                      type="text"
-                                      name="city"
-                                      value="Ludhiana"
-                                      id="id_city"
-                                      required=""
-                                      maxlength="64"
-                                      placeholder="City"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-lg-6">
-                                <div className="UI search panel-body_text">
-                                  <label>State / Province / Region*</label>
-                                  <div className="UI input panel-body_text_item">
-                                    <input
-                                      className="prompt srch_explore"
-                                      type="text"
-                                      name="state"
-                                      value="Punjab"
-                                      id="id_state"
-                                      required=""
-                                      maxlength="64"
-                                      placeholder="State / Province / Region"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-lg-6">
-                                <div className="UI search panel-body_text">
-                                  <label>Zip/Postal Code*</label>
-                                  <div className="UI input panel-body_text_item">
-                                    <input
-                                      className="prompt srch_explore"
-                                      type="text"
-                                      name="zip"
-                                      value="141013"
-                                      id="id_zip"
-                                      required=""
-                                      maxlength="64"
-                                      placeholder="Zip / Postal Code"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-lg-6">
-                                <div className="UI search panel-body_text">
-                                  <label>Phone Number*</label>
-                                  <div className="UI input panel-body_text_item">
-                                    <input
-                                      className="prompt srch_explore"
-                                      type="text"
-                                      name="phone"
-                                      value="+91123456789"
-                                      id="id_phone"
-                                      required=""
-                                      maxlength="12"
-                                      placeholder="Phone Number"
-                                    />
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="col-lg-6">
-                                <button
-                                  className="save_address_btn"
-                                  type="submit"
-                                >
-                                  Save Changes
-                                </button>
-                              </div>
-                            </div>
-                          </form>
-                        </div>
-                      </div>
-                    )}
+                    <div className="address_text">
+                      {addr.FirstName} {addr.LastName} <br />
+                      {addr.Address1},
+                      <br /> {addr.Address2}
+                      <br /> Road.
+                      <br /> {addr.City}, {addr.State}, {addr.ZipCode}
+                      <br /> {addr.Country}
+                    </div>
                   </div>
-                </div>
-                <div className="address_text">
-                  Joginder Singh <br />
-                  #1234 Street No. 45, Ward No. 60, Phase 3,
-                  <br /> Shahid Karnail Singh Nagar, Near Pakhowal
-                  <br /> Road.
-                  <br /> Ludhiana, Punjab, 141013
-                  <br /> India
-                </div>
+                ) : (
+                  <div>Loading...</div>
+                )}
               </div>
               <div className="checkout_chk_bg">
                 <div className="checkout_title">
@@ -635,7 +725,7 @@ const Checkout_Page = () => {
                     role="tabpanel"
                     aria-labelledby="credit-tab"
                   >
-                    <form className="basic_form">
+                    <form className="basic_form title">
                       <div className="row">
                         <div className="col-md-6">
                           <div className="UI search panel-body_text">
@@ -880,25 +970,31 @@ const Checkout_Page = () => {
                     <h4>Order Details</h4>
                     <img src={line} alt="" />
                   </div>
-                  <div className="order_dt_section">
-                    <div className="order_title">
-                      <h4>Baby Plan</h4>
-                      <div className="order_price">$49</div>
+                  {Order ? (
+                    <div className="order_dt_section">
+                      <div className="order_title">
+                        <h4>{Order.CourseName}</h4>
+                        <div className="order_price">${Order.CoursePrice}</div>
+                      </div>
+                      <div className="order_title">
+                        <h6>Taxes(GST)</h6>
+                        <div className="order_price">${Order.Taxes}</div>
+                      </div>
+                      <div className="order_title">
+                        <h4>Total</h4>
+                        <div className="order_price">
+                          ${Order.CoursePrice + Order.Taxes}
+                        </div>
+                      </div>
+                      <Link to="/invoice_page">
+                        <button className="chckot_btn" type="submit">
+                          Confirm Checkout
+                        </button>
+                      </Link>
                     </div>
-                    <div className="order_title">
-                      <h6>Taxes(GST)</h6>
-                      <div className="order_price">$2</div>
-                    </div>
-                    <div className="order_title">
-                      <h3>Total</h3>
-                      <div className="order_price">$51</div>
-                    </div>
-                    <Link to="/invoice_page">
-                      <button className="chckot_btn" type="submit">
-                        Confirm Checkout
-                      </button>
-                    </Link>
-                  </div>
+                  ) : (
+                    <div>Load Order Detail...</div>
+                  )}
                 </div>
               </div>
             </div>
@@ -908,29 +1004,35 @@ const Checkout_Page = () => {
                   <h4>Order Summary</h4>
                   <img src={line} alt="" />
                 </div>
-                <div className="order_dt_section">
-                  <div className="order_title">
-                    <h4>Baby Plan</h4>
-                    <div className="order_price">$49</div>
+                {Order ? (
+                  <div className="order_dt_section">
+                    <div className="order_title">
+                      <h4>{Order.CourseName}</h4>
+                      <div className="order_price">${Order.CoursePrice}</div>
+                    </div>
+                    <div className="order_title">
+                      <h6>Taxes(GST)</h6>
+                      <div className="order_price">${Order.Taxes}</div>
+                    </div>
+                    <div className="order_title">
+                      <h2>Total</h2>
+                      <div className="order_price5">
+                        ${Order.CoursePrice + Order.Taxes}
+                      </div>
+                    </div>
+                    <div className="scr_text">
+                      <FontAwesomeIcon
+                        icon={faLock}
+                        style={{
+                          marginRight: 5,
+                        }}
+                      />{" "}
+                      Secure checkout
+                    </div>
                   </div>
-                  <div className="order_title">
-                    <h6>Taxes(GST)</h6>
-                    <div className="order_price">$2</div>
-                  </div>
-                  <div className="order_title">
-                    <h2>Total</h2>
-                    <div className="order_price5">$51</div>
-                  </div>
-                  <div className="scr_text">
-                    <FontAwesomeIcon
-                      icon={faLock}
-                      style={{
-                        marginRight: 5,
-                      }}
-                    />{" "}
-                    Secure checkout
-                  </div>
-                </div>
+                ) : (
+                  <div>Loading...</div>
+                )}
               </div>
             </div>
           </div>
