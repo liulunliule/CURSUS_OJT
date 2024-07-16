@@ -12,23 +12,21 @@ import { persistReducer, persistStore } from "redux-persist";
 // });
 
 const persistConfig = {
-    key: "root",
-    storage,
-    whitelist: ["user", "savedCourse"],
+  key: "root",
+  storage,
+  whitelist: ["user", "savedCourse", "certificate"],
 };
 
 const rootReducer = combineReducers({
-    user: userSlice,
-    savedCourse: savedCourseReducer,
+  user: userSlice,
+  savedCourse: savedCourseReducer,
+  certificate: certificateReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-    reducer: {
-        savedCourse: savedCourseReducer,
-        certificate: certificateReducer,
-    },
+  reducer: persistedReducer,
 });
 
 export const persistor = persistStore(store);

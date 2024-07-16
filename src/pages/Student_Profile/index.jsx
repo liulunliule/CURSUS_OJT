@@ -115,7 +115,7 @@ function Other_Instructor_View() {
                     <li>
                       <div className="userInfor_join_group">
                         <div className="userInfor_join_title">
-                          Enroll Students
+                          Purchased
                         </div>
                         <div className="userInfor_join_parameter">
                           {userInfo.enrollstudents}
@@ -124,15 +124,7 @@ function Other_Instructor_View() {
                     </li>
                     <li>
                       <div className="userInfor_join_group">
-                        <div className="userInfor_join_title">Courses</div>
-                        <div className="userInfor_join_parameter">
-                          {courseCount}
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="userInfor_join_group">
-                        <div className="userInfor_join_title">Reviews</div>
+                        <div className="userInfor_join_title">My Reviews</div>
                         <div className="userInfor_join_parameter">
                           {userInfo.reviews}
                         </div>
@@ -142,6 +134,16 @@ function Other_Instructor_View() {
                       <div className="userInfor_join_group">
                         <div className="userInfor_join_title">
                           Subscriptions
+                        </div>
+                        <div className="userInfor_join_parameter">
+                          {userInfo.subscriptions}
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div className="userInfor_join_group">
+                        <div className="userInfor_join_title">
+                          Cerfiticates
                         </div>
                         <div className="userInfor_join_parameter">
                           {userInfo.subscriptions}
