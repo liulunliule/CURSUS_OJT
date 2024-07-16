@@ -8,15 +8,11 @@ import { Logo_dark } from "../../assets";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles, lightTheme, darkTheme } from "./global";
 import { useDarkMode } from "./darkMode";
-import { logo } from "../../assets";
-import { search } from "../../assets";
-import { cart } from "../../assets";
-import { letter } from "../../assets";
-import { bell } from "../../assets";
-import { avatar } from "../../assets";
+import { logo, search, cart, letter, bell, avatar } from "../../assets";
 import { useDispatch } from "react-redux";
 import { toggleShowAll } from "../../redux/features/savedCourseSlice";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { fetchUserMessage, fetchUserNotification } from "./data";
 
 function Header() {
   const [isDropdownOpenLetter, setIsDropdownOpenLetter] = useState(false);
@@ -24,25 +20,40 @@ function Header() {
   const [isDropdownOpenAvatar, setIsDropdownOpenAvatar] = useState(false);
   const [theme, toggleTheme] = useDarkMode();
   const [messages, setMessages] = useState([]);
+  const [notification, setNotification] = useState([]);
+  const [showCreateButton, setShowCreateButton] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const fetchMessages = async () => {
-      try {
-        const response = await fetch(
-          "https://66751909a8d2b4d072eeb172.mockapi.io/notification"
-        );
-        if (!response.ok) {
-          throw new Error("Network response was not ok.");
-        }
-        const data = await response.json();
-        setMessages(data);
-      } catch (error) {
-        console.error("Error fetching messages:", error);
+      const messageData = await fetchUserMessage();
+      setMessages(messageData);
+    };
+    const fetchNotification = async () => {
+      const notificateData = await fetchUserNotification();
+      setNotification(notificateData);
+    };
+    const showHeaderSecond = () => {
+      if (
+        location.pathname === "/" ||
+        location.pathname === "/fourlayout/instructor_studio_dashboard" ||
+        location.pathname === "/fourlayout/purchased_courses_page" ||
+        location.pathname === "/fourlayout/messages" ||
+        location.pathname === "/fourlayout/instructor_notification" ||
+        location.pathname === "/fourlayout/my_certificates" ||
+        location.pathname === "/fourlayout/reviews_page_student" ||
+        location.pathname === "/fourlayout/credits" ||
+        location.pathname === "/fourlayout/students_statement"
+      ) {
+        setShowCreateButton(false);
+      } else {
+        setShowCreateButton(true);
       }
     };
-
     fetchMessages();
-  }, []);
+    fetchNotification();
+    showHeaderSecond();
+  }, [location]);
 
   const toggleDropdownLetter = () => {
     setIsDropdownOpenLetter(!isDropdownOpenLetter);
@@ -68,6 +79,7 @@ function Header() {
       window.location.href = "/secondLayout/search_results_page";
     }
   };
+
   return (
     <div className="compo_header">
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
@@ -114,19 +126,21 @@ function Header() {
             </div>
           </div>
           <div className="header-right col-md-5">
-            <Link
-              to="/thirdlayout/create_new_course"
-              className={`create-button ${
-                theme !== "light" ? "dark-theme-hover" : ""
-              }`}
-            >
-              Create New Course
-            </Link>
+            {!showCreateButton && (
+              <Link
+                to="/thirdlayout/create_new_course"
+                className={`create-button ${
+                  theme !== "light" ? "dark-theme-hover" : ""
+                }`}
+              >
+                Create New Course
+              </Link>
+            )}
             <div className="user-profile">
               <Link to="/secondLayout/Shopping_cart">
                 <div className="icon-container">
                   <img src={cart} alt="Cart" className="icon-cart" />
-                  <span className="header-badge">5</span>
+                  <span className="header-badge">{messages.length}</span>
                 </div>
               </Link>
               <div className="icon-container">
@@ -139,10 +153,9 @@ function Header() {
                 {isDropdownOpenLetter && (
                   <div className="dropdown">
                     <ul>
-                      {messages.map((message) => (
-                        <Link to="/fourlayout/messages">
+                      {messages.slice(0, 3).map((message) => (
+                        <Link to="/fourlayout/messages" key={message.id}>
                           <li
-                            key={message.id}
                             className={`item-message ${
                               theme !== "light" ? "drop-hover" : ""
                             }`}
@@ -175,7 +188,7 @@ function Header() {
                     </ul>
                   </div>
                 )}
-                <span className="header-badge">6</span>
+                <span className="header-badge">{messages.length}</span>
               </div>
               <div className="icon-container">
                 <img
@@ -187,24 +200,26 @@ function Header() {
                 {isDropdownOpenBell && (
                   <div className="dropdown">
                     <ul>
-                      {messages.map((message) => (
-                        <Link to="/thirdlayout/reviews_page_instructor">
+                      {notification.slice(0, 3).map((notification) => (
+                        <Link
+                          to="/thirdlayout/reviews_page_instructor"
+                          key={notification.id}
+                        >
                           <li
-                            key={message.id}
                             className={`item-message ${
                               theme !== "light" ? "drop-hover" : ""
                             }`}
                           >
                             <img
-                              src={message.Avatar}
-                              alt={message.name}
+                              src={notification.Avatar}
+                              alt={notification.name}
                               className="avatar-message"
                             />
 
                             <div className="message-content">
-                              <p>{message.name}</p>
-                              <p>{message.message}</p>
-                              <p>{message.time}</p>
+                              <p>{notification.name}</p>
+                              <p>{notification.message}</p>
+                              <p>{notification.time}</p>
                             </div>
                           </li>
                         </Link>
@@ -223,7 +238,7 @@ function Header() {
                     </ul>
                   </div>
                 )}
-                <span className="header-badge">1</span>
+                <span className="header-badge">{notification.length}</span>
               </div>
 
               <div className="icon-container">
@@ -278,24 +293,6 @@ function Header() {
                         </div>
                       </li>
                       <hr />
-                      {/* <li
-                        className={`item-dask ${
-                          theme !== "light" ? "item-dask-hover" : ""
-                        }`}
-                        onClick={toggleTheme}
-                      >
-                        <div className="fa-moon-container">
-                          <FontAwesomeIcon icon={faMoon} className="fa-moon" />
-                        </div>
-                        <span className="nightmode">Night Mode</span>
-                        <button
-                          className={`toggle-button ${
-                            theme === "dark" ? "on" : ""
-                          }`}
-                          onClick={toggleTheme}
-                        ></button>
-                      </li>
-                      <hr /> */}
                       <div className="dropItemText">
                         <Link to="/fourlayout/instructor_studio_dashboard">
                           <li className="item">Cursus dashboard</li>
@@ -324,7 +321,6 @@ function Header() {
           </div>
         </header>
       </ThemeProvider>
-      {/* <SidebarFrontend /> */}
     </div>
   );
 }

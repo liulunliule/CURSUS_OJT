@@ -89,8 +89,6 @@ function Other_Instructor_View() {
     return chunkedArray;
   };
 
-  const postsChunks = chunkArray(posts, 4);
-
   return (
     <div className={`instructor-container ${isShowAll ? "active" : ""}`}>
       <div className="container-fluid">
