@@ -3,7 +3,7 @@
     margin-top: 0 !important;
     margin-bottom: 8px !important;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #333;
     margin-left: 25px;
 
@@ -11,6 +11,13 @@
         width: 20px;
         height: 20px;
         margin-right: 10px;
+    }
+}
+
+.wrapper12.active {
+    transition: margin-left 0.5s ease;
+    .sa4d25_sa {
+        margin-left: 60px;
     }
 }
 
@@ -27,7 +34,7 @@
     background: #ed2a26;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     border: none;
     margin-left: 25px;
 }
@@ -59,13 +66,12 @@
     display: flex;
 
     img {
-        
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
-            border: 2px solid #fff;
-            border-radius: 100%;
-            box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        border: 2px solid #fff;
+        border-radius: 100%;
+        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
     }
 }
 
@@ -76,7 +82,7 @@
     h6 {
         font-size: 14px;
         font-weight: 500;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         margin-bottom: 5px;
         color: #333;
         text-align: left;
@@ -86,7 +92,7 @@
     p {
         font-size: 14px;
         font-weight: 400;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         margin-bottom: 8px;
         color: #686f7a;
         text-align: left;
@@ -98,7 +104,7 @@
 .time_ago {
     font-size: 12px;
     font-weight: 400;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     margin-bottom: 0;
     color: #afafaf;
     text-align: left;

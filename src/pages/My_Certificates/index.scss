@@ -3,9 +3,9 @@
     transition: all 0.3s ease-out;
     margin-left: 250px;
     overflow-x: hidden;
-}
-.active {
-    margin-left: 0;
+    &.active {
+        margin-left: 60px;
+    }
 }
 
 .my-certificates-title {
