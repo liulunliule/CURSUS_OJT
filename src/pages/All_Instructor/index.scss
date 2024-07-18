@@ -2,7 +2,6 @@
     margin-top: 60px;
     margin-bottom: 70px;
     transition: all 0.3s ease-out;
-    // margin-left: 1px;
     overflow-x: hidden;
 
     .body_all_instructor {
@@ -106,9 +105,9 @@
 
 .all_instructor_infor_img img {
     text-align: center;
-    width: 100px !important;
-    height: 100px !important;
-    display: inline-block !important;
+    width: 100px ;
+    height: 100px ;
+    display: inline-block ;
     border-radius: 100%;
     border: 2px solid #fff;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
@@ -145,7 +144,6 @@
     font-size: 13px;
     color: #686f7a;
     margin-top: 10px;
-    font-family: "Roboto", sans-serif;
     font-weight: 400;
     margin-bottom: 17px;
     text-overflow: ellipsis;

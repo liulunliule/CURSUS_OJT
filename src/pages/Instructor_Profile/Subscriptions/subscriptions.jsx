@@ -1,20 +1,21 @@
-// Subscriptions.js
-import React from "react";
-import "./index.scss";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchSubscriptions } from "../../../redux/features/myProfileSlice"; // Điều chỉnh đường dẫn nếu cần
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import Bell from "../../../assets/img/bell.png";
+import "./index.scss";
+const Subscriptions = () => {
+  const dispatch = useDispatch();
+  const subscriptions = useSelector((state) => state.myProfile.subscriptions);
 
-const Subscriptions = ({ subscriptions, activeTab }) => {
+  useEffect(() => {
+    dispatch(fetchSubscriptions());
+  }, [dispatch]);
+  if (!Array.isArray(subscriptions)) {
+    return <div>No courses available.</div>;
+  }
   return (
-    <div
-      className={`tab-pane fade ${
-        activeTab === "nav-subscriptions" ? "active show" : ""
-      }`}
-      id="nav-subscriptions"
-      role="tabpanel"
-      aria-labelledby="nav-subscriptions-tab"
-    >
       <div className="subscriptions_container">
         <h3 className="about_title_text">Subscriptions</h3>
         <div className="subscriptions_grid">
@@ -41,21 +42,22 @@ const Subscriptions = ({ subscriptions, activeTab }) => {
                 <div className="subscription_category">
                   {subscription.category}
                 </div>
-                <div className="subscription_button"> 
-                <ul className="subscription_actions">
-                  <li>
-                    <button className="subscribes_button">Subscribed</button>
-                  </li>
-                  <li>
-                    <button className="notification_button">
-                      <img
-                        src={Bell}
-                        className="subscription_notification"
-                        alt="Notification"
-                      />
-                    </button>
-                  </li>
-                </ul></div>  
+                <div className="subscription_button">
+                  <ul className="subscription_actions">
+                    <li>
+                      <button className="subscribes_button">Subscribed</button>
+                    </li>
+                    <li>
+                      <button className="notification_button">
+                        <img
+                          src={Bell}
+                          className="subscription_notification"
+                          alt="Notification"
+                        />
+                      </button>
+                    </li>
+                  </ul>
+                </div>
                 <div className="subscription_stats">
                   <span className="students_count">
                     {subscription.students.toLocaleString()} Students
@@ -69,7 +71,6 @@ const Subscriptions = ({ subscriptions, activeTab }) => {
           ))}
         </div>
       </div>
-    </div>
   );
 };
 
