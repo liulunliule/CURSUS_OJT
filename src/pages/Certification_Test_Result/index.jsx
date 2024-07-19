@@ -7,23 +7,19 @@ import {
   faCheck,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
-import { hanldeGetResult } from "./dataResult";
+// import { hanldeGetResult } from "./dataResult";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchResult } from "../../redux/features/certificationTestResultSlice";
 
 const Certification_test_result = () => {
-  const [result, setResult] = useState([]);
+  const dispatch = useDispatch();
+  const { result, status, error } = useSelector(
+    (state) => state.certificationTestResult
+  );
 
   useEffect(() => {
-    const loadData = async () => {
-      try {
-        const result = await hanldeGetResult();
-        setResult(result);
-        console.log("result ", result);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    loadData();
-  }, []);
+    dispatch(fetchResult());
+  }, [dispatch]);
   return (
     <div className="test_result">
       <div className="toolbar_certification">
@@ -75,61 +71,71 @@ const Certification_test_result = () => {
           <div className="col-md-6">
             <div className="certi_form stickytime">
               <div className="test_result_bg">
-                {result ? (
-                  <ul className="test_result_left">
-                    <li>
-                      <div className="result_dt">
-                        <div className="right_ans">
-                          <FontAwesomeIcon
-                            icon={faCheck}
-                            style={{
-                              // color: "#fff",
-                              width: "35px",
-                              height: "100%",
-                            }}
-                          />
-                        </div>
-                        <p>
-                          Right<span>({result.Right})</span>
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="result_dt">
-                        <div className="wrong_ans">
-                          <FontAwesomeIcon
-                            icon={faXmark}
-                            style={{
-                              // color: "#fff",
-                              width: "35px",
-                              height: "100%",
-                            }}
-                          />
-                        </div>
-                        <p>
-                          Wrong<span>({result.Wrong})</span>
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="result_dt">
-                        <h4>{result.Right}</h4>
-                        <p>Out of {result.totalMark}</p>
-                      </div>
-                    </li>
-                  </ul>
-                ) : (
-                  <div>Loading...</div>
+                {status === "loading" && (
+                  <div>
+                    <h1>Waitting for result...</h1>
+                  </div>
                 )}
-                <div className="result_content">
-                  <h2>Congratulation! Joginder</h2>
-                  <p>You are eligible for this certificate</p>
-                  <Link to="/certificate">
-                    <button className="download_btn" type="submit">
-                      Download Certificate
-                    </button>
-                  </Link>
-                </div>
+                {status === "failed" && (
+                  <div>
+                    <h1>Failed to load the result</h1>
+                  </div>
+                )}
+                {status === "succeeded" && result && (
+                  <div>
+                    <ul className="test_result_left">
+                      <li>
+                        <div className="result_dt">
+                          <div className="right_ans">
+                            <FontAwesomeIcon
+                              icon={faCheck}
+                              style={{
+                                // color: "#fff",
+                                width: "35px",
+                                height: "100%",
+                              }}
+                            />
+                          </div>
+                          <p>
+                            Right<span>({result.Right})</span>
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="result_dt">
+                          <div className="wrong_ans">
+                            <FontAwesomeIcon
+                              icon={faXmark}
+                              style={{
+                                // color: "#fff",
+                                width: "35px",
+                                height: "100%",
+                              }}
+                            />
+                          </div>
+                          <p>
+                            Wrong<span>({result.Wrong})</span>
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <div className="result_dt">
+                          <h4>{result.Right}</h4>
+                          <p>Out of {result.totalMark}</p>
+                        </div>
+                      </li>
+                    </ul>
+                    <div className="result_content">
+                      <h2>Congratulation! Joginder</h2>
+                      <p>You are eligible for this certificate</p>
+                      <Link to="/certificate">
+                        <button className="download_btn" type="submit">
+                          Download Certificate
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
