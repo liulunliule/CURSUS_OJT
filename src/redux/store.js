@@ -4,6 +4,7 @@ import certificateReducer from "./features/myCertificateSlice";
 import userSlice from "./features/userSlice";
 import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
+import courseSlice from "./features/courseSlice";
 // export const store = configureStore({
 //     reducer: {
 //         savedCourse: savedCourseReducer,
@@ -12,21 +13,22 @@ import { persistReducer, persistStore } from "redux-persist";
 // });
 
 const persistConfig = {
-  key: "root",
-  storage,
-  whitelist: ["user", "savedCourse", "certificate"],
+    key: "root",
+    storage,
+    whitelist: ["user", "savedCourse", "certificate", "course"],
 };
 
 const rootReducer = combineReducers({
-  user: userSlice,
-  savedCourse: savedCourseReducer,
-  certificate: certificateReducer,
+    user: userSlice,
+    savedCourse: savedCourseReducer,
+    certificate: certificateReducer,
+    course: courseSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: persistedReducer,
+    reducer: persistedReducer,
 });
 
 export const persistor = persistStore(store);

@@ -16,11 +16,11 @@ import { message } from "antd";
 import { useDispatch } from "react-redux";
 import { fetchUserLoginSuccess } from "../../redux/features/userSlice";
 import { LoadingOutlined } from "@ant-design/icons";
+import { toast } from "react-toastify";
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [messageApi, contextHolder] = message.useMessage();
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
@@ -35,42 +35,47 @@ function Login() {
         //    Validate
         const isValidEmail = validateEmail(email);
         if (!isValidEmail) {
-            messageApi.open({
-                type: "error",
-                content: "Invalid email! Please try again",
-            });
+            toast.error("Invalid email! Please try again");
             return;
         } else if (!password) {
-            messageApi.open({
-                type: "error",
-                content: "Invalid password",
-            });
+            toast.error("Invalid password");
             return;
         }
         setIsLoading(true);
-        //submit login
-        const response = await postLogin(email, password);
-        console.log("Check: ", response.data);
 
-        if (response && response.data.EC === 0) {
-            dispatch(fetchUserLoginSuccess(response.data));
+        //submit login
+        try {
+            const response = await postLogin(email, password);
+            // console.log("Check: ", response.data);
+            if (response && response.data.message === "Login successful") {
+                setIsLoading(false);
+                toast.success(response.data.message);
+                dispatch(fetchUserLoginSuccess(response.data));
+                navigate("/");
+            }
+        } catch (error) {
+            toast.error(error.message);
             setIsLoading(false);
-            navigate("/", {
-                state: { message: response.data.EM, type: "success" },
-            });
         }
-        if (response && response.data.EC !== 0) {
-            messageApi.open({
-                type: "error",
-                content: response.data.EM,
-            });
-            setIsLoading(false);
-        }
+
+        // if (response && response.data.EC === 0) {
+        //     dispatch(fetchUserLoginSuccess(response.data));
+        //     setIsLoading(false);
+        //     navigate("/", {
+        //         state: { message: response.data.message, type: "success" },
+        //     });
+        // }
+        // if (response && response.data.EC !== 0) {
+        // messageApi.open({
+        //     type: "error",
+        //     content: response.data.EM,
+        // });
+        // setIsLoading(false);
+        // // }
     };
 
     return (
         <div>
-            {contextHolder}
             <div className="login">
                 <Link to="/">
                     <img src={logo} alt="" className="login__logo" />

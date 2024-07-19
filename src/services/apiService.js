@@ -1,26 +1,51 @@
 import axios from "axios";
 
-const postLogin = (email, password) => {
-    return axios.post("http://localhost:8081/api/v1/login", {
+// const postLogin = (email, password) => {
+//     if (!email || !password) {
+//         console.error("Email and password are required");
+//         return;
+//     }
+//     return axios.post("http://isolutions.top:8080/auth/login", {
+//         email,
+//         password,
+//     });
+// };
+
+const postLogin = async (email, password) => {
+    if (!email || !password) {
+        console.error("Email and password are required");
+        return;
+    }
+    try {
+        const response = await axios.post(
+            "http://isolutions.top:8080/auth/login",
+            {
+                email,
+                password,
+            }
+        );
+        return response;
+    } catch (error) {
+        if (error.response) {
+            // Server responded with a status other than 2xx
+            console.error("Error data:", error.response.data);
+            // console.error("Error status:", error.response.status);
+            // console.error("Error headers:", error.response.headers);
+            throw error.response.data; // Throw error data to be caught in handleLogin
+        }
+    }
+};
+
+const postRegister = (name, email, password) => {
+    return axios.post("http://isolutions.top:8080/auth/register", {
+        name,
         email,
         password,
-        delay: 3000,
     });
 };
 
-const logout = (email, refresh_token) => {
-    return axios.post("http://localhost:8081/api/v1/logout", {
-        email,
-        refresh_token,
-    });
-};
-
-const postRegister = (email, password, username) => {
-    return axios.post("http://localhost:8081/api/v1/register", {
-        email,
-        password,
-        username,
-    });
+const getCourse = () => {
+    return axios.get("http://isolutions.top:8080/api/course/view-course");
 };
 
 const getDataChart = () => {
@@ -84,6 +109,7 @@ const fetchOfficesData = () => {
 };
 
 export {
+    getCourse,
     fetchOfficesData,
     fetchReleasesData,
     fetchPressData,
@@ -91,7 +117,6 @@ export {
     fetchTransactionsData,
     fetchCreditData,
     postLogin,
-    logout,
     postRegister,
     getDataChart,
     getQuestion,

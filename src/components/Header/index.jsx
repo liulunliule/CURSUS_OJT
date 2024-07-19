@@ -14,9 +14,10 @@ import { toggleShowAll } from "../../redux/features/savedCourseSlice";
 import { Link, useLocation } from "react-router-dom";
 import { fetchUserMessage, fetchUserNotification } from "./data";
 import { useNavigate } from "react-router-dom";
-import { logout } from "../../services/apiService";
+
 import { doLogout } from "../../redux/features/userSlice";
 import { message } from "antd";
+import { toast } from "react-toastify";
 
 function Header() {
     const [isDropdownOpenLetter, setIsDropdownOpenLetter] = useState(false);
@@ -96,29 +97,14 @@ function Header() {
     const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
     console.log(account);
 
-    const [messageApi, contextHolder] = message.useMessage();
     const handleLogout = async () => {
-        const response = await logout(account.email, account.refresh_token);
-        console.log("Check res: ", response.data);
-        if (response.data && response.data.EC === 0) {
-            // Clear data redux
-            dispatch(doLogout());
-            navigate("/login");
-            messageApi.open({
-                type: "error",
-                content: response.data.EM,
-            });
-        } else {
-            messageApi.open({
-                type: "error",
-                content: "Cannot Logout",
-            });
-            return;
-        }
+        // Clear data redux
+        dispatch(doLogout());
+        toast.success("Log out successfully");
+        navigate("/login");
     };
     return (
         <div className="compo_header">
-            {contextHolder}
             <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
                 <GlobalStyles />
                 <header className="header">
