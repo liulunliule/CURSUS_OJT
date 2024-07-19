@@ -1,18 +1,18 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchOffices } from "../../redux/features/officesSlice";
 
 export const useFetchOffices = () => {
-  const [offices, setOffices] = useState([]);
+  const dispatch = useDispatch();
+  const offices = useSelector((state) => state.offices.offices || []);
+  const status = useSelector((state) => state.offices.status);
+  const error = useSelector((state) => state.offices.error);
 
   useEffect(() => {
-    axios.get("https://668f4a0880b313ba09178dee.mockapi.io/api/offices")
-      .then(response => {
-        setOffices(response.data);
-      })
-      .catch(error => {
-        console.error("Error fetching office data:", error);
-      });
-  }, []);
+    if (status === 'idle') {
+      dispatch(fetchOffices());
+    }
+  }, [status, dispatch]);
 
-  return offices;
+  return { offices, status, error };
 };
