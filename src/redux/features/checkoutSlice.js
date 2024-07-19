@@ -1,0 +1,97 @@
+// features/checkout/checkoutSlice.js
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+// Thunks to fetch and update data
+export const fetchOrder = createAsyncThunk(
+  'checkout/fetchOrder',
+  async () => {
+    const response = await axios.get(`https://669454774bd61d8314c73d55.mockapi.io/Order/1`);
+    return response.data;
+  }
+);
+
+export const fetchAddr = createAsyncThunk(
+  'checkout/fetchAddr',
+  async () => {
+    const response = await axios.get(`https://669454774bd61d8314c73d55.mockapi.io/addr/1`);
+    return response.data;
+  }
+);
+
+export const updateAddress = createAsyncThunk(
+  'checkout/updateAddress',
+  async (addr) => {
+    const response = await axios.put(`https://669454774bd61d8314c73d55.mockapi.io/addr/1`, addr);
+    return response.data;
+  }
+);
+
+const checkoutSlice = createSlice({
+  name: 'checkout',
+  initialState: {
+    order: [],
+    addr: {
+      AcademyName: "",
+      Country: "",
+      Address1: "",
+      Address2: "",
+      City: "",
+      State: "",
+      ZipCode: "",
+      Phone: "",
+      FirstName: "",
+      LastName: "",
+    },
+    status: 'idle',
+    error: null,
+  },
+  reducers: {
+    setAddr: (state, action) => {
+      state.addr = action.payload;
+    },
+    setActiveTab: (state, action) => {
+      state.activeTab = action.payload;
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchOrder.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchOrder.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.order = action.payload;
+      })
+      .addCase(fetchOrder.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      })
+      .addCase(fetchAddr.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchAddr.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.addr = action.payload;
+      })
+      .addCase(fetchAddr.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      })
+      .addCase(updateAddress.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(updateAddress.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.addr = action.payload;
+      })
+      .addCase(updateAddress.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
+  },
+});
+
+export const { setAddr, setActiveTab } = checkoutSlice.actions;
+
+export default checkoutSlice.reducer;

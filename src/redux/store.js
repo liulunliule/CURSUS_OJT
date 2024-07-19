@@ -7,6 +7,7 @@ import certificationTestResultReducer from './features/certificationTestResultSl
 import analyticsReducer from './features/analyticsSlice';
 import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
+import checkoutReducer from './features/checkoutSlice';
 // export const store = configureStore({
 //     reducer: {
 //         savedCourse: savedCourseReducer,
@@ -27,6 +28,7 @@ const rootReducer = combineReducers({
   certificationTestPage: certificationTestPageReducer,
   certificationTestResult: certificationTestResultReducer,
   analytics: analyticsReducer,
+  checkout: checkoutReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -11,15 +11,25 @@ import { faCreditCard } from "@fortawesome/free-regular-svg-icons";
 import { faPaypal } from "@fortawesome/free-brands-svg-icons";
 import { line } from "../../assets";
 import { Select } from "antd";
-import { hanldeGetAddr, hanldeGetOrder, updateAddress } from "./dataCheckout";
+import {
+  fetchAddr,
+  fetchOrder,
+  setAddr,
+  updateAddress,
+} from "../../redux/features/checkoutSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Checkout_Page = () => {
+  const dispatch = useDispatch();
   const [activeId, setActiveId] = useState(null);
   const [activeTab, setActiveTab] = useState("credit-tab");
+
+  const { addr, order, status, error } = useSelector((state) => state.checkout);
 
   const handleToggle = (id) => {
     setActiveId(activeId === id ? null : id);
   };
+
   const { Option } = Select;
   const filterSort = (optionA, optionB) => {
     const labelA = optionA.label ? optionA.label.toLowerCase() : "";
@@ -274,64 +284,39 @@ const Checkout_Page = () => {
     { value: "244", label: "Zambia" },
     { value: "245", label: "Zimbabwe" },
   ];
+
   const handleSave = async (e) => {
-    e.preventDefault(); // Ngăn chặn hành vi submit mặc định của form
+    e.preventDefault();
     try {
-      const updatedAddr = await updateAddress(addr);
-      console.log("Address updated successfully:", updatedAddr);
-      // Thực hiện hành động khác sau khi cập nhật thành công
-      loadData();
+      await dispatch(updateAddress(addr)).unwrap();
+      console.log("Address updated successfully");
     } catch (error) {
       console.error("Error updating address:", error);
     }
   };
-  const [Order, setOrder] = useState([]);
-  // const [addr, setAddr] = useState([]);
-  const [addr, setAddr] = useState({
-    AcademyName: "",
-    Country: "",
-    Address1: "",
-    Address2: "",
-    City: "",
-    State: "",
-    ZipCode: "",
-    Phone: "",
-    FirstName: "",
-    LastName: "",
-  });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setAddr((prevAddr) => ({
-      ...prevAddr,
-      [name]: value,
-    }));
+    dispatch(setAddr({ ...addr, [name]: value }));
   };
 
   const handleSelectChange = (value) => {
     const selectedCountry = countries.find(
       (country) => country.value === value
     );
-    setAddr((prevAddr) => ({
-      ...prevAddr,
-      Country: selectedCountry ? selectedCountry.label : "",
-    }));
+    dispatch(
+      setAddr({
+        ...addr,
+        Country: selectedCountry ? selectedCountry.label : "",
+      })
+    );
   };
-  const loadData = async () => {
-    try {
-      const Order = await hanldeGetOrder();
-      setOrder(Order);
-      console.log("Order ", Order);
 
-      const addr = await hanldeGetAddr();
-      setAddr(addr);
-      console.log("Addr ", addr);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
   useEffect(() => {
-    loadData();
-  }, []);
+    dispatch(fetchOrder());
+    dispatch(fetchAddr());
+  }, [dispatch]);
+
   return (
     <div className="Checkout_Page">
       <div className="toolbar_certification">
@@ -970,20 +955,20 @@ const Checkout_Page = () => {
                     <h4>Order Details</h4>
                     <img src={line} alt="" />
                   </div>
-                  {Order ? (
+                  {order ? (
                     <div className="order_dt_section">
                       <div className="order_title">
-                        <h4>{Order.CourseName}</h4>
-                        <div className="order_price">${Order.CoursePrice}</div>
+                        <h4>{order.CourseName}</h4>
+                        <div className="order_price">${order.CoursePrice}</div>
                       </div>
                       <div className="order_title">
                         <h6>Taxes(GST)</h6>
-                        <div className="order_price">${Order.Taxes}</div>
+                        <div className="order_price">${order.Taxes}</div>
                       </div>
                       <div className="order_title">
                         <h4>Total</h4>
                         <div className="order_price">
-                          ${Order.CoursePrice + Order.Taxes}
+                          ${order.CoursePrice + order.Taxes}
                         </div>
                       </div>
                       <Link to="/invoice_page">
@@ -1004,20 +989,20 @@ const Checkout_Page = () => {
                   <h4>Order Summary</h4>
                   <img src={line} alt="" />
                 </div>
-                {Order ? (
+                {order ? (
                   <div className="order_dt_section">
                     <div className="order_title">
-                      <h4>{Order.CourseName}</h4>
-                      <div className="order_price">${Order.CoursePrice}</div>
+                      <h4>{order.CourseName}</h4>
+                      <div className="order_price">${order.CoursePrice}</div>
                     </div>
                     <div className="order_title">
                       <h6>Taxes(GST)</h6>
-                      <div className="order_price">${Order.Taxes}</div>
+                      <div className="order_price">${order.Taxes}</div>
                     </div>
                     <div className="order_title">
                       <h2>Total</h2>
                       <div className="order_price5">
-                        ${Order.CoursePrice + Order.Taxes}
+                        ${order.CoursePrice + order.Taxes}
                       </div>
                     </div>
                     <div className="scr_text">
