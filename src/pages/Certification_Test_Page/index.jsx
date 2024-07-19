@@ -3,22 +3,17 @@ import "./index.scss";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesLeft } from "@fortawesome/free-solid-svg-icons";
-import { hanldeGetQuestion } from "./getDataTest";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchQuestions } from "../../redux/features/certificationTestPageSlice";
 
 const Certification_Test_Page = () => {
-  const [questions, setQuestion] = useState([]);
-
+  const dispatch = useDispatch();
+  const { questions, status, error } = useSelector(
+    (state) => state.certificationTestPage
+  );
   useEffect(() => {
-    const loadData = async () => {
-      try {
-        const questions = await hanldeGetQuestion();
-        setQuestion(questions);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-    loadData();
-  }, []);
+    dispatch(fetchQuestions());
+  }, [dispatch]);
   return (
     <div className="Certification_test">
       <div className="toolbar_certification">
@@ -90,7 +85,10 @@ const Certification_Test_Page = () => {
           <div className="col-lg-7 col-md-6">
             <div className="certi_form">
               <div className="">
-                {questions && questions.length > 0 ? (
+                {status === "loading" && <div>Loading...</div>}
+                {status === "failed" && <div>{error}</div>}
+                {status === "succeeded" &&
+                  questions.length > 0 &&
                   questions.map((ques, index) => (
                     <div className="ques_item">
                       <div className="ques_title">
@@ -130,10 +128,7 @@ const Certification_Test_Page = () => {
                         </div>
                       </div>
                     </div>
-                  ))
-                ) : (
-                  <div>Loading...</div>
-                )}
+                  ))}
               </div>
               <Link to="/secondLayout/Certification_test_result">
                 <button className="test_submit_btn" type="submit">

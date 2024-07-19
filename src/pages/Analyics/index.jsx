@@ -19,8 +19,9 @@ import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { Image, Table } from "antd";
 import { render } from "@testing-library/react";
 import { thumbnail } from "../../assets";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { handleGetDataChart } from "./dataAnalysis";
+import { fetchAnalyticsData } from "../../redux/features/analyticsSlice";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -33,9 +34,12 @@ ChartJS.register(
 );
 
 const Analyics = () => {
+  const dispatch = useDispatch();
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
+  const chartData = useSelector((state) => state.analytics.data);
+  const chartDataStatus = useSelector((state) => state.analytics.status);
   const [activeTab, setActiveTab] = useState("user");
-  const [chartData, setChartData] = useState(null);
+  // const [chartData, setChartData] = useState(null);
   const dataSubscribers = {
     labels: chartData?.months,
     datasets: [
@@ -83,7 +87,6 @@ const Analyics = () => {
       },
     ],
   };
-
   //not Done
   const [dataUserActivity, setDataUserActivity] = useState({
     labels: chartData?.monthsActivity,
@@ -119,7 +122,6 @@ const Analyics = () => {
       },
     ],
   });
-
   const updateDataUserActivity = (tab) => {
     const activityData = getActivityData(tab);
     setDataUserActivity({
@@ -157,7 +159,6 @@ const Analyics = () => {
       ],
     });
   };
-
   const getActivityData = (tab) => {
     switch (tab) {
       case "session":
@@ -183,7 +184,6 @@ const Analyics = () => {
         };
     }
   };
-
   const dataWeeklySale = {
     labels: chartData?.weekly,
     datasets: [
@@ -202,7 +202,6 @@ const Analyics = () => {
       },
     ],
   };
-
   const dataSaleOfYear = {
     labels: chartData?.months,
     datasets: [
@@ -333,19 +332,15 @@ const Analyics = () => {
     },
   ];
 
-  const fetchData = async () => {
-    const data = await handleGetDataChart();
-    setChartData(data);
-    console.log("data ", data);
-  };
-
   useEffect(() => {
     updateDataUserActivity(activeTab);
   }, [activeTab, chartData]);
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (chartDataStatus === "idle") {
+      dispatch(fetchAnalyticsData());
+    }
+  }, [chartDataStatus, dispatch]);
   return (
     <div className={`analyics ${isShowAll ? "" : "active"}`}>
       <div className="container-fluid">

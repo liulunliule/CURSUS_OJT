@@ -23,13 +23,12 @@ const postRegister = (email, password, username) => {
     });
 };
 
-const getDataChart = () => {
-    return fetch("https://66952ff94bd61d8314ca672b.mockapi.io/year/1");
-};
-
-const getQuestion = () => {
-    return fetch(`https://66753c2ba8d2b4d072ef3683.mockapi.io/Test`);
-};
+// const getDataChart = () => {
+//     return fetch("https://66952ff94bd61d8314ca672b.mockapi.io/year/1");
+// };
+// const getQuestion = () => {
+//     return fetch(`https://66753c2ba8d2b4d072ef3683.mockapi.io/Test`);
+// };
 
 const getOrder = () => {
     return fetch(`https://669454774bd61d8314c73d55.mockapi.io/Order/1`);
@@ -93,8 +92,8 @@ export {
     postLogin,
     logout,
     postRegister,
-    getDataChart,
-    getQuestion,
+    // getDataChart,
+    // getQuestion,
     getOrder,
     getGetAddr,
     updateAddress,
