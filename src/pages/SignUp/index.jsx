@@ -22,6 +22,24 @@ function SignUpPage() {
             );
     };
 
+    const handleNext = () => {
+        //    Validate
+        const isValidEmail = validateEmail(email);
+        if (!username) {
+            toast.error("Invalid username");
+            return;
+        } else if (!isValidEmail) {
+            toast.error("Invalid email! Please try again");
+            return;
+        } else if (!password) {
+            toast.error("Invalid password");
+            return;
+        }
+
+        // Next
+        else navigate("/signupstep", { state: { email, password, username } });
+    };
+
     return (
         <div>
             <div className="signup">
@@ -85,7 +103,7 @@ function SignUpPage() {
 
                             <button
                                 className="signup__button signup__signin"
-                                onClick={() => navigate("/signupstep")}
+                                onClick={handleNext}
                             >
                                 Next
                             </button>

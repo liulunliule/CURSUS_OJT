@@ -56,7 +56,7 @@ function Saved_courses_page() {
                                 <div className="saved_courses_media-item">
                                     <div className="saved_courses_media-thumbnail">
                                         <img
-                                            src={thumbnail}
+                                            src={savedCourse.video}
                                             alt=""
                                             className="thumbnail"
                                         />
@@ -65,23 +65,23 @@ function Saved_courses_page() {
                                             <div className="star">
                                                 <StarOutlined />
                                             </div>
-                                            4.5
+                                            {savedCourse.ratting}
                                         </div>
                                         <div className="saved_courses_media-play"></div>
                                         <div className="saved_courses_media-seller">
-                                            BESTSELLER
+                                            {savedCourse.level}
                                         </div>
                                         <div className="saved_courses_media-timer">
-                                            25 hours
+                                            {savedCourse.time} hours
                                         </div>
                                     </div>
                                     <div className="saved_courses_media-content">
                                         <div className="saved_courses_media-content-views">
                                             <div className="view-left">
-                                                109k views
+                                                {savedCourse.views}
                                             </div>
                                             <div className="view-right">
-                                                15 days ago
+                                                {savedCourse.date} days ago
                                             </div>
                                             <div class="dots">
                                                 ⋮
@@ -93,17 +93,17 @@ function Saved_courses_page() {
                                             </div>
                                         </div>
                                         <div className="saved_courses_media-content-title">
-                                            {savedCourse.name}
+                                            {savedCourse.titilecourse}
                                         </div>
                                         <div className="saved_courses_media-content-desc">
-                                            {savedCourse.category}
+                                            {savedCourse.typecourse}
                                         </div>
 
                                         <div className="saved_courses_media-content-buy">
                                             <p className="author">
                                                 By{" "}
                                                 <Link>
-                                                    {savedCourse.instructorName}
+                                                    {savedCourse.author}
                                                 </Link>{" "}
                                             </p>
                                             <div className="deal">
@@ -111,7 +111,7 @@ function Saved_courses_page() {
                                                     <ShoppingCartOutlined />
                                                 </button>
                                                 <div className="cost">
-                                                    {savedCourse.price}
+                                                   ${savedCourse.price}
                                                 </div>
                                             </div>
                                         </div>

@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import "./index.scss";
 import { logo, logo_Small } from "../../assets";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { message, Select } from "antd";
 import TextArea from "antd/es/input/TextArea";
 
 function SignUpStep() {
     const [isOpen, setIsOpen] = useState(true);
-    
-
+    const location = useLocation();
+    const { email, password, username } = location.state || {};
     const handleCloseSelect = () => {
         setIsOpen(false);
     };
 
     const handleOpenSelect = () => {
         setIsOpen(true);
+    };
+
+    const handleSignUp = () => {
+        console.log("Check location: ", email, password, username);
     };
 
     return (
@@ -62,7 +66,7 @@ function SignUpStep() {
                         </div>
                     </div>
                     {/* <p className="signUpStep__desc">Sign Up and Create Course!</p> */}
-                    <form className="signUpStep__form">
+                    <div className="signUpStep__form">
                         {isOpen && (
                             <div className="signUpStep__select">
                                 <Select
@@ -136,14 +140,17 @@ function SignUpStep() {
                             Your biography should have at least 12000
                             characters.
                         </p>
-                        <button className="signUpStep__btn button">
-                            Instructor Sign Up Now
+                        <button
+                            className="signUpStep__btn button"
+                            onClick={handleSignUp}
+                        >
+                            Sign Up Now
                         </button>
                         <div className="signUpStep__signup">
                             Already have an account?
                             <Link to="/login">Log In</Link>
                         </div>
-                    </form>
+                    </div>
                 </div>
 
                 <div className="signup__footer">
