@@ -10,7 +10,7 @@ import { postRegister } from "../../services/apiService";
 function SignUpPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [username, setUsername] = useState("");
+    const [userName, setUserName] = useState("");
 
     const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ function SignUpPage() {
     const handleNext = () => {
         //    Validate
         const isValidEmail = validateEmail(email);
-        if (!username) {
+        if (!userName) {
             toast.error("Invalid username");
             return;
         } else if (!isValidEmail) {
@@ -37,7 +37,7 @@ function SignUpPage() {
         }
 
         // Next
-        else navigate("/signupstep", { state: { email, password, username } });
+        else navigate("/signupstep", { state: { email, password, userName } });
     };
 
     return (
@@ -56,9 +56,9 @@ function SignUpPage() {
                                     id=""
                                     placeholder="User Name"
                                     className="signup__form-input"
-                                    value={username}
+                                    value={userName}
                                     onChange={(event) =>
-                                        setUsername(event.target.value)
+                                        setUserName(event.target.value)
                                     }
                                 />
                             </div>
