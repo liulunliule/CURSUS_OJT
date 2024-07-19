@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
 import { logo } from "../../assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faFacebookF,
@@ -11,12 +11,67 @@ import {
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faKey } from "@fortawesome/free-solid-svg-icons";
 import { logo_Small } from "../../assets";
+import { postLogin } from "../../services/apiService";
+import { message } from "antd";
+import { useDispatch } from "react-redux";
+import { fetchUserLoginSuccess } from "../../redux/features/userSlice";
+import { LoadingOutlined } from "@ant-design/icons";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 function Login() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const dispatch = useDispatch();
+    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
+    const validateEmail = (email) => {
+        return String(email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+    };
+    const handleLogin = async (email, password) => {
+        //    Validate
+        const isValidEmail = validateEmail(email);
+        if (!isValidEmail) {
+            toast.error("Invalid email! Please try again");
+            return;
+        } else if (!password) {
+            toast.error("Invalid password");
+            return;
+        }
+        setIsLoading(true);
+
+        // submit login
+        try {
+            const response = await axios.get(
+                "https://6696231a0312447373c1386e.mockapi.io/user"
+            );
+            console.log(response.data);
+            const user = response.data.find(
+                (user) => user.email === email && user.password === password
+            );
+            if (user) {
+                console.log(user);
+                setIsLoading(false);
+                toast.success("Login succeed");
+                dispatch(fetchUserLoginSuccess(user));
+                navigate("/");
+            }
+        } catch (error) {
+            toast.error(error.message);
+            setIsLoading(false);
+        }
+    };
+
     return (
         <div>
             <div className="login">
-                <img src={logo} alt="" className="login__logo" />
+                <Link to="/">
+                    <img src={logo} alt="" className="login__logo" />
+                </Link>
                 <div className="login__main main">
                     <h2 className="login__title">Welcome Back</h2>
                     <p className="login__desc">
@@ -28,7 +83,7 @@ function Login() {
                                 icon={faFacebookF}
                                 style={{
                                     color: "#ffffff",
-                                    "margin-right": "10px",
+                                    marginRight: "10px",
                                 }}
                             />
                             Continue with Facebook
@@ -38,7 +93,7 @@ function Login() {
                                 icon={faTwitter}
                                 style={{
                                     color: "#ffffff",
-                                    "margin-right": "10px",
+                                    marginRight: "10px",
                                 }}
                             />
                             Continue with Twitter
@@ -48,12 +103,12 @@ function Login() {
                                 icon={faGoogle}
                                 style={{
                                     color: "#ffffff",
-                                    "margin-right": "10px",
+                                    marginRight: "10px",
                                 }}
                             />
                             Continue with Google
                         </button>
-                        <form action="" className="login__form-group">
+                        <div className="login__form-group">
                             <div className="login__form">
                                 <FontAwesomeIcon
                                     icon={faEnvelope}
@@ -66,10 +121,13 @@ function Login() {
                                     id=""
                                     placeholder="Email Address"
                                     className="login__form-input"
+                                    value={email}
+                                    onChange={(event) =>
+                                        setEmail(event.target.value)
+                                    }
                                 />
                             </div>
-                            {/* </form> */}
-                            {/* <form action="" className="login__form"> */}
+
                             <div className="login__form">
                                 <FontAwesomeIcon
                                     icon={faKey}
@@ -82,6 +140,10 @@ function Login() {
                                     id=""
                                     placeholder="Password"
                                     className="login__form-input"
+                                    value={password}
+                                    onChange={(event) =>
+                                        setPassword(event.target.value)
+                                    }
                                 />
                             </div>
                             <div className="login__remember">
@@ -90,19 +152,29 @@ function Login() {
                                     name=""
                                     id="remember-me"
                                 />
-                                <label for="remember-me">Remember me</label>
+                                <label htmlFor="remember-me">Remember me</label>
                             </div>
                             <button
                                 className="login__button login__signin"
-                                type="submit"
+                                onClick={() => handleLogin(email, password)}
+                                disabled={isLoading}
                             >
+                                {isLoading === true && (
+                                    <LoadingOutlined
+                                        style={{ marginRight: "10px" }}
+                                    />
+                                )}
                                 Sign in
                             </button>
-                        </form>
+                        </div>
                     </div>
 
                     <div className="login__forgotPass">
-                        Or <Link to="/forgot_password" className="aaaa"> Forgot Password</Link>
+                        Or{" "}
+                        <Link to="/forgot_password" className="aaaa">
+                            {" "}
+                            Forgot Password
+                        </Link>
                     </div>
                     <div className="login__line"></div>
                     <div className="login__signup">

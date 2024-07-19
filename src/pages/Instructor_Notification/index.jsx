@@ -18,7 +18,7 @@ const Instructor_Notification = () => {
 
   return (
     <div className={`wrapper12 ${isShowAll ? "active" : ""}`}>
-        <div className='sa4d25'>
+        <div className='sa4d25_sa'>
             <div className='container-fluid'>
                 <div className='row'>
                     <div className='col-lg-12'>
