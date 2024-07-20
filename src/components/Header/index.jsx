@@ -35,7 +35,7 @@ function Header() {
     const location = useLocation();
     const dispatch = useDispatch();
     const account = useSelector((state) => state.user.account);
-    console.log("Check out: ", account);
+    // console.log("Check out: ", account);
 
     useEffect(() => {
         dispatch(fetchUserMessage());

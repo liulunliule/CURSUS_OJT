@@ -27,7 +27,7 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         fetchUserLoginSuccess: (state, action) => {
-            console.log("Check action: ", action.payload);
+            // console.log("Check action: ", action.payload);
             state.account = {
                 userName: action?.payload?.userName,
                 email: action?.payload?.email,
