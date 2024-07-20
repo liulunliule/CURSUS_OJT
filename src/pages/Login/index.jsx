@@ -16,11 +16,12 @@ import { message } from "antd";
 import { useDispatch } from "react-redux";
 import { fetchUserLoginSuccess } from "../../redux/features/userSlice";
 import { LoadingOutlined } from "@ant-design/icons";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [messageApi, contextHolder] = message.useMessage();
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
@@ -31,46 +32,46 @@ function Login() {
                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             );
     };
-    const handleLogin = async () => {
+    const handleLogin = async (email, password) => {
         //    Validate
         const isValidEmail = validateEmail(email);
         if (!isValidEmail) {
-            messageApi.open({
-                type: "error",
-                content: "Invalid email! Please try again",
-            });
+            toast.error("Invalid email! Please try again");
             return;
         } else if (!password) {
-            messageApi.open({
-                type: "error",
-                content: "Invalid password",
-            });
+            toast.error("Invalid password");
             return;
         }
         setIsLoading(true);
-        //submit login
-        const response = await postLogin(email, password);
-        console.log("Check: ", response.data);
 
-        if (response && response.data.EC === 0) {
-            dispatch(fetchUserLoginSuccess(response.data));
-            setIsLoading(false);
-            navigate("/", {
-                state: { message: response.data.EM, type: "success" },
-            });
-        }
-        if (response && response.data.EC !== 0) {
-            messageApi.open({
-                type: "error",
-                content: response.data.EM,
-            });
+        // submit login
+        try {
+            const response = await axios.get(
+                "https://6696231a0312447373c1386e.mockapi.io/user"
+            );
+            console.log(response.data);
+            const user = response.data.find(
+                (user) => user.email === email && user.password === password
+            );
+            if (user) {
+                console.log("Check ", user);
+                setIsLoading(false);
+                toast.success("Login succeed");
+                dispatch(fetchUserLoginSuccess(user));
+                navigate("/");
+            }
+
+            if (user.password !== password) {
+                toast.error("Incorrect Password. Please try again!!");
+            }
+        } catch (error) {
+            toast.error(error.message);
             setIsLoading(false);
         }
     };
 
     return (
         <div>
-            {contextHolder}
             <div className="login">
                 <Link to="/">
                     <img src={logo} alt="" className="login__logo" />
@@ -159,7 +160,7 @@ function Login() {
                             </div>
                             <button
                                 className="login__button login__signin"
-                                onClick={() => handleLogin()}
+                                onClick={() => handleLogin(email, password)}
                                 disabled={isLoading}
                             >
                                 {isLoading === true && (

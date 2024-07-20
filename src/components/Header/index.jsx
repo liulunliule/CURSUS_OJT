@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { faCircleCheck, faMoon } from "@fortawesome/free-regular-svg-icons";
+import {
+    faBars,
+    faCircleCheck,
+    faMoon,
+} from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/scss/bootstrap.scss";
 import "./index.scss";
 import { Logo_dark } from "../../assets";
@@ -11,53 +14,48 @@ import { useDarkMode } from "./darkMode";
 import { logo, search, cart, letter, bell, avatar } from "../../assets";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleShowAll } from "../../redux/features/savedCourseSlice";
-import { Link, useLocation } from "react-router-dom";
-import { fetchUserMessage, fetchUserNotification } from "./data";
-import { useNavigate } from "react-router-dom";
-import { logout } from "../../services/apiService";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { doLogout } from "../../redux/features/userSlice";
-import { message } from "antd";
+import {
+    fetchUserMessage,
+    fetchUserNotification,
+} from "../../redux/features/myHeaderSlice";
+import { toast } from "react-toastify";
 
 function Header() {
     const [isDropdownOpenLetter, setIsDropdownOpenLetter] = useState(false);
     const [isDropdownOpenBell, setIsDropdownOpenBell] = useState(false);
     const [isDropdownOpenAvatar, setIsDropdownOpenAvatar] = useState(false);
     const [theme, toggleTheme] = useDarkMode();
-    const [messages, setMessages] = useState([]);
-    const [notification, setNotification] = useState([]);
+    const userMessage = useSelector((state) => state.myHeader.messages);
+    const userNotification = useSelector(
+        (state) => state.myHeader.notification
+    );
     const [showCreateButton, setShowCreateButton] = useState(false);
     const location = useLocation();
+    const dispatch = useDispatch();
+    const account = useSelector((state) => state.user.account);
+    // console.log("Check out: ", account);
 
     useEffect(() => {
-        const fetchMessages = async () => {
-            const messageData = await fetchUserMessage();
-            setMessages(messageData);
-        };
-        const fetchNotification = async () => {
-            const notificateData = await fetchUserNotification();
-            setNotification(notificateData);
-        };
+        dispatch(fetchUserMessage());
+        dispatch(fetchUserNotification());
+
         const showHeaderSecond = () => {
-            if (
-                location.pathname ===
-                    "/fourlayout/instructor_studio_dashboard" ||
-                location.pathname === "/fourlayout/purchased_courses_page" ||
-                location.pathname === "/fourlayout/messages" ||
-                location.pathname === "/fourlayout/instructor_notification" ||
-                location.pathname === "/fourlayout/my_certificates" ||
-                location.pathname === "/fourlayout/reviews_page_student" ||
-                location.pathname === "/fourlayout/credits" ||
-                location.pathname === "/fourlayout/students_statement"
-            ) {
-                setShowCreateButton(true);
-            } else {
-                setShowCreateButton(false);
-            }
+            const paths = [
+                "/fourlayout/instructor_studio_dashboard",
+                "/fourlayout/purchased_courses_page",
+                "/fourlayout/messages",
+                "/fourlayout/instructor_notification",
+                "/fourlayout/my_certificates",
+                "/fourlayout/reviews_page_student",
+                "/fourlayout/credits",
+                "/fourlayout/students_statement",
+            ];
+            setShowCreateButton(paths.includes(location.pathname));
         };
-        fetchMessages();
-        fetchNotification();
         showHeaderSecond();
-    }, [location]);
+    }, [dispatch, location.pathname]);
 
     const toggleDropdownLetter = () => {
         setIsDropdownOpenLetter(!isDropdownOpenLetter);
@@ -77,13 +75,14 @@ function Header() {
         setIsDropdownOpenBell(false);
     };
 
-    const dispatch = useDispatch();
     const handleKeyPress = (event) => {
         if (event.key === "Enter") {
             window.location.href = "/secondLayout/search_results_page";
         }
     };
+
     const navigate = useNavigate();
+
     const handleLogin = () => {
         navigate("/login");
     };
@@ -92,33 +91,16 @@ function Header() {
         navigate("/signup");
     };
 
-    const account = useSelector((state) => state.user.account);
     const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
-    console.log(account);
 
-    const [messageApi, contextHolder] = message.useMessage();
     const handleLogout = async () => {
-        const response = await logout(account.email, account.refresh_token);
-        console.log("Check res: ", response.data);
-        if (response.data && response.data.EC === 0) {
-            // Clear data redux
-            dispatch(doLogout());
-            navigate("/login");
-            messageApi.open({
-                type: "error",
-                content: response.data.EM,
-            });
-        } else {
-            messageApi.open({
-                type: "error",
-                content: "Cannot Logout",
-            });
-            return;
-        }
+        // Clear data redux
+        dispatch(doLogout());
+        toast.success("Log out successfully");
+        navigate("/login");
     };
     return (
         <div className="compo_header">
-            {contextHolder}
             <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
                 <GlobalStyles />
                 <header className="header">
@@ -177,13 +159,13 @@ function Header() {
                             <div className="header_home_cta">
                                 <button
                                     className="btn-login"
-                                    onClick={() => handleLogin()}
+                                    onClick={handleLogin}
                                 >
                                     Login
                                 </button>
                                 <button
                                     className="btn-signup"
-                                    onClick={() => handleSignUp()}
+                                    onClick={handleSignUp}
                                 >
                                     Sign up
                                 </button>
@@ -198,7 +180,7 @@ function Header() {
                                             className="icon-cart"
                                         />
                                         <span className="header-badge">
-                                            {messages.length}
+                                            {userMessage.length}
                                         </span>
                                     </div>
                                 </Link>
@@ -212,12 +194,14 @@ function Header() {
                                     {isDropdownOpenLetter && (
                                         <div className="dropdown">
                                             <ul>
-                                                {messages
+                                                {userMessage
                                                     .slice(0, 3)
                                                     .map((message) => (
-                                                        <Link to="/fourlayout/messages">
+                                                        <Link
+                                                            to="/fourlayout/messages"
+                                                            key={message.id}
+                                                        >
                                                             <li
-                                                                key={message.id}
                                                                 className={`item-message ${
                                                                     theme !==
                                                                     "light"
@@ -234,7 +218,6 @@ function Header() {
                                                                     }
                                                                     className="avatar-message"
                                                                 />
-
                                                                 <div className="message-content">
                                                                     <p>
                                                                         {
@@ -270,7 +253,7 @@ function Header() {
                                         </div>
                                     )}
                                     <span className="header-badge">
-                                        {messages.length}
+                                        {userMessage.length}
                                     </span>
                                 </div>
                                 <div className="icon-container">
@@ -283,7 +266,7 @@ function Header() {
                                     {isDropdownOpenBell && (
                                         <div className="dropdown">
                                             <ul>
-                                                {notification
+                                                {userNotification
                                                     .slice(0, 3)
                                                     .map((notification) => (
                                                         <Link
@@ -293,9 +276,6 @@ function Header() {
                                                             }
                                                         >
                                                             <li
-                                                                key={
-                                                                    notification.id
-                                                                }
                                                                 className={`item-message ${
                                                                     theme !==
                                                                     "light"
@@ -312,7 +292,6 @@ function Header() {
                                                                     }
                                                                     className="avatar-message"
                                                                 />
-
                                                                 <div className="message-content">
                                                                     <p>
                                                                         {
@@ -348,7 +327,7 @@ function Header() {
                                         </div>
                                     )}
                                     <span className="header-badge">
-                                        {notification.length}
+                                        {userNotification.length}
                                     </span>
                                 </div>
 
@@ -380,8 +359,9 @@ function Header() {
                                                             <div className="profile-content">
                                                                 <div className="profile-content-info">
                                                                     <h6 className="profile-name">
-                                                                        Joginder
-                                                                        Singh
+                                                                        {
+                                                                            account.userName
+                                                                        }
                                                                         <FontAwesomeIcon
                                                                             icon={
                                                                                 faCircleCheck
@@ -393,7 +373,9 @@ function Header() {
                                                                     </h6>
                                                                 </div>
                                                                 <span className="channel-my-email">
-                                                                    gambol943@gmail.com
+                                                                    {
+                                                                        account.email
+                                                                    }
                                                                 </span>
                                                             </div>
                                                         </div>
@@ -469,7 +451,6 @@ function Header() {
                     </div>
                 </header>
             </ThemeProvider>
-            {/* <SidebarFrontend /> */}
         </div>
     );
 }

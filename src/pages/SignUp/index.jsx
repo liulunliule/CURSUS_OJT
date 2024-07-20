@@ -4,14 +4,42 @@ import { Link, useNavigate } from "react-router-dom";
 import "./index.scss";
 import { logo_Small } from "../../assets";
 import { message } from "antd";
+import { toast } from "react-toastify";
+import { postRegister } from "../../services/apiService";
 
 function SignUpPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [username, setUsername] = useState("");
+    const [userName, setUserName] = useState("");
 
-    const [messageApi, contextHolder] = message.useMessage();
     const navigate = useNavigate();
+
+    const validateEmail = (email) => {
+        return String(email)
+            .toLowerCase()
+            .match(
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+    };
+
+    const handleNext = () => {
+        //    Validate
+        const isValidEmail = validateEmail(email);
+        if (!userName) {
+            toast.error("Invalid username");
+            return;
+        } else if (!isValidEmail) {
+            toast.error("Invalid email! Please try again");
+            return;
+        } else if (!password) {
+            toast.error("Invalid password");
+            return;
+        }
+
+        // Next
+        else navigate("/signupstep", { state: { email, password, userName } });
+    };
+
     return (
         <div>
             <div className="signup">
@@ -28,9 +56,9 @@ function SignUpPage() {
                                     id=""
                                     placeholder="User Name"
                                     className="signup__form-input"
-                                    value={username}
+                                    value={userName}
                                     onChange={(event) =>
-                                        setUsername(event.target.value)
+                                        setUserName(event.target.value)
                                     }
                                 />
                             </div>
@@ -72,11 +100,13 @@ function SignUpPage() {
                                     and personalized recommendations
                                 </label>
                             </div>
-                            <Link to="/signupstep">
-                                <button className="signup__button signup__signin">
-                                    Next
-                                </button>
-                            </Link>
+
+                            <button
+                                className="signup__button signup__signin"
+                                onClick={handleNext}
+                            >
+                                Next
+                            </button>
                         </div>
                     </div>
 

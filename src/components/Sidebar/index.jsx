@@ -630,7 +630,7 @@ export function SideBarStudentDashboardDemo() {
     <div className={`SideBarStudentDashboardDemo ${isShowAll ? "active" : ""}`}>
       <div className="SideBarStudentDashboardDemo_select1">
         <Link
-          to="/fourlayout/instructor_studio_dashboard"
+          to="/fourlayout/student_studio_dashboard"
           className="Link_SideBarStudentDashboardDemo"
         >
           <div className="SideBarStudentDashboardDemo_select_wrapper">
