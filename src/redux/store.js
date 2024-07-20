@@ -8,6 +8,7 @@ import analyticsReducer from './features/analyticsSlice';
 import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
 import checkoutReducer from './features/checkoutSlice';
+import earningReducer from './features/earningSlice';
 // export const store = configureStore({
 //     reducer: {
 //         savedCourse: savedCourseReducer,
@@ -29,6 +30,7 @@ const rootReducer = combineReducers({
   certificationTestResult: certificationTestResultReducer,
   analytics: analyticsReducer,
   checkout: checkoutReducer,
+  earnings: earningReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
