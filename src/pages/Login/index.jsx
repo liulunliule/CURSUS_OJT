@@ -54,11 +54,15 @@ function Login() {
                 (user) => user.email === email && user.password === password
             );
             if (user) {
-                console.log(user);
+                console.log("Check ", user);
                 setIsLoading(false);
                 toast.success("Login succeed");
                 dispatch(fetchUserLoginSuccess(user));
                 navigate("/");
+            }
+
+            if (user.password !== password) {
+                toast.error("Incorrect Password. Please try again!!");
             }
         } catch (error) {
             toast.error(error.message);

@@ -81,377 +81,382 @@ import Analyics from "../pages/Analyics";
 import Student_Studio_Dashboard from "../pages/Student_Studio_Dashboard";
 import Verification from "../pages/Verification";
 import ReviewsPageStudent from "../pages/ReviewsPageStudent";
+import Reset_password from "../pages/Forgot_password/Reset_password/reset_password";
 function Router() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Layouts />,
-      children: [
+    const router = createBrowserRouter([
         {
-          path: "/",
-          element: <Homepage />,
+            path: "/",
+            element: <Layouts />,
+            children: [
+                {
+                    path: "/",
+                    element: <Homepage />,
+                },
+                {
+                    path: "/LiveStreams",
+                    element: <LiveStreams />,
+                },
+                {
+                    path: "/Add_Live_Stream",
+                    element: <Add_Live_Stream />,
+                },
+                {
+                    path: "/help",
+                    element: <Help />,
+                },
+                {
+                    path: "/report_history_page",
+                    element: <ReportHistoryPage />,
+                },
+                {
+                    path: "/instructor_profile",
+                    element: <Instructor_Profile />,
+                },
+                {
+                    path: "/student_profile",
+                    element: <Student_Profile />,
+                },
+                {
+                    path: "other_instructor_view",
+                    element: <Other_Instructor_View />,
+                },
+                {
+                    path: "saved_courses",
+                    element: <Saved_courses_page />,
+                },
+                {
+                    path: "/detail_category_page",
+                    element: <DetailCategoryPage />,
+                },
+                {
+                    path: "/send_feedback_page",
+                    element: <SendFeedbackPage />,
+                },
+                {
+                    path: "/setting_page",
+                    element: <SettingPage />,
+                    children: [
+                        {
+                            path: "account_tab",
+                            element: <AccountTab />,
+                        },
+                        {
+                            path: "notification_tab",
+                            element: <NotificationTab />,
+                        },
+                        {
+                            path: "privacy_tab",
+                            element: <PrivacyTab />,
+                        },
+                        {
+                            path: "billing_and_payouts_tab",
+                            element: <BillingAndPayoutsTab />,
+                        },
+                        {
+                            path: "API_clients_tab",
+                            element: <APIClientsTab />,
+                        },
+                        {
+                            path: "close_account_tab",
+                            element: <CloseAccountTab />,
+                        },
+                    ],
+                },
+                {
+                    path: "course_detail",
+                    element: <Course_detail />,
+                    children: [
+                        {
+                            path: "course_detail_about",
+                            element: <Course_detail_about />,
+                        },
+                        {
+                            path: "course_detail_course-content",
+                            element: <Course_detail_content />,
+                        },
+                        {
+                            path: "course_detail_reviews",
+                            element: <Course_detail_reviews />,
+                        },
+                    ],
+                },
+                {
+                    path: "/all_categories_page",
+                    element: <AllCategoriesPage />,
+                },
+                {
+                    path: "/report_history_page",
+                    element: <ReportHistoryPage />,
+                },
+                {
+                    path: "/explore_page",
+                    element: <ExplorePage />,
+                },
+                {
+                    path: "all_instructor",
+                    element: <All_Instructor />,
+                },
+                {
+                    path: "view_live_streams",
+                    element: <View_Live_Stream />,
+                },
+            ],
         },
-        {
-          path: "/LiveStreams",
-          element: <LiveStreams />,
-        },
-        {
-          path: "/Add_Live_Stream",
-          element: <Add_Live_Stream />,
-        },
-        {
-          path: "/help",
-          element: <Help />,
-        },
-        {
-          path: "/report_history_page",
-          element: <ReportHistoryPage />,
-        },
-        {
-          path: "/instructor_profile",
-          element: <Instructor_Profile />,
-        },
-        {
-          path: "/student_profile",
-          element: <Student_Profile />,
-        },
-        {
-          path: "other_instructor_view",
-          element: <Other_Instructor_View />,
-        },
-        {
-          path: "saved_courses",
-          element: <Saved_courses_page />,
-        },
-        {
-          path: "/detail_category_page",
-          element: <DetailCategoryPage />,
-        },
-        {
-          path: "/send_feedback_page",
-          element: <SendFeedbackPage />,
-        },
-        {
-          path: "/setting_page",
-          element: <SettingPage />,
-          children: [
-            {
-              path: "account_tab",
-              element: <AccountTab />,
-            },
-            {
-              path: "notification_tab",
-              element: <NotificationTab />,
-            },
-            {
-              path: "privacy_tab",
-              element: <PrivacyTab />,
-            },
-            {
-              path: "billing_and_payouts_tab",
-              element: <BillingAndPayoutsTab />,
-            },
-            {
-              path: "API_clients_tab",
-              element: <APIClientsTab />,
-            },
-            {
-              path: "close_account_tab",
-              element: <CloseAccountTab />,
-            },
-          ],
-        },
-        {
-          path: "course_detail",
-          element: <Course_detail />,
-          children: [
-            {
-              path: "course_detail_about",
-              element: <Course_detail_about />,
-            },
-            {
-              path: "course_detail_course-content",
-              element: <Course_detail_content />,
-            },
-            {
-              path: "course_detail_reviews",
-              element: <Course_detail_reviews />,
-            },
-          ],
-        },
-        {
-          path: "/all_categories_page",
-          element: <AllCategoriesPage />,
-        },
-        {
-          path: "/report_history_page",
-          element: <ReportHistoryPage />,
-        },
-        {
-          path: "/explore_page",
-          element: <ExplorePage />,
-        },
-        {
-          path: "all_instructor",
-          element: <All_Instructor />,
-        },
-        {
-          path: "view_live_streams",
-          element: <View_Live_Stream />,
-        },
-      ],
-    },
 
-    {
-      path: "/login",
-      element: <Login />,
-    },
-    {
-      path: "/forgot_password",
-      element: <ForgotPassword />,
-    },
-    {
-      path: "/signup",
-      element: <SignUpPage />,
-    },
-    {
-      path: "/signupstep",
-      element: <SignUpStep />,
-    },
-    {
-      path: "/secondLayout",
-      element: <SecondaryLayout />,
-      children: [
         {
-          path: "policy",
-          element: <Policy />,
+            path: "/login",
+            element: <Login />,
         },
         {
-          path: "term",
-          element: <TermOfUse />,
+            path: "/forgot_password",
+            element: <ForgotPassword />,
         },
         {
-          path: "Faq_detail_view-1",
-          element: <Faq_detail_view />,
+            path: "/reset_password",
+            element: <Reset_password />,
         },
         {
-          path: "Faq_detail_view-2",
-          element: <Faq_detail_view_2 />,
+            path: "/signup",
+            element: <SignUpPage />,
         },
         {
-          path: "contact_us",
-          element: <Contact_us />,
+            path: "/signupstep",
+            element: <SignUpStep />,
         },
         {
-          path: "checkout_page",
-          element: <Checkout_Page />,
+            path: "/secondLayout",
+            element: <SecondaryLayout />,
+            children: [
+                {
+                    path: "policy",
+                    element: <Policy />,
+                },
+                {
+                    path: "term",
+                    element: <TermOfUse />,
+                },
+                {
+                    path: "Faq_detail_view-1",
+                    element: <Faq_detail_view />,
+                },
+                {
+                    path: "Faq_detail_view-2",
+                    element: <Faq_detail_view_2 />,
+                },
+                {
+                    path: "contact_us",
+                    element: <Contact_us />,
+                },
+                {
+                    path: "checkout_page",
+                    element: <Checkout_Page />,
+                },
+                {
+                    path: "about",
+                    element: <AboutPage />,
+                },
+                {
+                    path: "company",
+                    element: <CompanyDetails />,
+                },
+                {
+                    path: "blog",
+                    element: <OurBlog />,
+                },
+                {
+                    path: "blog-detail",
+                    element: <BlogDetailView />,
+                },
+                {
+                    path: "press",
+                    element: <Press />,
+                },
+                {
+                    path: "careers",
+                    element: <CareersPage />,
+                },
+                {
+                    path: "apply-job",
+                    element: <ApplyJob />,
+                },
+                {
+                    path: "certification_center",
+                    element: <Certification_Center />,
+                },
+                {
+                    path: "certification_fill_form",
+                    element: <Certification_fill_form />,
+                },
+                {
+                    path: "Certification_test_page",
+                    element: <Certification_Test_Page />,
+                },
+                {
+                    path: "Certification_test_result",
+                    element: <Certification_test_result />,
+                },
+                {
+                    path: "paid_membership_page",
+                    element: <Paid_membership_page />,
+                },
+                {
+                    path: "Shopping_cart",
+                    element: <Shopping_Cart />,
+                },
+                {
+                    path: "search_results_page",
+                    element: <Search_Results_Page />,
+                },
+            ],
         },
         {
-          path: "about",
-          element: <AboutPage />,
+            path: "/thirdlayout",
+            element: <ThirdLayout />,
+            children: [
+                {
+                    path: "instructor_studio_dashboard",
+                    element: <Instructor_Studio_Dashboard />,
+                },
+                {
+                    path: "course_page",
+                    element: <Course_page />,
+                    children: [
+                        {
+                            path: "my_courses",
+                            element: <My_course />,
+                        },
+                        {
+                            path: "discounts",
+                            element: <Discounts />,
+                        },
+                        {
+                            path: "my_purchases",
+                            element: <My_purchases />,
+                        },
+                        {
+                            path: "promotion",
+                            element: <Promotion />,
+                        },
+                        {
+                            path: "upcoming_course",
+                            element: <Upcoming_course />,
+                        },
+                    ],
+                },
+                {
+                    path: "analyics",
+                    element: <Analyics />,
+                },
+                {
+                    path: "create_new_course",
+                    element: <Create_new_course />,
+                },
+                {
+                    path: "messages",
+                    element: <Messages />,
+                },
+                {
+                    path: "instructor_notification",
+                    element: <Instructor_Notification />,
+                },
+                {
+                    path: "my_certificates",
+                    element: <My_Certificates />,
+                },
+                {
+                    path: "reviews_page_instructor",
+                    element: <ReviewsPageInstructor />,
+                },
+                {
+                    path: "earnings",
+                    element: <Earnings />,
+                },
+                {
+                    path: "payout",
+                    element: <Payout />,
+                },
+                {
+                    path: "instructor_statement",
+                    element: <Instructor_statement />,
+                },
+                {
+                    path: "verification",
+                    element: <Verification />,
+                },
+            ],
         },
         {
-          path: "company",
-          element: <CompanyDetails />,
+            path: "/fourlayout",
+            element: <FourLayout />,
+            children: [
+                {
+                    path: "student_studio_dashboard",
+                    element: <Student_Studio_Dashboard />,
+                },
+                {
+                    path: "purchased_courses_page",
+                    element: <Purchased_Courses_page />,
+                },
+                {
+                    path: "messages",
+                    element: <Messages />,
+                },
+                {
+                    path: "instructor_notification",
+                    element: <Instructor_Notification />,
+                },
+                {
+                    path: "my_certificates",
+                    element: <My_Certificates />,
+                },
+                {
+                    path: "reviews_page_student",
+                    element: <ReviewsPageStudent />,
+                },
+                {
+                    path: "credits",
+                    element: <Credits />,
+                },
+                {
+                    path: "students_statement",
+                    element: <Students_statement />,
+                },
+            ],
         },
         {
-          path: "blog",
-          element: <OurBlog />,
+            path: "/certificate",
+            element: <Certificate />,
         },
         {
-          path: "blog-detail",
-          element: <BlogDetailView />,
+            path: "/thanks_page",
+            element: <Thanks_Page />,
         },
         {
-          path: "press",
-          element: <Press />,
+            path: "/error_page",
+            element: <Error_Page />,
         },
         {
-          path: "careers",
-          element: <CareersPage />,
+            path: "/report_history_page",
+            element: <ReportHistoryPage />,
         },
         {
-          path: "apply-job",
-          element: <ApplyJob />,
+            path: "/all_categories_page",
+            element: <AllCategoriesPage />,
         },
         {
-          path: "certification_center",
-          element: <Certification_Center />,
+            path: "/invoice_page",
+            element: <Invoice_Page />,
         },
         {
-          path: "certification_fill_form",
-          element: <Certification_fill_form />,
+            path: "/coming-soon",
+            element: <ComingSoon />,
         },
-        {
-          path: "Certification_test_page",
-          element: <Certification_Test_Page />,
-        },
-        {
-          path: "Certification_test_result",
-          element: <Certification_test_result />,
-        },
-        {
-          path: "paid_membership_page",
-          element: <Paid_membership_page />,
-        },
-        {
-          path: "Shopping_cart",
-          element: <Shopping_Cart />,
-        },
-        {
-          path: "search_results_page",
-          element: <Search_Results_Page />,
-        },
-      ],
-    },
-    {
-      path: "/thirdlayout",
-      element: <ThirdLayout />,
-      children: [
-        {
-          path: "instructor_studio_dashboard",
-          element: <Instructor_Studio_Dashboard />,
-        },
-        {
-          path: "course_page",
-          element: <Course_page />,
-          children: [
-            {
-              path: "my_courses",
-              element: <My_course />,
-            },
-            {
-              path: "discounts",
-              element: <Discounts />,
-            },
-            {
-              path: "my_purchases",
-              element: <My_purchases />,
-            },
-            {
-              path: "promotion",
-              element: <Promotion />,
-            },
-            {
-              path: "upcoming_course",
-              element: <Upcoming_course />,
-            },
-          ],
-        },
-        {
-          path: "analyics",
-          element: <Analyics />,
-        },
-        {
-          path: "create_new_course",
-          element: <Create_new_course />,
-        },
-        {
-          path: "messages",
-          element: <Messages />,
-        },
-        {
-          path: "instructor_notification",
-          element: <Instructor_Notification />,
-        },
-        {
-          path: "my_certificates",
-          element: <My_Certificates />,
-        },
-        {
-          path: "reviews_page_instructor",
-          element: <ReviewsPageInstructor />,
-        },
-        {
-          path: "earnings",
-          element: <Earnings />,
-        },
-        {
-          path: "payout",
-          element: <Payout />,
-        },
-        {
-          path: "instructor_statement",
-          element: <Instructor_statement />,
-        },
-        {
-          path: "verification",
-          element: <Verification />,
-        },
-      ],
-    },
-    {
-      path: "/fourlayout",
-      element: <FourLayout />,
-      children: [
-        {
-          path: "student_studio_dashboard",
-          element: <Student_Studio_Dashboard />,
-        },
-        {
-          path: "purchased_courses_page",
-          element: <Purchased_Courses_page />,
-        },
-        {
-          path: "messages",
-          element: <Messages />,
-        },
-        {
-          path: "instructor_notification",
-          element: <Instructor_Notification />,
-        },
-        {
-          path: "my_certificates",
-          element: <My_Certificates />,
-        },
-        {
-          path: "reviews_page_student",
-          element: <ReviewsPageStudent />,
-        },
-        {
-          path: "credits",
-          element: <Credits />,
-        },
-        {
-          path: "students_statement",
-          element: <Students_statement />,
-        },
-      ],
-    },
-    {
-      path: "/certificate",
-      element: <Certificate />,
-    },
-    {
-      path: "/thanks_page",
-      element: <Thanks_Page />,
-    },
-    {
-      path: "/error_page",
-      element: <Error_Page />,
-    },
-    {
-      path: "/report_history_page",
-      element: <ReportHistoryPage />,
-    },
-    {
-      path: "/all_categories_page",
-      element: <AllCategoriesPage />,
-    },
-    {
-      path: "/invoice_page",
-      element: <Invoice_Page />,
-    },
-    {
-      path: "/coming-soon",
-      element: <ComingSoon />,
-    },
-  ]);
-  return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
-  );
+    ]);
+    return (
+        <div>
+            <RouterProvider router={router} />
+        </div>
+    );
 }
 
 export default Router;
