@@ -395,7 +395,7 @@ const Checkout_Page = () => {
                             <div className="panel-body">
                               <form onSubmit={handleSave}>
                                 <div className="row">
-                                  <div className="col-lg-6">
+                                  <div className="col-lg-12">
                                     <div className="UI search panel-body_text">
                                       <label>First Name*</label>
                                       <div className="UI input panel-body_text_item">
@@ -403,19 +403,20 @@ const Checkout_Page = () => {
                                           className="prompt srch_explore"
                                           type="text"
                                           name="FirstName"
-                                          // value={addr.FirstName}
+                                          // value={addr.userName}
                                           id="id_name"
                                           required
                                           maxlength="64"
                                           // placeholder="First Name"
-                                          placeholder={addr.FirstName}
+                                          placeholder={addr.userName}
                                           onChange={handleChange}
                                         />
                                       </div>
                                     </div>
                                   </div>
                                   <div className="col-lg-6">
-                                    <div className="UI search panel-body_text">
+                                    {/* update name (not use LastName) */}
+                                    {/* <div className="UI search panel-body_text">
                                       <label>Last Name*</label>
                                       <div className="UI input panel-body_text_item">
                                         <input
@@ -431,7 +432,7 @@ const Checkout_Page = () => {
                                           onChange={handleChange}
                                         />
                                       </div>
-                                    </div>
+                                    </div> */}
                                   </div>
                                   <div className="col-lg-12">
                                     <div className="UI search panel-body_text">
@@ -624,8 +625,8 @@ const Checkout_Page = () => {
                       </div>
                     </div>
                     <div className="address_text">
-                      {addr.FirstName} {addr.LastName} <br />
-                      {addr.Address1},
+                      {addr.userName} {addr.LastName} <br />
+                      {addr.Address1}
                       <br /> {addr.Address2}
                       <br /> Road.
                       <br /> {addr.City}, {addr.State}, {addr.ZipCode}

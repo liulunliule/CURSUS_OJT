@@ -6,7 +6,7 @@ import axios from 'axios';
 export const fetchOrder = createAsyncThunk(
   'checkout/fetchOrder',
   async () => {
-    const response = await axios.get(`https://669454774bd61d8314c73d55.mockapi.io/Order/1`);
+    const response = await axios.get(`https://6696231a0312447373c1386e.mockapi.io/user/1/Order/1`);
     return response.data;
   }
 );
@@ -14,7 +14,7 @@ export const fetchOrder = createAsyncThunk(
 export const fetchAddr = createAsyncThunk(
   'checkout/fetchAddr',
   async () => {
-    const response = await axios.get(`https://669454774bd61d8314c73d55.mockapi.io/addr/1`);
+    const response = await axios.get(`https://6696231a0312447373c1386e.mockapi.io/user/1/addr/1`);
     return response.data;
   }
 );
@@ -22,7 +22,7 @@ export const fetchAddr = createAsyncThunk(
 export const updateAddress = createAsyncThunk(
   'checkout/updateAddress',
   async (addr) => {
-    const response = await axios.put(`https://669454774bd61d8314c73d55.mockapi.io/addr/1`, addr);
+    const response = await axios.put(`https://6696231a0312447373c1386e.mockapi.io/user/1/addr/1`, addr);
     return response.data;
   }
 );

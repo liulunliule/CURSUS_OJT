@@ -16,20 +16,6 @@ const Earnings = () => {
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
   const { Option } = Select;
   const { Text } = Typography;
-  // const data = [
-  //   { key: "1", date: "1, Wednesday", salesCount: 3, earning: 120.5 },
-  //   { key: "2", date: "2, Thursday", salesCount: 2, earning: 84.0 },
-  //   { key: "3", date: "4, Saturday", salesCount: 4, earning: 150.5 },
-  //   { key: "4", date: "5, Sunday", salesCount: 3, earning: 102.24 },
-  //   { key: "5", date: "6, Monday", salesCount: 2, earning: 80.5 },
-  //   { key: "6", date: "7, Tuesday", salesCount: 3, earning: 70.5 },
-  //   { key: "7", date: "8, Wednesday", salesCount: 5, earning: 130.0 },
-  //   { key: "8", date: "9, Thursday", salesCount: 3, earning: 95.5 },
-  //   { key: "9", date: "10, Friday", salesCount: 4, earning: 152.5 },
-  //   { key: "10", date: "11, Saturday", salesCount: 3, earning: 100.4 },
-  //   { key: "11", date: "12, Sunday", salesCount: 2, earning: 60.14 },
-  // ];
-
   const totalSalesCount = earningTable.reduce(
     (acc, item) => acc + item.salesCount,
     0
