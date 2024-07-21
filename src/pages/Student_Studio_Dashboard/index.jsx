@@ -8,7 +8,6 @@ import {
   UilAngleLeft,
   UilAngleRight,
   UilApps,
-  UilBookAlt,
 } from "@iconscout/react-unicons";
 import OnlineCourse from "../../assets/img/online-course.svg";
 import Knowledge from "../../assets/img/knowledge.svg";
