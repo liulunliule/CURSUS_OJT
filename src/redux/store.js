@@ -53,6 +53,7 @@ const rootReducer = combineReducers({
     checkout: checkoutReducer,
     earnings: earningReducer,
     statement: statementReducer,
+    credits: creditsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
