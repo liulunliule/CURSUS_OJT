@@ -1,36 +1,23 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
-    fetchCreditData,
-    fetchTransactionsData,
-} from "../../services/apiService";
+  fetchAddedCredits,
+  fetchTransactions,
+} from "../../redux/features/creditsSlice";
 
 export const useFetchCreditsData = () => {
-    const [addedCredits, setAddedCredits] = useState({});
-    const [transactions, setTransactions] = useState([]);
+  const dispatch = useDispatch();
+  const addedCredits = useSelector((state) => state.credits.addedCredits);
+  const transactions = useSelector((state) => state.credits.transactions);
+  const status = useSelector((state) => state.credits.status);
+  const error = useSelector((state) => state.credits.error);
 
-    useEffect(() => {
-        const fetchAddedCredits = async () => {
-            try {
-                const response = await fetchCreditData();
-                setAddedCredits(response.data[0]);
-            } catch (error) {
-                console.error("Error fetching added credits data:", error);
-            }
-        };
+  useEffect(() => {
+    if (status === "idle") {
+      dispatch(fetchAddedCredits());
+      dispatch(fetchTransactions());
+    }
+  }, [status, dispatch]);
 
-        const fetchTransactions = async () => {
-            try {
-                const response = await fetchTransactionsData();
-                setTransactions(response.data);
-            } catch (error) {
-                console.error("Error fetching transactions data:", error);
-            }
-        };
-
-        fetchAddedCredits();
-        fetchTransactions();
-    }, []);
-
-    return { addedCredits, transactions };
+  return { addedCredits, transactions, status, error };
 };

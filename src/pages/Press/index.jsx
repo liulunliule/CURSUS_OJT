@@ -4,7 +4,7 @@ import "./index.scss";
 
 const Press = () => {
   const [selected, setSelected] = useState("Press");
-  const { news, releases } = useFetchPressData();
+  const { news, releases, status, error } = useFetchPressData();
 
   const handleSelect = (item) => {
     const paths = {
@@ -17,6 +17,14 @@ const Press = () => {
     window.location.href = paths[item];
     setSelected(item);
   };
+
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (status === 'failed') {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className="press-page">
