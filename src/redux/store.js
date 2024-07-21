@@ -7,6 +7,7 @@ import mySearchReducer from "./features/mySearchSlice";
 import myStudioReducer from "./features/myStudioSlice";
 import allInstructorReducer from "./features/allInstructorSlice";
 import reviewFeedbackReducer from "./features/reviewfeedbackSlice";
+import feedbackReportReducer from "./features/feedbackvsReportSlice";
 import userSlice from "./features/userSlice";
 import certificationTestPageReducer from "./features/certificationTestPageSlice";
 import certificationTestResultReducer from "./features/certificationTestResultSlice";
@@ -35,6 +36,7 @@ const persistConfig = {
         "myStudio",
         "allInstructor",
         "reviewFeedback",
+        "feedbackReport",
     ],
 };
 
@@ -52,6 +54,7 @@ const rootReducer = combineReducers({
     myStudio: myStudioReducer,
     allInstructor: allInstructorReducer,
     reviewFeedback: reviewFeedbackReducer,
+    feedbackReport: feedbackReportReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
