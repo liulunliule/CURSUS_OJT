@@ -14,6 +14,7 @@ import { persistReducer, persistStore } from "redux-persist";
 import courseSlice from "./features/courseSlice";
 import checkoutReducer from './features/checkoutSlice';
 import earningReducer from './features/earningSlice';
+import statementReducer from './features/statementSlice';
 // export const store = configureStore({
 //     reducer: {
 //         savedCourse: savedCourseReducer,
@@ -50,6 +51,7 @@ const rootReducer = combineReducers({
     myStudio: myStudioReducer,
     checkout: checkoutReducer,
     earnings: earningReducer,
+    statement: statementReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

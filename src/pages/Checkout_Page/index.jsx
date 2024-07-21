@@ -21,6 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Checkout_Page = () => {
   const dispatch = useDispatch();
+  const account = useSelector((state) => state.user.account);
   const [activeId, setActiveId] = useState(null);
   const [activeTab, setActiveTab] = useState("credit-tab");
 
@@ -288,7 +289,7 @@ const Checkout_Page = () => {
   const handleSave = async (e) => {
     e.preventDefault();
     try {
-      await dispatch(updateAddress(addr)).unwrap();
+      await dispatch(updateAddress(addr, account?.id)).unwrap();
       console.log("Address updated successfully");
     } catch (error) {
       console.error("Error updating address:", error);
@@ -313,8 +314,8 @@ const Checkout_Page = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchOrder());
-    dispatch(fetchAddr());
+    dispatch(fetchOrder(account?.id));
+    dispatch(fetchAddr(account?.id));
   }, [dispatch]);
 
   return (
@@ -332,8 +333,8 @@ const Checkout_Page = () => {
                           <Link href="#">Home</Link>
                         </li>
                         <li className="breadcrumb-item">
-                          <Link to="/certification_center">
-                            Certification Center
+                          <Link to="/secondLayout/certification_center">
+                            {order.CourseName}
                           </Link>
                         </li>
                         <li
@@ -347,7 +348,10 @@ const Checkout_Page = () => {
                   </div>
                 </div>
                 <div className="titleright">
-                  <Link to="/certification_center" className="blog_link">
+                  <Link
+                    to="/secondLayout/certification_center"
+                    className="blog_link"
+                  >
                     <FontAwesomeIcon icon={faAnglesLeft} /> Back to
                     Certification Center
                   </Link>
@@ -408,32 +412,13 @@ const Checkout_Page = () => {
                                           required
                                           maxlength="64"
                                           // placeholder="First Name"
-                                          placeholder={addr.userName}
+                                          placeholder={addr.user.userName}
                                           onChange={handleChange}
                                         />
                                       </div>
                                     </div>
                                   </div>
-                                  <div className="col-lg-6">
-                                    {/* update name (not use LastName) */}
-                                    {/* <div className="UI search panel-body_text">
-                                      <label>Last Name*</label>
-                                      <div className="UI input panel-body_text_item">
-                                        <input
-                                          className="prompt srch_explore"
-                                          type="text"
-                                          name="LastName"
-                                          // value={addr.LastName}
-                                          id="id_surname"
-                                          required=""
-                                          maxlength="64"
-                                          // placeholder="Last Name"
-                                          placeholder={addr.LastName}
-                                          onChange={handleChange}
-                                        />
-                                      </div>
-                                    </div> */}
-                                  </div>
+                                  <div className="col-lg-6"></div>
                                   <div className="col-lg-12">
                                     <div className="UI search panel-body_text">
                                       <label>Academy Name*</label>
@@ -624,14 +609,16 @@ const Checkout_Page = () => {
                         )}
                       </div>
                     </div>
-                    <div className="address_text">
-                      {addr.userName} {addr.LastName} <br />
-                      {addr.Address1}
-                      <br /> {addr.Address2}
-                      <br /> Road.
-                      <br /> {addr.City}, {addr.State}, {addr.ZipCode}
-                      <br /> {addr.Country}
-                    </div>
+                    {addr && (
+                      <div className="address_text">
+                        {addr.user?.userName} <br />
+                        {addr.Address1}
+                        <br /> {addr.Address2}
+                        <br /> Road.
+                        <br /> {addr.City}, {addr.State}, {addr.ZipCode}
+                        <br /> {addr.Country}
+                      </div>
+                    )}
                   </div>
                 ) : (
                   <div>Loading...</div>
@@ -964,13 +951,11 @@ const Checkout_Page = () => {
                       </div>
                       <div className="order_title">
                         <h6>Taxes(GST)</h6>
-                        <div className="order_price">${order.Taxes}</div>
+                        <div className="order_price">$ {order.Taxes}</div>
                       </div>
                       <div className="order_title">
                         <h4>Total</h4>
-                        <div className="order_price">
-                          ${order.CoursePrice + order.Taxes}
-                        </div>
+                        <div className="order_price">$ {order.amount}</div>
                       </div>
                       <Link to="/invoice_page">
                         <button className="chckot_btn" type="submit">
@@ -1002,9 +987,7 @@ const Checkout_Page = () => {
                     </div>
                     <div className="order_title">
                       <h2>Total</h2>
-                      <div className="order_price5">
-                        ${order.CoursePrice + order.Taxes}
-                      </div>
+                      <div className="order_price5">$ {order.amount}</div>
                     </div>
                     <div className="scr_text">
                       <FontAwesomeIcon

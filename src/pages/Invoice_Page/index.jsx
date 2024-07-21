@@ -7,11 +7,12 @@ import { fetchAddr, fetchOrder } from "../../redux/features/checkoutSlice";
 
 const Invoice_Page = () => {
   const dispatch = useDispatch();
+  const account = useSelector((state) => state.user.account);
   const { addr, order, status, error } = useSelector((state) => state.checkout);
 
   useEffect(() => {
-    dispatch(fetchOrder());
-    dispatch(fetchAddr());
+    dispatch(fetchOrder(account?.id));
+    dispatch(fetchAddr(account?.id));
   }, [dispatch]);
   return (
     <div className="invoice">
@@ -42,7 +43,8 @@ const Invoice_Page = () => {
                   <ul>
                     <li>
                       <div class="invoice_date_info_list">
-                        <span>Date :</span>10 April 2020
+                        <span>Date :</span>
+                        {order.date}
                       </div>
                     </li>
                     <li>
@@ -63,7 +65,7 @@ const Invoice_Page = () => {
                     <div class="col-md-12">
                       <h2 class="invoice_title">Invoice</h2>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                       <div class="invoice_title_item">
                         <h4>To</h4>
                         <ul>
@@ -98,7 +100,7 @@ const Invoice_Page = () => {
                         </ul>
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                       <div class="invoice_title_item">
                         <h4>Cursus</h4>
                         <ul>
@@ -162,7 +164,7 @@ const Invoice_Page = () => {
                           </td>
                           <td>
                             <div class="user_dt_trans">
-                              <p>${order.CoursePrice + order.Taxes}</p>
+                              <p>${order.amount}</p>
                             </div>
                           </td>
                         </tr>
@@ -171,8 +173,7 @@ const Invoice_Page = () => {
                           <td colspan="3">
                             <div class="user_dt_trans total">
                               <div class="invoice_total">
-                                Invoice Total : USD $
-                                {order.CoursePrice + order.Taxes}
+                                Invoice Total : USD ${order.amount}
                               </div>
                               <p>Paid via Paypal</p>
                             </div>

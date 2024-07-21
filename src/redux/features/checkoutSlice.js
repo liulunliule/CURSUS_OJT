@@ -5,24 +5,24 @@ import axios from 'axios';
 // Thunks to fetch and update data
 export const fetchOrder = createAsyncThunk(
   'checkout/fetchOrder',
-  async () => {
-    const response = await axios.get(`https://6696231a0312447373c1386e.mockapi.io/user/1/Order/1`);
+  async (userId) => {
+    const response = await axios.get(`https://6696231a0312447373c1386e.mockapi.io/user/${userId}/Order/1`);
     return response.data;
   }
 );
 
 export const fetchAddr = createAsyncThunk(
   'checkout/fetchAddr',
-  async () => {
-    const response = await axios.get(`https://6696231a0312447373c1386e.mockapi.io/user/1/addr/1`);
+  async (userId) => {
+    const response = await axios.get(`https://6696231a0312447373c1386e.mockapi.io/user/${userId}/addr/1`);
     return response.data;
   }
 );
 
 export const updateAddress = createAsyncThunk(
   'checkout/updateAddress',
-  async (addr) => {
-    const response = await axios.put(`https://6696231a0312447373c1386e.mockapi.io/user/1/addr/1`, addr);
+  async (userId,addr) => {
+    const response = await axios.put(`https://6696231a0312447373c1386e.mockapi.io/user/${userId}/addr/1`, addr);
     return response.data;
   }
 );
