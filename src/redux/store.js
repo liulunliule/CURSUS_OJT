@@ -13,6 +13,8 @@ import myStudioReducer from "./features/myStudioSlice";
 import allInstructorReducer from "./features/allInstructorSlice";
 import reviewFeedbackReducer from "./features/reviewfeedbackSlice";
 import feedbackReportReducer from "./features/feedbackvsReportSlice";
+import notificationsSettingReducer from "./features/NotificationsSettingSlice";
+import privacySettingReducer from "./features/PrivacySettingSlice";
 import userSlice from "./features/userSlice";
 import certificationTestPageReducer from "./features/certificationTestPageSlice";
 import certificationTestResultReducer from "./features/certificationTestResultSlice";
@@ -45,6 +47,8 @@ const persistConfig = {
         "allInstructor",
         "reviewFeedback",
         "feedbackReport",
+        "notificationsSetting",
+        "privacySetting",
     ],
 };
 
@@ -71,6 +75,8 @@ const rootReducer = combineReducers({
     blogs: blogReducer,
         offices: officesReducer,
         press: pressReducer,
+    notificationsSetting: notificationsSettingReducer,
+    privacySetting: privacySettingReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
