@@ -1,36 +1,23 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
-    fetchNextPayoutData,
-    fetchTransactionsData,
-} from "../../services/apiService";
+  fetchNextPayout,
+  fetchTransactions,
+} from "../../redux/features/payoutSlice";
 
 export const useFetchPayoutData = () => {
-    const [nextPayout, setNextPayout] = useState({});
-    const [transactions, setTransactions] = useState([]);
+  const dispatch = useDispatch();
+  const nextPayout = useSelector((state) => state.payout.nextPayout);
+  const transactions = useSelector((state) => state.payout.transactions);
+  const status = useSelector((state) => state.payout.status);
+  const error = useSelector((state) => state.payout.error);
 
-    useEffect(() => {
-        const fetchNextPayout = async () => {
-            try {
-                const response = await fetchNextPayoutData();
-                setNextPayout(response.data[0]);
-            } catch (error) {
-                console.error("Error fetching next payout data:", error);
-            }
-        };
+  useEffect(() => {
+    if (status === "idle") {
+      dispatch(fetchNextPayout());
+      dispatch(fetchTransactions());
+    }
+  }, [status, dispatch]);
 
-        const fetchTransactions = async () => {
-            try {
-                const response = await fetchTransactionsData();
-                setTransactions(response.data);
-            } catch (error) {
-                console.error("Error fetching transactions data:", error);
-            }
-        };
-
-        fetchNextPayout();
-        fetchTransactions();
-    }, []);
-
-    return { nextPayout, transactions };
+  return { nextPayout, transactions, status, error };
 };

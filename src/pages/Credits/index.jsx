@@ -6,7 +6,15 @@ import { useFetchCreditsData } from './data';
 
 const Credits = () => {
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
-  const { addedCredits, transactions } = useFetchCreditsData();
+  const { addedCredits, transactions, status, error } = useFetchCreditsData();
+
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (status === 'failed') {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className={`credits-page ${isShowAll ? "active" : ""}`}>

@@ -11,15 +11,26 @@ import { faCreditCard } from "@fortawesome/free-regular-svg-icons";
 import { faPaypal } from "@fortawesome/free-brands-svg-icons";
 import { line } from "../../assets";
 import { Select } from "antd";
-import { hanldeGetAddr, hanldeGetOrder, updateAddress } from "./dataCheckout";
+import {
+  fetchAddr,
+  fetchOrder,
+  setAddr,
+  updateAddress,
+} from "../../redux/features/checkoutSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Checkout_Page = () => {
+  const dispatch = useDispatch();
+  const account = useSelector((state) => state.user.account);
   const [activeId, setActiveId] = useState(null);
   const [activeTab, setActiveTab] = useState("credit-tab");
+
+  const { addr, order, status, error } = useSelector((state) => state.checkout);
 
   const handleToggle = (id) => {
     setActiveId(activeId === id ? null : id);
   };
+
   const { Option } = Select;
   const filterSort = (optionA, optionB) => {
     const labelA = optionA.label ? optionA.label.toLowerCase() : "";
@@ -274,64 +285,39 @@ const Checkout_Page = () => {
     { value: "244", label: "Zambia" },
     { value: "245", label: "Zimbabwe" },
   ];
+
   const handleSave = async (e) => {
-    e.preventDefault(); // Ngăn chặn hành vi submit mặc định của form
+    e.preventDefault();
     try {
-      const updatedAddr = await updateAddress(addr);
-      console.log("Address updated successfully:", updatedAddr);
-      // Thực hiện hành động khác sau khi cập nhật thành công
-      loadData();
+      await dispatch(updateAddress(addr, account?.id)).unwrap();
+      console.log("Address updated successfully");
     } catch (error) {
       console.error("Error updating address:", error);
     }
   };
-  const [Order, setOrder] = useState([]);
-  // const [addr, setAddr] = useState([]);
-  const [addr, setAddr] = useState({
-    AcademyName: "",
-    Country: "",
-    Address1: "",
-    Address2: "",
-    City: "",
-    State: "",
-    ZipCode: "",
-    Phone: "",
-    FirstName: "",
-    LastName: "",
-  });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setAddr((prevAddr) => ({
-      ...prevAddr,
-      [name]: value,
-    }));
+    dispatch(setAddr({ ...addr, [name]: value }));
   };
 
   const handleSelectChange = (value) => {
     const selectedCountry = countries.find(
       (country) => country.value === value
     );
-    setAddr((prevAddr) => ({
-      ...prevAddr,
-      Country: selectedCountry ? selectedCountry.label : "",
-    }));
+    dispatch(
+      setAddr({
+        ...addr,
+        Country: selectedCountry ? selectedCountry.label : "",
+      })
+    );
   };
-  const loadData = async () => {
-    try {
-      const Order = await hanldeGetOrder();
-      setOrder(Order);
-      console.log("Order ", Order);
 
-      const addr = await hanldeGetAddr();
-      setAddr(addr);
-      console.log("Addr ", addr);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
   useEffect(() => {
-    loadData();
-  }, []);
+    dispatch(fetchOrder(account?.id));
+    dispatch(fetchAddr(account?.id));
+  }, [dispatch]);
+
   return (
     <div className="Checkout_Page">
       <div className="toolbar_certification">
@@ -347,8 +333,8 @@ const Checkout_Page = () => {
                           <Link href="#">Home</Link>
                         </li>
                         <li className="breadcrumb-item">
-                          <Link to="/certification_center">
-                            Certification Center
+                          <Link to="/secondLayout/certification_center">
+                            {order.CourseName}
                           </Link>
                         </li>
                         <li
@@ -362,7 +348,10 @@ const Checkout_Page = () => {
                   </div>
                 </div>
                 <div className="titleright">
-                  <Link to="/certification_center" className="blog_link">
+                  <Link
+                    to="/secondLayout/certification_center"
+                    className="blog_link"
+                  >
                     <FontAwesomeIcon icon={faAnglesLeft} /> Back to
                     Certification Center
                   </Link>
@@ -410,7 +399,7 @@ const Checkout_Page = () => {
                             <div className="panel-body">
                               <form onSubmit={handleSave}>
                                 <div className="row">
-                                  <div className="col-lg-6">
+                                  <div className="col-lg-12">
                                     <div className="UI search panel-body_text">
                                       <label>First Name*</label>
                                       <div className="UI input panel-body_text_item">
@@ -418,36 +407,18 @@ const Checkout_Page = () => {
                                           className="prompt srch_explore"
                                           type="text"
                                           name="FirstName"
-                                          // value={addr.FirstName}
+                                          // value={addr.userName}
                                           id="id_name"
                                           required
                                           maxlength="64"
                                           // placeholder="First Name"
-                                          placeholder={addr.FirstName}
+                                          placeholder={addr.user.userName}
                                           onChange={handleChange}
                                         />
                                       </div>
                                     </div>
                                   </div>
-                                  <div className="col-lg-6">
-                                    <div className="UI search panel-body_text">
-                                      <label>Last Name*</label>
-                                      <div className="UI input panel-body_text_item">
-                                        <input
-                                          className="prompt srch_explore"
-                                          type="text"
-                                          name="LastName"
-                                          // value={addr.LastName}
-                                          id="id_surname"
-                                          required=""
-                                          maxlength="64"
-                                          // placeholder="Last Name"
-                                          placeholder={addr.LastName}
-                                          onChange={handleChange}
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
+                                  <div className="col-lg-6"></div>
                                   <div className="col-lg-12">
                                     <div className="UI search panel-body_text">
                                       <label>Academy Name*</label>
@@ -638,14 +609,16 @@ const Checkout_Page = () => {
                         )}
                       </div>
                     </div>
-                    <div className="address_text">
-                      {addr.FirstName} {addr.LastName} <br />
-                      {addr.Address1},
-                      <br /> {addr.Address2}
-                      <br /> Road.
-                      <br /> {addr.City}, {addr.State}, {addr.ZipCode}
-                      <br /> {addr.Country}
-                    </div>
+                    {addr && (
+                      <div className="address_text">
+                        {addr.user?.userName} <br />
+                        {addr.Address1}
+                        <br /> {addr.Address2}
+                        <br /> Road.
+                        <br /> {addr.City}, {addr.State}, {addr.ZipCode}
+                        <br /> {addr.Country}
+                      </div>
+                    )}
                   </div>
                 ) : (
                   <div>Loading...</div>
@@ -970,21 +943,19 @@ const Checkout_Page = () => {
                     <h4>Order Details</h4>
                     <img src={line} alt="" />
                   </div>
-                  {Order ? (
+                  {order ? (
                     <div className="order_dt_section">
                       <div className="order_title">
-                        <h4>{Order.CourseName}</h4>
-                        <div className="order_price">${Order.CoursePrice}</div>
+                        <h4>{order.CourseName}</h4>
+                        <div className="order_price">${order.CoursePrice}</div>
                       </div>
                       <div className="order_title">
                         <h6>Taxes(GST)</h6>
-                        <div className="order_price">${Order.Taxes}</div>
+                        <div className="order_price">$ {order.Taxes}</div>
                       </div>
                       <div className="order_title">
                         <h4>Total</h4>
-                        <div className="order_price">
-                          ${Order.CoursePrice + Order.Taxes}
-                        </div>
+                        <div className="order_price">$ {order.amount}</div>
                       </div>
                       <Link to="/invoice_page">
                         <button className="chckot_btn" type="submit">
@@ -1004,21 +975,19 @@ const Checkout_Page = () => {
                   <h4>Order Summary</h4>
                   <img src={line} alt="" />
                 </div>
-                {Order ? (
+                {order ? (
                   <div className="order_dt_section">
                     <div className="order_title">
-                      <h4>{Order.CourseName}</h4>
-                      <div className="order_price">${Order.CoursePrice}</div>
+                      <h4>{order.CourseName}</h4>
+                      <div className="order_price">${order.CoursePrice}</div>
                     </div>
                     <div className="order_title">
                       <h6>Taxes(GST)</h6>
-                      <div className="order_price">${Order.Taxes}</div>
+                      <div className="order_price">${order.Taxes}</div>
                     </div>
                     <div className="order_title">
                       <h2>Total</h2>
-                      <div className="order_price5">
-                        ${Order.CoursePrice + Order.Taxes}
-                      </div>
+                      <div className="order_price5">$ {order.amount}</div>
                     </div>
                     <div className="scr_text">
                       <FontAwesomeIcon

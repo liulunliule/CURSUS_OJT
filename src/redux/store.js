@@ -1,5 +1,10 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import savedCourseReducer from "./features/savedCourseSlice";
+import blogReducer from './features/ourBlogSlice';
+import officesReducer from './features/officesSlice';
+import pressReducer from './features/pressSlice';
+import payoutReducer from './features/payoutSlice';
+import creditsReducer from "./features/creditsSlice";
 import certificateReducer from "./features/myCertificateSlice";
 import myProfileReducer from "./features/myProfileSlice";
 import myHeaderReducer from "./features/myHeaderSlice";
@@ -12,6 +17,9 @@ import analyticsReducer from "./features/analyticsSlice";
 import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
 import courseSlice from "./features/courseSlice";
+import checkoutReducer from './features/checkoutSlice';
+import earningReducer from './features/earningSlice';
+import statementReducer from './features/statementSlice';
 // export const store = configureStore({
 //     reducer: {
 //         savedCourse: savedCourseReducer,
@@ -46,6 +54,14 @@ const rootReducer = combineReducers({
     myHeader: myHeaderReducer,
     mySearch: mySearchReducer,
     myStudio: myStudioReducer,
+    checkout: checkoutReducer,
+    earnings: earningReducer,
+    statement: statementReducer,
+    credits: creditsReducer,
+    payout: payoutReducer,
+    blogs: blogReducer,
+        offices: officesReducer,
+        press: pressReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
