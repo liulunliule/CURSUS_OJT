@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// Thunks
 export const fetchUserInfo = createAsyncThunk(
   "myProfile/fetchUserInfo",
   async () => {
@@ -53,7 +52,7 @@ export const fetchPostComment = createAsyncThunk(
     userName,
     replyToUserId,
     status,
-    commentId, // Thêm commentId
+    commentId,
   }) => {
     const commentData = {
       user: userName,
@@ -66,7 +65,7 @@ export const fetchPostComment = createAsyncThunk(
       replyTo,
       replyToUserId,
       status,
-      commentId, // Thêm commentId
+      commentId,
     };
 
     const response = await axios.post(
@@ -115,7 +114,6 @@ export const fetchUsers = createAsyncThunk("myProfile/fetchUsers", async () => {
   return response.data;
 });
 
-// Slice
 const myProfileSlice = createSlice({
   name: "myProfile",
   initialState: {
