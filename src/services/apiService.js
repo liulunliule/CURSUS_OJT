@@ -55,23 +55,23 @@ const getCourse = () => {
 //     return fetch(`https://66753c2ba8d2b4d072ef3683.mockapi.io/Test`);
 // };
 
-const getOrder = () => {
-    return fetch(`https://669454774bd61d8314c73d55.mockapi.io/Order/1`);
-};
+// const getOrder = () => {
+//     return fetch(`https://669454774bd61d8314c73d55.mockapi.io/Order/1`);
+// };
 
-const getGetAddr = () => {
-    return fetch(`https://669454774bd61d8314c73d55.mockapi.io/addr/1`);
-};
+// const getGetAddr = () => {
+//     return fetch(`https://669454774bd61d8314c73d55.mockapi.io/addr/1`);
+// };
 
-const updateAddress = (addr) => {
-    return fetch("https://669454774bd61d8314c73d55.mockapi.io/addr/1", {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(addr),
-    });
-};
+// const updateAddress = (addr) => {
+//     return fetch("https://669454774bd61d8314c73d55.mockapi.io/addr/1", {
+//         method: "PUT",
+//         headers: {
+//             "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(addr),
+//     });
+// };
 
 const fetchCreditData = () => {
     return axios.get(
@@ -119,7 +119,7 @@ export {
     postRegister,
     // getDataChart,
     // getQuestion,
-    getOrder,
-    getGetAddr,
-    updateAddress,
+    // getOrder,
+    // getGetAddr,
+    // updateAddress,
 };
