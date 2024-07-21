@@ -67,6 +67,12 @@
         &:hover {
             background-color: #333;
         }
+
+        &:disabled {
+            background-color: #ddd;
+            color: #afafaf;
+            cursor: no-drop;
+        }
     }
     &__form {
         display: flex;
@@ -155,7 +161,7 @@
         color: #686f7a;
         font-size: 14px;
 
-        .aaaa{
+        .aaaa {
             text-decoration: none;
         }
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.scss";
 import { Select } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,50 +7,24 @@ import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { search } from "../../assets";
 import { Table, Button } from "antd";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchStatementTable } from "../../redux/features/statementSlice";
 
 const Students_statement = () => {
+  const dispatch = useDispatch();
+  const account = useSelector((state) => state.user.account);
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
+  const statementData = useSelector((state) => state.statement.data);
+  const statementStatus = useSelector((state) => state.statement.status);
   const { Option } = Select;
-  const data = [
-    {
-      key: "1",
-      date: "13 Apr 2020",
-      orderId: "123456",
-      type: "Buy",
-      title: "Course Title Here",
-      amount: "$17",
-      invoice: "View",
-    },
-    {
-      key: "2",
-      date: "10 Apr 2020",
-      orderId: "123456",
-      type: "Buy",
-      title: "Course Title Here",
-      amount: "$22",
-      invoice: "View",
-    },
-    {
-      key: "3",
-      date: "5 Apr 2020",
-      orderId: "123456",
-      type: "Buy",
-      title: "Course Title Here",
-      amount: "$10",
-      invoice: "View",
-    },
-    {
-      key: "4",
-      date: "3 Apr 2020",
-      orderId: "123456",
-      type: "Buy",
-      title: "Course Title Here",
-      amount: "$8",
-      invoice: "View",
-    },
-  ];
 
+  useEffect(() => {
+    if (account) {
+      if (statementStatus === "idle") {
+        dispatch(fetchStatementTable(account.id));
+      }
+    }
+  }, [statementStatus, account.id, dispatch]);
   const columns = [
     {
       title: "Date",
@@ -59,8 +33,8 @@ const Students_statement = () => {
     },
     {
       title: "Order ID",
-      dataIndex: "orderId",
-      key: "orderId",
+      dataIndex: "OrderId",
+      key: "OrderId",
     },
     {
       title: "Type",
@@ -194,7 +168,11 @@ const Students_statement = () => {
             </div>
             <div className="col-lg-12 col-md-12">
               <div className="statement_table">
-                <Table dataSource={data} columns={columns} pagination={false} />
+                <Table
+                  dataSource={statementData}
+                  columns={columns}
+                  pagination={false}
+                />
               </div>
             </div>
           </div>

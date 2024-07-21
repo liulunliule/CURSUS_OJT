@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
 import { Logo_dark } from "../../assets";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAddr, fetchOrder } from "../../redux/features/checkoutSlice";
 
 const Invoice_Page = () => {
+  const dispatch = useDispatch();
+  const account = useSelector((state) => state.user.account);
+  const { addr, order, status, error } = useSelector((state) => state.checkout);
+
+  useEffect(() => {
+    dispatch(fetchOrder(account?.id));
+    dispatch(fetchAddr(account?.id));
+  }, [dispatch]);
   return (
     <div className="invoice">
       <div className="invoice_header ">
@@ -33,7 +43,8 @@ const Invoice_Page = () => {
                   <ul>
                     <li>
                       <div class="invoice_date_info_list">
-                        <span>Date :</span>10 April 2020
+                        <span>Date :</span>
+                        {order.date}
                       </div>
                     </li>
                     <li>
@@ -43,7 +54,8 @@ const Invoice_Page = () => {
                     </li>
                     <li>
                       <div class="invoice_date_info_list">
-                        <span>Order ID :</span>1258963487
+                        <span>Order ID :</span>
+                        {order.id}
                       </div>
                     </li>
                   </ul>
@@ -53,37 +65,42 @@ const Invoice_Page = () => {
                     <div class="col-md-12">
                       <h2 class="invoice_title">Invoice</h2>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                       <div class="invoice_title_item">
                         <h4>To</h4>
                         <ul>
                           <li>
                             <div class="invoice_date_info_list">
-                              Rock William
+                              {addr.userName}
                             </div>
                           </li>
                           <li>
                             <div class="invoice_date_info_list">
-                              133, Dracut
+                              {addr.Address1}
+                              <br /> {addr.Address2}
                             </div>
                           </li>
                           <li>
                             <div class="invoice_date_info_list">
-                              Massachusetts
+                              {addr.City}
+                              <br />
+                              {addr.State}
                             </div>
                           </li>
                           <li>
-                            <div class="invoice_date_info_list">01826</div>
+                            <div class="invoice_date_info_list">
+                              {addr.ZipCode}
+                            </div>
                           </li>
                           <li>
                             <div class="invoice_date_info_list">
-                              United States
+                              {addr.Country}
                             </div>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                       <div class="invoice_title_item">
                         <h4>Cursus</h4>
                         <ul>
@@ -132,22 +149,22 @@ const Invoice_Page = () => {
                         <tr>
                           <th scope="row">
                             <div class="user_dt_trans">
-                              <p>Item Title</p>
+                              <p>{order.CourseName}</p>
                             </div>
                           </th>
                           <td>
                             <div class="user_dt_trans">
-                              <p>$79.00</p>
+                              <p>${order.CoursePrice}</p>
                             </div>
                           </td>
                           <td>
                             <div class="user_dt_trans">
-                              <p>$10.00</p>
+                              <p>${order.Taxes}</p>
                             </div>
                           </td>
                           <td>
                             <div class="user_dt_trans">
-                              <p>$89.00</p>
+                              <p>${order.amount}</p>
                             </div>
                           </td>
                         </tr>
@@ -156,7 +173,7 @@ const Invoice_Page = () => {
                           <td colspan="3">
                             <div class="user_dt_trans total">
                               <div class="invoice_total">
-                                Invoice Total : USD $220.00
+                                Invoice Total : USD ${order.amount}
                               </div>
                               <p>Paid via Paypal</p>
                             </div>

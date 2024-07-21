@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "./index.scss";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "bootstrap/scss/bootstrap.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,58 +9,36 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import Setting from "../../assets/img/settings.png";
-import {
-  fetchUserInfo,
-  fetchUserPosts,
-  fetchUserReviews,
-  fetchSubscriptions,
-} from "../Instructor_Profile/data";
 import About from "../Instructor_Profile/About/about";
 import Purchased from "../Instructor_Profile/Purchased/purchased";
 import Discussion from "../Instructor_Profile/Discussion/discussion";
 import Subscriptions from "../Instructor_Profile/Subscriptions/subscriptions";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-function Other_Instructor_View() {
-  const [userInfo, setUserInfo] = useState(null);
-  const [posts, setPosts] = useState([]);
-  const [userReviews, setUserReviews] = useState([]);
-  const [subscriptions, setSubscriptions] = useState([]);
-  const [activeTab, setActiveTab] = useState("nav-about");
-  const [loading, setLoading] = useState(true);
-  const targetId = "1";
-  const [courseCount, setCourseCount] = useState(0);
-  const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
+import "./index.scss";
+import {
+  fetchUserInfo,
+  fetchUserReviews,
+} from "../../redux/features/myProfileSlice";
 
-  const handleTabClick = (tabId) => {
-    setActiveTab(tabId);
-  };
+const Instructor_Profile = () => {
+  const dispatch = useDispatch();
+  const [activeTab, setActiveTab] = useState("nav-about");
+  const userInfo = useSelector((state) => state.myProfile.userInfo);
+  const userReviews = useSelector((state) => state.myProfile.userReviews);
+  const [loading, setLoading] = useState(true);
+  const isShowAll = useSelector((state) => state.savedCourse?.isShowAll);
 
   useEffect(() => {
-    const loadData = async () => {
-      try {
-        const userInfo = await fetchUserInfo(targetId);
-        setUserInfo(userInfo);
-
-        const postsData = await fetchUserPosts();
-        setPosts(postsData);
-        setCourseCount(postsData.length);
-
-        const reviewsData = await fetchUserReviews();
-        setUserReviews(reviewsData);
-
-        const subscriptionsData = await fetchSubscriptions();
-        setSubscriptions(subscriptionsData);
-
+    dispatch(fetchUserInfo());
+    dispatch(fetchUserReviews())
+      .then(() => {
         setLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+      })
+      .catch((error) => {
+        console.error("Error fetching instructors:", error);
         setLoading(false);
-      }
-    };
-
-    loadData();
-  }, [targetId]);
+      });
+  }, [dispatch]);
 
   if (loading) {
     return (
@@ -69,7 +47,7 @@ function Other_Instructor_View() {
         style={{
           width: "100%",
           height: "100vh",
-          backgroundColor: "#f7f7f7",
+          backdropFilter: "blur(3px)",
           position: "absolute",
           zIndex: "3000",
         }}
@@ -81,15 +59,11 @@ function Other_Instructor_View() {
     );
   }
 
-  const chunkArray = (array, size) => {
-    const chunkedArray = [];
-    for (let i = 0; i < array.length; i += size) {
-      chunkedArray.push(array.slice(i, i + size));
-    }
-    return chunkedArray;
-  };
+  if (!userInfo || !Array.isArray(userReviews) || userInfo.length === 0) {
+    return <div>No data available.</div>;
+  }
 
-  const postsChunks = chunkArray(posts, 4);
+  const firstUserInfo = userInfo[0];
 
   return (
     <div className={`instructor-container ${isShowAll ? "active" : ""}`}>
@@ -102,54 +76,56 @@ function Other_Instructor_View() {
                 <div className="profile-left col-lg-6">
                   <div className="user_infor">
                     <img
-                      src={userInfo.avatar}
-                      alt={userInfo.name}
+                      src={firstUserInfo.avatar}
+                      alt=""
                       className="userInfo_avatar"
                     />
                     <div className="userInfor">
                       <div className="userInfor_instructor">
-                        <h2>{userInfo.name}</h2>
-                        <span>{userInfo.major}</span>
+                        <h2>{firstUserInfo.name}</h2>
+                        <span>{firstUserInfo.major}</span>
                       </div>
                     </div>
                   </div>
                   <div className="userInfor_join">
-                    <li>
-                      <div className="userInfor_join_group">
-                        <div className="userInfor_join_title">
-                          Enroll Students
+                    <ul>
+                      <li>
+                        <div className="userInfor_join_group">
+                          <div className="userInfor_join_title">Purchased</div>
+                          <div className="userInfor_join_parameter">
+                            {firstUserInfo.enrollstudents}
+                          </div>
                         </div>
-                        <div className="userInfor_join_parameter">
-                          {userInfo.enrollstudents}
+                      </li>
+                      <li>
+                        <div className="userInfor_join_group">
+                          <div className="userInfor_join_title">My Reviews</div>
+                          <div className="userInfor_join_parameter">
+                            {firstUserInfo.course}
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="userInfor_join_group">
-                        <div className="userInfor_join_title">Courses</div>
-                        <div className="userInfor_join_parameter">
-                          {courseCount}
+                      </li>
+                      <li>
+                        <div className="userInfor_join_group">
+                          <div className="userInfor_join_title">
+                            Subscriptions
+                          </div>
+                          <div className="userInfor_join_parameter">
+                            {userReviews.length}
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="userInfor_join_group">
-                        <div className="userInfor_join_title">Reviews</div>
-                        <div className="userInfor_join_parameter">
-                          {userInfo.reviews}
+                      </li>
+                      <li>
+                        <div className="userInfor_join_group">
+                          <div className="userInfor_join_title">
+                            Cerfiticates
+                          </div>
+                          <div className="userInfor_join_parameter">
+                            {firstUserInfo.subscriptions}
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="userInfor_join_group">
-                        <div className="userInfor_join_title">
-                          Subscriptions
-                        </div>
-                        <div className="userInfor_join_parameter">
-                          {userInfo.subscriptions}
-                        </div>
-                      </div>
-                    </li>
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 <div className="profile_right col-lg-6">
@@ -159,7 +135,7 @@ function Other_Instructor_View() {
                         src={Setting}
                         alt="Setting"
                         className="setting_icon"
-                      ></img>
+                      />
                     </span>
                     Setting
                   </Link>
@@ -169,9 +145,7 @@ function Other_Instructor_View() {
                         <a href="#" className="fb">
                           <FontAwesomeIcon
                             icon={faFacebookF}
-                            style={{
-                              color: "white",
-                            }}
+                            style={{ color: "white" }}
                           />
                         </a>
                       </li>
@@ -179,9 +153,7 @@ function Other_Instructor_View() {
                         <a href="#" className="tw">
                           <FontAwesomeIcon
                             icon={faTwitter}
-                            style={{
-                              color: "white",
-                            }}
+                            style={{ color: "white" }}
                           />
                         </a>
                       </li>
@@ -189,9 +161,7 @@ function Other_Instructor_View() {
                         <a href="#" className="ln">
                           <FontAwesomeIcon
                             icon={faLinkedinIn}
-                            style={{
-                              color: "white",
-                            }}
+                            style={{ color: "white" }}
                           />
                         </a>
                       </li>
@@ -199,9 +169,7 @@ function Other_Instructor_View() {
                         <a href="#" className="yu">
                           <FontAwesomeIcon
                             icon={faYoutube}
-                            style={{
-                              color: "white",
-                            }}
+                            style={{ color: "white" }}
                           />
                         </a>
                       </li>
@@ -233,7 +201,7 @@ function Other_Instructor_View() {
                 </div>
               </div>
             </div>
-            {/* ///////////////////////Tab Content/////////////////// */}
+            {/* Tab navigation */}
             <div className="course_tabs_container">
               <div className="row instructor_container_row">
                 <div className="col-lg-12">
@@ -253,11 +221,10 @@ function Other_Instructor_View() {
                           href="#nav-about"
                           role="tab"
                           aria-selected={activeTab === "nav-about"}
-                          onClick={() => handleTabClick("nav-about")}
+                          onClick={() => setActiveTab("nav-about")}
                         >
                           About
                         </a>
-
                         <a
                           className={`nav-item nav-link ${
                             activeTab === "nav-purchased" ? "active" : ""
@@ -267,7 +234,7 @@ function Other_Instructor_View() {
                           href="#nav-purchased"
                           role="tab"
                           aria-selected={activeTab === "nav-purchased"}
-                          onClick={() => handleTabClick("nav-purchased")}
+                          onClick={() => setActiveTab("nav-purchased")}
                         >
                           Purchased
                         </a>
@@ -280,7 +247,7 @@ function Other_Instructor_View() {
                           href="#nav-reviews"
                           role="tab"
                           aria-selected={activeTab === "nav-reviews"}
-                          onClick={() => handleTabClick("nav-reviews")}
+                          onClick={() => setActiveTab("nav-reviews")}
                         >
                           Discussion
                         </a>
@@ -293,7 +260,7 @@ function Other_Instructor_View() {
                           href="#nav-subscriptions"
                           role="tab"
                           aria-selected={activeTab === "nav-subscriptions"}
-                          onClick={() => handleTabClick("nav-subscriptions")}
+                          onClick={() => setActiveTab("nav-subscriptions")}
                         >
                           Subscriptions
                         </a>
@@ -308,40 +275,50 @@ function Other_Instructor_View() {
               <div className="col-lg-12">
                 <div className="course_tab_content">
                   <div className="tab-content" id="nav-tabContent">
-                    {/* //////////////////////About//////////////////////////// */}
+                    {/* About tab */}
                     <div
                       className={`tab-pane fade ${
-                        activeTab === "nav-about" ? "active show" : ""
+                        activeTab === "nav-about" ? "show active" : ""
                       }`}
                       id="nav-about"
                       role="tabpanel"
                       aria-labelledby="nav-about-tab"
                     >
-                      <About userInfo={userInfo} />
+                      <About />
                     </div>
-
-                    {/* /////////////////////////////Purchased//////////////////////////////////////////// */}
+                    {/* Purchased tab */}
                     <div
                       className={`tab-pane fade ${
-                        activeTab === "nav-purchased" ? "active show" : ""
+                        activeTab === "nav-purchased" ? "show active" : ""
                       }`}
                       id="nav-purchased"
                       role="tabpanel"
                       aria-labelledby="nav-purchased-tab"
                     >
-                      <Purchased posts={posts} />
+                      <Purchased />
                     </div>
-                    {/* ///////////////////////////Discussion//////////////////////// */}
-                    <Discussion
-                      userReviews={userReviews}
-                      userInfo={userInfo}
-                      activeTab={activeTab}
-                    />
-                    {/* ////////////////////////Subscriptions////////////////////////////////////*/}
-                    <Subscriptions
-                      subscriptions={subscriptions}
-                      activeTab={activeTab}
-                    />
+                    {/* Discussion tab */}
+                    <div
+                      className={`tab-pane fade ${
+                        activeTab === "nav-reviews" ? "show active" : ""
+                      }`}
+                      id="nav-reviews"
+                      role="tabpanel"
+                      aria-labelledby="nav-reviews-tab"
+                    >
+                      <Discussion />
+                    </div>
+                    {/* Subscriptions tab */}
+                    <div
+                      className={`tab-pane fade ${
+                        activeTab === "nav-subscriptions" ? "show active" : ""
+                      }`}
+                      id="nav-subscriptions"
+                      role="tabpanel"
+                      aria-labelledby="nav-subscriptions-tab"
+                    >
+                      <Subscriptions />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -351,5 +328,6 @@ function Other_Instructor_View() {
       </div>
     </div>
   );
-}
-export default Other_Instructor_View;
+};
+
+export default Instructor_Profile;

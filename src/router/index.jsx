@@ -78,9 +78,10 @@ import APIClientsTab from "../pages/Setting_Page/API_Clients_Tab";
 import CloseAccountTab from "../pages/Setting_Page/Close_Account_Tab";
 import ReviewsPageInstructor from "../pages/ReviewsPageInstructor";
 import Analyics from "../pages/Analyics";
-
+import Student_Studio_Dashboard from "../pages/Student_Studio_Dashboard";
 import Verification from "../pages/Verification";
 import ReviewsPageStudent from "../pages/ReviewsPageStudent";
+import Reset_password from "../pages/Forgot_password/Reset_password/reset_password";
 function Router() {
   const router = createBrowserRouter([
     {
@@ -209,6 +210,10 @@ function Router() {
     {
       path: "/forgot_password",
       element: <ForgotPassword />,
+    },
+    {
+      path: "/reset_password",
+      element: <Reset_password />,
     },
     {
       path: "/signup",
@@ -385,8 +390,8 @@ function Router() {
       element: <FourLayout />,
       children: [
         {
-          path: "instructor_studio_dashboard",
-          element: <Instructor_Studio_Dashboard />,
+          path: "student_studio_dashboard",
+          element: <Student_Studio_Dashboard />,
         },
         {
           path: "purchased_courses_page",

@@ -1,5 +1,6 @@
-import React from "react";
-import "./index.scss";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUserPosts } from "../../../redux/features/myProfileSlice"; // Điều chỉnh đường dẫn nếu cần
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
@@ -7,12 +8,22 @@ import Play from "../../../assets/img/play-button.png";
 import Cart from "../../../assets/img/cart.png";
 import Down from "../../../assets/img/download.png";
 import Delete from "../../../assets/img/delete.png";
-const Purchased = ({ posts }) => {
+import "./index.scss";
+const Purchased = () => {
+  const dispatch = useDispatch();
+  const userPosts = useSelector((state) => state.myProfile.userPosts);
+
+  useEffect(() => {
+    dispatch(fetchUserPosts());
+  }, [dispatch]);
+  if (!Array.isArray(userPosts)) {
+    return <div>No courses available.</div>;
+  }
   return (
     <div className="purchased_content">
       <div className="purchased_course_list">
         <h3 className="about_title_text">Purchased Courses</h3>
-        {posts.map((item) => (
+        {userPosts.map((item) => (
           <div key={item.id} className="purchased_item">
             <div className="purchased_course_card">
               <div className="purchased_course_image">
@@ -91,7 +102,7 @@ const Purchased = ({ posts }) => {
                 <div className="purchased_badge">Purchased</div>
                 <div className="author_price">
                   By{" "}
-                  <a href="#" class="author">
+                  <a href="#" className="author">
                     {item.author}
                   </a>
                   <button

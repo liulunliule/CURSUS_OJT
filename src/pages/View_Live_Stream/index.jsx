@@ -7,7 +7,7 @@ import Share from "../../assets/img/share_live.png";
 import liveButton from "../../assets/img/live_button.png";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-
+import useFetch from "./fetch";
 
 const View_Live_Stream = () => {
     var settings = {
@@ -17,6 +17,9 @@ const View_Live_Stream = () => {
         slidesToShow: 6,
         slidesToScroll: 1,
       };
+
+    const { data: liveStreams, loading: liveStreamsLoading } = useFetch("https://66908324c0a7969efd9c4d55.mockapi.io/liveInstructor");
+    const { data: otherData, loading: otherDataLoading } = useFetch("https://66908324c0a7969efd9c4d55.mockapi.io/chatContent");
 
   return (
     <div className='fullPageWrap'>
@@ -68,7 +71,7 @@ const View_Live_Stream = () => {
                                 </div>
                                 <div className='live_chat_content'>
                                     <div className='ongod'>
-                                        {chat.map((d) => (
+                                        {otherData.map((d) => (
                                             <p>
                                                 <a href='#'>{d.name}</a>
                                                 {d.content}
@@ -95,7 +98,7 @@ const View_Live_Stream = () => {
                             <div className="owl-stage-outer">
                                 <div className="owl-stage100">
                                 <Slider {...settings}>
-                                    {data.map((d) => (
+                                    {liveStreams.map((d) => (
                                     <div className="owl-item">
                                         <div className="item">
                                         <div className="stream_1">
@@ -126,87 +129,5 @@ const View_Live_Stream = () => {
     </div>
   )
 }
-
-const chat = [
-    {
-        name: "John Doe",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec aliquet molestie leo ac pellentesque"
-    },
-    {
-        name: "Poonam",
-        content: "Class aptent taciti sociosqu ad litora torquent per conubia nostra"
-    },
-    {
-        name: "Jass",
-        content: "Nulla sollicitudin nec nisi at pellentesque. Cras fringilla est et sem tempor"
-    },
-    {
-        name: "Albert Smith",
-        content: "Pellentesque ultricies risus sit amet congue euismod"
-    },
-    {
-        name: "Jassica William",
-        content: "Nullam efficitur tristique consequat"
-    },
-    {
-        name: "Joy Dua",
-        content: "Proin sed leo eleifend,"
-    },
-    {
-        name: "Zoena Singh",
-        content: "Aliquam dignissim elementum sem id rutrum"
-    },
-    {
-        name: "Amritpal Singh",
-        content: "Fusce a elit at libero sollicitudin tincidunt"
-    },
-    {
-        name: "Johnson",
-        content: "Ut laoreet lobortis ornare"
-    },
-    {
-        name: "Jashan",
-        content: "Sed pretium erat eu turpis condimentum"
-    },
-];
-
-const data = [
-    {
-      name: "John Doe",
-      img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg",
-    },
-    {
-      name: "Jassica",
-      img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg",
-    },
-    {
-      name: "Edututs+",
-      img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-9.jpg",
-    },
-    {
-      name: "Joginder",
-      img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-8.jpg",
-    },
-    {
-      name: "Zoena",
-      img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-5.jpg",
-    },
-    {
-      name: "Albert Dua",
-      img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-6.jpg",
-    },
-    {
-      name: "Ridhima",
-      img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-7.jpg",
-    },
-    {
-      name: "Amritpal",
-      img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-8.jpg",
-    },
-    {
-      name: "Jimmy",
-      img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg",
-    },
-  ];
 
 export default View_Live_Stream;

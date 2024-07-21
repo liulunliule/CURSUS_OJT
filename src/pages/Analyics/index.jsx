@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { UilAnalysis } from "@iconscout/react-unicons";
 import { Bar, Line } from "react-chartjs-2";
@@ -19,7 +19,8 @@ import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { Image, Table } from "antd";
 import { render } from "@testing-library/react";
 import { thumbnail } from "../../assets";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAnalyticsData } from "../../redux/features/analyticsSlice";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -32,28 +33,32 @@ ChartJS.register(
 );
 
 const Analyics = () => {
+  const dispatch = useDispatch();
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
+  const chartData = useSelector((state) => state.analytics.data);
+  const chartDataStatus = useSelector((state) => state.analytics.status);
   const [activeTab, setActiveTab] = useState("user");
+  // const [chartData, setChartData] = useState(null);
   const dataSubscribers = {
-    labels: Array.from({ length: 12 }, (_, i) => i + 1), // example labels from 1 to 15
+    labels: chartData?.months,
     datasets: [
       {
         label: "Subscribers",
-        data: [6, 3, 4, 3, 6, 9, 4, 8, 9, 5, 8, 3], // example data points
+        data: chartData?.subscribers,
         backgroundColor: "red",
         // barPercentage: 0.5,
-        barThickness: 15,
+        barThickness: 8,
         // maxBarThickness: 10,
         // minBarLength: 2,
       },
     ],
   };
   const dataVisitors = {
-    labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+    labels: chartData?.weekly,
     datasets: [
       {
         label: "old",
-        data: [0, 4, 3, 5, 3, 7, 0],
+        data: chartData?.weeklyVisistors.old,
         borderWidth: 2,
         borderColor: "orange",
         backgroundColor: "rgba(255, 165, 0, 0.1)",
@@ -67,7 +72,7 @@ const Analyics = () => {
       },
       {
         label: "new",
-        data: [0, 2, 4.3, 8, 5, 1.8, 2.2],
+        data: chartData?.weeklyVisistors.new,
         borderWidth: 2,
         borderColor: "red",
         backgroundColor: "rgba(255, 0, 0, 0.1)",
@@ -81,13 +86,13 @@ const Analyics = () => {
       },
     ],
   };
-
-  const dataActivity = {
-    labels: ["4 Apr", "5 Apr", "6 Apr", "7 Apr", "8 Apr", "9 Apr", "10 Apr"],
+  //not Done
+  const [dataUserActivity, setDataUserActivity] = useState({
+    labels: chartData?.monthsActivity,
     datasets: [
       {
-        label: "Dataset 1",
-        data: [0, 50, 30, 70, 40, 90, 60],
+        label: "old",
+        data: chartData?.userActivity.old,
         borderWidth: 2,
         borderColor: "orange",
         backgroundColor: "rgba(255, 165, 0, 0.1)",
@@ -101,8 +106,8 @@ const Analyics = () => {
         borderDash: [5, 5], // Dashed line
       },
       {
-        label: "Dataset 2",
-        data: [0, 30, 70, 50, 80, 150, 100],
+        label: "new",
+        data: chartData?.userActivity.new,
         borderWidth: 2,
         borderColor: "red",
         backgroundColor: "rgba(255, 0, 0, 0.1)",
@@ -115,14 +120,75 @@ const Analyics = () => {
         tension: 0,
       },
     ],
+  });
+  const updateDataUserActivity = (tab) => {
+    const activityData = getActivityData(tab);
+    setDataUserActivity({
+      labels: chartData?.monthsActivity,
+      datasets: [
+        {
+          label: "old",
+          data: activityData.old,
+          borderWidth: 2,
+          borderColor: "orange",
+          backgroundColor: "rgba(255, 165, 0, 0.1)",
+          pointBackgroundColor: "#ffffff",
+          pointBorderColor: "orange",
+          pointBorderWidth: 2,
+          pointStyle: "circle",
+          pointRadius: 5,
+          fill: false,
+          tension: 0,
+          borderDash: [5, 5], // Dashed line
+        },
+        {
+          label: "new",
+          data: activityData.new,
+          borderWidth: 2,
+          borderColor: "red",
+          backgroundColor: "rgba(255, 0, 0, 0.1)",
+          pointBackgroundColor: "#ffffff",
+          pointBorderColor: "red",
+          pointBorderWidth: 2,
+          pointStyle: "circle",
+          pointRadius: 5,
+          fill: false,
+          tension: 0,
+        },
+      ],
+    });
   };
-
-  const dataSale = {
-    labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+  const getActivityData = (tab) => {
+    switch (tab) {
+      case "session":
+        return {
+          old: chartData?.sessionsActivity.old,
+          new: chartData?.sessionsActivity.new,
+        };
+      case "bounce":
+        return {
+          old: chartData?.bounceRateActivity.old,
+          new: chartData?.bounceRateActivity.new,
+        };
+      case "session-duration":
+        return {
+          old: chartData?.sessionsDurationActivity.old,
+          new: chartData?.sessionsDurationActivity.new,
+        };
+      case "user":
+      default:
+        return {
+          old: chartData?.userActivity.old,
+          new: chartData?.userActivity.new,
+        };
+    }
+  };
+  const dataWeeklySale = {
+    labels: chartData?.weekly,
     datasets: [
       {
         label: "Sales",
-        data: [0, 4, 3, 5, 3, 4, 1],
+        data: chartData?.weeklySales,
         borderWidth: 2,
         borderColor: "orange",
         backgroundColor: "rgba(255, 165, 0, 0.5)",
@@ -135,28 +201,12 @@ const Analyics = () => {
       },
     ],
   };
-
   const dataSaleOfYear = {
-    labels: [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Otc",
-      "Nov",
-      "Dec",
-    ],
+    labels: chartData?.months,
     datasets: [
       {
         label: "Sales Year",
-        data: [
-          0, 1400, 3200, 900, 4500, 5400, 1500, 7000, 3500, 2200, 3000, 1500,
-        ],
+        data: chartData?.sales,
         borderWidth: 2,
         borderColor: "red",
         backgroundColor: "rgba(255, 0, 0, 0.1)",
@@ -170,7 +220,17 @@ const Analyics = () => {
       },
     ],
   };
-
+  const dataCurrentUsers = {
+    labels: chartData?.currentUserPerMin,
+    datasets: [
+      {
+        label: "Subscribers",
+        data: chartData?.viewPerMin,
+        backgroundColor: "red",
+        barThickness: 15,
+      },
+    ],
+  };
   const options = {
     responsive: true,
     plugins: {
@@ -270,6 +330,16 @@ const Analyics = () => {
       key: "views",
     },
   ];
+
+  useEffect(() => {
+    updateDataUserActivity(activeTab);
+  }, [activeTab, chartData]);
+
+  useEffect(() => {
+    if (chartDataStatus === "idle") {
+      dispatch(fetchAnalyticsData());
+    }
+  }, [chartDataStatus, dispatch]);
   return (
     <div className={`analyics ${isShowAll ? "" : "active"}`}>
       <div className="container-fluid">
@@ -309,7 +379,7 @@ const Analyics = () => {
                 <h2>950</h2>
                 <p>Weekly Sale</p>
                 <div className="chart_line1">
-                  <Line data={dataSale} options={options} />
+                  <Line data={dataWeeklySale} options={options} />
                 </div>
               </div>
             </div>
@@ -414,7 +484,7 @@ const Analyics = () => {
                           <div className="tab-pane fade show active">
                             <div className="chart_line2">
                               <Line
-                                data={dataActivity}
+                                data={dataUserActivity}
                                 options={optionsClear}
                               />
                             </div>
@@ -439,7 +509,7 @@ const Analyics = () => {
                   </div>
                   <div className="card_body p-5">
                     <div className="chart_line2">
-                      <Bar data={dataSubscribers} options={optionsClear} />
+                      <Bar data={dataCurrentUsers} options={optionsClear} />
                     </div>
                   </div>
                   <div className="card_footer d-flex flex-wrap bg-white">

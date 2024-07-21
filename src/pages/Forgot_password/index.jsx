@@ -1,23 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { logoCursus } from "../../assets";
 import { logo_Small } from "../../assets";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import "./index.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function ForgotPassword() {
+    const [email, setEmail] = useState("");
+    const navigate = useNavigate();
+    const handleResetPassword = (e) => {
+        e.preventDefault();
+
+        if (!email) {
+            toast.error("Please enter your email address");
+            return;
+        }
+
+        navigate("/reset_password", { state: { email } });
+    };
     return (
         <div>
             <div className="forgot_password">
                 <Link to="/">
-                    <img src={logoCursus} alt="" className="forgot_password__logo" />
+                    <img
+                        src={logoCursus}
+                        alt=""
+                        className="forgot_password__logo"
+                    />
                 </Link>
                 <div className="forgot_password__main main">
                     <h2 className="forgot_password__title">
                         Request a Password Reset
                     </h2>
-                    <form className="forgot_password__form" action="">
+                    <form
+                        className="forgot_password__form"
+                        action=""
+                        onSubmit={handleResetPassword}
+                    >
                         <div className="forgot_password__wrapper">
                             <FontAwesomeIcon
                                 icon={faEnvelope}
@@ -28,6 +49,8 @@ function ForgotPassword() {
                                 className="forgot_password__input"
                                 type="email"
                                 placeholder="Email Address"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                         </div>
                         <button

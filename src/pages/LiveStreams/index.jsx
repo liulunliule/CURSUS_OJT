@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
 import Stream from "../../assets/img/stream.png";
@@ -14,6 +14,25 @@ const LiveStreams = () => {
     const mouseOverOff = () => {
         setMouseOverColor(null);
     };
+
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch("https://66908324c0a7969efd9c4d55.mockapi.io/liveInstructor");
+                const result = await response.json();
+                setData(result);
+                setLoading(false);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
     return (
@@ -101,72 +120,5 @@ const LiveStreams = () => {
         </div>
     );
 };
-
-const data = [
-    {
-        name: "John Doe",
-        img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg",
-    },
-    {
-        name: "Jassica",
-        img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg",
-    },
-    {
-        name: "Edututs+",
-        img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-9.jpg",
-    },
-    {
-        name: "Joginder",
-        img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-8.jpg",
-    },
-    {
-        name: "Zoena",
-        img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-5.jpg",
-    },
-    {
-        name: "Albert Dua",
-        img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-6.jpg",
-    },
-    {
-        name: "Ridhima",
-        img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-7.jpg",
-    },
-    {
-        name: "Amritpal",
-        img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-4.jpg",
-    },
-    {
-        name: "Jimmy",
-        img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg",
-    },
-    {
-        name: "Quinton Batchelor",
-        img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-11.jpg",
-    },
-    {
-        name: "Eli Natoli",
-        img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-12.jpg",
-    },
-    {
-        name: "Jaysen Batchelor",
-        img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-13.jpg",
-    },
-    {
-        name: "Farhat Amin",
-        img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-14.jpg",
-    },
-    {
-        name: "Kyle Pew",
-        img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-15.jpg",
-    },
-    {
-        name: "Kerstin Cable",
-        img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-16.jpg",
-    },
-    {
-        name: "Jose Portilla",
-        img: "https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-17.jpg",
-    },
-];
 
 export default LiveStreams;
