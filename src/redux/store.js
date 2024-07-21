@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import savedCourseReducer from "./features/savedCourseSlice";
+import creditsReducer from "./features/creditsSlice";
 import certificateReducer from "./features/myCertificateSlice";
 import myProfileReducer from "./features/myProfileSlice";
 import myHeaderReducer from "./features/myHeaderSlice";
