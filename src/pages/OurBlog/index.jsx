@@ -5,7 +5,7 @@ import "./index.scss";
 
 const OurBlog = () => {
   const [selected, setSelected] = useState("Blog");
-  const blogs = useFetchBlogs();
+  const { blogs, status, error } = useFetchBlogs();
 
   const handleSelect = (item) => {
     const paths = {
@@ -68,7 +68,9 @@ const OurBlog = () => {
           </div>
 
           <div className="blog-list">
-            {blogs.map((blog) => (
+            {status === 'loading' && <p>Loading...</p>}
+            {status === 'failed' && <p>Error: {error}</p>}
+            {status === 'succeeded' && blogs.map((blog) => (
               <div className="blog-item" key={blog.Blog_ID}>
                 <img src={blog.Blog_Image} alt={`Blog ${blog.Blog_ID}`} />
                 <div className="blog-info">

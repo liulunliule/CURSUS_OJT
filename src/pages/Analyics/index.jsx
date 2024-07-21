@@ -20,7 +20,6 @@ import { Image, Table } from "antd";
 import { render } from "@testing-library/react";
 import { thumbnail } from "../../assets";
 import { useDispatch, useSelector } from "react-redux";
-import { handleGetDataChart } from "./dataAnalysis";
 import { fetchAnalyticsData } from "../../redux/features/analyticsSlice";
 ChartJS.register(
   CategoryScale,

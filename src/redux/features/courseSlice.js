@@ -3,7 +3,9 @@ import axios from "axios";
 import { getCourse } from "../../services/apiService";
 
 export const fetchCourse = createAsyncThunk("course/fetchCourse", async () => {
-    const response = await getCourse();
+    const response = await axios.get(
+        "https://6696231a0312447373c1386e.mockapi.io/course"
+    );
     return response.data;
 });
 

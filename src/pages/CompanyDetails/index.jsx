@@ -4,12 +4,20 @@ import "./index.scss";
 
 const CompanyDetails = () => {
   const [selected, setSelected] = useState("Company");
-  const offices = useFetchOffices();
+  const { offices, status, error } = useFetchOffices();
 
   const handleSelect = (item) => {
     window.location.href = `/secondLayout/${item.toLowerCase()}`;
     setSelected(item);
   };
+
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (status === 'failed') {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className="company-page">
@@ -58,7 +66,7 @@ const CompanyDetails = () => {
         <h2>Our Offices</h2>
         <p>Cursus branches around the world</p>
         <div className="office-list">
-          {offices.map((office) => (
+          {Array.isArray(offices) && offices.map((office) => (
             <div key={office.Offices_ID} className="office-item">
               <img src={office.Offices_Image} alt={`Office in ${office.Nation}`} />
               <h3>{office.Nation}</h3>

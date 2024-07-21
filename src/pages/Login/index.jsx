@@ -17,6 +17,7 @@ import { useDispatch } from "react-redux";
 import { fetchUserLoginSuccess } from "../../redux/features/userSlice";
 import { LoadingOutlined } from "@ant-design/icons";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -31,7 +32,7 @@ function Login() {
                 /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
             );
     };
-    const handleLogin = async () => {
+    const handleLogin = async (email, password) => {
         //    Validate
         const isValidEmail = validateEmail(email);
         if (!isValidEmail) {
@@ -43,35 +44,30 @@ function Login() {
         }
         setIsLoading(true);
 
-        //submit login
+        // submit login
         try {
-            const response = await postLogin(email, password);
-            // console.log("Check: ", response.data);
-            if (response && response.data.message === "Login successful") {
+            const response = await axios.get(
+                "https://6696231a0312447373c1386e.mockapi.io/user"
+            );
+            console.log(response.data);
+            const user = response.data.find(
+                (user) => user.email === email && user.password === password
+            );
+            if (user) {
+                console.log("Check ", user);
                 setIsLoading(false);
-                toast.success(response.data.message);
-                dispatch(fetchUserLoginSuccess(response.data));
+                toast.success("Login succeed");
+                dispatch(fetchUserLoginSuccess(user));
                 navigate("/");
+            }
+
+            if (user.password !== password) {
+                toast.error("Incorrect Password. Please try again!!");
             }
         } catch (error) {
             toast.error(error.message);
             setIsLoading(false);
         }
-
-        // if (response && response.data.EC === 0) {
-        //     dispatch(fetchUserLoginSuccess(response.data));
-        //     setIsLoading(false);
-        //     navigate("/", {
-        //         state: { message: response.data.message, type: "success" },
-        //     });
-        // }
-        // if (response && response.data.EC !== 0) {
-        // messageApi.open({
-        //     type: "error",
-        //     content: response.data.EM,
-        // });
-        // setIsLoading(false);
-        // // }
     };
 
     return (
@@ -164,7 +160,7 @@ function Login() {
                             </div>
                             <button
                                 className="login__button login__signin"
-                                onClick={() => handleLogin()}
+                                onClick={() => handleLogin(email, password)}
                                 disabled={isLoading}
                             >
                                 {isLoading === true && (
