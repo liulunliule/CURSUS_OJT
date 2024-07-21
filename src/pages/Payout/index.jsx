@@ -6,7 +6,15 @@ import { useFetchPayoutData } from './data';
 
 const Payout = () => {
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
-  const { nextPayout, transactions } = useFetchPayoutData();
+  const { nextPayout, transactions, status, error } = useFetchPayoutData();
+
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (status === 'failed') {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <div className={`payout-page ${isShowAll ? "active" : ""}`}>

@@ -1,5 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import savedCourseReducer from "./features/savedCourseSlice";
+import payoutReducer from './features/payoutSlice';
 import creditsReducer from "./features/creditsSlice";
 import certificateReducer from "./features/myCertificateSlice";
 import myProfileReducer from "./features/myProfileSlice";
@@ -54,6 +55,7 @@ const rootReducer = combineReducers({
     earnings: earningReducer,
     statement: statementReducer,
     credits: creditsReducer,
+    payout: payoutReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
