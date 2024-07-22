@@ -20,6 +20,7 @@ import {
   fetchUserMessage,
   fetchUserNotification,
 } from "../../redux/features/myHeaderSlice";
+import { fetchShoppingCart } from "../../redux/features/shoppingCartSlice";
 import { toast } from "react-toastify";
 
 function Header() {
@@ -230,7 +231,7 @@ function Header() {
                       <ul>
                         {userNotification.slice(0, 3).map((notification) => (
                           <Link
-                            to="/thirdlayout/reviews_page_instructor"
+                            to="/thirdlayout/instructor_notification"
                             key={notification.id}
                           >
                             <li
