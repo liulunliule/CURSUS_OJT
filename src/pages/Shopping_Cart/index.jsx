@@ -1,11 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesLeft, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from "react-redux";
 import { line } from "../../assets";
+import {
+  deleteCartItem,
+  fetchShoppingCart,
+} from "../../redux/features/shoppingCartSlice";
+import { toast } from "react-toastify";
 
 const Shopping_Cart = () => {
+  const dispatch = useDispatch();
+  const { items, status, error } = useSelector((state) => state.shoppingCart);
+  const [deleteSuccess, setDeleteSuccess] = useState(false);
+
+  const handleDelete = async (itemId) => {
+    try {
+      await dispatch(deleteCartItem(itemId)).unwrap();
+      setDeleteSuccess(true);
+    } catch (err) {
+      toast.error("Failed to delete item");
+    }
+  };
+
+  useEffect(() => {
+    if (status === "idle") {
+      dispatch(fetchShoppingCart());
+    }
+  }, [status, dispatch]);
+
+  useEffect(() => {
+    if (deleteSuccess) {
+      toast.success("Item deleted successfully");
+      setDeleteSuccess(false);
+    }
+  }, [deleteSuccess]);
   return (
     <div className="Shopping_cart">
       <div className="toolbar_certification">
@@ -55,45 +86,52 @@ const Shopping_Cart = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-8">
-            <div className="CourseInCard">
-              <Link
-                to="/course_detail/course_detail_about"
-                className="CourseInCard_img"
-              >
-                <img
-                  className="cart_img"
-                  src="https://gambolthemes.net/html-items/cursus-new-demo/images/courses/img-2.jpg"
-                  alt=""
-                />
-              </Link>
-              <div className="CourseInCard_content">
-                <div className="CourseInCard_content_X">
-                  <FontAwesomeIcon
-                    icon={faXmark}
-                    style={{
-                      color: "#afafaf !important",
-                      width: "15px",
-                      height: "100%",
-                    }}
-                  />
+            {status === "loading" && <p>Loading...</p>}
+            {status === "failed" && <p>{error}</p>}
+            {status === "succeeded" &&
+              items.map((item, index) => (
+                <div className="CourseInCard">
+                  <Link
+                    to="/course_detail/course_detail_about"
+                    className="CourseInCard_img"
+                  >
+                    <img className="cart_img" src={item.video} alt="" />
+                  </Link>
+                  <div className="CourseInCard_content">
+                    <div
+                      className="CourseInCard_content_X"
+                      onClick={() => handleDelete(item.id)}
+                    >
+                      <FontAwesomeIcon
+                        icon={faXmark}
+                        style={{
+                          color: "#afafaf !important",
+                          width: "15px",
+                          height: "100%",
+                        }}
+                      />
+                    </div>
+                    <Link
+                      to="/course_detail/course_detail_about"
+                      className="CourseInCard_title"
+                    >
+                      {item.titilecourse}
+                    </Link>
+                    <Link
+                      to="/detail_category_page"
+                      className="CourseInCard_cate"
+                    >
+                      {item.typecourse}
+                    </Link>
+                    <div className="auth">
+                      <p>
+                        By <Link to="/instructor_profile">{item.author}</Link>
+                      </p>
+                      <div className="price">${item.price}</div>
+                    </div>
+                  </div>
                 </div>
-                <Link
-                  to="/course_detail/course_detail_about"
-                  className="CourseInCard_title"
-                >
-                  The Web Developer Bootcamp
-                </Link>
-                <Link to="/detail_category_page" className="CourseInCard_cate">
-                  Web Development | Python
-                </Link>
-                <div className="auth">
-                  <p>
-                    By <Link to="/instructor_profile">John Doe</Link>
-                  </p>
-                  <div className="price">$10</div>
-                </div>
-              </div>
-            </div>
+              ))}
           </div>
           <div className="col-lg-4">
             <div class="checkout_chk_bg stickytime">

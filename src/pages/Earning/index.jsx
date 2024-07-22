@@ -21,7 +21,7 @@ const Earnings = () => {
     0
   );
   const totalEarning = earningTable
-    .reduce((acc, item) => acc + item.earning, 0)
+    .reduce((acc, item) => acc + (parseFloat(item.earning) || 0), 0)
     .toFixed(2);
 
   const columns = [
@@ -39,7 +39,7 @@ const Earnings = () => {
       title: "Earning",
       dataIndex: "earning",
       key: "earning",
-      render: (text) => `$${text.toFixed(2)}`,
+      render: (text) => `$${parseFloat(text).toFixed(2)}`,
     },
   ];
 
