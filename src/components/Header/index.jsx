@@ -29,6 +29,10 @@ import {
   fetchUserMessage,
   fetchUserNotification,
 } from "../../redux/features/myHeaderSlice";
+import {
+  fetchSearchResult,
+  fetchAddNewCourse,
+} from "../../redux/features/mySearchSlice";
 import { toast } from "react-toastify";
 
 function Header() {
@@ -85,6 +89,15 @@ function Header() {
     setIsDropdownOpenLetter(false);
     setIsDropdownOpenBell(false);
   };
+  const [query, setQuery] = useState("");
+  useEffect(() => {
+    // const savedLikedCourses =
+    //   JSON.parse(localStorage.getItem("likedCourses")) || [];
+    // setLikedCourses(new Set(savedLikedCourses));
+    if (query) {
+      dispatch(fetchSearchResult(query));
+    }
+  }, [dispatch, query]);
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
@@ -114,11 +127,11 @@ function Header() {
     dispatch(fetchUpdateMessage({ messageId, userId }))
       .then((response) => {
         console.log("Update response:", response);
-        toast.success("Course removed successfully!");
+        toast.success("Seen");
       })
       .catch((error) => {
         console.error("Update error:", error);
-        toast.error("Failed to remove course. Please try again.");
+        toast.error("See fali. Please try again.");
       });
   };
 
@@ -130,11 +143,11 @@ function Header() {
     dispatch(fetchUpdateNotification({ notiId, userId }))
       .then((response) => {
         console.log("Update response:", response);
-        toast.success("Course removed successfully!");
+        toast.success("Seen");
       })
       .catch((error) => {
         console.error("Update error:", error);
-        toast.error("Failed to remove course. Please try again.");
+        toast.error("See fali. Please try again.");
       });
   };
 
@@ -175,6 +188,8 @@ function Header() {
                 className="search-input"
                 placeholder="Search for Tuts, Videos, Tutors, Tests and more..."
                 onKeyDown={handleKeyPress}
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
               />
               <img
                 src={search}

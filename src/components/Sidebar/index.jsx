@@ -38,6 +38,13 @@ import {
   UilCommentAltExclamation,
 } from "@iconscout/react-unicons";
 function SidebarFrontend() {
+  const account = useSelector((state) => state.user.account);
+  const userId = account.id || "";
+  const subscriptions = useSelector((state) => state.myProfile.subscriptions);
+  const chanelSubscription = subscriptions.filter(
+    (post) => post.userId === userId && post.subscriptionsed === true
+  );
+  console.log("chanelSubscription: ", chanelSubscription);
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
   return (
     <div className={`SideBarFrontend ${isShowAll ? "active" : ""}`}>
@@ -323,7 +330,7 @@ function SidebarFrontend() {
                 <Link className="Link_SideBar">Add live Stream</Link>
               </li>
               <li className="Li_List_Select_Pages_SideBar">
-                <Link className="Link_SideBar">Search Result</Link>
+                <Link className="Link_SideBar" to="/secondLayout/search_results_page">Search Result</Link>
               </li>
               <li className="Li_List_Select_Pages_SideBar">
                 <Link className="Link_SideBar" to="/thanks_page">
@@ -349,20 +356,25 @@ function SidebarFrontend() {
           <span className="select_Title">SUBSCRIPTIONS</span>
         </div>
         <div className="select_ListAvatar">
-          <Link to="/other_instructor_view" className="Link_SideBar">
-            <div className="wrapper_avatar1_SideBar">
-              <img className="avatar1_SideBar" src={avatar1_SideBar} alt="" />
-              <span className="nameOfAvatar1_SideBar">Rock Smith</span>
-              <span className="redDot_Avatar_SideBar"></span>
-            </div>
-          </Link>
-          <Link to="/other_instructor_view" className="Link_SideBar">
-            <div className="wrapper_avatar2_SideBar">
-              <img className="avatar2_SideBar" src={avatar2_SideBar} alt="" />
-              <span className="nameOfAvatar2_SideBar">Jassica William</span>
-              <span className="redDot_Avatar_SideBar"></span>
-            </div>
-          </Link>
+          {chanelSubscription.map((subscription) => (
+            <Link
+              to="/other_instructor_view"
+              className="Link_SideBar"
+              key={subscription.id}
+            >
+              <div className="wrapper_avatar1_SideBar">
+                <img
+                  className="avatar1_SideBar"
+                  src={subscription.userImage}
+                  alt=""
+                />
+                <span className="nameOfAvatar1_SideBar">
+                  {subscription.user}
+                </span>
+                <span className="redDot_Avatar_SideBar"></span>
+              </div>
+            </Link>
+          ))}
           <Link to="/all_instructor" className="Link_SideBar">
             <div className="addInstructor_SideBar">
               <img

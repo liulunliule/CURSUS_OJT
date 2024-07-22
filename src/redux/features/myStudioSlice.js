@@ -5,7 +5,7 @@ export const fetchStudio = createAsyncThunk(
   "myStudio/fetchStudio",
   async () => {
     const response = await axios.get(
-      "https://669515364bd61d8314c9eb78.mockapi.io/studiodashboard"
+      `https://6696231a0312447373c1386e.mockapi.io/studentstudiodashboard`
     );
     return response.data;
   }

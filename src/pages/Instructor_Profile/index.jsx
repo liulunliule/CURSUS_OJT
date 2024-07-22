@@ -25,6 +25,9 @@ const Instructor_Profile = () => {
   const userReviews = useSelector((state) => state.myProfile.userReviews);
   const isShowAll = useSelector((state) => state.savedCourse?.isShowAll);
   const account = useSelector((state) => state.user.account);
+  const userPosts = useSelector((state) => state.myProfile.userPosts);
+  const subscriptions = useSelector((state) => state.myProfile.subscriptions);
+  const userId = account.id || "";
   console.log("Check out: ", account);
   useEffect(() => {
     dispatch(fetchUserReviews())
@@ -55,6 +58,12 @@ const Instructor_Profile = () => {
       </div>
     );
   }
+  const countCourse = userPosts.filter((post) => post.userId === userId);
+  const countSubscription = subscriptions.filter(
+    (post) => post.userId === userId && post.subscriptionsed === true
+  );
+  const courseCount = countCourse.length;
+  const SubscriptionCount = countSubscription.length;
   return (
     <div className={`instructor-container ${isShowAll ? "active" : ""}`}>
       <div className="container-fluid">
@@ -93,7 +102,7 @@ const Instructor_Profile = () => {
                         <div className="userInfor_join_group">
                           <div className="userInfor_join_title">Courses</div>
                           <div className="userInfor_join_parameter">
-                            {account.course}
+                            {courseCount}
                           </div>
                         </div>
                       </li>
@@ -111,7 +120,7 @@ const Instructor_Profile = () => {
                             Subscriptions
                           </div>
                           <div className="userInfor_join_parameter">
-                            {account.subscriptions}
+                            {SubscriptionCount}
                           </div>
                         </div>
                       </li>
