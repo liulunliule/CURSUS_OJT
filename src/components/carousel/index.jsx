@@ -22,24 +22,25 @@ export default function Carousel() {
         modules={[]}
         className="carouselMom"
       >
-        {userAllInstructor.map((instructor) => (
-          <SwiperSlide className="carouselOfOne">
-            <Link to="/view_live_streams" className="carouselOfOneItem">
-              <img
-                className="carouselOfOneItem__avatarTest"
-                src={instructor.img}
-                alt=""
-              />
-              <h4 className="carouselOfOneItem__nameOfAvatar">
-                {instructor.name}
-              </h4>
-              <div className="carouselOfOneItem__linkLive">
-                <p className="liveLink">live</p>
-                <p className="redDot"></p>
-              </div>
-            </Link>
-          </SwiperSlide>
-        ))}
+        {userAllInstructor &&
+          userAllInstructor.map((instructor) => (
+            <SwiperSlide className="carouselOfOne">
+              <Link to="/view_live_streams" className="carouselOfOneItem">
+                <img
+                  className="carouselOfOneItem__avatarTest"
+                  src={instructor.img}
+                  alt=""
+                />
+                <h4 className="carouselOfOneItem__nameOfAvatar">
+                  {instructor.name}
+                </h4>
+                <div className="carouselOfOneItem__linkLive">
+                  <p className="liveLink">live</p>
+                  <p className="redDot"></p>
+                </div>
+              </Link>
+            </SwiperSlide>
+          ))}
       </Swiper>
     </>
   );

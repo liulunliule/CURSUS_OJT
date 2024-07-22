@@ -39,6 +39,7 @@ function Header() {
   useEffect(() => {
     dispatch(fetchUserMessage());
     dispatch(fetchUserNotification());
+    dispatch(fetchShoppingCart());
 
     const showHeaderSecond = () => {
       const paths = [
