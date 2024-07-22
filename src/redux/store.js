@@ -25,12 +25,7 @@ import courseSlice from "./features/courseSlice";
 import checkoutReducer from './features/checkoutSlice';
 import earningReducer from './features/earningSlice';
 import statementReducer from './features/statementSlice';
-// export const store = configureStore({
-//     reducer: {
-//         savedCourse: savedCourseReducer,
-//         user: userSlice,
-//     },
-// });
+import shoppingCartReducer from './features/shoppingCartSlice';
 
 const persistConfig = {
     key: "root",
@@ -73,10 +68,11 @@ const rootReducer = combineReducers({
     credits: creditsReducer,
     payout: payoutReducer,
     blogs: blogReducer,
-        offices: officesReducer,
-        press: pressReducer,
+    offices: officesReducer,
+    press: pressReducer,
     notificationsSetting: notificationsSettingReducer,
     privacySetting: privacySettingReducer,
+    shoppingCart: shoppingCartReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
