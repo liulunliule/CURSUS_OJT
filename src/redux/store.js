@@ -20,6 +20,9 @@ import courseSlice from "./features/courseSlice";
 import checkoutReducer from './features/checkoutSlice';
 import earningReducer from './features/earningSlice';
 import statementReducer from './features/statementSlice';
+import chatContentReducer from './features/chatContentSlice';
+import liveStreamsReducer from './features/liveStreamsSlice';
+import instructorNotificationsReducer from './features/instructorNotificationsSlice';
 // export const store = configureStore({
 //     reducer: {
 //         savedCourse: savedCourseReducer,
@@ -62,6 +65,9 @@ const rootReducer = combineReducers({
     blogs: blogReducer,
         offices: officesReducer,
         press: pressReducer,
+    chatContent: chatContentReducer,
+    liveStreams: liveStreamsReducer,
+    instructorNotifications: instructorNotificationsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
