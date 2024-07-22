@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import "./index.scss";
 const About = () => {
   const account = useSelector((state) => state.user.account);
+  
   return (
     <div className="about_profile">
       <h3 className="about_title_text">About Me</h3>

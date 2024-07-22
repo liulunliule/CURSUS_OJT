@@ -48,7 +48,7 @@ const Instructor_Studio_Dashboard = () => {
     slidesToScroll: 1,
     afterChange: (current) => setCurrentNewsSlide(current),
   };
-  
+
   const nextSlide = () => {
     if (sliderRef.current) {
       sliderRef.current.slickNext();
@@ -335,7 +335,7 @@ const Instructor_Studio_Dashboard = () => {
                         <h6 class="studio-dashboard-course-content-name">
                           Current subscribers
                         </h6>
-                        <h3 class="studio-dashboard-subcribe-title">856</h3>
+                        <h3 class="studio-dashboard-subcribe-title">{856}</h3>
                         <div class="studio-dashboard-view">
                           <div class="studio-dashboard-course-content-left">
                             View
@@ -386,50 +386,55 @@ const Instructor_Studio_Dashboard = () => {
                 </div>
                 <div class="studio-dashboard-section studio-dashboard-mt-50">
                   <h4 class="studio-dashboard-item-title">Submit Courses</h4>
-                  <div class="studio-dashboard-detail">
-                    <div class="studio-dashboard-course-1">
-                      <div class="studio-dashboard-course-content">
-                        <div class="studio-dashboard-upcming-card">
-                          <a
-                            href="#"
-                            class="studio-dashboard-course-content-discription"
-                          >
-                            The Complete JavaScript Course 2020: Build Real
-                            Projects!
-                            <span class="studio-dashboard-Pending">
-                              Pending
-                            </span>
-                          </a>
-                          <p class="studio-dashboard-submit-course">
-                            Submitted<span>1 days ago</span>
-                          </p>
-                          <a href="#" class="studio-dashboard-delete-link">
-                            Delete
-                          </a>
+                  {userInfo.submittedCourses &&
+                    userInfo.submittedCourses.map((itemsubmittedCourses) => (
+                      <div
+                        class="studio-dashboard-detail"
+                        key={itemsubmittedCourses.id}
+                      >
+                        <div class="studio-dashboard-course-1">
+                          <div class="studio-dashboard-course-content">
+                            <div class="studio-dashboard-upcming-card">
+                              <a
+                                href="#"
+                                class="studio-dashboard-course-content-discription"
+                              >
+                                {itemsubmittedCourses.title}
+                                <span class="studio-dashboard-Pending">
+                                  {itemsubmittedCourses.status}
+                                </span>
+                              </a>
+                              <p class="studio-dashboard-submit-course">
+                                Submitted
+                                <span>
+                                  {itemsubmittedCourses.submittedDate}
+                                </span>
+                              </p>
+                              <a href="#" class="studio-dashboard-delete-link">
+                                Delete
+                              </a>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
+                    ))}
                 </div>
-                <div class="studio-dashboard-section studio-dashboard-mt-50">
+                <div class="studio-dashboard-section studio-dashboard-mt-50 studio-dashboard-cursus">
                   <h4 class="studio-dashboard-item-title">
                     What's new in Cursus
                   </h4>
-                  <div class="studio-dashboard-detail">
-                    <div class="studio-dashboard-course-1">
-                      <div class="studio-dashboard-course-content">
-                        <a href="#" class="studio-dashboard-new-links">
-                          Improved performance on Studio Dashboard
-                        </a>
-                        <a href="#" class="studio-dashboard-new-links">
-                          See more Dashboard updates
-                        </a>
-                        <a href="#" class="studio-dashboard-new-links">
-                          See issues-at-glance for Live
-                        </a>
+                  {userInfo.newUpdates &&
+                    userInfo.newUpdates.map((itemNewUpdates) => (
+                      <div class="studio-dashboard-detail">
+                        <div class="studio-dashboard-course-1">
+                          <div class="studio-dashboard-course-content">
+                            <a href="#" class="studio-dashboard-new-links">
+                              {itemNewUpdates.title}
+                            </a>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
+                    ))}
                 </div>
               </div>
             </div>

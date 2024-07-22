@@ -16,21 +16,20 @@ import Discussion from "./Discussion/discussion";
 import Subscriptions from "./Subscriptions/subscriptions";
 import { Link } from "react-router-dom";
 import "./index.scss";
-import {
-  fetchUserInfo,
-  fetchUserReviews,
-} from "../../redux/features/myProfileSlice";
+import { fetchUserReviews } from "../../redux/features/myProfileSlice";
 
 const Instructor_Profile = () => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState("nav-about");
-  const userInfo = useSelector((state) => state.myProfile.userInfo);
   const userReviews = useSelector((state) => state.myProfile.userReviews);
   const isShowAll = useSelector((state) => state.savedCourse?.isShowAll);
-
+  const account = useSelector((state) => state.user.account);
+  const userPosts = useSelector((state) => state.myProfile.userPosts);
+  const subscriptions = useSelector((state) => state.myProfile.subscriptions);
+  const userId = account.id || "";
+  console.log("Check out: ", account);
   useEffect(() => {
-    dispatch(fetchUserInfo());
     dispatch(fetchUserReviews())
       .then(() => {
         setLoading(false);
@@ -59,12 +58,12 @@ const Instructor_Profile = () => {
       </div>
     );
   }
-
-  if (!userInfo || !Array.isArray(userReviews) || userInfo.length === 0) {
-    return <div>No data available.</div>;
-  }
-
-  const firstUserInfo = userInfo[0];
+  const countCourse = userPosts.filter((post) => post.userId === userId);
+  const countSubscription = subscriptions.filter(
+    (post) => post.userId === userId && post.subscriptionsed === true
+  );
+  const courseCount = countCourse.length;
+  const SubscriptionCount = countSubscription.length;
   return (
     <div className={`instructor-container ${isShowAll ? "active" : ""}`}>
       <div className="container-fluid">
@@ -76,14 +75,14 @@ const Instructor_Profile = () => {
                 <div className="profile-left col-lg-6">
                   <div className="user_infor">
                     <img
-                      src={firstUserInfo.avatar}
+                      src={account.avatar}
                       alt=""
                       className="userInfo_avatar"
                     />
                     <div className="userInfor">
                       <div className="userInfor_instructor">
-                        <h2>{firstUserInfo.name}</h2>
-                        <span>{firstUserInfo.major}</span>
+                        <h2>{account.userName}</h2>
+                        <span>{account.major}</span>
                       </div>
                     </div>
                   </div>
@@ -95,7 +94,7 @@ const Instructor_Profile = () => {
                             Enroll Students
                           </div>
                           <div className="userInfor_join_parameter">
-                            {firstUserInfo.enrollstudents}
+                            {account.enrollStudents}
                           </div>
                         </div>
                       </li>
@@ -103,7 +102,7 @@ const Instructor_Profile = () => {
                         <div className="userInfor_join_group">
                           <div className="userInfor_join_title">Courses</div>
                           <div className="userInfor_join_parameter">
-                            {firstUserInfo.course}
+                            {courseCount}
                           </div>
                         </div>
                       </li>
@@ -121,7 +120,7 @@ const Instructor_Profile = () => {
                             Subscriptions
                           </div>
                           <div className="userInfor_join_parameter">
-                            {firstUserInfo.subscriptions}
+                            {SubscriptionCount}
                           </div>
                         </div>
                       </li>

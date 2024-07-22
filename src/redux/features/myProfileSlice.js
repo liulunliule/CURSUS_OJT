@@ -5,7 +5,7 @@ export const fetchUserInfo = createAsyncThunk(
   "myProfile/fetchUserInfo",
   async () => {
     const response = await axios.get(
-      "https://66751909a8d2b4d072eeb172.mockapi.io/InstructorProfile"
+      "https://6696231a0312447373c1386e.mockapi.io/user"
     );
     return response.data;
   }
@@ -15,7 +15,18 @@ export const fetchUserPosts = createAsyncThunk(
   "myProfile/fetchUserPosts",
   async () => {
     const response = await axios.get(
-      "https://6677cf6e0bd45250561c9488.mockapi.io/course"
+      `https://6696231a0312447373c1386e.mockapi.io/course`
+    );
+    return response.data;
+  }
+);
+
+export const fetchUpdateCourse = createAsyncThunk(
+  "myProfile/fetchUpdateCourse",
+  async ({ id, updatedData }) => {
+    const response = await axios.put(
+      `https://6696231a0312447373c1386e.mockapi.io/course/${id}`,
+      updatedData
     );
     return response.data;
   }
@@ -25,9 +36,53 @@ export const fetchUserReviews = createAsyncThunk(
   "myProfile/fetchUserReviews",
   async () => {
     const response = await axios.get(
-      "https://6677cf6e0bd45250561c9488.mockapi.io/reviews"
+      `https://6696231a0312447373c1386e.mockapi.io/reviews`
     );
     return response.data;
+  }
+);
+
+export const fetchPostComment = createAsyncThunk(
+  "myProfile/fetchPostComment",
+  async ({
+    userId,
+    content,
+    avatar,
+    replyTo,
+    userName,
+    replyToUserId,
+    status,
+    commentId,
+  }) => {
+    const commentData = {
+      user: userName,
+      userImage: avatar,
+      time: new Date().toLocaleTimeString(),
+      content,
+      likes: 0,
+      dislikes: 0,
+      userId,
+      replyTo,
+      replyToUserId,
+      status,
+      commentId,
+    };
+
+    const response = await axios.post(
+      `https://6696231a0312447373c1386e.mockapi.io/user/${userId}/reviews`,
+      commentData
+    );
+    return response.data;
+  }
+);
+
+export const fetchDeleteReview = createAsyncThunk(
+  "myProfile/fetchDeleteReview",
+  async ({ userId, reviewId }) => {
+    await axios.delete(
+      `https://6696231a0312447373c1386e.mockapi.io/user/${userId}/reviews/${reviewId}`
+    );
+    return { reviewId };
   }
 );
 
@@ -35,21 +90,34 @@ export const fetchSubscriptions = createAsyncThunk(
   "myProfile/fetchSubscriptions",
   async () => {
     const response = await axios.get(
-      "https://6678f8ae0bd4525056207d59.mockapi.io/subscriptions"
+      `https://6696231a0312447373c1386e.mockapi.io/subscriptions`
     );
     return response.data;
   }
 );
+
+export const fetchUpdateSubscriptions = createAsyncThunk(
+  "myProfile/fetchUpdateSubscriptions",
+  async ({ id, updatedDataSubscriptions }) => {
+    const response = await axios.put(
+      `https://6696231a0312447373c1386e.mockapi.io/subscriptions/${id}`,
+      updatedDataSubscriptions
+    );
+    return response.data;
+  }
+);
+
 export const fetchUsers = createAsyncThunk("myProfile/fetchUsers", async () => {
   const response = await axios.get(
-    "https://6678f8ae0bd4525056207d59.mockapi.io/all_instructor"
+    `https://6696231a0312447373c1386e.mockapi.io/user`
   );
   return response.data;
 });
+
 const myProfileSlice = createSlice({
   name: "myProfile",
   initialState: {
-    userInfo: [],
+    userInfo: null,
     userPosts: [],
     userReviews: [],
     subscriptions: [],
@@ -57,7 +125,58 @@ const myProfileSlice = createSlice({
     status: "idle",
     error: null,
   },
-  reducers: {},
+  reducers: {
+    updateCourse: (state, action) => {
+      const index = state.userPosts.findIndex(
+        (course) => course.id === action.payload.id
+      );
+      if (index !== -1) {
+        state.userPosts[index] = action.payload;
+      }
+    },
+    updatedDataSubscriptions: (state, action) => {
+      const index = state.subscriptions.findIndex(
+        (chanel) => chanel.id === action.payload.id
+      );
+      if (index !== -1) {
+        state.subscriptions[index] = action.payload;
+      }
+    },
+    addReview: (state, action) => {
+      const newComment = action.payload;
+      if (newComment.replyTo) {
+        const updateReplies = (comments, replyToId, newReply) => {
+          return comments.map((comment) => {
+            if (comment.id === replyToId) {
+              return {
+                ...comment,
+                replies: [...(comment.replies || []), newReply],
+              };
+            } else if (comment.replies) {
+              return {
+                ...comment,
+                replies: updateReplies(comment.replies, replyToId, newReply),
+              };
+            }
+            return comment;
+          });
+        };
+
+        state.userReviews = updateReplies(
+          state.userReviews,
+          newComment.replyTo,
+          newComment
+        );
+      } else {
+        state.userReviews.push(newComment);
+      }
+    },
+    updateReview: (state, action) => {
+      state.userReviews = state.userReviews.filter(
+        (review) => review.id !== action.payload.reviewId
+      );
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchUserInfo.pending, (state) => {
@@ -119,8 +238,65 @@ const myProfileSlice = createSlice({
       .addCase(fetchUsers.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
+      })
+      .addCase(fetchUpdateCourse.fulfilled, (state, action) => {
+        const index = state.userPosts.findIndex(
+          (course) => course.id === action.payload.id
+        );
+        if (index !== -1) {
+          state.userPosts[index] = action.payload;
+        }
+      })      
+      .addCase(fetchUpdateSubscriptions.fulfilled, (state, action) => {
+        const index = state.subscriptions.findIndex(
+          (chanel) => chanel.id === action.payload.id
+        );
+        if (index !== -1) {
+          state.subscriptions[index] = action.payload;
+        }
+      })
+      .addCase(fetchPostComment.fulfilled, (state, action) => {
+        const newComment = action.payload;
+        if (newComment.replyTo) {
+          const updateReplies = (comments, replyToId, newReply) => {
+            return comments.map((comment) => {
+              if (comment.id === replyToId) {
+                return {
+                  ...comment,
+                  replies: [...(comment.replies || []), newReply],
+                };
+              } else if (comment.replies) {
+                return {
+                  ...comment,
+                  replies: updateReplies(comment.replies, replyToId, newReply),
+                };
+              }
+              return comment;
+            });
+          };
+
+          state.userReviews = updateReplies(
+            state.userReviews,
+            newComment.replyTo,
+            newComment
+          );
+        } else {
+          state.userReviews.push(newComment);
+        }
+      })
+      .addCase(fetchDeleteReview.fulfilled, (state, action) => {
+        state.userReviews = state.userReviews.filter(
+          (review) => review.id !== action.payload.reviewId
+        );
       });
   },
 });
+
+export const {
+  updateCourse,
+  updatedDataSubscriptions,
+  addReview,
+  updateReview,
+} = myProfileSlice.actions;
 
 export default myProfileSlice.reducer;

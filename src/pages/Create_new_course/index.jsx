@@ -25,7 +25,7 @@ function Create_new_course() {
   const [price, setPrice] = useState(0); // Default price is 0
 
   const [newCourse, setNewCourse] = useState({
-    titlecourse: "",
+    titilecourse: "",
     ShortDescription: "",
     Description: "",
     Whatlearn: "",
@@ -42,7 +42,7 @@ function Create_new_course() {
     if (account) {
       setNewCourse((prev) => ({
         ...prev,
-        titlecourse: basicInfo.titlecourse,
+        titilecourse: basicInfo.titlecourse,
         ShortDescription: basicInfo.ShortDescription,
         Description: basicInfo.Description,
         Whatlearn: basicInfo.Whatlearn,
@@ -52,7 +52,7 @@ function Create_new_course() {
         userId: account.userId,
       }));
     }
-  }, [basicInfo, mediaInfo, price, account]);
+  }, [basicInfo, mediaInfo, price, account, account]);
 
   const steps = [
     {

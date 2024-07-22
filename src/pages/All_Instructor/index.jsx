@@ -18,6 +18,7 @@ const All_Instructors = () => {
   const [loading, setLoading] = useState(true);
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
   const all_instructor = useSelector((state) => state.myProfile.all_instructor);
+  const userPosts = useSelector((state) => state.myProfile.userPosts);
 
   useEffect(() => {
     dispatch(fetchUsers())
@@ -29,6 +30,12 @@ const All_Instructors = () => {
         setLoading(false);
       });
   }, [dispatch]);
+
+  const instructor = all_instructor.filter((post) => post.role === true);
+
+  const getCourseCount = (userId) => {
+    return userPosts.filter((course) => course.userId === userId).length;
+  };
 
   if (loading) {
     return (
@@ -81,7 +88,7 @@ const All_Instructors = () => {
           <div className="col-md-12">
             <div className="all_instructor_group">
               <div className="row">
-                {all_instructor.map((instructor) => (
+                {instructor.map((instructor) => (
                   <div
                     className="col-xl-3 col-lg-4 col-md-6"
                     key={instructor.id}
@@ -89,13 +96,16 @@ const All_Instructors = () => {
                     <div className="all_instructor_infor">
                       <div className="all_instructor_infor_img">
                         <a href="/other_instructor_view">
-                          <img src={instructor.avatar} alt={instructor.name} />
+                          <img
+                            src={instructor.avatar}
+                            alt={instructor.userName}
+                          />
                         </a>
                       </div>
                       <div className="all_instructor_infor_content">
                         <div className="all_instructor_infor_content_detail">
                           <a href="#" className="all_instructor_infor_name">
-                            {instructor.name}
+                            {instructor.userName}
                             <div className="icon-faCircleCheck">
                               <FontAwesomeIcon
                                 icon={faCircleCheck}
@@ -145,10 +155,10 @@ const All_Instructors = () => {
                         </ul>
                         <div className="all_instructor_infor_instructor">
                           <span className="all_instructor_infor_student_number">
-                            {instructor.student} Students
+                            {instructor.enrollStudents} Students
                           </span>
                           <span className="all_instructor_infor_course_number">
-                            {instructor.course} Courses
+                            {getCourseCount(instructor.id)} Courses
                           </span>
                         </div>
                       </div>

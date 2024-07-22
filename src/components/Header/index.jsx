@@ -7,19 +7,32 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/scss/bootstrap.scss";
 import "./index.scss";
-import { Logo_dark } from "../../assets";
+import {
+  Logo_dark,
+  logo,
+  search,
+  cart,
+  letter,
+  bell,
+  avatar,
+} from "../../assets";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles, lightTheme, darkTheme } from "./global";
 import { useDarkMode } from "./darkMode";
-import { logo, search, cart, letter, bell, avatar } from "../../assets";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleShowAll } from "../../redux/features/savedCourseSlice";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { doLogout } from "../../redux/features/userSlice";
 import {
+  fetchUpdateMessage,
+  fetchUpdateNotification,
   fetchUserMessage,
   fetchUserNotification,
 } from "../../redux/features/myHeaderSlice";
+import {
+  fetchSearchResult,
+  fetchAddNewCourse,
+} from "../../redux/features/mySearchSlice";
 import { fetchShoppingCart } from "../../redux/features/shoppingCartSlice";
 import { toast } from "react-toastify";
 
@@ -35,12 +48,14 @@ function Header() {
   const location = useLocation();
   const dispatch = useDispatch();
   const account = useSelector((state) => state.user.account);
-  // console.log("Check out: ", account);
+  const userId = account.id || "";
 
   useEffect(() => {
-    dispatch(fetchUserMessage());
-    dispatch(fetchUserNotification());
-    dispatch(fetchShoppingCart());
+    if (userId) {
+      dispatch(fetchUserMessage(userId));
+      dispatch(fetchUserNotification(userId));
+      dispatch(fetchShoppingCart());
+    }
 
     const showHeaderSecond = () => {
       const paths = [
@@ -56,7 +71,7 @@ function Header() {
       setShowCreateButton(paths.includes(location.pathname));
     };
     showHeaderSecond();
-  }, [dispatch, location.pathname]);
+  }, [dispatch, location.pathname, userId]);
 
   const toggleDropdownLetter = () => {
     setIsDropdownOpenLetter(!isDropdownOpenLetter);
@@ -75,6 +90,15 @@ function Header() {
     setIsDropdownOpenLetter(false);
     setIsDropdownOpenBell(false);
   };
+  const [query, setQuery] = useState("");
+  useEffect(() => {
+    // const savedLikedCourses =
+    //   JSON.parse(localStorage.getItem("likedCourses")) || [];
+    // setLikedCourses(new Set(savedLikedCourses));
+    if (query) {
+      dispatch(fetchSearchResult(query));
+    }
+  }, [dispatch, query]);
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
@@ -95,11 +119,43 @@ function Header() {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
 
   const handleLogout = async () => {
-    // Clear data redux
     dispatch(doLogout());
-    toast.success("Log out successfully");
+    toast.success("Logged out successfully");
     navigate("/login");
   };
+
+  const filteredUserMess = userMessage.filter(
+    (post) => post.userId === userId && post.seen === true
+  );
+
+  const handleUpdateMess = (messageId) => {
+    dispatch(fetchUpdateMessage({ messageId, userId }))
+      .then((response) => {
+        console.log("Update response:", response);
+        toast.success("Seen");
+      })
+      .catch((error) => {
+        console.error("Update error:", error);
+        toast.error("See fali. Please try again.");
+      });
+  };
+
+  const filteredUserNoti = userNotification.filter(
+    (post) => post.userId === userId && post.seen === true
+  );
+
+  const handleUpdateNoti = (notiId) => {
+    dispatch(fetchUpdateNotification({ notiId, userId }))
+      .then((response) => {
+        console.log("Update response:", response);
+        toast.success("Seen");
+      })
+      .catch((error) => {
+        console.error("Update error:", error);
+        toast.error("See fali. Please try again.");
+      });
+  };
+
   return (
     <div className="compo_header">
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
@@ -137,6 +193,8 @@ function Header() {
                 className="search-input"
                 placeholder="Search for Tuts, Videos, Tutors, Tests and more..."
                 onKeyDown={handleKeyPress}
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
               />
               <img
                 src={search}
@@ -146,31 +204,33 @@ function Header() {
             </div>
           </div>
           <div className="header-right col-md-5">
+            {!showCreateButton && (
+              <Link
+                to="/thirdlayout/create_new_course"
+                className={`create-button ${
+                  theme !== "light" ? "dark-theme-hover" : ""
+                }`}
+              >
+                Create New Course
+              </Link>
+            )}
             {isAuthenticated === false ? (
               <div className="header_home_cta">
                 <button className="btn-login" onClick={handleLogin}>
                   Login
                 </button>
                 <button className="btn-signup" onClick={handleSignUp}>
-                  Sign up
+                  Sign Up
                 </button>
               </div>
             ) : (
               <div className="user-profile">
-                {!showCreateButton && (
-                  <Link
-                    to="/thirdlayout/create_new_course"
-                    className={`create-button ${
-                      theme !== "light" ? "dark-theme-hover" : ""
-                    }`}
-                  >
-                    Create New Course
-                  </Link>
-                )}
                 <Link to="/secondLayout/Shopping_cart">
                   <div className="icon-container">
                     <img src={cart} alt="Cart" className="icon-cart" />
-                    <span className="header-badge">{userCart.length}</span>
+                    <span className="header-badge">
+                      {filteredUserMess.length}
+                    </span>
                   </div>
                 </Link>
                 <div className="icon-container">
@@ -183,8 +243,12 @@ function Header() {
                   {isDropdownOpenLetter && (
                     <div className="dropdown">
                       <ul>
-                        {userMessage.slice(0, 3).map((message) => (
-                          <Link to="/fourlayout/messages" key={message.id}>
+                        {filteredUserMess.slice(0, 3).map((message) => (
+                          <Link
+                            to="/fourlayout/messages"
+                            key={message.id}
+                            onClick={() => handleUpdateMess(message.id)}
+                          >
                             <li
                               className={`item-message ${
                                 theme !== "light" ? "drop-hover" : ""
@@ -217,7 +281,9 @@ function Header() {
                       </ul>
                     </div>
                   )}
-                  <span className="header-badge">{userMessage.length}</span>
+                  <span className="header-badge">
+                    {filteredUserMess.length}
+                  </span>
                 </div>
                 <div className="icon-container">
                   <img
@@ -229,10 +295,11 @@ function Header() {
                   {isDropdownOpenBell && (
                     <div className="dropdown">
                       <ul>
-                        {userNotification.slice(0, 3).map((notification) => (
+                        {filteredUserNoti.slice(0, 3).map((notification) => (
                           <Link
-                            to="/thirdlayout/instructor_notification"
+                            to="/thirdlayout/reviews_page_instructor"
                             key={notification.id}
+                            onClick={() => handleUpdateNoti(notification.id)}
                           >
                             <li
                               className={`item-message ${
@@ -252,7 +319,7 @@ function Header() {
                             </li>
                           </Link>
                         ))}
-                        <Link to="/thirdlayout/instructor_notification">
+                        <Link to="/thirdlayout/reviews_page_instructor">
                           <li
                             className={`item-view ${
                               theme === "light"
@@ -267,13 +334,13 @@ function Header() {
                     </div>
                   )}
                   <span className="header-badge">
-                    {userNotification.length}
+                    {filteredUserNoti.length}
                   </span>
                 </div>
 
                 <div className="icon-container">
                   <img
-                    src={avatar}
+                    src={account.avatar}
                     alt="User Profile"
                     className="icon-user"
                     onClick={toggleDropdownAvatar}
@@ -291,7 +358,7 @@ function Header() {
                           <div className="channel_my">
                             <div className="profile-link">
                               <img
-                                src={avatar}
+                                src={account.avatar}
                                 alt=""
                                 className="profile-avatar"
                               />
@@ -314,12 +381,12 @@ function Header() {
                               </div>
                             </div>
 
-                            <a
-                              href="/instructor_profile"
+                            <Link
+                              to="/instructor_profile"
                               className="profile-instructor-link"
                             >
                               View Instructor Profile
-                            </a>
+                            </Link>
                           </div>
                         </li>
                         <hr />
@@ -345,12 +412,12 @@ function Header() {
                         </li>
                         <hr />
                         <div className="dropItemText">
-                          <li className="item">Cursus dashboard</li>
+                          <li className="item">Cursus Dashboard</li>
                           <li className="item">Paid Memberships</li>
                           <li className="item">Settings</li>
                           <li className="item">Help</li>
                           <li className="item">Send Feedback</li>
-                          <li className="item" onClick={() => handleLogout()}>
+                          <li className="item" onClick={handleLogout}>
                             Sign Out
                           </li>
                         </div>

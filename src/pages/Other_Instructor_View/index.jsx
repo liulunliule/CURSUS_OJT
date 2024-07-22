@@ -9,26 +9,31 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import Setting from "../../assets/img/settings.png";
-import Course from "../Instructor_Profile/Course/courser";
-import About from "../Instructor_Profile/About/about";
-import Discussion from "../Instructor_Profile/Discussion/discussion";
+import Course from "./Course/courser";
+import About from "./About/about";
+import Discussion from "./Discussion/discussion";
 import { Link } from "react-router-dom";
 import "./index.scss";
-import {
-  fetchUserInfo,
-  fetchUserReviews,
-} from "../../redux/features/myProfileSlice";
-
+import { fetchUserReviews } from "../../redux/features/myProfileSlice";
+import { useParams } from 'react-router-dom';
 const Instructor_Profile = () => {
   const dispatch = useDispatch();
-  const [activeTab, setActiveTab] = useState("nav-about");
-  const userInfo = useSelector((state) => state.myProfile.userInfo);
-  const userReviews = useSelector((state) => state.myProfile.userReviews);
   const [loading, setLoading] = useState(true);
+  const [activeTab, setActiveTab] = useState("nav-about");
+  const userReviews = useSelector((state) => state.myProfile.userReviews);
   const isShowAll = useSelector((state) => state.savedCourse?.isShowAll);
+  const account = useSelector((state) => state.user.account);
+  const userPosts = useSelector((state) => state.myProfile.userPosts);
+  const subscriptions = useSelector((state) => state.myProfile.subscriptions);
+  const userId = account.id || "";
+  const { id } = useParams();
+  const channelSubscription = subscriptions.filter(
+    (post) => post.id === id && post.subscriptionsed === true
+  );
 
+  console.log("listSubscription: ", channelSubscription);
+  console.log("Check out: ", account);
   useEffect(() => {
-    dispatch(fetchUserInfo());
     dispatch(fetchUserReviews())
       .then(() => {
         setLoading(false);
@@ -46,9 +51,9 @@ const Instructor_Profile = () => {
         style={{
           width: "100%",
           height: "100vh",
+          backdropFilter: "blur(3px)",
           position: "absolute",
           zIndex: "3000",
-          backdropFilter: "blur(3px)",
         }}
       >
         <div className="spinner-border text-primary" role="status">
@@ -57,9 +62,12 @@ const Instructor_Profile = () => {
       </div>
     );
   }
-
-  const firstUserInfo = userInfo[0];
-
+  const countCourse = userPosts.filter((post) => post.userId === userId);
+  const countSubscription = subscriptions.filter(
+    (post) => post.userId === userId && post.subscriptionsed === true
+  );
+  const courseCount = countCourse.length;
+  const SubscriptionCount = countSubscription.length;
   return (
     <div className={`instructor-container ${isShowAll ? "active" : ""}`}>
       <div className="container-fluid">
@@ -68,17 +76,18 @@ const Instructor_Profile = () => {
           <div className="col-md-10">
             <div className="profile">
               <div className="row instructor_container_row">
+              {channelSubscription.map((subscription) => (
                 <div className="profile-left col-lg-6">
                   <div className="user_infor">
                     <img
-                      src={firstUserInfo.avatar}
+                      src={subscription.userImage}
                       alt=""
                       className="userInfo_avatar"
                     />
                     <div className="userInfor">
                       <div className="userInfor_instructor">
-                        <h2>{firstUserInfo.name}</h2>
-                        <span>{firstUserInfo.major}</span>
+                        <h2>{subscription.user}</h2>
+                        <span>{subscription.major}</span>
                       </div>
                     </div>
                   </div>
@@ -90,7 +99,7 @@ const Instructor_Profile = () => {
                             Enroll Students
                           </div>
                           <div className="userInfor_join_parameter">
-                            {firstUserInfo.enrollstudents}
+                            {subscription.students}
                           </div>
                         </div>
                       </li>
@@ -98,7 +107,7 @@ const Instructor_Profile = () => {
                         <div className="userInfor_join_group">
                           <div className="userInfor_join_title">Courses</div>
                           <div className="userInfor_join_parameter">
-                            {firstUserInfo.course}
+                            {subscription.courses}
                           </div>
                         </div>
                       </li>
@@ -116,13 +125,13 @@ const Instructor_Profile = () => {
                             Subscriptions
                           </div>
                           <div className="userInfor_join_parameter">
-                            {firstUserInfo.subscriptions}
+                            {SubscriptionCount}
                           </div>
                         </div>
                       </li>
                     </ul>
                   </div>
-                </div>
+                </div>))}
                 <div className="profile_right col-lg-6">
                   <Link className="profile_setting" to="/setting_page">
                     <span>
