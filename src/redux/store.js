@@ -10,6 +10,11 @@ import myProfileReducer from "./features/myProfileSlice";
 import myHeaderReducer from "./features/myHeaderSlice";
 import mySearchReducer from "./features/mySearchSlice";
 import myStudioReducer from "./features/myStudioSlice";
+import allInstructorReducer from "./features/allInstructorSlice";
+import reviewFeedbackReducer from "./features/reviewfeedbackSlice";
+import feedbackReportReducer from "./features/feedbackvsReportSlice";
+import notificationsSettingReducer from "./features/NotificationsSettingSlice";
+import privacySettingReducer from "./features/PrivacySettingSlice";
 import userSlice from "./features/userSlice";
 import certificationTestPageReducer from "./features/certificationTestPageSlice";
 import certificationTestResultReducer from "./features/certificationTestResultSlice";
@@ -34,6 +39,11 @@ const persistConfig = {
         "myHeader",
         "mySearch",
         "myStudio",
+        "allInstructor",
+        "reviewFeedback",
+        "feedbackReport",
+        "notificationsSetting",
+        "privacySetting",
     ],
 };
 
@@ -49,6 +59,9 @@ const rootReducer = combineReducers({
     myHeader: myHeaderReducer,
     mySearch: mySearchReducer,
     myStudio: myStudioReducer,
+    allInstructor: allInstructorReducer,
+    reviewFeedback: reviewFeedbackReducer,
+    feedbackReport: feedbackReportReducer,
     checkout: checkoutReducer,
     earnings: earningReducer,
     statement: statementReducer,
@@ -57,6 +70,8 @@ const rootReducer = combineReducers({
     blogs: blogReducer,
     offices: officesReducer,
     press: pressReducer,
+    notificationsSetting: notificationsSettingReducer,
+    privacySetting: privacySettingReducer,
     shoppingCart: shoppingCartReducer,
 });
 

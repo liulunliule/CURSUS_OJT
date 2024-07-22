@@ -129,7 +129,10 @@ const Instructor_Profile = () => {
                   </div>
                 </div>
                 <div className="profile_right col-lg-6">
-                  <Link className="profile_setting" to="/setting_page">
+                  <Link
+                    className="profile_setting"
+                    to="/setting_page/account_tab"
+                  >
                     <span>
                       <img
                         src={Setting}
