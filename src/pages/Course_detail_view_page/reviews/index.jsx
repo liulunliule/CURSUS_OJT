@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { Progress, Rate } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { avatar1_SideBar } from "../../../assets";
+import axios from "axios";
 function Course_detail_reviews() {
+    const [reviews, setReviews] = useState([]);
+    const fetchReview = async () => {
+        const response = await axios.get(
+            "https://6696231a0312447373c1386e.mockapi.io/reviews"
+        );
+
+        setReviews(response.data);
+    };
+
+    useEffect(() => {
+        fetchReview();
+    }, []);
     return (
         <div className="course_detail_reviews">
             <div className="course_detail_reviews_inner">
@@ -58,196 +71,48 @@ function Course_detail_reviews() {
                         </form>
                     </div>
                     <div className="course_detail_reviews-comments-box">
-                        <div className="course_detail_reviews-comments-item">
-                            <div className="comment_item-info">
-                                <img
-                                    src={avatar1_SideBar}
-                                    alt=""
-                                    className="comment_avt"
-                                />
-                                <div className="comment_info">
-                                    <div className="comment_name">John Doe</div>
-                                    <div className="comment_time">
-                                        2 hour ago
+                        {reviews.map((review) => (
+                            <div className="course_detail_reviews-comments-item">
+                                <div className="comment_item-info">
+                                    <img
+                                        src={review.userImage}
+                                        alt=""
+                                        className="comment_avt"
+                                    />
+                                    <div className="comment_info">
+                                        <div className="comment_name">
+                                            {review.user}
+                                        </div>
+                                        <div className="comment_time">
+                                            {review.time}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <Rate defaultValue={4.5} className="icon_star" />
-                            <div className="comment_content">
-                                Nam gravida elit a velit rutrum, eget dapibus ex
-                                elementum. Interdum et malesuada fames ac ante
-                                ipsum primis in faucibus. Fusce lacinia, nunc
-                                sit amet tincidunt venenatis.
-                            </div>
-                            <div className="comment_report">
-                                <p>Was this review helpful?</p>
-                                <input
-                                    type="radio"
-                                    name="comment_report"
-                                    id="yes"
+                                <Rate
+                                    defaultValue={4.5}
+                                    className="icon_star"
                                 />
-                                <label htmlFor="yes">Yes</label>
-                                <input
-                                    type="radio"
-                                    name="comment_report"
-                                    id="no"
-                                />
-                                <label htmlFor="no">No</label>
-                                <span>Report</span>
-                            </div>
-                        </div>
-                        <div className="course_detail_reviews-comments-item">
-                            <div className="comment_item-info">
-                                <img
-                                    src={avatar1_SideBar}
-                                    alt=""
-                                    className="comment_avt"
-                                />
-                                <div className="comment_info">
-                                    <div className="comment_name">John Doe</div>
-                                    <div className="comment_time">
-                                        2 hour ago
-                                    </div>
+                                <div className="comment_content">
+                                    {review.content}
+                                </div>
+                                <div className="comment_report">
+                                    <p>Was this review helpful?</p>
+                                    <input
+                                        type="radio"
+                                        name="comment_report"
+                                        id="yes"
+                                    />
+                                    <label htmlFor="yes">Yes</label>
+                                    <input
+                                        type="radio"
+                                        name="comment_report"
+                                        id="no"
+                                    />
+                                    <label htmlFor="no">No</label>
+                                    <span>Report</span>
                                 </div>
                             </div>
-                            <Rate defaultValue={4.5} className="icon_star" />
-                            <div className="comment_content">
-                                Nam gravida elit a velit rutrum, eget dapibus ex
-                                elementum. Interdum et malesuada fames ac ante
-                                ipsum primis in faucibus. Fusce lacinia, nunc
-                                sit amet tincidunt venenatis.
-                            </div>
-                            <div className="comment_report">
-                                <p>Was this review helpful?</p>
-                                <input
-                                    type="radio"
-                                    name="comment_report"
-                                    id="yes"
-                                />
-                                <label htmlFor="yes">Yes</label>
-                                <input
-                                    type="radio"
-                                    name="comment_report"
-                                    id="no"
-                                />
-                                <label htmlFor="no">No</label>
-                                <span>Report</span>
-                            </div>
-                        </div>
-                        <div className="course_detail_reviews-comments-item">
-                            <div className="comment_item-info">
-                                <img
-                                    src={avatar1_SideBar}
-                                    alt=""
-                                    className="comment_avt"
-                                />
-                                <div className="comment_info">
-                                    <div className="comment_name">John Doe</div>
-                                    <div className="comment_time">
-                                        2 hour ago
-                                    </div>
-                                </div>
-                            </div>
-                            <Rate defaultValue={4.5} className="icon_star" />
-                            <div className="comment_content">
-                                Nam gravida elit a velit rutrum, eget dapibus ex
-                                elementum. Interdum et malesuada fames ac ante
-                                ipsum primis in faucibus. Fusce lacinia, nunc
-                                sit amet tincidunt venenatis.
-                            </div>
-                            <div className="comment_report">
-                                <p>Was this review helpful?</p>
-                                <input
-                                    type="radio"
-                                    name="comment_report"
-                                    id="yes"
-                                />
-                                <label htmlFor="yes">Yes</label>
-                                <input
-                                    type="radio"
-                                    name="comment_report"
-                                    id="no"
-                                />
-                                <label htmlFor="no">No</label>
-                                <span>Report</span>
-                            </div>
-                        </div>
-                        <div className="course_detail_reviews-comments-item">
-                            <div className="comment_item-info">
-                                <img
-                                    src={avatar1_SideBar}
-                                    alt=""
-                                    className="comment_avt"
-                                />
-                                <div className="comment_info">
-                                    <div className="comment_name">John Doe</div>
-                                    <div className="comment_time">
-                                        2 hour ago
-                                    </div>
-                                </div>
-                            </div>
-                            <Rate defaultValue={4.5} className="icon_star" />
-                            <div className="comment_content">
-                                Nam gravida elit a velit rutrum, eget dapibus ex
-                                elementum. Interdum et malesuada fames ac ante
-                                ipsum primis in faucibus. Fusce lacinia, nunc
-                                sit amet tincidunt venenatis.
-                            </div>
-                            <div className="comment_report">
-                                <p>Was this review helpful?</p>
-                                <input
-                                    type="radio"
-                                    name="comment_report"
-                                    id="yes"
-                                />
-                                <label htmlFor="yes">Yes</label>
-                                <input
-                                    type="radio"
-                                    name="comment_report"
-                                    id="no"
-                                />
-                                <label htmlFor="no">No</label>
-                                <span>Report</span>
-                            </div>
-                        </div>
-                        <div className="course_detail_reviews-comments-item">
-                            <div className="comment_item-info">
-                                <img
-                                    src={avatar1_SideBar}
-                                    alt=""
-                                    className="comment_avt"
-                                />
-                                <div className="comment_info">
-                                    <div className="comment_name">John Doe</div>
-                                    <div className="comment_time">
-                                        2 hour ago
-                                    </div>
-                                </div>
-                            </div>
-                            <Rate defaultValue={4.5} className="icon_star" />
-                            <div className="comment_content">
-                                Nam gravida elit a velit rutrum, eget dapibus ex
-                                elementum. Interdum et malesuada fames ac ante
-                                ipsum primis in faucibus. Fusce lacinia, nunc
-                                sit amet tincidunt venenatis.
-                            </div>
-                            <div className="comment_report">
-                                <p>Was this review helpful?</p>
-                                <input
-                                    type="radio"
-                                    name="comment_report"
-                                    id="yes"
-                                />
-                                <label htmlFor="yes">Yes</label>
-                                <input
-                                    type="radio"
-                                    name="comment_report"
-                                    id="no"
-                                />
-                                <label htmlFor="no">No</label>
-                                <span>Report</span>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </div>

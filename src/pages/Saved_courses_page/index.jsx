@@ -1,29 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./index.scss";
 import "./active.scss";
 import {
     CloseOutlined,
     DeleteOutlined,
-    PlayCircleOutlined,
     ShoppingCartOutlined,
     StarOutlined,
 } from "@ant-design/icons";
-import { thumbnail } from "../../assets";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons/faCartShopping";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleShowAll } from "../../redux/features/savedCourseSlice";
-import { fetchCourse } from "../../redux/features/courseSlice";
+import {
+    fetchCourse,
+    removeSavedCourse,
+} from "../../redux/features/courseSlice";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 function Saved_courses_page() {
     const dispatch = useDispatch();
+    const account = useSelector((state) => state.user.account);
     const savedCourses = useSelector((state) => state.course.courses);
     const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
 
     useEffect(() => {
-        dispatch(fetchCourse());
-    }, []);
+        if (account.id) {
+            dispatch(fetchCourse(account.id));
+        }
+    }, [dispatch, account.id]);
+
+    const handleRemoveSavedCourse = async (courseId) => {
+        // dispatch(removeSavedCourse(courseId));
+        console.log("Id: ", courseId);
+        await axios.delete(
+            `https://6696231a0312447373c1386e.mockapi.io/savedCourse/${courseId}`
+        );
+        const listAfterDelete = savedCourses.filter(
+            (course) => course.id !== courseId
+        );
+        return listAfterDelete;
+    };
 
     return (
         <div className={`saved_courses ${isShowAll ? "active" : ""}`}>
@@ -39,7 +54,9 @@ function Saved_courses_page() {
                     </div>
                     <div className="saved_courses_line"></div>
                     <div className="saved_courses_cta-desc">
-                        <div className="saved_courses_quantity">4 Courses</div>
+                        <div className="saved_courses_quantity">
+                            {savedCourses.length} Courses
+                        </div>
                         <button className="saved_courses_cta-desc-btn">
                             <div className="saved_courses_cta-icon">
                                 <DeleteOutlined />
@@ -52,8 +69,13 @@ function Saved_courses_page() {
                     <p className="saved_courses_media-title">Saved Courses</p>
                     <div className="saved_courses_media-list">
                         {savedCourses.map((savedCourse) => (
-                            <Link to="/course_detail/course_detail_about">
-                                <div className="saved_courses_media-item">
+                            <div
+                                className="saved_courses_media-item"
+                                key={savedCourse.id}
+                            >
+                                <Link
+                                    to={`/course_detail/${savedCourse.id}/course_detail_about`}
+                                >
                                     <div className="saved_courses_media-thumbnail">
                                         <img
                                             src={savedCourse.video}
@@ -75,49 +97,61 @@ function Saved_courses_page() {
                                             {savedCourse.time} hours
                                         </div>
                                     </div>
-                                    <div className="saved_courses_media-content">
-                                        <div className="saved_courses_media-content-views">
-                                            <div className="view-left">
-                                                {savedCourse.views}
-                                            </div>
-                                            <div className="view-right">
-                                                {savedCourse.date} days ago
-                                            </div>
-                                            <div class="dots">
-                                                ⋮
-                                                <div className="dots_popup">
-                                                    {" "}
-                                                    <CloseOutlined className="closeIcon" />
-                                                    Remove
-                                                </div>
+                                </Link>
+
+                                <div className="saved_courses_media-content">
+                                    <div className="saved_courses_media-content-views">
+                                        <div className="view-left">
+                                            {savedCourse.views}
+                                        </div>
+                                        <div className="view-right">
+                                            {savedCourse.date} days ago
+                                        </div>
+                                        <div className="dots">
+                                            ⋮
+                                            <div
+                                                className="dots_popup"
+                                                onClick={() =>
+                                                    handleRemoveSavedCourse(
+                                                        savedCourse.id
+                                                    )
+                                                }
+                                            >
+                                                <CloseOutlined className="closeIcon" />
+                                                Remove
                                             </div>
                                         </div>
+                                    </div>
+                                    <Link
+                                        to={`/course_detail/${savedCourse.id}/course_detail_about`}
+                                    >
                                         <div className="saved_courses_media-content-title">
                                             {savedCourse.titilecourse}
                                         </div>
-                                        <div className="saved_courses_media-content-desc">
-                                            {savedCourse.typecourse}
-                                        </div>
+                                    </Link>
+                                    <div className="saved_courses_media-content-desc">
+                                        {savedCourse.typecourse}
+                                    </div>
 
-                                        <div className="saved_courses_media-content-buy">
-                                            <p className="author">
-                                                By{" "}
-                                                <Link>
-                                                    {savedCourse.author}
-                                                </Link>{" "}
-                                            </p>
-                                            <div className="deal">
+                                    <div className="saved_courses_media-content-buy">
+                                        <p className="author">
+                                            By <Link>{savedCourse.author}</Link>{" "}
+                                        </p>
+                                        <div className="deal">
+                                            <Link
+                                                to={`/course_detail/${savedCourse.id}/course_detail_about`}
+                                            >
                                                 <button className="cart">
                                                     <ShoppingCartOutlined />
                                                 </button>
-                                                <div className="cost">
-                                                   ${savedCourse.price}
-                                                </div>
+                                            </Link>
+                                            <div className="cost">
+                                                ${savedCourse.price}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         ))}
                     </div>
                 </div>
