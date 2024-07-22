@@ -146,16 +146,6 @@ function Header() {
             </div>
           </div>
           <div className="header-right col-md-5">
-            {!showCreateButton && (
-              <Link
-                to="/thirdlayout/create_new_course"
-                className={`create-button ${
-                  theme !== "light" ? "dark-theme-hover" : ""
-                }`}
-              >
-                Create New Course
-              </Link>
-            )}
             {isAuthenticated === false ? (
               <div className="header_home_cta">
                 <button className="btn-login" onClick={handleLogin}>
@@ -167,6 +157,16 @@ function Header() {
               </div>
             ) : (
               <div className="user-profile">
+                {!showCreateButton && (
+                  <Link
+                    to="/thirdlayout/create_new_course"
+                    className={`create-button ${
+                      theme !== "light" ? "dark-theme-hover" : ""
+                    }`}
+                  >
+                    Create New Course
+                  </Link>
+                )}
                 <Link to="/secondLayout/Shopping_cart">
                   <div className="icon-container">
                     <img src={cart} alt="Cart" className="icon-cart" />

@@ -29,6 +29,7 @@ import checkoutReducer from './features/checkoutSlice';
 import earningReducer from './features/earningSlice';
 import statementReducer from './features/statementSlice';
 import shoppingCartReducer from './features/shoppingCartSlice';
+import createCourseReducer from "./features/createCourseSlice";
 
 const persistConfig = {
     key: "root",
@@ -79,6 +80,7 @@ const rootReducer = combineReducers({
     liveStreams: liveStreamsReducer,
     chatContent: chatContentReducer,
     instructorNotifications: instructorNotificationsReducer,
+    createCourse: createCourseReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
