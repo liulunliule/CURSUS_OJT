@@ -62,7 +62,7 @@ const rootReducer = combineReducers({
     press: pressReducer,
     shoppingCart: shoppingCartReducer,
     liveStreams: liveStreamsReducer,
-       chatContent: chatContentReducer,
+    chatContent: chatContentReducer,
     instructorNotifications: instructorNotificationsReducer,
 });
 
