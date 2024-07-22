@@ -330,7 +330,12 @@ function SidebarFrontend() {
                 <Link className="Link_SideBar">Add live Stream</Link>
               </li>
               <li className="Li_List_Select_Pages_SideBar">
-                <Link className="Link_SideBar" to="/secondLayout/search_results_page">Search Result</Link>
+                <Link
+                  className="Link_SideBar"
+                  to="/secondLayout/search_results_page"
+                >
+                  Search Result
+                </Link>
               </li>
               <li className="Li_List_Select_Pages_SideBar">
                 <Link className="Link_SideBar" to="/thanks_page">
@@ -358,7 +363,7 @@ function SidebarFrontend() {
         <div className="select_ListAvatar">
           {chanelSubscription.map((subscription) => (
             <Link
-              to="/other_instructor_view"
+              to={`/other_instructor_view/${subscription.id}`}
               className="Link_SideBar"
               key={subscription.id}
             >

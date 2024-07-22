@@ -117,7 +117,7 @@ function Router() {
           element: <Student_Profile />,
         },
         {
-          path: "other_instructor_view",
+          path: "other_instructor_view/:id",
           element: <Other_Instructor_View />,
         },
         {

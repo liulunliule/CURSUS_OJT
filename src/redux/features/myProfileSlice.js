@@ -109,7 +109,7 @@ export const fetchUpdateSubscriptions = createAsyncThunk(
 
 export const fetchUsers = createAsyncThunk("myProfile/fetchUsers", async () => {
   const response = await axios.get(
-    "https://6678f8ae0bd4525056207d59.mockapi.io/all_instructor"
+    `https://6696231a0312447373c1386e.mockapi.io/user`
   );
   return response.data;
 });

@@ -15,7 +15,7 @@ import Discussion from "./Discussion/discussion";
 import { Link } from "react-router-dom";
 import "./index.scss";
 import { fetchUserReviews } from "../../redux/features/myProfileSlice";
-
+import { useParams } from 'react-router-dom';
 const Instructor_Profile = () => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
@@ -26,6 +26,12 @@ const Instructor_Profile = () => {
   const userPosts = useSelector((state) => state.myProfile.userPosts);
   const subscriptions = useSelector((state) => state.myProfile.subscriptions);
   const userId = account.id || "";
+  const { id } = useParams();
+  const channelSubscription = subscriptions.filter(
+    (post) => post.id === id && post.subscriptionsed === true
+  );
+
+  console.log("listSubscription: ", channelSubscription);
   console.log("Check out: ", account);
   useEffect(() => {
     dispatch(fetchUserReviews())
@@ -70,17 +76,18 @@ const Instructor_Profile = () => {
           <div className="col-md-10">
             <div className="profile">
               <div className="row instructor_container_row">
+              {channelSubscription.map((subscription) => (
                 <div className="profile-left col-lg-6">
                   <div className="user_infor">
                     <img
-                      src={account.avatar}
+                      src={subscription.userImage}
                       alt=""
                       className="userInfo_avatar"
                     />
                     <div className="userInfor">
                       <div className="userInfor_instructor">
-                        <h2>{account.userName}</h2>
-                        <span>{account.major}</span>
+                        <h2>{subscription.user}</h2>
+                        <span>{subscription.major}</span>
                       </div>
                     </div>
                   </div>
@@ -92,7 +99,7 @@ const Instructor_Profile = () => {
                             Enroll Students
                           </div>
                           <div className="userInfor_join_parameter">
-                            {account.enrollStudents}
+                            {subscription.students}
                           </div>
                         </div>
                       </li>
@@ -100,7 +107,7 @@ const Instructor_Profile = () => {
                         <div className="userInfor_join_group">
                           <div className="userInfor_join_title">Courses</div>
                           <div className="userInfor_join_parameter">
-                            {courseCount}
+                            {subscription.courses}
                           </div>
                         </div>
                       </li>
@@ -124,7 +131,7 @@ const Instructor_Profile = () => {
                       </li>
                     </ul>
                   </div>
-                </div>
+                </div>))}
                 <div className="profile_right col-lg-6">
                   <Link className="profile_setting" to="/setting_page">
                     <span>
