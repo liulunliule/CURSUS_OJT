@@ -1,12 +1,19 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./index.scss";
 import { Progress, Rate } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { avatar1_SideBar } from "../../assets";
 import { UilStar } from "@iconscout/react-unicons";
+import { useEffect } from "react";
+import { fetchReviewFeedbackData } from "../../redux/features/reviewfeedbackSlice";
 
 function ReviewsPageInstructor() {
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
+  const dispatch = useDispatch();
+  const userReviewFeedback = useSelector((state) => state.reviewFeedback.data);
+  useEffect(() => {
+    dispatch(fetchReviewFeedbackData());
+  }, [dispatch]);
   return (
     <div className={`ReviewsPageInstructor ${isShowAll ? "active" : ""}`}>
       <div className="ReviewsPageInstructor_Title_Left">
@@ -60,51 +67,19 @@ function ReviewsPageInstructor() {
             </form>
           </div>
           <div className="course_detail_reviews-comments-box">
-            <div className="course_detail_reviews-comments-item">
-              <div className="comment_item-info">
-                <img src={avatar1_SideBar} alt="" className="comment_avt" />
-                <div className="comment_info">
-                  <div className="comment_name">John Doe</div>
-                  <div className="comment_time">2 hour ago</div>
+            {userReviewFeedback.map((review) => (
+              <div className="course_detail_reviews-comments-item">
+                <div className="comment_item-info">
+                  <img src={review.Avartar} alt="" className="comment_avt" />
+                  <div className="comment_info">
+                    <div className="comment_name">{review.Name_User}</div>
+                    <div className="comment_time">{review.Create_At}</div>
+                  </div>
                 </div>
+                <Rate defaultValue={review.Rating} className="icon_star" />
+                <div className="comment_content">{review.Description}</div>
               </div>
-              <Rate defaultValue={4.5} className="icon_star" />
-              <div className="comment_content">
-                Nam gravida elit a velit rutrum, eget dapibus ex elementum.
-                Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                Fusce lacinia, nunc sit amet tincidunt venenatis.
-              </div>
-            </div>
-            <div className="course_detail_reviews-comments-item">
-              <div className="comment_item-info">
-                <img src={avatar1_SideBar} alt="" className="comment_avt" />
-                <div className="comment_info">
-                  <div className="comment_name">John Doe</div>
-                  <div className="comment_time">2 hour ago</div>
-                </div>
-              </div>
-              <Rate defaultValue={4.5} className="icon_star" />
-              <div className="comment_content">
-                Nam gravida elit a velit rutrum, eget dapibus ex elementum.
-                Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                Fusce lacinia, nunc sit amet tincidunt venenatis.
-              </div>
-            </div>
-            <div className="course_detail_reviews-comments-item">
-              <div className="comment_item-info">
-                <img src={avatar1_SideBar} alt="" className="comment_avt" />
-                <div className="comment_info">
-                  <div className="comment_name">John Doe</div>
-                  <div className="comment_time">2 hour ago</div>
-                </div>
-              </div>
-              <Rate defaultValue={4.5} className="icon_star" />
-              <div className="comment_content">
-                Nam gravida elit a velit rutrum, eget dapibus ex elementum.
-                Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                Fusce lacinia, nunc sit amet tincidunt venenatis.
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
