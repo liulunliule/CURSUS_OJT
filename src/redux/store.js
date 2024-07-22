@@ -1,5 +1,8 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import savedCourseReducer from "./features/savedCourseSlice";
+import liveStreamsReducer from './features/liveStreamsSlice';
+import chatContentReducer from './features/chatContentSlice';
+import instructorNotificationsReducer from './features/instructorNotificationsSlice';
 import blogReducer from './features/ourBlogSlice';
 import officesReducer from './features/officesSlice';
 import pressReducer from './features/pressSlice';
@@ -58,6 +61,9 @@ const rootReducer = combineReducers({
     offices: officesReducer,
     press: pressReducer,
     shoppingCart: shoppingCartReducer,
+    liveStreams: liveStreamsReducer,
+       chatContent: chatContentReducer,
+    instructorNotifications: instructorNotificationsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

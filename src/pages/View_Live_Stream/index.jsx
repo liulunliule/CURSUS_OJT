@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./index.scss";
 import Eye from "../../assets/img/eye.png";
 import Like from "../../assets/img/like_live.png";
@@ -7,7 +7,9 @@ import Share from "../../assets/img/share_live.png";
 import liveButton from "../../assets/img/live_button.png";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import useFetch from "./fetch";
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchLiveStreams } from '../../redux/features/liveStreamsSlice';
+import { fetchChatContent } from '../../redux/features/chatContentSlice';
 
 const View_Live_Stream = () => {
     var settings = {
@@ -17,9 +19,19 @@ const View_Live_Stream = () => {
         slidesToShow: 6,
         slidesToScroll: 1,
       };
+    
+    const dispatch = useDispatch();
 
-    const { data: liveStreams, loading: liveStreamsLoading } = useFetch("https://66908324c0a7969efd9c4d55.mockapi.io/liveInstructor");
-    const { data: otherData, loading: otherDataLoading } = useFetch("https://66908324c0a7969efd9c4d55.mockapi.io/chatContent");
+    const liveStreams = useSelector((state) => state.liveStreams.liveStreams)
+    const liveStreamsLoading = useSelector((state) => state.liveStreams.loading);
+
+    const chatContent = useSelector((state) => state.chatContent.chatContent);
+    const chatContentLoading = useSelector((state) => state.chatContent.loading);
+
+    useEffect(() => {
+        dispatch(fetchLiveStreams());
+        dispatch(fetchChatContent());
+    })
 
   return (
     <div className='fullPageWrap'>
@@ -71,7 +83,7 @@ const View_Live_Stream = () => {
                                 </div>
                                 <div className='live_chat_content'>
                                     <div className='ongod'>
-                                        {otherData.map((d) => (
+                                        {chatContent.map((d) => (
                                             <p>
                                                 <a href='#'>{d.name}</a>
                                                 {d.content}
