@@ -5,6 +5,10 @@
     margin-bottom: 5px;
     .container{
         max-width: 1200px;
+        .col-lg-8{
+            margin-bottom: 60px;
+            margin-top: 40px;
+        }
     }
 }
 
@@ -16,8 +20,8 @@
     border-radius: 3px;
     border: 1px solid #efefef;
     transition: all .2s ease-in-out;
-    margin-bottom: 60px;
-    margin-top: 47px;
+    margin-top: 7px;
+    
     &_img{
         width: 40% !important;
         float: left;
