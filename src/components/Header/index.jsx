@@ -250,7 +250,7 @@ function Header() {
                             </li>
                           </Link>
                         ))}
-                        <Link to="/thirdlayout/reviews_page_instructor">
+                        <Link to="/thirdlayout/instructor_notification">
                           <li
                             className={`item-view ${
                               theme === "light"
