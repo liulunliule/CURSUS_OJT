@@ -65,12 +65,12 @@ function ReportHistoryPage() {
           <p>Learn more about reporting content on Cursus.</p>
         </Link>
       </div>
-      {dataReport.length == 0 ? (
+      {dataReport && dataReport.length > 0 ? (
+        <Table dataSource={dataReport} columns={columns} />
+      ) : (
         <div className="wrapper_ReportHistoryPage__end">
           <span>You haven't submitted any reports.</span>
         </div>
-      ) : (
-        <Table dataSource={dataReport} columns={columns} />
       )}
     </div>
   );
