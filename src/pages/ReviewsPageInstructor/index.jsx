@@ -67,19 +67,20 @@ function ReviewsPageInstructor() {
             </form>
           </div>
           <div className="course_detail_reviews-comments-box">
-            {userReviewFeedback.map((review) => (
-              <div className="course_detail_reviews-comments-item">
-                <div className="comment_item-info">
-                  <img src={review.Avartar} alt="" className="comment_avt" />
-                  <div className="comment_info">
-                    <div className="comment_name">{review.Name_User}</div>
-                    <div className="comment_time">{review.Create_At}</div>
+            {userReviewFeedback &&
+              userReviewFeedback.map((review) => (
+                <div className="course_detail_reviews-comments-item">
+                  <div className="comment_item-info">
+                    <img src={review.Avartar} alt="" className="comment_avt" />
+                    <div className="comment_info">
+                      <div className="comment_name">{review.Name_User}</div>
+                      <div className="comment_time">{review.Create_At}</div>
+                    </div>
                   </div>
+                  <Rate defaultValue={review.Rating} className="icon_star" />
+                  <div className="comment_content">{review.Description}</div>
                 </div>
-                <Rate defaultValue={review.Rating} className="icon_star" />
-                <div className="comment_content">{review.Description}</div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </div>

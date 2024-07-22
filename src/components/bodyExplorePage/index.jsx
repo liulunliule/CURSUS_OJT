@@ -20,73 +20,77 @@ function BodyExplorePage() {
 
   return (
     <div className="bodyExplore">
-      {userPosts.map((savedCourse) => (
-        <div className="explore_page__wrapper_courseAll">
-          <div className="showInformationOfCourse">
-            <div></div>
-            <div className="thumbnail_course_information">
-              <Link>
-                <img
-                  className="thumbnailCourse"
-                  src={savedCourse.video}
-                  alt=""
-                />
-              </Link>
-              <div className="membrane_thumbnail"></div>
-              <div className="other_thumbnail">
-                <div className="voteOfThumbnail">
-                  <StarOutlined className="voteOfThumbnail_star" />
-                  <span className="voteOfThumbnail_number">
-                    {savedCourse.ratting}
-                  </span>
-                </div>
-                <div className="other_thumbnail_badge_seller_sqr"></div>
-                <div className="other_thumbnail_badge_seller">
-                  <span className="other_thumbnail_badge_seller_title">
-                    BESTSELLER
-                  </span>
-                </div>
-                <span className="other_thumbnail_crse_timer">
-                  {savedCourse.time} hour
-                </span>
-              </div>
-            </div>
-            <div className="viewsAndPostDate">
-              <div className="viewsAndPostDate_real">
-                <span>{savedCourse.views}</span>
-                <span>•</span>
-                <span> 15 days ago</span>
-              </div>
-              <div className="viewsAndPostDate_menu">
-                <img className="menu_course" src={menu_course} alt="" />
-              </div>
-            </div>
-            <div className="title_course">
-              <Link
-                to="/course_detail/course_detail_about"
-                className="titleOfCourse"
-              >
-                {savedCourse.titilecourse}
-              </Link>
-            </div>
-            <div className="fieldOfCourse">
-              <Link className="field_course">{savedCourse.typecourse}</Link>
-            </div>
-            <div className="other_course">
-              <p className="other_By">
-                By
-                <Link className="other_courseName"> {savedCourse.author}</Link>
-              </p>
-              <div className="price_course">
+      {userPosts &&
+        userPosts.map((savedCourse) => (
+          <div className="explore_page__wrapper_courseAll">
+            <div className="showInformationOfCourse">
+              <div></div>
+              <div className="thumbnail_course_information">
                 <Link>
-                  <ShoppingCartOutlined className="cart_course" />
+                  <img
+                    className="thumbnailCourse"
+                    src={savedCourse.video}
+                    alt=""
+                  />
                 </Link>
-                <div>${savedCourse.price}</div>
+                <div className="membrane_thumbnail"></div>
+                <div className="other_thumbnail">
+                  <div className="voteOfThumbnail">
+                    <StarOutlined className="voteOfThumbnail_star" />
+                    <span className="voteOfThumbnail_number">
+                      {savedCourse.ratting}
+                    </span>
+                  </div>
+                  <div className="other_thumbnail_badge_seller_sqr"></div>
+                  <div className="other_thumbnail_badge_seller">
+                    <span className="other_thumbnail_badge_seller_title">
+                      BESTSELLER
+                    </span>
+                  </div>
+                  <span className="other_thumbnail_crse_timer">
+                    {savedCourse.time} hour
+                  </span>
+                </div>
+              </div>
+              <div className="viewsAndPostDate">
+                <div className="viewsAndPostDate_real">
+                  <span>{savedCourse.views}</span>
+                  <span>•</span>
+                  <span> 15 days ago</span>
+                </div>
+                <div className="viewsAndPostDate_menu">
+                  <img className="menu_course" src={menu_course} alt="" />
+                </div>
+              </div>
+              <div className="title_course">
+                <Link
+                  to="/course_detail/course_detail_about"
+                  className="titleOfCourse"
+                >
+                  {savedCourse.titilecourse}
+                </Link>
+              </div>
+              <div className="fieldOfCourse">
+                <Link className="field_course">{savedCourse.typecourse}</Link>
+              </div>
+              <div className="other_course">
+                <p className="other_By">
+                  By
+                  <Link className="other_courseName">
+                    {" "}
+                    {savedCourse.author}
+                  </Link>
+                </p>
+                <div className="price_course">
+                  <Link>
+                    <ShoppingCartOutlined className="cart_course" />
+                  </Link>
+                  <div>${savedCourse.price}</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
     </div>
   );
 }
