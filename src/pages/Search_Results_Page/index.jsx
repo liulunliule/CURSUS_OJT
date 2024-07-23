@@ -1629,14 +1629,7 @@ const Search_Resultse = () => {
                                 </div>
                               </a>
                               <div className="search-result-more-dropdown-content">
-                                <span
-                                  onClick={() => handleAddCourse(course)}
-                                  className={`btn ${
-                                    likedCourses.has(course.id)
-                                      ? "btn-danger"
-                                      : "btn-primary"
-                                  }`}
-                                >
+                                <span onClick={() => handleAddCourse(course)}>
                                   <i
                                     className={`uil uil-heart ${
                                       likedCourses.has(course.id)
