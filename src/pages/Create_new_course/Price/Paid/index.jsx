@@ -4,9 +4,11 @@ import "./index.scss";
 function Paid_page({ price, onPriceChange }) {
   const [inputPrice, setInputPrice] = useState(price || ""); // Initialize with price prop or empty
 
-  const handleUseClick = () => {
-    if (!isNaN(inputPrice) && inputPrice.trim() !== "") {
-      onPriceChange(Number(inputPrice)); // Update price in parent
+  const handlePriceChange = (e) => {
+    const { value } = e.target;
+    if (!isNaN(value)) {
+      setInputPrice(value);
+      onPriceChange(Number(value)); // Update price in parent
     }
   };
 
@@ -19,12 +21,9 @@ function Paid_page({ price, onPriceChange }) {
             type="text"
             id="regular_price"
             value={inputPrice}
-            onChange={(e) => setInputPrice(e.target.value)}
+            onChange={handlePriceChange}
             placeholder="$0"
           />
-          <button type="button" onClick={handleUseClick}>
-            Use
-          </button>
         </form>
       </div>
     </div>

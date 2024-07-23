@@ -16,6 +16,10 @@ function Create_new_course() {
     ShortDescription: "",
     Description: "",
     Whatlearn: "",
+    courseLevel: "",
+    audioLanguage: "",
+    closeCaption: "",
+    courseCategory: "",
   });
 
   const [mediaInfo, setMediaInfo] = useState({
@@ -33,6 +37,10 @@ function Create_new_course() {
     video: "", // Thumbnail URL
     author: "",
     userId: "",
+    Level: "",
+    audioLanguage: "",
+    closeCaption: "",
+    typecourse: "",
   });
 
   const account = useSelector((state) => state.user.account);
@@ -50,9 +58,13 @@ function Create_new_course() {
         video: mediaInfo.video,
         author: account.userName,
         userId: account.userId,
+        Level: basicInfo.courseLevel,
+        audioLanguage: basicInfo.audioLanguage,
+        closeCaption: basicInfo.closeCaption,
+        typecourse: basicInfo.courseCategory,
       }));
     }
-  }, [basicInfo, mediaInfo, price, account, account]);
+  }, [basicInfo, mediaInfo, price, account]);
 
   const steps = [
     {

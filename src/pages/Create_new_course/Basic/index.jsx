@@ -6,9 +6,40 @@ import ReactQuill from "react-quill";
 import TextArea from "antd/es/input/TextArea";
 import { Select } from "antd";
 
+const courseLevelOptions = [
+  { value: "Beginner", label: "Beginner" },
+  { value: "Intermediate", label: "Intermediate" },
+  { value: "Advanced", label: "Advanced" },
+];
+
+const audioLanguageOptions = [
+  { value: "English", label: "English" },
+  { value: "Spanish", label: "Spanish" },
+  { value: "French", label: "French" },
+  { value: "German", label: "German" },
+];
+
+const closeCaptionOptions = [
+  { value: "English", label: "English" },
+  { value: "Spanish", label: "Spanish" },
+  { value: "French", label: "French" },
+  { value: "German", label: "German" },
+];
+
+const courseCategoryOptions = [
+  { value: "Web Development", label: "Web Development" },
+  { value: "Data Science", label: "Data Science" },
+  { value: "Machine Learning", label: "Machine Learning" },
+  { value: "Artificial Intelligence", label: "Artificial Intelligence" },
+];
+
 function Basic({ basicInfo, setBasicInfo }) {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+    setBasicInfo((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSelectChange = (value, name) => {
     setBasicInfo((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -97,7 +128,9 @@ function Basic({ basicInfo, setBasicInfo }) {
                 height: "40px",
               }}
               placeholder="Nothing selected"
-            ></Select>
+              options={courseLevelOptions}
+              onChange={(value) => handleSelectChange(value, "courseLevel")}
+            />
           </div>
           <div className="basic_main_select-item">
             <label htmlFor="audioLanguage">Audio Language*</label>
@@ -107,7 +140,9 @@ function Basic({ basicInfo, setBasicInfo }) {
                 height: "40px",
               }}
               placeholder="Select audio"
-            ></Select>
+              options={audioLanguageOptions}
+              onChange={(value) => handleSelectChange(value, "audioLanguage")}
+            />
           </div>
           <div className="basic_main_select-item">
             <label htmlFor="closeCaption">Close Caption*</label>
@@ -117,7 +152,9 @@ function Basic({ basicInfo, setBasicInfo }) {
                 height: "40px",
               }}
               placeholder="Select caption"
-            ></Select>
+              options={closeCaptionOptions}
+              onChange={(value) => handleSelectChange(value, "closeCaption")}
+            />
           </div>
           <div className="basic_main_select-item">
             <label htmlFor="courseCategory">Course Category*</label>
@@ -127,13 +164,9 @@ function Basic({ basicInfo, setBasicInfo }) {
                 height: "40px",
               }}
               defaultValue="Web Development"
-              options={[
-                {
-                  value: "Web Development",
-                  label: "Web Development",
-                },
-              ]}
-            ></Select>
+              options={courseCategoryOptions}
+              onChange={(value) => handleSelectChange(value, "courseCategory")}
+            />
           </div>
         </div>
       </div>

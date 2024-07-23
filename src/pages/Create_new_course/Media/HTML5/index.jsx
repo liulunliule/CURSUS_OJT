@@ -30,11 +30,7 @@ function Media_html5({ setMediaInfo, mediaInfo }) {
           {!mediaInfo.video ? (
             <img src={media_thumb_1} alt="" className="html_thum" />
           ) : (
-            <img
-              src={mediaInfo?.video} // Use mediaInfo.video instead of media_thumb_1 as fallback
-              alt=""
-              className="html_thumb"
-            />
+            <img src={mediaInfo?.video} alt="" className="html_thumb" />
           )}
           <div className="media_html_choose_thumb-cta">
             <div className="choose_thumb-btn">
