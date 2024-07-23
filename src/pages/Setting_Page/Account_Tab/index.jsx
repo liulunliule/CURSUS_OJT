@@ -35,7 +35,7 @@ function AccountTab() {
             toast.success("User updated successfully");
 
             dispatch(updateUser({ userName, phone, aboutme: aboutMe }));
-            navigate("/");
+            // navigate("/");
         } catch (error) {
             console.error("Error updating user:", error);
             toast.error("An error occurred. Please try again.");
@@ -90,6 +90,8 @@ function AccountTab() {
                 </p>
 
                 <div className="AccountTab_Contents_InputName">
+                    <span className="AccountTab_Contents_SPAN">Email:</span>
+
                     <Input
                         className="AccountTab_Contents_InputName_FirstName"
                         placeholder="Email"
@@ -97,8 +99,9 @@ function AccountTab() {
                         disabled
                     />
                 </div>
-                <span className="AccountTab_Contents_SPAN">Email.</span>
                 <div className="AccountTab_Contents_InputName">
+                    <span className="AccountTab_Contents_SPAN">Username:</span>
+
                     <Input
                         className="AccountTab_Contents_InputName_FirstName"
                         placeholder="Username"
@@ -106,8 +109,11 @@ function AccountTab() {
                         onChange={(e) => setUserName(e.target.value)}
                     />
                 </div>
-                <span className="AccountTab_Contents_SPAN">Username</span>
                 <div className="AccountTab_Contents_InputName">
+                    <span className="AccountTab_Contents_SPAN">
+                        Phone Number:
+                    </span>
+
                     <Input
                         className="AccountTab_Contents_InputName_FirstName"
                         placeholder="Phone Number"
@@ -115,27 +121,18 @@ function AccountTab() {
                         onChange={(e) => setPhone(e.target.value)}
                     />
                 </div>
-                <span className="AccountTab_Contents_SPAN">Phone Number</span>
-                {/* <div className="AccountTab_Contents_Headline">
-                    <Input
-                        className="AccountTab_Contents_InputHeadline_Headline"
-                        placeholder="Headline"
+
+                <div className="AccountTab_Contents_InputName">
+                    <span className="AccountTab_Contents_SPAN">About me:</span>
+                    <TextArea
+                        className="AccountTab_Contents_TextArea"
+                        rows={3}
+                        placeholder="Write a little description about you..."
+                        maxLength={3000}
+                        value={aboutMe}
+                        onChange={(e) => setAboutMe(e.target.value)}
                     />
-                    <span className="AccountTab_Contents_Headline_36">36</span>
                 </div>
-                <span className="AccountTab_Contents_SPAN">
-                    Add a professional headline like, "Engineer at Cursus" or
-                    "Architect."
-                </span> */}
-                <TextArea
-                    className="AccountTab_Contents_TextArea"
-                    rows={3}
-                    placeholder="Write a little description about you..."
-                    maxLength={3000}
-                    value={aboutMe}
-                    onChange={(e) => setAboutMe(e.target.value)}
-                />
-                <span className="AccountTab_Contents_SPAN">About me.</span>
                 <div className="AccountTab_Contents_Line"></div>
                 <h4 className="AccountTab_Contents_ProfileLink_H4">
                     Profile Links
