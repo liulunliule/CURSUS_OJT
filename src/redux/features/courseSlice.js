@@ -23,11 +23,12 @@ export const fetchCourseDetail = createAsyncThunk(
 
 export const removeSavedCourse = createAsyncThunk(
     "course/removeSavedCourse",
-    async (courseId) => {
+    async ({ userId, courseId }) => {
+        console.log("Check id:", courseId);
         await axios.delete(
-            `https://6696231a0312447373c1386e.mockapi.io/savedCourse/${courseId}`
+            `https://6696231a0312447373c1386e.mockapi.io/user/${userId}/savedCourse/${courseId}`
         );
-        return courseId;
+        return { courseId };
     }
 );
 

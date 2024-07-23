@@ -9,6 +9,7 @@ import "./index.scss";
 
 const Course = () => {
   const dispatch = useDispatch();
+  const subscriptions = useSelector((state) => state.myProfile.subscriptions);
   const userPosts = useSelector((state) => state.myProfile.userPosts);
   const account = useSelector((state) => state.user.account);
   const userId = account.id || "";
@@ -19,11 +20,15 @@ const Course = () => {
     }
   }, [dispatch, userId]);
 
-  const filteredUserPosts = userPosts.filter((post) => post.userId === userId);
-
+  const subscribedChannelIds = subscriptions
+  .map(subscription => subscription.id)
+  const filteredCourses = userPosts.filter(post => {
+    console.log("Post channelId: ", post.channelId); 
+    return subscribedChannelIds.includes(post.channelId);
+  });
   return (
     <>
-      {filteredUserPosts.map((item) => (
+      {filteredCourses.map((item) => (
         <div key={item.id} className="course_tab col-lg-3 col-md-4">
           <div className="course_card">
             <a href="course_detail_view.html" className="course_img">

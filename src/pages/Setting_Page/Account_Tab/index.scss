@@ -59,7 +59,6 @@
 
         .AccountTab_Contents_InputName {
             margin-top: 35px;
-            display: flex;
             gap: 20px;
 
             .AccountTab_Contents_InputName_FirstName {
@@ -112,12 +111,12 @@
 
         .AccountTab_Contents_SPAN {
             margin-top: 5px;
-            font-size: 15px;
-            color: #ed2a26;
+            font-size: 13px;
+            color: #686f7a;
         }
 
         .AccountTab_Contents_TextArea {
-            margin-top: 30px;
+            // margin-top: 30px;
             border-radius: 3px;
         }
         .AccountTab_Contents_TextArea:hover {

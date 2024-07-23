@@ -11,10 +11,15 @@ import {
   HeartOutlined,
   StopOutlined,
 } from "@ant-design/icons";
-import { fetchCourse } from "../../redux/features/mySearchSlice";
 import { UilWindsock } from "@iconscout/react-unicons";
 import { Dropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import {
+  fetchSearchResult,
+  fetchAddNewCourse,
+} from "../../redux/features/mySearchSlice";
+
 const Search_Resultse = () => {
   const [loading, setLoading] = useState(true);
   const [showTopic, setShowTopic] = useState(false);
@@ -26,19 +31,67 @@ const Search_Resultse = () => {
   const [showVideoDuration, setshowVideoDuration] = useState(false);
   const [showCloseCaption, setshowCloseCaption] = useState(false);
   const [selectedSort, setSelectedSort] = useState("Sort");
+  const [query, setQuery] = useState("");
+  const [likedCourses, setLikedCourses] = useState(new Set());
   const dispatch = useDispatch();
-  const userSearch = useSelector((state) => state.mySearch.userSearch);
+  const { userSearch, status } = useSelector((state) => state.mySearch);
+  const account = useSelector((state) => state.user.account);
+
   const handleSortChange = (eventKey) => {
     setSelectedSort(eventKey);
+  };
+  useEffect(() => {
+    // const savedLikedCourses =
+    //   JSON.parse(localStorage.getItem("likedCourses")) || [];
+    // setLikedCourses(new Set(savedLikedCourses));
+    if (query) {
+      dispatch(fetchSearchResult(query));
+    }
+    setLoading(false);
+  }, [dispatch, query]);
+
+  const handleSearch = () => {
+    dispatch(fetchSearchResult(query));
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
+  const handleAddCourse = (course) => {
+    const userId = account.id;
+    const updatedCourse = {
+      ...course,
+      userId,
+      saved: !likedCourses.has(course.id),
+    };
+
+    dispatch(fetchAddNewCourse(updatedCourse))
+      .then(() => {
+        setLikedCourses((prev) => {
+          const newLikedCourses = new Set(prev);
+          if (updatedCourse.saved) {
+            newLikedCourses.add(course.id);
+          } else {
+            newLikedCourses.delete(course.id);
+          }
+          // localStorage.setItem(
+          //   "likedCourses",
+          //   JSON.stringify([...newLikedCourses])
+          // );
+          return newLikedCourses;
+        });
+        toast.error("Failed to add course. Please try again.");
+      })
+      .catch(() => {
+        toast.success("Course added successfully!");
+      });
   };
   React.useEffect(() => {
     setSelectedSort("Sort");
   }, []);
-  useEffect(() => {
-    dispatch(fetchCourse());
-    setLoading(false);
-  }, [dispatch]);
-
   const toggleAccordion = (accordion) => {
     setShowTopic(false);
     setShowLevel(false);
@@ -78,23 +131,22 @@ const Search_Resultse = () => {
         break;
     }
   };
-
   return (
     <div className="search-result-wrapper search-result">
       <div className="search-result-background">
         <div className="container">
           <div className="row">
-            <div class="col-lg-12">
-              <div class="title-search-result">
-                <div class="title-search-result-left">
-                  <div class="title-search-result-left-link">
+            <div className="col-lg-12">
+              <div className="title-search-result">
+                <div className="title-search-result-left">
+                  <div className="title-search-result-left-link">
                     <nav aria-label="breadcrumb">
-                      <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
+                      <ol className="breadcrumb">
+                        <li className="breadcrumb-item">
                           <a href="/">Home</a>
                         </li>
                         <li
-                          class="breadcrumb-item breadcrumb-item-color active "
+                          className="breadcrumb-item breadcrumb-item-color active"
                           aria-current="page"
                         >
                           Search Results
@@ -103,7 +155,7 @@ const Search_Resultse = () => {
                     </nav>
                   </div>
                 </div>
-                <div class="title-search-result-right">
+                <div className="title-search-result-right">
                   <div className="instructor_search title-search-result-right-search col-xl-12 col-lg-8">
                     <div className="search_all_instructor title-search-result-right-search-result">
                       <div className="policy__toolbar">
@@ -113,10 +165,11 @@ const Search_Resultse = () => {
                           </div>
                           <input
                             type="text"
-                            name=""
-                            id=""
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                            onKeyDown={handleKeyPress}
                             className="policy__toolbar-input"
-                            placeholder="Search"
+                            placeholder="Search courses..."
                           />
                         </div>
                       </div>
@@ -124,16 +177,16 @@ const Search_Resultse = () => {
                   </div>
                 </div>
               </div>
-              <div class="title-search-result-main">
+              <div className="title-search-result-main">
                 <h2>Search Results</h2>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="search-results-filters mb4d25">
-        <div class="container">
-          <div class="row justify-content-between">
+      <div className="search-results-filters mb4d25">
+        <div className="container">
+          <div className="row justify-content-between">
             <div class="col-lg-3 col-md-4">
               <div class="search-results-filters-section">
                 <div class="search-results-filters-section-result-stitles">
@@ -1513,7 +1566,7 @@ const Search_Resultse = () => {
                     <h4 className="search-result-number">
                       {userSearch.length} Results
                     </h4>
-                    {loading ? (
+                    {status === "loading" ? (
                       <div className="main-loader mt-50">
                         <div className="spinner">
                           <div className="bounce1"></div>
@@ -1551,12 +1604,11 @@ const Search_Resultse = () => {
                                 </div>
                                 <span className="search-result-play-btn">
                                   <i className="uil uil-play search-result-play">
-                                    {" "}
                                     <img
                                       src={Play}
                                       className="search-result-course-play"
                                       alt="purchased-play"
-                                    ></img>
+                                    />
                                   </i>
                                 </span>
                                 <div className="search-result-course-timer">
@@ -1577,28 +1629,31 @@ const Search_Resultse = () => {
                                 </div>
                               </a>
                               <div className="search-result-more-dropdown-content">
-                                <span>
-                                  <i className="uil uil-share-alt">
-                                    <ShareAltOutlined />
-                                  </i>{" "}
-                                  Share
-                                </span>
-                                <span>
-                                  <i className="uil uil-heart">
+                                <span
+                                  onClick={() => handleAddCourse(course)}
+                                  className={`btn ${
+                                    likedCourses.has(course.id)
+                                      ? "btn-danger"
+                                      : "btn-primary"
+                                  }`}
+                                >
+                                  <i
+                                    className={`uil uil-heart ${
+                                      likedCourses.has(course.id)
+                                        ? "heart-red"
+                                        : ""
+                                    }`}
+                                  >
                                     <HeartOutlined />
-                                  </i>{" "}
-                                  Save
-                                </span>
-                                <span>
-                                  <i className="uil uil-ban">
-                                    <StopOutlined />
-                                  </i>{" "}
-                                  Not Interested
+                                  </i>
+                                  {likedCourses.has(course.id)
+                                    ? "Saved"
+                                    : "Save"}
                                 </span>
                                 <span>
                                   <i className="uil uil-windsock">
                                     <UilWindsock />
-                                  </i>{" "}
+                                  </i>
                                   Report
                                 </span>
                               </div>
