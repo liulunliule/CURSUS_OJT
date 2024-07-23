@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -9,15 +9,20 @@ import {
 import Free_page from "./Free";
 import Paid_page from "./Paid";
 
-function Price() {
-  const [selectedOption, setSelectOption] = useState("free");
-  const [price, setPrice] = useState(0); // Default price is 0
+function Price({ price, setPrice }) {
+  const [selectedOption, setSelectOption] = useState(
+    price > 0 ? "paid" : "free"
+  );
 
   const handlePriceChange = (newPrice) => {
     setPrice(newPrice);
     setSelectOption("paid");
   };
-
+  useEffect(() => {
+    if (selectedOption === "free") {
+      setPrice(0);
+    }
+  }, [selectedOption, setPrice]);
   return (
     <div className="create_course_price">
       <div className="price_title">
