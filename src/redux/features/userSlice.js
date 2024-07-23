@@ -1,25 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  account: {
-    userName: "",
-    email: "",
-    password: "",
-    phone: "",
-    gender: false,
-    avatar: "",
-    role: false,
-    enrolledCourses: {},
-    major: " ",
-    enrollStudents: "",
-    aboutme: "",
-    subscriptions: "",
-    reviews: "",
-    purchased: "",
-    certificate: "",
-    id: "",
-  },
-  isAuthenticated: false,
+    account: {
+        userName: "",
+        email: "",
+        password: "",
+        phone: "",
+        gender: false,
+        avatar: "",
+        role: false,
+        enrolledCourses: "",
+        major: " ",
+        enrollStudents: "",
+        aboutme: "",
+        subscriptions: "",
+        reviews: "",
+        purchased: "",
+        certificate: "",
+        id: "",
+    },
+    isAuthenticated: false,
 };
 
 const userSlice = createSlice({
@@ -57,7 +57,7 @@ const userSlice = createSlice({
                 gender: false,
                 avatar: "",
                 role: false,
-                enrolledCourses: {},
+                enrolledCourses: "",
                 major: " ",
                 enrollStudents: "",
                 aboutme: "",

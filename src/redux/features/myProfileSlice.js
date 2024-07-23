@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { instructor } from "../../assets";
 
 export const fetchUserInfo = createAsyncThunk(
   "myProfile/fetchUserInfo",
@@ -58,6 +59,7 @@ export const fetchPostComment = createAsyncThunk(
       user: userName,
       userImage: avatar,
       time: new Date().toLocaleTimeString(),
+      date: new Date().toLocaleDateString(),
       content,
       likes: 0,
       dislikes: 0,
@@ -110,10 +112,17 @@ export const fetchUpdateSubscriptions = createAsyncThunk(
 export const fetchUsers = createAsyncThunk("myProfile/fetchUsers", async () => {
   const response = await axios.get(
     `https://6696231a0312447373c1386e.mockapi.io/user`
+
   );
   return response.data;
 });
-
+export const fetchInstructor = createAsyncThunk("myProfile/fetchInstructor", async (userId) => {
+  const response = await axios.get(
+    `https://6696231a0312447373c1386e.mockapi.io/user/${userId}`
+    
+  );
+  return response.data;
+});
 const myProfileSlice = createSlice({
   name: "myProfile",
   initialState: {
@@ -122,6 +131,7 @@ const myProfileSlice = createSlice({
     userReviews: [],
     subscriptions: [],
     all_instructor: [],
+    instructor: [],
     status: "idle",
     error: null,
   },
@@ -246,7 +256,11 @@ const myProfileSlice = createSlice({
         if (index !== -1) {
           state.userPosts[index] = action.payload;
         }
-      })      
+      })    
+      .addCase(fetchInstructor.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.instructor = action.payload;
+      })  
       .addCase(fetchUpdateSubscriptions.fulfilled, (state, action) => {
         const index = state.subscriptions.findIndex(
           (chanel) => chanel.id === action.payload.id

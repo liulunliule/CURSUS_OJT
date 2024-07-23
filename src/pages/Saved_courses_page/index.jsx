@@ -28,16 +28,12 @@ function Saved_courses_page() {
         }
     }, [dispatch, account.id]);
 
+    const userId = account.id;
     const handleRemoveSavedCourse = async (courseId) => {
-        // dispatch(removeSavedCourse(courseId));
-        console.log("Id: ", courseId);
-        await axios.delete(
-            `https://6696231a0312447373c1386e.mockapi.io/savedCourse/${courseId}`
-        );
-        const listAfterDelete = savedCourses.filter(
-            (course) => course.id !== courseId
-        );
-        return listAfterDelete;
+        dispatch(removeSavedCourse({ courseId, userId })).then(() => {
+            dispatch(fetchCourse(account.id));
+            toast.success("Delete Successfully");
+        });
     };
 
     return (

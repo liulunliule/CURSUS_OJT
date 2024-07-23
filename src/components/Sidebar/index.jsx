@@ -18,7 +18,7 @@ import {
   SendFeedbackLogo_SideBar,
 } from "../../assets";
 import "./index.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 //SideBarInstructorDashboardDemo
 import {
@@ -44,7 +44,9 @@ function SidebarFrontend() {
   const chanelSubscription = subscriptions.filter(
     (post) => post.userId === userId && post.subscriptionsed === true
   );
-  console.log("chanelSubscription: ", chanelSubscription);
+  const channel = subscriptions.filter((post) => post.userId === userId && post.subscriptionsed === true);
+  const navigate = useNavigate();
+  console.log("chanelSubscription: ", channel);
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
   return (
     <div className={`SideBarFrontend ${isShowAll ? "active" : ""}`}>
@@ -362,10 +364,11 @@ function SidebarFrontend() {
         </div>
         <div className="select_ListAvatar">
           {chanelSubscription.map((subscription) => (
-            <Link
-              to={`/other_instructor_view/${subscription.id}`}
+            <div
+        
               className="Link_SideBar"
               key={subscription.id}
+              onClick={()=>navigate(`/other_instructor_view/${subscription.id}`,{state:{channel}})}
             >
               <div className="wrapper_avatar1_SideBar">
                 <img
@@ -378,7 +381,7 @@ function SidebarFrontend() {
                 </span>
                 <span className="redDot_Avatar_SideBar"></span>
               </div>
-            </Link>
+            </div>
           ))}
           <Link to="/all_instructor" className="Link_SideBar">
             <div className="addInstructor_SideBar">
