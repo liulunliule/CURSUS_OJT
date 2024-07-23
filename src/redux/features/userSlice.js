@@ -9,7 +9,7 @@ const initialState = {
         gender: false,
         avatar: "",
         role: false,
-        enrolledCourses: {},
+        enrolledCourses: "",
         major: " ",
         enrollStudents: "",
         aboutme: "",
@@ -57,7 +57,7 @@ const userSlice = createSlice({
                 gender: false,
                 avatar: "",
                 role: false,
-                enrolledCourses: {},
+                enrolledCourses: "",
                 major: " ",
                 enrollStudents: "",
                 aboutme: "",
@@ -69,9 +69,14 @@ const userSlice = createSlice({
             };
             state.isAuthenticated = false;
         },
+
+        updateUser: (state, action) => {
+            state.account = { ...state.account, ...action.payload };
+        },
     },
 });
 
-export const { fetchUserLoginSuccess, doLogout } = userSlice.actions;
+export const { fetchUserLoginSuccess, doLogout, updateUser } =
+    userSlice.actions;
 
 export default userSlice.reducer;

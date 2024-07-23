@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
 import Stream from "../../assets/img/stream.png";
-import { useSelector } from "react-redux";
+import { fetchLiveStreams } from '../../redux/features/liveStreamsSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const LiveStreams = () => {
     const [mouseOverColor, setMouseOverColor] = useState(null);
@@ -15,24 +16,12 @@ const LiveStreams = () => {
         setMouseOverColor(null);
     };
 
-    const [data, setData] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const dispatch = useDispatch();
+    const liveStreams = useSelector((state) => state.liveStreams.liveStreams)
 
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch("https://66908324c0a7969efd9c4d55.mockapi.io/liveInstructor");
-                const result = await response.json();
-                setData(result);
-                setLoading(false);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-                setLoading(false);
-            }
-        };
-
-        fetchData();
-    }, []);
+        dispatch(fetchLiveStreams());
+    })
 
     const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
     return (
@@ -48,7 +37,7 @@ const LiveStreams = () => {
                                     </h4>
                                     <div className="la5lo2">
                                         <div className="row">
-                                            {data.map((d) => (
+                                            {liveStreams.map((d) => (
                                                 <div className="col-md-3">
                                                     <div className="stream_1 mb-4">
                                                         <Link

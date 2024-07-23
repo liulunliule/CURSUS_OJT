@@ -117,13 +117,10 @@ function Router() {
           element: <Student_Profile />,
         },
         {
-          path: "other_instructor_view",
+          path: "other_instructor_view/:id",
           element: <Other_Instructor_View />,
         },
-        {
-          path: "saved_courses",
-          element: <Saved_courses_page />,
-        },
+
         {
           path: "/detail_category_page",
           element: <DetailCategoryPage />,
@@ -163,7 +160,11 @@ function Router() {
           ],
         },
         {
-          path: "course_detail",
+          path: "saved_courses",
+          element: <Saved_courses_page />,
+        },
+        {
+          path: "course_detail/:id",
           element: <Course_detail />,
           children: [
             {

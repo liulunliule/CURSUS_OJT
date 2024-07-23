@@ -1,12 +1,15 @@
 // components/My_Certificates.js
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { createGlobalStyle } from "styled-components";
 import { UilAward, UilTrashAlt } from "@iconscout/react-unicons";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchCertificates, fetchDeleteMyCertificate } from '../../redux/features/myCertificateSlice';
-
+import {
+  fetchCertificates,
+  fetchUpdateMyCertificate,
+} from "../../redux/features/myCertificateSlice";
+import { toast } from "react-toastify";
 const GlobalStyles = createGlobalStyle`
   body {
     background-color: #f7f7f7; 
@@ -18,20 +21,21 @@ const GlobalStyles = createGlobalStyle`
 
 function My_Certificates() {
   const dispatch = useDispatch();
-  const { mycertificate, status, error } = useSelector((state) => state.certificate);
-  const isShowAll = useSelector((state) => state.savedCourse?.isShowAll);
-
+  const mycertificate = useSelector((state) => state.certificate.mycertificate);
+  const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    if (status === 'idle') {
-      dispatch(fetchCertificates());
-    }
-  }, [status, dispatch]);
+    dispatch(fetchCertificates());
+    setLoading(false);
+  }, [dispatch]);
 
-  const handleDelete = (id) => {
-    dispatch(fetchDeleteMyCertificate(id));
+  const handleUpdate = (id) => {
+    const UpdateMyCertificate = { statusCertificate: false };
+    dispatch(fetchUpdateMyCertificate({ id, UpdateMyCertificate }));
+    toast.success("Delete successfully!!!");
   };
 
-  if (status === 'loading') {
+  if (loading) {
     return (
       <div
         className="col-md-12 d-flex justify-content-center align-items-center"
@@ -48,10 +52,6 @@ function My_Certificates() {
         </div>
       </div>
     );
-  }
-
-  if (status === 'failed') {
-    return <div>Error: {error}</div>;
   }
 
   return (
@@ -79,7 +79,9 @@ function My_Certificates() {
                   <Link to="/secondLayout/certification_center">
                     <button
                       className="create-btn-dash-my-cerificate"
-                      onClick={() => window.location.href = 'certification_center.html'}
+                      onClick={() =>
+                        (window.location.href = "certification_center.html")
+                      }
                     >
                       New Certificate
                     </button>
@@ -89,37 +91,67 @@ function My_Certificates() {
 
               <div className="table-my-cerificate">
                 <div className="table-responsive-my-cerificate">
-                  <table className="table ucp-table-my-cerificate" id="content-table">
+                  <table
+                    className="table ucp-table-my-cerificate"
+                    id="content-table"
+                  >
                     <thead className="thead-s">
                       <tr>
-                        <th className="text-left" scope="col">Item No.</th>
+                        <th className="text-left" scope="col">
+                          Item No.
+                        </th>
                         <th scope="col">Title</th>
-                        <th className="text-left" scope="col">Marks</th>
-                        <th className="text-left" scope="col">Out Of</th>
-                        <th className="text-left" scope="col">Upload Date</th>
-                        <th className="text-left" scope="col">Certificate</th>
-                        <th className="text-left" scope="col">Controls</th>
+                        <th className="text-left" scope="col">
+                          Marks
+                        </th>
+                        <th className="text-left" scope="col">
+                          Out Of
+                        </th>
+                        <th className="text-left" scope="col">
+                          Upload Date
+                        </th>
+                        <th className="text-left" scope="col">
+                          Certificate
+                        </th>
+                        <th className="text-left" scope="col">
+                          Controls
+                        </th>
                       </tr>
                     </thead>
-                    {mycertificate.map((my_certificate, index) => (
-                      <tbody key={my_certificate.id}>
-                        <tr>
-                          <td className="text-center">{index + 1}</td>
-                          <td className="cell-ta">{my_certificate.title}</td>
-                          <td className="text-center">{my_certificate.marks}</td>
-                          <td className="text-center">{my_certificate.outof}</td>
-                          <td className="text-center">{my_certificate.date}</td>
-                          <td className="text-center text-center-hover">
-                            <Link to="/certificate">View</Link>
-                          </td>
-                          <td className="text-center">
-                            <a href="#" title="Delete" className="gray-s" onClick={() => handleDelete(my_certificate.id)}>
-                              <UilTrashAlt size="18" color="#686f7a" />
-                            </a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    ))}
+                    {mycertificate
+                      .filter(
+                        (my_certificate) => my_certificate.statusCertificate
+                      )
+                      .map((my_certificate, index) => (
+                        <tbody key={my_certificate.id}>
+                          <tr>
+                            <td className="text-center">{index + 1}</td>
+                            <td className="cell-ta">{my_certificate.title}</td>
+                            <td className="text-center">
+                              {my_certificate.marks}
+                            </td>
+                            <td className="text-center">
+                              {my_certificate.outof}
+                            </td>
+                            <td className="text-center">
+                              {my_certificate.date}
+                            </td>
+                            <td className="text-center text-center-hover">
+                              <Link to="/certificate">View</Link>
+                            </td>
+                            <td className="text-center">
+                              <a
+                                href="#"
+                                title="Delete"
+                                className="gray-s"
+                                onClick={() => handleUpdate(my_certificate.id)}
+                              >
+                                <UilTrashAlt size="18" color="#686f7a" />
+                              </a>
+                            </td>
+                          </tr>
+                        </tbody>
+                      ))}
                   </table>
                 </div>
               </div>

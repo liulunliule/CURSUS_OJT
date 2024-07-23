@@ -18,6 +18,7 @@ import {
   updateAddress,
 } from "../../redux/features/checkoutSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 const Checkout_Page = () => {
   const dispatch = useDispatch();
@@ -289,10 +290,14 @@ const Checkout_Page = () => {
   const handleSave = async (e) => {
     e.preventDefault();
     try {
-      await dispatch(updateAddress(addr, account?.id)).unwrap();
+      await dispatch(
+        updateAddress({ userId: account?.id, addrId: addr?.id, addr })
+      ).unwrap();
       console.log("Address updated successfully");
+      toast.success("Address updated successfully!");
     } catch (error) {
       console.error("Error updating address:", error);
+      toast.error("Failed to update address. Please try again.");
     }
   };
 
@@ -332,11 +337,11 @@ const Checkout_Page = () => {
                         <li className="breadcrumb-item">
                           <Link href="#">Home</Link>
                         </li>
-                        <li className="breadcrumb-item">
+                        {/* <li className="breadcrumb-item">
                           <Link to="/secondLayout/certification_center">
                             {order.CourseName}
                           </Link>
-                        </li>
+                        </li> */}
                         <li
                           className="breadcrumb-item active"
                           aria-current="page"
@@ -401,18 +406,17 @@ const Checkout_Page = () => {
                                 <div className="row">
                                   <div className="col-lg-12">
                                     <div className="UI search panel-body_text">
-                                      <label>First Name*</label>
+                                      <label>User Name*</label>
                                       <div className="UI input panel-body_text_item">
                                         <input
                                           className="prompt srch_explore"
                                           type="text"
-                                          name="FirstName"
-                                          // value={addr.userName}
+                                          name="userName"
+                                          value={addr.userName || ""}
                                           id="id_name"
                                           required
-                                          maxlength="64"
-                                          // placeholder="First Name"
-                                          placeholder={addr.user.userName}
+                                          maxLength="64"
+                                          placeholder="User Name"
                                           onChange={handleChange}
                                         />
                                       </div>
@@ -427,18 +431,17 @@ const Checkout_Page = () => {
                                           className="prompt srch_explore"
                                           type="text"
                                           name="AcademyName"
-                                          // value={addr.AcademyName}
+                                          value={addr.AcademyName || ""}
                                           id="id_academy"
-                                          required=""
-                                          maxlength="64"
-                                          // placeholder="Academy Name"
-                                          placeholder={addr.AcademyName}
+                                          required
+                                          maxLength="64"
+                                          placeholder="Academy Name"
                                           onChange={handleChange}
                                         />
                                       </div>
                                       <div className="help-block">
-                                        If you want your invoices addressed to a
-                                        academy. Leave blank to use your full
+                                        If you want your invoices addressed to
+                                        an academy. Leave blank to use your full
                                         name.
                                       </div>
                                     </div>
@@ -464,10 +467,12 @@ const Checkout_Page = () => {
                                       filterSort={filterSort}
                                       onChange={handleSelectChange}
                                       value={
-                                        countries.find(
-                                          (country) =>
-                                            country.label === addr.Country
-                                        )?.value || undefined
+                                        addr.Country
+                                          ? countries.find(
+                                              (country) =>
+                                                country.label === addr.Country
+                                            )?.value
+                                          : undefined
                                       }
                                     >
                                       {countries.map((country) => (
@@ -488,12 +493,11 @@ const Checkout_Page = () => {
                                           className="prompt srch_explore"
                                           type="text"
                                           name="Address1"
-                                          // value={addr.Address1}
+                                          value={addr.Address1 || ""}
                                           id="id_address1"
-                                          required=""
-                                          maxlength="300"
-                                          // placeholder="Address Line 1"
-                                          placeholder={addr.Address1}
+                                          required
+                                          maxLength="300"
+                                          placeholder="Address Line 1"
                                           onChange={handleChange}
                                         />
                                       </div>
@@ -507,12 +511,11 @@ const Checkout_Page = () => {
                                           className="prompt srch_explore"
                                           type="text"
                                           name="Address2"
-                                          // value={addr.Address2}
+                                          value={addr.Address2 || ""}
                                           id="id_address2"
-                                          required=""
-                                          maxlength="300"
-                                          // placeholder="Address Line 2"
-                                          placeholder={addr.Address2}
+                                          required
+                                          maxLength="300"
+                                          placeholder="Address Line 2"
                                           onChange={handleChange}
                                         />
                                       </div>
@@ -526,12 +529,11 @@ const Checkout_Page = () => {
                                           className="prompt srch_explore"
                                           type="text"
                                           name="City"
-                                          // value={addr.City}
+                                          value={addr.City || ""}
                                           id="id_city"
-                                          required=""
-                                          maxlength="64"
-                                          // placeholder="City"
-                                          placeholder={addr.City}
+                                          required
+                                          maxLength="64"
+                                          placeholder="City"
                                           onChange={handleChange}
                                         />
                                       </div>
@@ -545,12 +547,11 @@ const Checkout_Page = () => {
                                           className="prompt srch_explore"
                                           type="text"
                                           name="State"
-                                          // value={addr.State}
+                                          value={addr.State || ""}
                                           id="id_state"
-                                          required=""
-                                          maxlength="64"
-                                          // placeholder="State / Province / Region"
-                                          placeholder={addr.State}
+                                          required
+                                          maxLength="64"
+                                          placeholder="State / Province / Region"
                                           onChange={handleChange}
                                         />
                                       </div>
@@ -564,12 +565,11 @@ const Checkout_Page = () => {
                                           className="prompt srch_explore"
                                           type="text"
                                           name="ZipCode"
-                                          // value={addr.ZipCode}
+                                          value={addr.ZipCode || ""}
                                           id="id_zip"
-                                          required=""
-                                          maxlength="64"
-                                          // placeholder="Zip / Postal Code"
-                                          placeholder={addr.ZipCode}
+                                          required
+                                          maxLength="64"
+                                          placeholder="Zip / Postal Code"
                                           onChange={handleChange}
                                         />
                                       </div>
@@ -583,12 +583,11 @@ const Checkout_Page = () => {
                                           className="prompt srch_explore"
                                           type="text"
                                           name="Phone"
-                                          // value={addr.Phone}
+                                          value={addr.Phone || ""}
                                           id="id_phone"
-                                          required=""
-                                          maxlength="12"
-                                          // placeholder="Phone Number"
-                                          placeholder={addr.Phone}
+                                          required
+                                          maxLength="12"
+                                          placeholder="Phone Number"
                                           onChange={handleChange}
                                         />
                                       </div>
@@ -611,7 +610,7 @@ const Checkout_Page = () => {
                     </div>
                     {addr && (
                       <div className="address_text">
-                        {addr.user?.userName} <br />
+                        {addr.userName} <br />
                         {addr.Address1}
                         <br /> {addr.Address2}
                         <br /> Road.
