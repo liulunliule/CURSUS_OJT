@@ -1,24 +1,43 @@
-// Subscriptions.js
-import React from "react";
-import "./index.scss";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchSubscriptions,
+  fetchUpdateSubscriptions,
+} from "../../../redux/features/myProfileSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
 import Bell from "../../../assets/img/bell.png";
+import "./index.scss";
+import { toast } from "react-toastify";
 
-const Subscriptions = ({ subscriptions, activeTab }) => {
+const Subscriptions = () => {
+  const dispatch = useDispatch();
+  const subscriptions = useSelector((state) => state.myProfile.subscriptions);
+  const account = useSelector((state) => state.user.account);
+  const userId = account.id || "";
+
+  useEffect(() => {
+      dispatch(fetchSubscriptions());
+  }, [dispatch]);
+
+  const filteredUserSub = subscriptions.filter(
+    (post) => post.userId === userId && post.subscriptionsed === true
+  );
+
+  const handleUpdate = (id) => {
+    const updatedDataSubscriptions = { subscriptionsed: false };
+    dispatch(
+      fetchUpdateSubscriptions({ id, updatedDataSubscriptions })
+    );
+    toast.success("Subscription removed successfully!!!");
+  };
+
   return (
-    <div
-      className={`tab-pane fade ${
-        activeTab === "nav-subscriptions" ? "active show" : ""
-      }`}
-      id="nav-subscriptions"
-      role="tabpanel"
-      aria-labelledby="nav-subscriptions-tab"
-    >
-      <div className="subscriptions_container">
-        <h3 className="about_title_text">Subscriptions</h3>
-        <div className="subscriptions_grid">
-          {subscriptions.map((subscription) => (
+    <div className="subscriptions_container">
+      <h3 className="about_title_text">Subscriptions</h3>
+      <div className="subscriptions_grid">
+        {filteredUserSub.length > 0 ? (
+          filteredUserSub.map((subscription) => (
             <div key={subscription.id} className="subscription_card">
               <div className="subscription_image">
                 <a href="#">
@@ -31,9 +50,7 @@ const Subscriptions = ({ subscriptions, activeTab }) => {
                     {subscription.user}
                     <FontAwesomeIcon
                       icon={faCircleCheck}
-                      style={{
-                        color: "#1da1f2",
-                      }}
+                      style={{ color: "#1da1f2" }}
                       className="fa_circle_check"
                     />
                   </a>
@@ -41,24 +58,30 @@ const Subscriptions = ({ subscriptions, activeTab }) => {
                 <div className="subscription_category">
                   {subscription.category}
                 </div>
-                <div className="subscription_button"> 
-                <ul className="subscription_actions">
-                  <li>
-                    <button className="subscribes_button">Subscribed</button>
-                  </li>
-                  <li>
-                    <button className="notification_button">
-                      <img
-                        src={Bell}
-                        className="subscription_notification"
-                        alt="Notification"
-                      />
-                    </button>
-                  </li>
-                </ul></div>  
+                <div className="subscription_button">
+                  <ul className="subscription_actions">
+                    <li>
+                      <button
+                        className="subscribes_button"
+                        onClick={() => handleUpdate(subscription.id)}
+                      >
+                        Subscribed
+                      </button>
+                    </li>
+                    <li>
+                      <button className="notification_button">
+                        <img
+                          src={Bell}
+                          className="subscription_notification"
+                          alt="Notification"
+                        />
+                      </button>
+                    </li>
+                  </ul>
+                </div>
                 <div className="subscription_stats">
                   <span className="students_count">
-                    {subscription.students.toLocaleString()} Students
+                    {subscription.students} Students
                   </span>
                   <span className="courses_count">
                     {subscription.courses} Courses
@@ -66,8 +89,10 @@ const Subscriptions = ({ subscriptions, activeTab }) => {
                 </div>
               </div>
             </div>
-          ))}
-        </div>
+          ))
+        ) : (
+          <p>No subscriptions available</p>
+        )}
       </div>
     </div>
   );

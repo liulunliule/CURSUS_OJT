@@ -1,31 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.scss";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Select, Table, Typography } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
+import {
+  fetchEarningTable,
+  fetchTopCountries,
+} from "../../redux/features/earningSlice";
 
 const Earnings = () => {
+  const dispatch = useDispatch();
+  const topCountries = useSelector((state) => state.earnings.topCountries);
+  const earningTable = useSelector((state) => state.earnings.earningTable);
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
   const { Option } = Select;
   const { Text } = Typography;
-  const data = [
-    { key: "1", date: "1, Wednesday", salesCount: 3, earning: 120.5 },
-    { key: "2", date: "2, Thursday", salesCount: 2, earning: 84.0 },
-    { key: "3", date: "4, Saturday", salesCount: 4, earning: 150.5 },
-    { key: "4", date: "5, Sunday", salesCount: 3, earning: 102.24 },
-    { key: "5", date: "6, Monday", salesCount: 2, earning: 80.5 },
-    { key: "6", date: "7, Tuesday", salesCount: 3, earning: 70.5 },
-    { key: "7", date: "8, Wednesday", salesCount: 5, earning: 130.0 },
-    { key: "8", date: "9, Thursday", salesCount: 3, earning: 95.5 },
-    { key: "9", date: "10, Friday", salesCount: 4, earning: 152.5 },
-    { key: "10", date: "11, Saturday", salesCount: 3, earning: 100.4 },
-    { key: "11", date: "12, Sunday", salesCount: 2, earning: 60.14 },
-  ];
-
-  const totalSalesCount = data.reduce((acc, item) => acc + item.salesCount, 0);
-  const totalEarning = data
-    .reduce((acc, item) => acc + item.earning, 0)
+  const totalSalesCount = earningTable.reduce(
+    (acc, item) => acc + item.salesCount,
+    0
+  );
+  const totalEarning = earningTable
+    .reduce((acc, item) => acc + (parseFloat(item.earning) || 0), 0)
     .toFixed(2);
 
   const columns = [
@@ -43,9 +39,14 @@ const Earnings = () => {
       title: "Earning",
       dataIndex: "earning",
       key: "earning",
-      render: (text) => `$${text.toFixed(2)}`,
+      render: (text) => `$${parseFloat(text).toFixed(2)}`,
     },
   ];
+
+  useEffect(() => {
+    dispatch(fetchTopCountries());
+    dispatch(fetchEarningTable());
+  }, [dispatch]);
   return (
     <div className={`earning ${isShowAll ? "" : "active"}`}>
       <div className="container-fluid">
@@ -84,87 +85,20 @@ const Earnings = () => {
               <div class="top_countries_title">
                 <h2>Your Top Countries</h2>
               </div>
+              {/* map */}
               <ul class="country_list">
-                <li>
-                  <div class="country_item">
-                    <div class="country_item_left">
-                      <span>United States</span>
+                {topCountries.map((item) => (
+                  <li>
+                    <div class="country_item">
+                      <div class="country_item_left">
+                        <span>{item.Country}</span>
+                      </div>
+                      <div class="country_item_right">
+                        <span>${item.Earn}</span>
+                      </div>
                     </div>
-                    <div class="country_item_right">
-                      <span>$48</span>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="country_item">
-                    <div class="country_item_left">
-                      <span>Bulgaria</span>
-                    </div>
-                    <div class="country_item_right">
-                      <span>$35</span>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="country_item">
-                    <div class="country_item_left">
-                      <span>Dominica</span>
-                    </div>
-                    <div class="country_item_right">
-                      <span>$25</span>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="country_item">
-                    <div class="country_item_left">
-                      <span>Italy</span>
-                    </div>
-                    <div class="country_item_right">
-                      <span>$18</span>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="country_item">
-                    <div class="country_item_left">
-                      <span>Korea, Republic of</span>
-                    </div>
-                    <div class="country_item_right">
-                      <span>$18</span>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="country_item">
-                    <div class="country_item_left">
-                      <span>Malaysia</span>
-                    </div>
-                    <div class="country_item_right">
-                      <span>$10</span>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="country_item">
-                    <div class="country_item_left">
-                      <span>Netherlands</span>
-                    </div>
-                    <div class="country_item_right">
-                      <span>$8</span>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="country_item">
-                    <div class="country_item_left">
-                      <span>Thailand</span>
-                    </div>
-                    <div class="country_item_right">
-                      <span>$5</span>
-                    </div>
-                  </div>
-                </li>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -189,7 +123,7 @@ const Earnings = () => {
             <div className="earning_table">
               <div>
                 <Table
-                  dataSource={data}
+                  dataSource={earningTable}
                   columns={columns}
                   pagination={false}
                   summary={() => (

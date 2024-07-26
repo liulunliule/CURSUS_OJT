@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AboutPage renders AboutPage correctly 1`] = `
+<div>
+  <header
+    class="custom-header"
+    style="background-color: #f8f8f8;"
+  >
+    <nav
+      class="custom-nav"
+    >
+      <ul
+        class="custom-ul"
+      >
+        <li
+          class="custom-li selected"
+        >
+          About
+        </li>
+        <li
+          class="custom-li"
+        >
+          Blog
+        </li>
+        <li
+          class="custom-li"
+        >
+          Company
+        </li>
+        <li
+          class="custom-li"
+        >
+          Careers
+        </li>
+        <li
+          class="custom-li"
+        >
+          Press
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section
+    class="hero"
+    style="background-color: #f8f8f8;"
+  >
+    <h1>
+      Improving Lives Through Learning
+    </h1>
+  </section>
+  <section
+    class="features"
+  >
+    <h2>
+      Our Features
+    </h2>
+    <p>
+      On Cursus, you have access to:
+    </p>
+    <div
+      class="feature-list"
+    >
+      <div
+        class="feature-item"
+      >
+        <i
+          class="icon mobile-learning"
+        />
+        <img
+          src="/path/to/mobile-image"
+          alt="Mobile"
+        />
+        <div
+          style="display: flex; flex-direction: column; align-items: center; font-weight: bold; margin-top: 30px;"
+        >
+          <h3>
+            Mobile learning
+          </h3>
+        </div>
+        <p>
+          Quisque nec volutpat sem. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+        </p>
+      </div>
+      <!-- Other feature items... -->
+    </div>
+  </section>
+  <!-- Other sections... -->
+</div>
+`;

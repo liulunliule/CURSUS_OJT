@@ -1,28 +1,34 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
+import { useFetchPressData } from "./data";
 import "./index.scss";
 
 const Press = () => {
   const [selected, setSelected] = useState("Press");
+  const { news, releases, status, error } = useFetchPressData();
 
   const handleSelect = (item) => {
-    if (item === "About") {
-      window.location.href = "/secondLayout/about";
-    } else if (item === "Company") {
-      window.location.href = "/secondLayout/company";
-    } else if (item === "Blog") {
-      window.location.href = "/secondLayout/blog";
-    } else if (item === "Careers") {
-      window.location.href = "/secondLayout/careers";
-    } else if (item === "Press") {
-      window.location.href = "/secondLayout/press";
-    }
+    const paths = {
+      About: "/secondLayout/about",
+      Company: "/secondLayout/company",
+      Blog: "/secondLayout/blog",
+      Careers: "/secondLayout/careers",
+      Press: "/secondLayout/press",
+    };
+    window.location.href = paths[item];
     setSelected(item);
   };
 
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (status === 'failed') {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <div className="press-page">
-      <header className="custom-header">
+      <header className="custom-header" style={{ backgroundColor: "#f8f8f8" }}>
         <nav className="custom-nav">
           <ul className="custom-ul">
             {["About", "Blog", "Company", "Careers", "Press"].map((item) => (
@@ -38,8 +44,8 @@ const Press = () => {
         </nav>
       </header>
 
-      <section className="hero">
-        <h1>Improving Lives Through Learning</h1>
+      <section className="hero" style={{ backgroundColor: "#f8f8f8" }}>
+        <h1>What others are saying</h1>
       </section>
 
       <div className="content">
@@ -63,21 +69,14 @@ const Press = () => {
               <a href="mailto:press@cursus.com">press@cursus.com</a>
             </p>
             <div className="news-items">
-              {Array(3)
-                .fill()
-                .map((_, idx) => (
-                  <div key={idx} className="news-item">
-                    <p>March 10, 2020</p>
-                    <h3>Press News Title</h3>
-                    <p>
-                      Donec eget arcu vel mauris lacinia vestibulum id eu elit.
-                      Nam metus odio, iaculis eu nunc et, interdum mollis arcu.
-                      Pellentesque viverra faucibus diam. In sit amet laoreet
-                      dolor, vitae fringilla quam...
-                    </p>
-                    <a href="#">Read More</a>
-                  </div>
-                ))}
+              {news.map((item) => (
+                <div key={item.Press_News_ID} className="news-item">
+                  <p>{item.Press_At}</p>
+                  <h3>{item.Title}</h3>
+                  <p>{item.Intro}</p>
+                  <a href="#">Read More</a>
+                </div>
+              ))}
             </div>
             <a className="see-more" href="#">
               See More News
@@ -87,14 +86,12 @@ const Press = () => {
             <h2>Press Releases</h2>
             <p>For Release from Cursus</p>
             <div className="release-items">
-              {Array(5)
-                .fill()
-                .map((_, idx) => (
-                  <div key={idx} className="release-item">
-                    <p>March 10, 2020</p>
-                    <h3>Press Release Title</h3>
-                  </div>
-                ))}
+              {releases.map((item) => (
+                <div key={item.Press_Releases_ID} className="release-item">
+                  <p>{item.Press_At}</p>
+                  <h3>{item.Title}</h3>
+                </div>
+              ))}
             </div>
             <a className="see-more" href="#">
               See More Press Releases

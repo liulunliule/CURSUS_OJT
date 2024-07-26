@@ -1,0 +1,167 @@
+.discussion_reviews_content {
+  background: #f9f9f9;
+  padding: 0px 20px;
+  border-radius: 5px;
+}
+
+.discussion_comment_section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  line-height: 24px;
+  margin: 30px 0px 20px;
+}
+
+.discussion_comment_group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0px 20px;
+}
+
+.discussion_user_image {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #e7dede;
+}
+
+.discussion_user_image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+.discussion_comment_input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #efefef;
+  height: 40px;
+  border-style: none;
+  overflow: hidden;
+}
+.discussion_comment_input:focus {
+  outline: none;
+  box-shadow: none;
+}
+.discussion_reviews_list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+.discussion_review_item,
+.discussion-reply .discussion_review_item {
+  background: #fff;
+  padding: 0 20px;
+  border-radius: 5px;
+}
+.discussion_review_user_details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.user_avatar {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #e7dede;
+  object-fit: cover;
+}
+.discussion_review_user_info {
+  flex-grow: 1;
+}
+.discussion_user_name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.discussion_comment_button {
+  align-self: flex-end;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #ed2a26;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  width: 121px;
+  height: 40px;
+}
+
+.discussion_comment_button:hover {
+  background-color: #000000;
+}
+
+.discussion_review_time {
+  font-size: 12px;
+  color: #888;
+}
+
+.discussion_options_dropdown {
+  position: relative;
+}
+
+.discussion_options_dropdown a {
+  font-size: 20px;
+  color: #afafaf;
+  text-decoration: none;
+}
+
+.discussion_review_text {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.discussion_review_actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.discussion_action_link {
+  font-size: 14px;
+  color: #000000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.discussion_action_link:hover {
+  color: #ff0000;
+}
+.discussion_review_like,
+.discussion_review_dislike {
+  width: 16px;
+  height: 16px;
+}
+.discussion_review_like:hover,
+.discussion_review_dislike:hover {
+  filter: brightness(0) invert(19%) sepia(97%) saturate(3080%)
+    hue-rotate(349deg);
+}
+.discussion_reply_item {
+  margin-left: 50px;
+  margin-top: 10px;
+}
+
+.instructor_container_row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -12px;
+}

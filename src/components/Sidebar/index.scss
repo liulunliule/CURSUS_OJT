@@ -748,7 +748,7 @@
     }
 }
 
-.SideBarInstructorDashboardDemo{
+.SideBarInstructorDashboardDemo {
     width: 240px;
     position: fixed;
     background-color: #ffffff;
@@ -762,7 +762,10 @@
     transition: all 0.5s ease;
 
     &.active {
-        width: 0;
+        width: 60px;
+        .SideBarInstructorDashboardDemo_select_Title {
+            display: none;
+        }
     }
 
     &::-webkit-scrollbar {
@@ -779,11 +782,11 @@
         border-radius: 999px;
     }
 
-    .Link_SideBarInstructorDashboardDemo{
+    .Link_SideBarInstructorDashboardDemo {
         color: #333;
     }
 
-    .SideBarInstructorDashboardDemo_select1{
+    .SideBarInstructorDashboardDemo_select1 {
         width: 100%;
         border-bottom: solid 0.2px #e5e5e5;
 
@@ -792,10 +795,10 @@
             height: 45px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 22px;
 
             .SideBarInstructorDashboardDemo_select_Logo {
-                margin-left: 15px;
+                margin-left: 20px;
                 width: 20px;
             }
 
@@ -819,7 +822,7 @@
         }
     }
 
-    .SideBarInstructorDashboardDemo_select2{
+    .SideBarInstructorDashboardDemo_select2 {
         width: 100%;
 
         .SideBarInstructorDashboardDemo_select_wrapper {
@@ -827,10 +830,10 @@
             height: 45px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 22px;
 
             .SideBarInstructorDashboardDemo_select_Logo {
-                margin-left: 15px;
+                margin-left: 20px;
                 width: 20px;
             }
 
@@ -855,7 +858,7 @@
     }
 }
 
-.SideBarStudentDashboardDemo{
+.SideBarStudentDashboardDemo {
     width: 240px;
     position: fixed;
     background-color: #ffffff;
@@ -869,7 +872,10 @@
     transition: all 0.5s ease;
 
     &.active {
-        width: 0;
+        width: 60px;
+        .SideBarStudentDashboardDemo_select_Title {
+            display: none;
+        }
     }
 
     &::-webkit-scrollbar {
@@ -886,11 +892,11 @@
         border-radius: 999px;
     }
 
-    .Link_SideBarStudentDashboardDemo{
+    .Link_SideBarStudentDashboardDemo {
         color: #333;
     }
 
-    .SideBarStudentDashboardDemo_select1{
+    .SideBarStudentDashboardDemo_select1 {
         width: 100%;
         border-bottom: solid 0.2px #e5e5e5;
 
@@ -899,10 +905,10 @@
             height: 45px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 22px;
 
             .SideBarStudentDashboardDemo_select_Logo {
-                margin-left: 15px;
+                margin-left: 20px;
                 width: 20px;
             }
 
@@ -926,7 +932,7 @@
         }
     }
 
-    .SideBarStudentDashboardDemo_select2{
+    .SideBarStudentDashboardDemo_select2 {
         width: 100%;
 
         .SideBarStudentDashboardDemo_select_wrapper {
@@ -934,10 +940,10 @@
             height: 45px;
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 22px;
 
             .SideBarStudentDashboardDemo_select_Logo {
-                margin-left: 15px;
+                margin-left: 20px;
                 width: 20px;
             }
 

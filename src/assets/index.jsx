@@ -45,16 +45,6 @@ import Mobile from "./img/About/Mobile learning.png";
 import Academic from "./img/About/Academic Technical Support.png";
 import Sharable from "./img/About/Sharable Certificates.png";
 import Inclusive from "./img/About/An Inclusive Experience.png";
-//CompanyDetails
-import companyImage from "./img/CompanyDetails/company-image.jpg";
-import officeIndia from "./img/CompanyDetails/office-india.jpg";
-import officeSF from "./img/CompanyDetails/office-sf.jpg";
-import officeBrazil from "./img/CompanyDetails/office-brazil.jpg";
-//OurBlog
-import blogImage1 from "./img/OurBlog/blog-image1.jpg";
-import blogImage2 from "./img/OurBlog/blog-image2.jpg";
-import blogImage3 from "./img/OurBlog/blog-image3.jpg";
-import blogImage4 from "./img/OurBlog/blog-image4.jpg";
 //Messages
 import mess1 from "./img/Messages/mess1.jpg";
 import mess2 from "./img/Messages/mess2.jpg";
@@ -154,14 +144,6 @@ export {
   Academic,
   Sharable,
   Inclusive,
-  companyImage,
-  officeIndia,
-  officeSF,
-  officeBrazil,
-  blogImage1,
-  blogImage2,
-  blogImage3,
-  blogImage4,
   mess1,
   mess2,
   mess3,

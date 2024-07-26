@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "./index.scss";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "bootstrap/scss/bootstrap.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,55 +14,31 @@ import About from "./About/about";
 import Purchased from "./Purchased/purchased";
 import Discussion from "./Discussion/discussion";
 import Subscriptions from "./Subscriptions/subscriptions";
-import { useSelector } from "react-redux";
-import {
-  fetchUserInfo,
-  fetchUserPosts,
-  fetchUserReviews,
-  fetchSubscriptions,
-} from "./data";
 import { Link } from "react-router-dom";
+import "./index.scss";
+import { fetchUserReviews } from "../../redux/features/myProfileSlice";
 
-function Instructor_Profile() {
-  const [userInfo, setUserInfo] = useState(null);
-  const [posts, setPosts] = useState([]);
-  const [userReviews, setUserReviews] = useState([]);
-  const [subscriptions, setSubscriptions] = useState([]);
-  const [activeTab, setActiveTab] = useState("nav-about");
+const Instructor_Profile = () => {
+  const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
-  const targetId = "1";
-  const [courseCount, setCourseCount] = useState(0);
-  const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
-
-  const handleTabClick = (tabId) => {
-    setActiveTab(tabId);
-  };
-
+  const [activeTab, setActiveTab] = useState("nav-about");
+  const userReviews = useSelector((state) => state.myProfile.userReviews);
+  const isShowAll = useSelector((state) => state.savedCourse?.isShowAll);
+  const account = useSelector((state) => state.user.account);
+  const userPosts = useSelector((state) => state.myProfile.userPosts);
+  const subscriptions = useSelector((state) => state.myProfile.subscriptions);
+  const userId = account.id || "";
+  console.log("Check out: ", account);
   useEffect(() => {
-    const loadData = async () => {
-      try {
-        const userInfo = await fetchUserInfo(targetId);
-        setUserInfo(userInfo);
-
-        const postsData = await fetchUserPosts();
-        setPosts(postsData);
-        setCourseCount(postsData.length);
-
-        const reviewsData = await fetchUserReviews();
-        setUserReviews(reviewsData);
-
-        const subscriptionsData = await fetchSubscriptions();
-        setSubscriptions(subscriptionsData);
-
+    dispatch(fetchUserReviews())
+      .then(() => {
         setLoading(false);
-      } catch (error) {
-        console.error("Error fetching data:", error);
+      })
+      .catch((error) => {
+        console.error("Error fetching instructors:", error);
         setLoading(false);
-      }
-    };
-
-    loadData();
-  }, [targetId]);
+      });
+  }, [dispatch]);
 
   if (loading) {
     return (
@@ -71,7 +47,7 @@ function Instructor_Profile() {
         style={{
           width: "100%",
           height: "100vh",
-          backgroundColor: "#f7f7f7",
+          backdropFilter: "blur(3px)",
           position: "absolute",
           zIndex: "3000",
         }}
@@ -82,17 +58,12 @@ function Instructor_Profile() {
       </div>
     );
   }
-
-  const chunkArray = (array, size) => {
-    const chunkedArray = [];
-    for (let i = 0; i < array.length; i += size) {
-      chunkedArray.push(array.slice(i, i + size));
-    }
-    return chunkedArray;
-  };
-
-  const postsChunks = chunkArray(posts, 4);
-
+  const countCourse = userPosts.filter((post) => post.userId === userId);
+  const countSubscription = subscriptions.filter(
+    (post) => post.userId === userId && post.subscriptionsed === true
+  );
+  const courseCount = countCourse.length;
+  const SubscriptionCount = countSubscription.length;
   return (
     <div className={`instructor-container ${isShowAll ? "active" : ""}`}>
       <div className="container-fluid">
@@ -104,64 +75,69 @@ function Instructor_Profile() {
                 <div className="profile-left col-lg-6">
                   <div className="user_infor">
                     <img
-                      src={userInfo.avatar}
-                      alt={userInfo.name}
+                      src={account.avatar}
+                      alt=""
                       className="userInfo_avatar"
                     />
                     <div className="userInfor">
                       <div className="userInfor_instructor">
-                        <h2>{userInfo.name}</h2>
-                        <span>{userInfo.major}</span>
+                        <h2>{account.userName}</h2>
+                        <span>{account.major}</span>
                       </div>
                     </div>
                   </div>
                   <div className="userInfor_join">
-                    <li>
-                      <div className="userInfor_join_group">
-                        <div className="userInfor_join_title">
-                          Enroll Students
+                    <ul>
+                      <li>
+                        <div className="userInfor_join_group">
+                          <div className="userInfor_join_title">
+                            Enroll Students
+                          </div>
+                          <div className="userInfor_join_parameter">
+                            {account.enrollStudents}
+                          </div>
                         </div>
-                        <div className="userInfor_join_parameter">
-                          {userInfo.enrollstudents}
+                      </li>
+                      <li>
+                        <div className="userInfor_join_group">
+                          <div className="userInfor_join_title">Courses</div>
+                          <div className="userInfor_join_parameter">
+                            {courseCount}
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="userInfor_join_group">
-                        <div className="userInfor_join_title">Courses</div>
-                        <div className="userInfor_join_parameter">
-                          {courseCount}
+                      </li>
+                      <li>
+                        <div className="userInfor_join_group">
+                          <div className="userInfor_join_title">Reviews</div>
+                          <div className="userInfor_join_parameter">
+                            {userReviews.length}
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="userInfor_join_group">
-                        <div className="userInfor_join_title">Reviews</div>
-                        <div className="userInfor_join_parameter">
-                          {userInfo.reviews}
+                      </li>
+                      <li>
+                        <div className="userInfor_join_group">
+                          <div className="userInfor_join_title">
+                            Subscriptions
+                          </div>
+                          <div className="userInfor_join_parameter">
+                            {SubscriptionCount}
+                          </div>
                         </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div className="userInfor_join_group">
-                        <div className="userInfor_join_title">
-                          Subscriptions
-                        </div>
-                        <div className="userInfor_join_parameter">
-                          {userInfo.subscriptions}
-                        </div>
-                      </div>
-                    </li>
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 <div className="profile_right col-lg-6">
-                  <Link className="profile_setting" to="/setting_page">
+                  <Link
+                    className="profile_setting"
+                    to="/setting_page/account_tab"
+                  >
                     <span>
                       <img
                         src={Setting}
                         alt="Setting"
                         className="setting_icon"
-                      ></img>
+                      />
                     </span>
                     Setting
                   </Link>
@@ -171,9 +147,7 @@ function Instructor_Profile() {
                         <a href="#" className="fb">
                           <FontAwesomeIcon
                             icon={faFacebookF}
-                            style={{
-                              color: "white",
-                            }}
+                            style={{ color: "white" }}
                           />
                         </a>
                       </li>
@@ -181,9 +155,7 @@ function Instructor_Profile() {
                         <a href="#" className="tw">
                           <FontAwesomeIcon
                             icon={faTwitter}
-                            style={{
-                              color: "white",
-                            }}
+                            style={{ color: "white" }}
                           />
                         </a>
                       </li>
@@ -191,9 +163,7 @@ function Instructor_Profile() {
                         <a href="#" className="ln">
                           <FontAwesomeIcon
                             icon={faLinkedinIn}
-                            style={{
-                              color: "white",
-                            }}
+                            style={{ color: "white" }}
                           />
                         </a>
                       </li>
@@ -201,9 +171,7 @@ function Instructor_Profile() {
                         <a href="#" className="yu">
                           <FontAwesomeIcon
                             icon={faYoutube}
-                            style={{
-                              color: "white",
-                            }}
+                            style={{ color: "white" }}
                           />
                         </a>
                       </li>
@@ -214,7 +182,8 @@ function Instructor_Profile() {
                       <button
                         className="studio_link_btn btn_500"
                         onClick={() =>
-                          (window.location.href = "instructor_dashboard.html")
+                          (window.location.href =
+                            "/fourlayout/instructor_studio_dashboard")
                         }
                       >
                         Cursus Studio
@@ -223,7 +192,9 @@ function Instructor_Profile() {
                     <li>
                       <button
                         className="studio_link_btn-edit btn_500"
-                        onClick={() => (window.location.href = "setting.html")}
+                        onClick={() =>
+                          (window.location.href = "/setting_page/account_tab")
+                        }
                       >
                         Edit
                       </button>
@@ -232,7 +203,7 @@ function Instructor_Profile() {
                 </div>
               </div>
             </div>
-            {/* ///////////////////////Tab Content/////////////////// */}
+            {/* Tab navigation */}
             <div className="course_tabs_container">
               <div className="row instructor_container_row">
                 <div className="col-lg-12">
@@ -252,7 +223,7 @@ function Instructor_Profile() {
                           href="#nav-about"
                           role="tab"
                           aria-selected={activeTab === "nav-about"}
-                          onClick={() => handleTabClick("nav-about")}
+                          onClick={() => setActiveTab("nav-about")}
                         >
                           About
                         </a>
@@ -265,7 +236,7 @@ function Instructor_Profile() {
                           href="#nav-courses"
                           role="tab"
                           aria-selected={activeTab === "nav-courses"}
-                          onClick={() => handleTabClick("nav-courses")}
+                          onClick={() => setActiveTab("nav-courses")}
                         >
                           Courses
                         </a>
@@ -278,7 +249,7 @@ function Instructor_Profile() {
                           href="#nav-purchased"
                           role="tab"
                           aria-selected={activeTab === "nav-purchased"}
-                          onClick={() => handleTabClick("nav-purchased")}
+                          onClick={() => setActiveTab("nav-purchased")}
                         >
                           Purchased
                         </a>
@@ -291,7 +262,7 @@ function Instructor_Profile() {
                           href="#nav-reviews"
                           role="tab"
                           aria-selected={activeTab === "nav-reviews"}
-                          onClick={() => handleTabClick("nav-reviews")}
+                          onClick={() => setActiveTab("nav-reviews")}
                         >
                           Discussion
                         </a>
@@ -304,7 +275,7 @@ function Instructor_Profile() {
                           href="#nav-subscriptions"
                           role="tab"
                           aria-selected={activeTab === "nav-subscriptions"}
-                          onClick={() => handleTabClick("nav-subscriptions")}
+                          onClick={() => setActiveTab("nav-subscriptions")}
                         >
                           Subscriptions
                         </a>
@@ -319,62 +290,62 @@ function Instructor_Profile() {
               <div className="col-lg-12">
                 <div className="course_tab_content">
                   <div className="tab-content" id="nav-tabContent">
-                    {/* //////////////////////About//////////////////////////// */}
+                    {/* About tab */}
                     <div
                       className={`tab-pane fade ${
-                        activeTab === "nav-about" ? "active show" : ""
+                        activeTab === "nav-about" ? "show active" : ""
                       }`}
                       id="nav-about"
                       role="tabpanel"
                       aria-labelledby="nav-about-tab"
                     >
-                      <About userInfo={userInfo} />
+                      <About />
                     </div>
-                    {/* ////////////////////////////Course///////////////////////////////// */}
+                    {/* Courses tab */}
                     <div
                       id="nav-courses"
                       className={`tab-pane fade ${
                         activeTab === "nav-courses" ? "show active" : ""
                       }`}
                     >
-                      <h3 className="about-title-text">
-                        My Course ({courseCount})
-                      </h3>
+                      <h3 className="about-title-text">My Course</h3>
                       <div className="row instructor_container_row">
-                        {postsChunks.map((chunk, chunkIndex) => (
-                          <div
-                            className="row course-row instructor_container_row"
-                            key={chunkIndex}
-                          >
-                            {chunk.map((item) => (
-                              <Course item={item} key={item.id} />
-                            ))}
-                          </div>
-                        ))}
+                        <Course />
                       </div>
                     </div>
-                    {/* /////////////////////////////Purchased//////////////////////////////////////////// */}
+                    {/* Purchased tab */}
                     <div
                       className={`tab-pane fade ${
-                        activeTab === "nav-purchased" ? "active show" : ""
+                        activeTab === "nav-purchased" ? "show active" : ""
                       }`}
                       id="nav-purchased"
                       role="tabpanel"
                       aria-labelledby="nav-purchased-tab"
                     >
-                      <Purchased posts={posts} />
+                      <Purchased />
                     </div>
-                    {/* ///////////////////////////Discussion//////////////////////// */}
-                    <Discussion
-                      userReviews={userReviews}
-                      userInfo={userInfo}
-                      activeTab={activeTab}
-                    />
-                    {/* ////////////////////////Subscriptions////////////////////////////////////*/}
-                    <Subscriptions
-                      subscriptions={subscriptions}
-                      activeTab={activeTab}
-                    />
+                    {/* Discussion tab */}
+                    <div
+                      className={`tab-pane fade ${
+                        activeTab === "nav-reviews" ? "show active" : ""
+                      }`}
+                      id="nav-reviews"
+                      role="tabpanel"
+                      aria-labelledby="nav-reviews-tab"
+                    >
+                      <Discussion />
+                    </div>
+                    {/* Subscriptions tab */}
+                    <div
+                      className={`tab-pane fade ${
+                        activeTab === "nav-subscriptions" ? "show active" : ""
+                      }`}
+                      id="nav-subscriptions"
+                      role="tabpanel"
+                      aria-labelledby="nav-subscriptions-tab"
+                    >
+                      <Subscriptions />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -384,6 +355,6 @@ function Instructor_Profile() {
       </div>
     </div>
   );
-}
+};
 
 export default Instructor_Profile;
