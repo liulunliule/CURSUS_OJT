@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Messages Component renders Messages component correctly 1`] = `
+<div>
+  <header
+    class="chatting-header"
+  >
+    <h2>
+      Messages
+    </h2>
+  </header>
+  <div
+    class="chat-app"
+  >
+    <aside
+      class="message-list"
+    >
+      <input
+        placeholder="Search Messages..."
+        type="text"
+      />
+      <ul>
+        <li
+          class="message-item first"
+        >
+          <img
+            src="../../assets/mess1.png"
+          />
+          <div
+            class="message-info"
+          >
+            <h3>
+              John Doe
+            </h3>
+            <p>
+              Hi! Sir, How are you. I ask you one thing pl...
+            </p>
+          </div>
+          <div
+            class="time-unread-wrapper"
+          >
+            <span
+              class="time"
+            >
+              7 hours ago
+            </span>
+            <span
+              class="unread-count"
+            >
+              2
+            </span>
+          </div>
+        </li>
+        // More messages here
+      </ul>
+    </aside>
+    <main
+      class="chat-window"
+    >
+      <header
+        class="chat-header"
+      >
+        <img
+          src="../../assets/mess1.png"
+        />
+        <div
+          class="header-content"
+        >
+          <h3>
+            John Doe
+          </h3>
+          <span
+            class="status"
+          >
+            ONLINE
+          </span>
+        </div>
+        <div
+          class="options-menu"
+        >
+          <div
+            class="ellipsis"
+          >
+            ...
+          </div>
+          <ul
+            class="menu-items"
+          >
+            <li>
+              Delete
+            </li>
+            <li>
+              Block
+            </li>
+            <li>
+              Report
+            </li>
+            <li>
+              Mute
+            </li>
+          </ul>
+        </div>
+      </header>
+      <div
+        class="chat-messages"
+      >
+        <div
+          class="chat-message own"
+        >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.
+          </p>
+          <span
+            class="time"
+          >
+            Sat, April 10, 1:08 PM
+          </span>
+        </div>
+        // More messages here
+      </div>
+      <footer
+        class="chat-input"
+      >
+        <input
+          placeholder="Write a message..."
+          type="text"
+        />
+        <button>
+          ►
+        </button>
+      </footer>
+    </main>
+  </div>
+</div>
+`;
