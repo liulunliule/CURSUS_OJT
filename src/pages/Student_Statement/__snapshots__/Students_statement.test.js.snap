@@ -1,0 +1,446 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Certification Test Page 1`] = `
+<div>
+  <div
+    className="statement active"
+  >
+    <div
+      className="container-fluid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-12"
+        >
+          <h2
+            className="statement_title"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-file statement_icon"
+              data-icon="file"
+              data-prefix="far"
+              focusable="false"
+              role="img"
+              style={Object {}}
+              viewBox="0 0 384 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M320 464c8.8 0 16-7.2 16-16l0-288-80 0c-17.7 0-32-14.3-32-32l0-80L64 48c-8.8 0-16 7.2-16 16l0 384c0 8.8 7.2 16 16 16l256 0zM0 64C0 28.7 28.7 0 64 0L229.5 0c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3L384 448c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 64z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+             
+            Statements
+          </h2>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-8 col-md-7"
+        >
+          <div
+            className="top_countries"
+          >
+            <div
+              className="top_countries_title"
+            >
+              <h2>
+                Earnings
+              </h2>
+            </div>
+            <div
+              className="statement_content"
+            >
+              <p
+                className="statement-body"
+              >
+                If you are not an instrutor, you can't use this section.
+              </p>
+              <a
+                className="apply_instructor_btn"
+                href="/"
+                onClick={[Function]}
+              >
+                Become a Instructor
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-lg-4 col-md-5"
+        >
+          <div
+            className="top_countries"
+          >
+            <div
+              className="top_countries_title"
+            >
+              <h2>
+                View Invoices
+              </h2>
+            </div>
+            <div
+              className="statement_invoice_content"
+            >
+              <div
+                className="select_month"
+              >
+                <div
+                  className="ant-select ant-select-outlined css-dev-only-do-not-override-1uq9j6g ant-select-single ant-select-show-arrow ant-select-show-search"
+                  onBlur={[Function]}
+                  onFocus={[Function]}
+                  onKeyDown={[Function]}
+                  onKeyUp={[Function]}
+                  onMouseDown={[Function]}
+                  style={
+                    Object {
+                      "height": "35.8px",
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <div
+                    className="ant-select-selector"
+                    onClick={[Function]}
+                    onMouseDown={[Function]}
+                  >
+                    <span
+                      className="ant-select-selection-search"
+                    >
+                      <input
+                        aria-autocomplete="list"
+                        aria-controls="undefined_list"
+                        aria-expanded={false}
+                        aria-haspopup="listbox"
+                        aria-owns="undefined_list"
+                        autoComplete="off"
+                        className="ant-select-selection-search-input"
+                        disabled={false}
+                        onChange={[Function]}
+                        onCompositionEnd={[Function]}
+                        onCompositionStart={[Function]}
+                        onKeyDown={[Function]}
+                        onMouseDown={[Function]}
+                        onPaste={[Function]}
+                        readOnly={false}
+                        role="combobox"
+                        style={
+                          Object {
+                            "opacity": null,
+                          }
+                        }
+                        type="search"
+                        unselectable={null}
+                        value=""
+                      />
+                    </span>
+                    <span
+                      className="ant-select-selection-placeholder"
+                    >
+                      Monthly Invoices
+                    </span>
+                  </div>
+                  <span
+                    aria-hidden={true}
+                    className="ant-select-arrow"
+                    onMouseDown={[Function]}
+                    style={
+                      Object {
+                        "WebkitUserSelect": "none",
+                        "userSelect": "none",
+                      }
+                    }
+                    unselectable="on"
+                  >
+                    <span
+                      aria-label="down"
+                      className="anticon anticon-down ant-select-suffix"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="down"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="64 64 896 896"
+                        width="1em"
+                      >
+                        <path
+                          d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                        />
+                      </svg>
+                    </span>
+                  </span>
+                </div>
+                <button
+                  className="statement_download_btn"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="svg-inline--fa fa-download dowload_icon"
+                    data-icon="download"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    style={Object {}}
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 242.7-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7 288 32zM64 352c-35.3 0-64 28.7-64 64l0 32c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-32c0-35.3-28.7-64-64-64l-101.5 0-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352 64 352zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"
+                      fill="currentColor"
+                      style={Object {}}
+                    />
+                  </svg>
+                   
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-lg-12 col-md-12"
+        >
+          <ul
+            class="more_options_tt"
+          >
+            <li>
+              <button
+                class="more_items activee"
+              >
+                This Month
+              </button>
+            </li>
+            <li>
+              <button
+                class="more_items"
+              >
+                Last Month
+              </button>
+            </li>
+            <li>
+              <div
+                class="explore_search"
+              >
+                <div
+                  class="UI search"
+                >
+                  <div
+                    class="UI"
+                  >
+                    <input
+                      class="search_input"
+                      placeholder="Document Number"
+                      type="text"
+                    />
+                    <img
+                      alt="Search Icon"
+                      className="search-icon"
+                      src="search.png"
+                    />
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="col-lg-12 col-md-12"
+        >
+          <div
+            className="statement_table"
+          >
+            <div
+              className="ant-table-wrapper css-dev-only-do-not-override-1uq9j6g"
+              style={Object {}}
+            >
+              <div
+                className="ant-spin-nested-loading css-dev-only-do-not-override-1uq9j6g"
+              >
+                <div
+                  className="ant-spin-container"
+                >
+                  <div
+                    className="ant-table ant-table-empty css-dev-only-do-not-override-1uq9j6g"
+                  >
+                    <div
+                      className="ant-table-container"
+                    >
+                      <div
+                        className="ant-table-content"
+                        onScroll={[Function]}
+                        style={Object {}}
+                      >
+                        <table
+                          style={
+                            Object {
+                              "tableLayout": "auto",
+                            }
+                          }
+                        >
+                          <colgroup />
+                          <thead
+                            className="ant-table-thead"
+                          >
+                            <tr>
+                              <th
+                                className="ant-table-cell"
+                                colSpan={null}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                rowSpan={null}
+                                scope="col"
+                                style={Object {}}
+                              >
+                                Date
+                              </th>
+                              <th
+                                className="ant-table-cell"
+                                colSpan={null}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                rowSpan={null}
+                                scope="col"
+                                style={Object {}}
+                              >
+                                Order ID
+                              </th>
+                              <th
+                                className="ant-table-cell"
+                                colSpan={null}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                rowSpan={null}
+                                scope="col"
+                                style={Object {}}
+                              >
+                                Type
+                              </th>
+                              <th
+                                className="ant-table-cell"
+                                colSpan={null}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                rowSpan={null}
+                                scope="col"
+                                style={Object {}}
+                              >
+                                Title
+                              </th>
+                              <th
+                                className="ant-table-cell"
+                                colSpan={null}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                rowSpan={null}
+                                scope="col"
+                                style={Object {}}
+                              >
+                                Amount
+                              </th>
+                              <th
+                                className="ant-table-cell"
+                                colSpan={null}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                rowSpan={null}
+                                scope="col"
+                                style={Object {}}
+                              >
+                                Invoice
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody
+                            className="ant-table-tbody"
+                          >
+                            <tr
+                              className="ant-table-placeholder"
+                              style={
+                                Object {
+                                  "display": null,
+                                }
+                              }
+                            >
+                              <td
+                                className="ant-table-cell"
+                                colSpan={6}
+                                onMouseEnter={[Function]}
+                                onMouseLeave={[Function]}
+                                rowSpan={null}
+                                style={Object {}}
+                              >
+                                <div
+                                  className="css-dev-only-do-not-override-1uq9j6g ant-empty ant-empty-normal"
+                                  style={Object {}}
+                                >
+                                  <div
+                                    className="ant-empty-image"
+                                  >
+                                    <svg
+                                      height="41"
+                                      viewBox="0 0 64 41"
+                                      width="64"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <title>
+                                        Simple Empty
+                                      </title>
+                                      <g
+                                        fill="none"
+                                        fillRule="evenodd"
+                                        transform="translate(0 1)"
+                                      >
+                                        <ellipse
+                                          cx="32"
+                                          cy="33"
+                                          fill="#f5f5f5"
+                                          rx="32"
+                                          ry="7"
+                                        />
+                                        <g
+                                          fillRule="nonzero"
+                                          stroke="#d9d9d9"
+                                        >
+                                          <path
+                                            d="M55 12.76L44.854 1.258C44.367.474 43.656 0 42.907 0H21.093c-.749 0-1.46.474-1.947 1.257L9 12.761V22h46v-9.24z"
+                                          />
+                                          <path
+                                            d="M41.613 15.931c0-1.605.994-2.93 2.227-2.931H55v18.137C55 33.26 53.68 35 52.05 35h-40.1C10.32 35 9 33.259 9 31.137V13h11.16c1.233 0 2.227 1.323 2.227 2.928v.022c0 1.605 1.005 2.901 2.237 2.901h14.752c1.232 0 2.237-1.308 2.237-2.913v-.007z"
+                                            fill="#fafafa"
+                                          />
+                                        </g>
+                                      </g>
+                                    </svg>
+                                  </div>
+                                  <div
+                                    className="ant-empty-description"
+                                  >
+                                    No data
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
