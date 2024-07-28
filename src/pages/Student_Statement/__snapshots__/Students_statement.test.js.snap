@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test Certification Test Page 1`] = `
+exports[`test Students_statement Page 1`] = `
 <div>
   <div
     className="statement active"

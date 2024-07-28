@@ -1,18 +1,14 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
-import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom'; // Import MemoryRouter
-import { store } from '../../redux/store';
-import Shopping_Cart from '.';
+import Faq_detail_view from '.';
 
-test('test Shopping_Cart Page', () => {
+test('test Faq_detail_view', () => {
   const tree = renderer.create(
-    <Provider store={store}>
       <MemoryRouter>
-        <Shopping_Cart/>
+        <Faq_detail_view/>
       </MemoryRouter>
-    </Provider>
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });

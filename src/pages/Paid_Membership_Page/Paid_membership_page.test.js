@@ -6,13 +6,11 @@ import { MemoryRouter } from 'react-router-dom'; // Import MemoryRouter
 import { store } from '../../redux/store';
 import Paid_membership_page from '.';
 
-test('test Certification Test Page', () => {
+test('test Paid_membership_page', () => {
   const tree = renderer.create(
-    <Provider store={store}>
       <MemoryRouter>
         <Paid_membership_page/>
       </MemoryRouter>
-    </Provider>
   ).toJSON();
   expect(tree).toMatchSnapshot();
 });
