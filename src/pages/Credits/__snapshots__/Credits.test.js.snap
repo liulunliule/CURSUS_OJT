@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Credits Component applies active class when isShowAll is true 1`] = `
+<div>
+  <div class="credits-data active">
+    <p>Added Credits: $100</p>
+    <p>Method: Credit Card</p>
+    <p>Description: purchases</p>
+    <div class="transactions">
+      <p>Transaction 1: $100 - Credit Card - 2023-07-27</p>
+      <p>Transaction 2: $50 - PayPal - 2023-07-28</p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Credits Component renders credits data correctly 1`] = `
+<div>
+  <div class="credits-data">
+    <p>Added Credits: $100</p>
+    <p>Method: Credit Card</p>
+    <p>Description: purchases</p>
+    <div class="transactions">
+      <p>Transaction 1: $100 - Credit Card - 2023-07-27</p>
+      <p>Transaction 2: $50 - PayPal - 2023-07-28</p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Credits Component renders error state 1`] = `
+<div>
+  <p>Error: Failed to fetch data</p>
+</div>
+`;
+
+exports[`Credits Component renders loading state 1`] = `
+<div>
+  <p>Loading...</p>
+</div>
+`;
