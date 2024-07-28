@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
@@ -8,7 +7,7 @@ const ApplyJob = () => {
     <div className="apply-job">
       <div className="apply-job-title">
         <h1>Data Engineer</h1>
-        <Link to="/careers" className="back-to-career">
+        <Link to="/secondLayout/careers" className="back-to-career">
           Back to Career
         </Link>
       </div>

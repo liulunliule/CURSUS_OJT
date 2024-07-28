@@ -21,6 +21,7 @@ import Course from "../../assets/img/course.png";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { message } from "antd";
+import Carousel from "../../components/carousel";
 
 const Homepage = () => {
     const [mouseOverColor, setMouseOverColor] = useState(null);
@@ -74,7 +75,8 @@ const Homepage = () => {
                                     <div className="la5lo1">
                                         <div className="owl-carousel live_stream owl-theme owl-loaded owl-drag">
                                             <div className="owl-stage-outer">
-                                                <div className="owl-stage">
+                                            <Carousel />
+                                                {/* <div className="owl-stage">
                                                     <Slider {...settings}>
                                                         {data.map((d) => (
                                                             <div className="owl-item">
@@ -104,7 +106,7 @@ const Homepage = () => {
                                                             </div>
                                                         ))}
                                                     </Slider>
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </div>
                                     </div>

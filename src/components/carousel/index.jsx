@@ -7,6 +7,7 @@ import { avatarTest } from "../../assets";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllInstructorData } from "../../redux/features/allInstructorSlice";
+import { Autoplay } from "swiper/modules";
 
 export default function Carousel() {
   const dispatch = useDispatch();
@@ -17,9 +18,13 @@ export default function Carousel() {
   return (
     <>
       <Swiper
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
         slidesPerView={6}
         spaceBetween={10}
-        modules={[]}
+        modules={[Autoplay]}
         className="carouselMom"
       >
         {userAllInstructor &&

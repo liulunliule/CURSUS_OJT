@@ -1,4 +1,3 @@
-// features/checkout/checkoutSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -14,15 +13,15 @@ export const fetchOrder = createAsyncThunk(
 export const fetchAddr = createAsyncThunk(
   'checkout/fetchAddr',
   async (userId) => {
-    const response = await axios.get(`https://6696231a0312447373c1386e.mockapi.io/user/${userId}/addr/1`);
+    const response = await axios.get(`https://6696231a0312447373c1386e.mockapi.io/user/${userId}/addr/${userId}`);
     return response.data;
   }
 );
 
 export const updateAddress = createAsyncThunk(
   'checkout/updateAddress',
-  async (userId,addr) => {
-    const response = await axios.put(`https://6696231a0312447373c1386e.mockapi.io/user/${userId}/addr/1`, addr);
+  async ({ userId, addrId, addr }) => {
+    const response = await axios.put(`https://6696231a0312447373c1386e.mockapi.io/user/${userId}/addr/${addrId}`, addr);
     return response.data;
   }
 );
@@ -39,9 +38,8 @@ const checkoutSlice = createSlice({
       City: "",
       State: "",
       ZipCode: "",
-      Phone: "",
-      FirstName: "",
-      LastName: "",
+      phone: "",
+      userName: "",
     },
     status: 'idle',
     error: null,
