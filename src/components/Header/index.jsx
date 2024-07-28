@@ -7,15 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/scss/bootstrap.scss";
 import "./index.scss";
-import {
-  Logo_dark,
-  logo,
-  search,
-  cart,
-  letter,
-  bell,
-  avatar,
-} from "../../assets";
+import { Logo_dark, logo, search, cart, letter, bell } from "../../assets";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles, lightTheme, darkTheme } from "./global";
 import { useDarkMode } from "./darkMode";
@@ -29,10 +21,7 @@ import {
   fetchUserMessage,
   fetchUserNotification,
 } from "../../redux/features/myHeaderSlice";
-import {
-  fetchSearchResult,
-  fetchAddNewCourse,
-} from "../../redux/features/mySearchSlice";
+import { fetchSearchResult } from "../../redux/features/mySearchSlice";
 import { fetchShoppingCart } from "../../redux/features/shoppingCartSlice";
 import { toast } from "react-toastify";
 
@@ -42,14 +31,13 @@ function Header() {
   const [isDropdownOpenAvatar, setIsDropdownOpenAvatar] = useState(false);
   const [theme, toggleTheme] = useDarkMode();
   const userMessage = useSelector((state) => state.myHeader.messages);
-  const userCart = useSelector((state) => state.shoppingCart.items);
   const userNotification = useSelector((state) => state.myHeader.notification);
   const [showCreateButton, setShowCreateButton] = useState(false);
   const location = useLocation();
   const dispatch = useDispatch();
   const account = useSelector((state) => state.user.account);
   const userId = account.id || "";
-
+  const role = account.role;
   useEffect(() => {
     if (userId) {
       dispatch(fetchUserMessage(userId));
@@ -57,20 +45,20 @@ function Header() {
       dispatch(fetchShoppingCart());
     }
 
-    const showHeaderSecond = () => {
-      const paths = [
-        "/fourlayout/instructor_studio_dashboard",
-        "/fourlayout/purchased_courses_page",
-        "/fourlayout/messages",
-        "/fourlayout/instructor_notification",
-        "/fourlayout/my_certificates",
-        "/fourlayout/reviews_page_student",
-        "/fourlayout/credits",
-        "/fourlayout/students_statement",
-      ];
-      setShowCreateButton(paths.includes(location.pathname));
-    };
-    showHeaderSecond();
+    // const showHeaderSecond = () => {
+    //   const paths = [
+    //     "/fourlayout/instructor_studio_dashboard",
+    //     "/fourlayout/purchased_courses_page",
+    //     "/fourlayout/messages",
+    //     "/fourlayout/instructor_notification",
+    //     "/fourlayout/my_certificates",
+    //     "/fourlayout/reviews_page_student",
+    //     "/fourlayout/credits",
+    //     "/fourlayout/students_statement",
+    //   ];
+    //   setShowCreateButton(paths.includes(location.pathname));
+    // };
+    // showHeaderSecond();
   }, [dispatch, location.pathname, userId]);
 
   const toggleDropdownLetter = () => {
@@ -92,9 +80,6 @@ function Header() {
   };
   const [query, setQuery] = useState("");
   useEffect(() => {
-    // const savedLikedCourses =
-    //   JSON.parse(localStorage.getItem("likedCourses")) || [];
-    // setLikedCourses(new Set(savedLikedCourses));
     if (query) {
       dispatch(fetchSearchResult(query));
     }
@@ -204,7 +189,7 @@ function Header() {
             </div>
           </div>
           <div className="header-right col-md-5">
-            {!showCreateButton && (
+            {role === true && (
               <Link
                 to="/thirdlayout/create_new_course"
                 className={`create-button ${
@@ -243,30 +228,34 @@ function Header() {
                   {isDropdownOpenLetter && (
                     <div className="dropdown">
                       <ul>
-                        {filteredUserMess.slice(0, 3).map((message) => (
-                          <Link
-                            to="/fourlayout/messages"
-                            key={message.id}
-                            onClick={() => handleUpdateMess(message.id)}
-                          >
-                            <li
-                              className={`item-message ${
-                                theme !== "light" ? "drop-hover" : ""
-                              }`}
+                        {filteredUserMess.length === 0 ? (
+                          <li className="no-messages">No messages</li>
+                        ) : (
+                          filteredUserMess.slice(0, 3).map((message) => (
+                            <Link
+                              to="/fourlayout/messages"
+                              key={message.id}
+                              onClick={() => handleUpdateMess(message.id)}
                             >
-                              <img
-                                src={message.Avatar}
-                                alt={message.name}
-                                className="avatar-message"
-                              />
-                              <div className="message-content">
-                                <p>{message.name}</p>
-                                <p>{message.message}</p>
-                                <p>{message.time}</p>
-                              </div>
-                            </li>
-                          </Link>
-                        ))}
+                              <li
+                                className={`item-message ${
+                                  theme !== "light" ? "drop-hover" : ""
+                                }`}
+                              >
+                                <img
+                                  src={message.Avatar}
+                                  alt={message.name}
+                                  className="avatar-message"
+                                />
+                                <div className="message-content">
+                                  <p>{message.name}</p>
+                                  <p>{message.message}</p>
+                                  <p>{message.time}</p>
+                                </div>
+                              </li>
+                            </Link>
+                          ))
+                        )}
                         <Link to="/fourlayout/messages">
                           <li
                             className={`item-view ${
@@ -281,6 +270,7 @@ function Header() {
                       </ul>
                     </div>
                   )}
+
                   <span className="header-badge">
                     {filteredUserMess.length}
                   </span>
@@ -295,30 +285,34 @@ function Header() {
                   {isDropdownOpenBell && (
                     <div className="dropdown">
                       <ul>
-                        {filteredUserNoti.slice(0, 3).map((notification) => (
-                          <Link
-                            to="/thirdlayout/reviews_page_instructor"
-                            key={notification.id}
-                            onClick={() => handleUpdateNoti(notification.id)}
-                          >
-                            <li
-                              className={`item-message ${
-                                theme !== "light" ? "drop-hover" : ""
-                              }`}
+                        {filteredUserNoti.length === 0 ? (
+                          <li className="no-messages">No notifications </li>
+                        ) : (
+                          filteredUserNoti.slice(0, 3).map((notification) => (
+                            <Link
+                              to="/thirdlayout/reviews_page_instructor"
+                              key={notification.id}
+                              onClick={() => handleUpdateNoti(notification.id)}
                             >
-                              <img
-                                src={notification.Avatar}
-                                alt={notification.name}
-                                className="avatar-message"
-                              />
-                              <div className="message-content">
-                                <p>{notification.name}</p>
-                                <p>{notification.message}</p>
-                                <p>{notification.time}</p>
-                              </div>
-                            </li>
-                          </Link>
-                        ))}
+                              <li
+                                className={`item-message ${
+                                  theme !== "light" ? "drop-hover" : ""
+                                }`}
+                              >
+                                <img
+                                  src={notification.Avatar}
+                                  alt={notification.name}
+                                  className="avatar-message"
+                                />
+                                <div className="message-content">
+                                  <p>{notification.name}</p>
+                                  <p>{notification.message}</p>
+                                  <p>{notification.time}</p>
+                                </div>
+                              </li>
+                            </Link>
+                          ))
+                        )}
                         <Link to="/thirdlayout/reviews_page_instructor">
                           <li
                             className={`item-view ${
@@ -381,12 +375,12 @@ function Header() {
                               </div>
                             </div>
 
-                            <Link
-                              to="/instructor_profile"
+                            <a
+                              href="/instructor_profile"
                               className="profile-instructor-link"
                             >
-                              View Instructor Profile
-                            </Link>
+                              View Profile
+                            </a>
                           </div>
                         </li>
                         <hr />

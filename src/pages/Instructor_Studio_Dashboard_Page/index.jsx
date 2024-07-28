@@ -433,7 +433,7 @@ const Instructor_Studio_Dashboard = () => {
                                                     Current subscribers
                                                 </h6>
                                                 <h3 class="studio-dashboard-subcribe-title">
-                                                    {856}
+                                                    {userStudio.currentSubscribers}
                                                 </h3>
                                                 <div class="studio-dashboard-view">
                                                     <div class="studio-dashboard-course-content-left">

@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { instructor } from "../../assets";
 
 export const fetchUserInfo = createAsyncThunk(
   "myProfile/fetchUserInfo",
@@ -52,7 +51,6 @@ export const fetchPostComment = createAsyncThunk(
     replyTo,
     userName,
     replyToUserId,
-    status,
     commentId,
   }) => {
     const commentData = {
@@ -66,7 +64,6 @@ export const fetchPostComment = createAsyncThunk(
       userId,
       replyTo,
       replyToUserId,
-      status,
       commentId,
     };
 
@@ -109,20 +106,27 @@ export const fetchUpdateSubscriptions = createAsyncThunk(
   }
 );
 
-export const fetchUsers = createAsyncThunk("myProfile/fetchUsers", async () => {
-  const response = await axios.get(
-    `https://6696231a0312447373c1386e.mockapi.io/user`
-
-  );
-  return response.data;
-});
-export const fetchInstructor = createAsyncThunk("myProfile/fetchInstructor", async (userId) => {
-  const response = await axios.get(
-    `https://6696231a0312447373c1386e.mockapi.io/user/${userId}`
-    
-  );
-  return response.data;
-});
+export const fetchUsers = createAsyncThunk(
+  "mySearch/fetchUsers",
+  async (query) => {
+    const response = await axios.get(
+      `https://6696231a0312447373c1386e.mockapi.io/user`,
+      {
+        params: { search: query },
+      }
+    );
+    return response.data;
+  }
+);
+export const fetchInstructor = createAsyncThunk(
+  "myProfile/fetchInstructor",
+  async (userId) => {
+    const response = await axios.get(
+      `https://6696231a0312447373c1386e.mockapi.io/user/${userId}`
+    );
+    return response.data;
+  }
+);
 const myProfileSlice = createSlice({
   name: "myProfile",
   initialState: {
@@ -256,11 +260,11 @@ const myProfileSlice = createSlice({
         if (index !== -1) {
           state.userPosts[index] = action.payload;
         }
-      })    
+      })
       .addCase(fetchInstructor.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.instructor = action.payload;
-      })  
+      })
       .addCase(fetchUpdateSubscriptions.fulfilled, (state, action) => {
         const index = state.subscriptions.findIndex(
           (chanel) => chanel.id === action.payload.id

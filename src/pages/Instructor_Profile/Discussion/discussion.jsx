@@ -5,11 +5,11 @@ import {
   fetchPostComment,
   fetchDeleteReview,
 } from "../../../redux/features/myProfileSlice";
+import { HeartOutlined } from "@ant-design/icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import Like from "../../../assets/img/like.png";
 import Dislike from "../../../assets/img/dont-like.png";
-import Edit from "../../../assets/img/edit.png";
 import Delete from "../../../assets/img/delete.png";
 import "./index.scss";
 import { toast } from "react-toastify";
@@ -21,7 +21,7 @@ const Discussion = () => {
   const userId = account?.id || "";
   const userAvatar = account?.avatar || "";
   const userName = account?.userName || "";
-
+  console.log("reviews:", userReviews);
   const [newComment, setNewComment] = useState("");
   const [replyContent, setReplyContent] = useState("");
   const [replyTo, setReplyTo] = useState(null);
@@ -38,7 +38,6 @@ const Discussion = () => {
           content: newComment,
           avatar: userAvatar,
           userName,
-          status: true,
         })
       )
         .then(() => {
@@ -60,7 +59,6 @@ const Discussion = () => {
           avatar: userAvatar,
           replyTo: commentId,
           userName,
-          status: true,
         })
       )
         .then(() => {
@@ -147,6 +145,10 @@ const Discussion = () => {
                     <h4 className="discussion_user_name">{review.user}</h4>
                     <span className="discussion_review_time">
                       {review.time}
+                    </span>{" "}
+                    <br />
+                    <span className="discussion_review_time">
+                      {review.date}
                     </span>
                   </div>
                   {review.userId === userId && (
@@ -161,12 +163,6 @@ const Discussion = () => {
                         </div>
                       </a>
                       <div className="discussion_dropdown_content">
-                        <span>
-                          <i className="comment-alt-edit">
-                            <img src={Edit} alt="Edit" className="icon_edit" />
-                          </i>
-                          Edit
-                        </span>
                         <span>
                           <i
                             className="comment-alt-delete"
@@ -207,7 +203,7 @@ const Discussion = () => {
                     className="discussion_action_link"
                     onClick={() => setReplyTo(review.id)}
                   >
-                    Reply
+                    <HeartOutlined /> Reply
                   </a>
                 </div>
                 <hr />
@@ -224,94 +220,90 @@ const Discussion = () => {
                       type="button"
                       onClick={() => handleAddReply(review.id)}
                     >
-                      Reply
+                      Send
                     </button>
                   </div>
                 )}
                 {groupedReplies[review.id] &&
-                groupedReplies[review.id].length > 0
-                  ? groupedReplies[review.id].map((reply) => (
-                      <div key={reply.id} className="discussion_reply_item">
-                        <div className="discussion_review_item">
-                          <div className="discussion_review_user_details">
-                            <img
-                              src={reply.userImage}
-                              alt="User Avatar"
-                              className="user_avatar"
-                            />
-                            <div className="discussion_review_user_info">
-                              <h4 className="discussion_user_name">
-                                {reply.user}
-                              </h4>
-                              <span className="discussion_review_time">
-                                {reply.time}
-                              </span>
-                            </div>
-                            {reply.userId === userId && (
-                              <div className="discussion_options_dropdown">
-                                <div className="fa_EllipsisVertical">
-                                  <FontAwesomeIcon
-                                    icon={faEllipsisVertical}
-                                    style={{ color: "#686f7a" }}
-                                    className="purchased_fa_ellipsis_vertical"
-                                  />
-                                </div>
-                                <div className="discussion_dropdown_content">
-                                  <span>
-                                    <i className="comment-alt-edit">
-                                      <img
-                                        src={Edit}
-                                        alt="Edit"
-                                        className="icon_edit"
-                                      />
-                                    </i>
-                                    Edit
-                                  </span>
-                                  <span
-                                    onClick={() =>
-                                      handleDeleteComment(reply.id)
-                                    }
-                                  >
-                                    <i className="comment-alt-delete">
-                                      <img
-                                        src={Delete}
-                                        alt="Delete"
-                                        className="icon_delete"
-                                      />
-                                    </i>
-                                    Delete
-                                  </span>
-                                </div>
+                groupedReplies[review.id].length > 0 ? (
+                  groupedReplies[review.id].map((reply) => (
+                    <div key={reply.id} className="discussion_reply_item">
+                      <div className="discussion_review_item">
+                        <div className="discussion_review_user_details">
+                          <img
+                            src={reply.userImage}
+                            alt="User Avatar"
+                            className="user_avatar"
+                          />
+                          <div className="discussion_review_user_info">
+                            <h4 className="discussion_user_name">
+                              {reply.user}
+                            </h4>
+                            <span className="discussion_review_time">
+                              {reply.time}
+                            </span>
+                            <br />
+                            <span className="discussion_review_time">
+                              {reply.date}
+                            </span>
+                          </div>
+                          {reply.userId === userId && (
+                            <div className="discussion_options_dropdown">
+                              <div className="fa_EllipsisVertical">
+                                <FontAwesomeIcon
+                                  icon={faEllipsisVertical}
+                                  style={{ color: "#686f7a" }}
+                                  className="purchased_fa_ellipsis_vertical"
+                                />
                               </div>
-                            )}
-                          </div>
-                          <p className="discussion_review_text">
-                            {reply.content}
-                          </p>
-                          <div className="discussion_review_actions">
-                            <a href="#" className="discussion_action_link">
-                              <img
-                                src={Like}
-                                className="discussion_review_like"
-                                alt="Like"
-                              />
-                              {reply.likes}
-                            </a>
-                            <a href="#" className="discussion_action_link">
-                              <img
-                                src={Dislike}
-                                className="discussion_review_dislike"
-                                alt="Dislike"
-                              />
-                              {reply.dislikes}
-                            </a>
-                          </div>
+                              <div className="discussion_dropdown_content">
+                                <span
+                                  onClick={() => handleDeleteComment(reply.id)}
+                                >
+                                  <i className="comment-alt-delete">
+                                    <img
+                                      src={Delete}
+                                      alt="Delete"
+                                      className="icon_delete"
+                                    />
+                                  </i>
+                                  Delete
+                                </span>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                        <p className="discussion_review_text">
+                          {reply.content}
+                        </p>
+                        <div className="discussion_review_actions">
+                          <a href="#" className="discussion_action_link">
+                            <img
+                              src={Like}
+                              className="discussion_review_like"
+                              alt="Like"
+                            />
+                            {reply.likes}
+                          </a>
+                          <a href="#" className="discussion_action_link">
+                            <img
+                              src={Dislike}
+                              className="discussion_review_dislike"
+                              alt="Dislike"
+                            />
+                            {reply.dislikes}
+                          </a>
                         </div>
                       </div>
-                    ))
-                  : null}
+                    </div>
+                  ))
+                ) : (
+                  <p>No reply yet.</p>
+                )}
               </div>
-            ) : null;
+            ) : (
+              <p>No comments yet.</p>
+            );
           })
         ) : (
           <p>No comments yet.</p>

@@ -1,0 +1,2415 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Student Profile Page 1`] = `
+<div
+  className="search-result-wrapper search-result"
+>
+  <div
+    className="search-result-background"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-12"
+        >
+          <div
+            className="title-search-result"
+          >
+            <div
+              className="title-search-result-left"
+            >
+              <div
+                className="title-search-result-left-link"
+              >
+                <nav
+                  aria-label="breadcrumb"
+                >
+                  <ol
+                    className="breadcrumb"
+                  >
+                    <li
+                      className="breadcrumb-item"
+                    >
+                      <a
+                        href="/"
+                      >
+                        Home
+                      </a>
+                    </li>
+                    <li
+                      aria-current="page"
+                      className="breadcrumb-item breadcrumb-item-color active"
+                    >
+                      Search Results
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <div
+              className="title-search-result-right"
+            >
+              <div
+                className="instructor_search title-search-result-right-search col-xl-12 col-lg-8"
+              >
+                <div
+                  className="search_all_instructor title-search-result-right-search-result"
+                >
+                  <div
+                    className="policy__toolbar"
+                  >
+                    <div
+                      className="policy__toolbar-search"
+                    >
+                      <div
+                        className="policy__toolbar-icon"
+                      >
+                        <span
+                          aria-label="search"
+                          className="anticon anticon-search"
+                          role="img"
+                        >
+                          <svg
+                            aria-hidden="true"
+                            data-icon="search"
+                            fill="currentColor"
+                            focusable="false"
+                            height="1em"
+                            viewBox="64 64 896 896"
+                            width="1em"
+                          >
+                            <path
+                              d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0011.6 0l43.6-43.5a8.2 8.2 0 000-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                      <input
+                        className="policy__toolbar-input"
+                        onChange={[Function]}
+                        onKeyDown={[Function]}
+                        placeholder="Search courses..."
+                        type="text"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="title-search-result-main"
+          >
+            <h2>
+              Search Results
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="search-results-filters mb4d25"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row justify-content-between"
+      >
+        <div
+          class="col-lg-3 col-md-4"
+        >
+          <div
+            class="search-results-filters-section"
+          >
+            <div
+              class="search-results-filters-section-result-stitles"
+            >
+              <div
+                class="search-results-filters-title"
+              >
+                Filters
+              </div>
+              <div
+                className="search-results-filters-title-selector"
+              >
+                <div
+                  className="dropdown"
+                >
+                  <button
+                    aria-expanded={false}
+                    className="search-results-filters-title-selector-dropdown-basic dropdown-toggle btn"
+                    disabled={false}
+                    id="dropdown-basic"
+                    onClick={[Function]}
+                    type="button"
+                  >
+                    Sort
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              className="tb_145"
+            >
+              <div
+                className="panel-group accordion"
+                id="accordionfilter"
+              >
+                <div
+                  className="panel-searchpanel-default-search"
+                >
+                  <div
+                    className="panel-heading"
+                    id="headingOne"
+                  >
+                    <div
+                      className="panel-title10"
+                    >
+                      <a
+                        aria-controls="collapseOne"
+                        aria-expanded="false"
+                        className="collapsed-search "
+                        data-bs-target="#collapseOne"
+                        data-bs-toggle="collapse"
+                        onClick={[Function]}
+                      >
+                        Topic
+                      </a>
+                    </div>
+                  </div>
+                  <div
+                    aria-labelledby="headingOne"
+                    className="panel-collapse collapse "
+                    data-bs-parent="#accordionfilter"
+                    id="collapseOne"
+                  >
+                    <div
+                      className="panel-body"
+                    >
+                      <div
+                        className="ui form"
+                      >
+                        <div
+                          className="grouped fields"
+                        >
+                          <div
+                            className=" checkbox_sign "
+                          >
+                            <div
+                              className="inline field"
+                            >
+                              <div
+                                className="  mncheck"
+                              >
+                                <input
+                                  className="hidden"
+                                  id="checkbox1"
+                                  tabIndex="0"
+                                  type="checkbox"
+                                />
+                                <label
+                                  htmlFor="checkbox1"
+                                >
+                                  SEO
+                                  <span
+                                    className="filter__counter"
+                                  >
+                                    (428)
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className=" checkbox_sign"
+                          >
+                            <div
+                              className="inline field"
+                            >
+                              <div
+                                className="  mncheck"
+                              >
+                                <input
+                                  className="hidden"
+                                  id="checkbox2"
+                                  tabIndex="0"
+                                  type="checkbox"
+                                />
+                                <label
+                                  htmlFor="checkbox2"
+                                >
+                                  Php
+                                  <span
+                                    className="filter__counter"
+                                  >
+                                    (1526)
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className=" checkbox_sign"
+                          >
+                            <div
+                              className="inline field"
+                            >
+                              <div
+                                className="  mncheck"
+                              >
+                                <input
+                                  className="hidden"
+                                  id="checkbox3"
+                                  tabIndex="0"
+                                  type="checkbox"
+                                />
+                                <label
+                                  htmlFor="checkbox3"
+                                >
+                                  Wordpress Pro
+                                  <span
+                                    className="filter__counter"
+                                  >
+                                    (428)
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className=" checkbox_sign"
+                          >
+                            <div
+                              className="inline field"
+                            >
+                              <div
+                                className="  mncheck"
+                              >
+                                <input
+                                  className="hidden"
+                                  id="checkbox4"
+                                  tabIndex="0"
+                                  type="checkbox"
+                                />
+                                <label
+                                  htmlFor="checkbox4"
+                                >
+                                  WooCommerce
+                                  <span
+                                    className="filter__counter"
+                                  >
+                                    (958)
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className=" checkbox_sign"
+                          >
+                            <div
+                              className="inline field"
+                            >
+                              <div
+                                className="  mncheck"
+                              >
+                                <input
+                                  className="hidden"
+                                  id="checkbox5"
+                                  tabIndex="0"
+                                  type="checkbox"
+                                />
+                                <label
+                                  htmlFor="checkbox5"
+                                >
+                                  Bootstrap
+                                  <span
+                                    className="filter__counter"
+                                  >
+                                    (748)
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className=" checkbox_sign"
+                          >
+                            <div
+                              className="inline field"
+                            >
+                              <div
+                                className="  mncheck"
+                              >
+                                <input
+                                  className="hidden"
+                                  id="checkbox6"
+                                  tabIndex="0"
+                                  type="checkbox"
+                                />
+                                <label
+                                  htmlFor="checkbox6"
+                                >
+                                  Web Development
+                                  <span
+                                    className="filter__counter"
+                                  >
+                                    (2256)
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className=" checkbox_sign"
+                          >
+                            <div
+                              className="inline field"
+                            >
+                              <div
+                                className="  mncheck"
+                              >
+                                <input
+                                  className="hidden"
+                                  id="checkbox7"
+                                  tabIndex="0"
+                                  type="checkbox"
+                                />
+                                <label
+                                  htmlFor="checkbox7"
+                                >
+                                  Web Design
+                                  <span
+                                    className="filter__counter"
+                                  >
+                                    (4859)
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className=" checkbox_sign"
+                          >
+                            <div
+                              className="inline field"
+                            >
+                              <div
+                                className="  mncheck"
+                              >
+                                <input
+                                  className="hidden"
+                                  id="checkbox8"
+                                  tabIndex="0"
+                                  type="checkbox"
+                                />
+                                <label
+                                  htmlFor="checkbox8"
+                                >
+                                  Digital Marketing
+                                  <span
+                                    className="filter__counter"
+                                  >
+                                    (2458)
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className=" checkbox_sign"
+                          >
+                            <div
+                              className="inline field"
+                            >
+                              <div
+                                className="  mncheck"
+                              >
+                                <input
+                                  className="hidden"
+                                  id="checkbox9"
+                                  tabIndex="0"
+                                  type="checkbox"
+                                />
+                                <label
+                                  htmlFor="checkbox9"
+                                >
+                                  E-commerce
+                                  <span
+                                    className="filter__counter"
+                                  >
+                                    (1245)
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className=" checkbox_sign"
+                          >
+                            <div
+                              className="inline field"
+                            >
+                              <div
+                                className="  mncheck"
+                              >
+                                <input
+                                  className="hidden"
+                                  id="checkbox10"
+                                  tabIndex="0"
+                                  type="checkbox"
+                                />
+                                <label
+                                  htmlFor="checkbox10"
+                                >
+                                  Wordpress Themes
+                                  <span
+                                    className="filter__counter"
+                                  >
+                                    (5879)
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className=" checkbox_sign"
+                          >
+                            <div
+                              className="inline field"
+                            >
+                              <div
+                                className="  mncheck"
+                              >
+                                <input
+                                  className="hidden"
+                                  id="checkbox11"
+                                  tabIndex="0"
+                                  type="checkbox"
+                                />
+                                <label
+                                  htmlFor="checkbox11"
+                                >
+                                  Wordpress Plugins
+                                  <span
+                                    className="filter__counter"
+                                  >
+                                    (2654)
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className=" checkbox_sign"
+                          >
+                            <div
+                              className="inline field"
+                            >
+                              <div
+                                className="  mncheck"
+                              >
+                                <input
+                                  className="hidden"
+                                  id="checkbox12"
+                                  tabIndex="0"
+                                  type="checkbox"
+                                />
+                                <label
+                                  htmlFor="checkbox12"
+                                >
+                                  Wordpress Hosting
+                                  <span
+                                    className="filter__counter"
+                                  >
+                                    (1485)
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className=" checkbox_sign"
+                          >
+                            <div
+                              className="inline field"
+                            >
+                              <div
+                                className="  mncheck"
+                              >
+                                <input
+                                  className="hidden"
+                                  id="checkbox13"
+                                  tabIndex="0"
+                                  type="checkbox"
+                                />
+                                <label
+                                  htmlFor="checkbox13"
+                                >
+                                  Elementor
+                                  <span
+                                    className="filter__counter"
+                                  >
+                                    (3658)
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          <div
+                            className=" checkbox_sign"
+                          >
+                            <div
+                              className="inline field"
+                            >
+                              <div
+                                className="  mncheck"
+                              >
+                                <input
+                                  className="hidden"
+                                  id="checkbox14"
+                                  tabIndex="0"
+                                  type="checkbox"
+                                />
+                                <label
+                                  htmlFor="checkbox14"
+                                >
+                                  Wordpress for Ecommerce
+                                  <span
+                                    className="filter__counter"
+                                  >
+                                    (5894)
+                                  </span>
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-searchpanel-default-search"
+            >
+              <div
+                className="panel-heading"
+                id="headingTwo"
+              >
+                <div
+                  className="panel-title10"
+                >
+                  <a
+                    aria-controls="collapseTwo"
+                    aria-expanded="false"
+                    className="collapsed-search "
+                    data-bs-target="#collapseTwo"
+                    data-bs-toggle="collapse"
+                    onClick={[Function]}
+                  >
+                    Level
+                  </a>
+                </div>
+              </div>
+              <div
+                aria-labelledby="headingTwo"
+                className="panel-collapse collapse "
+                data-bs-parent="#accordionfilter"
+                id="collapseTwo"
+              >
+                <div
+                  className="panel-body"
+                >
+                  <div
+                    className="ui form"
+                  >
+                    <div
+                      className="grouped fields"
+                    >
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox15"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox15"
+                            >
+                              All Levels
+                              <span
+                                className="filter__counter"
+                              >
+                                (5000)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox16"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox16"
+                            >
+                              Beginner
+                              <span
+                                className="filter__counter"
+                              >
+                                (3517)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox17"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox17"
+                            >
+                              Intermediate
+                              <span
+                                className="filter__counter"
+                              >
+                                (1560)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox18"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox18"
+                            >
+                              Expert
+                              <span
+                                className="filter__counter"
+                              >
+                                (240)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-searchpanel-default-search"
+            >
+              <div
+                className="panel-heading"
+                id="headingThree"
+              >
+                <div
+                  className="panel-title10"
+                >
+                  <a
+                    aria-controls="collapseThree"
+                    aria-expanded="false"
+                    className="collapsed-search "
+                    data-bs-target="#collapseThree"
+                    data-bs-toggle="collapse"
+                    onClick={[Function]}
+                  >
+                    Language
+                  </a>
+                </div>
+              </div>
+              <div
+                aria-labelledby="headingThree"
+                className="panel-collapse collapse "
+                data-bs-parent="#accordionfilter"
+                id="collapseThree"
+              >
+                <div
+                  className="panel-body"
+                >
+                  <div
+                    className="ui form"
+                  >
+                    <div
+                      className="grouped fields"
+                    >
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox19"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox19"
+                            >
+                              English
+                              <span
+                                className="filter__counter"
+                              >
+                                (500)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox20"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox20"
+                            >
+                              Español
+                              <span
+                                className="filter__counter"
+                              >
+                                (250)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox21"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox21"
+                            >
+                              português
+                              <span
+                                className="filter__counter"
+                              >
+                                (270)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox22"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox22"
+                            >
+                              日本語
+                              <span
+                                className="filter__counter"
+                              >
+                                (190)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox23"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox23"
+                            >
+                              Deutsch
+                              <span
+                                className="filter__counter"
+                              >
+                                (120)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox24"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox24"
+                            >
+                              Français
+                              <span
+                                className="filter__counter"
+                              >
+                                (105)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox25"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox25"
+                            >
+                              Türkçe
+                              <span
+                                className="filter__counter"
+                              >
+                                (90)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox26"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox26"
+                            >
+                              हिन्दी
+                              <span
+                                className="filter__counter"
+                              >
+                                (80)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox27"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox27"
+                            >
+                              Italiano
+                              <span
+                                className="filter__counter"
+                              >
+                                (178)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox28"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox28"
+                            >
+                              Polski
+                              <span
+                                className="filter__counter"
+                              >
+                                (50)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox29"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox29"
+                            >
+                              ภาษาไทย
+                              <span
+                                className="filter__counter"
+                              >
+                                (27)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox30"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox30"
+                            >
+                              Română
+                              <span
+                                className="filter__counter"
+                              >
+                                (157)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox31"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox31"
+                            >
+                              Telugu
+                              <span
+                                className="filter__counter"
+                              >
+                                (110)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox32"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox32"
+                            >
+                              मराठी
+                              <span
+                                className="filter__counter"
+                              >
+                                (50)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-searchpanel-default-search"
+            >
+              <div
+                className="panel-heading"
+                id="headingThree"
+              >
+                <div
+                  className="panel-title10"
+                >
+                  <a
+                    aria-controls="collapseThree"
+                    aria-expanded="false"
+                    className="collapsed-search "
+                    data-bs-target="#collapseThree"
+                    data-bs-toggle="collapse"
+                    onClick={[Function]}
+                  >
+                    Price
+                  </a>
+                </div>
+              </div>
+              <div
+                aria-labelledby="headingThree"
+                className="panel-collapse collapse "
+                data-bs-parent="#accordionfilter"
+                id="collapseThree"
+              >
+                <div
+                  className="panel-body"
+                >
+                  <div
+                    className="ui form"
+                  >
+                    <div
+                      className="grouped fields"
+                    >
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox33"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox33"
+                            >
+                              Paid
+                              <span
+                                className="filter__counter"
+                              >
+                                (3000)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox34"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox34"
+                            >
+                              Free
+                              <span
+                                className="filter__counter"
+                              >
+                                (50)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-searchpanel-default-search"
+            >
+              <div
+                className="panel-heading"
+                id="headingThree"
+              >
+                <div
+                  className="panel-title10"
+                >
+                  <a
+                    aria-controls="collapseThree"
+                    aria-expanded="false"
+                    className="collapsed-search "
+                    data-bs-target="#collapseThree"
+                    data-bs-toggle="collapse"
+                    onClick={[Function]}
+                  >
+                    Features
+                  </a>
+                </div>
+              </div>
+              <div
+                aria-labelledby="headingThree"
+                className="panel-collapse collapse "
+                data-bs-parent="#accordionfilter"
+                id="collapseThree"
+              >
+                <div
+                  className="panel-body"
+                >
+                  <div
+                    className="ui form"
+                  >
+                    <div
+                      className="grouped fields"
+                    >
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox35"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox35"
+                            >
+                              Coptions
+                              <span
+                                className="filter__counter"
+                              >
+                                (4780)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox36"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox36"
+                            >
+                              Quizzes
+                              <span
+                                className="filter__counter"
+                              >
+                                (890)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox37"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox37"
+                            >
+                              Coding Exercises
+                              <span
+                                className="filter__counter"
+                              >
+                                (350)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox38"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox38"
+                            >
+                              Practice Tests
+                              <span
+                                className="filter__counter"
+                              >
+                                (1050)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-searchpanel-default-search"
+            >
+              <div
+                className="panel-heading"
+                id="headingThree"
+              >
+                <div
+                  className="panel-title10"
+                >
+                  <a
+                    aria-controls="collapseThree"
+                    aria-expanded="false"
+                    className="collapsed-search "
+                    data-bs-target="#collapseThree"
+                    data-bs-toggle="collapse"
+                    onClick={[Function]}
+                  >
+                    Rating
+                  </a>
+                </div>
+              </div>
+              <div
+                aria-labelledby="headingThree"
+                className="panel-collapse collapse "
+                data-bs-parent="#accordionfilter"
+                id="collapseThree"
+              >
+                <div
+                  className="panel-body"
+                >
+                  <div
+                    className="ui form"
+                  >
+                    <div
+                      className="grouped fields"
+                    >
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox39"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox39"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                className="svg-inline--fa fa-star fa-star-search"
+                                data-icon="star"
+                                data-prefix="far"
+                                focusable="false"
+                                role="img"
+                                style={
+                                  Object {
+                                    "color": "#eec00c",
+                                  }
+                                }
+                                viewBox="0 0 576 512"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"
+                                  fill="currentColor"
+                                  style={Object {}}
+                                />
+                              </svg>
+                              <svg
+                                aria-hidden="true"
+                                className="svg-inline--fa fa-star fa-star-search"
+                                data-icon="star"
+                                data-prefix="far"
+                                focusable="false"
+                                role="img"
+                                style={
+                                  Object {
+                                    "color": "#eec00c",
+                                  }
+                                }
+                                viewBox="0 0 576 512"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"
+                                  fill="currentColor"
+                                  style={Object {}}
+                                />
+                              </svg>
+                              <svg
+                                aria-hidden="true"
+                                className="svg-inline--fa fa-star fa-star-search"
+                                data-icon="star"
+                                data-prefix="far"
+                                focusable="false"
+                                role="img"
+                                style={
+                                  Object {
+                                    "color": "#eec00c",
+                                  }
+                                }
+                                viewBox="0 0 576 512"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"
+                                  fill="currentColor"
+                                  style={Object {}}
+                                />
+                              </svg>
+                              <svg
+                                aria-hidden="true"
+                                className="svg-inline--fa fa-star fa-star-search"
+                                data-icon="star"
+                                data-prefix="far"
+                                focusable="false"
+                                role="img"
+                                style={
+                                  Object {
+                                    "color": "#eec00c",
+                                  }
+                                }
+                                viewBox="0 0 576 512"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"
+                                  fill="currentColor"
+                                  style={Object {}}
+                                />
+                              </svg>
+                              <svg
+                                aria-hidden="true"
+                                className="svg-inline--fa fa-star fa-star-search"
+                                data-icon="star"
+                                data-prefix="far"
+                                focusable="false"
+                                role="img"
+                                style={
+                                  Object {
+                                    "color": "#eec00c",
+                                  }
+                                }
+                                viewBox="0 0 576 512"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"
+                                  fill="currentColor"
+                                  style={Object {}}
+                                />
+                              </svg>
+                              500&up
+                              <span
+                                className="filter__counter"
+                              >
+                                (5000)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox40"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox40"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                className="svg-inline--fa fa-star fa-star-search"
+                                data-icon="star"
+                                data-prefix="far"
+                                focusable="false"
+                                role="img"
+                                style={
+                                  Object {
+                                    "color": "#eec00c",
+                                  }
+                                }
+                                viewBox="0 0 576 512"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"
+                                  fill="currentColor"
+                                  style={Object {}}
+                                />
+                              </svg>
+                              <svg
+                                aria-hidden="true"
+                                className="svg-inline--fa fa-star fa-star-search"
+                                data-icon="star"
+                                data-prefix="far"
+                                focusable="false"
+                                role="img"
+                                style={
+                                  Object {
+                                    "color": "#eec00c",
+                                  }
+                                }
+                                viewBox="0 0 576 512"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"
+                                  fill="currentColor"
+                                  style={Object {}}
+                                />
+                              </svg>
+                              <svg
+                                aria-hidden="true"
+                                className="svg-inline--fa fa-star fa-star-search"
+                                data-icon="star"
+                                data-prefix="far"
+                                focusable="false"
+                                role="img"
+                                style={
+                                  Object {
+                                    "color": "#eec00c",
+                                  }
+                                }
+                                viewBox="0 0 576 512"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"
+                                  fill="currentColor"
+                                  style={Object {}}
+                                />
+                              </svg>
+                              <svg
+                                aria-hidden="true"
+                                className="svg-inline--fa fa-star fa-star-search"
+                                data-icon="star"
+                                data-prefix="far"
+                                focusable="false"
+                                role="img"
+                                style={
+                                  Object {
+                                    "color": "#eec00c",
+                                  }
+                                }
+                                viewBox="0 0 576 512"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"
+                                  fill="currentColor"
+                                  style={Object {}}
+                                />
+                              </svg>
+                              4.0 & up
+                              <span
+                                className="filter__counter"
+                              >
+                                (2500)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                        <div
+                          className=" checkbox_sign"
+                        >
+                          <div
+                            className="inline field"
+                          >
+                            <div
+                              className="  mncheck"
+                            >
+                              <input
+                                className="hidden"
+                                id="checkbox41"
+                                tabIndex="0"
+                                type="checkbox"
+                              />
+                              <label
+                                htmlFor="checkbox41"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  className="svg-inline--fa fa-star fa-star-search"
+                                  data-icon="star"
+                                  data-prefix="far"
+                                  focusable="false"
+                                  role="img"
+                                  style={
+                                    Object {
+                                      "color": "#eec00c",
+                                    }
+                                  }
+                                  viewBox="0 0 576 512"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"
+                                    fill="currentColor"
+                                    style={Object {}}
+                                  />
+                                </svg>
+                                <svg
+                                  aria-hidden="true"
+                                  className="svg-inline--fa fa-star fa-star-search"
+                                  data-icon="star"
+                                  data-prefix="far"
+                                  focusable="false"
+                                  role="img"
+                                  style={
+                                    Object {
+                                      "color": "#eec00c",
+                                    }
+                                  }
+                                  viewBox="0 0 576 512"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"
+                                    fill="currentColor"
+                                    style={Object {}}
+                                  />
+                                </svg>
+                                <svg
+                                  aria-hidden="true"
+                                  className="svg-inline--fa fa-star fa-star-search"
+                                  data-icon="star"
+                                  data-prefix="far"
+                                  focusable="false"
+                                  role="img"
+                                  style={
+                                    Object {
+                                      "color": "#eec00c",
+                                    }
+                                  }
+                                  viewBox="0 0 576 512"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"
+                                    fill="currentColor"
+                                    style={Object {}}
+                                  />
+                                </svg>
+                                3.0 & up
+                                <span
+                                  className="filter__counter"
+                                >
+                                  (2500)
+                                </span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox42"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox42"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                className="svg-inline--fa fa-star fa-star-search"
+                                data-icon="star"
+                                data-prefix="far"
+                                focusable="false"
+                                role="img"
+                                style={
+                                  Object {
+                                    "color": "#eec00c",
+                                  }
+                                }
+                                viewBox="0 0 576 512"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"
+                                  fill="currentColor"
+                                  style={Object {}}
+                                />
+                              </svg>
+                              <svg
+                                aria-hidden="true"
+                                className="svg-inline--fa fa-star fa-star-search"
+                                data-icon="star"
+                                data-prefix="far"
+                                focusable="false"
+                                role="img"
+                                style={
+                                  Object {
+                                    "color": "#eec00c",
+                                  }
+                                }
+                                viewBox="0 0 576 512"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"
+                                  fill="currentColor"
+                                  style={Object {}}
+                                />
+                              </svg>
+                              <svg
+                                aria-hidden="true"
+                                className="svg-inline--fa fa-star fa-star-search"
+                                data-icon="star"
+                                data-prefix="far"
+                                focusable="false"
+                                role="img"
+                                style={
+                                  Object {
+                                    "color": "#eec00c",
+                                  }
+                                }
+                                viewBox="0 0 576 512"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"
+                                  fill="currentColor"
+                                  style={Object {}}
+                                />
+                              </svg>
+                              2.0 & up
+                              <span
+                                className="filter__counter"
+                              >
+                                (122)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-searchpanel-default-search"
+            >
+              <div
+                className="panel-heading"
+                id="headingThree"
+              >
+                <div
+                  className="panel-title10"
+                >
+                  <a
+                    aria-controls="collapseThree"
+                    aria-expanded="false"
+                    className="collapsed-search "
+                    data-bs-target="#collapseThree"
+                    data-bs-toggle="collapse"
+                    onClick={[Function]}
+                  >
+                    Video Duration
+                  </a>
+                </div>
+              </div>
+              <div
+                aria-labelledby="headingThree"
+                className="panel-collapse collapse "
+                data-bs-parent="#accordionfilter"
+                id="collapseThree"
+              >
+                <div
+                  className="panel-body"
+                >
+                  <div
+                    className="ui form"
+                  >
+                    <div
+                      className="grouped fields"
+                    >
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox43"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox43"
+                            >
+                              0-2 Hours
+                              <span
+                                className="filter__counter"
+                              >
+                                (500)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox44"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox44"
+                            >
+                              3-6 Hours
+                              <span
+                                className="filter__counter"
+                              >
+                                (150)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox45"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox45"
+                            >
+                              7-18 Hours
+                              <span
+                                className="filter__counter"
+                              >
+                                (90)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox46"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox46"
+                            >
+                              19+ Hours
+                              <span
+                                className="filter__counter"
+                              >
+                                (25)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+             
+            <div
+              className="panel-searchpanel-default-search"
+            >
+              <div
+                className="panel-heading"
+                id="headingThree"
+              >
+                <div
+                  className="panel-title10"
+                >
+                  <a
+                    aria-controls="collapseThree"
+                    aria-expanded="false"
+                    className="collapsed-search "
+                    data-bs-target="#collapseThree"
+                    data-bs-toggle="collapse"
+                    onClick={[Function]}
+                  >
+                    Close Caption
+                  </a>
+                </div>
+              </div>
+              <div
+                aria-labelledby="headingThree"
+                className="panel-collapse collapse "
+                data-bs-parent="#accordionfilter"
+                id="collapseThree"
+              >
+                <div
+                  className="panel-body"
+                >
+                  <div
+                    className="ui form"
+                  >
+                    <div
+                      className="grouped fields"
+                    >
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox47"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox47"
+                            >
+                              English
+                              <span
+                                className="filter__counter"
+                              >
+                                (300)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox48"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox48"
+                            >
+                              Español
+                              <span
+                                className="filter__counter"
+                              >
+                                (210)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox49"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox49"
+                            >
+                              português
+                              <span
+                                className="filter__counter"
+                              >
+                                (170)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox50"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox50"
+                            >
+                              Italiano
+                              <span
+                                className="filter__counter"
+                              >
+                                (174)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox51"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox51"
+                            >
+                              हिन्दी
+                              <span
+                                className="filter__counter"
+                              >
+                                (80)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox52"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox52"
+                            >
+                              Français
+                              <span
+                                className="filter__counter"
+                              >
+                                (105)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox53"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox53"
+                            >
+                              Polski
+                              <span
+                                className="filter__counter"
+                              >
+                                (130)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox54"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox54"
+                            >
+                              Deutsch
+                              <span
+                                className="filter__counter"
+                              >
+                                (30)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox55"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox55"
+                            >
+                              Bahasa Indonesia
+                              <span
+                                className="filter__counter"
+                              >
+                                (20)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className=" checkbox_sign"
+                      >
+                        <div
+                          className="inline field"
+                        >
+                          <div
+                            className="  mncheck"
+                          >
+                            <input
+                              className="hidden"
+                              id="checkbox56"
+                              tabIndex="0"
+                              type="checkbox"
+                            />
+                            <label
+                              htmlFor="checkbox56"
+                            >
+                              ภาษาไทย
+                              <span
+                                className="filter__counter"
+                              >
+                                (27)
+                              </span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-lg-9 col-md-8"
+        >
+          <div
+            className="search-result-data search-result-data-mb-20"
+          >
+            <div
+              className="row"
+            >
+              <div
+                className="col-md-12"
+              >
+                <h4
+                  className="search-result-number"
+                >
+                  0
+                   Results
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
