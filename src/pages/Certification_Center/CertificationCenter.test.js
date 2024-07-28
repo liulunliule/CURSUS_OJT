@@ -7,7 +7,7 @@ import { store } from '../../redux/store';
 import CertificationCenter from '.';
 
 
-test('test Certification Test Result Page', () => {
+test('test Certification Center Page', () => {
   const tree = renderer.create(
     <Provider store={store}>
         <MemoryRouter>
