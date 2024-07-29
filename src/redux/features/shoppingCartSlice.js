@@ -9,6 +9,20 @@ const initialState = {
 };
 
 // Define an async thunk for fetching shopping cart data
+export const addCartData = createAsyncThunk(
+  'shoppingCart/addCartData', async ({ video, titilecourse, typecourse, author, price ,userId }) => {
+      const response = await axios.post('https://6696231a0312447373c1386e.mockapi.io/user/1/ShopingCart', {
+        video,
+        titilecourse,
+        typecourse,
+        author,
+        price,
+        userId,
+      });
+      return response.data;
+  }
+);
+
 export const fetchShoppingCart = createAsyncThunk(
   'shoppingCart/fetchShoppingCart',
   async () => {
