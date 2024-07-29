@@ -1,0 +1,366 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Careers Page component correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="careers-page"
+  >
+    <header
+      class="custom-header"
+      style="background-color: rgb(248, 248, 248);"
+    >
+      <nav
+        class="custom-nav"
+      >
+        <ul
+          class="custom-ul"
+        >
+          <li
+            class="custom-li "
+          >
+            About
+          </li>
+          <li
+            class="custom-li "
+          >
+            Blog
+          </li>
+          <li
+            class="custom-li "
+          >
+            Company
+          </li>
+          <li
+            class="custom-li selected"
+          >
+            Careers
+          </li>
+          <li
+            class="custom-li "
+          >
+            Press
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section
+      class="hero"
+      style="background-color: rgb(248, 248, 248);"
+    >
+      <h1>
+        We're a passionate, creative, and global company, come work with us.
+      </h1>
+    </section>
+    <section
+      class="video-container"
+    >
+      <div
+        class="video-half"
+      >
+        <iframe
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen=""
+          frameborder="0"
+          height="315"
+          src="https://www.youtube.com/embed/TKnufs85hXk?si=bp_CAVNtBJXtTtu3"
+          title="YouTube video player"
+          width="560"
+        />
+      </div>
+      <div
+        class="info-half"
+      >
+        <h1>
+          Working at Cursus
+        </h1>
+        <div
+          class="video-container-item"
+        >
+          <p>
+            Phasellus ex mauris, rhoncus quis posuere sit amet, ultricies nec lorem. Vivamus vestibulum porta urna, in placerat lectus facilisis sit amet. Vestibulum non mauris augue. Maecenas arcu magna, aliquam imperdiet tempor nec, lobortis ac erat. Aliquam vel magna tortor. Cras ornare, enim eu tristique tristique, orci nisl blandit mi, at dignissim velit leo nec metus.
+          </p>
+          <a
+            class="learn-more"
+            href="/secondLayout/apply-job"
+          >
+            Check Out Our Open Roles
+          </a>
+        </div>
+      </div>
+    </section>
+    <section
+      class="quotes"
+    >
+      <button
+        class="arrow left"
+        disabled=""
+      >
+        &lt;
+      </button>
+      <div
+        class="quote"
+      >
+        <div
+          style="display: flex; flex-direction: column; align-items: center;"
+        >
+          <h3>
+            We are learners
+          </h3>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget enim in turpis consequat tempor sed id neque. Nam at felis et elit auctor accumsan. Nunc at tortor tellus. Cras dignissim velit ac, sollicitudin mi bibendum in. In vel nibh sodales, venenatis eros a, vulputate ligula.
+        </p>
+      </div>
+      <button
+        class="arrow right"
+      >
+        &gt;
+      </button>
+    </section>
+    <section
+      class="benefits"
+    >
+      <h2>
+        Benefits
+      </h2>
+      <p>
+        Cursus culture is something special, and to complement and support that culture we have some amazing benefits.
+      </p>
+      <div
+        class="benefit-list"
+      >
+        <div
+          class="benefit-item"
+        >
+          <img
+            alt="Work from anywhere"
+            src="workfromanywhere.png"
+          />
+          <h3>
+            Work from anywhere
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget enim in turpis consequat tempor sed id neque. Nam at felis et elit auctor accumsan.
+          </p>
+        </div>
+        <div
+          class="benefit-item"
+        >
+          <img
+            alt="Work and Travel"
+            src="workandtravel.png"
+          />
+          <h3>
+            Work and Travel
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget enim in turpis consequat tempor sed id neque. Nam at felis et elit auctor accumsan.
+          </p>
+        </div>
+        <div
+          class="benefit-item"
+        >
+          <img
+            alt="Flexible Hours"
+            src="flexiblehours.png"
+          />
+          <h3>
+            Flexible Hours
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget enim in turpis consequat tempor sed id neque. Nam at felis et elit auctor accumsan.
+          </p>
+        </div>
+        <div
+          class="benefit-item"
+        >
+          <img
+            alt="Purchasing Leave"
+            src="purchasingleave.png"
+          />
+          <h3>
+            Purchasing Leave
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget enim in turpis consequat tempor sed id neque. Nam at felis et elit auctor accumsan.
+          </p>
+        </div>
+        <div
+          class="benefit-item"
+        >
+          <img
+            alt="Social Events"
+            src="socialevents.png"
+          />
+          <h3>
+            Social Events
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget enim in turpis consequat tempor sed id neque. Nam at felis et elit auctor accumsan.
+          </p>
+        </div>
+        <div
+          class="benefit-item"
+        >
+          <img
+            alt="Wellness Program"
+            src="wellnessprogram.png"
+          />
+          <h3>
+            Wellness Program
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget enim in turpis consequat tempor sed id neque. Nam at felis et elit auctor accumsan.
+          </p>
+        </div>
+        <div
+          class="benefit-item"
+        >
+          <img
+            alt="Mentoring Program"
+            src="mentoringprogram.png"
+          />
+          <h3>
+            Mentoring Program
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget enim in turpis consequat tempor sed id neque. Nam at felis et elit auctor accumsan.
+          </p>
+        </div>
+        <div
+          class="benefit-item"
+        >
+          <img
+            alt="Fundraising"
+            src="fundraising.png"
+          />
+          <h3>
+            Fundraising
+          </h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget enim in turpis consequat tempor sed id neque. Nam at felis et elit auctor accumsan.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section
+      class="open-roles"
+    >
+      <h2>
+        Open Roles
+      </h2>
+      <p>
+        Cursus is a fast-growing company and we're expanding both our Punjab office and international offices.
+      </p>
+      <div
+        class="role-lists-container"
+      >
+        <div
+          class="role-list role-list1"
+        >
+          <div
+            class="role-item"
+          >
+            <h3>
+              Algorithm Engineer
+            </h3>
+            <p>
+              India
+            </p>
+            <a
+              class="learn-more"
+              href="/secondLayout/apply-job"
+            >
+              Learn More and Apply
+            </a>
+          </div>
+          <div
+            class="role-item"
+          >
+            <h3>
+              Chief Technology Officer
+            </h3>
+            <p>
+              India
+            </p>
+            <a
+              class="learn-more"
+              href="/secondLayout/apply-job"
+            >
+              Learn More and Apply
+            </a>
+          </div>
+          <div
+            class="role-item"
+          >
+            <h3>
+              Customer Growth & Marketing Analyst
+            </h3>
+            <p>
+              India
+            </p>
+            <a
+              class="learn-more"
+              href="/secondLayout/apply-job"
+            >
+              Learn More and Apply
+            </a>
+          </div>
+        </div>
+        <div
+          class="role-list role-list2"
+        >
+          <div
+            class="role-item"
+          >
+            <h3>
+              Data Engineer
+            </h3>
+            <p>
+              India
+            </p>
+            <a
+              class="learn-more"
+              href="/secondLayout/apply-job"
+            >
+              Learn More and Apply
+            </a>
+          </div>
+          <div
+            class="role-item"
+          >
+            <h3>
+              iOS Developer - Edututs+
+            </h3>
+            <p>
+              San Francisco, CA
+            </p>
+            <a
+              class="learn-more"
+              href="/secondLayout/apply-job"
+            >
+              Learn More and Apply
+            </a>
+          </div>
+          <div
+            class="role-item"
+          >
+            <h3>
+              Senior UX Designer
+            </h3>
+            <p>
+              India
+            </p>
+            <a
+              class="learn-more"
+              href="/secondLayout/apply-job"
+            >
+              Learn More and Apply
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</DocumentFragment>
+`;

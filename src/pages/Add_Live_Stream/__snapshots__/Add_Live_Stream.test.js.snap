@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test verification page 1`] = `
+<div
+  className="wrapper12"
+>
+  <div
+    className="sa4d25"
+  >
+    <div
+      className="container-fluid"
+    >
+      <div
+        className="row justify-content-md-center"
+      >
+        <div
+          className="col-lg-8 col-md-10"
+        >
+          <div
+            className="section3125"
+          >
+            <div
+              className="justify-content-center"
+            >
+              <div
+                className="live-stream-page"
+              >
+                <div
+                  className="header100"
+                >
+                  <button
+                    className="buttonRed100"
+                    onClick={[Function]}
+                  >
+                    Add Streaming
+                  </button>
+                  <button
+                    className="buttonRed100"
+                    onClick={[Function]}
+                  >
+                    Setting
+                  </button>
+                </div>
+                <div
+                  className="content100"
+                >
+                  <div
+                    className="add-streaming"
+                  >
+                    <h2
+                      className="live-stream-title"
+                    >
+                      Connect your live stream to the Live API
+                    </h2>
+                    <div
+                      className="whatever"
+                    >
+                      Use live-streaming software or a hardware encoder.
+                      <a
+                        className="learn-more"
+                        href="#"
+                      >
+                        Learn More
+                      </a>
+                    </div>
+                    <div
+                      className="sth-imp"
+                    >
+                      Preview your broadcast with a stream key or paired encoder.
+                    </div>
+                    <div
+                      className="group-form"
+                    >
+                      <label>
+                        Server URL*
+                      </label>
+                      <input
+                        className="_dlor1"
+                        readOnly={true}
+                        type="text"
+                        value="rtmps://live-api-s.edututs+.com:443/rtmp/"
+                      />
+                      <button
+                        className="_6tf7s"
+                      >
+                        Copy
+                      </button>
+                    </div>
+                    <div
+                      className="group-form mb-20"
+                    >
+                      <label>
+                        Persistent stream key*
+                      </label>
+                      <input
+                        className="_dlor1"
+                        readOnly={true}
+                        type="text"
+                        value="592030151361629?s_bl=1&s_ps=1&s_sw=065&s_vt=api&s_a=AbzB7xYk7XdnKpBf"
+                      />
+                      <button
+                        className="_6tf7s"
+                      >
+                        Copy
+                      </button>
+                    </div>
+                    <button
+                      className="buttonRed100"
+                    >
+                      Go Live
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

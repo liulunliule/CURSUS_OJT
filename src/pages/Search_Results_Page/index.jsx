@@ -41,9 +41,6 @@ const Search_Resultse = () => {
     setSelectedSort(eventKey);
   };
   useEffect(() => {
-    // const savedLikedCourses =
-    //   JSON.parse(localStorage.getItem("likedCourses")) || [];
-    // setLikedCourses(new Set(savedLikedCourses));
     if (query) {
       dispatch(fetchSearchResult(query));
     }
@@ -1631,11 +1628,6 @@ const Search_Resultse = () => {
                               <div className="search-result-more-dropdown-content">
                                 <span
                                   onClick={() => handleAddCourse(course)}
-                                  className={`btn ${
-                                    likedCourses.has(course.id)
-                                      ? "btn-danger"
-                                      : "btn-primary"
-                                  }`}
                                 >
                                   <i
                                     className={`uil uil-heart ${

@@ -1,0 +1,258 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Login Page 1`] = `
+<div>
+  <div
+    className="login"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        className="login__logo"
+        src="logo.svg"
+      />
+    </a>
+    <div
+      className="login__main main"
+    >
+      <h2
+        className="login__title"
+      >
+        Welcome Back
+      </h2>
+      <p
+        className="login__desc"
+      >
+        Log In to Your Cursus Account!
+      </p>
+      <div
+        className="login__cta"
+      >
+        <button
+          className="login__button"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-facebook-f "
+            data-icon="facebook-f"
+            data-prefix="fab"
+            focusable="false"
+            role="img"
+            style={
+              Object {
+                "color": "#ffffff",
+                "marginRight": "10px",
+              }
+            }
+            viewBox="0 0 320 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+          Continue with Facebook
+        </button>
+        <button
+          className="login__button"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-twitter "
+            data-icon="twitter"
+            data-prefix="fab"
+            focusable="false"
+            role="img"
+            style={
+              Object {
+                "color": "#ffffff",
+                "marginRight": "10px",
+              }
+            }
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+          Continue with Twitter
+        </button>
+        <button
+          className="login__button"
+        >
+          <svg
+            aria-hidden="true"
+            className="svg-inline--fa fa-google "
+            data-icon="google"
+            data-prefix="fab"
+            focusable="false"
+            role="img"
+            style={
+              Object {
+                "color": "#ffffff",
+                "marginRight": "10px",
+              }
+            }
+            viewBox="0 0 488 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
+              fill="currentColor"
+              style={Object {}}
+            />
+          </svg>
+          Continue with Google
+        </button>
+        <div
+          className="login__form-group"
+        >
+          <div
+            className="login__form"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-envelope faEnvelope"
+              data-icon="envelope"
+              data-prefix="far"
+              focusable="false"
+              role="img"
+              style={
+                Object {
+                  "color": "#909090",
+                }
+              }
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M64 112c-8.8 0-16 7.2-16 16l0 22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1l0-22.1c0-8.8-7.2-16-16-16L64 112zM48 212.2L48 384c0 8.8 7.2 16 16 16l384 0c8.8 0 16-7.2 16-16l0-171.8L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64l384 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+            <input
+              className="login__form-input"
+              id=""
+              name=""
+              onChange={[Function]}
+              placeholder="Email Address"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="login__form"
+          >
+            <svg
+              aria-hidden="true"
+              className="svg-inline--fa fa-key faKey"
+              data-icon="key"
+              data-prefix="fas"
+              focusable="false"
+              role="img"
+              style={
+                Object {
+                  "color": "#909090",
+                }
+              }
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M336 352c97.2 0 176-78.8 176-176S433.2 0 336 0S160 78.8 160 176c0 18.7 2.9 36.8 8.3 53.7L7 391c-4.5 4.5-7 10.6-7 17l0 80c0 13.3 10.7 24 24 24l80 0c13.3 0 24-10.7 24-24l0-40 40 0c13.3 0 24-10.7 24-24l0-40 40 0c6.4 0 12.5-2.5 17-7l33.3-33.3c16.9 5.4 35 8.3 53.7 8.3zM376 96a40 40 0 1 1 0 80 40 40 0 1 1 0-80z"
+                fill="currentColor"
+                style={Object {}}
+              />
+            </svg>
+            <input
+              className="login__form-input"
+              id=""
+              name=""
+              onChange={[Function]}
+              placeholder="Password"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="login__remember"
+          >
+            <input
+              id="remember-me"
+              name=""
+              type="checkbox"
+            />
+            <label
+              htmlFor="remember-me"
+            >
+              Remember me
+            </label>
+          </div>
+          <button
+            className="login__button login__signin"
+            disabled={false}
+            onClick={[Function]}
+          >
+            Sign in
+          </button>
+        </div>
+      </div>
+      <div
+        className="login__forgotPass"
+      >
+        Or
+         
+        <a
+          className="aaaa"
+          href="/forgot_password"
+          onClick={[Function]}
+        >
+           
+          Forgot Password
+        </a>
+      </div>
+      <div
+        className="login__line"
+      />
+      <div
+        className="login__signup"
+      >
+        Don't have an account?
+        <a
+          className="login__signup-link"
+          href="/signup"
+          onClick={[Function]}
+        >
+          Sign Up
+        </a>
+      </div>
+    </div>
+    <div
+      className="login__footer"
+    >
+      <img
+        alt=""
+        src="small_logo.png"
+      />
+      <p
+        className="login__footer-content"
+      >
+        © 2024 
+        <b>
+          Cursus
+        </b>
+        . All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</div>
+`;
