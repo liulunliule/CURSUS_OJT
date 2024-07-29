@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ComingSoon renders ComingSoon component 1`] = `
-<div>
+exports[`renders Coming Soon component correctly 1`] = `
+<DocumentFragment>
   <div
     class="coming-soon-body"
   >
@@ -22,8 +22,7 @@ exports[`ComingSoon renders ComingSoon component 1`] = `
         <div
           class="time"
         >
-          305
-           
+          304 
           <span>
             Days
           </span>
@@ -31,8 +30,7 @@ exports[`ComingSoon renders ComingSoon component 1`] = `
         <div
           class="time"
         >
-          23
-           
+          9 
           <span>
             Hours
           </span>
@@ -40,8 +38,7 @@ exports[`ComingSoon renders ComingSoon component 1`] = `
         <div
           class="time"
         >
-          12
-           
+          32 
           <span>
             Minutes
           </span>
@@ -49,8 +46,7 @@ exports[`ComingSoon renders ComingSoon component 1`] = `
         <div
           class="time"
         >
-          26
-           
+          42 
           <span>
             Seconds
           </span>
@@ -76,5 +72,5 @@ exports[`ComingSoon renders ComingSoon component 1`] = `
       </div>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
