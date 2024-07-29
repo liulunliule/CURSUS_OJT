@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Instructor Profile Page 1`] = `
+<div
+  className="studio-dashboard-wrapper "
+/>
+`;
