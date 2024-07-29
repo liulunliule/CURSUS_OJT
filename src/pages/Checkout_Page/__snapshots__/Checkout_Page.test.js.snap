@@ -796,23 +796,14 @@ exports[`test Checkout Page 1`] = `
                 <div
                   className="order_title"
                 >
-                  <h4 />
-                  <div
-                    className="order_price"
-                  >
-                    $
-                  </div>
-                </div>
-                <div
-                  className="order_title"
-                >
                   <h6>
-                    Taxes(GST)
+                    Discount
                   </h6>
                   <div
                     className="order_price"
                   >
-                    $ 
+                    $
+                    0.00
                   </div>
                 </div>
                 <div
@@ -824,7 +815,8 @@ exports[`test Checkout Page 1`] = `
                   <div
                     className="order_price"
                   >
-                    $ 
+                    $
+                    0
                   </div>
                 </div>
                 <a
@@ -865,23 +857,27 @@ exports[`test Checkout Page 1`] = `
               <div
                 className="order_title"
               >
-                <h4 />
+                <h4>
+                  Original Price
+                </h4>
                 <div
                   className="order_price"
                 >
                   $
+                  0
                 </div>
               </div>
               <div
                 className="order_title"
               >
                 <h6>
-                  Taxes(GST)
+                  Discount
                 </h6>
                 <div
                   className="order_price"
                 >
                   $
+                  0.00
                 </div>
               </div>
               <div
@@ -893,7 +889,8 @@ exports[`test Checkout Page 1`] = `
                 <div
                   className="order_price5"
                 >
-                  $ 
+                  $
+                  0
                 </div>
               </div>
               <div

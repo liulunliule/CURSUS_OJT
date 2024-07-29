@@ -114,10 +114,10 @@ exports[`test Shopping_Cart Page 1`] = `
         className="col-lg-4"
       >
         <div
-          class="checkout_chk_bg stickytime"
+          className="checkout_chk_bg stickytime"
         >
           <div
-            class="checkout_title"
+            className="checkout_title"
           >
             <h4>
               Total
@@ -128,63 +128,66 @@ exports[`test Shopping_Cart Page 1`] = `
             />
           </div>
           <div
-            class="order_dt_section"
+            className="order_dt_section"
           >
             <div
-              class="order_title"
+              className="order_title"
             >
               <h4>
-                Orignal Price
+                Original Price
               </h4>
               <div
-                class="order_price"
+                className="order_price"
               >
-                $15
+                $
+                0
               </div>
             </div>
             <div
-              class="order_title"
+              className="order_title"
             >
               <h6>
-                Discount Price
+                Discount Price 
               </h6>
               <div
-                class="order_price"
+                className="order_price"
               >
-                $5
+                $
+                0.00
               </div>
             </div>
             <div
-              class="order_title"
+              className="order_title"
             >
               <h2>
                 Total
               </h2>
               <div
-                class="order_price5"
+                className="order_price5"
               >
-                $10
+                $
+                0
               </div>
             </div>
             <div
-              class="coupon_code"
+              className="coupon_code"
             >
               <p>
                 Learn now is applied.
               </p>
               <div
-                class="coupon_input"
+                className="coupon_input"
               >
                 <div
-                  class="UI search coupon_input_content"
+                  className="UI search coupon_input_content"
                 >
                   <div
-                    class="UI input panel-body_text_item"
+                    className="UI input panel-body_text_item"
                   >
                     <input
-                      class="prompt srch_explore"
+                      className="prompt srch_explore"
                       id="id_coupon_code"
-                      maxlength="6"
+                      maxLength="6"
                       name="couponcode"
                       placeholder="Enter Coupon Code"
                       required=""
@@ -193,7 +196,7 @@ exports[`test Shopping_Cart Page 1`] = `
                     />
                   </div>
                   <button
-                    class="code-apply-btn"
+                    className="code-apply-btn"
                     type="submit"
                   >
                     Apply
@@ -202,7 +205,7 @@ exports[`test Shopping_Cart Page 1`] = `
               </div>
             </div>
             <a
-              class="Checkout"
+              className="Checkout"
               href="/secondLayout/checkout_page"
               onClick={[Function]}
             >
