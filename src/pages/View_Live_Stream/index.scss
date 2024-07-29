@@ -147,10 +147,20 @@
     text-align: left;
 }
 
-.ongod a {
-    font-weight: 600;
-    margin-right: 10px;
-    color: #333!important;
+.ongod {
+    a {
+        font-weight: 600;
+        margin-right: 10px;
+        color: #333!important;
+    }
+
+    .chat{
+        span{
+            font-weight: 600;
+            margin-right: 10px;
+            color: #333!important;
+        }
+    }
 }
 
 .live_comment_section {
