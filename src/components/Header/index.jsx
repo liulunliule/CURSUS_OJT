@@ -32,7 +32,7 @@ function Header() {
   const [theme, toggleTheme] = useDarkMode();
   const userMessage = useSelector((state) => state.myHeader.messages);
   const userNotification = useSelector((state) => state.myHeader.notification);
-  const [showCreateButton, setShowCreateButton] = useState(false);
+  // const [showCreateButton, setShowCreateButton] = useState(false);
   const location = useLocation();
   const dispatch = useDispatch();
   const account = useSelector((state) => state.user.account);

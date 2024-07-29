@@ -197,7 +197,7 @@ function SidebarFrontend() {
             ) : null}
           </summary>
 
-          <div className="List_Select_Tests">
+          <div className={role === "" ? "hidden-content" : "List_Select_Tests"}>
             <ul className="Ul_List_Select_Tests_SideBar">
               <li className="Li_List_Select_Tests_SideBar">
                 <Link
@@ -239,6 +239,7 @@ function SidebarFrontend() {
             </ul>
           </div>
         </details>
+
         {role === true || role === false ? (
           <Link className="Link_SideBar" to="/saved_courses">
             <div className="select_SavedCourses">
