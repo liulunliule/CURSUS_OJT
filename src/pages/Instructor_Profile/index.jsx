@@ -60,7 +60,7 @@ const Instructor_Profile = () => {
   }
   const countCourse = userPosts.filter((post) => post.userId === userId);
   const countSubscription = subscriptions.filter(
-    (post) => post.userId === userId && post.subscriptionsed === true
+    (post) => post.userId === userId && post.registered === true
   );
   const courseCount = countCourse.length;
   const SubscriptionCount = countSubscription.length;
@@ -183,7 +183,7 @@ const Instructor_Profile = () => {
                         className="studio_link_btn btn_500"
                         onClick={() =>
                           (window.location.href =
-                            "/fourlayout/instructor_studio_dashboard")
+                            "/thirdlayout/instructor_studio_dashboard")
                         }
                       >
                         Cursus Studio

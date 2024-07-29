@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUserPosts } from "../../../redux/features/myProfileSlice"; // Adjust the import path if necessary
+import { fetchUserPosts } from "../../../redux/features/myProfileSlice"; 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import Play from "../../../assets/img/play-button.png";

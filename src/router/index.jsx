@@ -82,6 +82,7 @@ import Student_Studio_Dashboard from "../pages/Student_Studio_Dashboard";
 import Verification from "../pages/Verification";
 import ReviewsPageStudent from "../pages/ReviewsPageStudent";
 import Reset_password from "../pages/Forgot_password/Reset_password/reset_password";
+
 function Router() {
   const router = createBrowserRouter([
     {
@@ -433,7 +434,7 @@ function Router() {
       element: <Thanks_Page />,
     },
     {
-      path: "/error_page",
+      path: "*",
       element: <Error_Page />,
     },
     {
