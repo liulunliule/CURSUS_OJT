@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BlogDetailView renders BlogDetailView correctly 1`] = `
-<div>
+exports[`renders Blog Detail View component correctly 1`] = `
+<DocumentFragment>
   <div
     class="blog-detail"
   >
@@ -12,8 +12,8 @@ exports[`BlogDetailView renders BlogDetailView correctly 1`] = `
         Blog Title Here
       </h1>
       <a
-        href="/secondLayout/blog"
         class="back-to-blog"
+        href="/secondLayout/blog"
       >
         Back to Blog
       </a>
@@ -22,8 +22,8 @@ exports[`BlogDetailView renders BlogDetailView correctly 1`] = `
       class="blog-content"
     >
       <img
-        src="/path/to/BlogDetailImage"
         alt="Blog detail"
+        src="blog-detail-image.jpg"
       />
       <div
         class="blog-meta"
@@ -65,18 +65,18 @@ exports[`BlogDetailView renders BlogDetailView correctly 1`] = `
       class="pagination"
     >
       <a
-        href="#"
         class="previous"
+        href="#"
       >
         « Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </a>
       <a
-        href="#"
         class="next"
+        href="#"
       >
         Vestibulum vulputate nulla quis dignissim ultricies. »
       </a>
     </div>
   </div>
-</div>
+</DocumentFragment>
 `;
