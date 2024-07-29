@@ -70,6 +70,7 @@ exports[`test Invoice Page 1`] = `
                     <span>
                       Date :
                     </span>
+                    10 April 2020
                   </div>
                 </li>
                 <li>
@@ -89,6 +90,7 @@ exports[`test Invoice Page 1`] = `
                     <span>
                       Order ID :
                     </span>
+                    1258963487
                   </div>
                 </li>
               </ul>
@@ -237,7 +239,7 @@ exports[`test Invoice Page 1`] = `
                       <th
                         scope="col"
                       >
-                        Vat(20%)
+                        Discount
                       </th>
                       <th
                         scope="col"
@@ -247,44 +249,6 @@ exports[`test Invoice Page 1`] = `
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <th
-                        scope="row"
-                      >
-                        <div
-                          class="user_dt_trans"
-                        >
-                          <p />
-                        </div>
-                      </th>
-                      <td>
-                        <div
-                          class="user_dt_trans"
-                        >
-                          <p>
-                            $
-                          </p>
-                        </div>
-                      </td>
-                      <td>
-                        <div
-                          class="user_dt_trans"
-                        >
-                          <p>
-                            $
-                          </p>
-                        </div>
-                      </td>
-                      <td>
-                        <div
-                          class="user_dt_trans"
-                        >
-                          <p>
-                            $
-                          </p>
-                        </div>
-                      </td>
-                    </tr>
                     <tr>
                       <td
                         colspan="1"
@@ -299,7 +263,12 @@ exports[`test Invoice Page 1`] = `
                             class="invoice_total"
                           >
                             Invoice Total : USD $
+                            0.00
                           </div>
+                          <p>
+                            Total Discount : USD $
+                            0.00
+                          </p>
                           <p>
                             Paid via Paypal
                           </p>

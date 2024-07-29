@@ -11,7 +11,7 @@ const initialState = {
 // Define an async thunk for fetching shopping cart data
 export const addCartData = createAsyncThunk(
   'shoppingCart/addCartData', async ({ video, titilecourse, typecourse, author, price ,userId }) => {
-      const response = await axios.post('https://6696231a0312447373c1386e.mockapi.io/user/1/ShopingCart', {
+      const response = await axios.post('https://6696231a0312447373c1386e.mockapi.io/ShopingCart', {
         video,
         titilecourse,
         typecourse,
@@ -25,19 +25,22 @@ export const addCartData = createAsyncThunk(
 
 export const fetchShoppingCart = createAsyncThunk(
   'shoppingCart/fetchShoppingCart',
-  async () => {
-    const response = await axios.get('https://6696231a0312447373c1386e.mockapi.io/user/1/ShopingCart');
+  async (userId) => {
+    const response = await axios.get(`https://6696231a0312447373c1386e.mockapi.io/user/${userId}/ShopingCart`);
     return response.data;
   }
 );
 
 export const deleteCartItem = createAsyncThunk(
-    'shoppingCart/deleteCartItem',
-    async (itemId) => {
-      await axios.delete(`https://6696231a0312447373c1386e.mockapi.io/user/1/ShopingCart/${itemId}`);
-      return itemId;
-    }
-  );  
+  'shoppingCart/deleteCartItem',
+  async ({ userId, itemId }) => {
+    const url = `https://6696231a0312447373c1386e.mockapi.io/user/${userId}/ShopingCart/${itemId}`;
+    console.log("Deleting item with URL: ", url);
+    await axios.delete(url);
+    return itemId;
+  }
+);
+  
 
 // Create the slice
 const shoppingCartSlice = createSlice({

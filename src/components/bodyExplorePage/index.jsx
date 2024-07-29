@@ -10,7 +10,10 @@ import "./index.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCourse } from "../../redux/features/courseSlice";
 import { fetchUserPosts } from "../../redux/features/myProfileSlice";
-import { addCartData } from "../../redux/features/shoppingCartSlice";
+import {
+  addCartData,
+  fetchShoppingCart,
+} from "../../redux/features/shoppingCartSlice";
 import { message } from "antd";
 
 function BodyExplorePage() {
@@ -30,6 +33,7 @@ function BodyExplorePage() {
       await dispatch(
         addCartData({ video, titilecourse, typecourse, author, price, userId })
       ).unwrap();
+      dispatch(fetchShoppingCart(userId));
       message.success("Add Cart successfully");
       setIsClickable(false);
       navigate("/secondLayout/Shopping_cart");
