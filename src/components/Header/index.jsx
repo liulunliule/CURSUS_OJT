@@ -32,6 +32,7 @@ function Header() {
   const [theme, toggleTheme] = useDarkMode();
   const userMessage = useSelector((state) => state.myHeader.messages);
   const userNotification = useSelector((state) => state.myHeader.notification);
+  const items = useSelector((state) => state.shoppingCart.items);
   // const [showCreateButton, setShowCreateButton] = useState(false);
   const location = useLocation();
   const dispatch = useDispatch();
@@ -42,7 +43,7 @@ function Header() {
     if (userId) {
       dispatch(fetchUserMessage(userId));
       dispatch(fetchUserNotification(userId));
-      dispatch(fetchShoppingCart());
+      dispatch(fetchShoppingCart(userId));
     }
 
     // const showHeaderSecond = () => {
@@ -213,9 +214,7 @@ function Header() {
                 <Link to="/secondLayout/Shopping_cart">
                   <div className="icon-container">
                     <img src={cart} alt="Cart" className="icon-cart" />
-                    <span className="header-badge">
-                      {filteredUserMess.length}
-                    </span>
+                    <span className="header-badge">{items.length}</span>
                   </div>
                 </Link>
                 <div className="icon-container">

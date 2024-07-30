@@ -1,6 +1,6 @@
 import { ShoppingCartOutlined, StarOutlined } from "@ant-design/icons";
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import thumbnailCourse from "../../assets/img/thumbnail_live.jpg";
 import thumbnailCourse2 from "../../assets/img/thumbnail_live2.jpg";
 import thumbnailCourse3 from "../../assets/img/thumbnail_live3.jpg";
@@ -10,13 +10,37 @@ import "./index.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCourse } from "../../redux/features/courseSlice";
 import { fetchUserPosts } from "../../redux/features/myProfileSlice";
+import {
+  addCartData,
+  fetchShoppingCart,
+} from "../../redux/features/shoppingCartSlice";
+import { message } from "antd";
 
 function BodyExplorePage() {
+  const [isClickable, setIsClickable] = useState(true);
+  const navigate = useNavigate();
+  const account = useSelector((state) => state.user.account);
+  const userId = account.id || "";
   const dispatch = useDispatch();
   const userPosts = useSelector((state) => state.myProfile.userPosts);
   useEffect(() => {
     dispatch(fetchUserPosts());
   }, [dispatch]);
+  const handleAddCart = async (course) => {
+    if (!isClickable) return;
+    const { video, titilecourse, typecourse, author, price } = course;
+    try {
+      await dispatch(
+        addCartData({ video, titilecourse, typecourse, author, price, userId })
+      ).unwrap();
+      dispatch(fetchShoppingCart(userId));
+      message.success("Add Cart successfully");
+      setIsClickable(false);
+      navigate("/secondLayout/Shopping_cart");
+    } catch (error) {
+      message.error("Failed to Add Cart");
+    }
+  };
 
   return (
     <div className="bodyExplore">
@@ -83,7 +107,10 @@ function BodyExplorePage() {
                 </p>
                 <div className="price_course">
                   <Link>
-                    <ShoppingCartOutlined className="cart_course" />
+                    <ShoppingCartOutlined
+                      className="cart_course"
+                      onClick={() => handleAddCart(savedCourse)}
+                    />
                   </Link>
                   <div>${savedCourse.price}</div>
                 </div>

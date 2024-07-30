@@ -13,20 +13,28 @@ import { line } from "../../assets";
 import { Select } from "antd";
 import {
   fetchAddr,
-  fetchOrder,
   setAddr,
   updateAddress,
 } from "../../redux/features/checkoutSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { fetchShoppingCart } from "../../redux/features/shoppingCartSlice";
 
 const Checkout_Page = () => {
   const dispatch = useDispatch();
   const account = useSelector((state) => state.user.account);
+  const items = useSelector((state) => state.shoppingCart.items);
+
+  const userId = account.id;
   const [activeId, setActiveId] = useState(null);
   const [activeTab, setActiveTab] = useState("credit-tab");
+  const [discountPrice, setDiscountPrice] = useState(0);
+  const [originalPrice, setOriginalPrice] = useState(0);
 
   const { addr, order, status, error } = useSelector((state) => state.checkout);
+
+  const total = originalPrice - discountPrice.toFixed(2);
+  const discountPriceRounded = discountPrice.toFixed(2);
 
   const handleToggle = (id) => {
     setActiveId(activeId === id ? null : id);
@@ -291,7 +299,7 @@ const Checkout_Page = () => {
     e.preventDefault();
     try {
       await dispatch(
-        updateAddress({ userId: account?.id, addrId: addr?.id, addr })
+        updateAddress({ userId, addrId: addr?.id, addr })
       ).unwrap();
       console.log("Address updated successfully");
       toast.success("Address updated successfully!");
@@ -319,9 +327,17 @@ const Checkout_Page = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchOrder(account?.id));
-    dispatch(fetchAddr(account?.id));
-  }, [dispatch]);
+    dispatch(fetchShoppingCart(userId));
+    dispatch(fetchAddr(userId));
+    if (status === "succeeded") {
+      const totalPrice = items.reduce(
+        (sum, item) => sum + parseFloat(item.price),
+        0
+      );
+      setOriginalPrice(totalPrice);
+      setDiscountPrice(totalPrice * 0.2); // Apply 20% discount
+    }
+  }, [dispatch, userId, items]);
 
   return (
     <div className="Checkout_Page">
@@ -337,11 +353,6 @@ const Checkout_Page = () => {
                         <li className="breadcrumb-item">
                           <Link href="#">Home</Link>
                         </li>
-                        {/* <li className="breadcrumb-item">
-                          <Link to="/secondLayout/certification_center">
-                            {order.CourseName}
-                          </Link>
-                        </li> */}
                         <li
                           className="breadcrumb-item active"
                           aria-current="page"
@@ -942,29 +953,27 @@ const Checkout_Page = () => {
                     <h4>Order Details</h4>
                     <img src={line} alt="" />
                   </div>
-                  {order ? (
-                    <div className="order_dt_section">
+                  <div className="order_dt_section">
+                    {items.map((item) => (
                       <div className="order_title">
-                        <h4>{order.CourseName}</h4>
-                        <div className="order_price">${order.CoursePrice}</div>
+                        <h4>{item.titilecourse}</h4>
+                        <div className="order_price">${item.price}</div>
                       </div>
-                      <div className="order_title">
-                        <h6>Taxes(GST)</h6>
-                        <div className="order_price">$ {order.Taxes}</div>
-                      </div>
-                      <div className="order_title">
-                        <h4>Total</h4>
-                        <div className="order_price">$ {order.amount}</div>
-                      </div>
-                      <Link to="/invoice_page">
-                        <button className="chckot_btn" type="submit">
-                          Confirm Checkout
-                        </button>
-                      </Link>
+                    ))}
+                    <div className="order_title">
+                      <h6>Discount</h6>
+                      <div className="order_price">${discountPriceRounded}</div>
                     </div>
-                  ) : (
-                    <div>Load Order Detail...</div>
-                  )}
+                    <div className="order_title">
+                      <h4>Total</h4>
+                      <div className="order_price">${total}</div>
+                    </div>
+                    <Link to="/invoice_page">
+                      <button className="chckot_btn" type="submit">
+                        Confirm Checkout
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -974,19 +983,22 @@ const Checkout_Page = () => {
                   <h4>Order Summary</h4>
                   <img src={line} alt="" />
                 </div>
-                {order ? (
+                {items ? (
                   <div className="order_dt_section">
                     <div className="order_title">
-                      <h4>{order.CourseName}</h4>
-                      <div className="order_price">${order.CoursePrice}</div>
+                      {(items.length > 1 || !items.length) && (
+                        <h4>Original Price</h4>
+                      )}
+                      {items.length == 1 && <h4>{items[0].titilecourse}</h4>}
+                      <div className="order_price">${originalPrice}</div>
                     </div>
                     <div className="order_title">
-                      <h6>Taxes(GST)</h6>
-                      <div className="order_price">${order.Taxes}</div>
+                      <h6>Discount</h6>
+                      <div className="order_price">${discountPriceRounded}</div>
                     </div>
                     <div className="order_title">
                       <h2>Total</h2>
-                      <div className="order_price5">$ {order.amount}</div>
+                      <div className="order_price5">${total}</div>
                     </div>
                     <div className="scr_text">
                       <FontAwesomeIcon

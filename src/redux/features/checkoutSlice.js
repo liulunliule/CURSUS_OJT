@@ -1,14 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Thunks to fetch and update data
-export const fetchOrder = createAsyncThunk(
-  'checkout/fetchOrder',
-  async (userId) => {
-    const response = await axios.get(`https://6696231a0312447373c1386e.mockapi.io/user/${userId}/Order/1`);
-    return response.data;
-  }
-);
+// // Thunks to fetch and update data
+// export const fetchOrder = createAsyncThunk(
+//   'checkout/fetchOrder',
+//   async (userId) => {
+//     const response = await axios.get(`https://6696231a0312447373c1386e.mockapi.io/user/${userId}/Order/1`);
+//     return response.data;
+//   }
+// );
 
 export const fetchAddr = createAsyncThunk(
   'checkout/fetchAddr',
@@ -54,17 +54,6 @@ const checkoutSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchOrder.pending, (state) => {
-        state.status = 'loading';
-      })
-      .addCase(fetchOrder.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.order = action.payload;
-      })
-      .addCase(fetchOrder.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.error.message;
-      })
       .addCase(fetchAddr.pending, (state) => {
         state.status = 'loading';
       })
