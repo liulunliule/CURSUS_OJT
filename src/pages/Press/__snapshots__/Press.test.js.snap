@@ -1,257 +1,145 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Press Component handles navigation correctly 1`] = `
-<div class="press-page">
-  <header class="custom-header" style="background-color: #f8f8f8;">
-    <nav class="custom-nav">
-      <ul class="custom-ul">
-        <li class="custom-li selected">
+exports[`test Press 1`] = `
+<div
+  className="press-page"
+>
+  <header
+    className="custom-header"
+    style={
+      Object {
+        "backgroundColor": "#f8f8f8",
+      }
+    }
+  >
+    <nav
+      className="custom-nav"
+    >
+      <ul
+        className="custom-ul"
+      >
+        <li
+          className="custom-li "
+          onClick={[Function]}
+        >
           About
         </li>
-        <li class="custom-li">
+        <li
+          className="custom-li "
+          onClick={[Function]}
+        >
           Blog
         </li>
-        <li class="custom-li">
+        <li
+          className="custom-li "
+          onClick={[Function]}
+        >
           Company
         </li>
-        <li class="custom-li">
+        <li
+          className="custom-li "
+          onClick={[Function]}
+        >
           Careers
         </li>
-        <li class="custom-li">
+        <li
+          className="custom-li selected"
+          onClick={[Function]}
+        >
           Press
         </li>
       </ul>
     </nav>
   </header>
-  <section class="hero" style="background-color: #f8f8f8;">
+  <section
+    className="hero"
+    style={
+      Object {
+        "backgroundColor": "#f8f8f8",
+      }
+    }
+  >
     <h1>
       What others are saying
     </h1>
   </section>
-  <div class="content">
-    <div class="sidebar">
-      <div class="follow-buttons">
-        <button class="follow1">
+  <div
+    className="content"
+  >
+    <div
+      className="sidebar"
+    >
+      <div
+        className="follow-buttons"
+      >
+        <button
+          className="follow1"
+        >
           Follow our Facebook page
         </button>
-        <button class="follow2">
+        <button
+          className="follow2"
+        >
           Follow our X page
         </button>
       </div>
-      <a class="learn-more" href="#">
+      <a
+        className="learn-more"
+        href="#"
+      >
         Learn More
       </a>
-      <a class="help-center" href="#">
+      <a
+        className="help-center"
+        href="#"
+      >
         Cursus Help Center
       </a>
     </div>
-    <div class="right-section">
-      <div class="news-section">
+    <div
+      className="right-section"
+    >
+      <div
+        className="news-section"
+      >
         <h2>
           Cursus in the News
         </h2>
         <p>
-          For media interviews and inquiries, please send an email to 
-          <a href="mailto:press@cursus.com">
+          For media interviews and inquiries, please send an email to
+           
+          <a
+            href="mailto:press@cursus.com"
+          >
             press@cursus.com
           </a>
         </p>
-        <div class="news-items">
-          <div class="news-item">
-            <p>
-              2023-07-27
-            </p>
-            <h3>
-              News Title 1
-            </h3>
-            <p>
-              News Intro 1
-            </p>
-            <a href="#">
-              Read More
-            </a>
-          </div>
-          <div class="news-item">
-            <p>
-              2023-07-28
-            </p>
-            <h3>
-              News Title 2
-            </h3>
-            <p>
-              News Intro 2
-            </p>
-            <a href="#">
-              Read More
-            </a>
-          </div>
-        </div>
-        <a class="see-more" href="#">
+        <div
+          className="news-items"
+        />
+        <a
+          className="see-more"
+          href="#"
+        >
           See More News
         </a>
       </div>
-      <div class="releases-section">
+      <div
+        className="releases-section"
+      >
         <h2>
           Press Releases
         </h2>
         <p>
           For Release from Cursus
         </p>
-        <div class="release-items">
-          <div class="release-item">
-            <p>
-              2023-07-27
-            </p>
-            <h3>
-              Release Title 1
-            </h3>
-          </div>
-          <div class="release-item">
-            <p>
-              2023-07-28
-            </p>
-            <h3>
-              Release Title 2
-            </h3>
-          </div>
-        </div>
-        <a class="see-more" href="#">
-          See More Press Releases
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Press Component renders error state 1`] = `
-<div>
-  Error: Failed to fetch data
-</div>
-`;
-
-exports[`Press Component renders loading state 1`] = `
-<div>
-  Loading...
-</div>
-`;
-
-exports[`Press Component renders press data correctly 1`] = `
-<div class="press-page">
-  <header class="custom-header" style="background-color: #f8f8f8;">
-    <nav class="custom-nav">
-      <ul class="custom-ul">
-        <li class="custom-li">
-          About
-        </li>
-        <li class="custom-li">
-          Blog
-        </li>
-        <li class="custom-li">
-          Company
-        </li>
-        <li class="custom-li">
-          Careers
-        </li>
-        <li class="custom-li selected">
-          Press
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <section class="hero" style="background-color: #f8f8f8;">
-    <h1>
-      What others are saying
-    </h1>
-  </section>
-  <div class="content">
-    <div class="sidebar">
-      <div class="follow-buttons">
-        <button class="follow1">
-          Follow our Facebook page
-        </button>
-        <button class="follow2">
-          Follow our X page
-        </button>
-      </div>
-      <a class="learn-more" href="#">
-        Learn More
-      </a>
-      <a class="help-center" href="#">
-        Cursus Help Center
-      </a>
-    </div>
-    <div class="right-section">
-      <div class="news-section">
-        <h2>
-          Cursus in the News
-        </h2>
-        <p>
-          For media interviews and inquiries, please send an email to 
-          <a href="mailto:press@cursus.com">
-            press@cursus.com
-          </a>
-        </p>
-        <div class="news-items">
-          <div class="news-item">
-            <p>
-              2023-07-27
-            </p>
-            <h3>
-              News Title 1
-            </h3>
-            <p>
-              News Intro 1
-            </p>
-            <a href="#">
-              Read More
-            </a>
-          </div>
-          <div class="news-item">
-            <p>
-              2023-07-28
-            </p>
-            <h3>
-              News Title 2
-            </h3>
-            <p>
-              News Intro 2
-            </p>
-            <a href="#">
-              Read More
-            </a>
-          </div>
-        </div>
-        <a class="see-more" href="#">
-          See More News
-        </a>
-      </div>
-      <div class="releases-section">
-        <h2>
-          Press Releases
-        </h2>
-        <p>
-          For Release from Cursus
-        </p>
-        <div class="release-items">
-          <div class="release-item">
-            <p>
-              2023-07-27
-            </p>
-            <h3>
-              Release Title 1
-            </h3>
-          </div>
-          <div class="release-item">
-            <p>
-              2023-07-28
-            </p>
-            <h3>
-              Release Title 2
-            </h3>
-          </div>
-        </div>
-        <a class="see-more" href="#">
+        <div
+          className="release-items"
+        />
+        <a
+          className="see-more"
+          href="#"
+        >
           See More Press Releases
         </a>
       </div>
