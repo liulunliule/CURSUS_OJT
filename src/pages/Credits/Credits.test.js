@@ -1,0 +1,18 @@
+import React from 'react';
+import renderer from 'react-test-renderer';
+import '@testing-library/jest-dom/extend-expect';
+import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router-dom';
+import { store } from '../../redux/store';
+import Credits from '.';
+
+test('test Credits', () => {
+  const tree = renderer.create(
+    <Provider store={store}>
+        <MemoryRouter>
+            <Credits/>
+        </MemoryRouter>
+    </Provider>
+  ).toJSON();
+  expect(tree).toMatchSnapshot();
+});
