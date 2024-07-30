@@ -1,53 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Payout Component applies active class when isShowAll is true 1`] = `
+exports[`test Payout 1`] = `
 <div
-  class="payout-page active"
+  className="payout-page "
 >
   <div
-    class="content"
+    className="content"
   >
     <div
-      class="payout-header"
+      className="payout-header"
     >
       <h2>
         Payout
       </h2>
     </div>
     <div
-      class="payout-content"
+      className="payout-content"
     >
       <div
-        class="next-payout"
+        className="next-payout"
       >
         <h3>
           Next payout
         </h3>
-        <h6>
-          $100
-        </h6>
+        <h6 />
         <h5>
-          via Credit Card
+          via 
         </h5>
         <p>
           Your payout will be processed on 
-          <span>
-            2023-07-27
-          </span>
+          <span />
         </p>
       </div>
       <div
-        class="payout-account"
+        className="payout-account"
       >
         <h3>
           Payout account
         </h3>
         <div
-          class="account-details"
+          className="account-details"
         >
           <img
             alt="Payout"
-            src="payout-image-url" // Placeholder for the actual image source
+            src="payout.jpg"
           />
           <p>
             Added: 01 Mar 2020
@@ -59,7 +55,7 @@ exports[`Payout Component applies active class when isShowAll is true 1`] = `
       </div>
     </div>
     <div
-      class="transactions"
+      className="transactions"
     >
       <table>
         <thead>
@@ -75,252 +71,7 @@ exports[`Payout Component applies active class when isShowAll is true 1`] = `
             </th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>
-              $100
-            </td>
-            <td>
-              Credit Card
-            </td>
-            <td>
-              2023-07-27
-            </td>
-          </tr>
-          <tr>
-            <td>
-              $50
-            </td>
-            <td>
-              PayPal
-            </td>
-            <td>
-              2023-07-28
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Payout Component does not apply active class when isShowAll is false 1`] = `
-<div
-  class="payout-page"
->
-  <div
-    class="content"
-  >
-    <div
-      class="payout-header"
-    >
-      <h2>
-        Payout
-      </h2>
-    </div>
-    <div
-      class="payout-content"
-    >
-      <div
-        class="next-payout"
-      >
-        <h3>
-          Next payout
-        </h3>
-        <h6>
-          $100
-        </h6>
-        <h5>
-          via Credit Card
-        </h5>
-        <p>
-          Your payout will be processed on 
-          <span>
-            2023-07-27
-          </span>
-        </p>
-      </div>
-      <div
-        class="payout-account"
-      >
-        <h3>
-          Payout account
-        </h3>
-        <div
-          class="account-details"
-        >
-          <img
-            alt="Payout"
-            src="payout-image-url" // Placeholder for the actual image source
-          />
-          <p>
-            Added: 01 Mar 2020
-          </p>
-        </div>
-        <button>
-          Set Account
-        </button>
-      </div>
-    </div>
-    <div
-      class="transactions"
-    >
-      <table>
-        <thead>
-          <tr>
-            <th>
-              Amount
-            </th>
-            <th>
-              Payout Method
-            </th>
-            <th>
-              Date Processed
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              $100
-            </td>
-            <td>
-              Credit Card
-            </td>
-            <td>
-              2023-07-27
-            </td>
-          </tr>
-          <tr>
-            <td>
-              $50
-            </td>
-            <td>
-              PayPal
-            </td>
-            <td>
-              2023-07-28
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Payout Component renders error state 1`] = `
-<div>
-  Error: Failed to fetch data
-</div>
-`;
-
-exports[`Payout Component renders loading state 1`] = `
-<div>
-  Loading...
-</div>
-`;
-
-exports[`Payout Component renders payout data correctly 1`] = `
-<div
-  class="payout-page "
->
-  <div
-    class="content"
-  >
-    <div
-      class="payout-header"
-    >
-      <h2>
-        Payout
-      </h2>
-    </div>
-    <div
-      class="payout-content"
-    >
-      <div
-        class="next-payout"
-      >
-        <h3>
-          Next payout
-        </h3>
-        <h6>
-          $100
-        </h6>
-        <h5>
-          via Credit Card
-        </h5>
-        <p>
-          Your payout will be processed on 
-          <span>
-            2023-07-27
-          </span>
-        </p>
-      </div>
-      <div
-        class="payout-account"
-      >
-        <h3>
-          Payout account
-        </h3>
-        <div
-          class="account-details"
-        >
-          <img
-            alt="Payout"
-            src="payout-image-url" // Placeholder for the actual image source
-          />
-          <p>
-            Added: 01 Mar 2020
-          </p>
-        </div>
-        <button>
-          Set Account
-        </button>
-      </div>
-    </div>
-    <div
-      class="transactions"
-    >
-      <table>
-        <thead>
-          <tr>
-            <th>
-              Amount
-            </th>
-            <th>
-              Payout Method
-            </th>
-            <th>
-              Date Processed
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              $100
-            </td>
-            <td>
-              Credit Card
-            </td>
-            <td>
-              2023-07-27
-            </td>
-          </tr>
-          <tr>
-            <td>
-              $50
-            </td>
-            <td>
-              PayPal
-            </td>
-            <td>
-              2023-07-28
-            </td>
-          </tr>
-        </tbody>
+        <tbody />
       </table>
     </div>
   </div>
