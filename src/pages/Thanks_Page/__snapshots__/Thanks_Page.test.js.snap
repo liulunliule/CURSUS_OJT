@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders error page component correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="thanks-page thanks-page-wrapper"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-md-12"
+        >
+          <div
+            class="thanks-content-group"
+          >
+            <div
+              class="thanks-logo"
+            >
+              <a
+                href="index.html"
+              >
+                <img
+                  alt="Logo"
+                  src="logo_dark.svg"
+                />
+              </a>
+            </div>
+            <div
+              class="thanks-message"
+            >
+              <h1
+                class="thanks-title"
+              >
+                Thank You
+              </h1>
+              <h4
+                class="thanks-subtitle"
+              >
+                Your Order is Confirmed!
+              </h4>
+              <p
+                class="thanks-description"
+              >
+                Top Print Your Booking Order No.
+                <span>
+                   #ABE-ME-12345678
+                </span>
+                 (Invoice) - 
+                <a
+                  href="#"
+                >
+                  Click Here
+                </a>
+              </p>
+            </div>
+            <div
+              class="thanks-footer"
+            >
+              <div
+                class="thanks-footer-left"
+              >
+                <ul>
+                  <li>
+                    <a
+                      href="#"
+                    >
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                    >
+                      Press
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                    >
+                      Contact Us
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                    >
+                      Advertise
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                    >
+                      Developers
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                    >
+                      Copyright
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                    >
+                      Privacy Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                    >
+                      Terms
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="thanks-footer-right"
+              >
+                <p>
+                  © 2024 
+                  <strong>
+                    Cursus
+                  </strong>
+                  . All Rights Reserved.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

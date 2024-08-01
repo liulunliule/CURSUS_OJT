@@ -17,18 +17,16 @@ const Subscriptions = () => {
   const userId = account.id || "";
 
   useEffect(() => {
-      dispatch(fetchSubscriptions());
+    dispatch(fetchSubscriptions());
   }, [dispatch]);
 
   const filteredUserSub = subscriptions.filter(
-    (post) => post.userId === userId && post.subscriptionsed === true
+    (post) => post.userId === userId && post.registered === true
   );
 
   const handleUpdate = (id) => {
     const updatedDataSubscriptions = { subscriptionsed: false };
-    dispatch(
-      fetchUpdateSubscriptions({ id, updatedDataSubscriptions })
-    );
+    dispatch(fetchUpdateSubscriptions({ id, updatedDataSubscriptions }));
     toast.success("Subscription removed successfully!!!");
   };
 

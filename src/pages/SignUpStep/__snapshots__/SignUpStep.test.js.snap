@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test SignUpStep Page 1`] = `
+<div>
+  <div
+    className="signUpStep"
+  >
+    <img
+      alt=""
+      className="signUpStep__logo"
+      src="logo.svg"
+    />
+    <div
+      className="signUpStep__main main"
+    >
+      <div
+        className="signUpStep__switch-wrap"
+      >
+        <div
+          className="signUpStep__switch"
+        >
+          <input
+            className="signUpStep__switch-input"
+            defaultChecked={true}
+            hidden={true}
+            id="signUpStep-switch"
+            name="signUpOption"
+            onClick={[Function]}
+            type="radio"
+          />
+          <label
+            className="signUpStep__switch-label"
+            htmlFor="signUpStep-switch"
+          >
+            <span
+              className="signUpStep__switch-value"
+            >
+              Instructor Sign Up
+            </span>
+          </label>
+        </div>
+        <div
+          className="signUpStep__switch"
+        >
+          <input
+            className="signUpStep__switch-input"
+            defaultChecked={false}
+            hidden={true}
+            id="signUpStep-switch2"
+            name="signUpOption"
+            onClick={[Function]}
+            type="radio"
+          />
+          <label
+            className="signUpStep__switch-label"
+            htmlFor="signUpStep-switch2"
+          >
+            <span
+              className="signUpStep__switch-value"
+            >
+              Student Sign Up
+            </span>
+          </label>
+        </div>
+      </div>
+      <form
+        className="signUpStep__form"
+        onSubmit={[Function]}
+      >
+        <div
+          className="signUpStep__select"
+        >
+          <div
+            className="ant-select ant-select-outlined custom-select css-dev-only-do-not-override-1uq9j6g ant-select-single ant-select-show-arrow ant-select-show-search"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            style={
+              Object {
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className="ant-select-selector"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+            >
+              <span
+                className="ant-select-selection-search"
+              >
+                <input
+                  aria-autocomplete="list"
+                  aria-controls="undefined_list"
+                  aria-expanded={false}
+                  aria-haspopup="listbox"
+                  aria-owns="undefined_list"
+                  autoComplete="off"
+                  className="ant-select-selection-search-input"
+                  disabled={false}
+                  onChange={[Function]}
+                  onCompositionEnd={[Function]}
+                  onCompositionStart={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  onPaste={[Function]}
+                  readOnly={false}
+                  role="combobox"
+                  style={
+                    Object {
+                      "opacity": null,
+                    }
+                  }
+                  type="search"
+                  unselectable={null}
+                  value=""
+                />
+              </span>
+              <span
+                className="ant-select-selection-placeholder"
+              >
+                Search Category
+              </span>
+            </div>
+            <span
+              aria-hidden={true}
+              className="ant-select-arrow"
+              onMouseDown={[Function]}
+              style={
+                Object {
+                  "WebkitUserSelect": "none",
+                  "userSelect": "none",
+                }
+              }
+              unselectable="on"
+            >
+              <span
+                aria-label="down"
+                className="anticon anticon-down ant-select-suffix"
+                role="img"
+              >
+                <svg
+                  aria-hidden="true"
+                  data-icon="down"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                  />
+                </svg>
+              </span>
+            </span>
+          </div>
+        </div>
+        <div
+          className="signUpStep__textArea"
+        >
+          <textarea
+            className="ant-input css-dev-only-do-not-override-1uq9j6g ant-input-outlined"
+            disabled={false}
+            maxLength={12000}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onCompositionEnd={[Function]}
+            onCompositionStart={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Write a little description about you..."
+            rows={3}
+            style={
+              Object {
+                "resize": undefined,
+              }
+            }
+            value=""
+          />
+        </div>
+        <p
+          className="signUpStep__limit"
+        >
+          Your biography should have at least 12000 characters.
+        </p>
+        <button
+          className="signUpStep__btn button"
+          type="submit"
+        >
+          Sign Up Now
+        </button>
+        <div
+          className="signUpStep__signup"
+        >
+          Already have an account?
+          <a
+            href="/login"
+            onClick={[Function]}
+          >
+            Log In
+          </a>
+        </div>
+      </form>
+    </div>
+    <div
+      className="signup__footer"
+    >
+      <img
+        alt=""
+        src="small_logo.png"
+      />
+      <p
+        className="login__footer-content"
+      >
+        © 2024 
+        <b>
+          Cursus
+        </b>
+        . All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</div>
+`;

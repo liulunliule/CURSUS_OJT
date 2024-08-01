@@ -1,0 +1,930 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Checkout Page 1`] = `
+<div
+  className="Checkout_Page"
+>
+  <div
+    className="toolbar_certification"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-12"
+        >
+          <div
+            className="toolbar_title"
+          >
+            <div
+              className="titleleft"
+            >
+              <div
+                className="toolbar_title_item"
+              >
+                <nav
+                  aria-label="breadcrumb"
+                >
+                  <ol
+                    className="breadcrumb"
+                  >
+                    <li
+                      className="breadcrumb-item"
+                    >
+                      <a
+                        href="/"
+                        onClick={[Function]}
+                      >
+                        Home
+                      </a>
+                    </li>
+                    <li
+                      aria-current="page"
+                      className="breadcrumb-item active"
+                    >
+                      Certification Fill Form
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <div
+              className="titleright"
+            >
+              <a
+                className="blog_link"
+                href="/secondLayout/certification_center"
+                onClick={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angles-left "
+                  data-icon="angles-left"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+                 Back to Certification Center
+              </a>
+            </div>
+          </div>
+          <div
+            className="main_title"
+          >
+            <h2>
+              Certification Fill Form
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="body_checkout_page"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-8"
+        >
+          <div
+            className="checkout_chk_bg"
+          >
+            <div>
+              <div
+                className="checkout_title"
+              >
+                <h4>
+                  Billing Details
+                </h4>
+                <img
+                  alt=""
+                  src="line.svg"
+                />
+              </div>
+              <div
+                aria-multiselectable="true"
+                className="panel-group"
+                id="accordion"
+                role="tablist"
+              >
+                <div
+                  className="panel-default"
+                >
+                  <div
+                    className="panel-heading"
+                    id="address1"
+                    role="tab"
+                  >
+                    <div
+                      className="panel-title"
+                    >
+                      <div
+                        className="link collapsed"
+                        onClick={[Function]}
+                      >
+                        Edit Address
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="address_text"
+              >
+                 
+                <br />
+                <br />
+                 
+                <br />
+                 Road.
+                <br />
+                 
+                , 
+                , 
+                <br />
+                 
+              </div>
+            </div>
+          </div>
+          <div
+            className="checkout_chk_bg"
+          >
+            <div
+              className="checkout_title"
+            >
+              <h4>
+                Select Payment Method
+              </h4>
+              <img
+                alt=""
+                src="line.svg"
+              />
+            </div>
+            <div
+              className="checkout-tabs"
+            >
+              <ul
+                className="nav nav-tabs"
+                id="myTab"
+                role="tablist"
+              >
+                <li
+                  className="nav-item"
+                  role="presentation"
+                >
+                  <button
+                    aria-selected={true}
+                    className="nav-link active"
+                    data-bs-toggle="tab"
+                    id="credit-tab"
+                    onClick={[Function]}
+                    role="tab"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-credit-card "
+                      data-icon="credit-card"
+                      data-prefix="far"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "marginRight": 5,
+                        }
+                      }
+                      viewBox="0 0 576 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M512 80c8.8 0 16 7.2 16 16l0 32L48 128l0-32c0-8.8 7.2-16 16-16l448 0zm16 144l0 192c0 8.8-7.2 16-16 16L64 432c-8.8 0-16-7.2-16-16l0-192 480 0zM64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24l48 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-48 0zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24l112 0c13.3 0 24-10.7 24-24s-10.7-24-24-24l-112 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Credit/Debit Card
+                  </button>
+                </li>
+                <li
+                  className="nav-item"
+                  role="presentation"
+                >
+                  <button
+                    aria-selected={false}
+                    className="nav-link "
+                    data-bs-toggle="tab"
+                    id="bank-tab"
+                    onClick={[Function]}
+                    role="tab"
+                    tabIndex={-1}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-building-columns "
+                      data-icon="building-columns"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "marginRight": 5,
+                        }
+                      }
+                      viewBox="0 0 512 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M243.4 2.6l-224 96c-14 6-21.8 21-18.7 35.8S16.8 160 32 160l0 8c0 13.3 10.7 24 24 24l400 0c13.3 0 24-10.7 24-24l0-8c15.2 0 28.3-10.7 31.3-25.6s-4.8-29.9-18.7-35.8l-224-96c-8-3.4-17.2-3.4-25.2 0zM128 224l-64 0 0 196.3c-.6 .3-1.2 .7-1.8 1.1l-48 32c-11.7 7.8-17 22.4-12.9 35.9S17.9 512 32 512l448 0c14.1 0 26.5-9.2 30.6-22.7s-1.1-28.1-12.9-35.9l-48-32c-.6-.4-1.2-.7-1.8-1.1L448 224l-64 0 0 192-40 0 0-192-64 0 0 192-48 0 0-192-64 0 0 192-40 0 0-192zM256 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Bank Transfer
+                  </button>
+                </li>
+                <li
+                  className="nav-item"
+                  role="presentation"
+                >
+                  <button
+                    aria-selected={false}
+                    className="nav-link "
+                    data-bs-toggle="tab"
+                    id="paypal-tab"
+                    onClick={[Function]}
+                    role="tab"
+                    tabIndex={-1}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-paypal "
+                      data-icon="paypal"
+                      data-prefix="fab"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "marginRight": 5,
+                        }
+                      }
+                      viewBox="0 0 384 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M111.4 295.9c-3.5 19.2-17.4 108.7-21.5 134-.3 1.8-1 2.5-3 2.5H12.3c-7.6 0-13.1-6.6-12.1-13.9L58.8 46.6c1.5-9.6 10.1-16.9 20-16.9 152.3 0 165.1-3.7 204 11.4 60.1 23.3 65.6 79.5 44 140.3-21.5 62.6-72.5 89.5-140.1 90.3-43.4.7-69.5-7-75.3 24.2zM357.1 152c-1.8-1.3-2.5-1.8-3 1.3-2 11.4-5.1 22.5-8.8 33.6-39.9 113.8-150.5 103.9-204.5 103.9-6.1 0-10.1 3.3-10.9 9.4-22.6 140.4-27.1 169.7-27.1 169.7-1 7.1 3.5 12.9 10.6 12.9h63.5c8.6 0 15.7-6.3 17.4-14.9.7-5.4-1.1 6.1 14.4-91.3 4.6-22 14.3-19.7 29.3-19.7 71 0 126.4-28.8 142.9-112.3 6.5-34.8 4.6-71.4-23.8-92.6z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Paypal
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div
+              className="tab-content"
+            >
+              <div
+                aria-labelledby="credit-tab"
+                className="tab-pane fade active show"
+                id="credit-method-tab"
+                role="tabpanel"
+              >
+                <form
+                  className="basic_form title"
+                >
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="col-md-6"
+                    >
+                      <div
+                        className="UI search panel-body_text"
+                      >
+                        <label>
+                          Holder Name
+                        </label>
+                        <div
+                          className="UI input panel-body_text_item"
+                        >
+                          <input
+                            className="prompt srch_explore"
+                            id="id_holdername"
+                            maxLength="64"
+                            name="holder[name]"
+                            placeholder="Enter Holder Name"
+                            required=""
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="col-md-6"
+                    >
+                      <div
+                        className="UI search panel-body_text"
+                      >
+                        <label>
+                          Card Number
+                        </label>
+                        <div
+                          className="UI input panel-body_text_item"
+                        >
+                          <input
+                            className="prompt srch_explore"
+                            maxLength="16"
+                            name="card[number]"
+                            placeholder="Card #"
+                            type="text"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="col-md-4"
+                    >
+                      <div
+                        className="panel-body_text"
+                      >
+                        <label>
+                          Expiration Month
+                        </label>
+                        <div
+                          className="ant-select ant-select-outlined css-dev-only-do-not-override-1uq9j6g ant-select-single ant-select-show-arrow ant-select-show-search"
+                          onBlur={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          style={
+                            Object {
+                              "height": 40,
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <div
+                            className="ant-select-selector"
+                            onClick={[Function]}
+                            onMouseDown={[Function]}
+                          >
+                            <span
+                              className="ant-select-selection-search"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-controls="undefined_list"
+                                aria-expanded={false}
+                                aria-haspopup="listbox"
+                                aria-owns="undefined_list"
+                                autoComplete="off"
+                                className="ant-select-selection-search-input"
+                                disabled={false}
+                                onChange={[Function]}
+                                onCompositionEnd={[Function]}
+                                onCompositionStart={[Function]}
+                                onKeyDown={[Function]}
+                                onMouseDown={[Function]}
+                                onPaste={[Function]}
+                                readOnly={false}
+                                role="combobox"
+                                style={
+                                  Object {
+                                    "opacity": null,
+                                  }
+                                }
+                                type="search"
+                                unselectable={null}
+                                value=""
+                              />
+                            </span>
+                            <span
+                              className="ant-select-selection-placeholder"
+                            >
+                              Month
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden={true}
+                            className="ant-select-arrow"
+                            onMouseDown={[Function]}
+                            style={
+                              Object {
+                                "WebkitUserSelect": "none",
+                                "userSelect": "none",
+                              }
+                            }
+                            unselectable="on"
+                          >
+                            <span
+                              aria-label="down"
+                              className="anticon anticon-down ant-select-suffix"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="col-md-4"
+                    >
+                      <div
+                        className="UI search panel-body_text"
+                      >
+                        <label>
+                          Expiration Year
+                        </label>
+                        <div
+                          className="UI input panel-body_text_item"
+                        >
+                          <input
+                            className="prompt srch_explore"
+                            maxLength="4"
+                            name="card[expire-year]"
+                            placeholder="Year"
+                            type="text"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="col-md-4"
+                    >
+                      <div
+                        className="UI search panel-body_text"
+                      >
+                        <label>
+                          Expiration CVC
+                        </label>
+                        <div
+                          className="UI input panel-body_text_item"
+                        >
+                          <input
+                            className="prompt srch_explore"
+                            maxLength="3"
+                            name="card[cvc]"
+                            placeholder="CVC"
+                            type="text"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div
+                aria-labelledby="bank-tab"
+                className="tab-pane fade "
+                id="bank-method-tab"
+                role="tabpanel"
+              >
+                <form>
+                  <div
+                    className="row"
+                  >
+                    <div
+                      className="col-md-6"
+                    >
+                      <div
+                        className="UI search panel-body_text"
+                      >
+                        <label>
+                          Account Holder Name
+                        </label>
+                        <div
+                          className="UI input panel-body_text_item"
+                        >
+                          <input
+                            className="prompt srch_explore"
+                            maxLength="64"
+                            name="account[holdername]"
+                            placeholder="Enter Your Full Name"
+                            required=""
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="col-md-6"
+                    >
+                      <div
+                        className="UI search panel-body_text"
+                      >
+                        <label>
+                          Account Number
+                        </label>
+                        <div
+                          className="UI input panel-body_text_item"
+                        >
+                          <input
+                            className="prompt srch_explore"
+                            maxLength="10"
+                            name="account[number]"
+                            placeholder="Enter Account Number"
+                            type="text"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="col-md-6"
+                    >
+                      <div
+                        className="panel-body_text"
+                      >
+                        <label>
+                          Bank Name
+                        </label>
+                        <div
+                          className="ant-select ant-select-outlined css-dev-only-do-not-override-1uq9j6g ant-select-single ant-select-show-arrow ant-select-show-search"
+                          onBlur={[Function]}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          style={
+                            Object {
+                              "height": 40,
+                              "width": "100%",
+                            }
+                          }
+                        >
+                          <div
+                            className="ant-select-selector"
+                            onClick={[Function]}
+                            onMouseDown={[Function]}
+                          >
+                            <span
+                              className="ant-select-selection-search"
+                            >
+                              <input
+                                aria-autocomplete="list"
+                                aria-controls="undefined_list"
+                                aria-expanded={false}
+                                aria-haspopup="listbox"
+                                aria-owns="undefined_list"
+                                autoComplete="off"
+                                className="ant-select-selection-search-input"
+                                disabled={false}
+                                onChange={[Function]}
+                                onCompositionEnd={[Function]}
+                                onCompositionStart={[Function]}
+                                onKeyDown={[Function]}
+                                onMouseDown={[Function]}
+                                onPaste={[Function]}
+                                readOnly={false}
+                                role="combobox"
+                                style={
+                                  Object {
+                                    "opacity": null,
+                                  }
+                                }
+                                type="search"
+                                unselectable={null}
+                                value=""
+                              />
+                            </span>
+                            <span
+                              className="ant-select-selection-placeholder"
+                            >
+                              State Bank of India
+                            </span>
+                          </div>
+                          <span
+                            aria-hidden={true}
+                            className="ant-select-arrow"
+                            onMouseDown={[Function]}
+                            style={
+                              Object {
+                                "WebkitUserSelect": "none",
+                                "userSelect": "none",
+                              }
+                            }
+                            unselectable="on"
+                          >
+                            <span
+                              aria-label="down"
+                              className="anticon anticon-down ant-select-suffix"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="down"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="col-md-6"
+                    >
+                      <div
+                        className="UI search panel-body_text"
+                      >
+                        <label>
+                          IFSC Code
+                        </label>
+                        <div
+                          className="UI input panel-body_text_item"
+                        >
+                          <input
+                            className="prompt srch_explore"
+                            maxLength="10"
+                            name="IFSC[code]"
+                            placeholder="Enter IFSC Code"
+                            type="text"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div
+                aria-labelledby="paypal-tab"
+                className="tab-pane fade "
+                id="paypal-method-tab"
+                role="tabpanel"
+              >
+                <div
+                  className="row"
+                >
+                  <div
+                    className="col-md-12"
+                  >
+                    <p
+                      className="t-body"
+                    >
+                      After payment via PayPal's secure checkout, we will send you a link to download your files.
+                    </p>
+                    <div
+                      className="media"
+                    >
+                      <div
+                        className="media__item -align-center"
+                      >
+                        <p
+                          className="media__item_small"
+                        >
+                          PayPal accepts
+                        </p>
+                      </div>
+                      <div
+                        className="media__body"
+                      >
+                        <ul
+                          className="financial-institutes"
+                          id="paypal-gateway"
+                        >
+                          <li
+                            className="financial-institutes__logo"
+                          >
+                            <img
+                              alt="Visa"
+                              src="https://gambolthemes.net/html-items/cursus-new-demo/images/membership/pyicon-1.svg"
+                              title="Visa"
+                            />
+                          </li>
+                          <li
+                            className="financial-institutes__logo"
+                          >
+                            <img
+                              alt="MasterCard"
+                              src="https://gambolthemes.net/html-items/cursus-new-demo/images/membership/pyicon-2.svg"
+                              title="MasterCard"
+                            />
+                          </li>
+                          <li
+                            className="financial-institutes__logo"
+                          >
+                            <img
+                              alt="American Express"
+                              src="https://gambolthemes.net/html-items/cursus-new-demo/images/membership/pyicon-3.svg"
+                              title="American Express"
+                            />
+                          </li>
+                          <li
+                            className="financial-institutes__logo"
+                          >
+                            <img
+                              alt="Discover"
+                              src="https://gambolthemes.net/html-items/cursus-new-demo/images/membership/pyicon-4.svg"
+                              title="Discover"
+                            />
+                          </li>
+                          <li
+                            className="financial-institutes__logo"
+                          >
+                            <img
+                              alt="China UnionPay"
+                              src="https://gambolthemes.net/html-items/cursus-new-demo/images/membership/pyicon-5.svg"
+                              title="China UnionPay"
+                            />
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="chckout_order_dt"
+            >
+              <div
+                className="checkout_title"
+              >
+                <h4>
+                  Order Details
+                </h4>
+                <img
+                  alt=""
+                  src="line.svg"
+                />
+              </div>
+              <div
+                className="order_dt_section"
+              >
+                <div
+                  className="order_title"
+                >
+                  <h6>
+                    Discount
+                  </h6>
+                  <div
+                    className="order_price"
+                  >
+                    $
+                    0.00
+                  </div>
+                </div>
+                <div
+                  className="order_title"
+                >
+                  <h4>
+                    Total
+                  </h4>
+                  <div
+                    className="order_price"
+                  >
+                    $
+                    0
+                  </div>
+                </div>
+                <a
+                  href="/invoice_page"
+                  onClick={[Function]}
+                >
+                  <button
+                    className="chckot_btn"
+                    type="submit"
+                  >
+                    Confirm Checkout
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="col-lg-4"
+        >
+          <div
+            className="checkout_chk_bg stickytime"
+          >
+            <div
+              className="checkout_title"
+            >
+              <h4>
+                Order Summary
+              </h4>
+              <img
+                alt=""
+                src="line.svg"
+              />
+            </div>
+            <div
+              className="order_dt_section"
+            >
+              <div
+                className="order_title"
+              >
+                <h4>
+                  Original Price
+                </h4>
+                <div
+                  className="order_price"
+                >
+                  $
+                  0
+                </div>
+              </div>
+              <div
+                className="order_title"
+              >
+                <h6>
+                  Discount
+                </h6>
+                <div
+                  className="order_price"
+                >
+                  $
+                  0.00
+                </div>
+              </div>
+              <div
+                className="order_title"
+              >
+                <h2>
+                  Total
+                </h2>
+                <div
+                  className="order_price5"
+                >
+                  $
+                  0
+                </div>
+              </div>
+              <div
+                className="scr_text"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-lock "
+                  data-icon="lock"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  style={
+                    Object {
+                      "marginRight": 5,
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M144 144l0 48 160 0 0-48c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192l0-48C80 64.5 144.5 0 224 0s144 64.5 144 144l0 48 16 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+                 
+                Secure checkout
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

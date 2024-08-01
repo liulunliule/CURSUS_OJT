@@ -1,0 +1,409 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Course detail 1`] = `
+<div
+  className="course_detail "
+>
+  <div
+    className="course_detail_inner"
+  >
+    <div
+      className="course_detail-hero"
+    >
+      <div
+        className="course_detail-hero-media"
+      >
+        <div
+          className="course_detail-video"
+          onClick={[Function]}
+        >
+          <a
+            className="course_detail-video-link"
+            href="/"
+            onClick={[Function]}
+          >
+            <img
+              alt=""
+              className="video"
+            />
+          </a>
+          <div
+            className="course_detail-video-overlay"
+          />
+          <div
+            className="course_detail-video-seller"
+          >
+            Bestseller
+          </div>
+          <div
+            className="course_detail-video-play"
+          />
+          <div
+            className="course_detail-video-preview"
+          >
+            Preview this course
+          </div>
+        </div>
+        <div
+          className="video_modal "
+        >
+          <div
+            className="video_modal-overlay"
+            onClick={[Function]}
+          />
+          <div
+            className="video_modal-content"
+          >
+            <iframe
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen={true}
+              frameborder="0"
+              height="375"
+              referrerpolicy="strict-origin-when-cross-origin"
+              src="https://www.youtube.com/embed/Ohe_JzKksvA"
+              title="What is a \\"Good Font\\"?"
+              width="798"
+            />
+          </div>
+        </div>
+        <div
+          className="course_detail-emotion"
+        >
+          <div
+            className="course_detail-emotion-like"
+          >
+            <span
+              aria-label="heart"
+              className="anticon anticon-heart heart"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="heart"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M923 283.6a260.04 260.04 0 00-56.9-82.8 264.4 264.4 0 00-84-55.5A265.34 265.34 0 00679.7 125c-49.3 0-97.4 13.5-139.2 39-10 6.1-19.5 12.8-28.5 20.1-9-7.3-18.5-14-28.5-20.1-41.8-25.5-89.9-39-139.2-39-35.5 0-69.9 6.8-102.4 20.3-31.4 13-59.7 31.7-84 55.5a258.44 258.44 0 00-56.9 82.8c-13.9 32.3-21 66.6-21 101.9 0 33.3 6.8 68 20.3 103.3 11.3 29.5 27.5 60.1 48.2 91 32.8 48.9 77.9 99.9 133.9 151.6 92.8 85.7 184.7 144.9 188.6 147.3l23.7 15.2c10.5 6.7 24 6.7 34.5 0l23.7-15.2c3.9-2.5 95.7-61.6 188.6-147.3 56-51.7 101.1-102.7 133.9-151.6 20.7-30.9 37-61.5 48.2-91 13.5-35.3 20.3-70 20.3-103.3.1-35.3-7-69.6-20.9-101.9zM512 814.8S156 586.7 156 385.5C156 283.6 240.3 201 344.3 201c73.1 0 136.5 40.8 167.7 100.4C543.2 241.8 606.6 201 679.7 201c104 0 188.3 82.6 188.3 184.5 0 201.2-356 429.3-356 429.3z"
+                />
+              </svg>
+            </span>
+             Save
+          </div>
+          <div
+            className="course_detail-emotion-report"
+          >
+            <span
+              aria-label="flag"
+              className="anticon anticon-flag flag"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="flag"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M880 305H624V192c0-17.7-14.3-32-32-32H184v-40c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v784c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V640h248v113c0 17.7 14.3 32 32 32h416c17.7 0 32-14.3 32-32V337c0-17.7-14.3-32-32-32zM184 568V232h368v336H184zm656 145H504v-73h112c4.4 0 8-3.6 8-8V377h216v336z"
+                />
+              </svg>
+            </span>
+             Report abuse
+          </div>
+        </div>
+      </div>
+      <div
+        className="course_detail-hero-content"
+      >
+        <h2
+          className="course_detail-hero-content-title"
+        />
+        <p
+          className="course_detail-hero-content-desc"
+        />
+        <div
+          className="course_detail-hero-content-rating"
+        >
+          <div
+            className="star"
+          >
+            <span
+              aria-label="star"
+              className="anticon anticon-star starOutlined"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="star"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M908.1 353.1l-253.9-36.9L540.7 86.1c-3.1-6.3-8.2-11.4-14.5-14.5-15.8-7.8-35-1.3-42.9 14.5L369.8 316.2l-253.9 36.9c-7 1-13.4 4.3-18.3 9.3a32.05 32.05 0 00.6 45.3l183.7 179.1-43.4 252.9a31.95 31.95 0 0046.4 33.7L512 754l227.1 119.4c6.2 3.3 13.4 4.4 20.3 3.2 17.4-3 29.1-19.5 26.1-36.9l-43.4-252.9 183.7-179.1c5-4.9 8.3-11.3 9.3-18.3 2.7-17.5-9.5-33.7-27-36.3zM664.8 561.6l36.1 210.3L512 672.7 323.1 772l36.1-210.3-152.8-149L417.6 382 512 190.7 606.4 382l211.2 30.7-152.8 148.9z"
+                />
+              </svg>
+            </span>
+             
+          </div>
+          <div
+            className="ratings"
+          >
+            (81,665 ratings)
+          </div>
+        </div>
+        <div
+          className="student_quantity"
+        />
+        <div
+          className="subject"
+        >
+          <div
+            className="english"
+          >
+            <span
+              aria-label="wechat-work"
+              className="anticon anticon-wechat-work english_icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="wechat-work"
+                fill="currentColor"
+                fillRule="evenodd"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M909.78 729.59a135.87 135.87 0 00-47.04 19.04 114.24 114.24 0 01-51.4 31.08 76.29 76.29 0 0124.45-45.42 169.3 169.3 0 0023.4-55.02 50.41 50.41 0 1150.6 50.32zm-92.21-120.76a168.83 168.83 0 00-54.81-23.68 50.41 50.41 0 01-50.4-50.42 50.41 50.41 0 11100.8 0 137.5 137.5 0 0018.82 47.2 114.8 114.8 0 0130.76 51.66 76.08 76.08 0 01-45.02-24.76h-.19zm-83.04-177.71c-15.19-127.33-146.98-227.1-306.44-227.1-169.87 0-308.09 113.1-308.09 252.2A235.81 235.81 0 00230.06 647.6a311.28 311.28 0 0033.6 21.59L250 723.76c4.93 2.31 9.7 4.78 14.75 6.9l69-34.5c10.07 2.61 20.68 4.3 31.2 6.08 6.73 1.2 13.45 2.43 20.35 3.25a354.83 354.83 0 00128.81-7.4 248.88 248.88 0 0010.15 55.06 425.64 425.64 0 01-96.17 11.24 417.98 417.98 0 01-86.4-9.52L216.52 817.4a27.62 27.62 0 01-29.98-3.14 28.02 28.02 0 01-9.67-28.61l22.4-90.24A292.26 292.26 0 0164 456.21C64 285.98 227 148 428.09 148c190.93 0 347.29 124.53 362.52 282.82a244.97 244.97 0 00-26.47-2.62c-9.9.38-19.79 1.31-29.6 2.88zm-116.3 198.81a135.76 135.76 0 0047.05-19.04 114.24 114.24 0 0151.45-31 76.47 76.47 0 01-24.5 45.34 169.48 169.48 0 00-23.4 55.05 50.41 50.41 0 01-100.8.23 50.41 50.41 0 0150.2-50.58m90.8 121.32a168.6 168.6 0 0054.66 23.9 50.44 50.44 0 0135.64 86.08 50.38 50.38 0 01-86.04-35.66 136.74 136.74 0 00-18.67-47.28 114.71 114.71 0 01-30.54-51.8 76 76 0 0144.95 25.06z"
+                />
+              </svg>
+            </span>
+             
+            English
+          </div>
+          <div
+            className="more"
+          >
+            <span
+              aria-label="smile"
+              className="anticon anticon-smile more_icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="smile"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M288 421a48 48 0 1096 0 48 48 0 10-96 0zm352 0a48 48 0 1096 0 48 48 0 10-96 0zM512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm263 711c-34.2 34.2-74 61-118.3 79.8C611 874.2 562.3 884 512 884c-50.3 0-99-9.8-144.8-29.2A370.4 370.4 0 01248.9 775c-34.2-34.2-61-74-79.8-118.3C149.8 611 140 562.3 140 512s9.8-99 29.2-144.8A370.4 370.4 0 01249 248.9c34.2-34.2 74-61 118.3-79.8C413 149.8 461.7 140 512 140c50.3 0 99 9.8 144.8 29.2A370.4 370.4 0 01775.1 249c34.2 34.2 61 74 79.8 118.3C874.2 413 884 461.7 884 512s-9.8 99-29.2 144.8A368.89 368.89 0 01775 775zM664 533h-48.1c-4.2 0-7.8 3.2-8.1 7.4C604 589.9 562.5 629 512 629s-92.1-39.1-95.8-88.6c-.3-4.2-3.9-7.4-8.1-7.4H360a8 8 0 00-8 8.4c4.4 84.3 74.5 151.6 160 151.6s155.6-67.3 160-151.6a8 8 0 00-8-8.4z"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+        <div
+          className="date"
+        >
+          Last updated : 
+           day ago
+           
+        </div>
+        <div
+          className="course_detail-hero-content-cta"
+        >
+          <button
+            className="addToCart"
+          >
+            Add to Cart
+          </button>
+          <a
+            href="/secondLayout/checkout_page"
+            onClick={[Function]}
+          >
+            <button
+              className="buyNow"
+            >
+              Buy Now
+            </button>
+          </a>
+        </div>
+        <div
+          className="course_detail-hero-content-end"
+        >
+          30-Day Money-Back Guarantee
+        </div>
+      </div>
+    </div>
+    <div
+      className="course_detail-toolbar"
+    >
+      <div
+        className="course_detail-info"
+      >
+        <img
+          alt=""
+          className="avatar"
+          src="avatar1_SideBar.jpg"
+        />
+        <div
+          className="info_content"
+        >
+          <div
+            className="info_name"
+          />
+          <button
+            className="info_btn"
+          >
+            Subscribe
+          </button>
+        </div>
+      </div>
+      <div
+        className="course_detail-follow"
+      >
+        <div
+          className="course_detail-followers"
+        >
+          <span
+            aria-label="eye"
+            className="anticon anticon-eye followers_icon"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="eye"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"
+              />
+            </svg>
+          </span>
+           1452
+        </div>
+        <div
+          className="course_detail-followers"
+        >
+          <span
+            aria-label="like"
+            className="anticon anticon-like followers_icon"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="like"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M885.9 533.7c16.8-22.2 26.1-49.4 26.1-77.7 0-44.9-25.1-87.4-65.5-111.1a67.67 67.67 0 00-34.3-9.3H572.4l6-122.9c1.4-29.7-9.1-57.9-29.5-79.4A106.62 106.62 0 00471 99.9c-52 0-98 35-111.8 85.1l-85.9 311H144c-17.7 0-32 14.3-32 32v364c0 17.7 14.3 32 32 32h601.3c9.2 0 18.2-1.8 26.5-5.4 47.6-20.3 78.3-66.8 78.3-118.4 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7 0-12.6-1.8-25-5.4-37 16.8-22.2 26.1-49.4 26.1-77.7-.2-12.6-2-25.1-5.6-37.1zM184 852V568h81v284h-81zm636.4-353l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 16.5-7.2 32.2-19.6 43l-21.9 19 13.9 25.4a56.2 56.2 0 016.9 27.3c0 22.4-13.2 42.6-33.6 51.8H329V564.8l99.5-360.5a44.1 44.1 0 0142.2-32.3c7.6 0 15.1 2.2 21.1 6.7 9.9 7.4 15.2 18.6 14.6 30.5l-9.6 198.4h314.4C829 418.5 840 436.9 840 456c0 16.5-7.2 32.1-19.6 43z"
+              />
+            </svg>
+          </span>
+           100
+        </div>
+        <div
+          className="course_detail-followers"
+        >
+          <span
+            aria-label="dislike"
+            className="anticon anticon-dislike followers_icon"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="dislike"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M885.9 490.3c3.6-12 5.4-24.4 5.4-37 0-28.3-9.3-55.5-26.1-77.7 3.6-12 5.4-24.4 5.4-37 0-28.3-9.3-55.5-26.1-77.7 3.6-12 5.4-24.4 5.4-37 0-51.6-30.7-98.1-78.3-118.4a66.1 66.1 0 00-26.5-5.4H144c-17.7 0-32 14.3-32 32v364c0 17.7 14.3 32 32 32h129.3l85.8 310.8C372.9 889 418.9 924 470.9 924c29.7 0 57.4-11.8 77.9-33.4 20.5-21.5 31-49.7 29.5-79.4l-6-122.9h239.9c12.1 0 23.9-3.2 34.3-9.3 40.4-23.5 65.5-66.1 65.5-111 0-28.3-9.3-55.5-26.1-77.7zM184 456V172h81v284h-81zm627.2 160.4H496.8l9.6 198.4c.6 11.9-4.7 23.1-14.6 30.5-6.1 4.5-13.6 6.8-21.1 6.7a44.28 44.28 0 01-42.2-32.3L329 459.2V172h415.4a56.85 56.85 0 0133.6 51.8c0 9.7-2.3 18.9-6.9 27.3l-13.9 25.4 21.9 19a56.76 56.76 0 0119.6 43c0 9.7-2.3 18.9-6.9 27.3l-13.9 25.4 21.9 19a56.76 56.76 0 0119.6 43c0 9.7-2.3 18.9-6.9 27.3l-14 25.5 21.9 19a56.76 56.76 0 0119.6 43c0 19.1-11 37.5-28.8 48.4z"
+              />
+            </svg>
+          </span>
+           20
+        </div>
+        <div
+          className="course_detail-followers"
+        >
+          <span
+            aria-label="share-alt"
+            className="anticon anticon-share-alt followers_icon"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="share-alt"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M752 664c-28.5 0-54.8 10-75.4 26.7L469.4 540.8a160.68 160.68 0 000-57.6l207.2-149.9C697.2 350 723.5 360 752 360c66.2 0 120-53.8 120-120s-53.8-120-120-120-120 53.8-120 120c0 11.6 1.6 22.7 4.7 33.3L439.9 415.8C410.7 377.1 364.3 352 312 352c-88.4 0-160 71.6-160 160s71.6 160 160 160c52.3 0 98.7-25.1 127.9-63.8l196.8 142.5c-3.1 10.6-4.7 21.8-4.7 33.3 0 66.2 53.8 120 120 120s120-53.8 120-120-53.8-120-120-120zm0-476c28.7 0 52 23.3 52 52s-23.3 52-52 52-52-23.3-52-52 23.3-52 52-52zM312 600c-48.5 0-88-39.5-88-88s39.5-88 88-88 88 39.5 88 88-39.5 88-88 88zm440 236c-28.7 0-52-23.3-52-52s23.3-52 52-52 52 23.3 52 52-23.3 52-52 52z"
+              />
+            </svg>
+          </span>
+           9
+        </div>
+      </div>
+    </div>
+    <div
+      className="course_detail-main"
+    >
+      <div
+        className="course_detail-main-link"
+      >
+        <a
+          className=""
+          href="/course_detail/undefined/course_detail_about"
+          onClick={[Function]}
+        >
+          About
+        </a>
+        <a
+          className=""
+          href="/course_detail/undefined/course_detail_course-content"
+          onClick={[Function]}
+        >
+          Course Content
+        </a>
+        <a
+          className=""
+          href="/course_detail/undefined/course_detail_reviews"
+          onClick={[Function]}
+        >
+          Reviews
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

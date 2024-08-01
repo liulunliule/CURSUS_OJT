@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test SignUpPage Page 1`] = `
+<div>
+  <div
+    className="signup"
+  >
+    <img
+      alt=""
+      className="signup__logo"
+      src="logoCursus.svg"
+    />
+    <div
+      className="signup__main main"
+    >
+      <h2
+        className="signup__title"
+      >
+        Welcome to Cursus
+      </h2>
+      <p
+        className="signup__desc"
+      >
+        Sign Up and Start Learning!
+      </p>
+      <div
+        className="signup__cta"
+      >
+        <div
+          action=""
+          className="signup__form-group"
+        >
+          <div
+            className="signup__form"
+          >
+            <input
+              className="signup__form-input"
+              id=""
+              name=""
+              onChange={[Function]}
+              placeholder="User Name"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="signup__form"
+          >
+            <input
+              className="signup__form-input"
+              id=""
+              name=""
+              onChange={[Function]}
+              placeholder="Email Address"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="signup__form"
+          >
+            <input
+              className="signup__form-input"
+              id=""
+              name=""
+              onChange={[Function]}
+              placeholder="Password"
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="signup__remember"
+          >
+            <input
+              id="remember-me"
+              name=""
+              type="checkbox"
+            />
+            <label
+              for="remember-me"
+            >
+              I’m in for emails with exciting discounts and personalized recommendations
+            </label>
+          </div>
+          <button
+            className="signup__button signup__signin"
+            onClick={[Function]}
+          >
+            Next
+          </button>
+        </div>
+      </div>
+      <div
+        className="signup__forgotPass"
+      >
+        By signing up, you agree to our
+         
+        <a
+          href="/secondLayout/policy"
+          onClick={[Function]}
+        >
+           Terms of Use
+        </a>
+         and
+         
+        <a
+          href="/secondLayout/term"
+          onClick={[Function]}
+        >
+           Privacy Policy
+        </a>
+        .
+      </div>
+      <div
+        className="signup__line"
+      />
+      <div
+        className="signup__signup"
+      >
+        Already have an account?
+        <a
+          href="/login"
+          onClick={[Function]}
+        >
+          Log in
+        </a>
+      </div>
+    </div>
+    <div
+      className="signup__footer"
+    >
+      <img
+        alt=""
+        src="small_logo.png"
+      />
+      <p
+        className="login__footer-content"
+      >
+        © 2024 
+        <b>
+          Cursus
+        </b>
+        . All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</div>
+`;

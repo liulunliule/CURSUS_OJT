@@ -1,0 +1,738 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Certification Center Page 1`] = `
+<div>
+  <div
+    className="CertificationCenter"
+  >
+    <div
+      className="Center"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="title"
+        >
+          <h1>
+            Certification Center
+          </h1>
+          <p>
+            For Students and Instructors
+          </p>
+        </div>
+        <ul
+          className="certi_icon"
+        >
+          <li>
+            <img
+              alt=""
+              src="logo1.svg"
+            />
+          </li>
+          <li>
+            <img
+              alt=""
+              src="plus.svg"
+            />
+          </li>
+          <li>
+            <img
+              alt=""
+              src="certicon.svg"
+            />
+          </li>
+        </ul>
+        <a
+          href="/secondLayout/certification_fill_form"
+          onClick={[Function]}
+        >
+          <button
+            className="certi_btn"
+          >
+            Start Certification
+          </button>
+        </a>
+      </div>
+    </div>
+    <div
+      className="findCertificate"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="title"
+        >
+          <h2>
+            Find Certificate
+          </h2>
+        </div>
+        <form
+          className="findfrom"
+        >
+          <div
+            className="row"
+          >
+            <div
+              className="col-lg-3 col-md-6"
+            >
+              <input
+                id=""
+                name=""
+                placeholder="# Number"
+                type="text"
+              />
+            </div>
+            <div
+              className="col-lg-3 col-md-6"
+            >
+              <input
+                id=""
+                name=""
+                placeholder="Full Name"
+                type="text"
+              />
+            </div>
+            <div
+              className="col-lg-3 col-md-6"
+            >
+              <select>
+                <option
+                  value=""
+                >
+                  Select Category
+                </option>
+                <option
+                  value="1"
+                >
+                  Development
+                </option>
+                <option
+                  value="2"
+                >
+                  Finance & Accounting
+                </option>
+                <option
+                  value="3"
+                >
+                  Design
+                </option>
+                <option
+                  value="4"
+                >
+                  Marketing
+                </option>
+                <option
+                  value="5"
+                >
+                  Teaching & Academics
+                </option>
+              </select>
+            </div>
+            <div
+              className="col-lg-3 col-md-6"
+            >
+              <button
+                className="login-btn"
+                type="submit"
+              >
+                Find Certificate
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div
+      className="OurCertificate"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="title"
+        >
+          <h2>
+            Our Certification
+          </h2>
+          <p>
+            We prepared tests for the most popular categories and get certificate
+          </p>
+        </div>
+        <div
+          className="catey-tabs"
+        >
+          <ul
+            className="nav nav-pills justify-content-center mb-3"
+            id="pills-tab"
+            role="tablist"
+          >
+            <li
+              className="nav-item"
+              role="presentation"
+            >
+              <button
+                aria-controls="pills-development"
+                aria-selected={true}
+                className="nav-link active"
+                onClick={[Function]}
+                role="tab"
+              >
+                Development
+              </button>
+            </li>
+            <li
+              className="nav-item"
+              role="presentation"
+            >
+              <button
+                aria-controls="pills-accounting"
+                aria-selected={false}
+                className="nav-link "
+                onClick={[Function]}
+                role="tab"
+              >
+                Finance & Accounting
+              </button>
+            </li>
+            <li
+              className="nav-item"
+              role="presentation"
+            >
+              <button
+                aria-controls="pills-design"
+                aria-selected={false}
+                className="nav-link "
+                onClick={[Function]}
+                role="tab"
+              >
+                Design
+              </button>
+            </li>
+            <li
+              className="nav-item"
+              role="presentation"
+            >
+              <button
+                aria-controls="pills-marketing"
+                aria-selected={false}
+                className="nav-link "
+                onClick={[Function]}
+                role="tab"
+              >
+                Marketing
+              </button>
+            </li>
+            <li
+              className="nav-item"
+              role="presentation"
+            >
+              <button
+                aria-controls="pills-teaching"
+                aria-selected={false}
+                className="nav-link "
+                onClick={[Function]}
+                role="tab"
+              >
+                Teaching & Academics
+              </button>
+            </li>
+          </ul>
+          <div
+            className="tab-content"
+            id="pills-tabContent"
+          >
+            <div
+              aria-labelledby="pills-development-tab"
+              className="tab-pane fade show active"
+              id="pills-development"
+              role="tabpanel"
+            >
+              <div
+                className="certicates"
+              >
+                <div
+                  className="row"
+                >
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      WordPress
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      HTML CSS
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      MotoCMS 3
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Joomla
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      OpenCart
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Joomla Pro
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      WordPress Pro
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      WordPress Elementor
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      WordPress Elementor Pro
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      PrestaShop
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              aria-labelledby="pills-accounting-tab"
+              className="tab-pane fade "
+              id="pills-accounting"
+              role="tabpanel"
+            >
+              <div
+                className="certicates"
+              >
+                <div
+                  className="row"
+                >
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Accounting
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Finance Fundamentals
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Bookkeeping
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Political Science
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Finance
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Cryptocurrency
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              aria-labelledby="pills-design-tab"
+              className="tab-pane fade "
+              id="pills-design"
+              role="tabpanel"
+            >
+              <div
+                className="certicates"
+              >
+                <div
+                  className="row"
+                >
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Adobe Photoshop
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Adobe Illustrator
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Graphic Design
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      UI/UX
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      UX Research
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              aria-labelledby="pills-marketing-tab"
+              className="tab-pane fade "
+              id="pills-marketing"
+              role="tabpanel"
+            >
+              <div
+                className="certicates"
+              >
+                <div
+                  className="row"
+                >
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Digital Marketing
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Content Marketing
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      SEO
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Social Media Marketing
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Email Marketing
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Branding
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              aria-labelledby="pills-teaching-tab"
+              className="tab-pane fade "
+              id="pills-teaching"
+              role="tabpanel"
+            >
+              <div
+                className="certicates"
+              >
+                <div
+                  className="row"
+                >
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Education
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Mathematics
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Language Learning
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      History
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Psychology
+                    </a>
+                  </div>
+                  <div
+                    className="col-md-3 col-sm-6"
+                  >
+                    <a
+                      className="certilink"
+                      href="#"
+                    >
+                      Philosophy
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="benefit"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="benefit_container"
+        >
+          <div
+            className="title"
+          >
+            <h2>
+              Who Can Get Benefit From This?
+            </h2>
+          </div>
+          <div>
+            <div
+              className="who_get"
+            >
+              <div
+                className="who_img"
+              >
+                <img
+                  alt=""
+                  src="instructor.svg"
+                />
+              </div>
+              <h4>
+                Instructors
+              </h4>
+            </div>
+            <div
+              className="who_get"
+            >
+              <div
+                className="who_img"
+              >
+                <img
+                  alt=""
+                  src="student.svg"
+                />
+              </div>
+              <h4>
+                Students
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="willGet"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="title"
+        >
+          <h2>
+            What Will You Get?
+          </h2>
+          <p>
+            Cursus company, which confirms your skills and knowledge of Certification
+          </p>
+        </div>
+        <div
+          className="knowledge_dts"
+        >
+          <p>
+            Morbi eget elit eget turpis varius mollis eget vel massa. Donec porttitor, sapien eget commodo vulputate, erat felis aliquam dolor, non condimentum libero dolor vel ipsum. Sed porttitor nisi eget nulla ullamcorper eleifend. Fusce tristique sapien nisi, vel feugiat neque luctus sit amet. Quisque consequat quis turpis in mattis. Maecenas eget mollis nisl. Cras porta dapibus est, quis malesuada ex iaculis at. Vestibulum egestas tortor in urna tempor, in fermentum lectus bibendum. In leo leo, bibendum at pharetra at, tincidunt in nulla. In vel malesuada nulla, sed tincidunt neque. Phasellus at massa vel sem aliquet sodales non in magna. Ut tempus ipsum sagittis neque cursus euismod. Vivamus luctus elementum tortor, ac aliquet dolor vehicula et. Nulla vehicula pharetra lacus ornare gravida. Vivamus mollis ullamcorper dui quis gravida. Aenean pulvinar pulvinar arcu a suscipit.
+          </p>
+        </div>
+        <button
+          className="knowledge_btn"
+        >
+          Knowledge Base
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

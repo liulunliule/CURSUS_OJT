@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Apply Job component correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="apply-job"
+  >
+    <div
+      class="apply-job-title"
+    >
+      <h1>
+        Data Engineer
+      </h1>
+      <a
+        class="back-to-career"
+        href="/secondLayout/careers"
+      >
+        Back to Career
+      </a>
+    </div>
+    <div
+      class="job-content"
+    >
+      <button
+        class="apply-btn"
+        type="apply"
+      >
+        Apply For This Job
+      </button>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur volutpat maximus pellentesque. Integer sem enim, luctus at nibh at, condimentum sagittis sapien. Sed tempus ipsum erat, sit amet efficitur velit interdum eu. Vestibulum hendrerit id dolor eu scelerisque. Phasellus ex dui, consequat nec feugiat eu, dapibus eget ante. Sed sodales interdum dui, at euismod mi feugiat hendrerit. Suspendisse auctor libero in tempor mollis. Nulla et dolor velit. Aliquam sit amet luctus quam.
+      </p>
+      <h2>
+        What you'll be doing
+      </h2>
+      <p>
+        Nam a egestas libero, eget eleifend turpis. Sed id ipsum a ipsum aliquam laoreet sit amet sit amet nibh. Proin dapibus, libero sed posuere rhoncus, orci mi cursus enim, at accumsan eros massa lacinia mi. Nunc eget finibus felis, volutpat malesuada sem. Aliquam ac nisl pellentesque, varius neque sit amet, porttitor nunc. Nullam elit tellus, dapibus non eleifend sed, hendrerit eget velit. Aliquam ut felis dictum, tincidunt magna vitae, aliquam massa. In porttitor tristique quam, non dignissim sapien pharetra ultrices. Cras non ante non velit mollis mollis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque et bibendum urna, eget consequat sapien. Integer sed condimentum nibh. Integer id neque tristique, lobortis massa ac, dapibus nibh. Donec nulla odio, porttitor ac rutrum eget, volutpat a velit. Curabitur et enim quis diam congue dictum et vitae dui. Nulla tortor orci, luctus a pretium vel, ultrices porta nisl.
+      </p>
+      <p>
+        Etiam lobortis dictum tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse ultricies efficitur dui, suscipit tempus elit condimentum quis. Duis sed vestibulum tortor, eget cursus odio.
+      </p>
+      <h2>
+        What we're looking for
+      </h2>
+      <p>
+        1. Work closely with other data engineers to enhance infrastructure, improve reliability, and strengthen database performance
+      </p>
+      <p>
+        2. Collaborate with data scientists, product managers, marketers and other data-driven internal stakeholders to identify and develop opportunities that enhance data access and usage
+      </p>
+      <p>
+        3. Contribute to the ongoing development of the data warehouse ecosystem
+      </p>
+      <p>
+        4. Become the expert on all aspects of Edututs+'s data reporting and analytics infrastructure
+      </p>
+      <p>
+        5. Develop and maintain data definitions for internally available data sources
+      </p>
+      <h2>
+        Who should apply?
+      </h2>
+      <p>
+        Quisque et bibendum urna, eget consequat sapien. Integer sed condimentum nibh. Integer id neque tristique, lobortis massa ac, dapibus nibh. Donec nulla odio, porttitor ac rutrum eget, volutpat a velit. Curabitur et enim quis diam congue dictum et vitae dui. Nulla tortor orci, luctus a pretium vel, ultrices porta nisl.
+      </p>
+      <h2>
+        What next?
+      </h2>
+      <p>
+        Quisque et bibendum urna, eget consequat sapien. Integer sed condimentum nibh. Integer id neque tristique, lobortis massa ac, dapibus nibh. Donec nulla odio, porttitor ac rutrum eget, volutpat a velit. Curabitur et enim quis diam congue dictum et vitae dui. Nulla tortor orci, luctus a pretium vel, ultrices porta nisl.
+      </p>
+    </div>
+    <form
+      class="application-form"
+    >
+      <h3>
+        Submit Your Application
+      </h3>
+      <div
+        class="form-group"
+      >
+        <label>
+          Full Name
+        </label>
+        <input
+          type="text"
+        />
+      </div>
+      <div
+        class="form-group"
+      >
+        <label>
+          Email Address
+        </label>
+        <input
+          type="email"
+        />
+      </div>
+      <div
+        class="form-group"
+      >
+        <label>
+          Phone Number
+        </label>
+        <input
+          type="tel"
+        />
+      </div>
+      <div
+        class="form-group"
+      >
+        <label>
+          Gender
+        </label>
+        <select>
+          <option
+            value=""
+          >
+            Select Gender
+          </option>
+          <option
+            value="male"
+          >
+            Male
+          </option>
+          <option
+            value="female"
+          >
+            Female
+          </option>
+        </select>
+      </div>
+      <div
+        class="form-group"
+      >
+        <label>
+          Resume/CV
+        </label>
+        <input
+          type="file"
+        />
+      </div>
+      <div
+        class="form-group"
+      >
+        <label>
+          Links
+        </label>
+        <input
+          placeholder="LinkedIn URL"
+          type="text"
+        />
+        <input
+          placeholder="X URL"
+          type="text"
+        />
+        <input
+          placeholder="Portfolio URL"
+          type="text"
+        />
+        <input
+          placeholder="Other Website URL"
+          type="text"
+        />
+      </div>
+      <div
+        class="form-group"
+      >
+        <label>
+          Additional Information
+        </label>
+        <textarea
+          placeholder="Add a cover letter or anything else you want to share."
+        />
+      </div>
+      <button
+        class="submit-btn"
+        type="submit"
+      >
+        Submit Application
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;
