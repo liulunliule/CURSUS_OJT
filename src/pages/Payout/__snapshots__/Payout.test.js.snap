@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Payout 1`] = `
+<div
+  className="payout-page "
+>
+  <div
+    className="content"
+  >
+    <div
+      className="payout-header"
+    >
+      <h2>
+        Payout
+      </h2>
+    </div>
+    <div
+      className="payout-content"
+    >
+      <div
+        className="next-payout"
+      >
+        <h3>
+          Next payout
+        </h3>
+        <h6 />
+        <h5>
+          via 
+        </h5>
+        <p>
+          Your payout will be processed on 
+          <span />
+        </p>
+      </div>
+      <div
+        className="payout-account"
+      >
+        <h3>
+          Payout account
+        </h3>
+        <div
+          className="account-details"
+        >
+          <img
+            alt="Payout"
+            src="payout.jpg"
+          />
+          <p>
+            Added: 01 Mar 2020
+          </p>
+        </div>
+        <button>
+          Set Account
+        </button>
+      </div>
+    </div>
+    <div
+      className="transactions"
+    >
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Amount
+            </th>
+            <th>
+              Payout Method
+            </th>
+            <th>
+              Date Processed
+            </th>
+          </tr>
+        </thead>
+        <tbody />
+      </table>
+    </div>
+  </div>
+</div>
+`;
