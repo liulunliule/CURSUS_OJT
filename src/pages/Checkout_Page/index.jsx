@@ -31,7 +31,7 @@ const Checkout_Page = () => {
   const [discountPrice, setDiscountPrice] = useState(0);
   const [originalPrice, setOriginalPrice] = useState(0);
 
-  const { addr, status, error } = useSelector((state) => state.checkout);
+  const { addr, order, status, error } = useSelector((state) => state.checkout);
 
   const total = originalPrice - discountPrice.toFixed(2);
   const discountPriceRounded = discountPrice.toFixed(2);
