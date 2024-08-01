@@ -372,7 +372,7 @@ exports[`test Checkout Page 1`] = `
                           Expiration Month
                         </label>
                         <div
-                          className="ant-select ant-select-outlined css-dev-only-do-not-override-1uq9j6g ant-select-single ant-select-show-arrow ant-select-show-search"
+                          className="ant-select ant-select-outlined css-dev-only-do-not-override-1pg9a38 ant-select-single ant-select-show-arrow ant-select-show-search"
                           onBlur={[Function]}
                           onFocus={[Function]}
                           onKeyDown={[Function]}
@@ -574,7 +574,7 @@ exports[`test Checkout Page 1`] = `
                           Bank Name
                         </label>
                         <div
-                          className="ant-select ant-select-outlined css-dev-only-do-not-override-1uq9j6g ant-select-single ant-select-show-arrow ant-select-show-search"
+                          className="ant-select ant-select-outlined css-dev-only-do-not-override-1pg9a38 ant-select-single ant-select-show-arrow ant-select-show-search"
                           onBlur={[Function]}
                           onFocus={[Function]}
                           onKeyDown={[Function]}
