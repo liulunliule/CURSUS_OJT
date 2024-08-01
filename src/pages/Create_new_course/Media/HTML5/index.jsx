@@ -7,16 +7,16 @@ import { storage } from "../../../../config/firebase"; // Adjust the path as nec
 function Media_html5({ setMediaInfo, mediaInfo }) {
   const [thumbnailUrl, setThumbnail] = useState(media_thumb_1);
 
-  // const handleThumbnailUpload = async (event) => {
-  //   const file = event.target.files[0];
-  //   if (file) {
-  //     const storageRef = ref(storage, `thumbnails/${file.name}`);
-  //     await uploadBytes(storageRef, file);
-  //     const url = await getDownloadURL(storageRef);
-  //     setThumbnail(url);
-  //     setMediaInfo((prevInfo) => ({ ...prevInfo, video: url }));
-  //   }
-  // };
+  const handleThumbnailUpload = async (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const storageRef = ref(storage, `thumbnails/${file.name}`);
+      await uploadBytes(storageRef, file);
+      const url = await getDownloadURL(storageRef);
+      setThumbnail(url);
+      setMediaInfo((prevInfo) => ({ ...prevInfo, video: url }));
+    }
+  };
 
   return (
     <div className="media_html5">
@@ -38,7 +38,7 @@ function Media_html5({ setMediaInfo, mediaInfo }) {
                 type="file"
                 name=""
                 id="choose_thumb"
-                // onChange={handleThumbnailUpload}
+                onChange={handleThumbnailUpload}
               />
               <label htmlFor="choose_thumb">Choose thumbnail</label>
             </div>
