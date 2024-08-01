@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Company Details 1`] = `
+<div
+  className="company-page"
+>
+  <header
+    className="custom-header"
+    style={
+      Object {
+        "backgroundColor": "#f8f8f8",
+      }
+    }
+  >
+    <nav
+      className="custom-nav"
+    >
+      <ul
+        className="custom-ul"
+      >
+        <li
+          className="custom-li "
+          onClick={[Function]}
+        >
+          About
+        </li>
+        <li
+          className="custom-li "
+          onClick={[Function]}
+        >
+          Blog
+        </li>
+        <li
+          className="custom-li selected"
+          onClick={[Function]}
+        >
+          Company
+        </li>
+        <li
+          className="custom-li "
+          onClick={[Function]}
+        >
+          Careers
+        </li>
+        <li
+          className="custom-li "
+          onClick={[Function]}
+        >
+          Press
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section
+    className="hero"
+    style={
+      Object {
+        "backgroundColor": "#f8f8f8",
+        "padding": "40px",
+      }
+    }
+  >
+    <h1
+      style={
+        Object {
+          "marginTop": "6px",
+        }
+      }
+    >
+      Expanding learning opportunities
+    </h1>
+  </section>
+  <section
+    className="origins"
+  >
+    <div
+      className="origins-content"
+    >
+      <div
+        className="origins-text"
+      >
+        <h2>
+          Our Origins
+        </h2>
+        <p>
+          Cursus was founded in 2020 by computer science instructor with a vision to provide anyone, anywhere with access to the world’s best education. Now many instructors put their courses online for anyone to take and taught more learners in a few months than they could over an entire lifetime in the classroom. Today, Cursus has expanded to reach more than 40 million people and 2,300 businesses around the world. On Cursus you can find online courses, instructors, and certificates from Cursus.
+        </p>
+      </div>
+      <div
+        className="origins-image"
+      >
+        <img
+          alt="Company Origins"
+          src="https://gambolthemes.net/html-items/cursus-new-demo/images/about/company.jpg"
+        />
+      </div>
+    </div>
+  </section>
+  <section
+    className="offices"
+  >
+    <h2>
+      Our Offices
+    </h2>
+    <p>
+      Cursus branches around the world
+    </p>
+    <div
+      className="office-list"
+    />
+  </section>
+</div>
+`;

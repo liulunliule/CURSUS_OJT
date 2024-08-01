@@ -1,0 +1,184 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Credits 1`] = `
+<div
+  className="credits-page "
+>
+  <div
+    className="content"
+  >
+    <div
+      className="credits-header"
+    >
+      <h2>
+        Credits
+      </h2>
+    </div>
+    <div
+      className="credits-content"
+    >
+      <div
+        className="added-credits"
+      >
+        <h3>
+          Added Credits
+        </h3>
+        <h6 />
+        <h5>
+          via 
+        </h5>
+        <p>
+          Your credits will be used on 
+          <span />
+        </p>
+      </div>
+      <div
+        className="saved-cards"
+      >
+        <h3>
+          Saved Cards
+        </h3>
+        <div
+          className="card"
+        >
+          <img
+            alt="MasterCard"
+            src="MasterCard.jpg"
+          />
+          <p>
+            Added: 25 Mar 2020
+          </p>
+          <button>
+            Change Card
+          </button>
+        </div>
+      </div>
+      <div
+        className="add-credit-balance"
+      >
+        <h3>
+          Add Credit Balance
+        </h3>
+        <form>
+          <div
+            className="form-row"
+          >
+            <label>
+              Add Balance
+              <input
+                placeholder="$0"
+                type="text"
+              />
+            </label>
+          </div>
+          <div
+            className="form-row"
+          >
+            <label>
+              Holder Name
+              <input
+                placeholder="Enter Holder Name"
+                type="text"
+              />
+            </label>
+            <label>
+              Card Number
+              <input
+                placeholder="Card #"
+                type="text"
+              />
+            </label>
+          </div>
+          <div
+            className="form-row"
+          >
+            <label>
+              Expiration Month
+              <select>
+                <option>
+                  Month
+                </option>
+                <option>
+                  January
+                </option>
+                <option>
+                  February
+                </option>
+                <option>
+                  March
+                </option>
+                <option>
+                  April
+                </option>
+                <option>
+                  May
+                </option>
+                <option>
+                  June
+                </option>
+                <option>
+                  July
+                </option>
+                <option>
+                  August
+                </option>
+                <option>
+                  September
+                </option>
+                <option>
+                  October
+                </option>
+                <option>
+                  November
+                </option>
+                <option>
+                  December
+                </option>
+              </select>
+            </label>
+            <label>
+              Expiration Year
+              <input
+                placeholder="Year"
+                type="text"
+              />
+            </label>
+            <label>
+              Expiration Year
+              <input
+                placeholder="CVC"
+                type="text"
+              />
+            </label>
+          </div>
+          <button
+            type="submit"
+          >
+            Add Credit
+          </button>
+        </form>
+      </div>
+    </div>
+    <div
+      className="transactions"
+    >
+      <table>
+        <thead>
+          <tr>
+            <th>
+              Amount
+            </th>
+            <th>
+              Credit Method
+            </th>
+            <th>
+              Date Processed
+            </th>
+          </tr>
+        </thead>
+        <tbody />
+      </table>
+    </div>
+  </div>
+</div>
+`;
