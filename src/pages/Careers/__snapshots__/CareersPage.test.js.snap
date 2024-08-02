@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders Careers Page component correctly 1`] = `
+exports[`CareersPage component renders CareersPage component correctly 1`] = `
 <DocumentFragment>
   <div
     class="careers-page"
