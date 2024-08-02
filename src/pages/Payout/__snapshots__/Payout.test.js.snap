@@ -1,79 +1,108 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test Payout 1`] = `
-<div
-  className="payout-page "
->
+exports[`renders Payout component correctly 1`] = `
+<DocumentFragment>
   <div
-    className="content"
+    class="payout-page "
   >
     <div
-      className="payout-header"
-    >
-      <h2>
-        Payout
-      </h2>
-    </div>
-    <div
-      className="payout-content"
+      class="content"
     >
       <div
-        className="next-payout"
+        class="payout-header"
       >
-        <h3>
-          Next payout
-        </h3>
-        <h6 />
-        <h5>
-          via 
-        </h5>
-        <p>
-          Your payout will be processed on 
-          <span />
-        </p>
+        <h2>
+          Payout
+        </h2>
       </div>
       <div
-        className="payout-account"
+        class="payout-content"
       >
-        <h3>
-          Payout account
-        </h3>
         <div
-          className="account-details"
+          class="next-payout"
         >
-          <img
-            alt="Payout"
-            src="payout.jpg"
-          />
+          <h3>
+            Next payout
+          </h3>
+          <h6>
+            $500
+          </h6>
+          <h5>
+            via Bank Transfer
+          </h5>
           <p>
-            Added: 01 Mar 2020
+            Your payout will be processed on 
+            <span>
+              01 Mar 2024
+            </span>
           </p>
         </div>
-        <button>
-          Set Account
-        </button>
+        <div
+          class="payout-account"
+        >
+          <h3>
+            Payout account
+          </h3>
+          <div
+            class="account-details"
+          >
+            <img
+              alt="Payout"
+              src="payout.jpg"
+            />
+            <p>
+              Added: 01 Mar 2020
+            </p>
+          </div>
+          <button>
+            Set Account
+          </button>
+        </div>
+      </div>
+      <div
+        class="transactions"
+      >
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Amount
+              </th>
+              <th>
+                Payout Method
+              </th>
+              <th>
+                Date Processed
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                $200
+              </td>
+              <td>
+                PayPal
+              </td>
+              <td>
+                01 Feb 2024
+              </td>
+            </tr>
+            <tr>
+              <td>
+                $300
+              </td>
+              <td>
+                Bank Transfer
+              </td>
+              <td>
+                01 Jan 2024
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-    <div
-      className="transactions"
-    >
-      <table>
-        <thead>
-          <tr>
-            <th>
-              Amount
-            </th>
-            <th>
-              Payout Method
-            </th>
-            <th>
-              Date Processed
-            </th>
-          </tr>
-        </thead>
-        <tbody />
-      </table>
-    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
