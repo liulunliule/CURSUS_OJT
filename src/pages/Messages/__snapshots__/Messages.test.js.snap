@@ -19,7 +19,6 @@ exports[`renders Messages component correctly 1`] = `
         class="message-list"
       >
         <input
-          class="add mess"
           placeholder="Search Messages..."
           type="text"
         />

@@ -2,7 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     account: {
-        userName: "",
+        access_token: "",
+        refresh_token: "",
+        username: "",
         email: "",
         password: "",
         phone: "",
@@ -21,36 +23,28 @@ const initialState = {
     },
     isAuthenticated: false,
 };
-
 const userSlice = createSlice({
     name: "user",
     initialState,
     reducers: {
         fetchUserLoginSuccess: (state, action) => {
-            // console.log("Check action: ", action.payload);
+            console.log("Check action: ", action.payload);
             state.account = {
-                userName: action?.payload?.userName,
-                email: action?.payload?.email,
-                password: action,
-                phone: action?.payload?.phone,
-                gender: action?.payload?.gender,
-                avatar: action?.payload?.avatar,
-                role: action?.payload?.role,
-                enrolledCourses: action?.payload?.enrolledCourses,
-                major: action?.payload?.major,
-                enrollStudents: action?.payload?.enrollStudents,
-                aboutme: action?.payload?.aboutme,
-                subscriptions: action?.payload?.subscriptions,
-                reviews: action?.payload?.reviews,
-                purchased: action?.payload?.purchased,
-                certificate: action?.payload?.certificate,
-                id: action?.payload?.id,
+                access_token: action?.payload?.DT.access_token,
+                refresh_token: action?.payload?.DT.refresh_token,
+                username: action?.payload?.DT.username,
+                email: action?.payload?.DT.email,
+                image: action?.payload?.DT.image,
+                role: action?.payload?.DT.role,
             };
+
             state.isAuthenticated = true;
         },
         doLogout: (state) => {
             state.account = {
-                userName: "",
+                access_token: "",
+                refresh_token: "",
+                username: "",
                 email: "",
                 password: "",
                 phone: "",
@@ -69,14 +63,9 @@ const userSlice = createSlice({
             };
             state.isAuthenticated = false;
         },
-
-        updateUser: (state, action) => {
-            state.account = { ...state.account, ...action.payload };
-        },
     },
 });
 
-export const { fetchUserLoginSuccess, doLogout, updateUser } =
-    userSlice.actions;
+export const { fetchUserLoginSuccess, doLogout } = userSlice.actions;
 
 export default userSlice.reducer;
