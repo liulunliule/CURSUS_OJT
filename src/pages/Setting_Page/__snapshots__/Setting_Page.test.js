@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { store } from '../../../redux/store';
 import SettingPage from '..';
 
-test('test Certification Test Page', () => {
+test('test SettingPage', () => {
   const tree = renderer.create(
     <Provider store={store}>
       <MemoryRouter>
