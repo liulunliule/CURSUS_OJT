@@ -9,7 +9,9 @@ import Instructor_Notification from '.';
 test('test verification page', () => {
   const tree = renderer.create(
     <Provider store={store}>
-            <Instructor_Notification />
+      <MemoryRouter>
+        <Instructor_Notification/>
+      </MemoryRouter>
     </Provider>
   ).toJSON();
   expect(tree).toMatchSnapshot();
