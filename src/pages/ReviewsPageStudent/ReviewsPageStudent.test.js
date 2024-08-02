@@ -3,14 +3,14 @@ import renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
-import { store } from '../../../redux/store';
-import ForgotPassword from '..';
+import { store } from '../../redux/store';
+import ReviewsPageStudent from '.';
 
-test('test Certification Test Page', () => {
+test('test ReviewsPageStudent', () => {
   const tree = renderer.create(
     <Provider store={store}>
       <MemoryRouter>
-        <ForgotPassword/>
+        <ReviewsPageStudent/>
       </MemoryRouter>
     </Provider>
   ).toJSON();
