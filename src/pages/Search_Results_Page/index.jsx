@@ -3,7 +3,6 @@ import "./index.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
-import { fetchUserPosts } from "../../pages/Instructor_Profile/data"; // Assuming this is where you import your fetch function
 import Cart from "../../assets/img/cart.png";
 import Play from "../../assets/img/play-button.png";
 import {
@@ -14,8 +13,14 @@ import {
 } from "@ant-design/icons";
 import { UilWindsock } from "@iconscout/react-unicons";
 import { Dropdown } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
+import {
+  fetchSearchResult,
+  fetchAddNewCourse,
+} from "../../redux/features/mySearchSlice";
+
 const Search_Resultse = () => {
-  const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showTopic, setShowTopic] = useState(false);
   const [showLevel, setShowLevel] = useState(false);
@@ -26,25 +31,63 @@ const Search_Resultse = () => {
   const [showVideoDuration, setshowVideoDuration] = useState(false);
   const [showCloseCaption, setshowCloseCaption] = useState(false);
   const [selectedSort, setSelectedSort] = useState("Sort");
+  const [query, setQuery] = useState("");
+  const [likedCourses, setLikedCourses] = useState(new Set());
+  const dispatch = useDispatch();
+  const { userSearch, status } = useSelector((state) => state.mySearch);
+  const account = useSelector((state) => state.user.account);
 
   const handleSortChange = (eventKey) => {
     setSelectedSort(eventKey);
   };
-  React.useEffect(() => {
-    setSelectedSort("Sort");
-  }, []);
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const posts = await fetchUserPosts();
-        setPosts(posts);
-        setLoading(false);
-      } catch (error) {
-        console.error("Error fetching courses:", error);
-      }
+    if (query) {
+      dispatch(fetchSearchResult(query));
+    }
+    setLoading(false);
+  }, [dispatch, query]);
+
+  const handleSearch = () => {
+    dispatch(fetchSearchResult(query));
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    }
+  };
+
+  const handleAddCourse = (course) => {
+    const userId = account.id;
+    const updatedCourse = {
+      ...course,
+      userId,
+      saved: !likedCourses.has(course.id),
     };
 
-    fetchData();
+    dispatch(fetchAddNewCourse(updatedCourse))
+      .then(() => {
+        setLikedCourses((prev) => {
+          const newLikedCourses = new Set(prev);
+          if (updatedCourse.saved) {
+            newLikedCourses.add(course.id);
+          } else {
+            newLikedCourses.delete(course.id);
+          }
+          // localStorage.setItem(
+          //   "likedCourses",
+          //   JSON.stringify([...newLikedCourses])
+          // );
+          return newLikedCourses;
+        });
+        toast.error("Failed to add course. Please try again.");
+      })
+      .catch(() => {
+        toast.success("Course added successfully!");
+      });
+  };
+  React.useEffect(() => {
+    setSelectedSort("Sort");
   }, []);
   const toggleAccordion = (accordion) => {
     setShowTopic(false);
@@ -85,23 +128,22 @@ const Search_Resultse = () => {
         break;
     }
   };
-
   return (
     <div className="search-result-wrapper search-result">
       <div className="search-result-background">
         <div className="container">
           <div className="row">
-            <div class="col-lg-12">
-              <div class="title-search-result">
-                <div class="title-search-result-left">
-                  <div class="title-search-result-left-link">
+            <div className="col-lg-12">
+              <div className="title-search-result">
+                <div className="title-search-result-left">
+                  <div className="title-search-result-left-link">
                     <nav aria-label="breadcrumb">
-                      <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
+                      <ol className="breadcrumb">
+                        <li className="breadcrumb-item">
                           <a href="/">Home</a>
                         </li>
                         <li
-                          class="breadcrumb-item breadcrumb-item-color active "
+                          className="breadcrumb-item breadcrumb-item-color active"
                           aria-current="page"
                         >
                           Search Results
@@ -110,7 +152,7 @@ const Search_Resultse = () => {
                     </nav>
                   </div>
                 </div>
-                <div class="title-search-result-right">
+                <div className="title-search-result-right">
                   <div className="instructor_search title-search-result-right-search col-xl-12 col-lg-8">
                     <div className="search_all_instructor title-search-result-right-search-result">
                       <div className="policy__toolbar">
@@ -120,10 +162,11 @@ const Search_Resultse = () => {
                           </div>
                           <input
                             type="text"
-                            name=""
-                            id=""
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                            onKeyDown={handleKeyPress}
                             className="policy__toolbar-input"
-                            placeholder="Search"
+                            placeholder="Search courses..."
                           />
                         </div>
                       </div>
@@ -131,16 +174,16 @@ const Search_Resultse = () => {
                   </div>
                 </div>
               </div>
-              <div class="title-search-result-main">
+              <div className="title-search-result-main">
                 <h2>Search Results</h2>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="search-results-filters mb4d25">
-        <div class="container">
-          <div class="row justify-content-between">
+      <div className="search-results-filters mb4d25">
+        <div className="container">
+          <div className="row justify-content-between">
             <div class="col-lg-3 col-md-4">
               <div class="search-results-filters-section">
                 <div class="search-results-filters-section-result-stitles">
@@ -181,7 +224,9 @@ const Search_Resultse = () => {
                       <div className="panel-heading" id="headingOne">
                         <div className="panel-title10">
                           <a
-                            className={`collapsed-search ${showTopic ? "active" : ""}`}
+                            className={`collapsed-search ${
+                              showTopic ? "active" : ""
+                            }`}
                             onClick={() => toggleAccordion("topic")}
                             data-bs-toggle="collapse"
                             data-bs-target="#collapseOne"
@@ -466,7 +511,9 @@ const Search_Resultse = () => {
                   <div className="panel-heading" id="headingTwo">
                     <div className="panel-title10">
                       <a
-                        className={`collapsed-search ${showLevel ? "active" : ""}`}
+                        className={`collapsed-search ${
+                          showLevel ? "active" : ""
+                        }`}
                         onClick={() => toggleAccordion("level")}
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseTwo"
@@ -569,7 +616,9 @@ const Search_Resultse = () => {
                   <div className="panel-heading" id="headingThree">
                     <div className="panel-title10">
                       <a
-                        className={`collapsed-search ${showLanguage ? "active" : ""}`}
+                        className={`collapsed-search ${
+                          showLanguage ? "active" : ""
+                        }`}
                         onClick={() => toggleAccordion("language")}
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseThree"
@@ -827,7 +876,9 @@ const Search_Resultse = () => {
                   <div className="panel-heading" id="headingThree">
                     <div className="panel-title10">
                       <a
-                        className={`collapsed-search ${showPrice ? "active" : ""}`}
+                        className={`collapsed-search ${
+                          showPrice ? "active" : ""
+                        }`}
                         onClick={() => toggleAccordion("Price")}
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseThree"
@@ -895,7 +946,9 @@ const Search_Resultse = () => {
                   <div className="panel-heading" id="headingThree">
                     <div className="panel-title10">
                       <a
-                        className={`collapsed-search ${showFeatures ? "active" : ""}`}
+                        className={`collapsed-search ${
+                          showFeatures ? "active" : ""
+                        }`}
                         onClick={() => toggleAccordion("Features")}
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseThree"
@@ -997,7 +1050,9 @@ const Search_Resultse = () => {
                   <div className="panel-heading" id="headingThree">
                     <div className="panel-title10">
                       <a
-                        className={`collapsed-search ${showRating ? "active" : ""}`}
+                        className={`collapsed-search ${
+                          showRating ? "active" : ""
+                        }`}
                         onClick={() => toggleAccordion("Rating")}
                         data-bs-toggle="collapse"
                         data-bs-target="#collapseThree"
@@ -1066,7 +1121,9 @@ const Search_Resultse = () => {
                                     className="fa-star-search"
                                   />
                                   500&up
-                                  <span className="filter__counter">(5000)</span>
+                                  <span className="filter__counter">
+                                    (5000)
+                                  </span>
                                 </label>
                               </div>
                             </div>
@@ -1503,8 +1560,10 @@ const Search_Resultse = () => {
               <div className="search-result-data search-result-data-mb-20">
                 <div className="row">
                   <div className="col-md-12">
-                    <h4 className="search-result-number">5 Results</h4>
-                    {loading ? (
+                    <h4 className="search-result-number">
+                      {userSearch.length} Results
+                    </h4>
+                    {status === "loading" ? (
                       <div className="main-loader mt-50">
                         <div className="spinner">
                           <div className="bounce1"></div>
@@ -1513,7 +1572,7 @@ const Search_Resultse = () => {
                         </div>
                       </div>
                     ) : (
-                      posts.map((course) => (
+                      userSearch.map((course) => (
                         <div
                           className="col-md-12 search-result-course-card"
                           key={course.id}
@@ -1542,12 +1601,11 @@ const Search_Resultse = () => {
                                 </div>
                                 <span className="search-result-play-btn">
                                   <i className="uil uil-play search-result-play">
-                                    {" "}
                                     <img
                                       src={Play}
                                       className="search-result-course-play"
                                       alt="purchased-play"
-                                    ></img>
+                                    />
                                   </i>
                                 </span>
                                 <div className="search-result-course-timer">
@@ -1568,28 +1626,26 @@ const Search_Resultse = () => {
                                 </div>
                               </a>
                               <div className="search-result-more-dropdown-content">
-                                <span>
-                                  <i className="uil uil-share-alt">
-                                    <ShareAltOutlined />
-                                  </i>{" "}
-                                  Share
-                                </span>
-                                <span>
-                                  <i className="uil uil-heart">
+                                <span
+                                  onClick={() => handleAddCourse(course)}
+                                >
+                                  <i
+                                    className={`uil uil-heart ${
+                                      likedCourses.has(course.id)
+                                        ? "heart-red"
+                                        : ""
+                                    }`}
+                                  >
                                     <HeartOutlined />
-                                  </i>{" "}
-                                  Save
-                                </span>
-                                <span>
-                                  <i className="uil uil-ban">
-                                    <StopOutlined />
-                                  </i>{" "}
-                                  Not Interested
+                                  </i>
+                                  {likedCourses.has(course.id)
+                                    ? "Saved"
+                                    : "Save"}
                                 </span>
                                 <span>
                                   <i className="uil uil-windsock">
                                     <UilWindsock />
-                                  </i>{" "}
+                                  </i>
                                   Report
                                 </span>
                               </div>

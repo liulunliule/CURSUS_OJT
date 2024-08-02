@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./index.scss";
 import Bell from "../../assets/img/bell.png";
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchInstructorNotifications } from '../../redux/features/instructorNotificationsSlice';
 
 const Instructor_Notification = () => {
     const [mouseOverColor, setMouseOverColor] = useState(null);
@@ -14,6 +15,15 @@ const Instructor_Notification = () => {
     const mouseOverOff = () => {
         setMouseOverColor(null);
     }
+
+    const dispatch = useDispatch();
+    const notification = useSelector((state) => state.instructorNotifications.instructorNotifications)
+    const loading = useSelector((state) => state.instructorNotifications.loading);
+
+    useEffect(() => {
+        dispatch(fetchInstructorNotifications());
+    }, [dispatch])
+
     const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
 
   return (
@@ -30,10 +40,10 @@ const Instructor_Notification = () => {
                 </div>
 
                 <div className='row'>
-                    <div className='setting-section'>
+                    <div className='setting-section mbt-30'>
                         <Link to="/setting_page/account_tab">
                         <button
-                                style={{backgroundColor: mouseOverColor}}
+                                style={{backgroundColor: mouseOverColor, marginBottom: 30}}
                                 class="setting_noti"
                                 onMouseOver={mouseOverOn}
                                 onMouseOut={mouseOverOff}
@@ -41,19 +51,6 @@ const Instructor_Notification = () => {
                                 Notification Setting
                                 </button>
                         </Link>
-
-                                <div className='message_back mart-30'>
-                                            <div className='panel_stuff'>
-                                                <div className='profile_show'>
-                                                    <img src='https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-1.jpg' alt='photo'/>
-                                                    <div className='content_show'>
-                                                        <h6>Rock William</h6>
-                                                        <p>Like Your Comment On Video <strong>How To Create Sidebar Menu</strong>.</p>
-                                                        <span className='time_ago'>2 min ago</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                
                                     {notification.map((d) => (
                                         <div className='message_back'>
@@ -69,18 +66,6 @@ const Instructor_Notification = () => {
                                             </div>
                                         </div>
                                     ))}
-                                    <div className='message_back mbt-30'>
-                                            <div className='panel_stuff'>
-                                                <div className='profile_show'>
-                                                    <img src='https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-9.jpg' alt='photo'/>
-                                                    <div className='content_show'>
-                                                        <h6></h6>
-                                                        <p>Your Course Approved Now. <strong>How To Create Sidebar Menu</strong>.</p>
-                                                        <span className='time_ago'>20 min ago</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                     </div>
                 </div>
             </div>
@@ -89,21 +74,5 @@ const Instructor_Notification = () => {
   )
 }
 
-const notification = [
-    {
-        img: 'https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-2.jpg',
-        name: 'Jassica Smith',
-        content: 'Added New Review In Video',
-        strong: 'Full Stack PHP Developer',
-        time: '12 min ago'
-    },
-    {
-        img: 'https://gambolthemes.net/html-items/cursus-new-demo/images/left-imgs/img-9.jpg',
-        name: '',
-        content: 'Your Membership Activated',
-        strong: '',
-        time: '20 min ago'
-    },
-]
 
 export default Instructor_Notification

@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Free_page Component matches snapshot 1`] = `
+<div
+  className="free_page"
+>
+  <div
+    className="free_page_switch-btn"
+  >
+    <button
+      aria-checked={false}
+      className="ant-switch css-dev-only-do-not-override-1pg9a38"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="switch"
+      style={
+        Object {
+          "marginRight": "10px",
+        }
+      }
+      type="button"
+    >
+      <div
+        className="ant-switch-handle"
+      />
+      <span
+        className="ant-switch-inner"
+      >
+        <span
+          className="ant-switch-inner-checked"
+        />
+        <span
+          className="ant-switch-inner-unchecked"
+        />
+      </span>
+    </button>
+    Require Log in
+  </div>
+  <div
+    className="free_page_switch-btn"
+  >
+    <button
+      aria-checked={false}
+      className="ant-switch css-dev-only-do-not-override-1pg9a38"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="switch"
+      style={
+        Object {
+          "marginRight": "10px",
+        }
+      }
+      type="button"
+    >
+      <div
+        className="ant-switch-handle"
+      />
+      <span
+        className="ant-switch-inner"
+      >
+        <span
+          className="ant-switch-inner-checked"
+        />
+        <span
+          className="ant-switch-inner-unchecked"
+        />
+      </span>
+    </button>
+    Require Enroll
+  </div>
+  <p
+    className="free_page-content"
+  >
+    If the course is free, if student require to enroll your course, if not required enroll, if students required sign in to your website to take this course.
+  </p>
+</div>
+`;

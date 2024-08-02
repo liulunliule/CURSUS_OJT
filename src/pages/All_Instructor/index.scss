@@ -1,267 +1,264 @@
 .all_instructor_design {
-  margin-top: 60px;
-  margin-bottom: 70px;
-  transition: all 0.3s ease;
-  overflow-x: hidden;
-  .body_all_instructor {
-    background-color: #f7f7f7;
-    padding-top: 30px;
+    margin-top: 60px;
+    margin-bottom: 70px;
+    transition: all 0.3s ease-out;
+    overflow-x: hidden;
 
-  }
-  transition: all 0.5s ease;
-  &.active {
-    .sidebar_instructor {
-      width: 0; 
-    }
     .body_all_instructor {
-      width: 100%; 
+        background-color: #f7f7f7;
+        padding-top: 30px;
     }
-    .all_instructor_infor {
-      width: 339px;
-      height: 325px;
+    &.active {
+        .sidebar_instructor {
+            width: 0;
+        }
+        .body_all_instructor {
+            width: 100%;
+        }
+        .all_instructor_infor {
+            width: 339px;
+            height: 325px;
+        }
+        .social_links_all {
+            margin-right: 60px;
+            margin-left: 50px;
+        }
     }
-    .social_links_all {
-      margin-right: 60px;
-      margin-left: 50px;
-    }
-  }
 }
 .ai.search_focus {
-  .ai.left_icon.input_text.swdh11_search {
-    position: relative;
-    margin: 0px 25px 30px 25px;
-  }
-
-  .ai.left_icon.input_text.swdh11_search input {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    font-size: 14px;
-    transition: border-color 0.3s ease;
-  }
-
-  .swdh11_search {
-    display: flex;
-   
-    background-color: #fff;
-    align-items: center;
-    border-radius: 3px;
-    border: 1px solid #e5e5e5;
-    box-shadow: 0px 1px 4px 0px #00000005;
-    padding: 5px 10px 5px 15px;
-    color: #c7c7c7;
-
-    .icon-search-all-instrutor {
-      filter: brightness(3);
-      width: 24px;
-      padding-left: 2px;
+    .ai.left_icon.input_text.swdh11_search {
+        position: relative;
+        margin: 0px 25px 30px 25px;
     }
 
-    .search_all_instructor_explore::placeholder {
-      color: #c7c7c7;
-      padding-left: 5px;
-    }
-  }
-
-  .swdh11_search:focus-within {
-    border-color: #333; 
-
-    .search_all_instructor_explore::placeholder {
-      filter: brightness(0);
+    .ai.left_icon.input_text.swdh11_search input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        outline: none;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: border-color 0.3s ease;
     }
 
-    .icon-search-all-instrutor {
-      filter: brightness(0);
-    }
-  }
+    .swdh11_search {
+        display: flex;
 
-  .ai.left_icon.input_text.swdh11_search .icon_all_instructor_search {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    font-size: 18px;
-  }
+        background-color: #fff;
+        align-items: center;
+        border-radius: 3px;
+        border: 1px solid #e5e5e5;
+        box-shadow: 0px 1px 4px 0px #00000005;
+        padding: 5px 10px 5px 15px;
+        color: #c7c7c7;
+
+        .icon-search-all-instrutor {
+            filter: brightness(3);
+            width: 24px;
+            padding-left: 2px;
+        }
+
+        .search_all_instructor_explore::placeholder {
+            color: #c7c7c7;
+            padding-left: 5px;
+        }
+    }
+
+    .swdh11_search:focus-within {
+        border-color: #333;
+
+        .search_all_instructor_explore::placeholder {
+            filter: brightness(0);
+        }
+
+        .icon-search-all-instrutor {
+            filter: brightness(0);
+        }
+    }
+
+    .ai.left_icon.input_text.swdh11_search .icon_all_instructor_search {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        font-size: 18px;
+    }
 }
 
 .all_instructor_infor {
-  width: 279px;
-  height: 325px;
-  float: left;
-  padding: 10px;
-  margin-bottom: 30px;
-  border-radius: 3px;
-  border: 1px solid #efefef;
-  transition: all 0.2s ease-in-out;
-  background-color: #fff;
+    width: 279px;
+    height: 325px;
+    float: left;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    border: 1px solid #efefef;
+    background-color: #fff;
 }
 
 .all_instructor_infor_img {
-  width: 100%;
-  float: left;
-  padding: 20px;
-  text-align: center;
+    width: 100%;
+    float: left;
+    padding: 20px;
+    text-align: center;
 }
 
 .all_instructor_infor_img img {
-  text-align: center;
-  width: 100px !important;
-  height: 100px !important;
-  display: inline-block !important;
-  border-radius: 100%;
-  border: 2px solid #fff;
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100px ;
+    height: 100px ;
+    display: inline-block ;
+    border-radius: 100%;
+    border: 2px solid #fff;
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
 }
 
 .all_instructor_infor_content {
-  text-align: center;
-  float: left;
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 0 10px;
+    text-align: center;
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0 10px;
 }
 
 .all_instructor_infor_content_detail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .all_instructor_infor_name {
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
-  text-align: center;
-  position: relative;
-  display: flex;
-  .icon-faCircleCheck {
-    margin-left: 5px;
-  }
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    position: relative;
+    display: flex;
+    .icon-faCircleCheck {
+        margin-left: 5px;
+    }
 }
 
 .all_instructor_infor_major {
-  font-size: 13px;
-  color: #686f7a;
-  margin-top: 10px;
-  font-family: "Roboto", sans-serif;
-  font-weight: 400;
-  margin-bottom: 17px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+    font-size: 13px;
+    color: #686f7a;
+    margin-top: 10px;
+    font-weight: 400;
+    margin-bottom: 17px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .all_instructor_tutor_social_links li a {
-  font-size: 14px;
-  float: left;
-  width: 35px;
-  height: 36px;
-  border-radius: 3px;
-  text-align: center;
-  padding: 9px 0;
-  color: #fff;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+    font-size: 14px;
+    float: left;
+    width: 35px;
+    height: 36px;
+    border-radius: 3px;
+    text-align: center;
+    padding: 9px 0;
+    color: #fff;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 .social_links_all {
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
-  margin-right: 35px;
-  margin-left: 15px;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-right: 35px;
+    margin-left: 15px;
 }
 
 .purchased-view-date {
-  color: #686f7a;
-  margin-bottom: 10px;
-  display: flex;
-
-  &-ago {
+    color: #686f7a;
+    margin-bottom: 10px;
     display: flex;
-    align-items: center;
-    .view,
-    .date {
-      font-size: 12px;
-    }
-  }
 
-  .view::after {
-    content: "•";
-    margin-left: 5px;
-    margin-right: 5px;
-  }
+    &-ago {
+        display: flex;
+        align-items: center;
+        .view,
+        .date {
+            font-size: 12px;
+        }
+    }
+
+    .view::after {
+        content: "•";
+        margin-left: 5px;
+        margin-right: 5px;
+    }
 }
 
 .all_instructor_infor_instructor {
-  color: #686f7a;
-  margin-bottom: 10px;
-  padding-top: 10px;
-  .all_instructor_infor_student_number,
-  .all_instructor_infor_course_number {
-    font-size: 12px;
-  }
+    color: #686f7a;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    .all_instructor_infor_student_number,
+    .all_instructor_infor_course_number {
+        font-size: 12px;
+    }
 }
 .all_instructor_infor_student_number::after {
-  content: "•";
-  margin-left: 5px;
-  margin-right: 5px;
+    content: "•";
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 .instructor_search {
-  flex: 0 0 auto;
-  width: 100%;
+    flex: 0 0 auto;
+    width: 100%;
 }
 
 .all_instructor_infor_content_detail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .all_instructor_group {
-  margin-left: 30px;
-  margin-right: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .all-instructor-spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  .bounce-1,
-  .bounce-2,
-  .bounce-3 {
-    width: 12px;
-    height: 12px;
-    background-color: #000000;
-    border-radius: 50%;
-    display: inline-block;
-    animation: bounce 1.4s infinite ease-in-out both;
-  }
+    .bounce-1,
+    .bounce-2,
+    .bounce-3 {
+        width: 12px;
+        height: 12px;
+        background-color: #000000;
+        border-radius: 50%;
+        display: inline-block;
+        animation: bounce 1.4s infinite ease-in-out both;
+    }
 
-  .bounce-2 {
-    animation-delay: -0.32s;
-  }
+    .bounce-2 {
+        animation-delay: -0.32s;
+    }
 
-  .bounce-3 {
-    animation-delay: -0.16s;
-  }
+    .bounce-3 {
+        animation-delay: -0.16s;
+    }
 }
 
 @keyframes bounce {
-  0%,
-  80%,
-  100% {
-    transform: scale(0);
-  }
-  40% {
-    transform: scale(1);
-  }
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
 }

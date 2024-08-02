@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Press 1`] = `
+<div
+  className="press-page"
+>
+  <header
+    className="custom-header"
+    style={
+      Object {
+        "backgroundColor": "#f8f8f8",
+      }
+    }
+  >
+    <nav
+      className="custom-nav"
+    >
+      <ul
+        className="custom-ul"
+      >
+        <li
+          className="custom-li "
+          onClick={[Function]}
+        >
+          About
+        </li>
+        <li
+          className="custom-li "
+          onClick={[Function]}
+        >
+          Blog
+        </li>
+        <li
+          className="custom-li "
+          onClick={[Function]}
+        >
+          Company
+        </li>
+        <li
+          className="custom-li "
+          onClick={[Function]}
+        >
+          Careers
+        </li>
+        <li
+          className="custom-li selected"
+          onClick={[Function]}
+        >
+          Press
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section
+    className="hero"
+    style={
+      Object {
+        "backgroundColor": "#f8f8f8",
+      }
+    }
+  >
+    <h1>
+      What others are saying
+    </h1>
+  </section>
+  <div
+    className="content"
+  >
+    <div
+      className="sidebar"
+    >
+      <div
+        className="follow-buttons"
+      >
+        <button
+          className="follow1"
+        >
+          Follow our Facebook page
+        </button>
+        <button
+          className="follow2"
+        >
+          Follow our X page
+        </button>
+      </div>
+      <a
+        className="learn-more"
+        href="#"
+      >
+        Learn More
+      </a>
+      <a
+        className="help-center"
+        href="#"
+      >
+        Cursus Help Center
+      </a>
+    </div>
+    <div
+      className="right-section"
+    >
+      <div
+        className="news-section"
+      >
+        <h2>
+          Cursus in the News
+        </h2>
+        <p>
+          For media interviews and inquiries, please send an email to
+           
+          <a
+            href="mailto:press@cursus.com"
+          >
+            press@cursus.com
+          </a>
+        </p>
+        <div
+          className="news-items"
+        />
+        <a
+          className="see-more"
+          href="#"
+        >
+          See More News
+        </a>
+      </div>
+      <div
+        className="releases-section"
+      >
+        <h2>
+          Press Releases
+        </h2>
+        <p>
+          For Release from Cursus
+        </p>
+        <div
+          className="release-items"
+        />
+        <a
+          className="see-more"
+          href="#"
+        >
+          See More Press Releases
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,336 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Certification_fill_form Page 1`] = `
+<div>
+  <div
+    className="CertificationFillForm"
+  >
+    <div
+      className="toolbar_certification"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-lg-12"
+          >
+            <div
+              className="toolbar_title"
+            >
+              <div
+                className="titleleft"
+              >
+                <div
+                  className="toolbar_title_item"
+                >
+                  <nav
+                    aria-label="breadcrumb"
+                  >
+                    <ol
+                      className="breadcrumb"
+                    >
+                      <li
+                        className="breadcrumb-item"
+                      >
+                        <a
+                          href="/"
+                          onClick={[Function]}
+                        >
+                          Home
+                        </a>
+                      </li>
+                      <li
+                        className="breadcrumb-item"
+                      >
+                        <a
+                          href="/secondLayout/certification_center"
+                          onClick={[Function]}
+                        >
+                          Certification Center
+                        </a>
+                      </li>
+                      <li
+                        aria-current="page"
+                        className="breadcrumb-item active"
+                      >
+                        Certification Fill Form
+                      </li>
+                    </ol>
+                  </nav>
+                </div>
+              </div>
+              <div
+                className="titleright"
+              >
+                <a
+                  className="blog_link"
+                  href="/secondLayout/certification_center"
+                  onClick={[Function]}
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="svg-inline--fa fa-angles-left "
+                    data-icon="angles-left"
+                    data-prefix="fas"
+                    focusable="false"
+                    role="img"
+                    style={Object {}}
+                    viewBox="0 0 512 512"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z"
+                      fill="currentColor"
+                      style={Object {}}
+                    />
+                  </svg>
+                   
+                  Back to Certification Center
+                </a>
+              </div>
+            </div>
+            <div
+              className="main_title"
+            >
+              <h2>
+                Certification Fill Form
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="container"
+    >
+      <div
+        className="row justify-content-lg-center justify-content-md-center"
+      >
+        <div
+          className="col-lg-6 col-md-8"
+        >
+          <div
+            className="certi_form"
+          >
+            <div
+              className="fill_form"
+            >
+              <h2>
+                Fill in before you start:
+              </h2>
+              <form>
+                <div
+                  className="input_text"
+                >
+                  <input
+                    className="prompt srch_explore"
+                    id="id_fullname"
+                    maxlength="64"
+                    name="fullname"
+                    placeholder="Full Name"
+                    required=""
+                    type="text"
+                    value=""
+                  />
+                </div>
+                <div
+                  className="input_text"
+                >
+                  <input
+                    className="prompt srch_explore"
+                    id="id_email"
+                    maxlength="64"
+                    name="emailaddress"
+                    placeholder="Email Address"
+                    required=""
+                    type="email"
+                    value=""
+                  />
+                </div>
+                <div
+                  className="input_text"
+                >
+                  <input
+                    className="prompt srch_explore"
+                    id="id_phonenumber"
+                    maxlength="10"
+                    name="phonenumber"
+                    placeholder="Phone Number"
+                    required=""
+                    type="text"
+                    value=""
+                  />
+                </div>
+                <div
+                  className="fill_form_category"
+                >
+                  <h4>
+                    Select Category
+                  </h4>
+                  <div
+                    className="panel-groupaccordion"
+                    id="accordiontest"
+                  >
+                    <div
+                      className="panel panel-default"
+                    >
+                      <div
+                        className="panel-heading"
+                        id="headingOne"
+                      >
+                        <div
+                          className="panel-title"
+                        >
+                          <div
+                            className="link collapsed"
+                            onClick={[Function]}
+                            to="#"
+                          >
+                            Development
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="panel panel-default"
+                    >
+                      <div
+                        className="panel-heading"
+                        id="headingTwo"
+                      >
+                        <div
+                          className="panel-title"
+                        >
+                          <div
+                            className="link collapsed"
+                            onClick={[Function]}
+                            to="#"
+                          >
+                            Finance & Accounting
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="panel panel-default"
+                    >
+                      <div
+                        className="panel-heading"
+                        id="headingThree"
+                      >
+                        <div
+                          className="panel-title"
+                        >
+                          <div
+                            className="link collapsed"
+                            onClick={[Function]}
+                            to="#"
+                          >
+                            Design
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="panel panel-default"
+                    >
+                      <div
+                        className="panel-heading"
+                        id="headingfour"
+                      >
+                        <div
+                          className="panel-title"
+                        >
+                          <div
+                            className="link collapsed"
+                            onClick={[Function]}
+                            to="#"
+                          >
+                            Marketing
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      className="panel panel-default"
+                    >
+                      <div
+                        className="panel-heading"
+                        id="headingfive"
+                      >
+                        <div
+                          className="panel-title"
+                        >
+                          <div
+                            className="link collapsed"
+                            onClick={[Function]}
+                            to="#"
+                          >
+                            Teaching & Academics
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="signup__forgotPass"
+                >
+                  By signing up, you agree to our
+                  <a
+                    href="/secondLayout/policy"
+                    onClick={[Function]}
+                  >
+                     
+                    Privacy Policy
+                  </a>
+                   
+                  and
+                   
+                  <a
+                    href="/secondLayout/term"
+                    onClick={[Function]}
+                  >
+                     
+                    Terms and Conditions
+                  </a>
+                  .
+                </div>
+                <a
+                  href="/secondLayout/Certification_test_page"
+                  onClick={[Function]}
+                >
+                  <button
+                    className="Go-btn"
+                    type="submit"
+                  >
+                    Lets Go
+                  </button>
+                </a>
+                <p
+                  className="questrm"
+                >
+                  Please be ready to answer
+                   
+                  <span>
+                    20 questions
+                  </span>
+                   within
+                   
+                  <span>
+                    1 hours
+                  </span>
+                  .
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

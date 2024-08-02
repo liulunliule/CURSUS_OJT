@@ -1,17 +1,17 @@
-.ReviewsPageInstructor{
+.ReviewsPageInstructor {
     margin-top: 60px;
     margin-left: 240px;
     padding: 30px;
     background-color: #f7f7f7;
     transition: margin-left 0.5s ease;
 
-    &.active{
+    &.active {
         transition: margin-left 0.5s ease;
-        margin-left: 0;
+        margin-left: 60px;
     }
     padding: 47px 30px;
 
-    .ReviewsPageInstructor_Title_Left{
+    .ReviewsPageInstructor_Title_Left {
         display: flex;
         gap: 10px;
         margin-bottom: 20px;

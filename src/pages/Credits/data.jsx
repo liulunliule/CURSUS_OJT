@@ -1,6 +1,9 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchAddedCredits, fetchTransactions } from '../../redux/features/creditsSlice';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchAddedCredits,
+  fetchTransactions,
+} from "../../redux/features/creditsSlice";
 
 export const useFetchCreditsData = () => {
   const dispatch = useDispatch();
@@ -10,7 +13,7 @@ export const useFetchCreditsData = () => {
   const error = useSelector((state) => state.credits.error);
 
   useEffect(() => {
-    if (status === 'idle') {
+    if (status === "idle") {
       dispatch(fetchAddedCredits());
       dispatch(fetchTransactions());
     }

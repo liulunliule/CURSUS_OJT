@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Certification Test Result Page 1`] = `
+<div
+  className="test_result"
+>
+  <div
+    className="toolbar_certification"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-12"
+        >
+          <div
+            className="toolbar_title"
+          >
+            <div
+              className="titleleft"
+            >
+              <div
+                className="toolbar_title_item"
+              >
+                <nav
+                  aria-label="breadcrumb"
+                >
+                  <ol
+                    className="breadcrumb"
+                  >
+                    <li
+                      className="breadcrumb-item"
+                    >
+                      <a
+                        href="/"
+                        onClick={[Function]}
+                      >
+                        Home
+                      </a>
+                    </li>
+                    <li
+                      className="breadcrumb-item"
+                    >
+                      <a
+                        href="/secondLayout/certification_center"
+                        onClick={[Function]}
+                      >
+                        Certification Center
+                      </a>
+                    </li>
+                    <li
+                      aria-current="page"
+                      className="breadcrumb-item active"
+                    >
+                      Result
+                       
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <div
+              className="titleright"
+            >
+              <a
+                className="blog_link"
+                href="/secondLayout/certification_center"
+                onClick={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angles-left "
+                  data-icon="angles-left"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+                 Back to Certification Center
+              </a>
+            </div>
+          </div>
+          <div
+            className="main_title"
+          >
+            <h2>
+              Result
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div
+      className="row justify-content-md-center"
+    >
+      <div
+        className="col-md-6"
+      >
+        <div
+          className="certi_form stickytime"
+        >
+          <div
+            className="test_result_bg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
