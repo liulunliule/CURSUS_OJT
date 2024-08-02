@@ -1,0 +1,419 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Messages component correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="chat-tab"
+  >
+    <header
+      class="chatting-header"
+    >
+      <h2>
+        Messages
+      </h2>
+    </header>
+    <div
+      class="chat-app "
+    >
+      <aside
+        class="message-list"
+      >
+        <input
+          class="add mess"
+          placeholder="Search Messages..."
+          type="text"
+        />
+        <ul>
+          <li
+            class="message-item first"
+          >
+            <img
+              alt="John Doe"
+              src="mess1.jpg"
+            />
+            <div
+              class="message-info"
+            >
+              <h3>
+                John Doe
+              </h3>
+              <p>
+                Hi! Sir, How are you. I ask you one thing pl...
+              </p>
+            </div>
+            <div
+              class="time-unread-wrapper"
+            >
+              <span
+                class="time"
+              >
+                7 hours ago
+              </span>
+              <span
+                class="unread-count"
+              >
+                2
+              </span>
+            </div>
+          </li>
+          <li
+            class="message-item "
+          >
+            <img
+              alt="Kerstin Cable"
+              src="mess2.jpg"
+            />
+            <div
+              class="message-info"
+            >
+              <h3>
+                Kerstin Cable
+              </h3>
+              <p>
+                Hello, I paid you video tutorial but did not...
+              </p>
+            </div>
+            <div
+              class="time-unread-wrapper"
+            >
+              <span
+                class="time"
+              >
+                8 hours ago
+              </span>
+              <span
+                class="unread-count"
+              >
+                3
+              </span>
+            </div>
+          </li>
+          <li
+            class="message-item "
+          >
+            <img
+              alt="Jose Portilla"
+              src="mess3.jpg"
+            />
+            <div
+              class="message-info"
+            >
+              <h3>
+                Jose Portilla
+              </h3>
+              <p>
+                Thanks Sir, Such a nice video.
+              </p>
+            </div>
+            <div
+              class="time-unread-wrapper"
+            >
+              <span
+                class="time"
+              >
+                15 hours ago
+              </span>
+              <span
+                class="unread-count"
+              >
+                1
+              </span>
+            </div>
+          </li>
+          <li
+            class="message-item "
+          >
+            <img
+              alt="Farhat Amin"
+              src="mess4.jpg"
+            />
+            <div
+              class="message-info"
+            >
+              <h3>
+                Farhat Amin
+              </h3>
+              <p>
+                Hi! Sir, this is a purchase key CFKX12536...
+              </p>
+            </div>
+            <div
+              class="time-unread-wrapper"
+            >
+              <span
+                class="time"
+              >
+                22 hours ago
+              </span>
+              <span
+                class="unread-count"
+              >
+                7
+              </span>
+            </div>
+          </li>
+          <li
+            class="message-item "
+          >
+            <img
+              alt="Kyle Pew"
+              src="mess5.jpg"
+            />
+            <div
+              class="message-info"
+            >
+              <h3>
+                Kyle Pew
+              </h3>
+              <p>
+                Pls! Upload .NET Course
+              </p>
+            </div>
+            <div
+              class="time-unread-wrapper"
+            >
+              <span
+                class="time"
+              >
+                2 days ago
+              </span>
+              <span
+                class="unread-count"
+              >
+                12
+              </span>
+            </div>
+          </li>
+          <li
+            class="message-item "
+          >
+            <img
+              alt="Eli Natoli"
+              src="mess6.jpg"
+            />
+            <div
+              class="message-info"
+            >
+              <h3>
+                Eli Natoli
+              </h3>
+              <p>
+                Hi Sir thank you very very much for bootst...
+              </p>
+            </div>
+            <div
+              class="time-unread-wrapper"
+            >
+              <span
+                class="time"
+              >
+                5 days ago
+              </span>
+            </div>
+          </li>
+          <li
+            class="message-item "
+          >
+            <img
+              alt="Jaysen Batchelor"
+              src="mess7.jpg"
+            />
+            <div
+              class="message-info"
+            >
+              <h3>
+                Jaysen Batchelor
+              </h3>
+              <p>
+                Thank you! Sir
+              </p>
+            </div>
+            <div
+              class="time-unread-wrapper"
+            >
+              <span
+                class="time"
+              >
+                7 days ago
+              </span>
+              <span
+                class="unread-count"
+              >
+                6
+              </span>
+            </div>
+          </li>
+          <li
+            class="message-item "
+          >
+            <img
+              alt="Quinton Batchelor"
+              src="mess8.jpg"
+            />
+            <div
+              class="message-info"
+            >
+              <h3>
+                Quinton Batchelor
+              </h3>
+              <p>
+                Hey!
+              </p>
+            </div>
+            <div
+              class="time-unread-wrapper"
+            >
+              <span
+                class="time"
+              >
+                13 days ago
+              </span>
+              <span
+                class="unread-count"
+              >
+                1
+              </span>
+            </div>
+          </li>
+        </ul>
+      </aside>
+      <main
+        class="chat-window"
+      >
+        <header
+          class="chat-header"
+        >
+          <img
+            alt="John Doe"
+            src="mess1.jpg"
+          />
+          <div
+            class="header-content"
+          >
+            <h3>
+              John Doe
+            </h3>
+            <span
+              class="status"
+            >
+              ONLINE
+            </span>
+          </div>
+          <div
+            class="options-menu"
+          >
+            <div
+              class="ellipsis"
+            >
+              ...
+            </div>
+            <ul
+              class="menu-items"
+            >
+              <li>
+                Delete
+              </li>
+              <li>
+                Block
+              </li>
+              <li>
+                Report
+              </li>
+              <li>
+                Mute
+              </li>
+            </ul>
+          </div>
+        </header>
+        <div
+          class="chat-messages"
+        >
+          <div
+            class="chat-message own"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.
+            </p>
+            <span
+              class="time"
+            >
+              Sat, April 10, 1:08 PM
+            </span>
+          </div>
+          <div
+            class="chat-message "
+          >
+            <p>
+              Cras ultricies ligula.
+            </p>
+            <span
+              class="time"
+            >
+              5 minutes ago
+            </span>
+          </div>
+          <div
+            class="chat-message own"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.
+            </p>
+            <span
+              class="time"
+            >
+              Sat, April 10, 1:08 PM
+            </span>
+          </div>
+          <div
+            class="chat-message "
+          >
+            <p>
+              Lorem ipsum dolor sit amet
+            </p>
+            <span
+              class="time"
+            >
+              2 minutes ago
+            </span>
+          </div>
+          <div
+            class="chat-message own"
+          >
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.
+            </p>
+            <span
+              class="time"
+            >
+              Sat, April 10, 1:08 PM
+            </span>
+          </div>
+          <div
+            class="chat-message "
+          >
+            <p>
+              ....
+            </p>
+            <span
+              class="time"
+            >
+              Typing...
+            </span>
+          </div>
+        </div>
+        <footer
+          class="chat-input"
+        >
+          <input
+            placeholder="Write a message..."
+            type="text"
+          />
+          <button>
+            ►
+          </button>
+        </footer>
+      </main>
+    </div>
+  </div>
+</DocumentFragment>
+`;

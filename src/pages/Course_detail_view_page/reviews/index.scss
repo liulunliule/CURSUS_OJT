@@ -53,6 +53,7 @@
 
                 .progress_item {
                     display: flex;
+                    gap: 20px;
                     align-items: center;
                     margin-bottom: 20px;
                 }
@@ -140,7 +141,7 @@
                     }
 
                     .icon_star {
-                        margin-left: -10px;
+                        // margin-left: -10px;
                     }
 
                     .comment_content {

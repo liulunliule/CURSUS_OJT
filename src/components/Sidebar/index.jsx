@@ -18,7 +18,7 @@ import {
   SendFeedbackLogo_SideBar,
 } from "../../assets";
 import "./index.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 //SideBarInstructorDashboardDemo
 import {
@@ -38,7 +38,18 @@ import {
   UilCommentAltExclamation,
 } from "@iconscout/react-unicons";
 function SidebarFrontend() {
+  const account = useSelector((state) => state.user.account);
+  const userId = account.id || "";
+  const role = account.role;
+  console.log("role: ", account.role);
+  const subscriptions = useSelector((state) => state.myProfile.subscriptions);
+  const chanelSubscription = subscriptions.filter(
+    (post) => post.userId === userId && post.registered === true
+  );
+  const navigate = useNavigate();
+  console.log("chanelSubscription: ", chanelSubscription);
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
+
   return (
     <div className={`SideBarFrontend ${isShowAll ? "active" : ""}`}>
       <div className="select_Side1">
@@ -156,21 +167,37 @@ function SidebarFrontend() {
         </details>
         <details>
           <summary className="select_Tests">
-            <div className="wrapperTests">
-              <img
-                className="TestsLogo_SideBar"
-                src={TestsLogo_SideBar}
-                alt=""
-              />
-              <span className="select_Tests__title">Tests</span>
-            </div>
-            <img
-              className="DropDownLogo_SideBar"
-              src={DropDownLogo_SideBar}
-              alt=""
-            />
+            {role === true || role === false ? (
+              <>
+                <div className="wrapperTests">
+                  <img
+                    className="TestsLogo_SideBar"
+                    src={TestsLogo_SideBar}
+                    alt="Tests Logo"
+                  />
+                  <span className="select_Tests__title">Tests</span>
+                </div>
+                <img
+                  className="DropDownLogo_SideBar"
+                  src={DropDownLogo_SideBar}
+                  alt="Drop Down Logo"
+                />
+              </>
+            ) : role === "" ? (
+              <Link className="Link_SideBar" to="/Login">
+                <div className="wrapperTests">
+                  <img
+                    className="TestsLogo_SideBar"
+                    src={TestsLogo_SideBar}
+                    alt="Tests Logo"
+                  />
+                  <span className="select_Tests__title">Tests</span>
+                </div>
+              </Link>
+            ) : null}
           </summary>
-          <div className="List_Select_Tests">
+
+          <div className={role === "" ? "hidden-content" : "List_Select_Tests"}>
             <ul className="Ul_List_Select_Tests_SideBar">
               <li className="Li_List_Select_Tests_SideBar">
                 <Link
@@ -212,16 +239,30 @@ function SidebarFrontend() {
             </ul>
           </div>
         </details>
-        <Link className="Link_SideBar" to="/saved_courses">
-          <div className="select_SavedCourses">
-            <img
-              className="SavedCoursesLogo_SideBar"
-              src={SavedCoursesLogo_SideBar}
-              alt=""
-            />
-            <span className="select_SavedCourses__title">Saved Courses</span>
-          </div>
-        </Link>
+
+        {role === true || role === false ? (
+          <Link className="Link_SideBar" to="/saved_courses">
+            <div className="select_SavedCourses">
+              <img
+                className="SavedCoursesLogo_SideBar"
+                src={SavedCoursesLogo_SideBar}
+                alt=""
+              />
+              <span className="select_SavedCourses__title">Saved Courses</span>
+            </div>
+          </Link>
+        ) : role === "" ? (
+          <Link className="Link_SideBar" to="/Login">
+            <div className="select_SavedCourses">
+              <img
+                className="SavedCoursesLogo_SideBar"
+                src={SavedCoursesLogo_SideBar}
+                alt=""
+              />
+              <span className="select_SavedCourses__title">Saved Courses</span>
+            </div>
+          </Link>
+        ) : null}
         <details>
           <summary className="select_Pages">
             <div className="wrapperPages">
@@ -323,7 +364,12 @@ function SidebarFrontend() {
                 <Link className="Link_SideBar">Add live Stream</Link>
               </li>
               <li className="Li_List_Select_Pages_SideBar">
-                <Link className="Link_SideBar">Search Result</Link>
+                <Link
+                  className="Link_SideBar"
+                  to="/secondLayout/search_results_page"
+                >
+                  Search Result
+                </Link>
               </li>
               <li className="Li_List_Select_Pages_SideBar">
                 <Link className="Link_SideBar" to="/thanks_page">
@@ -349,20 +395,27 @@ function SidebarFrontend() {
           <span className="select_Title">SUBSCRIPTIONS</span>
         </div>
         <div className="select_ListAvatar">
-          <Link to="/other_instructor_view" className="Link_SideBar">
-            <div className="wrapper_avatar1_SideBar">
-              <img className="avatar1_SideBar" src={avatar1_SideBar} alt="" />
-              <span className="nameOfAvatar1_SideBar">Rock Smith</span>
-              <span className="redDot_Avatar_SideBar"></span>
+          {chanelSubscription.map((subscription) => (
+            <div
+              className="Link_SideBar"
+              key={subscription.id}
+              onClick={() =>
+                navigate(`/other_instructor_view/${subscription.id}`)
+              }
+            >
+              <div className="wrapper_avatar1_SideBar">
+                <img
+                  className="avatar1_SideBar"
+                  src={subscription.userImage}
+                  alt=""
+                />
+                <span className="nameOfAvatar1_SideBar">
+                  {subscription.user}
+                </span>
+                <span className="redDot_Avatar_SideBar"></span>
+              </div>
             </div>
-          </Link>
-          <Link to="/other_instructor_view" className="Link_SideBar">
-            <div className="wrapper_avatar2_SideBar">
-              <img className="avatar2_SideBar" src={avatar2_SideBar} alt="" />
-              <span className="nameOfAvatar2_SideBar">Jassica William</span>
-              <span className="redDot_Avatar_SideBar"></span>
-            </div>
-          </Link>
+          ))}
           <Link to="/all_instructor" className="Link_SideBar">
             <div className="addInstructor_SideBar">
               <img
@@ -375,43 +428,83 @@ function SidebarFrontend() {
           </Link>
         </div>
       </div>
+
       <div className="select_Side3">
-        <Link to="/setting_page/account_tab" className="Link_SideBar">
-          <div className="wrapper_SupportFunction_Setting_SideBar">
-            <img
-              className="SettingLogo_SideBar"
-              src={SettingLogo_SideBar}
-              alt=""
-            />
-            <span className="Setting_Title">Setting</span>
-          </div>
-        </Link>
+        {role === true || role === false ? (
+          <Link to="/setting_page/account_tab" className="Link_SideBar">
+            <div className="wrapper_SupportFunction_Setting_SideBar">
+              <img
+                className="SettingLogo_SideBar"
+                src={SettingLogo_SideBar}
+                alt=""
+              />
+              <span className="Setting_Title">Setting</span>
+            </div>
+          </Link>
+        ) : role === "" ? (
+          <Link className="Link_SideBar" to="/Login">
+            <div className="wrapper_SupportFunction_Setting_SideBar">
+              <img
+                className="SettingLogo_SideBar"
+                src={SettingLogo_SideBar}
+                alt=""
+              />
+              <span className="Setting_Title">Setting</span>
+            </div>
+          </Link>
+        ) : null}
         <Link className="Link_SideBar" to="/help">
           <div className="wrapper_SupportFunction_Help_SideBar">
             <img className="HelpLogo_SideBar" src={HelpLogo_SideBar} alt="" />
             <span className="Help_Title">Help</span>
           </div>
         </Link>
-        <Link className="Link_SideBar" to="/report_history_page">
-          <div className="wrapper_SupportFunction_ReportHistory_SideBar">
-            <img
-              className="ReportHistoryLogo_SideBar"
-              src={ReportHistoryLogo_SideBar}
-              alt=""
-            />
-            <span className="ReportHistory_Title">ReportHistory</span>
-          </div>
-        </Link>
-        <Link className="Link_SideBar" to="/send_feedback_page">
-          <div className="wrapper_SupportFunction_SendFeedback_SideBar">
-            <img
-              className="SendFeedbackLogo_SideBar"
-              src={SendFeedbackLogo_SideBar}
-              alt=""
-            />
-            <span className="SendFeedback_Title">SendFeedback</span>
-          </div>
-        </Link>
+        {role === true || role === false ? (
+          <Link className="Link_SideBar" to="/report_history_page">
+            <div className="wrapper_SupportFunction_ReportHistory_SideBar">
+              <img
+                className="ReportHistoryLogo_SideBar"
+                src={ReportHistoryLogo_SideBar}
+                alt=""
+              />
+              <span className="ReportHistory_Title">ReportHistory</span>
+            </div>
+          </Link>
+        ) : role === "" ? (
+          <Link className="Link_SideBar" to="/Login">
+            <div className="wrapper_SupportFunction_ReportHistory_SideBar">
+              <img
+                className="ReportHistoryLogo_SideBar"
+                src={ReportHistoryLogo_SideBar}
+                alt=""
+              />
+              <span className="ReportHistory_Title">ReportHistory</span>
+            </div>
+          </Link>
+        ) : null}
+        {role === true || role === false ? (
+          <Link className="Link_SideBar" to="/send_feedback_page">
+            <div className="wrapper_SupportFunction_SendFeedback_SideBar">
+              <img
+                className="SendFeedbackLogo_SideBar"
+                src={SendFeedbackLogo_SideBar}
+                alt=""
+              />
+              <span className="SendFeedback_Title">SendFeedback</span>
+            </div>
+          </Link>
+        ) : role === "" ? (
+          <Link className="Link_SideBar" to="/Login">
+            <div className="wrapper_SupportFunction_SendFeedback_SideBar">
+              <img
+                className="SendFeedbackLogo_SideBar"
+                src={SendFeedbackLogo_SideBar}
+                alt=""
+              />
+              <span className="SendFeedback_Title">SendFeedback</span>
+            </div>
+          </Link>
+        ) : null}
       </div>
 
       <div className="select_Side4">
@@ -630,7 +723,7 @@ export function SideBarStudentDashboardDemo() {
     <div className={`SideBarStudentDashboardDemo ${isShowAll ? "active" : ""}`}>
       <div className="SideBarStudentDashboardDemo_select1">
         <Link
-          to="/fourlayout/instructor_studio_dashboard"
+          to="/fourlayout/student_studio_dashboard"
           className="Link_SideBarStudentDashboardDemo"
         >
           <div className="SideBarStudentDashboardDemo_select_wrapper">

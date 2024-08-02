@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
 import { Logo_dark } from "../../assets";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAddr } from "../../redux/features/checkoutSlice";
+import { fetchShoppingCart } from "../../redux/features/shoppingCartSlice";
 
 const Invoice_Page = () => {
+  const dispatch = useDispatch();
+  const account = useSelector((state) => state.user.account);
+  const userId = account.id;
+  const { addr, order, status, error } = useSelector((state) => state.checkout);
+  const items = useSelector((state) => state.shoppingCart.items);
+  const parsePrice = (price) => parseFloat(price);
+
+  const calculateDiscount = (price) => (parsePrice(price) * 0.2).toFixed(2);
+  const calculateTotalAmount = (price) =>
+    (parsePrice(price) + parseFloat(calculateDiscount(price))).toFixed(2);
+  const totalDiscount = items
+    .reduce((sum, item) => sum + parseFloat(calculateDiscount(item.price)), 0)
+    .toFixed(2);
+  const totalAmount = items
+    .reduce(
+      (sum, item) => sum + parseFloat(calculateTotalAmount(item.price)),
+      0
+    )
+    .toFixed(2);
+
+  useEffect(() => {
+    dispatch(fetchShoppingCart(userId));
+    dispatch(fetchAddr(userId));
+  }, [dispatch]);
   return (
     <div className="invoice">
       <div className="invoice_header ">
@@ -33,7 +60,8 @@ const Invoice_Page = () => {
                   <ul>
                     <li>
                       <div class="invoice_date_info_list">
-                        <span>Date :</span>10 April 2020
+                        <span>Date :</span>
+                        10 April 2020
                       </div>
                     </li>
                     <li>
@@ -43,7 +71,8 @@ const Invoice_Page = () => {
                     </li>
                     <li>
                       <div class="invoice_date_info_list">
-                        <span>Order ID :</span>1258963487
+                        <span>Order ID :</span>
+                        1258963487
                       </div>
                     </li>
                   </ul>
@@ -53,37 +82,42 @@ const Invoice_Page = () => {
                     <div class="col-md-12">
                       <h2 class="invoice_title">Invoice</h2>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                       <div class="invoice_title_item">
                         <h4>To</h4>
                         <ul>
                           <li>
                             <div class="invoice_date_info_list">
-                              Rock William
+                              {addr.userName}
                             </div>
                           </li>
                           <li>
                             <div class="invoice_date_info_list">
-                              133, Dracut
+                              {addr.Address1}
+                              <br /> {addr.Address2}
                             </div>
                           </li>
                           <li>
                             <div class="invoice_date_info_list">
-                              Massachusetts
+                              {addr.City}
+                              <br />
+                              {addr.State}
                             </div>
                           </li>
                           <li>
-                            <div class="invoice_date_info_list">01826</div>
+                            <div class="invoice_date_info_list">
+                              {addr.ZipCode}
+                            </div>
                           </li>
                           <li>
                             <div class="invoice_date_info_list">
-                              United States
+                              {addr.Country}
                             </div>
                           </li>
                         </ul>
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-sm-6">
                       <div class="invoice_title_item">
                         <h4>Cursus</h4>
                         <ul>
@@ -124,40 +158,43 @@ const Invoice_Page = () => {
                         <tr>
                           <th scope="col">Item</th>
                           <th scope="col">Price</th>
-                          <th scope="col">Vat(20%)</th>
+                          <th scope="col">Discount</th>
                           <th scope="col">Total Amount</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <th scope="row">
-                            <div class="user_dt_trans">
-                              <p>Item Title</p>
-                            </div>
-                          </th>
-                          <td>
-                            <div class="user_dt_trans">
-                              <p>$79.00</p>
-                            </div>
-                          </td>
-                          <td>
-                            <div class="user_dt_trans">
-                              <p>$10.00</p>
-                            </div>
-                          </td>
-                          <td>
-                            <div class="user_dt_trans">
-                              <p>$89.00</p>
-                            </div>
-                          </td>
-                        </tr>
+                        {items.map((item) => (
+                          <tr>
+                            <th scope="row">
+                              <div class="user_dt_trans">
+                                <p>{item.titilecourse}</p>
+                              </div>
+                            </th>
+                            <td>
+                              <div class="user_dt_trans">
+                                <p>${parsePrice(item.price).toFixed(2)}</p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="user_dt_trans">
+                                <p>${calculateDiscount(item.price)}</p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="user_dt_trans">
+                                <p>${calculateTotalAmount(item.price)}</p>
+                              </div>
+                            </td>
+                          </tr>
+                        ))}
                         <tr>
                           <td colspan="1"></td>
                           <td colspan="3">
                             <div class="user_dt_trans total">
                               <div class="invoice_total">
-                                Invoice Total : USD $220.00
+                                Invoice Total : USD ${totalAmount}
                               </div>
+                              <p>Total Discount : USD ${totalDiscount}</p>
                               <p>Paid via Paypal</p>
                             </div>
                           </td>
