@@ -1,0 +1,396 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Contact_us Page 1`] = `
+<div
+  className="contact_us"
+>
+  <div
+    className="contact_us_inner"
+  >
+    <div
+      className="contact_us_container"
+    >
+      <div
+        className="contact_us__toolbar"
+      >
+        <div
+          className="contact_us__toolbar-home"
+        >
+          <a
+            href="/"
+            onClick={[Function]}
+          >
+            Home 
+          </a>
+          / Contact Us
+        </div>
+        <div
+          className="contact_us__toolbar-back"
+        >
+          <a
+            className="backHome"
+            href="/"
+            onClick={[Function]}
+          >
+             
+            <span
+              aria-label="backward"
+              className="anticon anticon-backward"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="backward"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="0 0 1024 1024"
+                width="1em"
+              >
+                <path
+                  d="M485.6 249.9L198.2 498c-8.3 7.1-8.3 20.8 0 27.9l287.4 248.2c10.7 9.2 26.4.9 26.4-14V263.8c0-14.8-15.7-23.2-26.4-13.9zm320 0L518.2 498a18.6 18.6 0 00-6.2 14c0 5.2 2.1 10.4 6.2 14l287.4 248.2c10.7 9.2 26.4.9 26.4-14V263.8c0-14.8-15.7-23.2-26.4-13.9z"
+                />
+              </svg>
+            </span>
+            Back to Home
+          </a>
+        </div>
+      </div>
+      <h2
+        className="contact_us-title"
+      >
+        Contact Us
+      </h2>
+    </div>
+    <div
+      className="contact_us-main"
+    >
+      <div
+        className="contact_us_container"
+      >
+        <div
+          className="contact_us-box"
+        >
+          <a
+            className="contact_us-item"
+            href="/"
+            onClick={[Function]}
+          >
+            <img
+              alt=""
+              className="contact-img"
+              src="contact_us-1.png"
+            />
+            <span
+              className="contact_us-item-desc"
+            >
+              Help Center
+            </span>
+          </a>
+          <a
+            className="contact_us-item"
+            href="/"
+            onClick={[Function]}
+          >
+            <img
+              alt=""
+              className="contact-img"
+              src="contact_us-2.png"
+            />
+            <span
+              className="contact_us-item-desc"
+            >
+              Blog
+            </span>
+          </a>
+          <a
+            className="contact_us-item"
+            href="/"
+            onClick={[Function]}
+          >
+            <img
+              alt=""
+              className="contact-img"
+              src="contact_us-3.png"
+            />
+            <span
+              className="contact_us-item-desc"
+            >
+              Careers
+            </span>
+          </a>
+          <a
+            className="contact_us-item"
+            href="/"
+            onClick={[Function]}
+          >
+            <img
+              alt=""
+              className="contact-img"
+              src="contact_us-4.png"
+            />
+            <span
+              className="contact_us-item-desc"
+            >
+              Developer Area
+            </span>
+          </a>
+        </div>
+        <div
+          className="contact_us-map"
+        >
+          <div
+            className="map"
+            style={
+              Object {
+                "width": "100%",
+              }
+            }
+          >
+            <iframe
+              frameBorder="0"
+              height="600"
+              marginHeight="0"
+              marginWidth="0"
+              scrolling="no"
+              src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=Fpt%20university+(My%20Business%20Name)&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+              title="Google Maps"
+              width="100%"
+            >
+              <a
+                href="https://www.gps.ie/"
+              >
+                gps systems
+              </a>
+            </iframe>
+          </div>
+          <div
+            className="contact_us-content"
+          >
+            <h4
+              className="contact_us-content-title"
+            >
+              Contact Information
+            </h4>
+            <div
+              className="contact_us-content-line"
+            />
+            <ul
+              className="contact_us-content-list"
+            >
+              <li
+                className="contact_item"
+              >
+                <div
+                  className="contact_info"
+                >
+                  <span
+                    aria-label="home"
+                    className="anticon anticon-home contact_icon"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="home"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 00-44.4 0L77.5 505a63.9 63.9 0 00-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0018.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"
+                      />
+                    </svg>
+                  </span>
+                   
+                  Main Address :
+                </div>
+                <p>
+                  #1235 Sks Nagar St No. 8 Phase 3, Pakhowal Road, 141001, LDH, Punjab, India
+                </p>
+              </li>
+              <li
+                className="contact_item"
+              >
+                <div
+                  className="contact_info"
+                >
+                  <span
+                    aria-label="mail"
+                    className="anticon anticon-mail contact_icon"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="mail"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M928 160H96c-17.7 0-32 14.3-32 32v640c0 17.7 14.3 32 32 32h832c17.7 0 32-14.3 32-32V192c0-17.7-14.3-32-32-32zm-40 110.8V792H136V270.8l-27.6-21.5 39.3-50.5 42.8 33.3h643.1l42.8-33.3 39.3 50.5-27.7 21.5zM833.6 232L512 482 190.4 232l-42.8-33.3-39.3 50.5 27.6 21.5 341.6 265.6a55.99 55.99 0 0068.7 0L888 270.8l27.6-21.5-39.3-50.5-42.7 33.2z"
+                      />
+                    </svg>
+                  </span>
+                   
+                  Email Address :
+                </div>
+                <p>
+                  Info@edututsplus@gmail.com
+                </p>
+              </li>
+              <li
+                className="contact_item"
+              >
+                <div
+                  className="contact_info"
+                >
+                  <span
+                    aria-label="mobile"
+                    className="anticon anticon-mobile contact_icon"
+                    role="img"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      data-icon="mobile"
+                      fill="currentColor"
+                      focusable="false"
+                      height="1em"
+                      viewBox="64 64 896 896"
+                      width="1em"
+                    >
+                      <path
+                        d="M744 62H280c-35.3 0-64 28.7-64 64v768c0 35.3 28.7 64 64 64h464c35.3 0 64-28.7 64-64V126c0-35.3-28.7-64-64-64zm-8 824H288V134h448v752zM472 784a40 40 0 1080 0 40 40 0 10-80 0z"
+                      />
+                    </svg>
+                  </span>
+                   
+                  Phone Number :
+                </div>
+                <p>
+                  +911234567890, 01610000000
+                </p>
+              </li>
+            </ul>
+            <div
+              className="contact_social"
+            >
+              <a
+                className="contact_social-link"
+                href="/"
+                onClick={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-facebook-f "
+                  data-icon="facebook-f"
+                  data-prefix="fab"
+                  focusable="false"
+                  role="img"
+                  style={
+                    Object {
+                      "color": "#ffffff",
+                    }
+                  }
+                  viewBox="0 0 320 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M80 299.3V512H196V299.3h86.5l18-97.8H196V166.9c0-51.7 20.3-71.5 72.7-71.5c16.3 0 29.4 .4 37 1.2V7.9C291.4 4 256.4 0 236.2 0C129.3 0 80 50.5 80 159.4v42.1H14v97.8H80z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </a>
+              <a
+                className="contact_social-link"
+                href="/"
+                onClick={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-twitter "
+                  data-icon="twitter"
+                  data-prefix="fab"
+                  focusable="false"
+                  role="img"
+                  style={
+                    Object {
+                      "color": "#ffffff",
+                    }
+                  }
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </a>
+              <a
+                className="contact_social-link"
+                href="/"
+                onClick={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-linkedin-in "
+                  data-icon="linkedin-in"
+                  data-prefix="fab"
+                  focusable="false"
+                  role="img"
+                  style={
+                    Object {
+                      "color": "#ffffff",
+                    }
+                  }
+                  viewBox="0 0 448 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </a>
+              <a
+                className="contact_social-link"
+                href="/"
+                onClick={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-youtube "
+                  data-icon="youtube"
+                  data-prefix="fab"
+                  focusable="false"
+                  role="img"
+                  style={
+                    Object {
+                      "color": "#ffffff",
+                    }
+                  }
+                  viewBox="0 0 576 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test verification page 1`] = `
+<div
+  className="wrapper12 "
+>
+  <div
+    className="sa4d25"
+  >
+    <div
+      className="container-fluid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-12"
+        >
+          <h2
+            className="noti-title"
+          >
+            <img
+              className=""
+              src="bell.png"
+            />
+            Notifications
+          </h2>
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="setting-section mbt-30"
+        >
+          <a
+            href="/setting_page/account_tab"
+            onClick={[Function]}
+          >
+            <button
+              class="setting_noti"
+              onMouseOut={[Function]}
+              onMouseOver={[Function]}
+              style={
+                Object {
+                  "backgroundColor": null,
+                  "marginBottom": 30,
+                }
+              }
+            >
+              Notification Setting
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

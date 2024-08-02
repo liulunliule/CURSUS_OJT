@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Student Profile Page 1`] = `
+<div
+  className="col-md-12 d-flex justify-content-center align-items-center"
+  style={
+    Object {
+      "backdropFilter": "blur(3px)",
+      "height": "100vh",
+      "position": "absolute",
+      "width": "100%",
+      "zIndex": "3000",
+    }
+  }
+>
+  <div
+    className="spinner-border text-primary"
+    role="status"
+  >
+    <span
+      className="visually-hidden"
+    >
+      Loading...
+    </span>
+  </div>
+</div>
+`;

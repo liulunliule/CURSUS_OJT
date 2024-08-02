@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test verification page 1`] = `
+<div
+  className="wrapper12 "
+>
+  <div>
+    <div
+      className="container-fluid"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="right_side"
+        >
+          <div
+            className="col-xl-9 col-lg-8"
+          >
+            <div
+              className="section3125"
+            >
+              <h4
+                className="item_title"
+              >
+                All Live Streams
+              </h4>
+              <div
+                className="la5lo2"
+              >
+                <div
+                  className="row"
+                >
+                  <div
+                    className="col-md-12 mt-10"
+                  >
+                    <div
+                      className="spinner"
+                    >
+                      <div
+                        className="bounce1"
+                      />
+                      <div
+                        className="bounce2"
+                      />
+                      <div
+                        className="bounce3"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="col-xl-3 col-lg-4"
+          >
+            <div
+              className="fcrse_11 mt-20"
+            >
+              <div
+                className="cater_ttle"
+              >
+                <h4>
+                  Live Streaming
+                </h4>
+              </div>
+              <div
+                className="live_text"
+              >
+                <div
+                  className="live_icon"
+                >
+                  <img
+                    src="stream.png"
+                  />
+                </div>
+                <div
+                  class="live-content"
+                >
+                  <p>
+                    Set up your channel and stream live to your students
+                  </p>
+                  <a
+                    href="/Add_Live_Stream"
+                    onClick={[Function]}
+                  >
+                    <button
+                      class="live_link"
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      style={
+                        Object {
+                          "backgroundColor": null,
+                        }
+                      }
+                    >
+                      Get Started
+                    </button>
+                  </a>
+                  <span
+                    class="livinfo"
+                  >
+                    Info : This feature only for 'Instructors'.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

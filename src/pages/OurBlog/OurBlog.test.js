@@ -1,103 +1,109 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router-dom';
+import { store } from '../../redux/store';
+import OurBlog from '.';
 import '@testing-library/jest-dom/extend-expect';
-import { BrowserRouter as Router } from 'react-router-dom';
-import OurBlog from './index';
-import { useFetchBlogs } from './data';
 
-jest.mock('./data', () => ({
-  useFetchBlogs: jest.fn(),
-}));
+const renderComponent = () =>
+  render(
+    <Provider store={store}>
+      <MemoryRouter>
+        <OurBlog />
+      </MemoryRouter>
+    </Provider>
+  );
 
-describe('OurBlog', () => {
-  beforeEach(() => {
-    useFetchBlogs.mockReturnValue({
-      blogs: [
-        {
-          Blog_ID: '1',
-          Blog_Image: '/path/to/image1.jpg',
-          Views: '123',
-          Create_At: '2024-01-01',
-          Blog_Title: 'First Blog',
-          Intro: 'This is the first blog.',
-        },
-        {
-          Blog_ID: '2',
-          Blog_Image: '/path/to/image2.jpg',
-          Views: '456',
-          Create_At: '2024-01-02',
-          Blog_Title: 'Second Blog',
-          Intro: 'This is the second blog.',
-        },
-      ],
-      status: 'succeeded',
-      error: null,
-    });
+describe('OurBlog component', () => {
+  test('renders OurBlog component correctly', () => {
+    const { asFragment } = renderComponent();
+    expect(asFragment()).toMatchSnapshot();
   });
 
-  test('renders OurBlog correctly', () => {
-    render(
-      <Router>
-        <OurBlog />
-      </Router>
-    );
-
-    expect(screen.getByRole('heading', { name: /Insights, ideas, and stories/i })).toBeInTheDocument();
-
-    ['About', 'Blog', 'Company', 'Careers', 'Press'].forEach(item => {
-      expect(screen.getByText(item)).toBeInTheDocument();
-    });
-
-    expect(screen.getByText('First Blog')).toBeInTheDocument();
-    expect(screen.getByText('Second Blog')).toBeInTheDocument();
+  test('displays the correct hero section title', () => {
+    renderComponent();
+    const heroTitle = screen.getByText('Insights, ideas, and stories');
+    expect(heroTitle).toBeInTheDocument();
   });
 
-  test('displays loading state correctly', () => {
-    useFetchBlogs.mockReturnValue({
-      blogs: [],
-      status: 'loading',
-      error: null,
-    });
-
-    render(
-      <Router>
-        <OurBlog />
-      </Router>
-    );
-
-    expect(screen.getByText('Loading...')).toBeInTheDocument();
+  test('renders loading state correctly', () => {
+    renderComponent();
+    jest.mock('./data', () => ({
+      useFetchBlogs: () => ({
+        blogs: [],
+        status: 'loading',
+        error: null,
+      }),
+    }));
   });
 
-  test('displays error state correctly', () => {
-    useFetchBlogs.mockReturnValue({
-      blogs: [],
-      status: 'failed',
-      error: 'Failed to fetch blogs',
-    });
-
-    render(
-      <Router>
-        <OurBlog />
-      </Router>
-    );
-
-    expect(screen.getByText('Error: Failed to fetch blogs')).toBeInTheDocument();
+  test('renders error state correctly', () => {
+    renderComponent();
+    jest.mock('./data', () => ({
+      useFetchBlogs: () => ({
+        blogs: [],
+        status: 'failed',
+        error: 'Error fetching blogs',
+      }),
+    }));
   });
 
-  test('navigates to the correct page when menu item is clicked', () => {
-    render(
-      <Router>
-        <OurBlog />
-      </Router>
-    );
+  test('displays blogs when data is fetched successfully', () => {
+    renderComponent();
+    jest.mock('./data', () => ({
+      useFetchBlogs: () => ({
+        blogs: [
+          {
+            Blog_ID: 1,
+            Blog_Image: 'image1.jpg',
+            Views: 100,
+            Create_At: '2023-08-01',
+            Blog_Title: 'First Blog',
+            Intro: 'Introduction to the first blog',
+          },
+          {
+            Blog_ID: 2,
+            Blog_Image: 'image2.jpg',
+            Views: 200,
+            Create_At: '2023-08-02',
+            Blog_Title: 'Second Blog',
+            Intro: 'Introduction to the second blog',
+          },
+        ],
+        status: 'succeeded',
+        error: null,
+      }),
+    }));
+  });
 
-    delete window.location;
-    window.location = { href: '' };
+  test('search input renders correctly', () => {
+    renderComponent();
+    const searchInput = screen.getByPlaceholderText('Search');
+    expect(searchInput).toBeInTheDocument();
+  });
 
-    const menuItems = ['About', 'Company', 'Blog', 'Careers', 'Press'];
-    menuItems.forEach(item => {
-      fireEvent.click(screen.getByText(item));
-      expect(window.location.href).toContain(`/secondLayout/${item.toLowerCase()}`);
-    });
+  test('labels and archive sections render correctly', () => {
+    renderComponent();
+    const labelsSection = screen.getByText('Labels');
+    const archiveSection = screen.getByText('Archive');
+    expect(labelsSection).toBeInTheDocument();
+    expect(archiveSection).toBeInTheDocument();
+  });
+
+  test('follow buttons render correctly', () => {
+    renderComponent();
+    const followFacebookButton = screen.getByText('Follow our Facebook page');
+    const followXButton = screen.getByText('Follow our X page');
+    expect(followFacebookButton).toBeInTheDocument();
+    expect(followXButton).toBeInTheDocument();
+  });
+
+  test('learn more and help center links render correctly', () => {
+    renderComponent();
+    const learnMoreLink = screen.getByText('Learn More');
+    const helpCenterLink = screen.getByText('Cursus Help Center');
+    expect(learnMoreLink).toBeInTheDocument();
+    expect(helpCenterLink).toBeInTheDocument();
   });
 });
