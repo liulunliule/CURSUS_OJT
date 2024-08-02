@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Certification Test Page 1`] = `
+<div
+  className="Certification_test"
+>
+  <div
+    className="toolbar_certification"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-12"
+        >
+          <div
+            className="toolbar_title"
+          >
+            <div
+              className="titleleft"
+            >
+              <div
+                className="toolbar_title_item"
+              >
+                <nav
+                  aria-label="breadcrumb"
+                >
+                  <ol
+                    className="breadcrumb"
+                  >
+                    <li
+                      className="breadcrumb-item"
+                    >
+                      <a
+                        href="/"
+                        onClick={[Function]}
+                      >
+                        Home
+                      </a>
+                    </li>
+                    <li
+                      className="breadcrumb-item"
+                    >
+                      <a
+                        href="/secondLayout/certification_center"
+                        onClick={[Function]}
+                      >
+                        Certification Center
+                      </a>
+                    </li>
+                    <li
+                      aria-current="page"
+                      className="breadcrumb-item active"
+                    >
+                      WordPress Test View
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <div
+              className="titleright"
+            >
+              <a
+                className="blog_link"
+                href="/secondLayout/certification_center"
+                onClick={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angles-left "
+                  data-icon="angles-left"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+                 Back to Certification Center
+              </a>
+            </div>
+          </div>
+          <div
+            className="main_title"
+          >
+            <h2>
+              WordPress Test View
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-4 col-md-6"
+      >
+        <div
+          className="certi_form stickytime"
+        >
+          <div
+            className="test_timer_bg"
+          >
+            <ul
+              className="test_timer_left"
+            >
+              <li>
+                <div
+                  className="timer_time"
+                >
+                  <h4>
+                    0
+                  </h4>
+                  <p>
+                    Questions
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div
+                  className="timer_time"
+                >
+                  <h4
+                    id="timer"
+                  >
+                    51:02
+                  </h4>
+                  <p>
+                    Minutes
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-lg-7 col-md-6"
+      >
+        <div
+          className="certi_form"
+        >
+          <div
+            className=""
+          />
+          <a
+            href="/secondLayout/Certification_test_result"
+            onClick={[Function]}
+          >
+            <button
+              className="test_submit_btn"
+              type="submit"
+            >
+              Submit Test
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

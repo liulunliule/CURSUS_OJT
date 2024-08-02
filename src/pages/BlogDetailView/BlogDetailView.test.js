@@ -1,32 +1,65 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import { BrowserRouter as Router } from 'react-router-dom';
-import BlogDetailView from './index';
-import { BlogDetailImage } from '../../assets';
+import { MemoryRouter } from 'react-router-dom';
+import BlogDetailView from '.';
 
-describe('BlogDetailView', () => {
-  test('renders BlogDetailView correctly', () => {
-    render(
-      <Router>
-        <BlogDetailView />
-      </Router>
-    );
+const renderComponent = () =>
+  render(
+    <MemoryRouter>
+      <BlogDetailView />
+    </MemoryRouter>
+  );
 
-    expect(screen.getByText('Blog Title Here')).toBeInTheDocument();
+describe('BlogDetailView component', () => {
+  test('renders BlogDetailView component correctly', () => {
+    const { asFragment } = renderComponent();
+    expect(asFragment()).toMatchSnapshot();
+  });
 
+  test('displays the blog title', () => {
+    renderComponent();
+    const title = screen.getByText('Blog Title Here');
+    expect(title).toBeInTheDocument();
+  });
+
+  test('displays the back to blog link', () => {
+    renderComponent();
     const backToBlogLink = screen.getByText('Back to Blog');
     expect(backToBlogLink).toBeInTheDocument();
     expect(backToBlogLink).toHaveAttribute('href', '/secondLayout/blog');
+  });
 
-    const blogImage = screen.getByAltText('Blog detail');
-    expect(blogImage).toBeInTheDocument();
-    expect(blogImage).toHaveAttribute('src', BlogDetailImage);
+  test('displays the blog meta information', () => {
+    renderComponent();
+    const views = screen.getByText('109k views');
+    const date = screen.getByText('March 10, 2020');
+    expect(views).toBeInTheDocument();
+    expect(date).toBeInTheDocument();
+  });
 
-    expect(screen.getByText('109k views')).toBeInTheDocument();
-    expect(screen.getByText('March 10, 2020')).toBeInTheDocument();
+  test('renders blog content sections', () => {
+    renderComponent();
+    const sections = [
+      'Why did you decide to teach on Cursus?',
+      'Did you have any prior on- or offline teaching experience prior to publishing your first Cursus course?',
+      'What are the most rewarding aspects of teaching on Cursus?',
+    ];
 
-    expect(screen.getByText('« Lorem ipsum dolor sit amet, consectetur adipiscing elit.')).toBeInTheDocument();
-    expect(screen.getByText('Vestibulum vulputate nulla quis dignissim ultricies. »')).toBeInTheDocument();
+    sections.forEach(section => {
+      expect(screen.getByText(section)).toBeInTheDocument();
+    });
+  });
+
+  test('displays pagination links', () => {
+    renderComponent();
+    const previousLink = screen.getByText('« Lorem ipsum dolor sit amet, consectetur adipiscing elit.');
+    const nextLink = screen.getByText('Vestibulum vulputate nulla quis dignissim ultricies. »');
+    
+    expect(previousLink).toBeInTheDocument();
+    expect(previousLink).toHaveAttribute('href', '#');
+
+    expect(nextLink).toBeInTheDocument();
+    expect(nextLink).toHaveAttribute('href', '#');
   });
 });

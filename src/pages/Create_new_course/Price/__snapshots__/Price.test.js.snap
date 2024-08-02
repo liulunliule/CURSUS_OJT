@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Price Component Snapshot matches snapshot when price is 0 1`] = `
+<div
+  className="create_course_price"
+>
+  <div
+    className="price_title"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-money-bill price_icon"
+      data-icon="money-bill"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 576 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M64 64C28.7 64 0 92.7 0 128L0 384c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64L64 64zm64 320l-64 0 0-64c35.3 0 64 28.7 64 64zM64 192l0-64 64 0c0 35.3-28.7 64-64 64zM448 384c0-35.3 28.7-64 64-64l0 64-64 0zm64-192c-35.3 0-64-28.7-64-64l64 0 0 64zM288 160a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    Price
+  </div>
+  <div
+    className="price_form"
+  >
+    <div
+      className="price_link-list"
+    >
+      <button
+        className="price_link active"
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-tag "
+          data-icon="tag"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={
+            Object {
+              "fontSize": "18px",
+              "marginRight": "5px",
+            }
+          }
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 80L0 229.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7L48 32C21.5 32 0 53.5 0 80zm112 32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        Free
+      </button>
+      <button
+        className="price_link "
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-cart-shopping "
+          data-icon="cart-shopping"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={
+            Object {
+              "marginRight": "5px",
+            }
+          }
+          viewBox="0 0 576 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        Paid
+      </button>
+    </div>
+    <div>
+      Free Page Content
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Price Component Snapshot matches snapshot when price is greater than 0 1`] = `
+<div
+  className="create_course_price"
+>
+  <div
+    className="price_title"
+  >
+    <svg
+      aria-hidden="true"
+      className="svg-inline--fa fa-money-bill price_icon"
+      data-icon="money-bill"
+      data-prefix="fas"
+      focusable="false"
+      role="img"
+      style={Object {}}
+      viewBox="0 0 576 512"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M64 64C28.7 64 0 92.7 0 128L0 384c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64L64 64zm64 320l-64 0 0-64c35.3 0 64 28.7 64 64zM64 192l0-64 64 0c0 35.3-28.7 64-64 64zM448 384c0-35.3 28.7-64 64-64l0 64-64 0zm64-192c-35.3 0-64-28.7-64-64l64 0 0 64zM288 160a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"
+        fill="currentColor"
+        style={Object {}}
+      />
+    </svg>
+    Price
+  </div>
+  <div
+    className="price_form"
+  >
+    <div
+      className="price_link-list"
+    >
+      <button
+        className="price_link "
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-tag "
+          data-icon="tag"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={
+            Object {
+              "fontSize": "18px",
+              "marginRight": "5px",
+            }
+          }
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 80L0 229.5c0 17 6.7 33.3 18.7 45.3l176 176c25 25 65.5 25 90.5 0L418.7 317.3c25-25 25-65.5 0-90.5l-176-176c-12-12-28.3-18.7-45.3-18.7L48 32C21.5 32 0 53.5 0 80zm112 32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        Free
+      </button>
+      <button
+        className="price_link active"
+        onClick={[Function]}
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-cart-shopping "
+          data-icon="cart-shopping"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={
+            Object {
+              "marginRight": "5px",
+            }
+          }
+          viewBox="0 0 576 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        Paid
+      </button>
+    </div>
+    <div>
+      <div>
+        Paid Page Content
+      </div>
+      <button
+        onClick={[Function]}
+      >
+        Change Price
+      </button>
+    </div>
+  </div>
+</div>
+`;

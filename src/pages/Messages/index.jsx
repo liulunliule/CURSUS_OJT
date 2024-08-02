@@ -9,7 +9,8 @@ import { mess6 } from "../../assets";
 import { mess7 } from "../../assets";
 import { mess8 } from "../../assets";
 import { useSelector } from "react-redux";
-
+import MessList from "./messList";
+import Chat from "./chat";
 const messages = [
   {
     name: "John Doe",
@@ -69,11 +70,31 @@ const messages = [
 ];
 
 const currentChat = [
-  { text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.", time: "Sat, April 10, 1:08 PM", isOwnMessage: true },
-  { text: "Cras ultricies ligula.", time: "5 minutes ago", isOwnMessage: false },
-  { text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.", time: "Sat, April 10, 1:08 PM", isOwnMessage: true },
-  { text: "Lorem ipsum dolor sit amet", time: "2 minutes ago", isOwnMessage: false },
-  { text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.", time: "Sat, April 10, 1:08 PM", isOwnMessage: true },
+  {
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.",
+    time: "Sat, April 10, 1:08 PM",
+    isOwnMessage: true,
+  },
+  {
+    text: "Cras ultricies ligula.",
+    time: "5 minutes ago",
+    isOwnMessage: false,
+  },
+  {
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.",
+    time: "Sat, April 10, 1:08 PM",
+    isOwnMessage: true,
+  },
+  {
+    text: "Lorem ipsum dolor sit amet",
+    time: "2 minutes ago",
+    isOwnMessage: false,
+  },
+  {
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec rutrum congue leo eget malesuada. Vivamus suscipit tortor eget felis porttitor.",
+    time: "Sat, April 10, 1:08 PM",
+    isOwnMessage: true,
+  },
   { text: "....", time: "Typing...", isOwnMessage: false },
 ];
 
@@ -85,11 +106,15 @@ const Messages = () => {
         <h2>Messages</h2>
       </header>
       <div className={`chat-app ${isShowAll ? "active" : ""}`}>
-        <aside className="message-list">
+        <MessList />
+        {/* <aside className="message-list">
           <input type="text" placeholder="Search Messages..." />
           <ul>
             {messages.map((msg, index) => (
-              <li key={index} className={`message-item ${index === 0 ? "first" : ""}`}>
+              <li
+                key={index}
+                className={`message-item ${index === 0 ? "first" : ""}`}
+              >
                 <img src={msg.avatar} alt={msg.name} />
                 <div className="message-info">
                   <h3>{msg.name}</h3>
@@ -97,14 +122,17 @@ const Messages = () => {
                 </div>
                 <div className="time-unread-wrapper">
                   <span className="time">{msg.time}</span>
-                  {msg.unread > 0 && <span className="unread-count">{msg.unread}</span>}
+                  {msg.unread > 0 && (
+                    <span className="unread-count">{msg.unread}</span>
+                  )}
                 </div>
               </li>
             ))}
           </ul>
-        </aside>
+        </aside> */}
         <main className="chat-window">
-          <header className="chat-header">
+          <Chat />
+          {/* <header className="chat-header">
             <img src={mess1} alt="John Doe" />
             <div className="header-content">
               <h3>John Doe</h3>
@@ -122,7 +150,10 @@ const Messages = () => {
           </header>
           <div className="chat-messages">
             {currentChat.map((msg, index) => (
-              <div key={index} className={`chat-message ${msg.isOwnMessage ? "own" : ""}`}>
+              <div
+                key={index}
+                className={`chat-message ${msg.isOwnMessage ? "own" : ""}`}
+              >
                 <p>{msg.text}</p>
                 <span className="time">{msg.time}</span>
               </div>
@@ -131,7 +162,7 @@ const Messages = () => {
           <footer className="chat-input">
             <input type="text" placeholder="Write a message..." />
             <button>&#9658;</button>
-          </footer>
+          </footer> */}
         </main>
       </div>
     </div>
