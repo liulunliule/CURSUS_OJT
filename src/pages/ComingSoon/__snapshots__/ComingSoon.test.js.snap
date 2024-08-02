@@ -22,7 +22,7 @@ exports[`renders Coming Soon component correctly 1`] = `
         <div
           class="time"
         >
-          297 
+          296 
           <span>
             Days
           </span>
@@ -30,7 +30,7 @@ exports[`renders Coming Soon component correctly 1`] = `
         <div
           class="time"
         >
-          22 
+          15 
           <span>
             Hours
           </span>
@@ -38,7 +38,7 @@ exports[`renders Coming Soon component correctly 1`] = `
         <div
           class="time"
         >
-          36 
+          42 
           <span>
             Minutes
           </span>
@@ -46,7 +46,7 @@ exports[`renders Coming Soon component correctly 1`] = `
         <div
           class="time"
         >
-          28 
+          31 
           <span>
             Seconds
           </span>

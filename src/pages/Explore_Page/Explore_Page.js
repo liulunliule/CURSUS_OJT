@@ -3,8 +3,8 @@
 // import '@testing-library/jest-dom/extend-expect';
 // import { Provider } from 'react-redux';
 // import { MemoryRouter } from 'react-router-dom';
-// import { store } from '../../../redux/store';
-// import ExplorePage from '..';
+// import { store } from '../../redux/store';
+// import ExplorePage from '.';
 
 // test('test Certification Test Page', () => {
 //   const tree = renderer.create(
