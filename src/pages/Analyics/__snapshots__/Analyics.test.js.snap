@@ -1,0 +1,882 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Analyics Page 1`] = `
+<div
+  className="analyics active"
+>
+  <div
+    className="container-fluid"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-12"
+      >
+        <h2
+          className="statement_title"
+        >
+          <svg
+            className="analyics_icon"
+            fill="currentColor"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M21.71,7.29a1,1,0,0,0-1.42,0L14,13.59,9.71,9.29a1,1,0,0,0-1.42,0l-6,6a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L9,11.41l4.29,4.3a1,1,0,0,0,1.42,0l7-7A1,1,0,0,0,21.71,7.29Z"
+            />
+          </svg>
+           Analyics
+        </h2>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-xl-4 col-sm-6"
+      >
+        <div
+          className="analyics_card card_mini"
+        >
+          <div
+            className="card_body"
+          >
+            <h2>
+              839
+            </h2>
+            <p>
+              Subscribers
+            </p>
+            <div
+              className="chart_line1"
+            >
+              <canvas
+                height={150}
+                role="img"
+                width={300}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-xl-4 col-sm-6"
+      >
+        <div
+          className="analyics_card card_mini"
+        >
+          <div
+            className="card_body"
+          >
+            <h2>
+              950
+            </h2>
+            <p>
+              Weekly Visitors
+            </p>
+            <div
+              className="chart_line1"
+            >
+              <canvas
+                height={150}
+                role="img"
+                width={300}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-xl-4 col-sm-6"
+      >
+        <div
+          className="analyics_card card_mini"
+        >
+          <div
+            className="card_body"
+          >
+            <h2>
+              950
+            </h2>
+            <p>
+              Weekly Sale
+            </p>
+            <div
+              className="chart_line1"
+            >
+              <canvas
+                height={150}
+                role="img"
+                width={300}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-12"
+      >
+        <div
+          className="analyics_card"
+        >
+          <div
+            className="card_header"
+          >
+            <h2>
+              Sales Of The Year
+            </h2>
+          </div>
+          <div
+            className="card_body card_default"
+          >
+            <div
+              className="chart_line2"
+            >
+              <canvas
+                height={150}
+                role="img"
+                width={300}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-xl-12"
+      >
+        <div
+          className="analyics_card"
+        >
+          <div
+            className="row no-gutters"
+          >
+            <div
+              className="col-xl-8"
+            >
+              <div
+                className="card_header justify-content-between"
+              >
+                <h2>
+                  User Activity
+                </h2>
+                <div
+                  className="tablist"
+                >
+                  <ul
+                    className="nav nav-tabs justify-content-between justify-content-xl-start nav-fill"
+                  >
+                    <li
+                      className="nav-item"
+                    >
+                      <button
+                        aria-selected={true}
+                        className="nav-link pb-md-0 active"
+                        onClick={[Function]}
+                        role="tab"
+                      >
+                        <span
+                          className="type-name"
+                        >
+                          User
+                        </span>
+                        <h4
+                          className="views_title d-inline-block mt-2 mr-2 mb-3"
+                        >
+                          5248
+                        </h4>
+                        <span
+                          className="text-success1"
+                        >
+                          5% 
+                          <svg
+                            aria-hidden="true"
+                            className="svg-inline--fa fa-arrow-up "
+                            data-icon="arrow-up"
+                            data-prefix="fas"
+                            focusable="false"
+                            role="img"
+                            style={Object {}}
+                            viewBox="0 0 384 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2 160 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                              fill="currentColor"
+                              style={Object {}}
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </li>
+                    <li
+                      className="nav-item"
+                    >
+                      <button
+                        aria-selected={false}
+                        className="nav-link pb-md-0 "
+                        onClick={[Function]}
+                        role="tab"
+                      >
+                        <span
+                          className="type-name"
+                        >
+                          Sessions
+                        </span>
+                        <h4
+                          className="views_title d-inline-block mt-2 mr-2 mb-3"
+                        >
+                          638
+                        </h4>
+                        <span
+                          className="text-success"
+                        >
+                          20% 
+                          <svg
+                            aria-hidden="true"
+                            className="svg-inline--fa fa-arrow-up "
+                            data-icon="arrow-up"
+                            data-prefix="fas"
+                            focusable="false"
+                            role="img"
+                            style={Object {}}
+                            viewBox="0 0 384 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2 160 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                              fill="currentColor"
+                              style={Object {}}
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </li>
+                    <li
+                      className="nav-item"
+                    >
+                      <button
+                        aria-selected={false}
+                        className="nav-link pb-md-0 "
+                        onClick={[Function]}
+                        role="tab"
+                      >
+                        <span
+                          className="type-name"
+                        >
+                          Bounce Rate
+                        </span>
+                        <h4
+                          className="views_title d-inline-block mt-2 mr-2 mb-3"
+                        >
+                          36.9%
+                        </h4>
+                        <span
+                          className="text-danger"
+                        >
+                          7% 
+                          <svg
+                            aria-hidden="true"
+                            className="svg-inline--fa fa-arrow-down "
+                            data-icon="arrow-down"
+                            data-prefix="fas"
+                            focusable="false"
+                            role="img"
+                            style={Object {}}
+                            viewBox="0 0 384 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
+                              fill="currentColor"
+                              style={Object {}}
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </li>
+                    <li
+                      className="nav-item"
+                    >
+                      <button
+                        aria-selected={false}
+                        className="nav-link pb-md-0 "
+                        onClick={[Function]}
+                        role="tab"
+                      >
+                        <span
+                          className="type-name"
+                        >
+                          Session Duration
+                        </span>
+                        <h4
+                          className="views_title d-inline-block mt-2 mr-2 mb-3"
+                        >
+                          4m 49s
+                        </h4>
+                        <span
+                          className="text-success"
+                        >
+                          15% 
+                          <svg
+                            aria-hidden="true"
+                            className="svg-inline--fa fa-arrow-up "
+                            data-icon="arrow-up"
+                            data-prefix="fas"
+                            focusable="false"
+                            role="img"
+                            style={Object {}}
+                            viewBox="0 0 384 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2 160 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+                              fill="currentColor"
+                              style={Object {}}
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </li>
+                  </ul>
+                  <div
+                    className="card_body"
+                  >
+                    <div
+                      className="tab-content"
+                    >
+                      <div
+                        className="tab-pane fade show active"
+                      >
+                        <div
+                          className="chart_line2"
+                        >
+                          <canvas
+                            height={150}
+                            role="img"
+                            width={300}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className="card_footer d-flex flex-wrap bg-white border-top"
+                  >
+                    <h3
+                      className="text-uppercase py-3 ovrvew-1"
+                    >
+                      Audience Overview
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="col-xl-4"
+            >
+              <div
+                className="card_header justify-content-between"
+              >
+                <h2
+                  className="m-0"
+                >
+                  Current Users
+                </h2>
+              </div>
+              <div
+                className="curntusr145"
+              >
+                <p
+                  className="my-2"
+                >
+                  Ave Page views per minute
+                </p>
+                <h4>
+                  09
+                </h4>
+              </div>
+              <div
+                className="card_body p-5"
+              >
+                <div
+                  className="chart_line2"
+                >
+                  <canvas
+                    height={150}
+                    role="img"
+                    width={300}
+                  />
+                </div>
+              </div>
+              <div
+                className="card_footer d-flex flex-wrap bg-white"
+              >
+                <h3
+                  className="text-uppercase py-3 ovrvew-1"
+                >
+                  Audience Overview
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-md-12 analyics_table"
+      >
+        <div
+          className="ant-table-wrapper css-dev-only-do-not-override-1pg9a38"
+          style={Object {}}
+        >
+          <div
+            className="ant-spin-nested-loading css-dev-only-do-not-override-1pg9a38"
+          >
+            <div
+              className="ant-spin-container"
+            >
+              <div
+                className="ant-table css-dev-only-do-not-override-1pg9a38"
+              >
+                <div
+                  className="ant-table-container"
+                >
+                  <div
+                    className="ant-table-content"
+                    onScroll={[Function]}
+                    style={Object {}}
+                  >
+                    <table
+                      style={
+                        Object {
+                          "tableLayout": "auto",
+                        }
+                      }
+                    >
+                      <colgroup />
+                      <thead
+                        className="ant-table-thead"
+                      >
+                        <tr>
+                          <th
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            scope="col"
+                            style={Object {}}
+                          >
+                            Item No.
+                          </th>
+                          <th
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            scope="col"
+                            style={Object {}}
+                          >
+                            Thumbnail
+                          </th>
+                          <th
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            scope="col"
+                            style={Object {}}
+                          >
+                            Title
+                          </th>
+                          <th
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            scope="col"
+                            style={Object {}}
+                          >
+                            Purchases
+                          </th>
+                          <th
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            scope="col"
+                            style={Object {}}
+                          >
+                            Comments
+                          </th>
+                          <th
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            scope="col"
+                            style={Object {}}
+                          >
+                            Views
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody
+                        className="ant-table-tbody"
+                      >
+                        <tr
+                          className="ant-table-row ant-table-row-level-0"
+                          data-row-key="1"
+                          onClick={[Function]}
+                          style={Object {}}
+                        >
+                          <td
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            style={Object {}}
+                          >
+                            1
+                          </td>
+                          <td
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            style={Object {}}
+                          >
+                            <div
+                              className="ant-image css-dev-only-do-not-override-1pg9a38"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "width": 150,
+                                }
+                              }
+                            >
+                              <img
+                                className="ant-image-img css-dev-only-do-not-override-1pg9a38"
+                                onLoad={[Function]}
+                                src="thumbnail-1.jpg"
+                                style={
+                                  Object {
+                                    "borderRadius": "5px",
+                                    "height": undefined,
+                                  }
+                                }
+                                width={150}
+                              />
+                              <div
+                                className="ant-image-mask"
+                                style={
+                                  Object {
+                                    "display": undefined,
+                                  }
+                                }
+                              >
+                                <div
+                                  className="ant-image-mask-info"
+                                >
+                                  <span
+                                    aria-label="eye"
+                                    className="anticon anticon-eye"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="eye"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"
+                                      />
+                                    </svg>
+                                  </span>
+                                  Preview
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            style={Object {}}
+                          >
+                            Course Title Here
+                          </td>
+                          <td
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            style={Object {}}
+                          >
+                            70
+                          </td>
+                          <td
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            style={Object {}}
+                          >
+                            1150
+                          </td>
+                          <td
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            style={Object {}}
+                          >
+                            1850
+                          </td>
+                        </tr>
+                        <tr
+                          className="ant-table-row ant-table-row-level-0"
+                          data-row-key="2"
+                          onClick={[Function]}
+                          style={Object {}}
+                        >
+                          <td
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            style={Object {}}
+                          >
+                            2
+                          </td>
+                          <td
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            style={Object {}}
+                          >
+                            <div
+                              className="ant-image css-dev-only-do-not-override-1pg9a38"
+                              onClick={[Function]}
+                              style={
+                                Object {
+                                  "height": undefined,
+                                  "width": 150,
+                                }
+                              }
+                            >
+                              <img
+                                className="ant-image-img css-dev-only-do-not-override-1pg9a38"
+                                onLoad={[Function]}
+                                src="thumbnail-1.jpg"
+                                style={
+                                  Object {
+                                    "borderRadius": "5px",
+                                    "height": undefined,
+                                  }
+                                }
+                                width={150}
+                              />
+                              <div
+                                className="ant-image-mask"
+                                style={
+                                  Object {
+                                    "display": undefined,
+                                  }
+                                }
+                              >
+                                <div
+                                  className="ant-image-mask-info"
+                                >
+                                  <span
+                                    aria-label="eye"
+                                    className="anticon anticon-eye"
+                                    role="img"
+                                  >
+                                    <svg
+                                      aria-hidden="true"
+                                      data-icon="eye"
+                                      fill="currentColor"
+                                      focusable="false"
+                                      height="1em"
+                                      viewBox="64 64 896 896"
+                                      width="1em"
+                                    >
+                                      <path
+                                        d="M942.2 486.2C847.4 286.5 704.1 186 512 186c-192.2 0-335.4 100.5-430.2 300.3a60.3 60.3 0 000 51.5C176.6 737.5 319.9 838 512 838c192.2 0 335.4-100.5 430.2-300.3 7.7-16.2 7.7-35 0-51.5zM512 766c-161.3 0-279.4-81.8-362.7-254C232.6 339.8 350.7 258 512 258c161.3 0 279.4 81.8 362.7 254C791.5 684.2 673.4 766 512 766zm-4-430c-97.2 0-176 78.8-176 176s78.8 176 176 176 176-78.8 176-176-78.8-176-176-176zm0 288c-61.9 0-112-50.1-112-112s50.1-112 112-112 112 50.1 112 112-50.1 112-112 112z"
+                                      />
+                                    </svg>
+                                  </span>
+                                  Preview
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            style={Object {}}
+                          >
+                            Course Title Here
+                          </td>
+                          <td
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            style={Object {}}
+                          >
+                            86
+                          </td>
+                          <td
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            style={Object {}}
+                          >
+                            2150
+                          </td>
+                          <td
+                            className="ant-table-cell"
+                            colSpan={null}
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            rowSpan={null}
+                            style={Object {}}
+                          >
+                            6850
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <ul
+                className="ant-pagination ant-table-pagination ant-table-pagination-right css-dev-only-do-not-override-1pg9a38"
+                style={Object {}}
+              >
+                <li
+                  aria-disabled={true}
+                  className="ant-pagination-prev ant-pagination-disabled"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={null}
+                  title="Previous Page"
+                >
+                  <button
+                    className="ant-pagination-item-link"
+                    disabled={true}
+                    tabIndex={-1}
+                    type="button"
+                  >
+                    <span
+                      aria-label="left"
+                      className="anticon anticon-left"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="left"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="64 64 896 896"
+                        width="1em"
+                      >
+                        <path
+                          d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </li>
+                <li
+                  className="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={0}
+                  title="1"
+                >
+                  <a
+                    rel="nofollow"
+                  >
+                    1
+                  </a>
+                </li>
+                <li
+                  aria-disabled={true}
+                  className="ant-pagination-next ant-pagination-disabled"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  tabIndex={null}
+                  title="Next Page"
+                >
+                  <button
+                    className="ant-pagination-item-link"
+                    disabled={true}
+                    tabIndex={-1}
+                    type="button"
+                  >
+                    <span
+                      aria-label="right"
+                      className="anticon anticon-right"
+                      role="img"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        data-icon="right"
+                        fill="currentColor"
+                        focusable="false"
+                        height="1em"
+                        viewBox="64 64 896 896"
+                        width="1em"
+                      >
+                        <path
+                          d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+                        />
+                      </svg>
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

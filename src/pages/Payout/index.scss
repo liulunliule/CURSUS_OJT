@@ -1,152 +1,152 @@
 .payout-page {
-  display: flex;
-  font-family: Arial, sans-serif;
-  margin-top: 50px;
-  margin-left: 240px;
-  transition: margin-left 0.5s ease;
+    display: flex;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+    margin-left: 240px;
+    transition: margin-left 0.5s ease;
 
-    &.active{
+    &.active {
         transition: margin-left 0.5s ease;
-        margin-left: 0;
+        margin-left: 60px;
     }
 
-  .content {
-    flex: 1;
-    padding: 20px;
-
-    .payout-header {
-      h2 {
-        font-size: 20px;
-        margin-bottom: 20px;
-        align-items: flex-start;
-      }
-    }
-
-    .payout-content {
-      display: flex;
-      flex-direction: column;
-      margin-top: 50px;
-
-      .next-payout {
-        width: 377.4px;
-        height: 206.35px;
-        background-color: #fff;
+    .content {
+        flex: 1;
         padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        margin-bottom: 20px;
-        align-items: flex-start;
 
-        h3 {
-          margin-top: 0;
-          margin-bottom: 20px;
-        }
-
-        p {
-          margin: 5px 0;
-
-          span {
-            font-weight: bold;
-            color: gray;
-            font-size: 14px;
-          }
-        }
-
-        h6 {
-          margin: 5px 0;
-          font-weight: bold;
-          color: rgb(175, 174, 174);
-          font-size: 25px;
-        }
-
-        h5 {
-          margin: 5px 0;
-          font-weight: bold;
-          color: gray;
-          font-size: 14px;
-          margin-bottom: 20px;
-        }
-      }
-
-      .payout-account {
-        width: 377.4px;
-        background-color: #fff;
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
-        h3 {
-          margin-top: 0;
-          margin-bottom: 20px;
-        }
-
-        .account-details {
-          display: flex;
-          align-items: center;
-          margin-bottom: 20px;
-
-          img {
-            margin-right: 20px;
-            width: 80px;
-            height: 28px;
-          }
-
-          p {
-            flex: 1;
-          }
-        }
-
-        button {
-          width: 335px;
-          padding: 10px 20px;
-          background-color: red;
-          color: #fff;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          align-self: flex-end;
-          margin-top: auto;
-
-          &:hover {
-            background-color: black;
-          }
-        }
-      }
-    }
-
-    .transactions {
-      width: 730px;
-      margin-top: 50px;
-      margin-right: 30px;
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-
-        thead {
-          tr {
-            th {
-              padding: 10px;
-              border-bottom: 1px solid #ddd;
-              text-align: left;
-              background-color: #ffe3e3;
+        .payout-header {
+            h2 {
+                font-size: 20px;
+                margin-bottom: 20px;
+                align-items: flex-start;
             }
-          }
         }
 
-        tbody {
-          tr {
-            td {
-              padding: 10px;
-              border-bottom: 1px solid #ddd;
-              background-color: #fff;
+        .payout-content {
+            display: flex;
+            flex-direction: column;
+            margin-top: 50px;
+
+            .next-payout {
+                width: 377.4px;
+                height: 206.35px;
+                background-color: #fff;
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                margin-bottom: 20px;
+                align-items: flex-start;
+
+                h3 {
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    margin: 5px 0;
+
+                    span {
+                        font-weight: bold;
+                        color: gray;
+                        font-size: 14px;
+                    }
+                }
+
+                h6 {
+                    margin: 5px 0;
+                    font-weight: bold;
+                    color: rgb(175, 174, 174);
+                    font-size: 25px;
+                }
+
+                h5 {
+                    margin: 5px 0;
+                    font-weight: bold;
+                    color: gray;
+                    font-size: 14px;
+                    margin-bottom: 20px;
+                }
             }
-          }
+
+            .payout-account {
+                width: 377.4px;
+                background-color: #fff;
+                padding: 20px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                h3 {
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                }
+
+                .account-details {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 20px;
+
+                    img {
+                        margin-right: 20px;
+                        width: 80px;
+                        height: 28px;
+                    }
+
+                    p {
+                        flex: 1;
+                    }
+                }
+
+                button {
+                    width: 335px;
+                    padding: 10px 20px;
+                    background-color: red;
+                    color: #fff;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    align-self: flex-end;
+                    margin-top: auto;
+
+                    &:hover {
+                        background-color: black;
+                    }
+                }
+            }
         }
-      }
+
+        .transactions {
+            width: 730px;
+            margin-top: 50px;
+            margin-right: 30px;
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+
+                thead {
+                    tr {
+                        th {
+                            padding: 10px;
+                            border-bottom: 1px solid #ddd;
+                            text-align: left;
+                            background-color: #ffe3e3;
+                        }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        td {
+                            padding: 10px;
+                            border-bottom: 1px solid #ddd;
+                            background-color: #fff;
+                        }
+                    }
+                }
+            }
+        }
     }
-  }
 }

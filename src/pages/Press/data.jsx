@@ -10,7 +10,7 @@ export const useFetchPressData = () => {
   const error = useSelector((state) => state.press.error);
 
   useEffect(() => {
-    if (status === 'idle') {
+    if (status === "idle") {
       dispatch(fetchNews());
       dispatch(fetchReleases());
     }

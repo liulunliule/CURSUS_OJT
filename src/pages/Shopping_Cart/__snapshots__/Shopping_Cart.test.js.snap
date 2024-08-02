@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Shopping_Cart Page 1`] = `
+<div
+  className="Shopping_cart"
+>
+  <div
+    className="toolbar_certification"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-12"
+        >
+          <div
+            className="toolbar_title"
+          >
+            <div
+              className="titleleft"
+            >
+              <div
+                className="toolbar_title_item"
+              >
+                <nav
+                  aria-label="breadcrumb"
+                >
+                  <ol
+                    className="breadcrumb"
+                  >
+                    <li
+                      className="breadcrumb-item"
+                    >
+                      <a
+                        href="/"
+                        onClick={[Function]}
+                      >
+                        Home
+                      </a>
+                    </li>
+                    <li
+                      className="breadcrumb-item"
+                    >
+                      <a
+                        href="/secondLayout/certification_center"
+                        onClick={[Function]}
+                      >
+                        Certification Center
+                      </a>
+                    </li>
+                    <li
+                      aria-current="page"
+                      className="breadcrumb-item active"
+                    >
+                      Shopping Cart
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <div
+              className="titleright"
+            >
+              <a
+                className="blog_link"
+                href="/secondLayout/certification_center"
+                onClick={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angles-left "
+                  data-icon="angles-left"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+                 Back to Certification Center
+              </a>
+            </div>
+          </div>
+          <div
+            className="main_title"
+          >
+            <h2>
+              Shopping Cart
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-8"
+      />
+      <div
+        className="col-lg-4"
+      >
+        <div
+          className="checkout_chk_bg stickytime"
+        >
+          <div
+            className="checkout_title"
+          >
+            <h4>
+              Total
+            </h4>
+            <img
+              alt=""
+              src="line.svg"
+            />
+          </div>
+          <div
+            className="order_dt_section"
+          >
+            <div
+              className="order_title"
+            >
+              <h4>
+                Original Price
+              </h4>
+              <div
+                className="order_price"
+              >
+                $
+                0
+              </div>
+            </div>
+            <div
+              className="order_title"
+            >
+              <h6>
+                Discount Price 
+              </h6>
+              <div
+                className="order_price"
+              >
+                $
+                0.00
+              </div>
+            </div>
+            <div
+              className="order_title"
+            >
+              <h2>
+                Total
+              </h2>
+              <div
+                className="order_price5"
+              >
+                $
+                0
+              </div>
+            </div>
+            <div
+              className="coupon_code"
+            >
+              <p>
+                Learn now is applied.
+              </p>
+              <div
+                className="coupon_input"
+              >
+                <div
+                  className="UI search coupon_input_content"
+                >
+                  <div
+                    className="UI input panel-body_text_item"
+                  >
+                    <input
+                      className="prompt srch_explore"
+                      id="id_coupon_code"
+                      maxLength="6"
+                      name="couponcode"
+                      placeholder="Enter Coupon Code"
+                      required=""
+                      type="text"
+                      value=""
+                    />
+                  </div>
+                  <button
+                    className="code-apply-btn"
+                    type="submit"
+                  >
+                    Apply
+                  </button>
+                </div>
+              </div>
+            </div>
+            <a
+              className="Checkout"
+              href="/secondLayout/checkout_page"
+              onClick={[Function]}
+            >
+              Checkout Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

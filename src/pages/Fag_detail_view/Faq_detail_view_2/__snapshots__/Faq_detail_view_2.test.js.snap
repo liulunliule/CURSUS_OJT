@@ -1,0 +1,555 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Faq_detail_view2 1`] = `
+<div
+  className="promotion"
+>
+  <div
+    className="promotion-container"
+  >
+    <div
+      className="promotion__inner"
+    >
+      <div
+        className="promotion__toolbar"
+      >
+        <div
+          className="promotion__toolbar-home"
+        >
+          <a
+            href="/"
+            onClick={[Function]}
+          >
+            Home 
+          </a>
+          /
+           
+          <a
+            href="/"
+            onClick={[Function]}
+          >
+            Selling & Promotion 
+          </a>
+          /Pricing & Coupons
+        </div>
+        <div
+          className="promotion__toolbar-search"
+        >
+          <div
+            className="promotion__toolbar-icon"
+          >
+            <span
+              aria-label="search"
+              className="anticon anticon-search"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="search"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0011.6 0l43.6-43.5a8.2 8.2 0 000-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z"
+                />
+              </svg>
+            </span>
+          </div>
+          <input
+            className="promotion__toolbar-input"
+            id=""
+            name=""
+            placeholder="Search"
+            type="text"
+          />
+        </div>
+      </div>
+      <h1
+        className="promotion__title"
+      >
+        Promote Your Course With Coupons and Referral Links
+      </h1>
+    </div>
+  </div>
+  <div
+    className="promotion__main"
+  >
+    <div
+      className="promotion-container"
+    >
+      <div
+        className="promotion__catalogue-wrapper"
+      >
+        <div
+          className="promotion__catalogue"
+        >
+          <h4
+            className="promotion__catalogue-title"
+          >
+            Instructor Topics
+          </h4>
+          <ul>
+            <li
+              className="promotion__catalogue-item"
+            >
+              <div
+                className="promotion__catalogue-item-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-cart-shopping "
+                  data-icon="cart-shopping"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 576 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+               
+              <a
+                className=""
+                href="/secondLayout/Faq_detail_view-1"
+                onClick={[Function]}
+              >
+                Payments
+              </a>
+            </li>
+            <li
+              className="promotion__catalogue-item"
+            >
+              <div
+                className="promotion__catalogue-item-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-sellsy "
+                  data-icon="sellsy"
+                  data-prefix="fab"
+                  focusable="false"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 640 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M539.71 237.308c3.064-12.257 4.29-24.821 4.29-37.384C544 107.382 468.618 32 376.076 32c-77.22 0-144.634 53.012-163.02 127.781-15.322-13.176-34.934-20.53-55.157-20.53-46.271 0-83.962 37.69-83.962 83.961 0 7.354.92 15.015 3.065 22.369-42.9 20.225-70.785 63.738-70.785 111.234C6.216 424.843 61.68 480 129.401 480h381.198c67.72 0 123.184-55.157 123.184-123.184.001-56.384-38.916-106.025-94.073-119.508zM199.88 401.554c0 8.274-7.048 15.321-15.321 15.321H153.61c-8.274 0-15.321-7.048-15.321-15.321V290.626c0-8.273 7.048-15.321 15.321-15.321h30.949c8.274 0 15.321 7.048 15.321 15.321v110.928zm89.477 0c0 8.274-7.048 15.321-15.322 15.321h-30.949c-8.274 0-15.321-7.048-15.321-15.321V270.096c0-8.274 7.048-15.321 15.321-15.321h30.949c8.274 0 15.322 7.048 15.322 15.321v131.458zm89.477 0c0 8.274-7.047 15.321-15.321 15.321h-30.949c-8.274 0-15.322-7.048-15.322-15.321V238.84c0-8.274 7.048-15.321 15.322-15.321h30.949c8.274 0 15.321 7.048 15.321 15.321v162.714zm87.027 0c0 8.274-7.048 15.321-15.322 15.321h-28.497c-8.274 0-15.321-7.048-15.321-15.321V176.941c0-8.579 7.047-15.628 15.321-15.628h28.497c8.274 0 15.322 7.048 15.322 15.628v224.613z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+               
+              <a
+                className=""
+                href="/secondLayout/Faq_detail_view-2"
+                onClick={[Function]}
+              >
+                Selling & Promotion
+              </a>
+            </li>
+            <li
+              className="promotion__catalogue-item"
+            >
+              <div
+                className="promotion__catalogue-item-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-cart-shopping "
+                  data-icon="cart-shopping"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 576 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+               
+              <a
+                href="/term"
+                onClick={[Function]}
+              >
+                Quality Standards
+              </a>
+            </li>
+            <li
+              className="promotion__catalogue-item"
+            >
+              <div
+                className="promotion__catalogue-item-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-ruler "
+                  data-icon="ruler"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M177.9 494.1c-18.7 18.7-49.1 18.7-67.9 0L17.9 401.9c-18.7-18.7-18.7-49.1 0-67.9l50.7-50.7 48 48c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-48-48 41.4-41.4 48 48c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-48-48 41.4-41.4 48 48c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-48-48 41.4-41.4 48 48c6.2 6.2 16.4 6.2 22.6 0s6.2-16.4 0-22.6l-48-48 50.7-50.7c18.7-18.7 49.1-18.7 67.9 0l92.1 92.1c18.7 18.7 18.7 49.1 0 67.9L177.9 494.1z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+               
+              <a
+                href="/term"
+                onClick={[Function]}
+              >
+                Course Building
+              </a>
+            </li>
+            <li
+              className="promotion__catalogue-item"
+            >
+              <div
+                className="promotion__catalogue-item-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-bars-progress "
+                  data-icon="bars-progress"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M448 160l-128 0 0-32 128 0 0 32zM48 64C21.5 64 0 85.5 0 112l0 64c0 26.5 21.5 48 48 48l416 0c26.5 0 48-21.5 48-48l0-64c0-26.5-21.5-48-48-48L48 64zM448 352l0 32-256 0 0-32 256 0zM48 288c-26.5 0-48 21.5-48 48l0 64c0 26.5 21.5 48 48 48l416 0c26.5 0 48-21.5 48-48l0-64c0-26.5-21.5-48-48-48L48 288z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+               
+              <a
+                href="/term"
+                onClick={[Function]}
+              >
+                Course Management
+              </a>
+            </li>
+            <li
+              className="promotion__catalogue-item"
+            >
+              <div
+                className="promotion__catalogue-item-icon"
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-helmet-safety "
+                  data-icon="helmet-safety"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 576 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 32c-17.7 0-32 14.3-32 32l0 2.3 0 99.6c0 5.6-4.5 10.1-10.1 10.1c-3.6 0-7-1.9-8.8-5.1L157.1 87C83 123.5 32 199.8 32 288l0 64 512 0 0-66.4c-.9-87.2-51.7-162.4-125.1-198.6l-48 83.9c-1.8 3.2-5.2 5.1-8.8 5.1c-5.6 0-10.1-4.5-10.1-10.1l0-99.6 0-2.3c0-17.7-14.3-32-32-32l-64 0zM16.6 384C7.4 384 0 391.4 0 400.6c0 4.7 2 9.2 5.8 11.9C27.5 428.4 111.8 480 288 480s260.5-51.6 282.2-67.5c3.8-2.8 5.8-7.2 5.8-11.9c0-9.2-7.4-16.6-16.6-16.6L16.6 384z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+              </div>
+               
+              <a
+                href="/term"
+                onClick={[Function]}
+              >
+                Trust & Safety
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          className="promotion__catalogue"
+        >
+          <h4
+            className="promotion__catalogue-title"
+          >
+            Related Articles
+          </h4>
+          <ul>
+            <li
+              className="promotion__catalogue-item"
+            >
+              <a
+                href="/promotion"
+                onClick={[Function]}
+              >
+                Instructor Revenue Share
+              </a>
+            </li>
+            <li
+              className="promotion__catalogue-item"
+            >
+              <a
+                href="/term"
+                onClick={[Function]}
+              >
+                Coupons & Course Referral Links: Rules and Guidelines
+              </a>
+            </li>
+            <li
+              className="promotion__catalogue-item"
+            >
+              <a
+                href="/term"
+                onClick={[Function]}
+              >
+                Rules and Guidelines
+              </a>
+            </li>
+            <li
+              className="promotion__catalogue-item"
+            >
+              <a
+                href="/term"
+                onClick={[Function]}
+              >
+                Instructor Promotional Agreements and Cursus Deals
+              </a>
+            </li>
+            <li
+              className="promotion__catalogue-item"
+            >
+              <a
+                href="/term"
+                onClick={[Function]}
+              >
+                Cursus Coupons: FAQ
+              </a>
+            </li>
+            <li
+              className="promotion__catalogue-item"
+            >
+              <a
+                href="/term"
+                onClick={[Function]}
+              >
+                How to Select Your Payout Method And Become a Premium Instructor
+              </a>
+            </li>
+          </ul>
+        </div>
+        <button
+          className="promotion__catalogue-btn"
+        >
+          <a
+            href="/"
+            onClick={[Function]}
+          >
+            Submit A Request
+          </a>
+        </button>
+      </div>
+      <div
+        className="promotion__content"
+      >
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur volutpat maximus pellentesque. Integer sem enim, luctus at nibh at, condimentum sagittis sapien. Sed tempus ipsum erat, sit amet efficitur velit interdum eu. Vestibulum hendrerit id dolor eu scelerisque. Phasellus ex dui, consequat nec feugiat eu, dapibus eget ante. Sed sodales interdum dui, at euismod mi feugiat hendrerit. Suspendisse auctor libero in tempor mollis. Nulla et dolor velit. Aliquam sit amet luctus quam.
+        </p>
+        <div
+          className="promotion__content-1"
+        >
+          <div
+            className="promotion__content-title"
+          >
+            Course referral links
+          </div>
+          <p>
+            Nam a egestas libero, eget eleifend turpis. Sed id ipsum a ipsum aliquam laoreet sit amet sit amet nibh. Proin dapibus, libero sed posuere rhoncus, orci mi cursus enim, at accumsan eros massa lacinia mi. Nunc eget finibus felis, volutpat malesuada sem. Aliquam ac nisl pellentesque, varius neque sit amet, porttitor nunc. Nullam elit tellus, dapibus non eleifend sed, hendrerit eget velit. Aliquam ut felis dictum, tincidunt magna vitae, aliquam massa. In porttitor tristique quam, non dignissim sapien pharetra ultrices. Cras non ante non velit mollis mollis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque et bibendum urna, eget consequat sapien. Integer sed condimentum nibh. Integer id neque tristique, lobortis massa ac, dapibus nibh. Donec nulla odio, porttitor ac rutrum eget, volutpat a velit. Curabitur et enim quis diam congue dictum et vitae dui. Nulla tortor orci, luctus a pretium vel, ultrices porta nisl.
+          </p>
+          <p>
+            Etiam lobortis dictum tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse ultricies efficitur dui, suscipit tempus elit condimentum quis. Duis sed vestibulum tortor, eget cursus odio.
+          </p>
+        </div>
+        <div
+          className="promotion__content-1"
+        >
+          <h4
+            className="promotion__content-title"
+          >
+            How to create a coupon
+          </h4>
+          <ol
+            className="promotion__content-desc"
+          >
+            <li
+              className="promotion__content-desc-item"
+            >
+              <a
+                className="promotion__content-desc-link"
+                href="/"
+                onClick={[Function]}
+              >
+                Navigate to the
+                 
+                <b>
+                  course Promotions page
+                </b>
+              </a>
+            </li>
+            <li
+              className="promotion__content-desc-item"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                Click 
+                <b>
+                  Create new coupon
+                </b>
+              </a>
+            </li>
+            <li
+              className="promotion__content-desc-item"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                <b>
+                  Select the coupon type
+                </b>
+              </a>
+            </li>
+            <li
+              className="promotion__content-desc-item"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                If applicable, choose your coupon price
+              </a>
+            </li>
+            <li
+              className="promotion__content-desc-item"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                Edit the coupon code if you wish (the coupon code must be between 6 and 20 characters, and can only contain alphanumeric characters (A-Z, 0-9) , periods ("."), dashes ("-") or underscores ("_").
+              </a>
+            </li>
+            <li
+              className="promotion__content-desc-item"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                Click 
+                <b>
+                  Review coupon
+                </b>
+                 to double check the coupon’s details
+              </a>
+            </li>
+            <li
+              className="promotion__content-desc-item"
+            >
+              <a
+                href="/"
+                onClick={[Function]}
+              >
+                Click 
+                <b>
+                  Create coupon
+                </b>
+              </a>
+            </li>
+          </ol>
+        </div>
+        <div
+          className="promotion__content-1"
+        >
+          <div
+            className="promotion__content-title"
+          >
+            How to share your coupon code
+          </div>
+          <p>
+            Morbi lectus nunc, lacinia ut consequat a, semper vel erat. Duis ut lacus nec dui sodales mattis. Mauris tellus dolor, pulvinar sit amet pretium a, malesuada sed tellus. Aliquam ultrices elit neque, quis lacinia ex porttitor non. Donec ac iaculis turpis. Nulla lacinia enim quis orci aliquam, non cursus urna pellentesque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus in mi a nisi auctor interdum. Vivamus faucibus magna sed elit interdum consequat. Vestibulum eu tortor vel ante feugiat faucibus quis et urna. Quisque interdum ac enim eu tempus. Fusce viverra, lectus egestas tincidunt cursus, tortor sapien convallis metus, vitae auctor risus metus vel nisi. Aenean dapibus bibendum mauris ut iaculis.
+          </p>
+        </div>
+        <div
+          className="promotion__content-1"
+        >
+          <div
+            className="promotion__content-title"
+          >
+            How to deactivate a coupon
+          </div>
+          <p>
+            Quisque et bibendum urna, eget consequat sapien. Integer sed condimentum nibh. Integer id neque tristique, lobortis massa ac, dapibus nibh. Donec nulla odio, porttitor ac rutrum eget, volutpat a velit. Curabitur et enim quis diam congue dictum et vitae dui. Nulla tortor orci, luctus a pretium vel, ultrices porta nisl.
+          </p>
+          <form
+            className="promotion__content-1-form"
+          >
+            <div
+              className="promotion__content-1-form-title"
+            >
+              Was this review helpful?
+            </div>
+            <div
+              className="promotion__content-1-form-radio"
+            >
+              <input
+                id="yes"
+                name="content"
+                type="radio"
+              />
+              <label
+                htmlFor="yes"
+              >
+                Yes
+              </label>
+              <input
+                id="no"
+                name="content"
+                type="radio"
+              />
+              <label
+                htmlFor="no"
+              >
+                No
+              </label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

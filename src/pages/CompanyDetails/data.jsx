@@ -9,7 +9,7 @@ export const useFetchOffices = () => {
   const error = useSelector((state) => state.offices.error);
 
   useEffect(() => {
-    if (status === 'idle') {
+    if (status === "idle") {
       dispatch(fetchOffices());
     }
   }, [status, dispatch]);
