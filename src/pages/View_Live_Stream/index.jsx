@@ -6,10 +6,10 @@ import Dislike from "../../assets/img/dislike.png";
 import Share from "../../assets/img/share_live.png";
 import liveButton from "../../assets/img/live_button.png";
 import { Link } from "react-router-dom";
-import Slider from "react-slick";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchLiveStreams } from "../../redux/features/liveStreamsSlice";
 import { fetchChatContent } from "../../redux/features/chatContentSlice";
+import Carousel from "../../components/carousel";
 
 const View_Live_Stream = () => {
   var settings = {
@@ -117,7 +117,7 @@ const View_Live_Stream = () => {
                   <div className="owl-carousel live_stream owl-theme owl-loaded owl-drag">
                     <div className="owl-stage-outer">
                       <div className="owl-stage100">
-                        <Slider {...settings}>
+                        {/* <Slider {...settings}>
                           {liveStreams.map((d) => (
                             <div className="owl-item">
                               <div className="item">
@@ -134,7 +134,8 @@ const View_Live_Stream = () => {
                               </div>
                             </div>
                           ))}
-                        </Slider>
+                        </Slider> */}
+                        <Carousel />
                       </div>
                     </div>
                   </div>
