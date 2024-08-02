@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<div
+  className="paid_page"
+>
+  <div
+    className="paid_page-input"
+  >
+    <label
+      htmlFor="regular_price"
+    >
+      Regular Price*
+    </label>
+    <form
+      className="paid_page-form"
+      onSubmit={[Function]}
+    >
+      <input
+        id="regular_price"
+        onChange={[Function]}
+        placeholder="$0"
+        type="text"
+        value={100}
+      />
+    </form>
+  </div>
+</div>
+`;

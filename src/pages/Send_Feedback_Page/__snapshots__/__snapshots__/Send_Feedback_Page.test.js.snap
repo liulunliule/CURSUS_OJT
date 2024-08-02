@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test Certification Test Page 1`] = `
+exports[`SendFeedbackPage snapshot test 1`] = `
 <div
   className="SendFeedbackPage "
 >
@@ -22,7 +22,7 @@ exports[`test Certification Test Page 1`] = `
       </h2>
     </div>
     <input
-      className="ant-input css-dev-only-do-not-override-1uq9j6g ant-input-outlined SendFeedbackPage_Contents_Input"
+      className="ant-input css-dev-only-do-not-override-1pg9a38 ant-input-outlined SendFeedbackPage_Contents_Input"
       disabled={false}
       onBlur={[Function]}
       onChange={[Function]}
@@ -36,7 +36,7 @@ exports[`test Certification Test Page 1`] = `
       value=""
     />
     <textarea
-      className="ant-input css-dev-only-do-not-override-1uq9j6g ant-input-outlined SendFeedbackPage_Contents_TextArea"
+      className="ant-input css-dev-only-do-not-override-1pg9a38 ant-input-outlined SendFeedbackPage_Contents_TextArea"
       disabled={false}
       maxLength={3000}
       onBlur={[Function]}
@@ -60,10 +60,10 @@ exports[`test Certification Test Page 1`] = `
       Add Screenshots
     </span>
     <span
-      className="ant-upload-wrapper css-dev-only-do-not-override-1uq9j6g"
+      className="ant-upload-wrapper css-dev-only-do-not-override-1pg9a38"
     >
       <div
-        className="css-dev-only-do-not-override-1uq9j6g ant-upload ant-upload-drag"
+        className="css-dev-only-do-not-override-1pg9a38 ant-upload ant-upload-drag"
         onDragLeave={[Function]}
         onDragOver={[Function]}
         onDrop={[Function]}
