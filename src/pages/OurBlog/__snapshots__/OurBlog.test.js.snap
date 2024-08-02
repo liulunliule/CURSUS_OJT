@@ -1,134 +1,127 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test Our Blog 1`] = `
-<div
-  className="blog-page"
->
-  <header
-    className="custom-header"
-    style={
-      Object {
-        "backgroundColor": "#f8f8f8",
-      }
-    }
+exports[`OurBlog component renders OurBlog component correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="blog-page"
   >
-    <nav
-      className="custom-nav"
+    <header
+      class="custom-header"
+      style="background-color: rgb(248, 248, 248);"
     >
-      <ul
-        className="custom-ul"
+      <nav
+        class="custom-nav"
       >
-        <li
-          className="custom-li "
-          onClick={[Function]}
+        <ul
+          class="custom-ul"
         >
-          About
-        </li>
-        <li
-          className="custom-li selected"
-          onClick={[Function]}
-        >
-          Blog
-        </li>
-        <li
-          className="custom-li "
-          onClick={[Function]}
-        >
-          Company
-        </li>
-        <li
-          className="custom-li "
-          onClick={[Function]}
-        >
-          Careers
-        </li>
-        <li
-          className="custom-li "
-          onClick={[Function]}
-        >
-          Press
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <section
-    className="hero"
-    style={
-      Object {
-        "backgroundColor": "#f8f8f8",
-      }
-    }
-  >
-    <h1>
-      Insights, ideas, and stories
-    </h1>
-  </section>
-  <section
-    className="content"
-  >
-    <div
-      className="content-main"
+          <li
+            class="custom-li "
+          >
+            About
+          </li>
+          <li
+            class="custom-li selected"
+          >
+            Blog
+          </li>
+          <li
+            class="custom-li "
+          >
+            Company
+          </li>
+          <li
+            class="custom-li "
+          >
+            Careers
+          </li>
+          <li
+            class="custom-li "
+          >
+            Press
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <section
+      class="hero"
+      style="background-color: rgb(248, 248, 248);"
+    >
+      <h1>
+        Insights, ideas, and stories
+      </h1>
+    </section>
+    <section
+      class="content"
     >
       <div
-        className="sidebar"
+        class="content-main"
       >
         <div
-          className="left"
+          class="sidebar"
         >
           <div
-            className="search"
+            class="left"
           >
-            <input
-              placeholder="Search"
-              type="text"
-            />
-          </div>
-          <div
-            className="labels"
-          >
-            <h3>
-              Labels
-            </h3>
-          </div>
-          <div
-            className="archive"
-          >
-            <h3>
-              Archive
-            </h3>
-          </div>
-          <div
-            className="follow-buttons"
-          >
-            <button
-              className="follow1"
+            <div
+              class="search"
             >
-              Follow our Facebook page
-            </button>
-            <button
-              className="follow2"
+              <input
+                placeholder="Search"
+                type="text"
+              />
+            </div>
+            <div
+              class="labels"
             >
-              Follow our X page
-            </button>
+              <h3>
+                Labels
+              </h3>
+            </div>
+            <div
+              class="archive"
+            >
+              <h3>
+                Archive
+              </h3>
+            </div>
+            <div
+              class="follow-buttons"
+            >
+              <button
+                class="follow1"
+              >
+                Follow our Facebook page
+              </button>
+              <button
+                class="follow2"
+              >
+                Follow our X page
+              </button>
+            </div>
+            <a
+              class="learn-more"
+              href="#"
+            >
+              Learn More
+            </a>
+            <a
+              class="help-center"
+              href="#"
+            >
+              Cursus Help Center
+            </a>
           </div>
-          <a
-            className="learn-more"
-            href="#"
-          >
-            Learn More
-          </a>
-          <a
-            className="help-center"
-            href="#"
-          >
-            Cursus Help Center
-          </a>
+        </div>
+        <div
+          class="blog-list"
+        >
+          <p>
+            Loading...
+          </p>
         </div>
       </div>
-      <div
-        className="blog-list"
-      />
-    </div>
-  </section>
-</div>
+    </section>
+  </div>
+</DocumentFragment>
 `;
