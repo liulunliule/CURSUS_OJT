@@ -6,6 +6,9 @@
     .container{
         max-width: 1200px;
     }
+    .basic_form.title{
+        margin-bottom: 30px;
+    }
 }
 
 .checkout{
@@ -157,6 +160,9 @@
     font-weight: 500;
     background: #ed2a26;
     display: block;
+    &:hover{
+        background-color: #333;
+    }
 }
 
 .address_text {

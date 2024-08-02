@@ -1,6 +1,9 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchNextPayout, fetchTransactions } from '../../redux/features/payoutSlice';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchNextPayout,
+  fetchTransactions,
+} from "../../redux/features/payoutSlice";
 
 export const useFetchPayoutData = () => {
   const dispatch = useDispatch();
@@ -10,7 +13,7 @@ export const useFetchPayoutData = () => {
   const error = useSelector((state) => state.payout.error);
 
   useEffect(() => {
-    if (status === 'idle') {
+    if (status === "idle") {
       dispatch(fetchNextPayout());
       dispatch(fetchTransactions());
     }

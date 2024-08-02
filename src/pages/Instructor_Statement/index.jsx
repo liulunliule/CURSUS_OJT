@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./index.scss";
 import { Select } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,49 +7,38 @@ import { faDownload } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { search } from "../../assets";
 import { Table, Button } from "antd";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchInstructorStatement,
+  fetchStatementTable,
+} from "../../redux/features/statementSlice";
 
 const Instructor_statement = () => {
+  const dispatch = useDispatch();
+  const account = useSelector((state) => state.user.account);
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
+  const statementData = useSelector((state) => state.statement.data);
+  const statementStatus = useSelector((state) => state.statement.status);
+  const instructorData = useSelector((state) => state.statement.instructorData);
+  const instructorStatus = useSelector(
+    (state) => state.statement.instructorStatus
+  );
+  const [activeItem, setActiveItem] = useState("This Month");
+
   const { Option } = Select;
-  const data = [
-    {
-      key: "1",
-      date: "13 Apr 2020",
-      orderId: "123456",
-      type: "Buy",
-      title: "Course Title Here",
-      amount: "$17",
-      invoice: "View",
-    },
-    {
-      key: "2",
-      date: "10 Apr 2020",
-      orderId: "123456",
-      type: "Buy",
-      title: "Course Title Here",
-      amount: "$22",
-      invoice: "View",
-    },
-    {
-      key: "3",
-      date: "5 Apr 2020",
-      orderId: "123456",
-      type: "Buy",
-      title: "Course Title Here",
-      amount: "$10",
-      invoice: "View",
-    },
-    {
-      key: "4",
-      date: "3 Apr 2020",
-      orderId: "123456",
-      type: "Buy",
-      title: "Course Title Here",
-      amount: "$8",
-      invoice: "View",
-    },
-  ];
+
+  useEffect(() => {
+    console.log(account.id);
+    if (account) {
+      if (statementStatus === "idle") {
+        dispatch(fetchStatementTable(account?.id));
+      }
+      if (instructorStatus === "idle") {
+        dispatch(fetchInstructorStatement(account?.id));
+      }
+    }
+    // console.log("instructorData", instructorData);
+  }, [statementStatus, instructorStatus, account.id, dispatch]);
 
   const columns = [
     {
@@ -59,8 +48,8 @@ const Instructor_statement = () => {
     },
     {
       title: "Order ID",
-      dataIndex: "orderId",
-      key: "orderId",
+      dataIndex: "OrderId",
+      key: "OrderId",
     },
     {
       title: "Type",
@@ -141,7 +130,7 @@ const Instructor_statement = () => {
                           <p className="js-earnings__instructor-funds-wrapper">
                             <span className=""></span>
                             <span className="js-earnngs__instructor-funds t-currency">
-                              $289.64
+                              ${instructorData.funds}
                             </span>
                           </p>
                         </td>
@@ -149,7 +138,7 @@ const Instructor_statement = () => {
                           <p className="js-earnings__earnings-wrapper">
                             <span className="tt__earning">+</span>
                             <span className="js-earnings__earnings t-currency">
-                              $458.00
+                              ${instructorData.Earnings}
                             </span>
                           </p>
                         </td>
@@ -157,7 +146,7 @@ const Instructor_statement = () => {
                           <p className="js-earnings__fees-wrapper">
                             <span className="tt__earning">-</span>
                             <span className="js-earnings__fees t-currency">
-                              $154.86
+                              ${instructorData.Fees}
                             </span>
                           </p>
                         </td>
@@ -207,10 +196,24 @@ const Instructor_statement = () => {
             <div className="col-lg-12 col-md-12">
               <ul className="more_options_tt">
                 <li>
-                  <button className="more_items activee">This Month</button>
+                  <button
+                    className={`more_items ${
+                      activeItem === "This Month" ? "activee" : ""
+                    }`}
+                    onClick={() => setActiveItem("This Month")}
+                  >
+                    This Month
+                  </button>
                 </li>
                 <li>
-                  <button className="more_items">Last Month</button>
+                  <button
+                    className={`more_items ${
+                      activeItem === "Last Month" ? "activee" : ""
+                    }`}
+                    onClick={() => setActiveItem("Last Month")}
+                  >
+                    Last Month
+                  </button>
                 </li>
                 <li>
                   <div className="explore_search">
@@ -234,7 +237,11 @@ const Instructor_statement = () => {
             </div>
             <div className="col-lg-12 col-md-12">
               <div className="statement_table">
-                <Table dataSource={data} columns={columns} pagination={false} />
+                <Table
+                  dataSource={statementData}
+                  columns={columns}
+                  pagination={false}
+                />
               </div>
             </div>
           </div>

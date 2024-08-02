@@ -1,5 +1,6 @@
 // globalStyles.js
 
+import { theme } from "antd";
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
@@ -83,7 +84,6 @@ export const lightTheme = {
   nightModeHovertext: "none",
   faMoonBackground: "#ffecec",
   profileNameColor: "#333",
-
 };
 
 export const darkTheme = {
@@ -102,7 +102,7 @@ export const darkTheme = {
   dropdownText: "#fff",
   profileLinkBackground: "#fff",
   dropText: "#ccc",
-  nightModetext:"#ddd",
+  nightModetext: "#ddd",
   nightModeHovertext: "#fff",
   faMoonBackground: "#4a4a4a",
   profileNameColor: "#fff",

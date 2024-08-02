@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SendFeedbackPage snapshot test 1`] = `
+<div
+  className="SendFeedbackPage "
+>
+  <div
+    className="SendFeedbackPage_Contents"
+  >
+    <div
+      className="SendFeedbackPage_Contents_Title"
+    >
+      <img
+        alt=""
+        className="SendFeedbackLogo_SendFeedbackPage"
+        src="SendFeedbackLogo_SideBar.png"
+      />
+      <h2
+        className="SendFeedbackPage_Contents_Title_H2"
+      >
+        Send Feedback
+      </h2>
+    </div>
+    <input
+      className="ant-input css-dev-only-do-not-override-1pg9a38 ant-input-outlined SendFeedbackPage_Contents_Input"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onCompositionEnd={[Function]}
+      onCompositionStart={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Email address"
+      style={Object {}}
+      type="text"
+      value=""
+    />
+    <textarea
+      className="ant-input css-dev-only-do-not-override-1pg9a38 ant-input-outlined SendFeedbackPage_Contents_TextArea"
+      disabled={false}
+      maxLength={3000}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onCompositionEnd={[Function]}
+      onCompositionStart={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      placeholder=" Describe your issue or share your ideas"
+      rows={4}
+      style={
+        Object {
+          "resize": undefined,
+        }
+      }
+      value=""
+    />
+    <span
+      className="SendFeedbackPage_Contents_Span"
+    >
+      Add Screenshots
+    </span>
+    <span
+      className="ant-upload-wrapper css-dev-only-do-not-override-1pg9a38"
+    >
+      <div
+        className="css-dev-only-do-not-override-1pg9a38 ant-upload ant-upload-drag"
+        onDragLeave={[Function]}
+        onDragOver={[Function]}
+        onDrop={[Function]}
+        style={
+          Object {
+            "height": undefined,
+          }
+        }
+      >
+        <span
+          className="ant-upload ant-upload-btn"
+          onClick={[Function]}
+          onDragOver={[Function]}
+          onDrop={[Function]}
+          onKeyDown={[Function]}
+          role="button"
+          tabIndex="0"
+        >
+          <input
+            accept=""
+            disabled={false}
+            multiple={false}
+            onChange={[Function]}
+            onClick={[Function]}
+            style={
+              Object {
+                "display": "none",
+              }
+            }
+            type="file"
+          />
+          <div
+            className="ant-upload-drag-container"
+          >
+            <p
+              className="ant-upload-drag-icon"
+            >
+              <span
+                aria-label="cloud-upload"
+                className="anticon anticon-cloud-upload Drag_Icon"
+                role="img"
+              >
+                <svg
+                  aria-hidden="true"
+                  data-icon="cloud-upload"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M518.3 459a8 8 0 00-12.6 0l-112 141.7a7.98 7.98 0 006.3 12.9h73.9V856c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V613.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 459z"
+                  />
+                  <path
+                    d="M811.4 366.7C765.6 245.9 648.9 160 512.2 160S258.8 245.8 213 366.6C127.3 389.1 64 467.2 64 560c0 110.5 89.5 200 199.9 200H304c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8h-40.1c-33.7 0-65.4-13.4-89-37.7-23.5-24.2-36-56.8-34.9-90.6.9-26.4 9.9-51.2 26.2-72.1 16.7-21.3 40.1-36.8 66.1-43.7l37.9-9.9 13.9-36.6c8.6-22.8 20.6-44.1 35.7-63.4a245.6 245.6 0 0152.4-49.9c41.1-28.9 89.5-44.2 140-44.2s98.9 15.3 140 44.2c19.9 14 37.5 30.8 52.4 49.9 15.1 19.3 27.1 40.7 35.7 63.4l13.8 36.5 37.8 10C846.1 454.5 884 503.8 884 560c0 33.1-12.9 64.3-36.3 87.7a123.07 123.07 0 01-87.6 36.3H720c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h40.1C870.5 760 960 670.5 960 560c0-92.7-63.1-170.7-148.6-193.3z"
+                  />
+                </svg>
+              </span>
+            </p>
+            <p
+              className="ant-upload-text Drag_Text"
+            >
+              Select screenshots to upload
+            </p>
+            <p
+              className="ant-upload-hint Drag_hint"
+            >
+              or drag and drop screenshots
+            </p>
+          </div>
+        </span>
+      </div>
+      <div
+        className="ant-upload-list ant-upload-list-text"
+      />
+    </span>
+    <button
+      className="SendFeedbackPage_Contents_button"
+      onClick={[Function]}
+    >
+      Send Feedback
+    </button>
+  </div>
+</div>
+`;

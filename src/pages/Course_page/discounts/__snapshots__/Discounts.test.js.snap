@@ -1,0 +1,424 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Discounts Component matches the snapshot 1`] = `
+<div
+  className="discounts"
+>
+  <div
+    className="ant-collapse ant-collapse-icon-position-start discounts_collapse css-dev-only-do-not-override-1pg9a38"
+    style={Object {}}
+  >
+    <div
+      className="ant-collapse-item"
+    >
+      <div
+        aria-disabled={false}
+        aria-expanded={false}
+        className="ant-collapse-header"
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+        tabIndex={0}
+      >
+        <div
+          className="ant-collapse-expand-icon"
+        >
+          <span
+            aria-label="collapsed"
+            className="anticon anticon-right ant-collapse-arrow"
+            role="img"
+          >
+            <svg
+              aria-hidden="true"
+              data-icon="right"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+              />
+            </svg>
+          </span>
+        </div>
+        <span
+          className="ant-collapse-header-text"
+        >
+          <h4
+            className="discounts_collapse_title"
+          >
+            New Discount
+          </h4>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    className="ant-table-wrapper discounts_table css-dev-only-do-not-override-1pg9a38"
+    style={Object {}}
+  >
+    <div
+      className="ant-spin-nested-loading css-dev-only-do-not-override-1pg9a38"
+    >
+      <div
+        className="ant-spin-container"
+      >
+        <div
+          className="ant-table css-dev-only-do-not-override-1pg9a38"
+        >
+          <div
+            className="ant-table-container"
+          >
+            <div
+              className="ant-table-content"
+              onScroll={[Function]}
+              style={Object {}}
+            >
+              <table
+                style={
+                  Object {
+                    "tableLayout": "auto",
+                  }
+                }
+              >
+                <colgroup />
+                <thead
+                  className="ant-table-thead"
+                >
+                  <tr>
+                    <th
+                      className="ant-table-cell"
+                      colSpan={null}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      rowSpan={null}
+                      scope="col"
+                      style={Object {}}
+                    >
+                      Item No.
+                    </th>
+                    <th
+                      className="ant-table-cell"
+                      colSpan={null}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      rowSpan={null}
+                      scope="col"
+                      style={Object {}}
+                    >
+                      Course
+                    </th>
+                    <th
+                      className="ant-table-cell"
+                      colSpan={null}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      rowSpan={null}
+                      scope="col"
+                      style={Object {}}
+                    >
+                      Start Date
+                    </th>
+                    <th
+                      className="ant-table-cell"
+                      colSpan={null}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      rowSpan={null}
+                      scope="col"
+                      style={Object {}}
+                    >
+                      End Date
+                    </th>
+                    <th
+                      className="ant-table-cell"
+                      colSpan={null}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      rowSpan={null}
+                      scope="col"
+                      style={Object {}}
+                    >
+                      Discount
+                    </th>
+                    <th
+                      className="ant-table-cell"
+                      colSpan={null}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      rowSpan={null}
+                      scope="col"
+                      style={Object {}}
+                    >
+                      Status
+                    </th>
+                    <th
+                      className="ant-table-cell"
+                      colSpan={null}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      rowSpan={null}
+                      scope="col"
+                      style={Object {}}
+                    >
+                      Action
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  className="ant-table-tbody"
+                >
+                  <tr
+                    className="ant-table-row ant-table-row-level-0"
+                    data-row-key="1"
+                    onClick={[Function]}
+                    style={Object {}}
+                  >
+                    <td
+                      className="ant-table-cell"
+                      colSpan={null}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      rowSpan={null}
+                      style={Object {}}
+                    >
+                      IT-001
+                    </td>
+                    <td
+                      className="ant-table-cell"
+                      colSpan={null}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      rowSpan={null}
+                      style={Object {}}
+                    >
+                      Course Title Here
+                    </td>
+                    <td
+                      className="ant-table-cell"
+                      colSpan={null}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      rowSpan={null}
+                      style={Object {}}
+                    >
+                      02 November 2019
+                    </td>
+                    <td
+                      className="ant-table-cell"
+                      colSpan={null}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      rowSpan={null}
+                      style={Object {}}
+                    >
+                      19 November 2019
+                    </td>
+                    <td
+                      className="ant-table-cell"
+                      colSpan={null}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      rowSpan={null}
+                      style={Object {}}
+                    >
+                      20%
+                    </td>
+                    <td
+                      className="ant-table-cell"
+                      colSpan={null}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      rowSpan={null}
+                      style={Object {}}
+                    >
+                      <b
+                        style={
+                          Object {
+                            "color": "red",
+                          }
+                        }
+                      >
+                        Active
+                      </b>
+                    </td>
+                    <td
+                      className="ant-table-cell"
+                      colSpan={null}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      rowSpan={null}
+                      style={Object {}}
+                    >
+                      <div>
+                        <button
+                          className="ant-btn css-dev-only-do-not-override-1pg9a38 ant-btn-default ant-btn-icon-only"
+                          disabled={false}
+                          onClick={[Function]}
+                          style={
+                            Object {
+                              "marginRight": 8,
+                            }
+                          }
+                          type="button"
+                        >
+                          <span
+                            className="ant-btn-icon"
+                            style={Object {}}
+                          >
+                            <span
+                              aria-label="edit"
+                              className="anticon anticon-edit"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="edit"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M257.7 752c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 000-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 009.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9zm67.4-174.4L687.8 215l73.3 73.3-362.7 362.6-88.9 15.7 15.6-89zM880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                        </button>
+                        <button
+                          className="ant-btn css-dev-only-do-not-override-1pg9a38 ant-btn-default ant-btn-icon-only ant-btn-dangerous"
+                          disabled={false}
+                          onClick={[Function]}
+                          style={Object {}}
+                          type="button"
+                        >
+                          <span
+                            className="ant-btn-icon"
+                            style={Object {}}
+                          >
+                            <span
+                              aria-label="delete"
+                              className="anticon anticon-delete"
+                              role="img"
+                            >
+                              <svg
+                                aria-hidden="true"
+                                data-icon="delete"
+                                fill="currentColor"
+                                focusable="false"
+                                height="1em"
+                                viewBox="64 64 896 896"
+                                width="1em"
+                              >
+                                <path
+                                  d="M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z"
+                                />
+                              </svg>
+                            </span>
+                          </span>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <ul
+          className="ant-pagination ant-table-pagination ant-table-pagination-right css-dev-only-do-not-override-1pg9a38"
+          style={Object {}}
+        >
+          <li
+            aria-disabled={true}
+            className="ant-pagination-prev ant-pagination-disabled"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            tabIndex={null}
+            title="Previous Page"
+          >
+            <button
+              className="ant-pagination-item-link"
+              disabled={true}
+              tabIndex={-1}
+              type="button"
+            >
+              <span
+                aria-label="left"
+                className="anticon anticon-left"
+                role="img"
+              >
+                <svg
+                  aria-hidden="true"
+                  data-icon="left"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </li>
+          <li
+            className="ant-pagination-item ant-pagination-item-1 ant-pagination-item-active"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            tabIndex={0}
+            title="1"
+          >
+            <a
+              rel="nofollow"
+            >
+              1
+            </a>
+          </li>
+          <li
+            aria-disabled={true}
+            className="ant-pagination-next ant-pagination-disabled"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            tabIndex={null}
+            title="Next Page"
+          >
+            <button
+              className="ant-pagination-item-link"
+              disabled={true}
+              tabIndex={-1}
+              type="button"
+            >
+              <span
+                aria-label="right"
+                className="anticon anticon-right"
+                role="img"
+              >
+                <svg
+                  aria-hidden="true"
+                  data-icon="right"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,1309 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Paid_membership_page 1`] = `
+<div
+  className="Paid_membership"
+>
+  <div
+    className="toolbar_certification"
+  >
+    <div
+      className="container"
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-lg-12"
+        >
+          <div
+            className="toolbar_title"
+          >
+            <div
+              className="titleleft"
+            >
+              <div
+                className="toolbar_title_item"
+              >
+                <nav
+                  aria-label="breadcrumb"
+                >
+                  <ol
+                    className="breadcrumb"
+                  >
+                    <li
+                      className="breadcrumb-item"
+                    >
+                      <a
+                        href="/"
+                        onClick={[Function]}
+                      >
+                        Home
+                      </a>
+                    </li>
+                    <li
+                      className="breadcrumb-item"
+                    >
+                      <a
+                        href="/secondLayout/certification_center"
+                        onClick={[Function]}
+                      >
+                        Certification Center
+                      </a>
+                    </li>
+                    <li
+                      aria-current="page"
+                      className="breadcrumb-item active"
+                    >
+                      Paid Membership
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+            <div
+              className="titleright"
+            >
+              <a
+                className="blog_link"
+                href="/secondLayout/certification_center"
+                onClick={[Function]}
+              >
+                <svg
+                  aria-hidden="true"
+                  className="svg-inline--fa fa-angles-left "
+                  data-icon="angles-left"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  style={Object {}}
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160zm352-160l-160 160c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L301.3 256 438.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0z"
+                    fill="currentColor"
+                    style={Object {}}
+                  />
+                </svg>
+                 Back to Certification Center
+              </a>
+            </div>
+          </div>
+          <div
+            className="main_title"
+          >
+            <h2>
+              Paid Membership
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-6"
+      >
+        <div
+          className="membership_bg"
+        >
+          <div
+            className="membership_title"
+          >
+            <div
+              className="membership__left"
+            >
+              <h2>
+                Baby Plan
+              </h2>
+              <div
+                className="membership_price"
+              >
+                $49/month
+              </div>
+              <div
+                className="save_price"
+              >
+                Save $79 when paid annually
+              </div>
+            </div>
+            <div
+              className="membership__right"
+            >
+              <img
+                alt=""
+                src="hot_air_balloon.svg"
+              />
+            </div>
+          </div>
+          <div
+            className="membership_des"
+          >
+            <p>
+              For instructors launching their first digital products.
+            </p>
+          </div>
+          <div
+            className="panel-group"
+            id="accordion0"
+          >
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingOne"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="link collapsed"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-check "
+                      data-icon="check"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#ed2a26",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Your own shop
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingTwo"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <dev
+                    className="link collapsed"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-check "
+                      data-icon="check"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#ed2a26",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Online courses
+                  </dev>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingThree"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <dev
+                    className="link collapsed"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-check "
+                      data-icon="check"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#ed2a26",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Email marketing
+                  </dev>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingfour"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <dev
+                    className="link collapsed"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-check "
+                      data-icon="check"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#ed2a26",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Messaging
+                  </dev>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingfive"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <dev
+                    className="link collapsed"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-check "
+                      data-icon="check"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#ed2a26",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Zero charges comissions 10 sales
+                  </dev>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingsix"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="link collapsed"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-check "
+                      data-icon="check"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#ed2a26",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    7-days-a-week support
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default-1"
+            >
+              <div
+                className="panel-heading"
+              >
+                <div
+                  className="panel-title-1"
+                >
+                  <a
+                    className="collapsed"
+                    href="/"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-xmark "
+                      data-icon="xmark"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#686f7a",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 384 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Memberships
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default-1"
+            >
+              <div
+                className="panel-heading"
+              >
+                <div
+                  className="panel-title-1"
+                >
+                  <a
+                    className="collapsed"
+                    href="/"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-xmark "
+                      data-icon="xmark"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#686f7a",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 384 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Blog
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default-1"
+            >
+              <div
+                className="panel-heading"
+              >
+                <div
+                  className="panel-title-1"
+                >
+                  <a
+                    className="collapsed"
+                    href="/"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-xmark "
+                      data-icon="xmark"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#686f7a",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 384 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Affiliate marketings
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default-1"
+            >
+              <div
+                className="panel-heading"
+              >
+                <div
+                  className="panel-title-1"
+                >
+                  <a
+                    className="collapsed"
+                    href="/"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-xmark "
+                      data-icon="xmark"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#686f7a",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 384 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Third-party code
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            href="/secondlayout/checkout_page"
+            onClick={[Function]}
+          >
+            <button
+              className="prmb_btn"
+            >
+              Purchase Membership
+            </button>
+          </a>
+        </div>
+      </div>
+      <div
+        className="col-md-6"
+      >
+        <div
+          className="membership_bg"
+        >
+          <div
+            className="membership_title"
+          >
+            <div
+              className="membership__left"
+            >
+              <h2>
+                Business Plan
+              </h2>
+              <div
+                className="membership_price"
+              >
+                $99/month
+              </div>
+              <div
+                className="save_price"
+              >
+                Save $189 when paid annually
+              </div>
+            </div>
+            <div
+              className="membership__right"
+            >
+              <img
+                alt=""
+                src="plane.svg"
+              />
+            </div>
+          </div>
+          <div
+            className="membership_des"
+          >
+            <p>
+              For instructors who are ready to grow their business.
+            </p>
+          </div>
+          <div
+            className="panel-group"
+            id="accordion1"
+          >
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingOne1"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="link collapsed"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-check "
+                      data-icon="check"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#ed2a26",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Your own Shop
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingTwo1"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="link collapsed"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-check "
+                      data-icon="check"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#ed2a26",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Online courses
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingThree1"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="link collapsed"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-check "
+                      data-icon="check"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#ed2a26",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Email marketing
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingfour1"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="link collapsed"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-check "
+                      data-icon="check"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#ed2a26",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Messaging
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingfive1"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="link collapsed"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-check "
+                      data-icon="check"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#ed2a26",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Zero charges comissions 30 sales
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingsix1"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="link collapsed"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-check "
+                      data-icon="check"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#ed2a26",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    7-days-a-week support
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingseven1"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="link collapsed"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-check "
+                      data-icon="check"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#ed2a26",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Memberships
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingeight1"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="link collapsed"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-check "
+                      data-icon="check"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#ed2a26",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Blog
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingnine1"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="link collapsed"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-check "
+                      data-icon="check"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#ed2a26",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Affiliate marketings
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingten1"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="link collapsed"
+                    onClick={[Function]}
+                  >
+                    <svg
+                      aria-hidden="true"
+                      className="svg-inline--fa fa-check "
+                      data-icon="check"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      style={
+                        Object {
+                          "color": "#ed2a26",
+                          "height": "100%",
+                          "margin": "0 0.5em",
+                          "width": "15px",
+                        }
+                      }
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"
+                        fill="currentColor"
+                        style={Object {}}
+                      />
+                    </svg>
+                     
+                    Third-party code
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a
+            href="/secondlayout/checkout_page"
+            onClick={[Function]}
+          >
+            <button
+              className="prmb_btn"
+            >
+              Purchase Membership
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-lg-12"
+      >
+        <div
+          className="FAQtitle"
+        >
+          <h2>
+            Membership FAQ
+          </h2>
+          <p>
+            Wait, what about…
+          </p>
+        </div>
+        <div
+          className="membership_faq_bg"
+        >
+          <div
+            className="panel-group mt-4"
+            id="accordion2"
+          >
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingOne2"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="collapsed link"
+                    onClick={[Function]}
+                  >
+                    Is it easy to change plans?
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingTwo2"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="collapsed link"
+                    onClick={[Function]}
+                  >
+                    Can I cancel at any time?
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingThree2"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="collapsed link"
+                    onClick={[Function]}
+                  >
+                    Are there any credit card or PayPal fees?
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingfour2"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="collapsed link"
+                    onClick={[Function]}
+                  >
+                    Do I have to choose my plan before I start my trial?
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingfive2"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="collapsed link"
+                    onClick={[Function]}
+                  >
+                    Edututs+ isn’t for me. Can I have a refund?
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingsix2"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="collapsed link"
+                    onClick={[Function]}
+                  >
+                    How do I get my money?
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingseven2"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="collapsed link"
+                    onClick={[Function]}
+                  >
+                    Do I need a credit card to sign up?
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingeight2"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="collapsed link"
+                    onClick={[Function]}
+                  >
+                    Is Edututs+ safe and secure for online transactions?
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="panel-default"
+            >
+              <div
+                className="panel-heading"
+                id="headingnine2"
+              >
+                <div
+                  className="panel-title"
+                >
+                  <div
+                    className="collapsed link"
+                    onClick={[Function]}
+                  >
+                    I still have questions. HELP!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
