@@ -4,14 +4,14 @@ import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
 import { store } from '../../redux/store';
-import Press from '.';
+import SettingPage from '.';
 
-test('test Press', () => {
+test('test SettingPage', () => {
   const tree = renderer.create(
     <Provider store={store}>
-        <MemoryRouter>
-            <Press/>
-        </MemoryRouter>
+      <MemoryRouter>
+        <SettingPage/>
+      </MemoryRouter>
     </Provider>
   ).toJSON();
   expect(tree).toMatchSnapshot();

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test SettingPage 1`] = `
+<div
+  className="SettingPage "
+>
+  <div
+    className="SettingPage_Title"
+  >
+    <img
+      alt=""
+      className="SettingPage_SettingLogo"
+      src="SettingLogo_SideBar.png"
+    />
+    <h2
+      className="SettingPage_Title_Title"
+    >
+      Setting
+    </h2>
+  </div>
+</div>
+`;

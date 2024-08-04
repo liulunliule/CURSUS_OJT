@@ -432,17 +432,17 @@ exports[`test Analyics Page 1`] = `
         className="col-md-12 analyics_table"
       >
         <div
-          className="ant-table-wrapper css-dev-only-do-not-override-98ntnt"
+          className="ant-table-wrapper css-dev-only-do-not-override-1pg9a38"
           style={Object {}}
         >
           <div
-            className="ant-spin-nested-loading css-dev-only-do-not-override-98ntnt"
+            className="ant-spin-nested-loading css-dev-only-do-not-override-1pg9a38"
           >
             <div
               className="ant-spin-container"
             >
               <div
-                className="ant-table css-dev-only-do-not-override-98ntnt"
+                className="ant-table css-dev-only-do-not-override-1pg9a38"
               >
                 <div
                   className="ant-table-container"
@@ -560,7 +560,7 @@ exports[`test Analyics Page 1`] = `
                             style={Object {}}
                           >
                             <div
-                              className="ant-image css-dev-only-do-not-override-98ntnt"
+                              className="ant-image css-dev-only-do-not-override-1pg9a38"
                               onClick={[Function]}
                               style={
                                 Object {
@@ -570,7 +570,7 @@ exports[`test Analyics Page 1`] = `
                               }
                             >
                               <img
-                                className="ant-image-img css-dev-only-do-not-override-98ntnt"
+                                className="ant-image-img css-dev-only-do-not-override-1pg9a38"
                                 onLoad={[Function]}
                                 src="thumbnail-1.jpg"
                                 style={
@@ -682,7 +682,7 @@ exports[`test Analyics Page 1`] = `
                             style={Object {}}
                           >
                             <div
-                              className="ant-image css-dev-only-do-not-override-98ntnt"
+                              className="ant-image css-dev-only-do-not-override-1pg9a38"
                               onClick={[Function]}
                               style={
                                 Object {
@@ -692,7 +692,7 @@ exports[`test Analyics Page 1`] = `
                               }
                             >
                               <img
-                                className="ant-image-img css-dev-only-do-not-override-98ntnt"
+                                className="ant-image-img css-dev-only-do-not-override-1pg9a38"
                                 onLoad={[Function]}
                                 src="thumbnail-1.jpg"
                                 style={
@@ -785,7 +785,7 @@ exports[`test Analyics Page 1`] = `
                 </div>
               </div>
               <ul
-                className="ant-pagination ant-table-pagination ant-table-pagination-right css-dev-only-do-not-override-98ntnt"
+                className="ant-pagination ant-table-pagination ant-table-pagination-right css-dev-only-do-not-override-1pg9a38"
                 style={Object {}}
               >
                 <li

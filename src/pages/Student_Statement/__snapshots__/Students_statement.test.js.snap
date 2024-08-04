@@ -93,7 +93,7 @@ exports[`test Students_statement Page 1`] = `
                 className="select_month"
               >
                 <div
-                  className="ant-select ant-select-outlined css-dev-only-do-not-override-98ntnt ant-select-single ant-select-show-arrow ant-select-show-search"
+                  className="ant-select ant-select-outlined css-dev-only-do-not-override-1pg9a38 ant-select-single ant-select-show-arrow ant-select-show-search"
                   onBlur={[Function]}
                   onFocus={[Function]}
                   onKeyDown={[Function]}
@@ -259,17 +259,17 @@ exports[`test Students_statement Page 1`] = `
             className="statement_table"
           >
             <div
-              className="ant-table-wrapper css-dev-only-do-not-override-98ntnt"
+              className="ant-table-wrapper css-dev-only-do-not-override-1pg9a38"
               style={Object {}}
             >
               <div
-                className="ant-spin-nested-loading css-dev-only-do-not-override-98ntnt"
+                className="ant-spin-nested-loading css-dev-only-do-not-override-1pg9a38"
               >
                 <div
                   className="ant-spin-container"
                 >
                   <div
-                    className="ant-table ant-table-empty css-dev-only-do-not-override-98ntnt"
+                    className="ant-table ant-table-empty css-dev-only-do-not-override-1pg9a38"
                   >
                     <div
                       className="ant-table-container"
@@ -379,7 +379,7 @@ exports[`test Students_statement Page 1`] = `
                                 style={Object {}}
                               >
                                 <div
-                                  className="css-dev-only-do-not-override-98ntnt ant-empty ant-empty-normal"
+                                  className="css-dev-only-do-not-override-1pg9a38 ant-empty ant-empty-normal"
                                   style={Object {}}
                                 >
                                   <div

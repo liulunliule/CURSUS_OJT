@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Coming Soon component correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="coming-soon-body"
+  >
+    <div
+      class="coming-soon"
+    >
+      <div
+        class="logo"
+      >
+        <img
+          alt="Logo"
+          src="logo_dark.svg"
+        />
+      </div>
+      <div
+        class="countdown"
+      >
+        <div
+          class="time"
+        >
+          296 
+          <span>
+            Days
+          </span>
+        </div>
+        <div
+          class="time"
+        >
+          14 
+          <span>
+            Hours
+          </span>
+        </div>
+        <div
+          class="time"
+        >
+          48 
+          <span>
+            Minutes
+          </span>
+        </div>
+        <div
+          class="time"
+        >
+          41 
+          <span>
+            Seconds
+          </span>
+        </div>
+      </div>
+      <div
+        class="notify-me"
+      >
+        <p>
+          We'll be coming soon!
+        </p>
+        <form>
+          <input
+            placeholder="Email address"
+            type="email"
+          />
+          <button
+            type="submit"
+          >
+            Notify Me
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
