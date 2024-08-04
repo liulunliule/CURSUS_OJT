@@ -65,7 +65,7 @@ export const fetchAddNewCourse = createAsyncThunk(
     };
 
     const response = await axios.post(
-      `https://6696231a0312447373c1386e.mockapi.io/savedCourse`, 
+      `https://6696231a0312447373c1386e.mockapi.io/savedCourse`,
       newCourseData
     );
     return response.data;
@@ -76,7 +76,7 @@ const mySearchSlice = createSlice({
   name: "mySearch",
   initialState: {
     userSearch: [],
-    savedCourses: [], 
+    savedCourses: [],
     status: "idle",
     error: null,
   },
@@ -112,6 +112,9 @@ const mySearchSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(fetchAddNewCourse.fulfilled, (state, action) => {
+        if (!state.savedCourses) {
+          state.savedCourses = [];
+        }
         state.savedCourses.push(action.payload);
       });
   },

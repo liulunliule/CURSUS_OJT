@@ -5,12 +5,7 @@ import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import Cart from "../../assets/img/cart.png";
 import Play from "../../assets/img/play-button.png";
-import {
-  SearchOutlined,
-  ShareAltOutlined,
-  HeartOutlined,
-  StopOutlined,
-} from "@ant-design/icons";
+import { SearchOutlined, HeartOutlined } from "@ant-design/icons";
 import { UilWindsock } from "@iconscout/react-unicons";
 import { Dropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,6 +14,7 @@ import {
   fetchSearchResult,
   fetchAddNewCourse,
 } from "../../redux/features/mySearchSlice";
+import { Link } from "react-router-dom";
 
 const Search_Resultse = () => {
   const [loading, setLoading] = useState(true);
@@ -65,27 +61,20 @@ const Search_Resultse = () => {
       saved: !likedCourses.has(course.id),
     };
 
-    dispatch(fetchAddNewCourse(updatedCourse))
-      .then(() => {
-        setLikedCourses((prev) => {
-          const newLikedCourses = new Set(prev);
-          if (updatedCourse.saved) {
-            newLikedCourses.add(course.id);
-          } else {
-            newLikedCourses.delete(course.id);
-          }
-          // localStorage.setItem(
-          //   "likedCourses",
-          //   JSON.stringify([...newLikedCourses])
-          // );
-          return newLikedCourses;
-        });
-        toast.error("Failed to add course. Please try again.");
-      })
-      .catch(() => {
-        toast.success("Course added successfully!");
-      });
+    dispatch(fetchAddNewCourse(updatedCourse));
+    setLikedCourses((prev) => {
+      const newLikedCourses = new Set(prev);
+      if (newLikedCourses.has(course.id)) {
+        newLikedCourses.delete(course.id);
+      } else {
+        newLikedCourses.add(course.id);
+      }
+      return newLikedCourses;
+    });
+
+    toast.success("Course added to favorites!");
   };
+
   React.useEffect(() => {
     setSelectedSort("Sort");
   }, []);
@@ -1626,9 +1615,7 @@ const Search_Resultse = () => {
                                 </div>
                               </a>
                               <div className="search-result-more-dropdown-content">
-                                <span
-                                  onClick={() => handleAddCourse(course)}
-                                >
+                                <span onClick={() => handleAddCourse(course)}>
                                   <i
                                     className={`uil uil-heart ${
                                       likedCourses.has(course.id)
@@ -1642,12 +1629,15 @@ const Search_Resultse = () => {
                                     ? "Saved"
                                     : "Save"}
                                 </span>
-                                <span>
-                                  <i className="uil uil-windsock">
-                                    <UilWindsock />
-                                  </i>
-                                  Report
-                                </span>
+
+                                <Link to="/report_history_page">
+                                  <span>
+                                    <i className="uil uil-windsock">
+                                      <UilWindsock />
+                                    </i>
+                                    Report
+                                  </span>
+                                </Link>
                               </div>
                             </div>
                             <div className="search-result-view-date">

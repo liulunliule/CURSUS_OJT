@@ -4,12 +4,13 @@ import "./index.scss";
 import { createGlobalStyle } from "styled-components";
 import { UilAward, UilTrashAlt } from "@iconscout/react-unicons";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   fetchCertificates,
   fetchUpdateMyCertificate,
 } from "../../redux/features/myCertificateSlice";
 import { toast } from "react-toastify";
+
 const GlobalStyles = createGlobalStyle`
   body {
     background-color: #f7f7f7; 
@@ -21,18 +22,21 @@ const GlobalStyles = createGlobalStyle`
 
 function My_Certificates() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const mycertificate = useSelector((state) => state.certificate.mycertificate);
   const isShowAll = useSelector((state) => state.savedCourse.isShowAll);
   const [loading, setLoading] = useState(true);
+  const account = useSelector((state) => state.user.account);
+  const userId = account.id || "";
+  
   useEffect(() => {
-    dispatch(fetchCertificates());
-    setLoading(false);
-  }, [dispatch]);
+    dispatch(fetchCertificates(userId)).then(() => setLoading(false));
+  }, [dispatch, userId]);
 
   const handleUpdate = (id) => {
     const UpdateMyCertificate = { statusCertificate: false };
-    dispatch(fetchUpdateMyCertificate({ id, UpdateMyCertificate }));
-    toast.success("Delete successfully!!!");
+    dispatch(fetchUpdateMyCertificate({ id, UpdateMyCertificate, userId }));
+    toast.success("Deleted successfully!");
   };
 
   if (loading) {
@@ -76,16 +80,12 @@ function My_Certificates() {
                   <h1>Jump Into New Certificate</h1>
                 </div>
                 <div className="card-dash-right-my-cerificate">
-                  <Link to="/secondLayout/certification_center">
-                    <button
-                      className="create-btn-dash-my-cerificate"
-                      onClick={() =>
-                        (window.location.href = "certification_center.html")
-                      }
-                    >
-                      New Certificate
-                    </button>
-                  </Link>
+                  <button
+                    className="create-btn-dash-my-cerificate"
+                    onClick={() => navigate("/secondLayout/certification_center")}
+                  >
+                    New Certificate
+                  </button>
                 </div>
               </div>
 
@@ -120,7 +120,9 @@ function My_Certificates() {
                     </thead>
                     {mycertificate
                       .filter(
-                        (my_certificate) => my_certificate.statusCertificate
+                        (my_certificate) =>
+                          my_certificate.statusCertificate &&
+                          my_certificate.userId === userId
                       )
                       .map((my_certificate, index) => (
                         <tbody key={my_certificate.id}>
