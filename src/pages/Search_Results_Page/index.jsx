@@ -5,12 +5,7 @@ import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import Cart from "../../assets/img/cart.png";
 import Play from "../../assets/img/play-button.png";
-import {
-  SearchOutlined,
-  ShareAltOutlined,
-  HeartOutlined,
-  StopOutlined,
-} from "@ant-design/icons";
+import { SearchOutlined, HeartOutlined } from "@ant-design/icons";
 import { UilWindsock } from "@iconscout/react-unicons";
 import { Dropdown } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -19,6 +14,7 @@ import {
   fetchSearchResult,
   fetchAddNewCourse,
 } from "../../redux/features/mySearchSlice";
+import { Link } from "react-router-dom";
 
 const Search_Resultse = () => {
   const [loading, setLoading] = useState(true);
@@ -1634,12 +1630,14 @@ const Search_Resultse = () => {
                                     : "Save"}
                                 </span>
 
-                                <span>
-                                  <i className="uil uil-windsock">
-                                    <UilWindsock />
-                                  </i>
-                                  Report
-                                </span>
+                                <Link to="/report_history_page">
+                                  <span>
+                                    <i className="uil uil-windsock">
+                                      <UilWindsock />
+                                    </i>
+                                    Report
+                                  </span>
+                                </Link>
                               </div>
                             </div>
                             <div className="search-result-view-date">
