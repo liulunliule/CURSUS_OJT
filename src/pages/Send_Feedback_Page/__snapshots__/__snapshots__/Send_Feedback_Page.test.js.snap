@@ -22,7 +22,7 @@ exports[`test Certification Test Page 1`] = `
       </h2>
     </div>
     <input
-      className="ant-input css-dev-only-do-not-override-1uq9j6g ant-input-outlined SendFeedbackPage_Contents_Input"
+      className="ant-input css-dev-only-do-not-override-98ntnt ant-input-outlined SendFeedbackPage_Contents_Input"
       disabled={false}
       onBlur={[Function]}
       onChange={[Function]}
@@ -36,7 +36,7 @@ exports[`test Certification Test Page 1`] = `
       value=""
     />
     <textarea
-      className="ant-input css-dev-only-do-not-override-1uq9j6g ant-input-outlined SendFeedbackPage_Contents_TextArea"
+      className="ant-input css-dev-only-do-not-override-98ntnt ant-input-outlined SendFeedbackPage_Contents_TextArea"
       disabled={false}
       maxLength={3000}
       onBlur={[Function]}
@@ -60,10 +60,10 @@ exports[`test Certification Test Page 1`] = `
       Add Screenshots
     </span>
     <span
-      className="ant-upload-wrapper css-dev-only-do-not-override-1uq9j6g"
+      className="ant-upload-wrapper css-dev-only-do-not-override-98ntnt"
     >
       <div
-        className="css-dev-only-do-not-override-1uq9j6g ant-upload ant-upload-drag"
+        className="css-dev-only-do-not-override-98ntnt ant-upload ant-upload-drag"
         onDragLeave={[Function]}
         onDragOver={[Function]}
         onDrop={[Function]}

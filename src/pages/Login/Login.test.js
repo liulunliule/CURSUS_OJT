@@ -10,17 +10,10 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { fetchUserLoginSuccess } from "../../redux/features/userSlice";
 
-// Mocking dependencies
-jest.mock("axios");
-jest.mock("react-toastify", () => ({
-    toast: {
-        success: jest.fn(),
-        error: jest.fn(),
-    },
-}));
-jest.mock("../../redux/features/userSlice", () => ({
-    fetchUserLoginSuccess: jest.fn(),
-}));
+test("Login renders correctly and matches snapshot", () => {
+    const { asFragment } = render(<Login />);
+    expect(asFragment()).toMatchSnapshot();
+});
 
 test("renders Login Page correctly", () => {
     render(
@@ -31,7 +24,6 @@ test("renders Login Page correctly", () => {
         </Provider>
     );
 
-    // Kiểm tra các phần tử trên trang login
     expect(screen.getByPlaceholderText("Email Address")).toBeInTheDocument();
     expect(screen.getByPlaceholderText("Password")).toBeInTheDocument();
     expect(screen.getByText("Sign in")).toBeInTheDocument();
@@ -41,7 +33,6 @@ test("renders Login Page correctly", () => {
 });
 
 test("handles user input and login process", async () => {
-    // Mock API response
     const mockUser = { email: "huyngocnghech@gmail.com", password: "123" };
     axios.get.mockResolvedValue({ data: [mockUser] });
 

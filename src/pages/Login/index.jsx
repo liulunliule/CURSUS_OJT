@@ -139,7 +139,7 @@ function Login() {
                                     className="faKey"
                                 />
                                 <input
-                                    type="text"
+                                    type="password"
                                     name=""
                                     id=""
                                     placeholder="Password"
