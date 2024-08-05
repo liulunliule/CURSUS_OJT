@@ -374,12 +374,23 @@ function Header() {
                               </div>
                             </div>
 
-                            <a
-                              href="/instructor_profile"
-                              className="profile-instructor-link"
-                            >
-                              View Profile
-                            </a>
+                            {role === true ? (
+                              <>
+                                <a
+                                  href="/instructor_profile"
+                                  className="profile-instructor-link"
+                                >
+                                  View Profile
+                                </a>
+                              </>
+                            ) : role === false ? (
+                              <a
+                                href="/student_profile"
+                                className="profile-instructor-link"
+                              >
+                                View Profile
+                              </a>
+                            ) : null}
                           </div>
                         </li>
                         <hr />

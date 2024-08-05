@@ -23,11 +23,14 @@ import {
 const Instructor_Profile = () => {
   const dispatch = useDispatch();
   const [activeTab, setActiveTab] = useState("nav-about");
-  const userInfo = useSelector((state) => state.myProfile.userInfo);
   const userReviews = useSelector((state) => state.myProfile.userReviews);
   const [loading, setLoading] = useState(true);
   const isShowAll = useSelector((state) => state.savedCourse?.isShowAll);
-
+  const account = useSelector((state) => state.user.account);
+  const userPosts = useSelector((state) => state.myProfile.userPosts);
+  const subscriptions = useSelector((state) => state.myProfile.subscriptions);
+  const mycertificate = useSelector((state) => state.certificate.mycertificate);
+  const userId = account.id || "";
   useEffect(() => {
     dispatch(fetchUserInfo());
     dispatch(fetchUserReviews())
@@ -39,7 +42,18 @@ const Instructor_Profile = () => {
         setLoading(false);
       });
   }, [dispatch]);
-
+  const countCourse = userPosts.filter(
+    (post) => post.userId === userId && post.purchased === true
+  );
+  const countSubscription = subscriptions.filter(
+    (post) => post.userId === userId && post.registered === true
+  );
+  const countCertificate = mycertificate.filter(
+    (post) => post.userId === userId && post.statusCertificate === true
+  );
+  const courseCount = countCourse.length;
+  const SubscriptionCount = countSubscription.length;
+  const CertificateCount = countCertificate.length;
   if (loading) {
     return (
       <div
@@ -59,12 +73,6 @@ const Instructor_Profile = () => {
     );
   }
 
-  if (!userInfo || !Array.isArray(userReviews) || userInfo.length === 0) {
-    return <div>No data available.</div>;
-  }
-
-  const firstUserInfo = userInfo[0];
-
   return (
     <div className={`instructor-container ${isShowAll ? "active" : ""}`}>
       <div className="container-fluid">
@@ -76,14 +84,14 @@ const Instructor_Profile = () => {
                 <div className="profile-left col-lg-6">
                   <div className="user_infor">
                     <img
-                      src={firstUserInfo.avatar}
+                      src={account.avatar}
                       alt=""
                       className="userInfo_avatar"
                     />
                     <div className="userInfor">
                       <div className="userInfor_instructor">
-                        <h2>{firstUserInfo.name}</h2>
-                        <span>{firstUserInfo.major}</span>
+                        <h2>{account.userName}</h2>
+                        <span>{account.major}</span>
                       </div>
                     </div>
                   </div>
@@ -93,7 +101,7 @@ const Instructor_Profile = () => {
                         <div className="userInfor_join_group">
                           <div className="userInfor_join_title">Purchased</div>
                           <div className="userInfor_join_parameter">
-                            {firstUserInfo.enrollstudents}
+                            {courseCount}
                           </div>
                         </div>
                       </li>
@@ -101,7 +109,7 @@ const Instructor_Profile = () => {
                         <div className="userInfor_join_group">
                           <div className="userInfor_join_title">My Reviews</div>
                           <div className="userInfor_join_parameter">
-                            {firstUserInfo.course}
+                            {userReviews.length}
                           </div>
                         </div>
                       </li>
@@ -111,7 +119,7 @@ const Instructor_Profile = () => {
                             Subscriptions
                           </div>
                           <div className="userInfor_join_parameter">
-                            {userReviews.length}
+                            {SubscriptionCount}
                           </div>
                         </div>
                       </li>
@@ -121,7 +129,7 @@ const Instructor_Profile = () => {
                             Cerfiticates
                           </div>
                           <div className="userInfor_join_parameter">
-                            {firstUserInfo.subscriptions}
+                            {CertificateCount}
                           </div>
                         </div>
                       </li>
@@ -181,7 +189,7 @@ const Instructor_Profile = () => {
                         className="studio_link_btn btn_500"
                         onClick={() =>
                           (window.location.href =
-                            "/fourlayout/instructor_studio_dashboard")
+                            "/fourlayout/student_studio_dashboard")
                         }
                       >
                         Cursus Studio
