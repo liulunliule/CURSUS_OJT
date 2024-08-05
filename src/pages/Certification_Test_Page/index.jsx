@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.scss";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,6 +7,7 @@ import { hanldeGetQuestion } from "./getDataTest";
 
 const Certification_Test_Page = () => {
   const [questions, setQuestion] = useState([]);
+  const [timeLeft, setTimeLeft] = useState({ minutes: 59, seconds: 59 });
 
   useEffect(() => {
     const loadData = async () => {
@@ -19,6 +20,25 @@ const Certification_Test_Page = () => {
     };
     loadData();
   }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prevTime) => {
+        const { minutes, seconds } = prevTime;
+        if (seconds > 0) {
+          return { minutes, seconds: seconds - 1 };
+        } else if (minutes > 0) {
+          return { minutes: minutes - 1, seconds: 59 };
+        } else {
+          clearInterval(timer);
+          return { minutes: 0, seconds: 0 };
+        }
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="Certification_test">
       <div className="toolbar_certification">
@@ -38,10 +58,7 @@ const Certification_Test_Page = () => {
                             Certification Center
                           </Link>
                         </li>
-                        <li
-                          className="breadcrumb-item active"
-                          aria-current="page"
-                        >
+                        <li className="breadcrumb-item active" aria-current="page">
                           WordPress Test View
                         </li>
                       </ol>
@@ -49,12 +66,8 @@ const Certification_Test_Page = () => {
                   </div>
                 </div>
                 <div className="titleright">
-                  <Link
-                    to="/secondLayout/certification_center"
-                    className="blog_link"
-                  >
-                    <FontAwesomeIcon icon={faAnglesLeft} /> Back to
-                    Certification Center
+                  <Link to="/secondLayout/certification_center" className="blog_link">
+                    <FontAwesomeIcon icon={faAnglesLeft} /> Back to Certification Center
                   </Link>
                 </div>
               </div>
@@ -79,7 +92,9 @@ const Certification_Test_Page = () => {
                   </li>
                   <li>
                     <div className="timer_time">
-                      <h4 id="timer">51:02</h4>
+                      <h4 id="timer">
+                        {String(timeLeft.minutes).padStart(2, '0')}:{String(timeLeft.seconds).padStart(2, '0')}
+                      </h4>
                       <p>Minutes</p>
                     </div>
                   </li>
@@ -92,7 +107,7 @@ const Certification_Test_Page = () => {
               <div className="">
                 {questions && questions.length > 0 ? (
                   questions.map((ques, index) => (
-                    <div className="ques_item">
+                    <div className="ques_item" key={index}>
                       <div className="ques_title">
                         <span>Ques {index + 1} :-</span>
                         {ques.Question}
