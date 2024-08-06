@@ -14,7 +14,6 @@ import {
     removeSavedCourse,
 } from "../../redux/features/courseSlice";
 import { toast } from "react-toastify";
-import axios from "axios";
 
 function Saved_courses_page() {
     const dispatch = useDispatch();
