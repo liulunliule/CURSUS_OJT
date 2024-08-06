@@ -9,7 +9,7 @@ exports[`Free_page Component matches snapshot 1`] = `
   >
     <button
       aria-checked={false}
-      className="ant-switch css-dev-only-do-not-override-1uq9j6g"
+      className="ant-switch css-dev-only-do-not-override-d2lrxs"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="switch"
@@ -41,7 +41,7 @@ exports[`Free_page Component matches snapshot 1`] = `
   >
     <button
       aria-checked={false}
-      className="ant-switch css-dev-only-do-not-override-1uq9j6g"
+      className="ant-switch css-dev-only-do-not-override-d2lrxs"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="switch"

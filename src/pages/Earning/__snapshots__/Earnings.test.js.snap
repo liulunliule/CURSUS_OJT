@@ -111,7 +111,7 @@ exports[`test Earnings Page 1`] = `
             className="select"
           >
             <div
-              className="ant-select ant-select-outlined css-dev-only-do-not-override-1uq9j6g ant-select-single ant-select-show-arrow ant-select-show-search"
+              className="ant-select ant-select-outlined css-dev-only-do-not-override-d2lrxs ant-select-single ant-select-show-arrow ant-select-show-search"
               onBlur={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
@@ -204,17 +204,17 @@ exports[`test Earnings Page 1`] = `
         >
           <div>
             <div
-              className="ant-table-wrapper css-dev-only-do-not-override-1uq9j6g"
+              className="ant-table-wrapper css-dev-only-do-not-override-d2lrxs"
               style={Object {}}
             >
               <div
-                className="ant-spin-nested-loading css-dev-only-do-not-override-1uq9j6g"
+                className="ant-spin-nested-loading css-dev-only-do-not-override-d2lrxs"
               >
                 <div
                   className="ant-spin-container"
                 >
                   <div
-                    className="ant-table ant-table-empty css-dev-only-do-not-override-1uq9j6g"
+                    className="ant-table ant-table-empty css-dev-only-do-not-override-d2lrxs"
                   >
                     <div
                       className="ant-table-container"
@@ -291,7 +291,7 @@ exports[`test Earnings Page 1`] = `
                                 style={Object {}}
                               >
                                 <div
-                                  className="css-dev-only-do-not-override-1uq9j6g ant-empty ant-empty-normal"
+                                  className="css-dev-only-do-not-override-d2lrxs ant-empty ant-empty-normal"
                                   style={Object {}}
                                 >
                                   <div
@@ -355,7 +355,7 @@ exports[`test Earnings Page 1`] = `
                                 style={Object {}}
                               >
                                 <span
-                                  className="ant-typography css-dev-only-do-not-override-1uq9j6g"
+                                  className="ant-typography css-dev-only-do-not-override-d2lrxs"
                                   style={
                                     Object {
                                       "WebkitLineClamp": undefined,
@@ -376,7 +376,7 @@ exports[`test Earnings Page 1`] = `
                                 style={Object {}}
                               >
                                 <span
-                                  className="ant-typography css-dev-only-do-not-override-1uq9j6g"
+                                  className="ant-typography css-dev-only-do-not-override-d2lrxs"
                                   style={
                                     Object {
                                       "WebkitLineClamp": undefined,
@@ -397,7 +397,7 @@ exports[`test Earnings Page 1`] = `
                                 style={Object {}}
                               >
                                 <span
-                                  className="ant-typography css-dev-only-do-not-override-1uq9j6g"
+                                  className="ant-typography css-dev-only-do-not-override-d2lrxs"
                                   style={
                                     Object {
                                       "WebkitLineClamp": undefined,

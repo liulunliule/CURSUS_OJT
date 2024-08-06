@@ -33,17 +33,17 @@ exports[`test Purchased_Courses_page 1`] = `
       className="purchased_courses_page-table"
     >
       <div
-        className="ant-table-wrapper css-dev-only-do-not-override-1uq9j6g"
+        className="ant-table-wrapper css-dev-only-do-not-override-d2lrxs"
         style={Object {}}
       >
         <div
-          className="ant-spin-nested-loading css-dev-only-do-not-override-1uq9j6g"
+          className="ant-spin-nested-loading css-dev-only-do-not-override-d2lrxs"
         >
           <div
             className="ant-spin-container"
           >
             <div
-              className="ant-table css-dev-only-do-not-override-1uq9j6g"
+              className="ant-table css-dev-only-do-not-override-d2lrxs"
             >
               <div
                 className="ant-table-container"
@@ -262,7 +262,7 @@ exports[`test Purchased_Courses_page 1`] = `
                         >
                           <div>
                             <button
-                              className="ant-btn css-dev-only-do-not-override-1uq9j6g ant-btn-default ant-btn-icon-only"
+                              className="ant-btn css-dev-only-do-not-override-d2lrxs ant-btn-default ant-btn-icon-only"
                               disabled={false}
                               onClick={[Function]}
                               style={
@@ -301,7 +301,7 @@ exports[`test Purchased_Courses_page 1`] = `
                               </span>
                             </button>
                             <button
-                              className="ant-btn css-dev-only-do-not-override-1uq9j6g ant-btn-default ant-btn-icon-only ant-btn-dangerous"
+                              className="ant-btn css-dev-only-do-not-override-d2lrxs ant-btn-default ant-btn-icon-only ant-btn-dangerous"
                               disabled={false}
                               onClick={[Function]}
                               style={
@@ -337,7 +337,7 @@ exports[`test Purchased_Courses_page 1`] = `
                               </span>
                             </button>
                             <button
-                              className="ant-btn css-dev-only-do-not-override-1uq9j6g ant-btn-default ant-btn-icon-only"
+                              className="ant-btn css-dev-only-do-not-override-d2lrxs ant-btn-default ant-btn-icon-only"
                               disabled={false}
                               onClick={[Function]}
                               style={
@@ -479,7 +479,7 @@ exports[`test Purchased_Courses_page 1`] = `
                         >
                           <div>
                             <button
-                              className="ant-btn css-dev-only-do-not-override-1uq9j6g ant-btn-default ant-btn-icon-only"
+                              className="ant-btn css-dev-only-do-not-override-d2lrxs ant-btn-default ant-btn-icon-only"
                               disabled={false}
                               onClick={[Function]}
                               style={
@@ -518,7 +518,7 @@ exports[`test Purchased_Courses_page 1`] = `
                               </span>
                             </button>
                             <button
-                              className="ant-btn css-dev-only-do-not-override-1uq9j6g ant-btn-default ant-btn-icon-only ant-btn-dangerous"
+                              className="ant-btn css-dev-only-do-not-override-d2lrxs ant-btn-default ant-btn-icon-only ant-btn-dangerous"
                               disabled={false}
                               onClick={[Function]}
                               style={
@@ -554,7 +554,7 @@ exports[`test Purchased_Courses_page 1`] = `
                               </span>
                             </button>
                             <button
-                              className="ant-btn css-dev-only-do-not-override-1uq9j6g ant-btn-default ant-btn-icon-only"
+                              className="ant-btn css-dev-only-do-not-override-d2lrxs ant-btn-default ant-btn-icon-only"
                               disabled={false}
                               onClick={[Function]}
                               style={
@@ -598,7 +598,7 @@ exports[`test Purchased_Courses_page 1`] = `
               </div>
             </div>
             <ul
-              className="ant-pagination ant-table-pagination ant-table-pagination-right css-dev-only-do-not-override-1uq9j6g"
+              className="ant-pagination ant-table-pagination ant-table-pagination-right css-dev-only-do-not-override-d2lrxs"
               style={Object {}}
             >
               <li
