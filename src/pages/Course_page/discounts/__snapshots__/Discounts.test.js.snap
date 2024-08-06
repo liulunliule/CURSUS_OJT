@@ -5,7 +5,7 @@ exports[`Discounts Component matches the snapshot 1`] = `
   className="discounts"
 >
   <div
-    className="ant-collapse ant-collapse-icon-position-start discounts_collapse css-dev-only-do-not-override-1pg9a38"
+    className="ant-collapse ant-collapse-icon-position-start discounts_collapse css-dev-only-do-not-override-1uq9j6g"
     style={Object {}}
   >
     <div
@@ -56,17 +56,17 @@ exports[`Discounts Component matches the snapshot 1`] = `
     </div>
   </div>
   <div
-    className="ant-table-wrapper discounts_table css-dev-only-do-not-override-1pg9a38"
+    className="ant-table-wrapper discounts_table css-dev-only-do-not-override-1uq9j6g"
     style={Object {}}
   >
     <div
-      className="ant-spin-nested-loading css-dev-only-do-not-override-1pg9a38"
+      className="ant-spin-nested-loading css-dev-only-do-not-override-1uq9j6g"
     >
       <div
         className="ant-spin-container"
       >
         <div
-          className="ant-table css-dev-only-do-not-override-1pg9a38"
+          className="ant-table css-dev-only-do-not-override-1uq9j6g"
         >
           <div
             className="ant-table-container"
@@ -254,7 +254,7 @@ exports[`Discounts Component matches the snapshot 1`] = `
                     >
                       <div>
                         <button
-                          className="ant-btn css-dev-only-do-not-override-1pg9a38 ant-btn-default ant-btn-icon-only"
+                          className="ant-btn css-dev-only-do-not-override-1uq9j6g ant-btn-default ant-btn-icon-only"
                           disabled={false}
                           onClick={[Function]}
                           style={
@@ -290,7 +290,7 @@ exports[`Discounts Component matches the snapshot 1`] = `
                           </span>
                         </button>
                         <button
-                          className="ant-btn css-dev-only-do-not-override-1pg9a38 ant-btn-default ant-btn-icon-only ant-btn-dangerous"
+                          className="ant-btn css-dev-only-do-not-override-1uq9j6g ant-btn-default ant-btn-icon-only ant-btn-dangerous"
                           disabled={false}
                           onClick={[Function]}
                           style={Object {}}
@@ -330,7 +330,7 @@ exports[`Discounts Component matches the snapshot 1`] = `
           </div>
         </div>
         <ul
-          className="ant-pagination ant-table-pagination ant-table-pagination-right css-dev-only-do-not-override-1pg9a38"
+          className="ant-pagination ant-table-pagination ant-table-pagination-right css-dev-only-do-not-override-1uq9j6g"
           style={Object {}}
         >
           <li

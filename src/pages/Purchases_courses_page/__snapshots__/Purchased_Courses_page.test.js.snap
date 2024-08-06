@@ -22,7 +22,7 @@ exports[`test Purchased_Courses_page 1`] = `
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"
+          d="M96 0C43 0 0 43 0 96L0 416c0 53 43 96 96 96l288 0 32 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l0-64c17.7 0 32-14.3 32-32l0-320c0-17.7-14.3-32-32-32L384 0 96 0zm0 384l256 0 0 64L96 448c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16l192 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-192 0c-8.8 0-16-7.2-16-16zm16 48l192 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-192 0c-8.8 0-16-7.2-16-16s7.2-16 16-16z"
           fill="currentColor"
           style={Object {}}
         />
@@ -33,17 +33,17 @@ exports[`test Purchased_Courses_page 1`] = `
       className="purchased_courses_page-table"
     >
       <div
-        className="ant-table-wrapper css-dev-only-do-not-override-1pg9a38"
+        className="ant-table-wrapper css-dev-only-do-not-override-1uq9j6g"
         style={Object {}}
       >
         <div
-          className="ant-spin-nested-loading css-dev-only-do-not-override-1pg9a38"
+          className="ant-spin-nested-loading css-dev-only-do-not-override-1uq9j6g"
         >
           <div
             className="ant-spin-container"
           >
             <div
-              className="ant-table css-dev-only-do-not-override-1pg9a38"
+              className="ant-table css-dev-only-do-not-override-1uq9j6g"
             >
               <div
                 className="ant-table-container"
@@ -262,7 +262,7 @@ exports[`test Purchased_Courses_page 1`] = `
                         >
                           <div>
                             <button
-                              className="ant-btn css-dev-only-do-not-override-1pg9a38 ant-btn-default ant-btn-icon-only"
+                              className="ant-btn css-dev-only-do-not-override-1uq9j6g ant-btn-default ant-btn-icon-only"
                               disabled={false}
                               onClick={[Function]}
                               style={
@@ -301,7 +301,7 @@ exports[`test Purchased_Courses_page 1`] = `
                               </span>
                             </button>
                             <button
-                              className="ant-btn css-dev-only-do-not-override-1pg9a38 ant-btn-default ant-btn-icon-only ant-btn-dangerous"
+                              className="ant-btn css-dev-only-do-not-override-1uq9j6g ant-btn-default ant-btn-icon-only ant-btn-dangerous"
                               disabled={false}
                               onClick={[Function]}
                               style={
@@ -337,7 +337,7 @@ exports[`test Purchased_Courses_page 1`] = `
                               </span>
                             </button>
                             <button
-                              className="ant-btn css-dev-only-do-not-override-1pg9a38 ant-btn-default ant-btn-icon-only"
+                              className="ant-btn css-dev-only-do-not-override-1uq9j6g ant-btn-default ant-btn-icon-only"
                               disabled={false}
                               onClick={[Function]}
                               style={
@@ -479,7 +479,7 @@ exports[`test Purchased_Courses_page 1`] = `
                         >
                           <div>
                             <button
-                              className="ant-btn css-dev-only-do-not-override-1pg9a38 ant-btn-default ant-btn-icon-only"
+                              className="ant-btn css-dev-only-do-not-override-1uq9j6g ant-btn-default ant-btn-icon-only"
                               disabled={false}
                               onClick={[Function]}
                               style={
@@ -518,7 +518,7 @@ exports[`test Purchased_Courses_page 1`] = `
                               </span>
                             </button>
                             <button
-                              className="ant-btn css-dev-only-do-not-override-1pg9a38 ant-btn-default ant-btn-icon-only ant-btn-dangerous"
+                              className="ant-btn css-dev-only-do-not-override-1uq9j6g ant-btn-default ant-btn-icon-only ant-btn-dangerous"
                               disabled={false}
                               onClick={[Function]}
                               style={
@@ -554,7 +554,7 @@ exports[`test Purchased_Courses_page 1`] = `
                               </span>
                             </button>
                             <button
-                              className="ant-btn css-dev-only-do-not-override-1pg9a38 ant-btn-default ant-btn-icon-only"
+                              className="ant-btn css-dev-only-do-not-override-1uq9j6g ant-btn-default ant-btn-icon-only"
                               disabled={false}
                               onClick={[Function]}
                               style={
@@ -598,7 +598,7 @@ exports[`test Purchased_Courses_page 1`] = `
               </div>
             </div>
             <ul
-              className="ant-pagination ant-table-pagination ant-table-pagination-right css-dev-only-do-not-override-1pg9a38"
+              className="ant-pagination ant-table-pagination ant-table-pagination-right css-dev-only-do-not-override-1uq9j6g"
               style={Object {}}
             >
               <li
