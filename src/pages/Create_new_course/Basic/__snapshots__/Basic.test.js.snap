@@ -119,7 +119,7 @@ exports[`matches snapshot 1`] = `
           What will students learn in your course?*
         </label>
         <textarea
-          className="ant-input css-dev-only-do-not-override-1pg9a38 ant-input-outlined"
+          className="ant-input css-dev-only-do-not-override-d2lrxs ant-input-outlined"
           disabled={false}
           name="Whatlearn"
           onBlur={[Function]}
@@ -156,7 +156,7 @@ exports[`matches snapshot 1`] = `
           Requirement*
         </label>
         <textarea
-          className="ant-input css-dev-only-do-not-override-1pg9a38 ant-input-outlined"
+          className="ant-input css-dev-only-do-not-override-d2lrxs ant-input-outlined"
           disabled={false}
           onBlur={[Function]}
           onChange={[Function]}
@@ -191,7 +191,7 @@ exports[`matches snapshot 1`] = `
           Course Level*
         </label>
         <div
-          className="ant-select ant-select-outlined css-dev-only-do-not-override-1pg9a38 ant-select-single ant-select-show-arrow"
+          className="ant-select ant-select-outlined css-dev-only-do-not-override-d2lrxs ant-select-single ant-select-show-arrow"
           onBlur={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
@@ -288,7 +288,7 @@ exports[`matches snapshot 1`] = `
           Audio Language*
         </label>
         <div
-          className="ant-select ant-select-outlined css-dev-only-do-not-override-1pg9a38 ant-select-single ant-select-show-arrow"
+          className="ant-select ant-select-outlined css-dev-only-do-not-override-d2lrxs ant-select-single ant-select-show-arrow"
           onBlur={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
@@ -385,7 +385,7 @@ exports[`matches snapshot 1`] = `
           Close Caption*
         </label>
         <div
-          className="ant-select ant-select-outlined css-dev-only-do-not-override-1pg9a38 ant-select-single ant-select-show-arrow"
+          className="ant-select ant-select-outlined css-dev-only-do-not-override-d2lrxs ant-select-single ant-select-show-arrow"
           onBlur={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
@@ -482,7 +482,7 @@ exports[`matches snapshot 1`] = `
           Course Category*
         </label>
         <div
-          className="ant-select ant-select-outlined css-dev-only-do-not-override-1pg9a38 ant-select-single ant-select-show-arrow"
+          className="ant-select ant-select-outlined css-dev-only-do-not-override-d2lrxs ant-select-single ant-select-show-arrow"
           onBlur={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}

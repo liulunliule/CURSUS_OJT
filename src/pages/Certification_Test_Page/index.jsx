@@ -8,12 +8,31 @@ import { fetchQuestions } from "../../redux/features/certificationTestPageSlice"
 
 const Certification_Test_Page = () => {
   const dispatch = useDispatch();
+  const [timeLeft, setTimeLeft] = useState({ minutes: 59, seconds: 59 });
   const { questions, status, error } = useSelector(
     (state) => state.certificationTestPage
   );
   useEffect(() => {
     dispatch(fetchQuestions());
   }, [dispatch]);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prevTime) => {
+        const { minutes, seconds } = prevTime;
+        if (seconds > 0) {
+          return { minutes, seconds: seconds - 1 };
+        } else if (minutes > 0) {
+          return { minutes: minutes - 1, seconds: 59 };
+        } else {
+          clearInterval(timer);
+          return { minutes: 0, seconds: 0 };
+        }
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
   return (
     <div className="Certification_test">
       <div className="toolbar_certification">
@@ -74,7 +93,10 @@ const Certification_Test_Page = () => {
                   </li>
                   <li>
                     <div className="timer_time">
-                      <h4 id="timer">51:02</h4>
+                      <h4 id="timer">
+                        {String(timeLeft.minutes).padStart(2, "0")}:
+                        {String(timeLeft.seconds).padStart(2, "0")}
+                      </h4>
                       <p>Minutes</p>
                     </div>
                   </li>
