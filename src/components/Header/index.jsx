@@ -380,7 +380,7 @@ function Header() {
                                   href="/instructor_profile"
                                   className="profile-instructor-link"
                                 >
-                                  View Profile
+                                  View My Profile
                                 </a>
                               </>
                             ) : role === false ? (
@@ -388,7 +388,7 @@ function Header() {
                                 href="/student_profile"
                                 className="profile-instructor-link"
                               >
-                                View Profile
+                                View My Profile
                               </a>
                             ) : null}
                           </div>
@@ -416,11 +416,29 @@ function Header() {
                         </li>
                         <hr />
                         <div className="dropItemText">
-                          <li className="item">Cursus Dashboard</li>
-                          <li className="item">Paid Memberships</li>
-                          <li className="item">Settings</li>
-                          <li className="item">Help</li>
-                          <li className="item">Send Feedback</li>
+                          {role === true ? (
+                            <>
+                              <Link to="/thirdlayout/instructor_studio_dashboard">
+                                <li className="item">Cursus Dashboard</li>
+                              </Link>
+                            </>
+                          ) : role === false ? (
+                            <Link to="/fourlayout/student_studio_dashboard">
+                              <li className="item">Cursus Dashboard</li>
+                            </Link>
+                          ) : null}
+                          <Link to="/secondLayout/paid_membership_page">
+                            <li className="item">Paid Memberships</li>
+                          </Link>
+                          <Link to="/setting_page/account_tab">
+                            <li className="item">Settings</li>
+                          </Link>
+                          <Link to="/help">
+                            <li className="item">Help</li>
+                          </Link>
+                          <Link to="/send_feedback_page">
+                            <li className="item">Send Feedback</li>
+                          </Link>
                           <li className="item" onClick={handleLogout}>
                             Sign Out
                           </li>

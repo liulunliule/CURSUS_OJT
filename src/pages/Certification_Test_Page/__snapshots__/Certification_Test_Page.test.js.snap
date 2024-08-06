@@ -138,7 +138,9 @@ exports[`test Certification Test Page 1`] = `
                   <h4
                     id="timer"
                   >
-                    51:02
+                    59
+                    :
+                    59
                   </h4>
                   <p>
                     Minutes

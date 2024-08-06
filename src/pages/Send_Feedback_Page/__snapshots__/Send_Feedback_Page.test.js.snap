@@ -22,7 +22,7 @@ exports[`SendFeedbackPage snapshot test 1`] = `
       </h2>
     </div>
     <input
-      className="ant-input css-dev-only-do-not-override-1pg9a38 ant-input-outlined SendFeedbackPage_Contents_Input"
+      className="ant-input css-dev-only-do-not-override-d2lrxs ant-input-outlined SendFeedbackPage_Contents_Input"
       disabled={false}
       onBlur={[Function]}
       onChange={[Function]}
@@ -30,13 +30,14 @@ exports[`SendFeedbackPage snapshot test 1`] = `
       onCompositionStart={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
+      onKeyUp={[Function]}
       placeholder="Email address"
       style={Object {}}
       type="text"
       value=""
     />
     <textarea
-      className="ant-input css-dev-only-do-not-override-1pg9a38 ant-input-outlined SendFeedbackPage_Contents_TextArea"
+      className="ant-input css-dev-only-do-not-override-d2lrxs ant-input-outlined SendFeedbackPage_Contents_TextArea"
       disabled={false}
       maxLength={3000}
       onBlur={[Function]}
@@ -60,10 +61,10 @@ exports[`SendFeedbackPage snapshot test 1`] = `
       Add Screenshots
     </span>
     <span
-      className="ant-upload-wrapper css-dev-only-do-not-override-1pg9a38"
+      className="ant-upload-wrapper css-dev-only-do-not-override-d2lrxs"
     >
       <div
-        className="css-dev-only-do-not-override-1pg9a38 ant-upload ant-upload-drag"
+        className="css-dev-only-do-not-override-d2lrxs ant-upload ant-upload-drag"
         onDragLeave={[Function]}
         onDragOver={[Function]}
         onDrop={[Function]}

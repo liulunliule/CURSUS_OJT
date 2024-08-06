@@ -385,10 +385,6 @@
             flex: 1;
             color: #000;
           }
-          .dropItemText,
-          .li {
-            color: #ddd;
-          }
         }
       }
     }
@@ -433,4 +429,7 @@
       }
     }
   }
-  
+  a {
+    color: #686f7a;
+    text-decoration: underline;
+}

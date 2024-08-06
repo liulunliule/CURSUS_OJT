@@ -32,8 +32,8 @@ const Instructor_Studio_Dashboard = () => {
     }, [dispatch]);
 
     const settings = {
-        dots: true,
-        infinite: true,
+        // dots: f,
+        // infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -41,8 +41,8 @@ const Instructor_Studio_Dashboard = () => {
     };
 
     const newsSettings = {
-        dots: true,
-        infinite: true,
+        // dots: true,
+        // infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -420,9 +420,7 @@ const Instructor_Studio_Dashboard = () => {
                                     <div class="studio-dashboard-detail">
                                         <div class="studio-dashboard-course-1">
                                             <div class="studio-dashboard-course-content">
-                                                {userInfo.profileAnalytics &&
-                                                    userInfo.profileAnalytics
-                                                        .length > 0 &&
+                                                {userInfo.profileAnalytics &&                                                  
                                                     userInfo.profileAnalytics.map(
                                                         (
                                                             itemProfileAnalytics,
