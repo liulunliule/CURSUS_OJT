@@ -3,10 +3,10 @@ import renderer from 'react-test-renderer';
 import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
-import { store } from '../../../redux/store';
-import AllCategoriesPage from '..';
+import { store } from '../../redux/store';
+import AllCategoriesPage from '.';
 
-test('test Certification Test Page', () => {
+test('test AllCategoriesPage', () => {
   const tree = renderer.create(
     <Provider store={store}>
       <MemoryRouter>

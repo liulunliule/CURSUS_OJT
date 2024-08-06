@@ -6,16 +6,46 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import "./index.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 function ForgotPassword() {
     const [email, setEmail] = useState("");
+
     const navigate = useNavigate();
-    const handleResetPassword = (e) => {
+    const handleResetPassword = async (e) => {
         e.preventDefault();
 
         if (!email) {
             toast.error("Please enter your email address");
             return;
+        }
+
+        const serviceID = "service_opddtia";
+        const templateID = "template_5g92d3l";
+        const publicKey = "JVZ1QcVFHltEVdEc3";
+
+        const data = {
+            service_id: serviceID,
+            template_id: templateID,
+            user_id: publicKey,
+            template_params: {
+                from_name: email,
+                to_name: "Trinh Huy",
+                message:
+                    "If you didn't request a password reset, please ignore this email or contact support if you have questions",
+            },
+        };
+
+        //Send email
+        try {
+            const response = await axios.post(
+                "https://api.emailjs.com/api/v1.0/email/send",
+                data
+            );
+            console.log(response.data);
+            setEmail("");
+        } catch (error) {
+            console.error(error);
         }
 
         navigate("/reset_password", { state: { email } });

@@ -6,7 +6,6 @@ import Dislike from "../../assets/img/dislike.png";
 import Share from "../../assets/img/share_live.png";
 import liveButton from "../../assets/img/live_button.png";
 import { Link } from "react-router-dom";
-import Slider from "react-slick";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchLiveStreams } from "../../redux/features/liveStreamsSlice";
 import { fetchChatContent } from "../../redux/features/chatContentSlice";
@@ -14,6 +13,7 @@ import {
   addChatMessage,
   fetchLiveChat,
 } from "../../redux/features/liveChatSlice";
+import Carousel from "../../components/carousel";
 
 const View_Live_Stream = () => {
   var settings = {
@@ -47,10 +47,23 @@ const View_Live_Stream = () => {
     setMessage(""); // Clear the input after sending the message
   };
 
+  // useEffect(() => {
+  //   dispatch(fetchLiveStreams());
+  //   dispatch(fetchChatContent());
+  //   dispatch(fetchLiveChat());
+  // }, [dispatch]);
+
   useEffect(() => {
     dispatch(fetchLiveStreams());
     dispatch(fetchChatContent());
-    dispatch(fetchLiveChat());
+
+    // Polling every 5 seconds
+    const interval = setInterval(() => {
+      dispatch(fetchLiveChat());
+    }, 5000);
+
+    // Clear interval on component unmount
+    return () => clearInterval(interval);
   }, [dispatch]);
 
   return (
@@ -147,7 +160,7 @@ const View_Live_Stream = () => {
                   <div className="owl-carousel live_stream owl-theme owl-loaded owl-drag">
                     <div className="owl-stage-outer">
                       <div className="owl-stage100">
-                        <Slider {...settings}>
+                        {/* <Slider {...settings}>
                           {liveStreams.map((d) => (
                             <div className="owl-item">
                               <div className="item">
@@ -164,7 +177,8 @@ const View_Live_Stream = () => {
                               </div>
                             </div>
                           ))}
-                        </Slider>
+                        </Slider> */}
+                        <Carousel />
                       </div>
                     </div>
                   </div>

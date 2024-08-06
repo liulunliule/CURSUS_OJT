@@ -36,7 +36,7 @@ function Reset_password() {
                 `https://6696231a0312447373c1386e.mockapi.io/user?email=${email}`
             );
 
-            // console.log("CHeck: ", response.data);
+            console.log("CHeck: ", response.data);
 
             if (response.data.length === 0) {
                 toast.error("User not found");

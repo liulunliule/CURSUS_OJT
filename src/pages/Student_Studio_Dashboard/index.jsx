@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./index.scss";
 import "bootstrap/scss/bootstrap.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

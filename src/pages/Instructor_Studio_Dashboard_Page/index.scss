@@ -11,9 +11,6 @@
         .button_test .studio-dashboard-owl-next {
             margin-top: -143.6%;
         }
-        .button-news {
-            margin-top: -121.6%;
-        }
     }
 }
 
@@ -192,6 +189,7 @@
 }
 
 .studio-dashboard-section {
+    position: relative;
     float: left;
     width: 100%;
 }
@@ -599,12 +597,13 @@
 }
 
 .button_test {
-    // display: flex;
-    // justify-content: space-between;
-    // align-items: center;
-    // position: absolute;
-    // top: 0;
-    // right: 0;
+    position: absolute;
+    top: 55px;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: right;
 
     .studio-dashboard-owl-prev,
     .studio-dashboard-owl-next {
@@ -643,12 +642,13 @@
 }
 
 .button-news {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -137.6%;
     float: right;
-    position: relative;
 
     .button-prev-news,
     .button-next-news {

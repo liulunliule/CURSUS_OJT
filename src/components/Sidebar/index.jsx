@@ -9,8 +9,6 @@ import {
   SavedCoursesLogo_SideBar,
   PagesLogo_SideBar,
   DropDownLogo_SideBar,
-  avatar1_SideBar,
-  avatar2_SideBar,
   AddInstructorLogo_SideBar,
   SettingLogo_SideBar,
   HelpLogo_SideBar,
@@ -18,7 +16,7 @@ import {
   SendFeedbackLogo_SideBar,
 } from "../../assets";
 import "./index.scss";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 //SideBarInstructorDashboardDemo
 import {
@@ -231,11 +229,27 @@ function SidebarFrontend() {
                   Test Result
                 </Link>
               </li>
-              <li className="Li_List_Select_Tests_SideBar">
-                <Link className="Link_SideBar" to="/fourlayout/my_certificates">
-                  My Certification
-                </Link>
-              </li>
+              {role === true ? (
+                <>
+                  <li className="Li_List_Select_Tests_SideBar">
+                    <Link
+                      className="Link_SideBar"
+                      to="/thirdlayout/my_certificates"
+                    >
+                      My Certification
+                    </Link>
+                  </li>
+                </>
+              ) : role === false ? (
+                <li className="Li_List_Select_Tests_SideBar">
+                  <Link
+                    className="Link_SideBar"
+                    to="/fourlayout/my_certificates"
+                  >
+                    My Certification
+                  </Link>
+                </li>
+              ) : null}
             </ul>
           </div>
         </details>

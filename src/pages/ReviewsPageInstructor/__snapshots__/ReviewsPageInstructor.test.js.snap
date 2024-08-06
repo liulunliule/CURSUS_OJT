@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`test Certification Test Page 1`] = `
+exports[`test ReviewsPageInstructor 1`] = `
 <div
-  className="ReviewsPageStudent "
+  className="ReviewsPageInstructor "
 >
   <div
-    className="ReviewsPageStudent_Title_Left"
+    className="ReviewsPageInstructor_Title_Left"
   >
     <svg
       fill="currentColor"
@@ -19,7 +19,7 @@ exports[`test Certification Test Page 1`] = `
       />
     </svg>
     <h2>
-      All Reviews
+      All Review
     </h2>
   </div>
   <div
@@ -31,7 +31,7 @@ exports[`test Certification Test Page 1`] = `
       <h3
         className="course_detail_reviews-feedback-title"
       >
-        My All Feedback
+        All Student Feedback
       </h3>
       <div
         className="total_rating"
@@ -2214,7 +2214,7 @@ exports[`test Certification Test Page 1`] = `
         className="course_detail_reviews-comments-search"
       >
         <h3>
-          My All Reviews
+          All Reviews
         </h3>
         <form
           action=""
